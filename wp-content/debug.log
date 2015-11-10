@@ -1,0 +1,8 @@
+[10-Nov-2015 20:31:01 UTC] PHP Fatal error:  Class 'App\Model\Bootstrap' not found in /Users/jmayhak/Sites/carnes-crossroads/wp-content/themes/cntheme/functions.php on line 20
+[10-Nov-2015 20:31:01 UTC] PHP Stack trace:
+[10-Nov-2015 20:31:01 UTC] PHP   1. {main}() /Users/jmayhak/Sites/carnes-crossroads/wp-admin/themes.php:0
+[10-Nov-2015 20:31:01 UTC] PHP   2. require_once() /Users/jmayhak/Sites/carnes-crossroads/wp-admin/themes.php:10
+[10-Nov-2015 20:31:01 UTC] PHP   3. require_once() /Users/jmayhak/Sites/carnes-crossroads/wp-admin/admin.php:31
+[10-Nov-2015 20:31:01 UTC] PHP   4. require_once() /Users/jmayhak/Sites/carnes-crossroads/wp-load.php:37
+[10-Nov-2015 20:31:01 UTC] PHP   5. require_once() /Users/jmayhak/Sites/carnes-crossroads/wp-config.php:104
+[10-Nov-2015 20:31:01 UTC] PHP   6. include() /Users/jmayhak/Sites/carnes-crossroads/wp-settings.php:329

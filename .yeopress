@@ -1,0 +1,19 @@
+{
+	"wpVer": "4.3.1",
+	"url": "http://carnes-crossroads.jonathan.dev",
+	"tablePrefix": "wp_",
+	"dbHost": "192.168.12.5",
+	"dbName": "daniel_island",
+	"dbUser": "root",
+	"dbPass": "2015!!cn",
+	"wpLang": "",
+	"git": false,
+	"customDirs": false,
+	"createLocalConfig": true,
+	"blockExternalRequests": false,
+	"vagrant": false,
+	"installTheme": false,
+	"wpDir": ".",
+	"contentDir": "wp-content",
+	"saltKeys": "define('AUTH_KEY',         'Q/h6z|]VB0whxVW~p(IkLN5Yp@E?l>InBK:vBqhzgx6Tq4|&IJzY8OMDfba:+zPp');\ndefine('SECURE_AUTH_KEY',  'cPr$u}n+z:B?):s-xi5|d!~|j]i!0f~|RZHi[%Roj#naBv=3<=NSPCs>Nr(tB8v%');\ndefine('LOGGED_IN_KEY',    '9wu1rBQZ:@v|f[XF=DG:#m#w1{;h`<r$$_VRG3-PjpHvx|&3iA@FOJj&B%^<bKo-');\ndefine('NONCE_KEY',        'SNR[=u5|).h]u&o:[/4C rtb-m7~;_W_2oU-aG>_Gq*+JKo?](:M=%C3y+gvAhh(');\ndefine('AUTH_SALT',        'Lai5huMFy@?Mqw?Gl(ZOF|dwbt=SC+zw?;w|>I=drniG5GH{YcQUEv |}RE-L[7>');\ndefine('SECURE_AUTH_SALT', 'm>w+F,9rH|N|}iW7LV-O)20Jke-rp9ptcJuz^Ugv)=q,#:5BsH%+`JJ+5:=(FaqD');\ndefine('LOGGED_IN_SALT',   '`fsO@b1nn?31v+s!j-_~mR-fy<p9q&#i/Dsgq?cWg[*/GG@Alh Jv]&h0X*itaV.');\ndefine('NONCE_SALT',       '|<yu)VHtCW/jXK+AlS102/2oLF)XVk9/xkiBwD{DLc3-a2CC6K8L;YJ/<S|uer?H');\n"
+}
