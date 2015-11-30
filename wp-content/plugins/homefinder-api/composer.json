@@ -1,0 +1,23 @@
+{
+  "description": "",
+  "minimum-stability": "stable",
+  "license": "proprietary",
+  "authors": [
+    {
+      "name": "Chernoff Newman",
+      "email": "developer@chernoffnewman.com"
+    }
+  ],
+  "require": {
+    "nesbot/carbon": "1.18.0",
+    "guzzlehttp/guzzle": "~6.0",
+    "elasticsearch/elasticsearch": "0.4"
+  },
+  "autoload": {
+    "psr-4": {"HomeFinder\\": "src/HomeFinder/"}
+  },
+  "require-dev": {
+    "10up/wp_mock": "dev-master",
+    "phpunit/phpunit": "^4.8"
+  }
+}
