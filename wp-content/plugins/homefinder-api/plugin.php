@@ -10,6 +10,14 @@
 require 'vendor/autoload.php';
 
 add_action('after_setup_theme', function () {
-    \HomeFinder\Model\Bootstrap::init();
+    $theme = wp_get_theme();
+
+    if ($theme->get('Name') === 'Carnes Crossroads 2015') {
+        \HomeFinder\Model\Bootstrap::init();
+    } else {
+        add_action('admin_notices', function () {
+            echo "<div class='update-nag'><p>Home Finder API Plugin requires Carnes Crossroads 2015 theme by Chernoff Newman</p></div>";
+        });
+    }
 });
 

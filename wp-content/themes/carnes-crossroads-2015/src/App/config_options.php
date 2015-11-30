@@ -34,6 +34,10 @@ $config_options = array(
         'wp-migrate-db-pro-media-files/wp-migrate-db-pro-media-files.php' => array(
             'title' => 'WP Migrate DB Pro Media Files',
             'url' => 'https://deliciousbrains.com/?download_file=21&order=wc_order_5560bce6dcb71&email=jonathan.mayhak%40chernoffnewman.com&key=5454df2e3107dfe6d89d2f40522c7fc3&addon=2351'
+        ),
+        'homefinder-api/plugin.php' => array(
+            'title' => 'Home Finder API by Chernoff Newman',
+            'url' => '#'
         )
     ),
 
