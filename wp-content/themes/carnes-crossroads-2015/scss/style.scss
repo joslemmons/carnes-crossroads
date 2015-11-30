@@ -5,35 +5,27 @@ Author: Chernoff Newman
 Version: 1.0
 */
 
-@import "variables";
-@import "lib/bootstrap";
-
-/*************
-** Globals **
-*************/
-@import "fonts";
-@import "cn-mixins";
+@import "variables",
+        "lib/bootstrap";
 
 
-/*****************
-** Base Styles **
-*****************/
-@import "base";
-@import "variables";
-
-/**************
-** Templates **
-**************/
-@import "ie";
-@import "front-page";
-@import "page-default";
-@import "news";
-@import "search";
+// Globals
+// ===================================
+@import "fonts",
+        "cn-mixins",
+        "navigation";
 
 
-/*************
-** Partials **
-**************/
-@import "partials/nav";
-@import "partials/footer";
-@import "partials/cognito";
+
+// Base Styles
+// ===================================
+@import "base",
+        "variables";
+
+
+
+// Template Styles
+// ===================================
+@import "front-page",
+        "page-default",
+        "search";

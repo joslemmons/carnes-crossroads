@@ -20,13 +20,8 @@
         <link rel="apple-touch-icon-precomposed" href="{{ template_uri }}/img/apple-icon.png"/>
         <link rel="shortcut icon" href="{{ template_uri }}/img/favicon.ico" sizes="32x32"/>
 
-        {% if typekit_src %}
-        <script src="{{ typekit_src }}"></script>
-        <script>try {
-            Typekit.load({async: true});
-        } catch (e) {
-        }</script>
-        {% endif %}
+        <script src="https://use.typekit.net/xxt2zzn.js"></script>
+        <script>try{Typekit.load({ async: true });}catch(e){}</script>
 
         {{ wp_head() }}
 
@@ -36,6 +31,19 @@
 <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade
 your browser</a> to improve your experience.</p>
 <![endif]-->
+
+        <nav class="main-nav">
+            <div class="container">
+                <div class="row">
+                    <div class="xs-col-2"><img src="{{ template_uri }}/img/carnes_logo_wht.svg"></div>
+                    <ul class="main-nav__sub">
+                        <li class="main-nav__sub-item"><a href="">Home Finder</a></li>
+                        <li class="main-nav__sub-item"><a href="">Home Finder</a></li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+
         {% block template %}
         {% endblock %}
 

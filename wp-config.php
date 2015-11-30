@@ -13,7 +13,7 @@
  *
  * @package WordPress
  */
- 
+
 // Include local configuration
 if (file_exists(dirname(__FILE__) . '/local-config.php')) {
 	include(dirname(__FILE__) . '/local-config.php');
@@ -27,10 +27,12 @@ if (!defined('DB_USER')) {
 	define('DB_USER', 'root');
 }
 if (!defined('DB_PASSWORD')) {
-	define('DB_PASSWORD', '2015!!cn');
+	// define('DB_PASSWORD', '2015!!cn');
+    define('DB_PASSWORD', 'root');
 }
 if (!defined('DB_HOST')) {
-	define('DB_HOST', '192.168.12.5');
+	// define('DB_HOST', '192.168.12.5');
+    define('DB_HOST', 'localhost');
 }
 
 /** Database Charset to use in creating database tables. */
