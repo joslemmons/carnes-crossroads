@@ -20,8 +20,3 @@ if (!function_exists('getallheaders')) {
 }
 
 \App\Model\Bootstrap::init();
-
-$missing_plugins = Config::getMissingPlugins();
-if (false === is_admin() && false === empty($missing_plugins)) {
-    exit('missing plugins <a href="/wp-admin">admin</a>');
-}
