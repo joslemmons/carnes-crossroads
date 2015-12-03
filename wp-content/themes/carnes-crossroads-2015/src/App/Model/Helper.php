@@ -3,6 +3,8 @@
 class Helper
 {
 
+    private static $_pages;
+
     /**
      * Create image attachment using a web url.
      *
@@ -161,5 +163,26 @@ class Helper
     public static function isPost()
     {
         return ($_SERVER['REQUEST_METHOD'] === 'POST');
+    }
+
+    public static function getPagesForPiklist()
+    {
+        $return = array();
+
+        if (self::$_pages === null) {
+            $pages = \Timber::get_posts(array(
+                'posts_per_page' => -1,
+                'post_type' => 'page',
+            ));
+
+            foreach ($pages as $page) {
+                $url = parse_url($page->link());
+                $return[$page->id] = $page->title() . ' (' . $url['path'] . ')';
+            }
+        } else {
+            $return = self::$_pages;
+        }
+
+        return $return;
     }
 }

@@ -59,7 +59,7 @@ $config_options = array(
     // social options
     'social' => array(
         'instagram' => array(
-            'support_approval_workflow' => true,
+            'support_approval_workflow' => false,
             'default_username' => ''
         ),
         'twitter' => array(

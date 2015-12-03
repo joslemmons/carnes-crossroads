@@ -50,6 +50,8 @@ class Bootstrap
     private static function _registerCustomPostTypes()
     {
         Instagram::bootstrap();
+        Page::bootstrap();
+        FrontPage::bootstrap();
     }
 
 }
