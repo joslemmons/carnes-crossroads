@@ -1,16 +1,15 @@
 <?php
 /*  
 Title: Validation
-Class: custom-class-1 custom-class-2
-Width: 720
 */
+?>
 
-  echo $before_widget;
+<?php echo $before_widget; ?>
 
-  echo $before_title;
+  <?php echo $before_title; ?>
+  
+  <?php echo $after_title; ?>
 
-  echo $after_title;
-
-  piklist::pre($settings);
-
-  echo $after_widget;
+    <?php piklist::pre($settings); ?>
+    
+<?php echo $after_widget; ?>

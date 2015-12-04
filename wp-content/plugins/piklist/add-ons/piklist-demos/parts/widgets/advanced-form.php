@@ -1,23 +1,29 @@
 <?php
+/*
+Width: 720
+*/
 
-  piklist('field', array(
+piklist('field', array(
     'type' => 'colorpicker'
     ,'field' => 'color'
-    ,'label' => __('Color Picker', 'piklist-demo')
+    ,'label' => 'Color Picker'
+ 
   ));
 
   piklist('field', array(
     'type' => 'colorpicker'
     ,'add_more' => true
     ,'field' => 'color_add_more'
-    ,'label' => __('Color Picker Add More', 'piklist-demo')
+    ,'label' => 'Color Picker Add More'
+ 
   ));
 
-  piklist('field', array(
+
+piklist('field', array(
     'type' => 'datepicker'
     ,'field' => 'date'
-    ,'label' => __('Date', 'piklist-demo')
-    ,'description' => __('Choose a date', 'piklist-demo')
+    ,'label' => 'Date'
+    ,'description' => 'Choose a date'
     ,'options' => array(
       'dateFormat' => 'M d, yy'
     )
@@ -32,8 +38,8 @@
     'type' => 'datepicker'
     ,'field' => 'date_add_more'
     ,'add_more' => true
-    ,'label' => __('Date Add More', 'piklist-demo')
-    ,'description' => __('Choose a date', 'piklist-demo')
+    ,'label' => 'Date Add More'
+    ,'description' => 'Choose a date'
     ,'options' => array(
       'dateFormat' => 'M d, yy'
     )
@@ -44,19 +50,90 @@
  
   ));
 
+
+piklist('field', array(
+    'type' => 'group'
+    ,'label' => __('Newsletter Signup (Grouped)')
+    ,'description' => __('Add email addresses with topic selectivity')
+    ,'field' => 'newsletter_signup'
+    ,'add_more' => true
+    ,'fields' => array(
+      array(
+        'type' => 'text'
+        ,'field' => 'first_name'
+        ,'label' => 'First Name'
+        ,'columns' => 4
+      )
+      ,array(
+        'type' => 'text'
+        ,'field' => 'last_name'
+        ,'label' => 'Last Name'
+        ,'columns' => 4
+      )
+      ,array(
+        'type' => 'text'
+        ,'field' => 'email'
+        ,'label' => 'Email Address'
+        ,'columns' => 4
+      )
+      ,array(
+        'type' => 'group'
+        ,'field' => 'newsletters'
+        ,'fields' => array(
+          array(
+            'type' => 'checkbox'
+            ,'field' => 'newsletter_a'
+            ,'label' => 'Newsletter A'
+            ,'columns' => 4
+            ,'value' => 'first'
+            ,'choices' => array(
+              'first' => 'A-1'
+              ,'second' => 'A-2'
+              ,'third' => 'A-3'
+            )
+          )
+          ,array(
+            'type' => 'checkbox'
+            ,'field' => 'newsletter_b'
+            ,'columns' => 4
+            ,'label' => 'Newsletter B'
+            ,'value' => 'second'
+            ,'choices' => array(
+              'first' => 'B-1'
+              ,'second' => 'B-2'
+              ,'third' => 'B-3'
+            )
+          )
+          ,array(
+            'type' => 'checkbox'
+            ,'field' => 'newsletter_c'
+            ,'columns' => 4
+            ,'label' => 'Newsletter C'
+            ,'value' => 'third'
+            ,'choices' => array(
+              'first' => 'C-1'
+              ,'second' => 'C-2'
+              ,'third' => 'C-3'
+            )
+          )
+        )
+      )
+    )
+  ));
+
   piklist('field', array(
     'type' => 'group'
     ,'field' => 'work_order_repair'
     ,'add_more' => true
-    ,'label' => __('REPAIR', 'piklist-demo')
-    ,'description' => __('Enter TYPE of Work, PRICE and DUE DATE', 'piklist-demo')
+    ,'label' => 'REPAIR'
+    ,'description' => 'Enter TYPE of Work, PRICE and DUE DATE'
     ,'fields' => array(
       array(
         'type' => 'text'
         ,'field' => 'work'
         ,'columns' => 6
         ,'attributes' => array(
-          'placeholder' => __('Type of work', 'piklist-demo')
+          'placeholder' => 'Type of work'
         )
       )
       ,array(
@@ -64,7 +141,7 @@
         ,'field' => 'price'
         ,'columns' => 2
         ,'attributes' => array(
-          'placeholder' => __('$', 'piklist-demo')
+          'placeholder' => '$'
         )
       )
       ,array(
@@ -75,7 +152,7 @@
           'dateFormat' => 'M d, yy'
         )
         ,'attributes' => array(
-          'placeholder' => __('Due date', 'piklist-demo')
+          'placeholder' => 'Due date'
         )
       )
     )
@@ -85,24 +162,24 @@
   piklist('field', array(
     'type' => 'group'
     ,'field' => 'demo_add_more_group_todo'
-    ,'label' => __('Todo\'s', 'piklist-demo')
+    ,'label' => __('Todo\'s (Grouped)')
     ,'add_more' => true
     ,'fields' => array(
       array(
         'type' => 'select'
         ,'field' => 'user'
-        ,'label' => __('Assigned to', 'piklist-demo')
+        ,'label' => 'Assigned to'
         ,'columns' => 4
-        ,'choices' => array(
-          'adam' => __('Adam', 'piklist-demo')
-          ,'bill' => __('Bill', 'piklist-demo')
-          ,'carol' => __('Carol', 'piklist-demo')
+        ,'choices' => array (
+          'adam' => 'Adam'
+          ,'bill' => 'Bill'
+          ,'carol' => 'Carol'
           )
         )
         ,array(
           'type' => 'text'
           ,'field' => 'task'
-          ,'label' => __('Task', 'piklist-demo')
+          ,'label' => 'Task'
           ,'columns' => 8
         )
     )
@@ -110,15 +187,40 @@
 
   piklist('field', array(
     'type' => 'group'
-    ,'label' => __('Content Section', 'piklist-demo')
-    ,'description' => __('When an add-more field is nested it should be grouped to maintain the data relationships.', 'piklist-demo')
+    ,'label' => __('Todo\'s (Un-Grouped)')
+    ,'add_more' => true
+    ,'fields' => array(
+      array(
+        'type' => 'select'
+        ,'field' => 'demo_add_more_todo_user'
+        ,'label' => 'Assigned to'
+        ,'columns' => 4
+        ,'choices' => array (
+          'adam' => 'Adam'
+          ,'bill' => 'Bill'
+          ,'carol' => 'Carol'
+          )
+        )
+        ,array(
+          'type' => 'text'
+          ,'field' => 'demo_add_more_todo_task'
+          ,'label' => 'Task'
+          ,'columns' => 8
+        )
+    )
+  ));
+
+  piklist('field', array(
+    'type' => 'group'
+    ,'label' => __('Content Section (Grouped)')
+    ,'description' => __('When an add-more field is nested it should be grouped to maintain the data relationships.')
     ,'field' => 'demo_content'
     ,'add_more' => true
     ,'fields' => array(
       array(
         'type' => 'text'
         ,'field' => 'csg_title'
-        ,'label' => __('Title', 'piklist-demo')
+        ,'label' => 'Title'
         ,'columns' => 12
         ,'attributes' => array(
           'class' => 'large-text'
@@ -127,7 +229,7 @@
       ,array(
         'type' => 'text'
         ,'field' => 'csg_section'
-        ,'label' => __('Section', 'piklist-demo')
+        ,'label' => 'Section'
         ,'columns' => 12
         ,'attributes' => array(
           'class' => 'large-text'
@@ -141,9 +243,9 @@
           array(
             'type' => 'select'
             ,'field' => 'post_id'
-            ,'label' => __('Grade', 'piklist-demo')
+            ,'label' => 'Grade'
             ,'columns' => 12
-            ,'choices' => array(
+            ,'choices' => array (
               'a' => 'A'
               ,'b' => 'B'
               ,'c' => 'C'
@@ -156,104 +258,77 @@
 
   piklist('field', array(
     'type' => 'group'
-    ,'field' => 'ingredient_section'
-    ,'label' => __('Ingredients', 'piklist-demo')
+    ,'label' => __('Content Section with Siblings (Grouped)')
+    ,'decription' => __('When an add-more field is nested it should be grouped to maintain the data relationships.')
+    ,'field' => 'demo_content_sibling'
     ,'add_more' => true
     ,'fields' => array(
       array(
         'type' => 'text'
-        ,'field' => 'ingredients_component_title'
-        ,'label' => __('Section Title', 'piklist-demo')
+        ,'field' => 'title'
+        ,'label' => 'Section Title'
         ,'columns' => 12
+        ,'attributes' => array(
+          'class' => 'large-text'
+        )
+      )
+      ,array(
+        'type' => 'text'
+        ,'field' => 'tagline'
+        ,'label' => 'Section Tagline'
+        ,'columns' => 12
+        ,'attributes' => array(
+          'class' => 'large-text'
+        )
       )
       ,array(
         'type' => 'group'
-        ,'field' => 'ingredient'
+        ,'field' => 'sibling_content_1'
         ,'add_more' => true
         ,'fields' => array(
           array(
-            'type' => 'text'
-            ,'field' => 'ingredient_qty'
-            ,'label' => __('Qty', 'piklist-demo')
-            ,'columns' => 2
-          )
-          ,array(
-            'type' => 'textarea'
-            ,'field' => 'ingredient_description'
-            ,'label' => __('Description', 'piklist-demo')
-            ,'columns' => 10
-            ,'attributes' => array(
-              'rows' => 5
+            'type' => 'select'
+            ,'field' => 'post_id_sibling_1'
+            ,'label' => 'Content One Title'
+            ,'columns' => 12
+            ,'choices' => piklist(
+              get_posts(
+                 array(
+                  'post_type' => 'post'
+                  ,'orderby' => 'post_date'
+                 )
+                 ,'objects'
+               )
+               ,array(
+                 'ID'
+                 ,'post_title'
+               )
             )
           )
         )
-      )
-    )
-  ));
-
-  piklist('field', array(
-    'type' => 'group'
-    ,'label' => __('Newsletter Signup', 'piklist-demo')
-    ,'description' => __('Add email addresses with topic selectivity', 'piklist-demo')
-    ,'field' => 'newsletter_signup'
-    ,'add_more' => true
-    ,'fields' => array(
-      array(
-        'type' => 'text'
-        ,'field' => 'first_name'
-        ,'label' => __('First Name', 'piklist-demo')
-        ,'columns' => 4
-      )
-      ,array(
-        'type' => 'text'
-        ,'field' => 'last_name'
-        ,'label' => __('Last Name', 'piklist-demo')
-        ,'columns' => 4
-      )
-      ,array(
-        'type' => 'text'
-        ,'field' => 'email'
-        ,'label' => __('Email Address', 'piklist-demo')
-        ,'columns' => 4
       )
       ,array(
         'type' => 'group'
-        ,'field' => 'newsletters'
+        ,'field' => 'sibling_content_2'
+        ,'add_more' => true
         ,'fields' => array(
           array(
-            'type' => 'checkbox'
-            ,'field' => 'newsletter_a'
-            ,'label' => __('Newsletter A', 'piklist-demo')
-            ,'columns' => 4
-            ,'value' => 'first'
-            ,'choices' => array(
-              'first' => __('A-1', 'piklist-demo')
-              ,'second' => __('A-2', 'piklist-demo')
-              ,'third' => __('A-3', 'piklist-demo')
-            )
-          )
-          ,array(
-            'type' => 'checkbox'
-            ,'field' => 'newsletter_b'
-            ,'columns' => 4
-            ,'label' => __('Newsletter B', 'piklist-demo')
-            ,'value' => 'second'
-            ,'choices' => array(
-              'first' => __('B-1', 'piklist-demo')
-              ,'second' => __('B-2', 'piklist-demo')
-              ,'third' => __('B-3', 'piklist-demo')
-            )
-          )
-          ,array(
-            'type' => 'checkbox'
-            ,'field' => 'newsletter_c'
-            ,'columns' => 4
-            ,'label' => __('Newsletter C', 'piklist-demo')
-            ,'value' => 'third'
-            ,'choices' => array(
-              'first' => __('C-1', 'piklist-demo')
-              ,'second' => __('C-2', 'piklist-demo')
-              ,'third' => __('C-3', 'piklist-demo')
+            'type' => 'select'
+            ,'field' => 'post_id_sibling_2'
+            ,'label' => 'Content Two Title'
+            ,'columns' => 12
+            ,'choices' => piklist(
+              get_posts(
+                 array(
+                  'post_type' => 'post'
+                  ,'orderby' => 'post_date'
+                 )
+                 ,'objects'
+               )
+               ,array(
+                 'ID'
+                 ,'post_title'
+               )
             )
           )
         )
@@ -261,57 +336,10 @@
     )
   ));
 
-  piklist('field', array(
-    'type' => 'group'
-    ,'field' => 'newsletter_archive_demo'
-    ,'label' => __('Newsletter Archives', 'piklist-demo')
-    ,'columns' => 12
-    ,'add_more' => true
-    ,'fields' => array(
-      array(
-        'type' => 'datepicker'
-        ,'field' => 'newsletter_archive_title'
-        ,'label' => __('Issue Date', 'piklist-demo')
-        ,'columns' => 12
-      )
-      ,array(
-        'type' => 'file'
-        ,'field' => 'newsletter_file'
-        ,'label' => __('Upload or choose an Image', 'piklist-demo')
-        ,'columns' => 12
-        ,'options' => array(
-          'modal_title' => __('Add File(s)', 'piklist-demo')
-          ,'button' => __('Add', 'piklist-demo')
-        )
-      )
-      ,array(
-        'type' => 'editor'
-        ,'field' => 'newsletter_highlights'
-        ,'label' => __('Highlights of this issue', 'piklist-demo')
-        ,'columns' => 12
-        ,'options' => array(
-          'wpautop' => true
-          ,'media_buttons' => false
-          ,'teeny' => false
-          ,'dfw' => false
-          ,'tinymce' => true
-          ,'quicktags' => true
-        )
-      )
-      ,array(
-        'type' => 'file'
-        ,'field' => 'newsletter_image'
-        ,'columns' => 12
-        ,'label' => __('Add a cover image', 'piklist-demo')
-        ,'options' => array(
-          'modal_title' => __('Add File(s)', 'piklist-demo')
-          ,'button' => __('Add', 'piklist-demo')
-        )
-      )
-    )
-  ));
 
   piklist('shared/code-locater', array(
     'location' => __FILE__
-    ,'type' => 'Widget'
+    ,'type' => 'Meta Box'
   ));
+
+?>

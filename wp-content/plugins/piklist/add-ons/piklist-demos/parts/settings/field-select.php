@@ -1,22 +1,20 @@
 <?php
 /*
 Title: Select Fields
-Order: 30
-Tab: Common
-Sub Tab: Lists
 Setting: piklist_demo_fields
-Flow: Demo Workflow
+Tab: Lists
+Order: 30
 */
 
   piklist('field', array(
     'type' => 'select'
     ,'field' => 'select'
-    ,'label' => __('Select', 'piklist-demo')
+    ,'label' => 'Select'
     ,'value' => 'third'
     ,'choices' => array(
-      'first' => __('First Choice', 'piklist-demo')
-      ,'second' => __('Second Choice', 'piklist-demo')
-      ,'third' => __('Third Choice', 'piklist-demo')
+      'first' => 'First Choice'
+      ,'second' => 'Second Choice'
+      ,'third' => 'Third Choice'
     )
   ));
   
@@ -24,16 +22,18 @@ Flow: Demo Workflow
     'type' => 'select'
     ,'field' => 'select_add_more'
     ,'add_more' => true
-    ,'label' => __('Add More', 'piklist-demo')
+    ,'label' => 'Add More'
+    ,'description' => 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.'
     ,'value' => 'third'
     ,'choices' => array(
-      'first' => __('First Choice', 'piklist-demo')
-      ,'second' => __('Second Choice', 'piklist-demo')
-      ,'third' => __('Third Choice', 'piklist-demo')
+      'first' => 'First Choice'
+      ,'second' => 'Second Choice'
+      ,'third' => 'Third Choice'
     )
   ));
 
   piklist('shared/code-locater', array(
     'location' => __FILE__
-    ,'type' => 'Settings Section'
+    ,'type' => 'Meta Box'
   ));
+?>

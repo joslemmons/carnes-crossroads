@@ -2,7 +2,7 @@
 /*
 Title: Extend Piklist
 Setting: piklist_core_addons
-Tab Order: 0
+Order: 10
 */
 ?>
 
@@ -17,5 +17,8 @@ Tab Order: 0
     ,'field' => 'add-ons'
     ,'template' => 'field'
     ,'label' => __('Plugin Add-ons', 'piklist')
+    ,'description' => __('Check to activate.','piklist')
     ,'choices' => piklist(piklist_add_on::$available_add_ons, array('_key', 'Name'))
   ));
+  
+?>

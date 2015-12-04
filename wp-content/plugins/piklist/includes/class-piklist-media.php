@@ -1,49 +1,24 @@
 <?php
 
-if (!defined('ABSPATH')) exit; // Exit if accessed directly
+if (!defined('ABSPATH'))
+{
+  exit;
+}
 
-/**
- * Piklist_Media
- * Controls media modifications and features.
- *
- * @package     Piklist
- * @subpackage  Media
- * @copyright   Copyright (c) 2012-2015, Piklist, LLC.
- * @license     http://opensource.org/licenses/gpl-2.0.php GNU Public License
- * @since       1.0
- */
-class Piklist_Media
+class PikList_Media
 {
   private static $meta_boxes = array();
-    
-  /**
-   * _construct
-   * Class constructor.
-   *
-   * @access public
-   * @static
-   * @since 1.0
-   */
+  
+  private static $meta_box_nonce = false;
+  
   public static function _construct()
-  {
+  {    
     add_action('init', array('piklist_media', 'init'));
     
+    add_filter('attachment_fields_to_save', array('piklist_media', 'process_form'), 10, 2);
     add_filter('attachment_fields_to_edit', array('piklist_media', 'attachment_fields_to_edit'), 100, 2);
   }
 
-  /**
-   * attachment_fields_to_edit
-   * Checks if there are meta boxes to render.
-   *
-   * @param $form_fields
-   * @param $post
-   *
-   * @return
-   *
-   * @access public
-   * @static
-   * @since 1.0
-   */
   public static function attachment_fields_to_edit($form_fields, $post)
   {
     global $typenow;
@@ -59,103 +34,76 @@ class Piklist_Media
     return $form_fields;
   }
   
-  /**
-   * init
-   * Initializes system.
-   *
-   * @access public
-   * @static
-   * @since 1.0
-   */
   public static function init()
-  {
+  {   
     self::register_meta_boxes();
   }
 
-  /**
-   * register_meta_boxes
-   * register meta boxes.
-   *
-   *
-   * @return
-   *
-   * @access public
-   * @static
-   * @since 1.0
-   */
   public static function register_meta_boxes()
   {
-    $data = array(
-              'title' => 'Title'
+    piklist::process_views('media', array('piklist_media', 'register_meta_boxes_callback'));
+  }
+
+  public static function register_meta_boxes_callback($arguments)
+  {
+    extract($arguments);
+    
+    $current_user = wp_get_current_user();
+    
+    $data = get_file_data($path . '/parts/' . $folder . '/' . $part, apply_filters('piklist_get_file_data', array(
+              'name' => 'Title'
               ,'description' => 'Description'
               ,'capability' => 'Capability'
               ,'role' => 'Role'
               ,'order' => 'Order'
+              ,'Status' => 'Status'
               ,'new' => 'New'
               ,'id' => 'ID'
-            );
-            
-    piklist::process_parts('media', $data, array('piklist_media', 'register_meta_boxes_callback'));
-  }
-
-  /**
-   * register_meta_boxes_callback
-   * Handle the registration of a meta box for media.
-   *
-   * @param $arguments
-   *
-   * @access public
-   * @static
-   * @since 1.0
-   */
-  public static function register_meta_boxes_callback($arguments)
-  {
-    global $pagenow;
+            ), 'media'));
     
-    extract($arguments);
+    $data = apply_filters('piklist_add_part', $data, 'media');
     
-    if (!$data['new'] || ($data['new'] && !in_array($pagenow, array('async-upload.php', 'media-new.php'))))
+    $meta_box = array(
+      'id' => piklist::slug($data['name'])
+      ,'config' => $data
+      ,'part' => $path . '/parts/' . $folder . '/' . $part
+    );
+    
+    if ((!$data['capability'] || ($data['capability'] && current_user_can(strtolower($data['capability']))))
+      && (!$data['role']) || piklist_user::current_user_role($data['role'])
+      && (!$data['new'] || ($data['new'] && !in_array($pagenow, array('async-upload.php', 'media-new.php'))))
+    )
     {    
-      foreach (self::$meta_boxes as $key => $meta_box)
-      {
-        if ($id == $meta_box['id'])
-        {
-          unset(self::$meta_boxes[$key]);
-        }
-      }
-      
       if (isset($order))
       {
-        self::$meta_boxes[$order] = $arguments;
+        self::$meta_boxes[$order] = $meta_box;
       }
       else
       {
-        array_push(self::$meta_boxes, $arguments);
+        array_push(self::$meta_boxes, $meta_box);
       }
     }
   }
 
-  /**
-   * meta_box
-   * Render the meta box.
-   *
-   * @param $post
-   *
-   * @return
-   *
-   * @access public
-   * @static
-   * @since 1.0
-   */
   public static function meta_box($post)
   {
     if (!empty(self::$meta_boxes))
     {
       ob_start();
       
-      $GLOBALS['piklist_attachment'] = $post;
+      if (!self::$meta_box_nonce)
+      {
+        piklist_form::render_field(array(
+          'type' => 'hidden'
+          ,'field' => 'nonce'
+          ,'value' => wp_create_nonce(plugin_basename(piklist::$paths['piklist'] . '/piklist.php'))
+          ,'scope' => piklist::$prefix
+        ));
       
-      uasort(self::$meta_boxes, array('piklist', 'sort_by_data_order'));
+        self::$meta_box_nonce = true;
+      }
+      
+      $GLOBALS['piklist_attachment'] = $post;
       
       foreach (self::$meta_boxes as $meta_box)
       {
@@ -166,12 +114,11 @@ class Piklist_Media
         
         do_action('piklist_pre_render_media_meta_box', $post, $meta_box);
         
-        foreach ($meta_box['render'] as $render)
-        {
-          piklist::render($render, array(
-            'data' => $meta_box['data']
-          ), false);
-        }
+        piklist::render($meta_box['part'], array(
+          'post_id' => $post->ID
+          ,'prefix' => 'piklist'
+          ,'plugin' => 'piklist'
+        ), false);
                 
         do_action('piklist_post_render_media_meta_box', $post, $meta_box);
                 
@@ -192,61 +139,13 @@ class Piklist_Media
     
     return null;
   }
-
-  /**
-   * get_image_sizes
-   * Gets images sizes
-   *
-   * @param string $size the image size (i.e. medium)
-   *
-   * @return
-   *
-   * @access public
-   * @static
-   * @since 1.0
-   */
-  public static function get_image_sizes($size = '')
+  
+  public static function process_form($post, $attachment)
   {
-    global $_wp_additional_image_sizes;
+    piklist_form::process_form(array(
+      'post' => $post['ID']
+    ));
 
-    $sizes = array();
-    
-    $get_intermediate_image_sizes = get_intermediate_image_sizes();
-
-    foreach($get_intermediate_image_sizes as $_size)
-    {
-      if(in_array($_size, array('thumbnail', 'medium', 'large')))
-      {
-        $sizes[$_size]['width'] = get_option($_size . '_size_w');
-        $sizes[$_size]['height'] = get_option($_size . '_size_h');
-        $sizes[$_size]['crop'] = (bool) get_option($_size . '_crop');
-
-      }
-      elseif (isset($_wp_additional_image_sizes[$_size]))
-      {
-        $sizes[$_size] = array( 
-          'width' => $_wp_additional_image_sizes[$_size]['width']
-          ,'height' => $_wp_additional_image_sizes[$_size]['height']
-          ,'crop' =>  $_wp_additional_image_sizes[$_size]['crop']
-        );
-      }
-
-    }
-
-    // Get only 1 size if found
-    if ($size)
-    {
-      if (isset($sizes[$size]))
-      {
-        return $sizes[$size];
-      }
-      else
-      {
-        return false;
-      }
-
-    }
-
-    return $sizes;
+    return $post;
   }
 }

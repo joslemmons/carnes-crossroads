@@ -1,20 +1,17 @@
 <?php
 /*
 Title: Party Invite
-Order: 100
-Tab: Conditions
-Sub Tab: Advanced
 Setting: piklist_demo_fields
-Flow: Demo Workflow
+Order: 100
+Collapse: false
+Tab: Conditions
 */
   
   piklist('field', array(
     'type' => 'html'
     ,'field' => '_message_meal'
+    ,'template' => 'admin_notice_error'
     ,'value' => __('We only serve steaks rare.', 'piklist-demo')
-    ,'attributes' => array(
-      'class' => 'piklist-error-text'
-    )
     ,'conditions' => array(
       'relation' => 'or'
       ,array(
@@ -22,11 +19,11 @@ Flow: Demo Workflow
         ,'value' => 'steak'
       )
       ,array(
-        'field' => 'guest_one_meal'
+        'field' => 'guest_one:guest_one_meal'
         ,'value' => 'steak'
       )
       ,array(
-        'field' => 'guest_two_meal'
+        'field' => 'guest_two:guest_two_meal'
         ,'value' => 'steak'
       )
     )
@@ -35,7 +32,7 @@ Flow: Demo Workflow
   piklist('field', array(
     'type' => 'select'
     ,'field' => 'attending'
-    ,'label' => __('Are you coming to the party?', 'piklist-demo')
+    ,'label' => 'Are you coming to the party?'
     ,'choices' => array(
       '' => ''
       ,'yes' => 'Yes'
@@ -55,7 +52,7 @@ Flow: Demo Workflow
   piklist('field', array(
     'type' => 'radio'
     ,'field' => 'guest_meal'
-    ,'label' => __('Choose meal type', 'piklist-demo')
+    ,'label' => 'Choose meal type'
     ,'choices' => array(
       'chicken' => 'Chicken'
       ,'steak' => 'Steak'
@@ -73,8 +70,8 @@ Flow: Demo Workflow
   piklist('field', array(
     'type' => 'select'
     ,'field' => 'guests'
-    ,'label' => __('Are you bringing guests', 'piklist-demo')
-    ,'description' => __('Coming to party != (No or empty)', 'piklist-demo')
+    ,'label' => 'Are you bringing guests'
+    ,'description' => 'Coming to party != (No or empty)'
     ,'choices' => array(
       'yes' => 'Yes'
       ,'no' => 'No'
@@ -91,10 +88,8 @@ Flow: Demo Workflow
   piklist('field', array(
     'type' => 'html'
     ,'field' => '_message_guests'
+    ,'template' => 'admin_notice'
     ,'value' => __('Sorry, only two guests are allowed.', 'piklist-demo')
-    ,'attributes' => array(
-      'class' => 'piklist-error-text'
-    )
     ,'conditions' => array(
       array(
         'field' => 'guests_number'
@@ -106,8 +101,8 @@ Flow: Demo Workflow
   piklist('field', array(
     'type' => 'number'
     ,'field' => 'guests_number'
-    ,'label' => __('How many guests?', 'piklist-demo')
-    ,'description' => __('Coming to party != (No or empty) AND Guests = Yes', 'piklist-demo')
+    ,'label' => 'How many guests?'
+    ,'description' => 'Coming to party != (No or empty) AND Guests = Yes'
     ,'value' => 1
     ,'attributes' => array(
       'class' => 'small-text'
@@ -130,18 +125,19 @@ Flow: Demo Workflow
 
   piklist('field', array(
     'type' => 'group'
-    ,'label' => __('Guest One', 'piklist-demo')
-    ,'description' => __('Number of guests != empty', 'piklist-demo')
+    ,'label' => 'Guest One'
+    ,'field' => 'guest_one'
+    ,'description' => 'Number of guests != empty'
     ,'fields' => array(
       array(
         'type' => 'text'
-        ,'field' => 'guest_one'
-        ,'label' => __('Name', 'piklist-demo')
+        ,'field' => 'guest_one_name'
+        ,'label' => 'Name'
       )
       ,array(
         'type' => 'radio'
         ,'field' => 'guest_one_meal'
-        ,'label' => __('Meal choice', 'piklist-demo')
+        ,'label' => 'Meal choice'
         ,'choices' => array(
           'chicken' => 'Chicken'
           ,'steak' => 'Steak'
@@ -169,18 +165,19 @@ Flow: Demo Workflow
 
   piklist('field', array(
     'type' => 'group'
-    ,'label' => __('Guest Two', 'piklist-demo')
-    ,'description' => __('Number of guests != (empty or 1)', 'piklist-demo')
+    ,'label' => 'Guest Two'
+    ,'field' => 'guest_two'
+    ,'description' => 'Number of guests != (empty or 1)'
     ,'fields' => array(
       array(
         'type' => 'text'
-        ,'field' => 'guest_two'
-        ,'label' => __('Name', 'piklist-demo')
+        ,'field' => 'guest_two_name'
+        ,'label' => 'Name'
       )
       ,array(
         'type' => 'radio'
         ,'field' => 'guest_two_meal'
-        ,'label' => __('Meal choice', 'piklist-demo')
+        ,'label' => 'Meal choice'
         ,'choices' => array(
           'chicken' => 'Chicken'
           ,'steak' => 'Steak'
@@ -200,9 +197,6 @@ Flow: Demo Workflow
         ,'compare' => '!='
       )
     )
-  ));
+  ));      
 
-  piklist('shared/code-locater', array(
-    'location' => __FILE__
-    ,'type' => 'Settings Section'
-  ));
+?>

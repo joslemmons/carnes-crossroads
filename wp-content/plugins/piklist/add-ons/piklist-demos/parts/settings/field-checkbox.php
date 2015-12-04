@@ -2,29 +2,15 @@
 /*
 Title: Checkbox Fields
 Setting: piklist_demo_fields
-Order: 10
-Tab: Common
-Sub Tab: Lists
-Flow: Demo Workflow
+Tab: Lists
+Order: 30
 */
 
   piklist('field', array(
     'type' => 'checkbox'
     ,'field' => 'checkbox'
-    ,'label' => __('Checkbox', 'piklist-demo')
-    ,'value' => 'third'
-    ,'choices' => array(
-      'first' => 'First Choice'
-      ,'second' => 'Second Choice'
-      ,'third' => 'Third Choice'
-    )
-  ));
-  
-  piklist('field', array(
-    'type' => 'checkbox'
-    ,'field' => 'checkbox_add_more'
-    ,'label' => __('Checkbox Add More', 'piklist-demo')
-    ,'add_more' => true
+    ,'label' => 'Normal'
+    ,'description' => 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.'
     ,'value' => 'third'
     ,'choices' => array(
       'first' => 'First Choice'
@@ -36,7 +22,7 @@ Flow: Demo Workflow
   piklist('field', array(
     'type' => 'checkbox'
     ,'field' => 'checkbox_inline'
-    ,'label' => __('Single Line', 'piklist-demo')
+    ,'label' => 'Single Line'
     ,'value' => 'that'
     ,'list' => false
     ,'choices' => array(
@@ -48,13 +34,14 @@ Flow: Demo Workflow
   piklist('field', array(
     'type' => 'group'
     ,'field' => 'checkbox_list'
-    ,'label' => __('Group Lists', 'piklist-demo')
+    ,'label' => 'Group Lists'
     ,'list' => false
+    ,'description' => 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.'
     ,'fields' => array(
       array(
         'type' => 'checkbox'
         ,'field' => 'checkbox_list_1'
-        ,'label' => __('List #1', 'piklist-demo')
+        ,'label' => 'List #1'
         ,'label_position' => 'before'
         ,'value' => 'third'
         ,'choices' => array(
@@ -66,7 +53,7 @@ Flow: Demo Workflow
       ,array(
         'type' => 'checkbox'
         ,'field' => 'checkbox_list_2'
-        ,'label' => __('List #2', 'piklist-demo')
+        ,'label' => 'List #2'
         ,'label_position' => 'before'
         ,'value' => 'second'
         ,'choices' => array(
@@ -82,14 +69,15 @@ Flow: Demo Workflow
   piklist('field', array(
     'type' => 'checkbox'
     ,'field' => 'checkbox_nested'
-    ,'label' => __('Nested Field', 'piklist-demo')
+    ,'label' => 'Nested Field'
+    ,'description' => 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.'
     ,'value' => array(
       'first'
       ,'third'
     )
     ,'choices' => array(
       'first' => 'First Choice'
-      ,'second' => sprintf(__('Second Choices with a nested %s input.', 'piklist-demo'), '[field=checkbox_nested_text]')
+      ,'second' => 'Second Choice with a nested [field=checkbox_nested_text] input.'
       ,'third' => 'Third Choice'
     )
     ,'fields' => array(
@@ -107,5 +95,7 @@ Flow: Demo Workflow
 
   piklist('shared/code-locater', array(
     'location' => __FILE__
-    ,'type' => 'Settings Section'
+    ,'type' => 'Meta Box'
   ));
+  
+?>

@@ -2,40 +2,44 @@
 /*
 Title: Multiselect Fields
 Post Type: piklist_demo
-Order: 40
-Tab: Common
-Sub Tab: Lists
-Flow: Demo Workflow
+Order: 20
+Collapse: true
 */
 
   piklist('field', array(
     'type' => 'select'
     ,'field' => 'multiselect'
-    ,'label' => __('Multiselect', 'piklist-demo')
+    ,'label' => 'Multiselect'
     ,'value' => 'third'
     ,'choices' => array(
-      'first' => __('First Choice', 'piklist-demo')
-      ,'second' => __('Second Choice', 'piklist-demo')
-      ,'third' => __('Third Choice', 'piklist-demo')
+      'first' => 'First Choice'
+      ,'second' => 'Second Choice'
+      ,'third' => 'Third Choice'
     )
     ,'attributes' => array(
-      'multiple' => 'multiple' // This changes a select field into a multi-select field
+      'multiple' => 'multiple'
+    )
+    ,'on_post_status' => array(
+      'value' => 'lock'
     )
   ));
   
   piklist('field', array(
     'type' => 'select'
     ,'field' => 'multiselect_add_more'
-    ,'label' => __('Multiselect Add More', 'piklist-demo')
+    ,'label' => 'Multiselect Add More'
     ,'value' => 'third'
     ,'add_more' => true
     ,'choices' => array(
-      'first' => __('First Choice', 'piklist-demo')
-      ,'second' => __('Second Choice', 'piklist-demo')
-      ,'third' => __('Third Choice', 'piklist-demo')
+      'first' => 'First Choice'
+      ,'second' => 'Second Choice'
+      ,'third' => 'Third Choice'
     )
     ,'attributes' => array(
-      'multiple' => 'multiple' // This changes a select field into a multi-select field
+      'multiple' => 'multiple'
+    )
+    ,'on_post_status' => array(
+      'value' => 'lock'
     )
   ));
   
@@ -43,3 +47,4 @@ Flow: Demo Workflow
     'location' => __FILE__
     ,'type' => 'Meta Box'
   ));
+?>

@@ -1,44 +1,70 @@
 <?php
 /*
 Title: Text Fields
-Order: 10
-Tab: Common
-Sub Tab: Basic
 Setting: piklist_demo_fields
-Flow: Demo Workflow
+Tab Order: 1
+Order: 30
 */
-?>
-
-<div class="piklist-demo-highlight">
-  <?php _e('Text fields are at the core of most forms, and easily created with Piklist. Tooltip help can be added to any field with one line of code.', 'piklist-demo');?>
-</div>
-
-<?php
 
   piklist('field', array(
     'type' => 'text'
-    ,'field' => 'text'
-    ,'label' => __('Text', 'piklist-demo')
-    ,'help' => __('You can easily add tooltips to your fields with the help parameter.', 'piklist-demo')
+    ,'field' => 'text_class_regular'
+    ,'label' => 'Text'
+    ,'description' => 'class="regular-text"'
+    ,'help' => 'You can easily add tooltips to your fields with the help parameter.'
     ,'attributes' => array(
       'class' => 'regular-text'
+      ,'placeholder' => 'Enter some text'
     )
   ));
 
   piklist('field', array(
+    'type' => 'text'
+    ,'field' => 'text_required'
+    ,'label' => 'Text Required'
+    ,'description' => "required => true"
+    ,'attributes' => array(
+      'class' => 'regular-text'
+      ,'placeholder' => 'Enter text or this page won\'t save.'
+    )
+    ,'required' => true
+  ));
+  
+  piklist('field', array(
+    'type' => 'text'
+    ,'field' => 'text_add_more'
+    ,'add_more' => true
+    ,'label' => 'Add More'
+    ,'description' => 'add_more="true" columns="8"'
+    ,'attributes' => array(
+      'columns' => 8
+      ,'placeholder' => 'Enter some text'
+    )
+  ));
+  
+  piklist('field', array(
     'type' => 'textarea'
     ,'field' => 'demo_textarea_large'
-    ,'label' => __('Text Area', 'piklist-demo')
+    ,'label' => 'Large Code'
     ,'description' => 'class="large-text code" rows="10" columns="50"'
     ,'value' => 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.'
     ,'attributes' => array(
       'rows' => 10
       ,'cols' => 50
-      ,'class' => 'large-text'
+      ,'class' => 'large-text code'
     )
+  ));
+
+  piklist('field', array(
+    'type' => 'html'
+    ,'label' => 'HTML Field'
+    ,'description' => 'Allows you to output any HTML in the proper format.'
+    ,'value' => '<ul><li>First Item</li><li>Second Item</li></ul>'
   ));
 
   piklist('shared/code-locater', array(
     'location' => __FILE__
-    ,'type' => 'Settings Section'
+    ,'type' => 'Meta Box'
   ));
+  
+?>

@@ -1,13 +1,15 @@
 
-<div style="display: none !important;">
+<div style="display: none;">
   
-  <?php 
-    wp_editor(null, 'piklist-editor-proxy', array(
-      'teeny' => true,
-      'tinymce' => array(
-        'wp_skip_init' => true
-      )
-    )); 
-  ?>
+  <?php wp_editor('', 'piklist-editor-proxy'); ?>
 
 </div>
+
+<script>
+
+  (function($)
+  {
+    $('#wp-piklist-editor-proxy-wrap').remove();
+  });
+
+</script>

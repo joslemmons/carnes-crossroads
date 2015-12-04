@@ -14,4 +14,6 @@
 
 </style>
 
-<h4 class="update-available"><?php _e('Updating is recommended, here\'s why:', 'piklist');?></h4>
+<h4 class="update-available">
+  <?php _e('Updating is recommended, here\'s why:', 'piklist');?>
+</h4>

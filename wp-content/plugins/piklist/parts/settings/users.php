@@ -2,10 +2,9 @@
 /*
 Title: Users
 Setting: piklist_core
-Order: 20
-Flow: Piklist Core Settings
-Tab: General
+Order: 1
 */
+
 
   piklist('field', array(
     'type' => 'checkbox'
@@ -17,3 +16,6 @@ Tab: General
       'true' => __('Allow', 'piklist')
     )
   ));
+
+  
+?>

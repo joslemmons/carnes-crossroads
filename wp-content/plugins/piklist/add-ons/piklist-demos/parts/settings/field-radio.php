@@ -1,77 +1,65 @@
 <?php
 /*
 Title: Radio Fields
-Order: 20
-Tab: Common
-Sub Tab: Lists
 Setting: piklist_demo_fields
-Flow: Demo Workflow
+Tab: Lists
+Tab Order: 30
+Order: 30
 */
 
   piklist('field', array(
     'type' => 'radio'
     ,'field' => 'radio'
-    ,'label' => __('Radio', 'piklist-demo')
+    ,'label' => 'Normal'
+    ,'description' => 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.'
     ,'value' => 'third'
     ,'choices' => array(
-      'first' => __('First Choice', 'piklist-demo')
-      ,'second' => __('Second Choice', 'piklist-demo')
-      ,'third' => __('Third Choice', 'piklist-demo')
-    )
-  ));
-  
-  piklist('field', array(
-    'type' => 'radio'
-    ,'field' => 'radio_add_more'
-    ,'label' => __('Radio Add More', 'piklist-demo')
-    ,'add_more' => true
-    ,'value' => 'third'
-    ,'choices' => array(
-      'first' => __('First Choice', 'piklist-demo')
-      ,'second' => __('Second Choice', 'piklist-demo')
-      ,'third' => __('Third Choice', 'piklist-demo')
+      'first' => 'First Choice'
+      ,'second' => 'Second Choice'
+      ,'third' => 'Third Choice'
     )
   ));
   
   piklist('field', array(
     'type' => 'radio'
     ,'field' => 'radio_inline'
-    ,'label' => __('Single Line', 'piklist-demo')
+    ,'label' => 'Single Line'
     ,'value' => 'no'
     ,'list' => false
     ,'choices' => array(
-      'yes' => __('Yes', 'piklist-demo')
-      ,'no' => __('No', 'piklist-demo')
+      'yes' => 'Yes'
+      ,'no' => 'No'
     )
   ));
   
   piklist('field', array(
     'type' => 'group'
     ,'field' => 'radio_list'
-    ,'label' => __('Group Lists', 'piklist-demo')
+    ,'label' => 'Group Lists'
+    ,'description' => 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.'
     ,'fields' => array(
       array(
         'type' => 'radio'
         ,'field' => 'radio_list_1'
-        ,'label' => __('List #1', 'piklist-demo')
+        ,'label' => 'List #1'
         ,'label_position' => 'before'
         ,'value' => 'third'
         ,'choices' => array(
-          'first' => __('First Choice', 'piklist-demo')
-          ,'third' => __('Third Choice', 'piklist-demo')
+          'first' => 'First Choice'
+          ,'third' => 'Third Choice'
         )
         ,'columns' => 6
       )
       ,array(
         'type' => 'radio'
         ,'field' => 'radio_list_2'
-        ,'label' => __('List #2', 'piklist-demo')
+        ,'label' => 'List #2'
         ,'label_position' => 'before'
         ,'value' => 'second'
         ,'choices' => array(
-          'first' => __('First Choice', 'piklist-demo')
-          ,'second' => __('Second Choice', 'piklist-demo')
-          ,'third' => __('Third Choice', 'piklist-demo')
+          'first' => 'First Choice'
+          ,'second' => 'Second Choice'
+          ,'third' => 'Third Choice'
         )
         ,'columns' => 6
       )
@@ -81,12 +69,13 @@ Flow: Demo Workflow
   piklist('field', array(
     'type' => 'radio'
     ,'field' => 'radio_nested'
-    ,'label' => __('Nested Field', 'piklist-demo')
+    ,'label' => 'Nested Field'
+    ,'description' => 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.'
     ,'value' => 'third'
     ,'choices' => array(
-      'first' => __('First Choice', 'piklist-demo')
-      ,'second' => sprintf(__('Second Choice with a nested %s input.', 'piklist-demo'), '[field=radio_nested_text]')
-      ,'third' => __('Third Choice', 'piklist-demo')
+      'first' => 'First Choice'
+      ,'second' => 'Second Choice with a nested [field=radio_nested_text] input.'
+      ,'third' => 'Third Choice'
     )
     ,'fields' => array(
       array(
@@ -103,5 +92,7 @@ Flow: Demo Workflow
 
   piklist('shared/code-locater', array(
     'location' => __FILE__
-    ,'type' => 'Settings Section'
+    ,'type' => 'Meta Box'
   ));
+  
+?>

@@ -1,12 +1,15 @@
 <?php
+/*
+Width: 720
+*/
 
   piklist('field', array(
     'type' => 'editor'
-    ,'field' => 'content'
-    ,'label' => __('Content', 'piklist-demo')
-    ,'description' => __('This is the standard post box, now placed in a Piklist WorkFlow.', 'piklist-demo')
+    ,'field' => 'post_content'
+    ,'label' => 'Post Content'
+    ,'description' => 'This is the standard post box, now placed in a Piklist WorkFlow.'
     ,'value' => 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.'
-    ,'options' => array(
+    ,'options' => array (
       'wpautop' => true
       ,'media_buttons' => true
       ,'tabindex' => ''
@@ -14,37 +17,38 @@
       ,'editor_class' => ''
       ,'teeny' => false
       ,'dfw' => false
-      ,'tinymce' => array(
-        'resize' => false
-        ,'wp_autoresize_on' => true
-      )
+      ,'tinymce' => true
       ,'quicktags' => true
     )
   ));
 
   piklist('field', array(
     'type' => 'editor'
-    ,'field' => 'addmore_content'
-    ,'label' => __('Teeny Add More', 'piklist-demo')
+    ,'field' => 'post_content'
+    ,'label' => 'Post Content Add More'
     ,'add_more' => true
-    ,'description' => __('This is the teeny editor with an add more.', 'piklist-demo')
+    ,'description' => 'This is the teeny editor with an add more.'
     ,'value' => 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.'
-    ,'options' => array(
-      'drag_drop_upload' => true
-      ,'editor_height' => 100
-      ,'media_buttons' => false
+    ,'options' => array (
+      'media_buttons' => true
       ,'teeny' => true
-      ,'quicktags' => false
-      ,'tinymce' => array(
-        'autoresize_min_height' => 100
-        ,'toolbar1' => 'bold,italic,bullist,numlist,blockquote,link,unlink,undo,redo'
-        ,'resize' => false
-        ,'wp_autoresize_on' => true
-      )
+      ,'textarea_rows' => 5
     )
   ));
 
-  piklist('shared/code-locater', array(
-    'location' => __FILE__
-    ,'type' => 'Widget'
+  piklist('field', array(
+    'type' => 'editor'
+    ,'field' => 'post_content_draggable'
+    ,'value' => 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.'
+    ,'options' => array (
+      'wpautop' => true
+      ,'media_buttons' => true
+      ,'tabindex' => ''
+      ,'editor_css' => ''
+      ,'editor_class' => ''
+      ,'teeny' => false
+      ,'dfw' => false
+      ,'tinymce' => true
+      ,'quicktags' => true
+    )
   ));

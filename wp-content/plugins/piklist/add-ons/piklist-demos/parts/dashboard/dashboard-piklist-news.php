@@ -2,16 +2,19 @@
 /*
 Title: Piklist News
 Capability: manage_options
-Network: only
+Network: true
 */
 
-include_once ABSPATH . WPINC . '/feed.php';
+include_once( ABSPATH . WPINC . '/feed.php' );
 
 $rss = fetch_feed('http://piklist.com/feed/');
 
-if (!is_wp_error($rss)):
-  $maxitems = $rss->get_item_quantity(5); 
-  $rss_items = $rss->get_items(0, $maxitems);
+if (!is_wp_error($rss)) :
+
+    $maxitems = $rss->get_item_quantity(5); 
+
+    $rss_items = $rss->get_items(0, $maxitems);
+
 endif;
 ?>
 
@@ -19,54 +22,67 @@ endif;
 
   <ul>
 
-    <?php if ($maxitems == 0) : ?>
+      <?php if ($maxitems == 0) : ?>
 
-      <li><?php _e('No items', 'piklist-demo'); ?></li>
+          <li>
 
-    <?php else: ?>
+            <?php _e('No items', 'piklist-demo'); ?>
 
-      <?php foreach ($rss_items as $item): ?>
+          </li>
 
-        <?php
-          $title = esc_html($item->get_title());
-          
-          $date = date_i18n(get_option('date_format'), $item->get_date('U'));
-          
-          $description = str_replace(array("\n", "\r"), ' ', esc_attr(strip_tags(@html_entity_decode($item->get_description(), ENT_QUOTES, get_option('blog_charset')))));
-          $description = wp_html_excerpt( $description, 360 );
+      <?php else : ?>
 
-          if ('[...]' == substr( $description, -5 )):
-            $description = substr($description, 0, -5) . '[&hellip;]';
-          elseif ('[&hellip;]' != substr($description, -10)):
-            $description .= ' [&hellip;]';
-          endif;
-          
-          $description = esc_html( $description );
+          <?php foreach ($rss_items as $item) : ?>
 
-          $link = $item->get_link();
-          
-          while (stristr($link, 'http') != $link):
-            $link = substr($link, 1);
-          endwhile;
-            
-          $link = esc_url(strip_tags($link));
-        ?>
+              <?php $title = esc_html($item->get_title()); ?>
 
-        <li>
-          <a class='rsswidget' href='<?php echo esc_url($link); ?>' title='<?php echo $description;?>'>
-            <?php echo esc_html($title); ?>
-          </a>
-          <span class="rss-date">
-            <?php echo esc_html($date); ?>
-          </span>
-          <div class="rss-summary">
-            <?php echo esc_html($description); ?>
-          </div>
-        </li>
+              <?php $date = date_i18n(get_option('date_format'), $item->get_date('U')); ?>
 
-      <?php endforeach; ?>
+              <?php
+                $description = str_replace(array("\n", "\r"), ' ', esc_attr(strip_tags( @html_entity_decode($item->get_description(), ENT_QUOTES, get_option('blog_charset')))));
+                $description = wp_html_excerpt( $description, 360 );
 
-    <?php endif; ?>
+                if ('[...]' == substr( $description, -5 ))
+                {
+                  $description = substr($description, 0, -5) . '[&hellip;
+                  ]';
+                }
+                elseif ('[&hellip;]' != substr($description, -10 ))
+                {
+                  $description .= ' [&hellip;]';
+                }                        
+
+                $description = esc_html( $description );
+              ?>
+
+              <?php
+                $link = $item->get_link();
+                while (stristr($link, 'http') != $link)
+                {
+                  $link = substr($link, 1);
+                }
+                  $link = esc_url(strip_tags($link));
+              ?>
+
+              <li>
+
+                <a class='rsswidget' href='<?php echo esc_url($link); ?>' title='<?php echo $description;?>'>
+                  <?php echo esc_html($title); ?>
+                </a>
+
+                <span class="rss-date">
+                  <?php echo esc_html($date); ?>
+                </span>
+
+                <div class="rss-summary">
+                  <?php echo esc_html($description); ?>
+                </div>
+
+              </li>
+
+          <?php endforeach; ?>
+
+      <?php endif; ?>
       
   </ul>
 
@@ -80,3 +96,5 @@ endif;
     'location' => __FILE__
     ,'type' => 'Dashboard Widget'
   ));
+
+?>

@@ -1,45 +1,32 @@
 <?php
 /*
 Title: Validation Fields
-Order: 10
-Tab: Validation
 Setting: piklist_demo_fields
-Flow: Demo Workflow
+Tab: Validate
+Tab Order: 60
+Order: 30
 */
 
   piklist('field', array(
     'type' => 'text'
-    ,'field' => 'validate_text_required'
-    ,'label' => __('Text Required', 'piklist-demo')
+    ,'field' => 'text_required'
+    ,'label' => 'Text Required'
     ,'description' => "required => true"
     ,'attributes' => array(
       'class' => 'large-text'
-      ,'placeholder' => __('Enter text or this page won\'t save.', 'piklist-demo')
     )
     ,'required' => true
-    ,'validate' => array(
-      array(
-        'type' => 'limit'
-        ,'options' => array(
-          'min' => 2
-          ,'max' => 6
-          ,'count' => 'characters'
-        )
-      )
-    )
   ));
 
   piklist('field', array(
     'type'    => 'group'
-    ,'field'   => 'validate_group_required'
-    ,'label'   => __('Group Required', 'piklist-demo')
-    ,'description' =>__('Only the checkbox is required', 'piklist-demo')
+    ,'field'   => 'group_required'
+    ,'label'   => 'Group Required'
     ,'add_more'=> true
     ,'fields'  => array(
       array(
         'type' => 'text'
         ,'field' => 'name'
-        ,'label' => 'Name'
         ,'columns' => 8
         ,'attributes' => array(
           'placeholder' => 'Name'
@@ -48,7 +35,6 @@ Flow: Demo Workflow
       ,array(
         'type' => 'checkbox'
         ,'field' => 'hierarchical'
-        ,'label' => 'Type'
         ,'required' => true
         ,'columns' => 4
         ,'choices' => array(
@@ -60,9 +46,9 @@ Flow: Demo Workflow
 
   piklist('field', array(
     'type' => 'text'
-    ,'label' => __('File Name', 'piklist-demo')
-    ,'field' => 'sanitize_file_name'
-    ,'description' => __('Converts multiple words to a valid file name', 'piklist-demo')
+    ,'label' => 'File Name'
+    ,'field' => 'file_name'
+    ,'description' => 'Converts multiple words to a valid file name'
     ,'sanitize' => array(
       array(
         'type' => 'file_name'
@@ -76,8 +62,8 @@ Flow: Demo Workflow
   piklist('field', array(
     'type' => 'text'
     ,'field' => 'validate_emaildomain'
-    ,'label' => __('Email address', 'piklist-demo')
-    ,'description' => __('Validate Email and Email Domain', 'piklist-demo')
+    ,'label' => 'Email address'
+    ,'description' => __('Validate Email and Email Domain')
     ,'attributes' => array(
       'class' => 'large-text'
     )
@@ -94,8 +80,8 @@ Flow: Demo Workflow
   piklist('field', array(
     'type' => 'text'
     ,'field' => 'validate_file_exists'
-    ,'label' => __('File exists?', 'piklist-demo')
-    ,'description' => sprintf(__('Test with: %s', 'piklist-demo'), 'http://wordpress.org/plugins/about/readme.txt')
+    ,'label' => __('File exists?')
+    ,'description' => 'Test with: http://wordpress.org/plugins/about/readme.txt'
     ,'attributes' => array(
       'class' => 'large-text'
     )
@@ -110,7 +96,7 @@ Flow: Demo Workflow
     'type' => 'text'
     ,'field' => 'validate_image'
     ,'label' => __('Image')
-    ,'description' => sprintf(__('Test with: %s', 'piklist-demo'), 'http://piklist.com/wp-content/themes/piklistcom-base/images/piklist-logo@2x.png')
+    ,'description' => 'Test with: http://piklist.com/wp-content/themes/piklistcom-base/images/piklist-logo@2x.png'
     ,'attributes' => array(
       'class' => 'large-text'
     )
@@ -123,16 +109,15 @@ Flow: Demo Workflow
 
   piklist('field', array(
     'type' => 'checkbox'
-    ,'field' => 'validate_checkbox_limit'
-    ,'label' => __('Checkbox', 'piklist-demo')
+    ,'field' => 'checkbox'
+    ,'label' => 'Checkbox'
     ,'description' => 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.'
     ,'value' => 'third'
     ,'choices' => array(
-      'first' => __('First Choice', 'piklist-demo')
-      ,'second' => __('Second Choice', 'piklist-demo')
-      ,'third' => __('Third Choice', 'piklist-demo')
+      'first' => 'First Choice'
+      ,'second' => 'Second Choice'
+      ,'third' => 'Third Choice'
     )
-    ,'required' => true
     ,'validate' => array(
       array(
         'type' => 'limit'
@@ -146,13 +131,12 @@ Flow: Demo Workflow
 
   piklist('field', array(
     'type' => 'file'
-    ,'field' => 'validate_upload_media_limit'
-    ,'label' => __('Add File(s)', 'piklist-demo')
-    ,'description' => __('No more than one file is allowed', 'piklist-demo')
-    ,'required' => true
+    ,'field' => 'upload_media'
+    ,'label' => __('Add File(s)','piklist-demo')
+    ,'description' => 'No more than one file is allowed'
     ,'options' => array(
-      'modal_title' => __('Add File(s)', 'piklist-demo')
-      ,'button' => __('Add', 'piklist-demo')
+      'modal_title' => __('Add File(s)','piklist-demo')
+      ,'button' => __('Add','piklist-demo')
     )
     ,'attributes' => array(
       'class' => 'large-text'
@@ -170,21 +154,21 @@ Flow: Demo Workflow
 
   piklist('field', array(
     'type' => 'group'
-    ,'field' => 'validate_group_add_more_limit'
+    ,'field' => 'address_group_add_more'
     ,'add_more' => true
-    ,'label' => __('Grouped/Add-More with Limit', 'piklist-demo')
-    ,'description' => __('No more than two add-mores are allowed', 'piklist-demo')
+    ,'label' => 'Grouped/Add-More with Limit'
+    ,'description' => 'No more than two add-mores are allowed'
     ,'fields' => array(
       array(
         'type' => 'text'
         ,'field' => 'group_field_1'
-        ,'label' => __('Field 1', 'piklist-demo')
+        ,'label' => 'Field 1'
         ,'columns' => 12
       )
       ,array(
         'type' => 'text'
         ,'field' => 'group_field_2'
-        ,'label' => __('Field 2', 'piklist-demo')
+        ,'label' => 'Field 2'
         ,'columns' => 12
       )
     )
@@ -199,7 +183,11 @@ Flow: Demo Workflow
     )
   ));
 
+
+
   piklist('shared/code-locater', array(
     'location' => __FILE__
-    ,'type' => 'Settings Section'
+    ,'type' => 'Meta Box'
   ));
+
+?>

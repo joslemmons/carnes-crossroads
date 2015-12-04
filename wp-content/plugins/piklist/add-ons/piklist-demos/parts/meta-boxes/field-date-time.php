@@ -3,23 +3,21 @@
 Title: DatePicker Fields
 Post Type: piklist_demo
 Order: 50
-Collapse: false
-Tab: Basic
-Flow: Demo Workflow
+Collapse: true
 */
 ?>
 
-<p class="piklist-demo-highlight">
-  <?php _e('DatePicker fields are easy to create and format.', 'piklist-demo');?>
-</p>
+<h3 class="demo-highlight">
+  <?php _e('DatePicker fields are easy to create and format.','piklist-demo');?>
+</h3>
 
 <?php
   
   piklist('field', array(
     'type' => 'datepicker'
     ,'field' => 'date'
-    ,'label' => __('Date', 'piklist-demo')
-    ,'description' => __('Choose a date', 'piklist-demo')
+    ,'label' => 'Date'
+    ,'description' => 'Choose a date'
     ,'options' => array(
       'dateFormat' => 'M d, yy'
     )
@@ -36,8 +34,8 @@ Flow: Demo Workflow
     'type' => 'datepicker'
     ,'field' => 'date_add_more'
     ,'add_more' => true
-    ,'label' => __('Add More', 'piklist-demo')
-    ,'description' => __('Choose a date', 'piklist-demo')
+    ,'label' => 'Add More'
+    ,'description' => 'Choose a date'
     ,'options' => array(
       'dateFormat' => 'M d, yy'
     )
@@ -54,3 +52,5 @@ Flow: Demo Workflow
     'location' => __FILE__
     ,'type' => 'Meta Box'
   ));
+  
+?>

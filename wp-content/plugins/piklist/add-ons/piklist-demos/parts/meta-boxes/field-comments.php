@@ -6,24 +6,19 @@ Order: 30
 Priority: default
 Context: side
 Collapse: true
-Flow: Demo Workflow
 */
 ?>
 
-<p class="piklist-demo-highlight">
-  <?php _e('Inline comments fields are a snap to add.', 'piklist-demo');?>
-</p>
+<h3 class="demo-highlight">
+  <?php _e('Inline comments fields are a snap to add.','piklist-demo');?>
+</h3>
 
 <?php
 
   piklist('field', array(
     'type' => 'comments'
-    ,'label' => __('Notes', 'piklist-demo')
-    ,'description' => __('Add some notes', 'piklist-demo')
-    ,'attributes' => array(
-      'class' => 'large-text code'
-      ,'rows' => 5
-    )
+    ,'label' => 'Notes'
+    ,'description' => 'Add some notes'
   ));
 
 ?>
@@ -86,3 +81,5 @@ Flow: Demo Workflow
     'location' => __FILE__
     ,'type' => 'Meta Box'
   ));
+  
+?>
