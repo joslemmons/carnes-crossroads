@@ -33,7 +33,14 @@ piklist('field', array(
         array(
             'type' => 'file',
             'field' => ContactFooter::$field_featured_image_attachment_id,
-            'label' => 'Image'
+            'label' => 'Image',
+            'columns' => 12
+        ),
+        array(
+            'type' => 'html',
+            'field' => '__tmp',
+            'label' => '',
+            'value' => '<hr />'
         ),
         array(
             'type' => 'radio',
@@ -46,26 +53,32 @@ piklist('field', array(
         array(
             'type' => 'file',
             'field' => ContactFooter::$field_featured_video_attachment_id,
-            'label' => 'Pick Video',
-            'conditions' => array(
-                array(
-                    'field' => ContactFooter::$field_featured_items . ':' . ContactFooter::$field_featured_has_video,
-                    'value' => ContactFooter::HAS_VIDEO_AS_ATTACHMENT
-                )
-            ),
+            'label' => 'If has video, then either pick/upload video',
+//            'conditions' => array(
+//                array(
+//                    'field' => ContactFooter::$field_featured_items . ':' . ContactFooter::$field_featured_has_video,
+//                    'value' => ContactFooter::HAS_VIDEO_AS_ATTACHMENT
+//                )
+//            ),
             'columns' => 12
         ),
         array(
             'type' => 'text',
             'field' => ContactFooter::$field_featured_video_src,
-            'label' => 'Enter Video Link',
-            'conditions' => array(
-                array(
-                    'field' => ContactFooter::$field_featured_items . ':' . ContactFooter::$field_featured_has_video,
-                    'value' => ContactFooter::HAS_VIDEO_AS_LINK
-                )
-            ),
+            'label' => 'Or enter video link',
+//            'conditions' => array(
+//                array(
+//                    'field' => ContactFooter::$field_featured_items . ':' . ContactFooter::$field_featured_has_video,
+//                    'value' => ContactFooter::HAS_VIDEO_AS_LINK
+//                )
+//            ),
             'columns' => 12
+        ),
+        array(
+            'type' => 'html',
+            'field' => '__tmp_aa',
+            'label' => '',
+            'value' => '<hr />'
         ),
         array(
             'type' => 'text',
@@ -80,6 +93,12 @@ piklist('field', array(
             'columns' => 12
         ),
         array(
+            'type' => 'html',
+            'field' => '__tmp_aaa',
+            'label' => '',
+            'value' => '<hr />'
+        ),
+        array(
             'type' => 'radio',
             'field' => ContactFooter::$field_featured_link_action,
             'label' => 'Link Action',
@@ -90,28 +109,34 @@ piklist('field', array(
         array(
             'type' => 'select',
             'field' => ContactFooter::$field_featured_link_action_page_to_link_to,
-            'label' => 'Link to Internal Page',
+            'label' => 'Either pick an Internal Page',
             'columns' => 12,
             'choices' => Helper::getPagesForPiklist(),
-            'conditions' => array(
-                array(
-                    'field' => ContactFooter::$field_featured_items . ':' . ContactFooter::$field_featured_link_action,
-                    'value' => ContactFooter::IS_LINK_TO_PAGE
-                )
-            )
+//            'conditions' => array(
+//                array(
+//                    'field' => ContactFooter::$field_featured_items . ':' . ContactFooter::$field_featured_link_action,
+//                    'value' => ContactFooter::IS_LINK_TO_PAGE
+//                )
+//            )
         ),
         array(
             'type' => 'text',
             'field' => ContactFooter::$field_featured_link_action_custom_link,
-            'label' => 'Custom Link',
+            'label' => 'Or enter a custom link',
             'description' => 'ie. http://google.com',
             'columns' => 12,
-            'conditions' => array(
-                array(
-                    'field' => ContactFooter::$field_featured_items . ':' . ContactFooter::$field_featured_link_action,
-                    'value' => ContactFooter::IS_LINK_TO_PAGE
-                )
-            )
+//            'conditions' => array(
+//                array(
+//                    'field' => ContactFooter::$field_featured_items . ':' . ContactFooter::$field_featured_link_action,
+//                    'value' => ContactFooter::IS_LINK_TO_PAGE
+//                )
+//            )
+        ),
+        array(
+            'type' => 'html',
+            'field' => '__tmp_aaaa',
+            'label' => '',
+            'value' => '<hr />'
         ),
         array(
             'type' => 'text',
