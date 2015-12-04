@@ -54,7 +54,7 @@ $config_options = array(
     'add_this_src' => '//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-55fb015f8f7cff12',
 
     // set the logo on the login page
-    'login_logo_src' => get_template_directory_uri() . '/img/cn-logo.png',
+    'login_logo_src' => '',
 
     // social options
     'social' => array(
