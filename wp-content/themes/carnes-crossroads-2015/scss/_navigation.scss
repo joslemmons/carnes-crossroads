@@ -1,0 +1,78 @@
+// Navigation
+// ===================================
+
+.main-nav {
+    padding: 20px 0 0 0;
+    background: url(./img/pattern-green.jpg) repeat center center;
+    position: relative;
+    float: left;
+
+    &__inner-wrap {
+        position: relative;
+        width: 100%;
+    }
+
+    &__logo {
+        width: 200px;
+        margin: 0 0 0 10%;
+        float: left;
+    }
+
+    &__sub {
+        width: 60%;
+        margin: 0;
+        padding: 0 10% 0 0;
+        float: right;
+        list-style-type: none;
+        text-align: right;
+    }
+
+    &__sub-item {
+        margin: 0 0 0 11px;
+        padding: 15px 0;
+        display: inline-block;
+
+        &:first-of-type {
+            padding-left: 35px;
+            background: url(./img/grad-divider.png) no-repeat left top;
+        }
+
+        a {
+            color: $cc-dk-green;
+            font-size: 0.75rem;
+            font-family: $avenir;
+            font-weight: $weight-bold;
+            text-transform: uppercase;
+        }
+    }
+
+    &__primary {
+        width: 70%;
+        margin: 0;
+        float: right;
+        padding: 0 10% 0 10px;
+        list-style-type: none;
+        text-align: right;
+        background: url(./img/grad-green.png) no-repeat left top;
+    }
+
+    &__primary-item {
+        margin: 0 0 0 20px;
+        height: 100%;
+        padding: 20px 0;
+        display: inline-block;
+
+        &:first-of-type {
+            padding-left: 35px;
+            background: url(./img/grad-divider.png) no-repeat left top;
+        }
+
+        a {
+            color: $white;
+            font-size: 1rem;
+            font-family: $minion;
+            font-weight: $weight-bold;
+            text-transform: uppercase;
+        }
+    }
+}

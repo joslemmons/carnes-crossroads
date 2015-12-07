@@ -12,20 +12,17 @@ Version: 1.0
 // Globals
 // ===================================
 @import "fonts",
-        "cn-mixins",
-        "navigation";
+        "cn-mixins";
 
 
 
 // Base Styles
 // ===================================
 @import "base",
-        "variables";
-
+        "navigation";
 
 
 // Template Styles
 // ===================================
 @import "front-page",
-        "page-default",
-        "search";
+        "page-default";
