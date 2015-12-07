@@ -14,6 +14,7 @@ class Bootstrap
         Social::init();
         Analytics::init();
         VisualEditor::init();
+        ContactFooter::init();
 
         add_theme_support('post-thumbnails');
         add_theme_support('menus');
@@ -50,6 +51,8 @@ class Bootstrap
     private static function _registerCustomPostTypes()
     {
         Instagram::bootstrap();
+        Page::bootstrap();
+        FrontPage::bootstrap();
     }
 
 }
