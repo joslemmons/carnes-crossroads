@@ -47,7 +47,7 @@
  ** $font-size is coming from _variables, base font size for all the things **
  ** em(#px)                                 **
  *****************************************************************************/
-  
+
 @function em($target, $context: $font-size) {
     @return ($target / $context) * 1em;
 }
@@ -88,15 +88,15 @@
     @-webkit-keyframes #{$animation_name} {
         @content;
     }
- 
+
     @-moz-keyframes #{$animation_name} {
         @content;
     }
- 
+
     @-o-keyframes #{$animation_name} {
         @content;
     }
- 
+
     @keyframes #{$animation_name} {
         @content;
     }
@@ -104,7 +104,7 @@
 
 
 /*
-    Example usage: 
+    Example usage:
     @include animation(10s, 5s, changecolour)
  */
 @mixin animation ($delay, $duration, $animation) {
@@ -112,17 +112,17 @@
     -webkit-animation-duration: $duration;
     -webkit-animation-name: $animation;
     -webkit-animation-fill-mode: forwards; /* this prevents the animation from restarting! */
- 
+
     -moz-animation-delay: $delay;
     -moz-animation-duration: $duration;
     -moz-animation-name: $animation;
     -moz-animation-fill-mode: forwards; /* this prevents the animation from restarting! */
- 
+
     -o-animation-delay: $delay;
     -o-animation-duration: $duration;
     -o-animation-name: $animation;
     -o-animation-fill-mode: forwards; /* this prevents the animation from restarting! */
- 
+
     animation-delay: $delay;
     animation-duration: $duration;
     animation-name: $animation;
@@ -133,4 +133,28 @@
   -webkit-transform: $value;
      -moz-transform: $value;
           transform: $value;
+}
+
+// Center
+// ===================================
+// center vertically and/or horizontally an absolute positioned element
+
+@mixin center($xy:xy) {
+  @if $xy == xy {
+    left: 50%;
+    top: 50%;
+    bottom: auto;
+    right: auto;
+    @include transform(translateX(-50%) translateY(-50%));
+  }
+  @else if $xy == x {
+    left: 50%;
+    right: auto;
+    @include transform(translateX(-50%));
+  }
+  @else if $xy == y {
+    top: 50%;
+    bottom: auto;
+    @include transform(translateY(-50%));
+  }
 }

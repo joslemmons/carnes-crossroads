@@ -1,28 +1,24 @@
 /*
-Error: Undefined mixin 'transition'.
-        on line 14 of /Users/joslemmons/Sites/carnes-crossroads/wp-content/themes/carnes-crossroads-2015/scss/_base.scss, in `transition'
-        from line 14 of /Users/joslemmons/Sites/carnes-crossroads/wp-content/themes/carnes-crossroads-2015/scss/_base.scss
+Error: Undefined variable: "$black".
+        on line 42 of /Users/joslemmons/Sites/carnes-crossroads/wp-content/themes/carnes-crossroads-2015/scss/_fonts.scss
 
-9: html, body {
-10:     height: 100%;
-11: }
-12: 
-13: a {
-14:     @include transition(all, 0.2s, ease-in-out, 0s);
-15: }
-16: 
-17: a:focus, a:hover {
-18:     text-decoration: none !important;
-19:     color: darken($white,20%);
+37: 
+38: // Basics
+39: // ===================================
+40: 
+41: html, body {
+42:     color: $black;
+43:     font-size: 1em;
+44:     font-family: $font-sans;
+45:     line-height: 1.5;
+46: }
+47: 
 
 Backtrace:
-/Users/joslemmons/Sites/carnes-crossroads/wp-content/themes/carnes-crossroads-2015/scss/_base.scss:14:in `transition'
-/Users/joslemmons/Sites/carnes-crossroads/wp-content/themes/carnes-crossroads-2015/scss/_base.scss:14
-/Applications/CodeKit.app/Contents/Resources/engines/scss/lib/sass/tree/visitors/perform.rb:349:in `block in visit_mixin'
-/Applications/CodeKit.app/Contents/Resources/engines/scss/lib/sass/stack.rb:98:in `block in with_mixin'
-/Applications/CodeKit.app/Contents/Resources/engines/scss/lib/sass/stack.rb:115:in `with_frame'
-/Applications/CodeKit.app/Contents/Resources/engines/scss/lib/sass/stack.rb:98:in `with_mixin'
-/Applications/CodeKit.app/Contents/Resources/engines/scss/lib/sass/tree/visitors/perform.rb:347:in `visit_mixin'
+/Users/joslemmons/Sites/carnes-crossroads/wp-content/themes/carnes-crossroads-2015/scss/_fonts.scss:42
+/Applications/CodeKit.app/Contents/Resources/engines/scss/lib/sass/script/tree/variable.rb:49:in `_perform'
+/Applications/CodeKit.app/Contents/Resources/engines/scss/lib/sass/script/tree/node.rb:50:in `perform'
+/Applications/CodeKit.app/Contents/Resources/engines/scss/lib/sass/tree/visitors/perform.rb:395:in `visit_prop'
 /Applications/CodeKit.app/Contents/Resources/engines/scss/lib/sass/tree/visitors/base.rb:36:in `visit'
 /Applications/CodeKit.app/Contents/Resources/engines/scss/lib/sass/tree/visitors/perform.rb:158:in `block in visit'
 /Applications/CodeKit.app/Contents/Resources/engines/scss/lib/sass/stack.rb:79:in `block in with_base'
@@ -63,4 +59,4 @@ Backtrace:
 body:before {
   white-space: pre;
   font-family: monospace;
-  content: "Error: Undefined mixin 'transition'.\A         on line 14 of /Users/joslemmons/Sites/carnes-crossroads/wp-content/themes/carnes-crossroads-2015/scss/_base.scss, in `transition'\A         from line 14 of /Users/joslemmons/Sites/carnes-crossroads/wp-content/themes/carnes-crossroads-2015/scss/_base.scss\A \A 9: html, body {\A 10:     height: 100%;\A 11: }\A 12: \A 13: a {\A 14:     @include transition(all, 0.2s, ease-in-out, 0s);\A 15: }\A 16: \A 17: a:focus, a:hover {\A 18:     text-decoration: none !important;\A 19:     color: darken($white,20%);"; }
+  content: "Error: Undefined variable: \"$black\".\A         on line 42 of /Users/joslemmons/Sites/carnes-crossroads/wp-content/themes/carnes-crossroads-2015/scss/_fonts.scss\A \A 37: \A 38: // Basics\A 39: // ===================================\A 40: \A 41: html, body {\A 42:     color: $black;\A 43:     font-size: 1em;\A 44:     font-family: $font-sans;\A 45:     line-height: 1.5;\A 46: }\A 47: "; }

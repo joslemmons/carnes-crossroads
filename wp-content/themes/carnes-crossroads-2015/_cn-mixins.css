@@ -1,0 +1,13 @@
+/* CN Mixins */
+/*****************************************************************************
+ ** Working in ems can be annoying. Think in pixels by using this function  **
+ ** $font-size is coming from _variables, base font size for all the things **
+ ** em(#px)                                 **
+ *****************************************************************************/
+/*****************************************************************************
+ ** line up to column on one side; edge of window on other
+ *****************************************************************************/
+/*
+    Example usage:
+    @include animation(10s, 5s, changecolour)
+ */

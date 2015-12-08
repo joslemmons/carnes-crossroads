@@ -47,13 +47,20 @@ html, body {
 
 h1, h2, h3, h4, h5, h6 {
     font-family: $font-sans;
-    line-height: 1.5;
+    line-height: 1;
     font-weight: 400;
     text-transform: uppercase;
+    margin: 0;
 }
 
 h1 {
-    font-size: 2.5em;
+    font-family: $minion;
+    font-weight: $weight-regular;
+    font-size: 6rem;
+    line-height: 1;
+    text-transform: none;
+    color: $white;
+    text-shadow: 0 0 10px rgba(#555d59, .5);
 }
 
 h2 {

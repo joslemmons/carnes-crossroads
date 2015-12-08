@@ -1,41 +1,63 @@
+// Base Styles
+// ===================================
 
 * {
     box-sizing: border-box;
     -webkit-font-smoothing: antialiased;
 }
 
-::selection {
-    background: $black;
-    color: $white;
-}
-::-moz-selection {
-    background: $black;
-    color: $white;
+html, body {
+    height: 100%;
 }
 
 a {
-    @include transition(0.3s all);
-    //    color: $green;
+    @include transition(all, 0.2s, ease-in-out, 0s);
 }
 
 a:focus, a:hover {
     text-decoration: none !important;
-    //    color: darken($green,20%);
+    color: darken($white,20%);
 }
 
 *:focus {
     outline: 0;
 }
 
-@media screen {
+.ie-only {
+    display: none;
+}
 
+.clearfix {
+    overflow: auto;
+    zoom: 1;
+}
 
-    .btn {
+//IE Fixes
+.lt-ie9 {
 
-        &:hover {
-
-        }
+    .ie-only {
+        display: block;
     }
 
+    img.bg {
+        /* Set rules to fill background */
+        min-height: 100%;
+        min-width: 1600px;
 
+        /* Set up proportionate scaling */
+        width: 100%;
+        height: auto;
+
+        /* Set up positioning */
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        margin: auto;
+    }
+
+    .visible-sm img {
+        display: none;
+    }
 }

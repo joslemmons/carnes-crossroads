@@ -1,7 +1,19 @@
 {% extends 'base.twig' %}
 {% block template %}
 
-
+<section class="hero__home" id="intro-video">
+    <div class="hero__content-wrap">
+        <h1>Featured Headline about life at Carnes Crossroads.</h1>
+        <div class="play-btn-container">
+            <a href="{{ video_src }}" data-video-height="1080" data-video-width="1920" class="cnicon-play video-play"><span class="play-icon"><img src="{{ template_uri }}/img/play-icon_x2.png"/></span></a>
+        </div>
+    </div>
+    <img class="ie-only bg" src="{{ template_uri }}/img/bg-hero-home.jpg">
+    <video loop poster="{{ template_uri }}/img/bg-hero-home.jpg">
+        <source src="http://dlpnyk6xy3bg9.cloudfront.net/60_noAudio.webm" type="video/webm">
+            <source src="http://dlpnyk6xy3bg9.cloudfront.net/60_noAudio.mp4"  type="video/mp4">
+    </video>
+</section>
 
 
 {% endblock %}
