@@ -1,30 +1,27 @@
 // Front Page Styles
 // ===================================
 
-.hero {
-    position: relative;
-    clear: both;
-    margin: 0;
+.hero__map-link {
+    margin: 100px auto 0 auto;
 
-    &__content-wrap {
-        width: 100%;
-        padding: 15% 12% 0 12%;
-        text-align: center;
-        position: absolute;
-    }
+    a {
+        font-family: $minion;
+        font-weight: $weight-regular;
+        font-size: 0.85rem;
+        text-transform: uppercase;
+        letter-spacing: 2px;
+        color: $white;
+        text-shadow: 0 0 10px rgba(#555d59, .5);
 
-    &__home {
-        display: block;
-        height: 100%;
-        width: 100%;
-        text-align: left;
-        position: relative;
-        overflow: hidden;
+        &:hover {
+            color: darken($white, 5);
+            text-shadow: 0 0 10px rgba(#555d59, 1);
+        }
     }
 }
 
 video {
-    position: fixed;
+    position: absolute;
     top: 50%;
     left: 50%;
     min-width: 100%;
@@ -40,10 +37,10 @@ video {
 }
 
 .play-btn-container {
-    margin-top: 25px;
+    margin: 35px 0 75px 0;
 
     a {
-        color: $white;
+        color: #fff;
     }
 
     .play-icon img {
@@ -81,7 +78,7 @@ video {
     display: inline-block;
     vertical-align: middle;
     background: rgba(0,0,0,0);
-    color: $white;
+    color: #fff;
     padding: 5px;
     cursor: default;
     height: 75%;
@@ -141,4 +138,48 @@ video {
 
 .player .video-wrapper {
     background: none !important;
+}
+
+.dropdown-toggle {
+    min-width: 275px;
+    padding: 10px 15px;
+    margin-right: 20px;
+    border-radius: 0;
+    border: none;
+    outline: none;
+    font-family: $minion;
+    font-size: 1.05rem;
+    font-style: italic;
+    font-weight: $weight-regular;
+    color: $cc-med-grey;
+
+    .caret {
+        margin-left: 25px;
+        color: $cc-med-grey;
+        border-top:   6px solid $cc-med-grey !important;
+        border-right: 6px solid transparent;
+        border-left:  6px solid transparent;
+    }
+}
+
+.dropdown-menu {
+    min-width: 275px;
+    padding: 0;
+    margin: 0;
+    border-radius: 0;
+    border: none;
+
+    li {
+        margin: 10px 0;
+        text-align: left;
+        font-family: $minion;
+        font-size: 1rem;
+        font-style: italic;
+        font-weight: $weight-regular;
+        color: $cc-med-grey;
+    }
+
+    li a:hover {
+        background-color: $cc-med-grey;
+    }
 }

@@ -32,6 +32,33 @@ a:focus, a:hover {
     zoom: 1;
 }
 
+.btn {
+    border-radius: 0;
+}
+
+.btn-green {
+    padding-left: 20px;
+    padding-right: 20px;
+    position: relative;
+    font-family: $minion;
+    font-weight: $weight-regular;
+    font-size: 1rem;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    color: $white;
+    background-color: $cc-green;
+    border: 1px solid darken($cc-green, 10);
+    outline: 5px solid $cc-green;
+
+    &:hover {
+        color: $white;
+        text-shadow: 0 2px 10px rgba($black, .5);
+        background-color: darken($cc-green, 2);
+        border: 1px solid darken($cc-green, 10);
+        outline: 5px solid darken($cc-green, 2);;
+    }
+}
+
 //IE Fixes
 .lt-ie9 {
 

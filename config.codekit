@@ -49368,6 +49368,17 @@
 		"outputPathIsSetByUser": 0,
 		"processed": 0
 		},
+	"\/wp-content\/themes\/carnes-crossroads-2015\/img\/bg-button-red.jpg": {
+		"fileType": 16384,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"initialSize": 45844,
+		"inputAbbreviatedPath": "\/wp-content\/themes\/carnes-crossroads-2015\/img\/bg-button-red.jpg",
+		"outputAbbreviatedPath": "\/wp-content\/themes\/carnes-crossroads-2015\/img\/bg-button-red.jpg",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"processed": 0
+		},
 	"\/wp-content\/themes\/carnes-crossroads-2015\/img\/bg-hero-home.jpg": {
 		"fileType": 16384,
 		"ignore": 0,
@@ -49375,6 +49386,28 @@
 		"initialSize": 214116,
 		"inputAbbreviatedPath": "\/wp-content\/themes\/carnes-crossroads-2015\/img\/bg-hero-home.jpg",
 		"outputAbbreviatedPath": "\/wp-content\/themes\/carnes-crossroads-2015\/img\/bg-hero-home.jpg",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"processed": 0
+		},
+	"\/wp-content\/themes\/carnes-crossroads-2015\/img\/cc-comm-map.jpg": {
+		"fileType": 16384,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"initialSize": 78712,
+		"inputAbbreviatedPath": "\/wp-content\/themes\/carnes-crossroads-2015\/img\/cc-comm-map.jpg",
+		"outputAbbreviatedPath": "\/wp-content\/themes\/carnes-crossroads-2015\/img\/cc-comm-map.jpg",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"processed": 0
+		},
+	"\/wp-content\/themes\/carnes-crossroads-2015\/img\/cc-homes-1.jpg": {
+		"fileType": 16384,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"initialSize": 195829,
+		"inputAbbreviatedPath": "\/wp-content\/themes\/carnes-crossroads-2015\/img\/cc-homes-1.jpg",
+		"outputAbbreviatedPath": "\/wp-content\/themes\/carnes-crossroads-2015\/img\/cc-homes-1.jpg",
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0,
 		"processed": 0
@@ -49412,6 +49445,17 @@
 		"outputPathIsSetByUser": 0,
 		"processed": 0
 		},
+	"\/wp-content\/themes\/carnes-crossroads-2015\/img\/icon-arrow.png": {
+		"fileType": 32768,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"initialSize": 305,
+		"inputAbbreviatedPath": "\/wp-content\/themes\/carnes-crossroads-2015\/img\/icon-arrow.png",
+		"outputAbbreviatedPath": "\/wp-content\/themes\/carnes-crossroads-2015\/img\/icon-arrow.png",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"processed": 0
+		},
 	"\/wp-content\/themes\/carnes-crossroads-2015\/img\/pattern-green.jpg": {
 		"fileType": 16384,
 		"ignore": 0,
@@ -49419,6 +49463,17 @@
 		"initialSize": 4962,
 		"inputAbbreviatedPath": "\/wp-content\/themes\/carnes-crossroads-2015\/img\/pattern-green.jpg",
 		"outputAbbreviatedPath": "\/wp-content\/themes\/carnes-crossroads-2015\/img\/pattern-green.jpg",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"processed": 0
+		},
+	"\/wp-content\/themes\/carnes-crossroads-2015\/img\/pattern-white-texture.jpg": {
+		"fileType": 16384,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"initialSize": 15304,
+		"inputAbbreviatedPath": "\/wp-content\/themes\/carnes-crossroads-2015\/img\/pattern-white-texture.jpg",
+		"outputAbbreviatedPath": "\/wp-content\/themes\/carnes-crossroads-2015\/img\/pattern-white-texture.jpg",
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0,
 		"processed": 0
@@ -49591,8 +49646,8 @@
 		"debugStyle": 0,
 		"decimalPrecision": 10,
 		"fileType": 4,
-		"ignore": 0,
-		"ignoreWasSetByUser": 0,
+		"ignore": 1,
+		"ignoreWasSetByUser": 1,
 		"inputAbbreviatedPath": "\/wp-content\/themes\/carnes-crossroads-2015\/scss\/_base.scss",
 		"outputAbbreviatedPath": "\/wp-content\/themes\/carnes-crossroads-2015\/_base.css",
 		"outputPathIsOutsideProject": 0,
@@ -49607,8 +49662,8 @@
 		"debugStyle": 0,
 		"decimalPrecision": 10,
 		"fileType": 4,
-		"ignore": 0,
-		"ignoreWasSetByUser": 0,
+		"ignore": 1,
+		"ignoreWasSetByUser": 1,
 		"inputAbbreviatedPath": "\/wp-content\/themes\/carnes-crossroads-2015\/scss\/_cn-mixins.scss",
 		"outputAbbreviatedPath": "\/wp-content\/themes\/carnes-crossroads-2015\/_cn-mixins.css",
 		"outputPathIsOutsideProject": 0,
@@ -49623,8 +49678,8 @@
 		"debugStyle": 0,
 		"decimalPrecision": 10,
 		"fileType": 4,
-		"ignore": 0,
-		"ignoreWasSetByUser": 0,
+		"ignore": 1,
+		"ignoreWasSetByUser": 1,
 		"inputAbbreviatedPath": "\/wp-content\/themes\/carnes-crossroads-2015\/scss\/_fonts.scss",
 		"outputAbbreviatedPath": "\/wp-content\/themes\/carnes-crossroads-2015\/_fonts.css",
 		"outputPathIsOutsideProject": 0,
@@ -49639,8 +49694,8 @@
 		"debugStyle": 0,
 		"decimalPrecision": 10,
 		"fileType": 4,
-		"ignore": 0,
-		"ignoreWasSetByUser": 0,
+		"ignore": 1,
+		"ignoreWasSetByUser": 1,
 		"inputAbbreviatedPath": "\/wp-content\/themes\/carnes-crossroads-2015\/scss\/_front-page.scss",
 		"outputAbbreviatedPath": "\/wp-content\/themes\/carnes-crossroads-2015\/_front-page.css",
 		"outputPathIsOutsideProject": 0,
@@ -49666,15 +49721,15 @@
 		"shouldRunBless": 0,
 		"useLibsass": 0
 		},
-	"\/wp-content\/themes\/carnes-crossroads-2015\/scss\/_page-default.scss": {
+	"\/wp-content\/themes\/carnes-crossroads-2015\/scss\/_page-templates.scss": {
 		"createSourceMap": 0,
 		"debugStyle": 0,
 		"decimalPrecision": 10,
 		"fileType": 4,
-		"ignore": 0,
+		"ignore": 1,
 		"ignoreWasSetByUser": 0,
-		"inputAbbreviatedPath": "\/wp-content\/themes\/carnes-crossroads-2015\/scss\/_page-default.scss",
-		"outputAbbreviatedPath": "\/wp-content\/themes\/carnes-crossroads-2015\/_page-default.css",
+		"inputAbbreviatedPath": "\/wp-content\/themes\/carnes-crossroads-2015\/scss\/_page-templates.scss",
+		"outputAbbreviatedPath": "\/wp-content\/themes\/carnes-crossroads-2015\/_page-templates.css",
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0,
 		"outputStyle": 0,
@@ -49687,8 +49742,8 @@
 		"debugStyle": 0,
 		"decimalPrecision": 10,
 		"fileType": 4,
-		"ignore": 0,
-		"ignoreWasSetByUser": 0,
+		"ignore": 1,
+		"ignoreWasSetByUser": 1,
 		"inputAbbreviatedPath": "\/wp-content\/themes\/carnes-crossroads-2015\/scss\/_variables.scss",
 		"outputAbbreviatedPath": "\/wp-content\/themes\/carnes-crossroads-2015\/_variables.css",
 		"outputPathIsOutsideProject": 0,
@@ -49697,6 +49752,15 @@
 		"shouldRunAutoprefixer": 0,
 		"shouldRunBless": 0,
 		"useLibsass": 0
+		},
+	"\/wp-content\/themes\/carnes-crossroads-2015\/scss\/bootstrap.css": {
+		"fileType": 16,
+		"ignore": 1,
+		"ignoreWasSetByUser": 0,
+		"inputAbbreviatedPath": "\/wp-content\/themes\/carnes-crossroads-2015\/scss\/bootstrap.css",
+		"outputAbbreviatedPath": "No Output Path",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0
 		},
 	"\/wp-content\/themes\/carnes-crossroads-2015\/scss\/lib\/bootstrap.css": {
 		"fileType": 16,

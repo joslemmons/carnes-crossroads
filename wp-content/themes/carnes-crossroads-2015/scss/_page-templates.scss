@@ -1,0 +1,139 @@
+// Template Page Styles
+// ===================================
+
+.hero {
+    position: relative;
+    clear: both;
+    margin: 0;
+
+    &__content-wrap {
+        width: 100%;
+        padding: 15% 12% 0 12%;
+        text-align: center;
+        position: absolute;
+    }
+
+    &__home {
+        display: block;
+        height: 90%;
+        width: 100%;
+        text-align: left;
+        position: relative;
+        overflow: hidden;
+    }
+}
+
+.page-content {
+    position: relative;
+    padding: 75px 0;
+
+    &--white {
+        @extend .page-content;
+        background-color: $white;
+        background: url(./img/pattern-white-texture.jpg) repeat;
+    }
+}
+
+.block {
+    position: relative;
+    width: 100%;
+    display: inline-block;
+    background-color: $white;
+    background-size: cover;
+    background-position: center center;
+    background-repeat: no-repeat;
+    overflow: hidden;
+
+    &--large {
+        @extend .block;
+        height: 600px;
+    }
+
+    &--small {
+        @extend .block;
+        height: 400px;
+    }
+
+    &--button-red {
+        @extend .block;
+        height: 170px;
+        margin-top: 30px;
+        padding: 12px;
+        background-image: url(./img/bg-button-red.jpg);
+        background-size: 110%;
+        @include transition(all, 0.3s, ease-in-out, 0s);
+
+        &:hover {
+            background-size: 120%;
+
+        }
+    }
+
+    &__button-inner {
+        width: 100%;
+        height: 100%;
+        padding: 45px 0 0 0;
+        border: 1px solid $white;
+        text-align: center;
+
+        h3 {
+            margin-bottom: 8px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            color: $white;
+        }
+
+        p {
+            font-size: 0.9rem;
+            font-weight: $weight-bold;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            color: #fff2d4;
+        }
+    }
+}
+
+.block-tab {
+    position: absolute;
+    padding: 30px;
+    background: $white;
+
+    p {
+        margin: 12px 0;
+        font-family: $avenir;
+        font-weight: $weight-regular;
+        font-size: 0.85rem;
+        line-height: 1.6;
+        letter-spacing: 1px;
+        text-transform: uppercase;
+        color: $cc-med-grey;
+    }
+
+    &__link {
+        position: relative;
+        display: inline-block;
+        padding-right: 35px;
+        margin: 15px 0 0 0;
+        font-family: $avenir;
+        font-weight: $weight-medium;
+        font-size: 0.75rem;
+        letter-spacing: 2px;
+        text-transform: uppercase;
+        color: #756340;
+        background: url(./img/icon-arrow.png) no-repeat center right;
+        background-size: 1.25rem;
+
+    }
+
+    &--bottom-left {
+        @extend .block-tab;
+        bottom: 0;
+        left: 0;
+    }
+
+    &--bottom-right {
+        @extend .block-tab;
+        bottom: 0;
+        right: 0;
+    }
+}

@@ -5,6 +5,8 @@
 
 // Global values
 // --------------------------------------------------
+$white:                 #fff;
+$black:                 #000;
 
 // Grays
 // -------------------------
@@ -84,7 +86,7 @@ $border-radius-small:            3px !default;
 
 $component-active-bg:            $brand-primary !default;
 
-$caret-width-base:               4px !default;
+$caret-width-base:               6px !default;
 $caret-width-large:              5px !default;
 
 // Tables
@@ -614,7 +616,7 @@ $component-offset-horizontal: 180px !default;
 $container-tablet:            ((720px + $grid-gutter-width)) !default;
 
 // Medium screen / desktop
-$container-desktop:           ((940px + $grid-gutter-width)) !default;
+$container-desktop:           ((960px + $grid-gutter-width)) !default;
 
 // Large screen / wide desktop
-$container-lg-desktop:        ((1140px + $grid-gutter-width)) !default;
+$container-lg-desktop:        ((1200px + $grid-gutter-width)) !default;

@@ -68,7 +68,12 @@ h2 {
 }
 
 h3 {
-    font-size: 2em;
+    font-family: $minion;
+    font-weight: $weight-regular;
+    font-size: 1.7rem;
+    line-height: 1;
+    text-transform: none;
+    color: $cc-brown;
 }
 
 h4 {
