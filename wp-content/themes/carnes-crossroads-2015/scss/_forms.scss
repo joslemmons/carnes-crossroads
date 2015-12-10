@@ -1,0 +1,135 @@
+// Forms
+// ===================================
+
+
+.contact__checkbox {
+    width: 100%;
+    position: relative;
+
+    p {
+        margin: 0 0 0 3.5rem;
+        font-family: $avenir;
+        font-weight: $weight-regular;
+        font-size: 0.8rem;
+        text-transform: uppercase;
+        line-height: 0;
+        color: $cc-med-grey;
+    }
+
+    input[type="checkbox"] {
+        visibility: hidden;
+
+        &:checked + label:after {
+            opacity: 1;
+        }
+    }
+
+    & label {
+        cursor: pointer;
+        position: absolute;
+        width: 2.5rem;
+        height: 2.5rem;
+        top: 0;
+        left: 0;
+        border: 1px solid $input-border;
+    }
+
+    & label:after {
+        opacity: 0.3;
+        content: '';
+        position: absolute;
+        width: 1.5rem;
+        height: 0.65rem;
+        background: transparent;
+        top: 0.65rem;
+        left: 0.5rem;
+        border: 2px solid $input-border;
+        border-top: none;
+        border-right: none;
+
+        -webkit-transform: rotate(-45deg);
+        -moz-transform: rotate(-45deg);
+        -o-transform: rotate(-45deg);
+        -ms-transform: rotate(-45deg);
+        transform: rotate(-45deg);
+    }
+
+    & label:hover::after {
+        opacity: 0.7;
+    }
+}
+
+.form-control {
+    height: 3.5rem;
+    border-radius: 0;
+    font-family: $avenir;
+    font-weight: $weight-regular;
+    font-size: 0.8rem;
+    text-transform: uppercase;
+    width: 100%;
+    text-align: left;
+    color: $cc-med-grey;
+}
+
+.btn-group-full {
+    width: 100%;
+    line-height: 0;
+
+    .caret {
+        margin-top: 5px;
+        float: right;
+        color: $cc-med-grey;
+        border-top:   6px solid $cc-med-grey !important;
+        border-right: 6px solid transparent;
+        border-left:  6px solid transparent;
+    }
+
+    .dropdown-menu {
+        margin: 0 12px;
+        width: 93%;
+    }
+}
+
+.dropdown-toggle {
+    min-width: 275px;
+    padding: 10px 15px;
+    margin-right: 20px;
+    border-radius: 0;
+    border: none;
+    outline: none;
+    font-family: $minion;
+    font-size: 1.05rem;
+    font-style: italic;
+    font-weight: $weight-regular;
+    color: $cc-med-grey;
+
+    .caret {
+        margin-left: 25px;
+        color: $cc-med-grey;
+        border-top:   6px solid $cc-med-grey !important;
+        border-right: 6px solid transparent;
+        border-left:  6px solid transparent;
+    }
+}
+
+.dropdown-menu {
+    min-width: 275px;
+    padding: 0;
+    margin: 0;
+    border-radius: 0;
+    border: none;
+
+    li {
+        margin: 10px 0;
+        text-align: left;
+        font-family: $minion;
+        font-size: 1rem;
+        font-style: italic;
+        font-weight: $weight-regular;
+        color: $cc-med-grey;
+    }
+
+    li a:hover {
+        background-color: $cc-med-grey;
+    }
+}

@@ -26,6 +26,7 @@
 .page-content {
     position: relative;
     padding: 75px 0;
+    background-color: $white;
 
     &--white {
         @extend .page-content;
@@ -46,12 +47,22 @@
         @extend .page-content;
         background-color: $cc-tan;
     }
+
+    &--contact {
+        @extend .page-content;
+        padding-bottom: 0;
+    }
+
+    &--footer {
+        @extend .page-content;
+        padding: 50px 0 0 0;
+        border-top: 1px solid $cc-lt-grey;
+    }
 }
 
 .block {
     position: relative;
     width: 100%;
-    display: inline-block;
     background-color: $white;
     background-size: cover;
     background-position: center center;
@@ -159,13 +170,18 @@
         color: #756340;
         background: url(./img/icon-arrow.png) no-repeat center right;
         background-size: 1.25rem;
-
     }
 
     &--top-left {
         @extend .block-tab;
         top: 0;
         left: 0;
+    }
+
+    &--top-right {
+        @extend .block-tab;
+        top: 0;
+        right: 0;
     }
 
     &--bottom-left {

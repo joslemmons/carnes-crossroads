@@ -5,13 +5,12 @@ Author: Chernoff Newman
 Version: 1.0
 */
 
-@import "variables",
-        "lib/bootstrap";
-
 
 // Globals
 // ===================================
-@import "fonts",
+@import "variables",
+        "lib/bootstrap",
+        "fonts",
         "cn-mixins";
 
 
@@ -19,7 +18,11 @@ Version: 1.0
 // Base Styles
 // ===================================
 @import "base",
-        "navigation";
+        "buttons",
+        "forms",
+        "navigation",
+        "footer";
+
 
 
 // Template Styles
