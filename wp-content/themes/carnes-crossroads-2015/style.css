@@ -3192,7 +3192,12 @@ h1 {
   text-shadow: 0 0 10px rgba(85, 93, 89, 0.5); }
 
 h2 {
-  font-size: 2.25em; }
+  font-family: "minion-pro", serif;
+  font-weight: 400;
+  font-size: 2.2rem;
+  line-height: 1.4;
+  color: #3d3421;
+  text-transform: none; }
 
 h3 {
   font-family: "minion-pro", serif;
@@ -3417,7 +3422,7 @@ a:focus, a:hover {
     position: relative;
     width: 100%; }
   .main-nav__logo {
-    width: 200px;
+    width: 175px;
     margin: 0 0 0 8%;
     float: left; }
   .main-nav__sub {
@@ -3429,7 +3434,7 @@ a:focus, a:hover {
     text-align: right; }
   .main-nav__sub-item {
     margin: 0 0 0 15px;
-    padding: 10px 0;
+    padding: 8px 0;
     display: inline-block; }
     .main-nav__sub-item:first-of-type {
       padding-left: 35px;
@@ -3439,7 +3444,8 @@ a:focus, a:hover {
       font-size: 0.75rem;
       font-family: "avenir", sans-serif;
       font-weight: 700;
-      text-transform: uppercase; }
+      text-transform: uppercase;
+      letter-spacing: 1px; }
     .main-nav__sub-item a:hover {
       color: #9bb824; }
   .main-nav__primary {
@@ -3461,7 +3467,7 @@ a:focus, a:hover {
     .main-nav__primary-item a {
       color: #fff;
       font-size: 1rem;
-      letter-spacing: 0.5px;
+      letter-spacing: 1px;
       font-family: "minion-pro", serif;
       font-weight: 700;
       text-transform: uppercase; }
@@ -3656,6 +3662,24 @@ video {
     padding: 15% 12% 0 12%;
     text-align: center;
     position: absolute; }
+  .hero__content-tab {
+    position: absolute;
+    bottom: 0;
+    padding: 15px 15px 0 15px;
+    background-color: rgba(226, 111, 87, 0.93);
+    left: 50%;
+    right: auto;
+    -webkit-transform: translateX(-50%);
+    -moz-transform: translateX(-50%);
+    transform: translateX(-50%); }
+    .hero__content-tab h1 {
+      font-size: 2.5rem;
+      letter-spacing: 1.5px; }
+  .hero__content-inner {
+    padding: 40px 80px;
+    border-top: 1px solid #b4391f;
+    border-left: 1px solid #b4391f;
+    border-right: 1px solid #b4391f; }
   .hero__home {
     display: block;
     height: 90%;
@@ -3663,8 +3687,16 @@ video {
     text-align: left;
     position: relative;
     overflow: hidden; }
+  .hero__page {
+    display: block;
+    height: 70%;
+    width: 100%;
+    position: relative;
+    background-position: top center;
+    background-repeat: no-repeat;
+    background-size: cover; }
 
-.page-content, .page-content--white, .page-content--white-floral, .page-content--tan, .page-content--contact, .page-content--footer {
+.page-content, .page-content--white, .page-content--white-floral, .page-content--white-floral-top, .page-content--tan, .page-content--contact, .page-content--footer {
   position: relative;
   padding: 75px 0;
   background-color: #fff; }
@@ -3677,6 +3709,12 @@ video {
     background-repeat: no-repeat, repeat;
     background-size: cover, auto;
     background-position: center center; }
+  .page-content--white-floral-top {
+    background-color: #fff;
+    background-image: url(./img/bg-floral-top.png), url(./img/pattern-white-texture.jpg);
+    background-repeat: no-repeat, repeat;
+    background-size: cover, auto;
+    background-position: top center; }
   .page-content--tan {
     background-color: #f8f2e9; }
   .page-content--contact {
@@ -3685,7 +3723,7 @@ video {
     padding: 50px 0 0 0;
     border-top: 1px solid #919194; }
 
-.block, .block--large, .block--small, .block--button-red, .block--button-orange {
+.block, .block--large, .block--small, .block--button, .block--button-whats-new, .block--button-news, .block--button-comm-map, .block--button-visit, .block--button-events {
   position: relative;
   width: 100%;
   background-color: #fff;
@@ -3697,30 +3735,27 @@ video {
     height: 600px; }
   .block--small {
     height: 400px; }
-  .block--button-red {
+  .block--button, .block--button-whats-new, .block--button-news, .block--button-comm-map, .block--button-visit, .block--button-events {
     height: 170px;
     margin-top: 30px;
     padding: 12px;
-    background-image: url(./img/bg-button-red.jpg);
     background-size: 110%;
     -webkit-transition: all 0.3s ease-in-out 0s;
     -moz-transition: all 0.3s ease-in-out 0s;
     -o-transition: all 0.3s ease-in-out 0s;
     transition: all 0.3s ease-in-out 0s; }
-    .block--button-red:hover {
+    .block--button:hover, .block--button-whats-new:hover, .block--button-news:hover, .block--button-comm-map:hover, .block--button-visit:hover, .block--button-events:hover {
       background-size: 120%; }
-  .block--button-orange {
-    height: 170px;
-    margin-top: 30px;
-    padding: 12px;
-    background-image: url(./img/bg-button-orange.jpg);
-    background-size: 110%;
-    -webkit-transition: all 0.3s ease-in-out 0s;
-    -moz-transition: all 0.3s ease-in-out 0s;
-    -o-transition: all 0.3s ease-in-out 0s;
-    transition: all 0.3s ease-in-out 0s; }
-    .block--button-orange:hover {
-      background-size: 120%; }
+    .block--button-whats-new {
+      background-image: url(./img/bg-button-whats-new.jpg); }
+    .block--button-news {
+      background-image: url(./img/bg-button-news.jpg); }
+    .block--button-comm-map {
+      background-image: url(./img/bg-button-map.jpg); }
+    .block--button-visit {
+      background-image: url(./img/bg-button-visit.jpg); }
+    .block--button-events {
+      background-image: url(./img/bg-button-events.jpg); }
   .block__button-inner {
     width: 100%;
     height: 100%;

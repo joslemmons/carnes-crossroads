@@ -14,7 +14,7 @@
     }
 
     &__logo {
-        width: 200px;
+        width: 175px;
         margin: 0 0 0 8%;
         float: left;
     }
@@ -30,7 +30,7 @@
 
     &__sub-item {
         margin: 0 0 0 15px;
-        padding: 10px 0;
+        padding: 8px 0;
         display: inline-block;
 
         &:first-of-type {
@@ -44,6 +44,7 @@
             font-family: $avenir;
             font-weight: $weight-bold;
             text-transform: uppercase;
+            letter-spacing: 1px;
         }
 
         a:hover {
@@ -75,7 +76,7 @@
         a {
             color: $white;
             font-size: 1rem;
-            letter-spacing: 0.5px;
+            letter-spacing: 1px;
             font-family: $minion;
             font-weight: $weight-bold;
             text-transform: uppercase;

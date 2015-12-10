@@ -1,0 +1,24 @@
+{% extends 'base.twig' %}
+{% block template %}
+
+<section class="hero__page" style="background-image: url({{ template_uri }}/img/bg-hero-lifestyle.jpg)">
+    <div class="hero__content-tab">
+        <div class="hero__content-inner">
+            <h1>Lifestyle</h1>
+        </div>
+    </div>
+</section>
+
+<section class="page-content--white-floral-top">
+    <div class="container">
+        <div class="row">
+            <div class="col-xs-12 col-md-8 col-md-offset-2 text-center">
+                <h2>Short descriptor about the lifestyle at Carnes Crossroads. This will act as a headline for all of the sub categories.</h2>
+            </div>
+        </div>
+    </div>
+</section>
+
+{% include "partials/contact-foot.twig" %}
+
+{% endblock %}
