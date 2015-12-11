@@ -47,7 +47,6 @@
         height: 90%;
         width: 100%;
         text-align: left;
-        position: relative;
         overflow: hidden;
     }
 
@@ -55,7 +54,6 @@
         display: block;
         height: 70%;
         width: 100%;
-        position: relative;
         background-position: top center;
         background-repeat: no-repeat;
         background-size: cover;
@@ -80,7 +78,7 @@
 
     &--white-floral {
         @extend .page-content;
-        background: url(./img/bg-floral-overlay.png), url(./img/pattern-white-texture.jpg) $white;
+        background: url(./img/bg-floral-overlay.png), url(./img/pattern-white-texture.jpg);
         background-repeat: no-repeat, repeat;
         background-size: cover, auto;
         background-position: center center;
@@ -88,10 +86,10 @@
 
     &--white-floral-top {
         @extend .page-content;
-        background: url(./img/bg-floral-top.png), url(./img/pattern-white-texture.jpg) $white;
+        background: url(./img/bg-floral-top.png), url(./img/pattern-white-texture.jpg);
         background-repeat: no-repeat, repeat;
-        background-size: cover, auto;
-        background-position: center center;
+        background-size: contain, auto;
+        background-position: top center;
 
         p {
             font-family: $minion;
