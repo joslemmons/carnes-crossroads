@@ -58,6 +58,11 @@
     padding: 75px 0;
     background-color: $white;
 
+    hr {
+        margin: 90px -15px;
+        border-top: 1px solid #9b8b79;
+    }
+
     &--white {
         @extend .page-content;
         background-color: $white;
@@ -80,6 +85,16 @@
         background-repeat: no-repeat, repeat;
         background-size: cover, auto;
         background-position: top center;
+
+        p {
+            font-family: $minion;
+            font-size: 1.15rem;
+            color: $cc-brown;
+        }
+
+        .bx-wrapper {
+            margin-top: 0 !important;
+        }
     }
 
     &--tan {
@@ -250,55 +265,5 @@
         right: 0;
         left: 0;
         bottom: 0;
-    }
-}
-
-#slider {
-    display: inline-block;
-    width: 40px;
-    height: 40px;
-    cursor: pointer;
-    opacity: 1;
-    content: none;
-    @include transition(all, 0.2s, ease-in-out, 0s);
-
-    &:hover {
-        opacity: .6;
-    }
-
-    a {
-        display: block;
-        width: 100%;
-        height: 100%;
-    }
-
-    &--prev {
-        @extend #slider;
-        margin-right: 20px;
-        background: url(./img/icon-prev-next.png) no-repeat center left / cover;
-    }
-
-    &--next {
-        @extend #slider;
-        background: url(./img/icon-prev-next.png) no-repeat center right / cover;
-    }
-}
-
-.slider {
-    &__controls {
-        display: inline-block;
-    }
-
-    &__item {
-        position: relative;
-        margin-right: 30px;
-        width: 300px;
-        height: 400px;
-        display: inline-block;
-        background-color: $white;
-        background-size: cover;
-        background-position: center center;
-        background-repeat: no-repeat;
-        overflow: hidden;
     }
 }
