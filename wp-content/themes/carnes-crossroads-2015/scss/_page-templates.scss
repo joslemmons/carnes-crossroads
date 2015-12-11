@@ -17,20 +17,29 @@
         position: absolute;
         bottom: 0;
         padding: 15px 15px 0 15px;
-        background-color: rgba($cc-red, .93);
         @include center(x);
 
         h1 {
             font-size: 2.5rem;
             letter-spacing: 1.5px;
         }
+
+        &-red {
+            @extend .hero__content-tab;
+            background-color: rgba($cc-red, .93);
+        }
+
+        &-green {
+            @extend .hero__content-tab;
+            background-color: rgba($cc-green, .85);
+        }
     }
 
     &__content-inner {
         padding: 40px 80px;
-        border-top: 1px solid darken($cc-red, 20);
-        border-left: 1px solid darken($cc-red, 20);
-        border-right: 1px solid darken($cc-red, 20);
+        border-top: 1px solid darken($cc-med-grey, 20);
+        border-left: 1px solid darken($cc-med-grey, 20);
+        border-right: 1px solid darken($cc-med-grey, 20);
     }
 
     &__home {
@@ -71,8 +80,7 @@
 
     &--white-floral {
         @extend .page-content;
-        background-color: $white;
-        background-image: url(./img/bg-floral-overlay.png), url(./img/pattern-white-texture.jpg);
+        background: url(./img/bg-floral-overlay.png), url(./img/pattern-white-texture.jpg) $white;
         background-repeat: no-repeat, repeat;
         background-size: cover, auto;
         background-position: center center;
@@ -80,11 +88,10 @@
 
     &--white-floral-top {
         @extend .page-content;
-        background-color: $white;
-        background-image: url(./img/bg-floral-top.png), url(./img/pattern-white-texture.jpg);
+        background: url(./img/bg-floral-top.png), url(./img/pattern-white-texture.jpg) $white;
         background-repeat: no-repeat, repeat;
         background-size: cover, auto;
-        background-position: top center;
+        background-position: center center;
 
         p {
             font-family: $minion;

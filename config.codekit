@@ -49708,6 +49708,17 @@
 		"outputPathIsSetByUser": 0,
 		"processed": 0
 		},
+	"\/wp-content\/themes\/carnes-crossroads-2015\/img\/bg-hero-location.jpg": {
+		"fileType": 16384,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"initialSize": 509399,
+		"inputAbbreviatedPath": "\/wp-content\/themes\/carnes-crossroads-2015\/img\/bg-hero-location.jpg",
+		"outputAbbreviatedPath": "\/wp-content\/themes\/carnes-crossroads-2015\/img\/bg-hero-location.jpg",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"processed": 0
+		},
 	"\/wp-content\/themes\/carnes-crossroads-2015\/img\/cc-comm-map.jpg": {
 		"fileType": 16384,
 		"ignore": 0,
@@ -49917,6 +49928,17 @@
 		"outputPathIsSetByUser": 0,
 		"processed": 0
 		},
+	"\/wp-content\/themes\/carnes-crossroads-2015\/img\/page-ss-historic.jpg": {
+		"fileType": 16384,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"initialSize": 105563,
+		"inputAbbreviatedPath": "\/wp-content\/themes\/carnes-crossroads-2015\/img\/page-ss-historic.jpg",
+		"outputAbbreviatedPath": "\/wp-content\/themes\/carnes-crossroads-2015\/img\/page-ss-historic.jpg",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"processed": 0
+		},
 	"\/wp-content\/themes\/carnes-crossroads-2015\/img\/page-ss-parks.jpg": {
 		"fileType": 16384,
 		"ignore": 0,
@@ -49924,6 +49946,17 @@
 		"initialSize": 145610,
 		"inputAbbreviatedPath": "\/wp-content\/themes\/carnes-crossroads-2015\/img\/page-ss-parks.jpg",
 		"outputAbbreviatedPath": "\/wp-content\/themes\/carnes-crossroads-2015\/img\/page-ss-parks.jpg",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"processed": 0
+		},
+	"\/wp-content\/themes\/carnes-crossroads-2015\/img\/page-ss-summerville.jpg": {
+		"fileType": 16384,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"initialSize": 158276,
+		"inputAbbreviatedPath": "\/wp-content\/themes\/carnes-crossroads-2015\/img\/page-ss-summerville.jpg",
+		"outputAbbreviatedPath": "\/wp-content\/themes\/carnes-crossroads-2015\/img\/page-ss-summerville.jpg",
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0,
 		"processed": 0
@@ -50094,6 +50127,15 @@
 		"ignore": 0,
 		"ignoreWasSetByUser": 0,
 		"inputAbbreviatedPath": "\/wp-content\/themes\/carnes-crossroads-2015\/page-lifestyle.php",
+		"outputAbbreviatedPath": "No Output Path",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0
+		},
+	"\/wp-content\/themes\/carnes-crossroads-2015\/page-location.php": {
+		"fileType": 8192,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"inputAbbreviatedPath": "\/wp-content\/themes\/carnes-crossroads-2015\/page-location.php",
 		"outputAbbreviatedPath": "No Output Path",
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0
@@ -51333,6 +51375,15 @@
 		"ignore": 0,
 		"ignoreWasSetByUser": 0,
 		"inputAbbreviatedPath": "\/wp-content\/themes\/carnes-crossroads-2015\/src\/App\/View\/page-lifestyle.twig",
+		"outputAbbreviatedPath": "No Output Path",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0
+		},
+	"\/wp-content\/themes\/carnes-crossroads-2015\/src\/App\/View\/page-location.twig": {
+		"fileType": 8192,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"inputAbbreviatedPath": "\/wp-content\/themes\/carnes-crossroads-2015\/src\/App\/View\/page-location.twig",
 		"outputAbbreviatedPath": "No Output Path",
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0
