@@ -33,6 +33,11 @@
             @extend .hero__content-tab;
             background-color: rgba($cc-green, .85);
         }
+
+        &-orange {
+            @extend .hero__content-tab;
+            background-color: rgba($cc-orange, .85);
+        }
     }
 
     &__content-inner {
@@ -44,6 +49,7 @@
 
     &__home {
         display: block;
+        position: relative;
         height: 90%;
         width: 100%;
         text-align: left;
@@ -52,6 +58,7 @@
 
     &__page {
         display: block;
+        position: relative;
         height: 70%;
         width: 100%;
         background-position: top center;

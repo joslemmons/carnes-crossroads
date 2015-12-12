@@ -1,38 +1,13 @@
 // Slideshow Styles
 // ===================================
 
-#slider {
-    display: inline-block;
-    width: 40px;
-    height: 40px;
-    cursor: pointer;
-    opacity: 1;
-    content: none;
-    @include transition(all, 0.2s, ease-in-out, 0s);
+// MULTIPLE IMAGE CAROSELS
 
-    &:hover {
-        opacity: .6;
+.slider-lg {
+    &__wrap {
+        margin-top: 30px;
     }
 
-    a {
-        display: block;
-        width: 100%;
-        height: 100%;
-    }
-
-    &--prev {
-        @extend #slider;
-        margin-right: 20px;
-        background: url(./img/icon-prev-next.png) no-repeat center left / cover;
-    }
-
-    &--next {
-        @extend #slider;
-        background: url(./img/icon-prev-next.png) no-repeat center right / cover;
-    }
-}
-
-.slider {
     &__controls {
         display: inline-block;
     }
@@ -51,8 +26,40 @@
     }
 }
 
-.slideshow {
+#prev-lg1, #prev-lg2, #prev-lg3,
+#next-lg1, #next-lg2, #next-lg3 {
+    display: inline-block;
+    width: 40px;
+    height: 40px;
+    cursor: pointer;
+    opacity: .6;
+    content: none;
+    margin-right: 20px;
+    @include transition(all, 0.2s, ease-in-out, 0s);
 
+    &:hover {
+        opacity: .8;
+    }
+
+    a {
+        display: block;
+        width: 100%;
+        height: 100%;
+    }
+}
+
+#prev-lg1, #prev-lg2, #prev-lg3 {
+    background: url(./img/icon-prev-next.png) no-repeat center left / cover;
+}
+
+#next-lg1, #next-lg2, #next-lg3 {
+    background: url(./img/icon-prev-next.png) no-repeat center right / cover;
+}
+
+
+// SMALL FADE-IN-OUT SLIDESHOWS
+
+.slider-sm {
     &__nav {
         position: absolute;
         bottom: 7px;
@@ -86,35 +93,33 @@
     }
 }
 
-#slideshow1,
-#slideshow2 {
 
-    &--prev,
-    &--next {
-        display: inline-block;
-        width: 30px;
-        height: 30px;
-        cursor: pointer;
-        opacity: 1;
-        content: none;
-        @include transition(all, 0.2s, ease-in-out, 0s);
 
-        &:hover {
-            opacity: 0.6;
-        }
+#prev-sm1, #prev-sm2, #prev-sm3,
+#next-sm1, #next-sm2, #next-sm3 {
+    display: inline-block;
+    width: 30px;
+    height: 30px;
+    cursor: pointer;
+    opacity: 1;
+    content: none;
+    @include transition(all, 0.2s, ease-in-out, 0s);
 
-        a {
-            display: block;
-            width: 100%;
-            height: 100%;
-        }
+    &:hover {
+        opacity: 0.6;
     }
 
-    &--prev {
-        background: url(./img/icon-prev-next.png) no-repeat center left / cover;
+    a {
+        display: block;
+        width: 100%;
+        height: 100%;
     }
+}
 
-    &--next {
-        background: url(./img/icon-prev-next.png) no-repeat center right / cover;
-    }
+#prev-sm1, #prev-sm2, #prev-sm3 {
+    background: url(./img/icon-prev-next.png) no-repeat center left / cover;
+}
+
+#next-sm1, #next-sm2, #next-sm3  {
+    background: url(./img/icon-prev-next.png) no-repeat center right / cover;
 }
