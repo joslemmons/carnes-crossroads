@@ -19,4 +19,8 @@ if (!function_exists('getallheaders')) {
     }
 }
 
+include 'calendar-build.php';
+
 \App\Model\Bootstrap::init();
+
+

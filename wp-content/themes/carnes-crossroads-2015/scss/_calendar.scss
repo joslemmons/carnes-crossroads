@@ -1,0 +1,79 @@
+// Calendar
+// ===================================
+
+.calendar {
+    width: 100%;
+    padding: 15px;
+    position: relative;
+    text-align: center;
+    background: $white;
+    font-family: $avenir;
+
+    & table {
+        width: 100%;
+    }
+
+   &__month{
+        position: relative;
+    }
+
+    & thead {
+        font-weight: 600;
+        text-transform: uppercase;
+    }
+
+    & tbody {
+        color: #7c8a95;
+    }
+
+    tbody td:hover {
+        border: 2px solid #00addf;
+    }
+
+    & td {
+        border: 2px solid transparent;
+        border-radius: 50%;
+        display: inline-block;
+        height: 3em;
+        line-height: 3em;
+        text-align: center;
+        width: 3em;
+    }
+
+    .prev-month,
+    .next-month {
+        color: #cbd1d2;
+
+        &:hover {
+             border: 2px solid #cbd1d2;
+        }
+    }
+
+    .current-day {
+        background: #00addf;
+        color: #f9f9f9;
+
+        &:after {
+            background: #f9f9f9;
+        }
+    }
+
+    .event {
+        cursor: pointer;
+        position: relative;
+
+        &:after {
+            background: #00addf;
+            border-radius: 50%;
+            bottom: .5em;
+            display: block;
+            content: '';
+            height: .5em;
+            left: 50%;
+            margin: -.25em 0 0 -.25em;
+            position: absolute;
+            width: .5em;
+        }
+    }
+
+}
