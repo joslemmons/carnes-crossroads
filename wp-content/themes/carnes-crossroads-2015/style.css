@@ -3431,6 +3431,17 @@ a:focus, a:hover {
   .dropdown-menu li a:hover {
     background-color: #828181; }
 
+.events-headline-contact {
+  margin-top: 50px; }
+  .events-headline-contact h2 {
+    margin-bottom: 75px; }
+  .events-headline-contact h4 {
+    margin-left: 15px;
+    font-size: 1rem;
+    font-weight: 500; }
+  .events-headline-contact .btn {
+    margin: 25px 0 0 8px; }
+
 .main-nav {
   padding: 20px 0 0 0;
   background: url(./img/pattern-green.jpg) repeat center center;
@@ -3954,52 +3965,56 @@ video {
 
 .calendar {
   width: 100%;
-  padding: 15px;
+  padding: 0 0 15px 0;
   position: relative;
   text-align: center;
   background: #fff;
-  font-family: "avenir", sans-serif; }
+  font-family: "avenir", sans-serif;
+  font-size: 1.15rem; }
   .calendar table {
     width: 100%; }
   .calendar__month {
-    position: relative; }
+    background: #d6a83f;
+    position: relative;
+    color: #fff;
+    margin: 0;
+    padding: 15px;
+    font-family: "avenir", sans-serif;
+    font-weight: 400;
+    font-size: 1.5rem;
+    text-transform: none; }
   .calendar thead {
+    margin: 0;
+    color: #fff;
+    background: #d6a83f;
     font-weight: 600;
     text-transform: uppercase; }
   .calendar tbody {
     color: #7c8a95; }
-  .calendar tbody td:hover {
-    border: 2px solid #00addf; }
   .calendar td {
     border: 2px solid transparent;
     border-radius: 50%;
     display: inline-block;
-    height: 3em;
-    line-height: 3em;
+    height: 2.7em;
+    line-height: 2.7em;
     text-align: center;
-    width: 3em; }
-  .calendar .prev-month,
-  .calendar .next-month {
-    color: #cbd1d2; }
-    .calendar .prev-month:hover,
-    .calendar .next-month:hover {
-      border: 2px solid #cbd1d2; }
+    width: 2.7em; }
   .calendar .current-day {
-    background: #00addf;
-    color: #f9f9f9; }
+    background: #d6a83f;
+    color: #fff; }
     .calendar .current-day:after {
-      background: #f9f9f9; }
+      background: #fff; }
   .calendar .event {
     cursor: pointer;
     position: relative; }
     .calendar .event:after {
-      background: #00addf;
+      background: #d6a83f;
       border-radius: 50%;
-      bottom: .5em;
+      top: .5rem;
+      right: .5rem;
       display: block;
       content: '';
-      height: .5em;
-      left: 50%;
+      height: .4em;
+      width: .4em;
       margin: -.25em 0 0 -.25em;
-      position: absolute;
-      width: .5em; }
+      position: absolute; }

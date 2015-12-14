@@ -133,3 +133,21 @@
         background-color: $cc-med-grey;
     }
 }
+
+.events-headline-contact {
+    margin-top: 50px;
+
+    h2 {
+        margin-bottom: 75px;
+    }
+
+    h4 {
+        margin-left: 15px;
+        font-size: 1rem;
+        font-weight: $weight-medium;
+    }
+
+    .btn {
+        margin: 25px 0 0 8px;
+    }
+}
