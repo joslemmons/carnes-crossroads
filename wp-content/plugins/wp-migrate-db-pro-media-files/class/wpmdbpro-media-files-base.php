@@ -310,11 +310,12 @@ class WPMDBPro_Media_Files_Base extends WPMDBPro_Addon {
 
 		$dir      = ( '/' == $dir ) ? '' : $dir;
 		$dir_path = $upload_dir . $dir;
+		$sub_paths = glob( $dir_path . '*', GLOB_MARK );
 
 		// Get all the files except the one we use to store backups.
 		$wpmdb_upload_folder = $this->get_upload_info();
 		$pattern             = '/' . preg_quote( $wpmdb_upload_folder, '/' ) . '/';
-		$files               = preg_grep( $pattern, glob( $dir_path . '*', GLOB_MARK ), PREG_GREP_INVERT );
+		$files               = preg_grep( $pattern, $sub_paths ? $sub_paths : array(), PREG_GREP_INVERT );
 
 		$reached_start_file = false;
 
