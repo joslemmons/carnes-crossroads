@@ -10,7 +10,9 @@ class TimberContext
 
     public static function registerMenu($data)
     {
-        $data['menu'] = new \TimberMenu();
+        $data['primary_menu'] = new \TimberMenu('Primary Menu');
+        $data['header_menu'] = new \TimberMenu('Header Menu');
+        $data['footer_menu'] = new \TimberMenu('Footer Menu');
 
         return $data;
     }
