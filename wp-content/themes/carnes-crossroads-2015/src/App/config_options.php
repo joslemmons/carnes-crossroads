@@ -42,7 +42,7 @@ $config_options = array(
     ),
 
     // the top black bar when viewing the website and logged into WP
-    'always_hide_admin_bar' => false,
+    'always_hide_admin_bar' => true,
 
     // this is a custom number pad for all traffic
     'require_auth' => false,
