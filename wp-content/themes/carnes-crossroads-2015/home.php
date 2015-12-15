@@ -2,4 +2,4 @@
 
 $context = Timber::get_context();
 
-Timber::render('news.twig', $context);
+Timber::render('page-events.twig', $context);

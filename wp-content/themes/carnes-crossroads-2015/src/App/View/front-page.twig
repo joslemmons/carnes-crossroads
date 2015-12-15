@@ -71,11 +71,11 @@
         <div class="row">
             <h3 class="pull-left">Headline about the community &amp; lifestyle</h3>
             <div class="slider-lg__controls pull-right">
-                <span id="prev-lg1"></span>
-                <span id="next-lg1"></span>
+                <span class="prev-lg"></span>
+                <span class="next-lg"></span>
             </div>
         </div>
-        <div class="row slider-lg__wrap" id="slider-lg1">
+        <div class="row slider-lg__wrap slider-lg">
             {% for item in page.getHorizontalSliderItems %}
                 <div class="slider-lg__item" style="background-image: url('{{ item.image.get_src }}');">
                 <div class="block-tab--full-bottom">

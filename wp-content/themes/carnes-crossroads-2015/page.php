@@ -1,6 +1,6 @@
 <?php 
 
 $context = Timber::get_context();
-$context['post'] = new TimberPost();
+$context['page'] = Timber::get_post(false, '\App\Model\Page');
 
 Timber::render('page-default.twig', $context);
