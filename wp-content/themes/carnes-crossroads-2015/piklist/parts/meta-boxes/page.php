@@ -23,6 +23,12 @@ if ($post->id !== 23) {
     ));
 
     piklist('field', array(
+        'type' => 'file',
+        'field' => Page::$field_gallery_image_attachment_ids,
+        'label' => 'Gallery'
+    ));
+
+    piklist('field', array(
         'type' => 'group',
         'field' => Page::$field_quicklinks_group,
         'label' => 'Quicklinks',
@@ -33,7 +39,18 @@ if ($post->id !== 23) {
                 'field' => Page::$field_use_custom_quicklinks,
                 'label' => 'Use Custom Quicklink Boxes?',
                 'choices' => Page::getUseCustomQuicklinksOptionsForPiklist(),
-                'value' => Page::DO_NOT_USE_CUSTOM_QUICKLINK,
+                'value' => Page::USE_DEFAULT_QUICKLINKS
+            ),
+            array(
+                'type' => 'file',
+                'field' => Page::$field_quicklinks_group_item_one_image_attachment_id,
+                'label' => 'Box One Image',
+                'conditions' => array(
+                    array(
+                        'field' => Page::$field_quicklinks_group . ':' . Page::$field_use_custom_quicklinks,
+                        'value' => Page::USE_CUSTOM_QUICKLINKS
+                    )
+                ),
                 'columns' => 12
             ),
             array(
@@ -66,7 +83,6 @@ if ($post->id !== 23) {
                 'label' => 'Box One Button Action',
                 'choices' => Page::getChildPageButtonLinkOptionsForPiklist(),
                 'value' => Page::IS_LINK_TO_PAGE,
-                'columns' => 12,
                 'conditions' => array(
                     array(
                         'field' => Page::$field_quicklinks_group . ':' . Page::$field_use_custom_quicklinks,
@@ -109,6 +125,18 @@ if ($post->id !== 23) {
                 )
             ),
             array(
+                'type' => 'file',
+                'field' => Page::$field_quicklinks_group_item_two_image_attachment_id,
+                'label' => 'Box Two Image',
+                'conditions' => array(
+                    array(
+                        'field' => Page::$field_quicklinks_group . ':' . Page::$field_use_custom_quicklinks,
+                        'value' => Page::USE_CUSTOM_QUICKLINKS
+                    )
+                ),
+                'columns' => 12
+            ),
+            array(
                 'type' => 'text',
                 'field' => Page::$field_quicklinks_group_item_two_title,
                 'label' => 'Box Two Title',
@@ -138,7 +166,6 @@ if ($post->id !== 23) {
                 'label' => 'Box Two Button Action',
                 'choices' => Page::getChildPageButtonLinkOptionsForPiklist(),
                 'value' => Page::IS_LINK_TO_PAGE,
-                'columns' => 12,
                 'conditions' => array(
                     array(
                         'field' => Page::$field_quicklinks_group . ':' . Page::$field_use_custom_quicklinks,
@@ -181,6 +208,18 @@ if ($post->id !== 23) {
                 )
             ),
             array(
+                'type' => 'file',
+                'field' => Page::$field_quicklinks_group_item_three_image_attachment_id,
+                'label' => 'Box Three Image',
+                'conditions' => array(
+                    array(
+                        'field' => Page::$field_quicklinks_group . ':' . Page::$field_use_custom_quicklinks,
+                        'value' => Page::USE_CUSTOM_QUICKLINKS
+                    )
+                ),
+                'columns' => 12
+            ),
+            array(
                 'type' => 'text',
                 'field' => Page::$field_quicklinks_group_item_three_title,
                 'label' => 'Box Three Title',
@@ -210,7 +249,6 @@ if ($post->id !== 23) {
                 'label' => 'Box Three Button Action',
                 'choices' => Page::getChildPageButtonLinkOptionsForPiklist(),
                 'value' => Page::IS_LINK_TO_PAGE,
-                'columns' => 12,
                 'conditions' => array(
                     array(
                         'field' => Page::$field_quicklinks_group . ':' . Page::$field_use_custom_quicklinks,

@@ -11,4 +11,5 @@ return array(
     $vendorDir . '/guzzlehttp/psr7/src/functions_include.php',
     $vendorDir . '/guzzlehttp/guzzle/src/functions_include.php',
     $baseDir . '/inc/TwitterAPIExchange.php',
+    $baseDir . '/inc/calendar-build.php',
 );

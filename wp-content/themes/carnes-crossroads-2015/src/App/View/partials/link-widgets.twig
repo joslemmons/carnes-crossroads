@@ -1,38 +1,19 @@
 <section class="page-content--tan">
     <div class="container">
         <div class="row">
-
+            {% for box in page.getQuickLinkBoxes %}
+            {% if loop.index0 < 3 %}
             <div class="col-xs-4 col-md-4">
-                <div class="block--button-green" style="background-image: url({{ template_uri }}/img/bg-button-map.jpg);">
+                <div class="block--button-comm-map" style="background-image: url('{{ box.image.get_src }}')">
                     <div class="block__button-inner">
-                        <a href="#"><span></span></a>
-                        <h3>Community Map</h3>
-                        <p>See The Bigger Picture</p>
-                    </div>
-                </div>
-                <div class="green"></div>
-            </div>
-
-            <div class="col-xs-4 col-md-4 ">
-                <div class="block--button-orange" style="background-image: url({{ template_uri }}/img/bg-button-visit.jpg);">
-                    <div class="block__button-inner">
-                        <a href="#"><span></span></a>
-                        <h3>Plan Your Visit</h3>
-                        <p>Contact Us Today</p>
+                        <a href="{{ box.button.link }}"><span></span></a>
+                        <h3>{{ box.title }}</h3>
+                        <p>{{ box.subtitle }}</p>
                     </div>
                 </div>
             </div>
-
-            <div class="col-xs-4 col-md-4 ">
-                <div class="block--button-red" style="background-image: url({{ template_uri }}/img/bg-button-events.jpg);">
-                    <div class="block__button-inner">
-                        <a href="#"><span></span></a>
-                        <h3>Upcoming Events</h3>
-                        <p>Concets, Classes &amp; More</p>
-                    </div>
-                </div>
-            </div>
-
+            {% endif %}
+            {% endfor %}
         </div>
     </div>
 </section>
