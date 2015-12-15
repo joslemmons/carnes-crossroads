@@ -4,7 +4,7 @@
             {% for box in page.getQuickLinkBoxes %}
             {% if loop.index0 < 3 %}
             <div class="col-xs-4 col-md-4">
-                <div class="block--button-comm-map" style="background-image: url('{{ box.image.get_src }}')">
+                <div class="block-button-{% if loop.index == 1 %}green{% elseif loop.index == 2 %}orange{% else %}red{% endif %}" style="background-image: url('{{ box.image.get_src }}')">
                     <div class="block__button-inner">
                         <a href="{{ box.button.link }}"><span></span></a>
                         <h3>{{ box.title }}</h3>
