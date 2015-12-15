@@ -1,7 +1,5 @@
 <?php
 
-use App\Model\Config;
-
 require('vendor/autoload.php');
 
 // this function is apache only. make it for nginx too
@@ -19,8 +17,4 @@ if (!function_exists('getallheaders')) {
     }
 }
 
-include 'calendar-build.php';
-
 \App\Model\Bootstrap::init();
-
-
