@@ -99,7 +99,7 @@
         background-position: top center;
 
         p {
-            font-family: $minion;
+            font-family: $font-serif;
             font-size: 1.15rem;
             color: $cc-brown;
         }
@@ -224,7 +224,7 @@
 
     p {
         margin: 10px 0;
-        font-family: $avenir;
+        font-family: $font-sans;
         font-weight: $weight-regular;
         font-size: 0.75rem;
         line-height: 1.6;
@@ -238,7 +238,7 @@
         display: inline-block;
         padding-right: 35px;
         margin: 15px 0 0 0;
-        font-family: $avenir;
+        font-family: $font-sans;
         font-weight: $weight-medium;
         font-size: 0.75rem;
         letter-spacing: 2px;
