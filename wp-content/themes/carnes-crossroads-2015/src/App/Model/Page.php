@@ -94,8 +94,12 @@ class Page extends \TimberPost
         $field = self::$field_quicklinks_group;
         $quick_link_group = $this->$field;
 
-        $quick_link_choice = array_pop($quick_link_group[self::$field_use_custom_quicklinks]);
-        $quick_link_choice = array_pop($quick_link_choice);
+        if (false === $quick_link_group) {
+            $quick_link_choice = self::USE_DEFAULT_QUICKLINKS;
+        } else {
+            $quick_link_choice = array_pop($quick_link_group[self::$field_use_custom_quicklinks]);
+            $quick_link_choice = array_pop($quick_link_choice);
+        }
 
         switch (true) {
             case (self::USE_DEFAULT_QUICKLINKS === $quick_link_choice):
