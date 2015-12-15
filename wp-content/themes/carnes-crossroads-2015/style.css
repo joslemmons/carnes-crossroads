@@ -3581,8 +3581,8 @@ a:focus, a:hover {
   background-repeat: no-repeat;
   overflow: hidden; }
 
-#prev-lg1, #prev-lg2, #prev-lg3,
-#next-lg1, #next-lg2, #next-lg3 {
+.prev-lg,
+.next-lg {
   display: inline-block;
   width: 40px;
   height: 40px;
@@ -3594,19 +3594,19 @@ a:focus, a:hover {
   -moz-transition: all 0.2s ease-in-out 0s;
   -o-transition: all 0.2s ease-in-out 0s;
   transition: all 0.2s ease-in-out 0s; }
-  #prev-lg1:hover, #prev-lg2:hover, #prev-lg3:hover,
-  #next-lg1:hover, #next-lg2:hover, #next-lg3:hover {
+  .prev-lg:hover,
+  .next-lg:hover {
     opacity: .8; }
-  #prev-lg1 a, #prev-lg2 a, #prev-lg3 a,
-  #next-lg1 a, #next-lg2 a, #next-lg3 a {
+  .prev-lg a,
+  .next-lg a {
     display: block;
     width: 100%;
     height: 100%; }
 
-#prev-lg1, #prev-lg2, #prev-lg3 {
+.prev-lg {
   background: url(./img/icon-prev-next.png) no-repeat center left/cover; }
 
-#next-lg1, #next-lg2, #next-lg3 {
+.next-lg {
   background: url(./img/icon-prev-next.png) no-repeat center right/cover; }
 
 .slider-sm__nav {
@@ -3634,8 +3634,8 @@ a:focus, a:hover {
     text-transform: none;
     color: #fff; }
 
-#prev-sm1, #prev-sm2, #prev-sm3,
-#next-sm1, #next-sm2, #next-sm3 {
+.prev-sm,
+.next-sm {
   display: inline-block;
   width: 30px;
   height: 30px;
@@ -3646,19 +3646,19 @@ a:focus, a:hover {
   -moz-transition: all 0.2s ease-in-out 0s;
   -o-transition: all 0.2s ease-in-out 0s;
   transition: all 0.2s ease-in-out 0s; }
-  #prev-sm1:hover, #prev-sm2:hover, #prev-sm3:hover,
-  #next-sm1:hover, #next-sm2:hover, #next-sm3:hover {
+  .prev-sm:hover,
+  .next-sm:hover {
     opacity: 0.6; }
-  #prev-sm1 a, #prev-sm2 a, #prev-sm3 a,
-  #next-sm1 a, #next-sm2 a, #next-sm3 a {
+  .prev-sm a,
+  .next-sm a {
     display: block;
     width: 100%;
     height: 100%; }
 
-#prev-sm1, #prev-sm2, #prev-sm3 {
+.prev-sm {
   background: url(./img/icon-prev-next.png) no-repeat center left/cover; }
 
-#next-sm1, #next-sm2, #next-sm3 {
+.next-sm {
   background: url(./img/icon-prev-next.png) no-repeat center right/cover; }
 
 .hero__map-link {
@@ -3978,7 +3978,7 @@ video {
     background: #d6a83f;
     position: relative;
     color: #fff;
-    margin: 0;
+    margin: 0 0 -5px 0;
     padding: 15px;
     font-family: "Nunito", sans-serif, sans-serif;
     font-weight: 400;
@@ -3988,14 +3988,16 @@ video {
     margin: 0;
     color: #fff;
     background: #d6a83f;
-    font-weight: 600;
+    font-weight: 700;
     text-transform: uppercase; }
+    .calendar thead td {
+      margin: 0;
+      border-radius: 0; }
   .calendar tbody {
     color: #7c8a95; }
   .calendar td {
     border: 2px solid transparent;
     border-radius: 50%;
-    display: inline-block;
     height: 2.7em;
     line-height: 2.7em;
     text-align: center;

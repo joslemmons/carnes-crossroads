@@ -78,11 +78,11 @@
         <div class="row slider-lg__wrap slider-lg">
             {% for item in page.getHorizontalSliderItems %}
                 <div class="slider-lg__item" style="background-image: url('{{ item.image.get_src }}');">
-                <div class="block-tab--full-bottom">
-                    <h3>{{ item.title }}</h3>
-                    <p>{{ item.subtitle }}</p>
+                    <div class="block-tab--full-bottom">
+                        <h3>{{ item.title }}</h3>
+                        <p>{{ item.subtitle }}</p>
+                    </div>
                 </div>
-            </div>
             {% endfor %}
         </div>
     </div>

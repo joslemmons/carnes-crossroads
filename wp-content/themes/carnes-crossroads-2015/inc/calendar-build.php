@@ -24,15 +24,18 @@ function build_calendar($month,$year,$dateArray) {
 
     // Create the table tag opener and day headers
 
-    $calendar = "<table class='calendar'>";
-    $calendar .= "<caption>$monthName $year</caption>";
+    $calendar = "<table>";
+    $calendar .= "<thead>";
+    $calendar .= "<h4 class='calendar__month'>$monthName $year</h4>";
     $calendar .= "<tr>";
 
     // Create the calendar headers
 
     foreach($daysOfWeek as $day) {
-         $calendar .= "<th class='header'>$day</th>";
+         $calendar .= "<td>$day</td>";
     }
+    $calendar .= "</tr>";
+    $calendar .= "</thead>";
 
     // Create the rest of the calendar
 
@@ -67,7 +70,7 @@ function build_calendar($month,$year,$dateArray) {
 
          $date = "$year-$month-$currentDayRel";
 
-         $calendar .= "<td class='day' rel='$date'>$currentDay</td>";
+         $calendar .= "<td rel='$date'>$currentDay</td>";
 
          // Increment counters
 
