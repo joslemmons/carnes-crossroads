@@ -14,6 +14,7 @@ piklist('field', array(
     'add_more' => true,
     'field' => FrontPage::$field_horizontal_slider,
     'label' => 'Slides',
+    'description' => '<img width="170" src="' . get_template_directory_uri() . '/img/admin/front-page-horizontal-content.png' . '" />',
     'fields' => array(
         array(
             'type' => 'file',

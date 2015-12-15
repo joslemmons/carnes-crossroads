@@ -30,28 +30,36 @@
     <div class="container">
         <div class="row">
             <div class="col-xs-12 col-md-8">
-                <div class="block--large" style="background-image: url({{ template_uri }}/img/cc-homes-1.jpg);">
+                {% for item in page.getTopFeaturedPrimaryItems %}
+                    <div class="block--large" {% if item.video_src %}data-video-src="{{ item.video_src }}"{% endif %}
+                         style="background-image: url('{{ item.image.get_src }}');">
                     <div class="block-tab--bottom-left">
-                        <h3>Featured Listing</h3>
-                        <p>Browse through our most recent listings</p>
-                        <a href="#" class="block-tab__link">View All</a>
+                        <h3>{{ item.title }}</h3>
+                        <p>{{ item.subtitle }}</p>
+                        <a href="{{ item.button.link }}" class="block-tab__link">{{ item.button.title }}</a>
                     </div>
                 </div>
+                {% endfor %}
             </div>
             <div class="col-xs-12 col-md-4">
-                <div class="block--small" style="background-image: url({{ template_uri }}/img/cc-comm-map.jpg);">
+                {% for item in page.getTopFeaturedSecondaryItems %}
+                    <div class="block--small" {% if item.video_src %}data-video-src="{{ item.video_src }}"{% endif %}
+                         style="background-image: url('{{ item.image.get_src }}');">
                     <div class="block-tab--bottom-right">
-                        <h3>The Community Plan</h3>
-                        <p>Neighborhoods &amp; Towns</p>
-                        <a href="#" class="block-tab__link">View Plan</a>
+                        <h3>{{ item.title }}</h3>
+                        <p>{{ item.subtitle }}</p>
+                        <a href="{{ item.button.link }}" class="block-tab__link">{{ item.button.title }}</a>
                     </div>
                 </div>
+                {% endfor %}
                 <div class="block--button-whats-new">
+                    {% for item in page.getTopFeaturedTertiaryItems %}
                     <div class="block__button-inner">
-                        <a href="#"><span></span></a>
-                        <h3>What's New In Town</h3>
-                        <p>Shopping, Dining and More</p>
+                        <a href="{{ item.button.link }}"><span></span></a>
+                        <h3>{{ item.title }}</h3>
+                        <p>{{ item.subtitle }}</p>
                     </div>
+                    {% endfor %}
                 </div>
             </div>
         </div>
@@ -68,36 +76,14 @@
             </div>
         </div>
         <div class="row slider-lg__wrap" id="slider-lg1">
-            <div class="slider-lg__item" style="background-image: url({{ template_uri }}/img/slider-1.jpg);">
+            {% for item in page.getHorizontalSliderItems %}
+                <div class="slider-lg__item" style="background-image: url('{{ item.image.get_src }}');">
                 <div class="block-tab--full-bottom">
-                    <h3>Schools</h3>
-                    <p>Subhead Descriptor</p>
+                    <h3>{{ item.title }}</h3>
+                    <p>{{ item.subtitle }}</p>
                 </div>
             </div>
-            <div class="slider-lg__item" style="background-image: url({{ template_uri }}/img/slider-2.jpg);">
-                <div class="block-tab--full-bottom">
-                    <h3>Parks &amp; Trails</h3>
-                    <p>Subhead Descriptor</p>
-                </div>
-            </div>
-            <div class="slider-lg__item" style="background-image: url({{ template_uri }}/img/slider-3.jpg);">
-                <div class="block-tab--full-bottom">
-                    <h3>Amenities</h3>
-                    <p>Subhead Descriptor</p>
-                </div>
-            </div>
-            <div class="slider-lg__item" style="background-image: url({{ template_uri }}/img/slider-4.jpg);">
-                <div class="block-tab--full-bottom">
-                    <h3>Shopping &amp; Dining</h3>
-                    <p>Subhead Descriptor</p>
-                </div>
-            </div>
-            <div class="slider-lg__item" style="background-image: url({{ template_uri }}/img/slider-5.jpg);">
-                <div class="block-tab--full-bottom">
-                    <h3>The Green Barn</h3>
-                    <p>Subhead Descriptor</p>
-                </div>
-            </div>
+            {% endfor %}
         </div>
     </div>
 </section>
@@ -106,28 +92,34 @@
     <div class="container">
         <div class="row">
             <div class="col-xs-12 col-md-8">
-                <div class="block--large" style="background-image: url({{ template_uri }}/img/cc-lowcountry.jpg);">
+                {% for item in page.getBottomFeaturedPrimaryItems %}
+                    <div class="block--large" style="background-image: url('{{ item.image.get_src }}');">
                     <div class="block-tab--top-left">
-                        <h3>Lowcountry Living</h3>
-                        <p>Descriptor about Summerville and Charleston</p>
-                        <a href="#" class="block-tab__link">Read More</a>
+                        <h3>{{ item.title }}</h3>
+                        <p>{{ item.subtitle }}</p>
+                        <a href="{{ item.button.link }}" class="block-tab__link">{{ item.button.title }}</a>
                     </div>
                 </div>
+                {% endfor %}
             </div>
             <div class="col-xs-12 col-md-4">
-                <div class="block--small" style="background-image: url({{ template_uri }}/img/cc-loc-map.jpg);">
+                {% for item in page.getBottomFeaturedSecondaryItems %}
+                    <div class="block--small" style="background-image: url('{{ item.image.get_src }}');">
                     <div class="block-tab--bottom-right">
-                        <h3>Location</h3>
-                        <p>What's Nearby</p>
-                        <a href="#" class="block-tab__link">View Map</a>
+                        <h3>{{ item.title }}</h3>
+                        <p>{{ item.subtitle }}</p>
+                        <a href="{{ item.button.link }}" class="block-tab__link">{{ item.button.title }}</a>
                     </div>
                 </div>
+                {% endfor %}
                 <div class="block--button-news">
+                    {% for item in page.getBottomFeaturedSecondaryItems %}
                     <div class="block__button-inner">
-                        <a href="#"><span></span></a>
-                        <h3>News &amp; Events</h3>
-                        <p>Find Out What's Happening</p>
+                        <a href="{{ item.button.link }}"><span></span></a>
+                        <h3>{{ item.title }}</h3>
+                        <p>{{ item.subtitle }}</p>
                     </div>
+                    {% endfor %}
                 </div>
             </div>
         </div>

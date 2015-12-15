@@ -185,4 +185,74 @@ class Helper
 
         return $return;
     }
+
+    public static function getContentAsArrayFromPiklist($items, $fields = array())
+    {
+        $content = array();
+
+        $field_title = (isset($fields['title'])) ? $fields['title'] : null;
+        $field_sub_title = (isset($fields['sub_title'])) ? $fields['sub_title'] : null;
+        $field_image_attachment_id = (isset($fields['image_attachment_id'])) ? $fields['image_attachment_id'] : null;
+        $field_link_action = (isset($fields['link_action'])) ? $fields['link_action'] : null;
+        $field_link_action_page_id = (isset($fields['link_action_page_id'])) ? $fields['link_action_page_id'] : null;
+        $field_link_action_custom_link = (isset($fields['link_action_custom_link'])) ? $fields['link_action_custom_link'] : null;
+        $field_link_action_text = (isset($fields['list_action_text'])) ? $fields['list_action_text'] : null;
+        $field_has_video = (isset($fields['has_video'])) ? $fields['has_video'] : null;
+        $field_video_attachment_id = (isset($fields['video_attachment_id'])) ? $fields['video_attachment_id'] : null;
+        $field_video_custom_link = (isset($fields['video_custom_link'])) ? $fields['video_custom_link'] : null;
+
+        $num = count($items[$field_title]);
+        for ($i = 0; $i < $num; $i++) {
+            if ('' === trim($items[$field_title][$i])) {
+                continue;
+            }
+
+            $image = null;
+            if (null !== $field_image_attachment_id) {
+                $image_attachment_id = array_pop($items[$field_image_attachment_id][$i]);
+                $image = new \TimberImage($image_attachment_id);
+            }
+
+            $url = null;
+            if (null !== $field_link_action && null !== $field_link_action_page_id && null !== $field_link_action_custom_link) {
+                if (FrontPage::IS_LINK_TO_PAGE === array_pop($items[$field_link_action][$i])) {
+                    $page_id = $items[$field_link_action_page_id][$i];
+                    $url = get_page_link($page_id);
+                } else {
+                    $url = $items[$field_link_action_custom_link][$i];
+                }
+            }
+
+            $video_src = null;
+            if (null !== $field_has_video && null !== $field_video_attachment_id && null !== $field_video_custom_link) {
+                $video_action_choice = array_pop($items[$field_has_video][$i]);
+                if (FrontPage::HAS_VIDEO_AS_ATTACHMENT === $video_action_choice) {
+                    $video_attachment_id = $items[$field_video_attachment_id][$i];
+                    $video_src = wp_get_attachment_url($video_attachment_id);
+                }
+
+                if (FrontPage::HAS_VIDEO_AS_LINK === $video_action_choice) {
+                    $video_src = $items[$field_video_custom_link][$i];
+                }
+            }
+
+            $link_text = null;
+            if (null !== $field_link_action_text) {
+                $link_text = $items[$field_link_action_text][$i];
+            }
+
+            $content[] = array(
+                'image' => $image,
+                'title' => $items[$field_title][$i],
+                'subtitle' => $items[$field_sub_title][$i],
+                'button' => array(
+                    'title' => $link_text,
+                    'link' => $url
+                ),
+                'video_src' => $video_src
+            );
+        }
+
+        return $content;
+    }
 }
