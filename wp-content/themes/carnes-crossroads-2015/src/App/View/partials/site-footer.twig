@@ -20,15 +20,9 @@
             </div>
             <div class="col-xs-12 col-md-8">
                 <ul class="footer__nav text-right">
-                    <li class="footer__nav-item"><a href="">Home Finder</a></li>
-                    <li class="footer__nav-item"><a href="">Area Map/Location</a></li>
-                    <li class="footer__nav-item"><a href="">Account/Login</a></li>
-                    <li class="footer__nav-item"><a href="">E-Newsletter</a></li>
-                    <li class="footer__nav-item"><a href="">FAQ</a></li>
-                    <li class="footer__nav-item"><a href="">Contact</a></li>
-                    <li class="footer__nav-item"><a href="">Resident Info</a></li>
-                    <li class="footer__nav-item"><a href="">Builders Info</a></li>
-                    <li class="footer__nav-item"><a href="">Daniel Island Development Company</a></li>
+                    {% for item in footer_menu.get_items %}
+                    <li class="footer__nav-item"><a href="{{ item.link }}">{{ item.title }}</a></li>
+                    {% endfor %}
                 </ul>
             </div>
         </div>

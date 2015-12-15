@@ -2,7 +2,6 @@
 /*
  * Title: Bottom Featured Content (Carnes Crossroads 2015 Theme)
  * ID: 23
- * collapse: true
  * order: 3
  */
 

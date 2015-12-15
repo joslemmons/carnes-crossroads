@@ -152,15 +152,6 @@ class FrontPage extends \TimberPost
         self::$field_bottom_featured_group_tertiary_link_action = Config::getKeyPrefix() . 'bottom_featured_group_tertiary_link_action';
         self::$field_bottom_featured_group_tertiary_link_action_page_to_link_to = Config::getKeyPrefix() . 'bottom_featured_group_tertiary_link_action_page_to_link_to';
         self::$field_bottom_featured_group_tertiary_link_action_custom_link = Config::getKeyPrefix() . 'bottom_featured_group_tertiary_link_action_custom_link';
-
-        self::$field_horizontal_slider = Config::getKeyPrefix() . 'horizontal_slider';
-        self::$field_horizontal_slider_image_attachment_id = Config::getKeyPrefix() . 'horizontal_slider_image_attachment_id';
-        self::$field_horizontal_slider_title = Config::getKeyPrefix() . 'horizontal_slider_title';
-        self::$field_horizontal_slider_subtitle = Config::getKeyPrefix() . 'horizontal_slider_subtitle';
-        self::$field_horizontal_slider_link_action = Config::getKeyPrefix() . 'horizontal_slider_link_action';
-        self::$field_horizontal_slider_link_action_page_to_link_to = Config::getKeyPrefix() . 'horizontal_slider_link_action_page_to_link_to';
-        self::$field_horizontal_slider_link_action_custom_link = Config::getKeyPrefix() . 'horizontal_slider_link_action_custom_link';
-
     }
 
     public static function getVideoOptionsForPiklist()
@@ -179,4 +170,142 @@ class FrontPage extends \TimberPost
             self::IS_CUSTOM_LINK => 'Custom Link'
         );
     }
+
+    
+
+    public function getTopFeaturedPrimaryItems()
+    {
+        $field = self::$field_top_featured_group_primary_items;
+        $items = $this->$field;
+
+        $primary_items = Helper::getContentAsArrayFromPiklist($items, array(
+            'title' => self::$field_top_featured_group_primary_title,
+            'sub_title' => self::$field_top_featured_group_primary_subtitle,
+            'image_attachment_id' => self::$field_top_featured_group_primary_image_attachment_id,
+            'link_action' => self::$field_top_featured_group_primary_link_action,
+            'link_action_page_id' => self::$field_top_featured_group_primary_link_action_page_to_link_to,
+            'link_action_custom_link' => self::$field_top_featured_group_primary_link_action_custom_link,
+            'list_action_text' => self::$field_top_featured_group_primary_link_text,
+            'has_video' => self::$field_top_featured_group_primary_has_video,
+            'video_attachment_id' => self::$field_top_featured_group_primary_video_attachment_id,
+            'video_custom_link' => self::$field_top_featured_group_primary_video_src,
+        ));
+
+        return $primary_items;
+    }
+
+    public function getTopFeaturedSecondaryItems()
+    {
+        $field = self::$field_top_featured_group_secondary_items;
+        $items = $this->$field;
+
+        $secondary_items = Helper::getContentAsArrayFromPiklist($items, array(
+            'title' => self::$field_top_featured_group_secondary_title,
+            'sub_title' => self::$field_top_featured_group_secondary_subtitle,
+            'image_attachment_id' => self::$field_top_featured_group_secondary_image_attachment_id,
+            'link_action' => self::$field_top_featured_group_secondary_link_action,
+            'link_action_page_id' => self::$field_top_featured_group_secondary_link_action_page_to_link_to,
+            'link_action_custom_link' => self::$field_top_featured_group_secondary_link_action_custom_link,
+            'list_action_text' => self::$field_top_featured_group_secondary_link_text,
+            'has_video' => self::$field_top_featured_group_secondary_has_video,
+            'video_attachment_id' => self::$field_top_featured_group_secondary_video_attachment_id,
+            'video_custom_link' => self::$field_top_featured_group_secondary_video_src,
+        ));
+
+        return $secondary_items;
+    }
+
+    public function getTopFeaturedTertiaryItems()
+    {
+        $field = self::$field_top_featured_group_tertiary_items;
+        $items = $this->$field;
+
+        $tertiary_items = Helper::getContentAsArrayFromPiklist($items, array(
+            'title' => self::$field_top_featured_group_tertiary_title,
+            'sub_title' => self::$field_top_featured_group_tertiary_subtitle,
+            'link_action' => self::$field_top_featured_group_tertiary_link_action,
+            'link_action_page_id' => self::$field_top_featured_group_tertiary_link_action_page_to_link_to,
+            'link_action_custom_link' => self::$field_top_featured_group_tertiary_link_action_custom_link,
+        ));
+
+        return $tertiary_items;
+    }
+
+    public function getHorizontalSliderItems()
+    {
+        $field = self::$field_horizontal_slider;
+        $items = $this->$field;
+
+        $horizontal_items = Helper::getContentAsArrayFromPiklist($items, array(
+            'title' => self::$field_horizontal_slider_title,
+            'sub_title' => self::$field_horizontal_slider_subtitle,
+            'image_attachment_id' => self::$field_horizontal_slider_image_attachment_id,
+            'link_action' => self::$field_horizontal_slider_link_action,
+            'link_action_page_id' => self::$field_horizontal_slider_link_action_page_to_link_to,
+            'link_action_custom_link' => self::$field_horizontal_slider_link_action_custom_link,
+        ));
+
+        return $horizontal_items;
+    }
+
+    public function getBottomFeaturedPrimaryItems()
+    {
+        $field = self::$field_bottom_featured_group_primary_items;
+        $items = $this->$field;
+
+        $primary_items = Helper::getContentAsArrayFromPiklist($items, array(
+            'title' => self::$field_bottom_featured_group_primary_title,
+            'sub_title' => self::$field_bottom_featured_group_primary_subtitle,
+            'image_attachment_id' => self::$field_bottom_featured_group_primary_image_attachment_id,
+            'link_action' => self::$field_bottom_featured_group_primary_link_action,
+            'link_action_page_id' => self::$field_bottom_featured_group_primary_link_action_page_to_link_to,
+            'link_action_custom_link' => self::$field_bottom_featured_group_primary_link_action_custom_link,
+            'list_action_text' => self::$field_bottom_featured_group_primary_link_text,
+            'has_video' => self::$field_bottom_featured_group_primary_has_video,
+            'video_attachment_id' => self::$field_bottom_featured_group_primary_video_attachment_id,
+            'video_custom_link' => self::$field_bottom_featured_group_primary_video_src,
+        ));
+
+        return $primary_items;
+    }
+
+    public function getBottomFeaturedSecondaryItems()
+    {
+        $field = self::$field_bottom_featured_group_secondary_items;
+        $items = $this->$field;
+
+        $secondary_items = Helper::getContentAsArrayFromPiklist($items, array(
+            'title' => self::$field_bottom_featured_group_secondary_title,
+            'sub_title' => self::$field_bottom_featured_group_secondary_subtitle,
+            'image_attachment_id' => self::$field_bottom_featured_group_secondary_image_attachment_id,
+            'link_action' => self::$field_bottom_featured_group_secondary_link_action,
+            'link_action_page_id' => self::$field_bottom_featured_group_secondary_link_action_page_to_link_to,
+            'link_action_custom_link' => self::$field_bottom_featured_group_secondary_link_action_custom_link,
+            'list_action_text' => self::$field_bottom_featured_group_secondary_link_text,
+            'has_video' => self::$field_bottom_featured_group_secondary_has_video,
+            'video_attachment_id' => self::$field_bottom_featured_group_secondary_video_attachment_id,
+            'video_custom_link' => self::$field_bottom_featured_group_secondary_video_src,
+        ));
+
+        return $secondary_items;
+    }
+
+    public function getBottomFeaturedTertiaryItems()
+    {
+        $field = self::$field_bottom_featured_group_tertiary_items;
+        $items = $this->$field;
+
+        $tertiary_items = Helper::getContentAsArrayFromPiklist($items, array(
+            'title' => self::$field_bottom_featured_group_tertiary_title,
+            'sub_title' => self::$field_bottom_featured_group_tertiary_subtitle,
+            'link_action' => self::$field_bottom_featured_group_tertiary_link_action,
+            'link_action_page_id' => self::$field_bottom_featured_group_tertiary_link_action_page_to_link_to,
+            'link_action_custom_link' => self::$field_bottom_featured_group_tertiary_link_action_custom_link,
+        ));
+
+        return $tertiary_items;
+    }
+
+
+
 }

@@ -2,7 +2,6 @@
 /*
  * Title: Top Featured Content (Carnes Crossroads 2015 Theme)
  * ID: 23
- * collapse: true
  * order: 1
  */
 
@@ -15,20 +14,21 @@ piklist('field', array(
     'field' => FrontPage::$field_top_featured_group_primary_items,
     'label' => 'Top Primary Featured Content',
     'description' => '<img width="170" src="' . get_template_directory_uri() . '/img/admin/front-page-primary.png' . '" />',
-    'add_more' => true,
+    'columns' => 12,
+//    'add_more' => true,
     'fields' => array(
         array(
             'type' => 'file',
             'field' => FrontPage::$field_top_featured_group_primary_image_attachment_id,
-            'label' => 'Image'
+            'label' => 'Image',
+            'columns' => 12
         ),
         array(
             'type' => 'radio',
             'field' => FrontPage::$field_top_featured_group_primary_has_video,
             'label' => 'Has Video?',
             'choices' => FrontPage::getVideoOptionsForPiklist(),
-            'value' => FrontPage::DOES_NOT_HAVE_VIDEO,
-            'columns' => 12
+            'value' => FrontPage::DOES_NOT_HAVE_VIDEO
         ),
         array(
             'type' => 'file',
@@ -71,8 +71,7 @@ piklist('field', array(
             'field' => FrontPage::$field_top_featured_group_primary_link_action,
             'label' => 'Link Action',
             'choices' => FrontPage::getChildPageButtonLinkOptionsForPiklist(),
-            'value' => FrontPage::IS_LINK_TO_PAGE,
-            'columns' => 12
+            'value' => FrontPage::IS_LINK_TO_PAGE
         ),
         array(
             'type' => 'select',
@@ -115,7 +114,7 @@ piklist('field', array(
     'field' => FrontPage::$field_top_featured_group_secondary_items,
     'label' => 'Top Secondary Featured Content',
     'description' => '<img width="170" src="' . get_template_directory_uri() . '/img/admin/front-page-secondary.png' . '" />',
-    'add_more' => true,
+//    'add_more' => true,
     'fields' => array(
         array(
             'type' => 'file',
@@ -127,8 +126,7 @@ piklist('field', array(
             'field' => FrontPage::$field_top_featured_group_secondary_has_video,
             'label' => 'Has Video?',
             'choices' => FrontPage::getVideoOptionsForPiklist(),
-            'value' => FrontPage::DOES_NOT_HAVE_VIDEO,
-            'columns' => 12
+            'value' => FrontPage::DOES_NOT_HAVE_VIDEO
         ),
         array(
             'type' => 'file',
@@ -171,8 +169,7 @@ piklist('field', array(
             'field' => FrontPage::$field_top_featured_group_secondary_link_action,
             'label' => 'Link Action',
             'choices' => FrontPage::getChildPageButtonLinkOptionsForPiklist(),
-            'value' => FrontPage::IS_LINK_TO_PAGE,
-            'columns' => 12
+            'value' => FrontPage::IS_LINK_TO_PAGE
         ),
         array(
             'type' => 'select',
@@ -215,7 +212,7 @@ piklist('field', array(
     'field' => FrontPage::$field_top_featured_group_tertiary_items,
     'label' => 'Top tertiary Featured Content',
     'description' => '<img width="170" src="' . get_template_directory_uri() . '/img/admin/front-page-tertiary.png' . '" />',
-    'add_more' => true,
+//    'add_more' => true,
     'fields' => array(
         array(
             'type' => 'text',
@@ -234,8 +231,7 @@ piklist('field', array(
             'field' => FrontPage::$field_top_featured_group_tertiary_link_action,
             'label' => 'Link Action',
             'choices' => FrontPage::getChildPageButtonLinkOptionsForPiklist(),
-            'value' => FrontPage::IS_LINK_TO_PAGE,
-            'columns' => 12
+            'value' => FrontPage::IS_LINK_TO_PAGE
         ),
         array(
             'type' => 'select',
