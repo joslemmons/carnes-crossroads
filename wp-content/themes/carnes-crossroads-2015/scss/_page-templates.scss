@@ -129,7 +129,7 @@
 .block {
     position: relative;
     width: 100%;
-    background-color: $white;
+    // background-color: $white;
     background-size: cover;
     background-position: center center;
     background-repeat: no-repeat;
@@ -157,30 +157,30 @@
             background-size: 120%;
         }
 
-        &-whats-new {
+        &-green {
             @extend .block--button;
-            background-image: url(./img/bg-button-whats-new.jpg);
+            box-shadow: 0px 500px rgba($cc-green, 0.75) inset;
         }
 
-        &-news {
+        &-orange {
             @extend .block--button;
-            background-image: url(./img/bg-button-news.jpg);
+            box-shadow: 0px 500px rgba($cc-orange, 0.2) inset;
         }
 
-        &-comm-map {
+        &-red {
             @extend .block--button;
-            background-image: url(./img/bg-button-map.jpg);
+            box-shadow: 0px 500px rgba($cc-red, 0.2) inset;
         }
+    }
 
-        &-visit {
-            @extend .block--button;
-            background-image: url(./img/bg-button-visit.jpg);
-        }
-
-        &-events {
-            @extend .block--button;
-            background-image: url(./img/bg-button-events.jpg);
-        }
+    .green:after {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background: rgba($cc-green, 0.5);
     }
 
     &__button-inner {
@@ -189,6 +189,7 @@
         padding: 45px 0 0 0;
         border: 1px solid $white;
         text-align: center;
+        z-index: 999;
 
         span {
             position: absolute;

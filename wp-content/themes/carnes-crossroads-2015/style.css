@@ -3858,10 +3858,9 @@ video {
     padding: 50px 0 0 0;
     border-top: 1px solid #919194; }
 
-.block, .block--large, .block--small, .block--button, .block--button-whats-new, .block--button-news, .block--button-comm-map, .block--button-visit, .block--button-events {
+.block, .block--large, .block--small, .block--button, .block--button-green, .block--button-orange, .block--button-red {
   position: relative;
   width: 100%;
-  background-color: #fff;
   background-size: cover;
   background-position: center center;
   background-repeat: no-repeat;
@@ -3870,7 +3869,7 @@ video {
     height: 600px; }
   .block--small {
     height: 400px; }
-  .block--button, .block--button-whats-new, .block--button-news, .block--button-comm-map, .block--button-visit, .block--button-events {
+  .block--button, .block--button-green, .block--button-orange, .block--button-red {
     height: 170px;
     margin-top: 30px;
     padding: 12px;
@@ -3879,24 +3878,29 @@ video {
     -moz-transition: all 0.3s ease-in-out 0s;
     -o-transition: all 0.3s ease-in-out 0s;
     transition: all 0.3s ease-in-out 0s; }
-    .block--button:hover, .block--button-whats-new:hover, .block--button-news:hover, .block--button-comm-map:hover, .block--button-visit:hover, .block--button-events:hover {
+    .block--button:hover, .block--button-green:hover, .block--button-orange:hover, .block--button-red:hover {
       background-size: 120%; }
-    .block--button-whats-new {
-      background-image: url(./img/bg-button-whats-new.jpg); }
-    .block--button-news {
-      background-image: url(./img/bg-button-news.jpg); }
-    .block--button-comm-map {
-      background-image: url(./img/bg-button-map.jpg); }
-    .block--button-visit {
-      background-image: url(./img/bg-button-visit.jpg); }
-    .block--button-events {
-      background-image: url(./img/bg-button-events.jpg); }
+    .block--button-green {
+      box-shadow: 0px 500px rgba(118, 142, 28, 0.75) inset; }
+    .block--button-orange {
+      box-shadow: 0px 500px rgba(214, 168, 63, 0.2) inset; }
+    .block--button-red {
+      box-shadow: 0px 500px rgba(226, 111, 87, 0.2) inset; }
+  .block .green:after, .block--large .green:after, .block--small .green:after, .block--button .green:after, .block--button-green .green:after, .block--button-orange .green:after, .block--button-red .green:after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(118, 142, 28, 0.5); }
   .block__button-inner {
     width: 100%;
     height: 100%;
     padding: 45px 0 0 0;
     border: 1px solid #fff;
-    text-align: center; }
+    text-align: center;
+    z-index: 999; }
     .block__button-inner span {
       position: absolute;
       width: 100%;
