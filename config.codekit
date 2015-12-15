@@ -51442,38 +51442,38 @@
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0
 		},
-	"\/wp-content\/themes\/carnes-crossroads-2015\/src\/App\/View\/Partials\/contact-foot.twig": {
+	"\/wp-content\/themes\/carnes-crossroads-2015\/src\/App\/View\/partials\/contact-foot.twig": {
 		"fileType": 8192,
 		"ignore": 0,
 		"ignoreWasSetByUser": 0,
-		"inputAbbreviatedPath": "\/wp-content\/themes\/carnes-crossroads-2015\/src\/App\/View\/Partials\/contact-foot.twig",
+		"inputAbbreviatedPath": "\/wp-content\/themes\/carnes-crossroads-2015\/src\/App\/View\/partials\/contact-foot.twig",
 		"outputAbbreviatedPath": "No Output Path",
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0
 		},
-	"\/wp-content\/themes\/carnes-crossroads-2015\/src\/App\/View\/Partials\/link-widgets.twig": {
+	"\/wp-content\/themes\/carnes-crossroads-2015\/src\/App\/View\/partials\/link-widgets.twig": {
 		"fileType": 8192,
 		"ignore": 0,
 		"ignoreWasSetByUser": 0,
-		"inputAbbreviatedPath": "\/wp-content\/themes\/carnes-crossroads-2015\/src\/App\/View\/Partials\/link-widgets.twig",
+		"inputAbbreviatedPath": "\/wp-content\/themes\/carnes-crossroads-2015\/src\/App\/View\/partials\/link-widgets.twig",
 		"outputAbbreviatedPath": "No Output Path",
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0
 		},
-	"\/wp-content\/themes\/carnes-crossroads-2015\/src\/App\/View\/Partials\/site-footer.twig": {
+	"\/wp-content\/themes\/carnes-crossroads-2015\/src\/App\/View\/partials\/site-footer.twig": {
 		"fileType": 8192,
 		"ignore": 0,
 		"ignoreWasSetByUser": 0,
-		"inputAbbreviatedPath": "\/wp-content\/themes\/carnes-crossroads-2015\/src\/App\/View\/Partials\/site-footer.twig",
+		"inputAbbreviatedPath": "\/wp-content\/themes\/carnes-crossroads-2015\/src\/App\/View\/partials\/site-footer.twig",
 		"outputAbbreviatedPath": "No Output Path",
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0
 		},
-	"\/wp-content\/themes\/carnes-crossroads-2015\/src\/App\/View\/Partials\/site-header.twig": {
+	"\/wp-content\/themes\/carnes-crossroads-2015\/src\/App\/View\/partials\/site-header.twig": {
 		"fileType": 8192,
 		"ignore": 0,
 		"ignoreWasSetByUser": 0,
-		"inputAbbreviatedPath": "\/wp-content\/themes\/carnes-crossroads-2015\/src\/App\/View\/Partials\/site-header.twig",
+		"inputAbbreviatedPath": "\/wp-content\/themes\/carnes-crossroads-2015\/src\/App\/View\/partials\/site-header.twig",
 		"outputAbbreviatedPath": "No Output Path",
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0
@@ -65367,6 +65367,50 @@
 		"outputAbbreviatedPath": "No Output Path",
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0
+		},
+	"\/wp-content\/uploads\/2015\/12\/CC_InteriorTemplate_events_pop-up_01-1024x579.jpg": {
+		"fileType": 16384,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"initialSize": 81431,
+		"inputAbbreviatedPath": "\/wp-content\/uploads\/2015\/12\/CC_InteriorTemplate_events_pop-up_01-1024x579.jpg",
+		"outputAbbreviatedPath": "\/wp-content\/uploads\/2015\/12\/CC_InteriorTemplate_events_pop-up_01-1024x579.jpg",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"processed": 0
+		},
+	"\/wp-content\/uploads\/2015\/12\/CC_InteriorTemplate_events_pop-up_01-150x150.jpg": {
+		"fileType": 16384,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"initialSize": 6925,
+		"inputAbbreviatedPath": "\/wp-content\/uploads\/2015\/12\/CC_InteriorTemplate_events_pop-up_01-150x150.jpg",
+		"outputAbbreviatedPath": "\/wp-content\/uploads\/2015\/12\/CC_InteriorTemplate_events_pop-up_01-150x150.jpg",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"processed": 0
+		},
+	"\/wp-content\/uploads\/2015\/12\/CC_InteriorTemplate_events_pop-up_01-300x170.jpg": {
+		"fileType": 16384,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"initialSize": 11339,
+		"inputAbbreviatedPath": "\/wp-content\/uploads\/2015\/12\/CC_InteriorTemplate_events_pop-up_01-300x170.jpg",
+		"outputAbbreviatedPath": "\/wp-content\/uploads\/2015\/12\/CC_InteriorTemplate_events_pop-up_01-300x170.jpg",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"processed": 0
+		},
+	"\/wp-content\/uploads\/2015\/12\/CC_InteriorTemplate_events_pop-up_01.jpg": {
+		"fileType": 16384,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"initialSize": 1.78865e+06,
+		"inputAbbreviatedPath": "\/wp-content\/uploads\/2015\/12\/CC_InteriorTemplate_events_pop-up_01.jpg",
+		"outputAbbreviatedPath": "\/wp-content\/uploads\/2015\/12\/CC_InteriorTemplate_events_pop-up_01.jpg",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"processed": 0
 		},
 	"\/wp-content\/uploads\/wp-migrate-db\/index.php": {
 		"fileType": 8192,
