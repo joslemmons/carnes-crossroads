@@ -39,8 +39,7 @@ if ($post->id !== 23) {
                 'field' => Page::$field_use_custom_quicklinks,
                 'label' => 'Use Custom Quicklink Boxes?',
                 'choices' => Page::getUseCustomQuicklinksOptionsForPiklist(),
-                'value' => Page::DO_NOT_USE_CUSTOM_QUICKLINK,
-                'columns' => 12
+                'value' => Page::USE_DEFAULT_QUICKLINKS
             ),
             array(
                 'type' => 'file',
@@ -84,7 +83,6 @@ if ($post->id !== 23) {
                 'label' => 'Box One Button Action',
                 'choices' => Page::getChildPageButtonLinkOptionsForPiklist(),
                 'value' => Page::IS_LINK_TO_PAGE,
-                'columns' => 12,
                 'conditions' => array(
                     array(
                         'field' => Page::$field_quicklinks_group . ':' . Page::$field_use_custom_quicklinks,
@@ -168,7 +166,6 @@ if ($post->id !== 23) {
                 'label' => 'Box Two Button Action',
                 'choices' => Page::getChildPageButtonLinkOptionsForPiklist(),
                 'value' => Page::IS_LINK_TO_PAGE,
-                'columns' => 12,
                 'conditions' => array(
                     array(
                         'field' => Page::$field_quicklinks_group . ':' . Page::$field_use_custom_quicklinks,
@@ -252,7 +249,6 @@ if ($post->id !== 23) {
                 'label' => 'Box Three Button Action',
                 'choices' => Page::getChildPageButtonLinkOptionsForPiklist(),
                 'value' => Page::IS_LINK_TO_PAGE,
-                'columns' => 12,
                 'conditions' => array(
                     array(
                         'field' => Page::$field_quicklinks_group . ':' . Page::$field_use_custom_quicklinks,
