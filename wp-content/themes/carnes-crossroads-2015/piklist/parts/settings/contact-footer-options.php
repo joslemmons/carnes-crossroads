@@ -20,7 +20,7 @@ piklist('field', array(
     'field' => ContactFooter::$field_contact_form_gravity_form_id,
     'label' => 'Choose Gravity Form',
     'columns' => 12,
-    'choices' => ContactFooter::getFormChoicesForPiklist()
+    'choices' => Helper::getFormChoicesForPiklist()
 ));
 
 piklist('field', array(

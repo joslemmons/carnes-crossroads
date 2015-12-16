@@ -1,5 +1,7 @@
 <?php namespace App\Model;
 
+use Carbon\Carbon;
+
 class Helper
 {
 
@@ -254,5 +256,20 @@ class Helper
         }
 
         return $content;
+    }
+
+    public static function getFormChoicesForPiklist()
+    {
+        $forms = array();
+        $gravity_forms = \GFAPI::get_forms();
+
+        $forms[0] = '-- Choose Gravity Form --';
+
+        foreach ($gravity_forms as $gravity_form) {
+            $date = Carbon::createFromFormat('Y-m-d H:i:s', $gravity_form['date_created']);
+            $forms[$gravity_form['id']] = $gravity_form['title'] . ' (' . $date->format('M j, Y') . ')';
+        }
+
+        return $forms;
     }
 }

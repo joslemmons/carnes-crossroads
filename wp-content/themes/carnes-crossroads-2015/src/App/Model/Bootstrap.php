@@ -53,6 +53,7 @@ class Bootstrap
         Instagram::bootstrap();
         Page::bootstrap();
         FrontPage::bootstrap();
+        NewsAndEventsPage::bootstrap();
     }
 
 }
