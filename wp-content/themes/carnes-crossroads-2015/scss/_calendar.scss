@@ -7,7 +7,7 @@
     position: relative;
     text-align: center;
     background: $white;
-    font-family: $avenir;
+    font-family: $font-sans;
     font-size: 1.15rem;
 
     & table {
@@ -18,9 +18,9 @@
         background: $cc-orange;
         position: relative;
         color: $white;
-        margin: 0;
+        margin: 0 0 -5px 0;
         padding: 15px;
-        font-family: $avenir;
+        font-family: $font-sans;
         font-weight: $weight-regular;
         font-size: 1.5rem;
         text-transform: none;
@@ -30,8 +30,13 @@
         margin: 0;
         color: $white;
         background: $cc-orange;
-        font-weight: 600;
+        font-weight: $weight-bold;
         text-transform: uppercase;
+
+        td {
+            margin: 0;
+            border-radius: 0;
+        }
     }
 
     & tbody {
@@ -45,21 +50,11 @@
     & td {
         border: 2px solid transparent;
         border-radius: 50%;
-        display: inline-block;
         height: 2.7em;
         line-height: 2.7em;
         text-align: center;
         width: 2.7em;
     }
-
-    // .prev-month,
-    // .next-month {
-    //     color: #cbd1d2;
-
-    //     &:hover {
-    //          border: 2px solid #cbd1d2;
-    //     }
-    // }
 
     .current-day {
         background: $cc-orange;

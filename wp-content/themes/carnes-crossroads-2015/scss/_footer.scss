@@ -15,7 +15,7 @@
     width: 90%;
 
     label {
-        font-family: $avenir;
+        font-family: $font-sans;
         font-weight: $weight-medium;
         font-size: 0.9rem;
         text-transform: uppercase;
@@ -60,7 +60,7 @@
             display: inline-block;
 
             a {
-                font-family: $avenir;
+                font-family: $font-sans;
                 font-weight: $weight-medium;
                 font-size: 0.78rem;
                 text-transform: uppercase;
@@ -81,7 +81,7 @@
 
         p, a {
             margin: 0;
-            font-family: $avenir;
+            font-family: $font-sans;
             font-weight: $weight-bold;
             font-size: 0.7rem;
             text-transform: uppercase;

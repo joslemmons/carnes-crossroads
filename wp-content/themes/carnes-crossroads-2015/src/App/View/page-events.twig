@@ -13,79 +13,9 @@
     <div class="container">
         <div class="row extra-bottom">
             <div class="col-xs-12 col-md-4">
-                 {{ function('build_calendar', 12, 2015, []) }}
-                {#<div class="calendar">#}
-                    {#<table>#}
-                        {#<thead>#}
-                             {#<h4 class="calendar__month">January 2015</h4>#}
-                            {#<tr>#}
-                                {#<td>S</td>#}
-                                {#<td>M</td>#}
-                                {#<td>T</td>#}
-                                {#<td>W</td>#}
-                                {#<td>T</td>#}
-                                {#<td>F</td>#}
-                                {#<td>S</td>#}
-                            {#</tr>#}
-                        {#</thead>#}
-                        {#<tbody>#}
-                            {#<tr>#}
-                                {#<td class="prev-month">27</td>#}
-                                {#<td class="prev-month">28</td>#}
-                                {#<td class="prev-month">29</td>#}
-                                {#<td class="prev-month">30</td>#}
-                                {#<td class="prev-month">31</td>#}
-                                {#<td>1</td>#}
-                                {#<td>2</td>#}
-                            {#</tr>#}
-                            {#<tr>#}
-                                {#<td>3</td>#}
-                                {#<td>4</td>#}
-                                {#<td>5</td>#}
-                                {#<td>6</td>#}
-                                {#<td>7</td>#}
-                                {#<td>8</td>#}
-                                {#<td>9</td>#}
-                            {#</tr>#}
-                            {#<tr>#}
-                                {#<td class="event">10</td>#}
-                                {#<td>11</td>#}
-                                {#<td>12</td>#}
-                                {#<td>13</td>#}
-                                {#<td>14</td>#}
-                                {#<td>15</td>#}
-                                {#<td>16</td>#}
-                            {#</tr>#}
-                            {#<tr>#}
-                                {#<td>17</td>#}
-                                {#<td>18</td>#}
-                                {#<td>19</td>#}
-                                {#<td>20</td>#}
-                                {#<td class="event">21</td>#}
-                                {#<td>22</td>#}
-                                {#<td class="current-day event">23</td>#}
-                            {#</tr>#}
-                            {#<tr>#}
-                                {#<td>24</td>#}
-                                {#<td>25</td>#}
-                                {#<td>26</td>#}
-                                {#<td>27</td>#}
-                                {#<td>28</td>#}
-                                {#<td>29</td>#}
-                                {#<td>30</td>#}
-                            {#</tr>#}
-                            {#<tr>#}
-                                {#<td>31</td>#}
-                                {#<td class="next-month">1</td>#}
-                                {#<td class="next-month">2</td>#}
-                                {#<td class="next-month">3</td>#}
-                                {#<td class="next-month">4</td>#}
-                                {#<td class="next-month">5</td>#}
-                                {#<td class="next-month">6</td>#}
-                            {#</tr>#}
-                        {#</tbody>#}
-                    {#</table>#}
-                {#</div> <!-- end calendar -->#}
+                <div class="calendar">
+                    {{ function('build_calendar', 12, 2015, []) }}
+                </div>
             </div>
             <div class="col-xs-12 col-md-7 col-md-offset-1 events-headline-contact">
                 <h2>{{ page.getHeadline }}</h2>
@@ -99,11 +29,11 @@
         <div class="row">
             <h3 class="pull-left">Headline about the community &amp; lifestyle</h3>
             <div class="slider-lg__controls pull-right">
-                <span id="prev-lg1"></span>
-                <span id="next-lg1"></span>
+                <span class="prev-lg"></span>
+                <span class="next-lg"></span>
             </div>
         </div>
-        <div class="row slider-lg__wrap" id="slider-lg1">
+        <div class="row slider-lg__wrap slider-lg">
             <div class="slider-lg__item" style="background-image: url({{ template_uri }}/img/slider-1.jpg);">
                 <div class="block-tab--full-bottom">
                     <h3>Schools</h3>
@@ -140,11 +70,11 @@
         <div class="row extra-top">
             <h3 class="pull-left">Headline about the community &amp; lifestyle</h3>
             <div class="slider-lg__controls pull-right">
-                <span id="prev-lg2"></span>
-                <span id="next-lg2"></span>
+                <span class="prev-lg"></span>
+                <span class="next-lg"></span>
             </div>
         </div>
-        <div class="row slider-lg__wrap" id="slider-lg2">
+        <div class="row slider-lg__wrap slider-lg">
             <div class="slider-lg__item" style="background-image: url({{ template_uri }}/img/slider-1.jpg);">
                 <div class="block-tab--full-bottom">
                     <h3>Schools</h3>
@@ -181,11 +111,11 @@
         <div class="row extra-top">
             <h3 class="pull-left">Headline about the community &amp; lifestyle</h3>
             <div class="slider-lg__controls pull-right">
-                <span id="prev-lg3"></span>
-                <span id="next-lg3"></span>
+                <span class="prev-lg"></span>
+                <span class="next-lg"></span>
             </div>
         </div>
-        <div class="row slider-lg__wrap" id="slider-lg3">
+        <div class="row slider-lg__wrap slider-lg">
             <div class="slider-lg__item" style="background-image: url({{ template_uri }}/img/slider-1.jpg);">
                 <div class="block-tab--full-bottom">
                     <h3>Schools</h3>

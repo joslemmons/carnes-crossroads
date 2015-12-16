@@ -22,7 +22,7 @@
     <img class="ie-only bg" src="{{ template_uri }}/img/bg-hero-home.jpg">
     <video loop poster="{{ template_uri }}/img/bg-hero-home.jpg">
         <source src="http://dlpnyk6xy3bg9.cloudfront.net/60_noAudio.webm" type="video/webm">
-            <source src="http://dlpnyk6xy3bg9.cloudfront.net/60_noAudio.mp4"  type="video/mp4">
+        <source src="http://dlpnyk6xy3bg9.cloudfront.net/60_noAudio.mp4"  type="video/mp4">
     </video>
 </section>
 
@@ -52,7 +52,7 @@
                     </div>
                 </div>
                 {% endfor %}
-                <div class="block--button-whats-new">
+                <div class="block--button-red" style="background-image: url({{ template_uri }}/img/bg-button-whats-new.jpg);">
                     {% for item in page.getTopFeaturedTertiaryItems %}
                     <div class="block__button-inner">
                         <a href="{{ item.button.link }}"><span></span></a>
@@ -78,11 +78,11 @@
         <div class="row slider-lg__wrap slider-lg">
             {% for item in page.getHorizontalSliderItems %}
                 <div class="slider-lg__item" style="background-image: url('{{ item.image.get_src }}');">
-                <div class="block-tab--full-bottom">
-                    <h3>{{ item.title }}</h3>
-                    <p>{{ item.subtitle }}</p>
+                    <div class="block-tab--full-bottom">
+                        <h3>{{ item.title }}</h3>
+                        <p>{{ item.subtitle }}</p>
+                    </div>
                 </div>
-            </div>
             {% endfor %}
         </div>
     </div>
@@ -112,7 +112,7 @@
                     </div>
                 </div>
                 {% endfor %}
-                <div class="block--button-news">
+                <div class="block--button-orange" style="background-image: url({{ template_uri }}/img/bg-button-news.jpg);">
                     {% for item in page.getBottomFeaturedSecondaryItems %}
                     <div class="block__button-inner">
                         <a href="{{ item.button.link }}"><span></span></a>

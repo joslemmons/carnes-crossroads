@@ -2,6 +2,7 @@
 // ===================================
 
 .main-nav {
+    width: 100%;
     padding: 20px 0 0 0;
     background: url(./img/pattern-green.jpg) repeat center center;
     position: relative;
@@ -41,7 +42,7 @@
         a {
             color: $cc-dk-green;
             font-size: 0.75rem;
-            font-family: $avenir;
+            font-family: $font-sans;
             font-weight: $weight-bold;
             text-transform: uppercase;
             letter-spacing: 1px;
@@ -77,7 +78,7 @@
             color: $white;
             font-size: 1rem;
             letter-spacing: 1px;
-            font-family: $minion;
+            font-family: $font-serif;
             font-weight: $weight-bold;
             text-transform: uppercase;
         }

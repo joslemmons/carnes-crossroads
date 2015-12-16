@@ -14,6 +14,7 @@ Version: 1.0
  * Designed and built with all the love in the world by @mdo and @fat.
  */
 /*! normalize.css v2.1.0 | MIT License | git.io/normalize */
+@import url(https://fonts.googleapis.com/css?family=Nunito:400,300,700);
 article,
 aside,
 details,
@@ -3164,26 +3165,21 @@ td.visible-print {
   th.hidden-print,
   td.hidden-print {
     display: none !important; } }
-@font-face {
-  font-family: 'avenir';
-  src: url("/fonts/AvenirNextLTPro-Demi.eot?#iefix") format("embedded-opentype"), url("/fonts/AvenirNextLTPro-Demi.otf") format("opentype"), url("/fonts/AvenirNextLTPro-Demi.woff") format("woff"), url("/fonts/AvenirNextLTPro-Demi.ttf") format("truetype"), url("/fonts/AvenirNextLTPro-Demi.svg#AvenirNextLTPro-Demi") format("svg");
-  font-weight: 700;
-  font-style: normal; }
 html, body {
   color: #000;
   font-size: 1em;
-  font-family: "avenir", sans-serif, sans-serif;
+  font-family: "Nunito", sans-serif, sans-serif;
   line-height: 1.5; }
 
 h1, h2, h3, h4, h5, h6 {
-  font-family: "avenir", sans-serif, sans-serif;
+  font-family: "Nunito", sans-serif, sans-serif;
   line-height: 1;
   font-weight: 400;
   text-transform: uppercase;
   margin: 0; }
 
 h1 {
-  font-family: "minion-pro", serif;
+  font-family: "minion-pro", serif, serif;
   font-weight: 400;
   font-size: 6rem;
   line-height: 1;
@@ -3192,7 +3188,7 @@ h1 {
   text-shadow: 0 0 10px rgba(85, 93, 89, 0.5); }
 
 h2 {
-  font-family: "minion-pro", serif;
+  font-family: "minion-pro", serif, serif;
   font-weight: 400;
   font-size: 2.2rem;
   line-height: 1.4;
@@ -3200,7 +3196,7 @@ h2 {
   text-transform: none; }
 
 h3 {
-  font-family: "minion-pro", serif;
+  font-family: "minion-pro", serif, serif;
   font-weight: 400;
   font-size: 1.7rem;
   line-height: 1;
@@ -3209,7 +3205,7 @@ h3 {
 
 h4 {
   margin-bottom: 20px;
-  font-family: "avenir", sans-serif;
+  font-family: "Nunito", sans-serif, sans-serif;
   font-weight: 700;
   font-size: 1.4rem;
   letter-spacing: 1.5px;
@@ -3305,7 +3301,7 @@ a:focus, a:hover {
   padding-left: 20px;
   padding-right: 20px;
   position: relative;
-  font-family: "minion-pro", serif;
+  font-family: "minion-pro", serif, serif;
   font-weight: 400;
   font-size: 1rem;
   text-transform: uppercase;
@@ -3332,7 +3328,7 @@ a:focus, a:hover {
   position: relative; }
   .contact__checkbox p {
     margin: 0 0 0 3.5rem;
-    font-family: "avenir", sans-serif;
+    font-family: "Nunito", sans-serif, sans-serif;
     font-weight: 400;
     font-size: 0.8rem;
     text-transform: uppercase;
@@ -3373,7 +3369,7 @@ a:focus, a:hover {
 .form-control {
   height: 3.5rem;
   border-radius: 0;
-  font-family: "avenir", sans-serif;
+  font-family: "Nunito", sans-serif, sans-serif;
   font-weight: 400;
   font-size: 0.8rem;
   text-transform: uppercase;
@@ -3423,7 +3419,7 @@ a:focus, a:hover {
   .dropdown-menu li {
     margin: 10px 0;
     text-align: left;
-    font-family: "minion-pro", serif;
+    font-family: "minion-pro", serif, serif;
     font-size: 1rem;
     font-style: italic;
     font-weight: 400;
@@ -3443,6 +3439,7 @@ a:focus, a:hover {
     margin: 25px 0 0 8px; }
 
 .main-nav {
+  width: 100%;
   padding: 20px 0 0 0;
   background: url(./img/pattern-green.jpg) repeat center center;
   position: relative;
@@ -3472,7 +3469,7 @@ a:focus, a:hover {
     .main-nav__sub-item a {
       color: #414d0f;
       font-size: 0.75rem;
-      font-family: "avenir", sans-serif;
+      font-family: "Nunito", sans-serif, sans-serif;
       font-weight: 700;
       text-transform: uppercase;
       letter-spacing: 1px; }
@@ -3498,7 +3495,7 @@ a:focus, a:hover {
       color: #fff;
       font-size: 1rem;
       letter-spacing: 1px;
-      font-family: "minion-pro", serif;
+      font-family: "minion-pro", serif, serif;
       font-weight: 700;
       text-transform: uppercase; }
     .main-nav__primary-item a:hover {
@@ -3514,7 +3511,7 @@ a:focus, a:hover {
   margin-top: -25px;
   width: 90%; }
   .footer-search label {
-    font-family: "avenir", sans-serif;
+    font-family: "Nunito", sans-serif, sans-serif;
     font-weight: 500;
     font-size: 0.9rem;
     text-transform: uppercase;
@@ -3545,7 +3542,7 @@ a:focus, a:hover {
     list-style-type: none;
     display: inline-block; }
     .footer__nav-item a {
-      font-family: "avenir", sans-serif;
+      font-family: "Nunito", sans-serif, sans-serif;
       font-weight: 500;
       font-size: 0.78rem;
       text-transform: uppercase;
@@ -3559,7 +3556,7 @@ a:focus, a:hover {
   background-color: #919194; }
   .footer__grey p, .footer__grey a {
     margin: 0;
-    font-family: "avenir", sans-serif;
+    font-family: "Nunito", sans-serif, sans-serif;
     font-weight: 700;
     font-size: 0.7rem;
     text-transform: uppercase;
@@ -3584,8 +3581,8 @@ a:focus, a:hover {
   background-repeat: no-repeat;
   overflow: hidden; }
 
-#prev-lg1, #prev-lg2, #prev-lg3,
-#next-lg1, #next-lg2, #next-lg3 {
+.prev-lg,
+.next-lg {
   display: inline-block;
   width: 40px;
   height: 40px;
@@ -3597,19 +3594,19 @@ a:focus, a:hover {
   -moz-transition: all 0.2s ease-in-out 0s;
   -o-transition: all 0.2s ease-in-out 0s;
   transition: all 0.2s ease-in-out 0s; }
-  #prev-lg1:hover, #prev-lg2:hover, #prev-lg3:hover,
-  #next-lg1:hover, #next-lg2:hover, #next-lg3:hover {
+  .prev-lg:hover,
+  .next-lg:hover {
     opacity: .8; }
-  #prev-lg1 a, #prev-lg2 a, #prev-lg3 a,
-  #next-lg1 a, #next-lg2 a, #next-lg3 a {
+  .prev-lg a,
+  .next-lg a {
     display: block;
     width: 100%;
     height: 100%; }
 
-#prev-lg1, #prev-lg2, #prev-lg3 {
+.prev-lg {
   background: url(./img/icon-prev-next.png) no-repeat center left/cover; }
 
-#next-lg1, #next-lg2, #next-lg3 {
+.next-lg {
   background: url(./img/icon-prev-next.png) no-repeat center right/cover; }
 
 .slider-sm__nav {
@@ -3631,14 +3628,14 @@ a:focus, a:hover {
   right: 0;
   background-color: #768e1c; }
   .slider-sm__caption span {
-    font-family: "avenir", sans-serif;
+    font-family: "Nunito", sans-serif, sans-serif;
     font-weight: 500;
     font-size: 0.8rem;
     text-transform: none;
     color: #fff; }
 
-#prev-sm1, #prev-sm2, #prev-sm3,
-#next-sm1, #next-sm2, #next-sm3 {
+.prev-sm,
+.next-sm {
   display: inline-block;
   width: 30px;
   height: 30px;
@@ -3649,25 +3646,25 @@ a:focus, a:hover {
   -moz-transition: all 0.2s ease-in-out 0s;
   -o-transition: all 0.2s ease-in-out 0s;
   transition: all 0.2s ease-in-out 0s; }
-  #prev-sm1:hover, #prev-sm2:hover, #prev-sm3:hover,
-  #next-sm1:hover, #next-sm2:hover, #next-sm3:hover {
+  .prev-sm:hover,
+  .next-sm:hover {
     opacity: 0.6; }
-  #prev-sm1 a, #prev-sm2 a, #prev-sm3 a,
-  #next-sm1 a, #next-sm2 a, #next-sm3 a {
+  .prev-sm a,
+  .next-sm a {
     display: block;
     width: 100%;
     height: 100%; }
 
-#prev-sm1, #prev-sm2, #prev-sm3 {
+.prev-sm {
   background: url(./img/icon-prev-next.png) no-repeat center left/cover; }
 
-#next-sm1, #next-sm2, #next-sm3 {
+.next-sm {
   background: url(./img/icon-prev-next.png) no-repeat center right/cover; }
 
 .hero__map-link {
   margin: 100px auto 0 auto; }
   .hero__map-link a {
-    font-family: "minion-pro", serif;
+    font-family: "minion-pro", serif, serif;
     font-weight: 400;
     font-size: 0.85rem;
     text-transform: uppercase;
@@ -3848,7 +3845,7 @@ video {
     background-size: contain, auto;
     background-position: top center; }
     .page-content--white-floral-top p {
-      font-family: "minion-pro", serif;
+      font-family: "minion-pro", serif, serif;
       font-size: 1.15rem;
       color: #3d3421; }
     .page-content--white-floral-top .bx-wrapper {
@@ -3861,10 +3858,9 @@ video {
     padding: 50px 0 0 0;
     border-top: 1px solid #919194; }
 
-.block, .block--large, .block--small, .block--button, .block--button-whats-new, .block--button-news, .block--button-comm-map, .block--button-visit, .block--button-events {
+.block, .block--large, .block--small, .block--button, .block--button-green, .block--button-orange, .block--button-red {
   position: relative;
   width: 100%;
-  background-color: #fff;
   background-size: cover;
   background-position: center center;
   background-repeat: no-repeat;
@@ -3873,7 +3869,7 @@ video {
     height: 600px; }
   .block--small {
     height: 400px; }
-  .block--button, .block--button-whats-new, .block--button-news, .block--button-comm-map, .block--button-visit, .block--button-events {
+  .block--button, .block--button-green, .block--button-orange, .block--button-red {
     height: 170px;
     margin-top: 30px;
     padding: 12px;
@@ -3882,24 +3878,29 @@ video {
     -moz-transition: all 0.3s ease-in-out 0s;
     -o-transition: all 0.3s ease-in-out 0s;
     transition: all 0.3s ease-in-out 0s; }
-    .block--button:hover, .block--button-whats-new:hover, .block--button-news:hover, .block--button-comm-map:hover, .block--button-visit:hover, .block--button-events:hover {
+    .block--button:hover, .block--button-green:hover, .block--button-orange:hover, .block--button-red:hover {
       background-size: 120%; }
-    .block--button-whats-new {
-      background-image: url(./img/bg-button-whats-new.jpg); }
-    .block--button-news {
-      background-image: url(./img/bg-button-news.jpg); }
-    .block--button-comm-map {
-      background-image: url(./img/bg-button-map.jpg); }
-    .block--button-visit {
-      background-image: url(./img/bg-button-visit.jpg); }
-    .block--button-events {
-      background-image: url(./img/bg-button-events.jpg); }
+    .block--button-green {
+      box-shadow: 0px 500px rgba(118, 142, 28, 0.75) inset; }
+    .block--button-orange {
+      box-shadow: 0px 500px rgba(214, 168, 63, 0.2) inset; }
+    .block--button-red {
+      box-shadow: 0px 500px rgba(226, 111, 87, 0.2) inset; }
+  .block .green:after, .block--large .green:after, .block--small .green:after, .block--button .green:after, .block--button-green .green:after, .block--button-orange .green:after, .block--button-red .green:after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(118, 142, 28, 0.5); }
   .block__button-inner {
     width: 100%;
     height: 100%;
     padding: 45px 0 0 0;
     border: 1px solid #fff;
-    text-align: center; }
+    text-align: center;
+    z-index: 999; }
     .block__button-inner span {
       position: absolute;
       width: 100%;
@@ -3926,7 +3927,7 @@ video {
   background: #fff; }
   .block-tab p, .block-tab--top-left p, .block-tab--top-right p, .block-tab--bottom-left p, .block-tab--bottom-right p, .block-tab--full-bottom p {
     margin: 10px 0;
-    font-family: "avenir", sans-serif;
+    font-family: "Nunito", sans-serif, sans-serif;
     font-weight: 400;
     font-size: 0.75rem;
     line-height: 1.6;
@@ -3938,7 +3939,7 @@ video {
     display: inline-block;
     padding-right: 35px;
     margin: 15px 0 0 0;
-    font-family: "avenir", sans-serif;
+    font-family: "Nunito", sans-serif, sans-serif;
     font-weight: 500;
     font-size: 0.75rem;
     letter-spacing: 2px;
@@ -3969,7 +3970,7 @@ video {
   position: relative;
   text-align: center;
   background: #fff;
-  font-family: "avenir", sans-serif;
+  font-family: "Nunito", sans-serif, sans-serif;
   font-size: 1.15rem; }
   .calendar table {
     width: 100%; }
@@ -3977,9 +3978,9 @@ video {
     background: #d6a83f;
     position: relative;
     color: #fff;
-    margin: 0;
+    margin: 0 0 -5px 0;
     padding: 15px;
-    font-family: "avenir", sans-serif;
+    font-family: "Nunito", sans-serif, sans-serif;
     font-weight: 400;
     font-size: 1.5rem;
     text-transform: none; }
@@ -3987,14 +3988,16 @@ video {
     margin: 0;
     color: #fff;
     background: #d6a83f;
-    font-weight: 600;
+    font-weight: 700;
     text-transform: uppercase; }
+    .calendar thead td {
+      margin: 0;
+      border-radius: 0; }
   .calendar tbody {
     color: #7c8a95; }
   .calendar td {
     border: 2px solid transparent;
     border-radius: 50%;
-    display: inline-block;
     height: 2.7em;
     line-height: 2.7em;
     text-align: center;
