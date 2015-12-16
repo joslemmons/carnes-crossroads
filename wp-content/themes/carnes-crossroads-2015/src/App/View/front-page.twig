@@ -113,7 +113,7 @@
                 </div>
                 {% endfor %}
                 <div class="block--button-orange" style="background-image: url({{ template_uri }}/img/bg-button-news.jpg);">
-                    {% for item in page.getBottomFeaturedSecondaryItems %}
+                    {% for item in page.getBottomFeaturedTertiaryItems %}
                     <div class="block__button-inner">
                         <a href="{{ item.button.link }}"><span></span></a>
                         <h3>{{ item.title }}</h3>
