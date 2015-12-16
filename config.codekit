@@ -50290,6 +50290,15 @@
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0
 		},
+	"\/wp-content\/themes\/carnes-crossroads-2015\/piklist\/parts\/meta-boxes\/news-and-events.php": {
+		"fileType": 8192,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"inputAbbreviatedPath": "\/wp-content\/themes\/carnes-crossroads-2015\/piklist\/parts\/meta-boxes\/news-and-events.php",
+		"outputAbbreviatedPath": "No Output Path",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0
+		},
 	"\/wp-content\/themes\/carnes-crossroads-2015\/piklist\/parts\/meta-boxes\/page.php": {
 		"fileType": 8192,
 		"ignore": 0,
@@ -51352,6 +51361,15 @@
 		"ignore": 0,
 		"ignoreWasSetByUser": 0,
 		"inputAbbreviatedPath": "\/wp-content\/themes\/carnes-crossroads-2015\/src\/App\/Model\/Logger.php",
+		"outputAbbreviatedPath": "No Output Path",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0
+		},
+	"\/wp-content\/themes\/carnes-crossroads-2015\/src\/App\/Model\/NewsAndEventsPage.php": {
+		"fileType": 8192,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"inputAbbreviatedPath": "\/wp-content\/themes\/carnes-crossroads-2015\/src\/App\/Model\/NewsAndEventsPage.php",
 		"outputAbbreviatedPath": "No Output Path",
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0

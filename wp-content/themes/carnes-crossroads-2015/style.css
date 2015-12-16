@@ -3881,19 +3881,11 @@ video {
     .block--button:hover, .block--button-green:hover, .block--button-orange:hover, .block--button-red:hover {
       background-size: 120%; }
     .block--button-green {
-      box-shadow: 0px 500px rgba(118, 142, 28, 0.75) inset; }
+      box-shadow: 0px 500px rgba(118, 142, 28, 0.85) inset; }
     .block--button-orange {
-      box-shadow: 0px 500px rgba(214, 168, 63, 0.2) inset; }
+      box-shadow: 0px 500px rgba(214, 168, 63, 0.85) inset; }
     .block--button-red {
-      box-shadow: 0px 500px rgba(226, 111, 87, 0.2) inset; }
-  .block .green:after, .block--large .green:after, .block--small .green:after, .block--button .green:after, .block--button-green .green:after, .block--button-orange .green:after, .block--button-red .green:after {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background: rgba(118, 142, 28, 0.5); }
+      box-shadow: 0px 500px rgba(226, 111, 87, 0.85) inset; }
   .block__button-inner {
     width: 100%;
     height: 100%;

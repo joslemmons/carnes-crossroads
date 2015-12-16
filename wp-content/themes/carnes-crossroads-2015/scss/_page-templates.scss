@@ -159,28 +159,18 @@
 
         &-green {
             @extend .block--button;
-            box-shadow: 0px 500px rgba($cc-green, 0.75) inset;
+            box-shadow: 0px 500px rgba($cc-green, 0.85) inset;
         }
 
         &-orange {
             @extend .block--button;
-            box-shadow: 0px 500px rgba($cc-orange, 0.2) inset;
+            box-shadow: 0px 500px rgba($cc-orange, 0.85) inset;
         }
 
         &-red {
             @extend .block--button;
-            box-shadow: 0px 500px rgba($cc-red, 0.2) inset;
+            box-shadow: 0px 500px rgba($cc-red, 0.85) inset;
         }
-    }
-
-    .green:after {
-        content: '';
-        position: absolute;
-        top: 0;
-        left: 0;
-        right: 0;
-        bottom: 0;
-        background: rgba($cc-green, 0.5);
     }
 
     &__button-inner {
