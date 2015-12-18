@@ -1,7 +1,7 @@
 {% extends 'base.twig' %}
 {% block template %}
 
-    <section class="hero__page" style="background-image: url('{{ page.thumbnail.get_src }}')">
+    <section class="hero__page" style="background-image: url('{{ page.thumbnail.get_src|resize(1534,653) }}')">
         <div class="hero__content-tab-{{ page.getHeroColor }}">
         <div class="hero__content-inner">
             <h1>{{ page.title }}</h1>
@@ -28,7 +28,7 @@
                 {% endif %}
                 <div class="slider-sm__wrap slider-sm">
                     {% for image in child_page.getGalleryImages %}
-                        <div class="slider-sm__item" style="background-image: url('{{ image.get_src }}');">
+                        <div class="slider-sm__item" style="background-image: url('{{ image.get_src|resize(718,350) }}');">
                             {% if image.caption %}
                         <div class="slider-sm__caption">
                             <span>{{ image.caption }}</span>
@@ -85,7 +85,7 @@
                         {% endif %}
                         <div class="slider-sm__wrap slider-sm">
                             {% for image in child_page.getGalleryImages %}
-                                <div class="slider-sm__item" style="background-image: url('{{ image.get_src }}');">
+                                <div class="slider-sm__item" style="background-image: url('{{ image.get_src|resize(718,350) }}');">
                                     {% if image.caption %}
                                         <div class="slider-sm__caption">
                                             <span>{{ image.caption }}</span>
