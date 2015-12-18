@@ -5,6 +5,11 @@ class Page extends \TimberPost
 
     public static $field_headline;
     public static $field_gallery_image_attachment_ids;
+    public static $field_show_button;
+    public static $field_button_action;
+    public static $field_button_page_to_link_to;
+    public static $field_button_custom_link;
+    public static $field_button_text;
 
     public static $field_use_custom_quicklinks;
 
@@ -35,11 +40,18 @@ class Page extends \TimberPost
     const USE_CUSTOM_QUICKLINKS = 'true';
     const DO_NOT_USE_CUSTOM_QUICKLINK = 'false';
     const USE_DEFAULT_QUICKLINKS = 'default';
+    const SHOW_BUTTON = 'true';
+    const DO_NOT_SHOW_BUTTON = 'false';
 
     public static function bootstrap()
     {
         self::$field_headline = Config::getKeyPrefix() . 'headline';
         self::$field_gallery_image_attachment_ids = Config::getKeyPrefix() . 'gallery_image_attachment_ids';
+        self::$field_show_button = Config::getKeyPrefix() . 'show_button';
+        self::$field_button_action = Config::getKeyPrefix() . 'button_action';
+        self::$field_button_page_to_link_to = Config::getKeyPrefix() . 'button_page_to_link_to';
+        self::$field_button_custom_link = Config::getKeyPrefix() . 'button_custom_link';
+        self::$field_button_text = Config::getKeyPrefix() . 'button_text';
 
         self::$field_use_custom_quicklinks = Config::getKeyPrefix() . 'use_custom_quicklinks';
 
@@ -216,6 +228,46 @@ class Page extends \TimberPost
         }
 
         return $color;
+    }
+
+    public static function getButtonChoicesForPiklist()
+    {
+        return array(
+            Page::SHOW_BUTTON => 'Yes',
+            Page::DO_NOT_SHOW_BUTTON => 'No'
+        );
+    }
+
+    public function getButton()
+    {
+        $field = self::$field_show_button;
+        $show_field = $this->$field;
+
+        $button = array();
+        if (self::SHOW_BUTTON === $show_field) {
+            $field_link_action = self::$field_button_action;
+            $link_action = $this->$field_link_action;
+
+            if (self::IS_LINK_TO_PAGE === $link_action) {
+                $field_link_to_page_id = self::$field_button_page_to_link_to;
+                $link_to_page_id = $this->$field_link_to_page_id;
+                $button['link'] = get_page_link($link_to_page_id);
+            } else {
+                $field_link_to_custom = self::$field_button_custom_link;
+                $custom_link = $this->$field_link_to_custom;
+                $button['link'] = $custom_link;
+            }
+
+            $field_button_text = self::$field_button_text;
+            $button_text = $this->$field_button_text;
+
+            $button['title'] = 'More Info';
+            if ('' !== trim($button_text)) {
+                $button['title'] = $button_text;
+            }
+        }
+
+        return $button;
     }
 
 }

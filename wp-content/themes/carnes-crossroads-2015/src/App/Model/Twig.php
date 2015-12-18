@@ -1,5 +1,7 @@
 <?php namespace App\Model;
 
+use Cocur\Slugify\Slugify;
+
 class Twig
 {
     public static function init()
@@ -11,12 +13,20 @@ class Twig
     public static function addFilters($twig)
     {
         $twig->addFilter('twitterify', new \Twig_Filter_Function(array(get_class(), 'twitterify')));
+        $twig->addFilter('slugify', new \Twig_Filter_Function(array(get_class(), 'slugify')));
+        $twig->addFilter('truncateToFirstParagraph', new \Twig_Filter_Function(array(get_class(), 'truncateToFirstParagraph')));
         return $twig;
     }
 
     public static function addExtensions($twig)
     {
         return $twig;
+    }
+
+    public static function slugify($text)
+    {
+        $slugify = new Slugify();
+        return $slugify->slugify($text);
     }
 
     public static function twitterify($ret)
@@ -29,6 +39,21 @@ class Twig
         $ret = preg_replace("/\B@(\w+)/", " <a href=\"http://www.twitter.com/\\1\" target=\"_blank\">@\\1</a>", $ret);
         $ret = preg_replace("/\B#(\w+)/", " <a href=\"http://search.twitter.com/search?q=\\1\" target=\"_blank\">#\\1</a>", $ret);
         return $ret;
+    }
+
+    public static function truncateToFirstParagraph($text, $readMoreHtml = '')
+    {
+        $strLen = strlen($text);
+        $text_with_excerpt = substr($text, 0, strpos($text, '</p>'));
+
+        if ($strLen === strlen($text_with_excerpt) + 5) {
+            // there's only one big paragraph
+            return $text;
+        }
+
+        $text_with_excerpt .= ($readMoreHtml . '</p>');
+
+        return $text_with_excerpt;
     }
 
 }
