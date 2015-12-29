@@ -3244,7 +3244,8 @@ p, ol, ul {
   -webkit-font-smoothing: antialiased; }
 
 html, body {
-  height: 100%; }
+  height: 100%;
+  overflow-x: hidden; }
 
 a {
   -webkit-transition: all 0.2s ease-in-out 0s;
@@ -3565,8 +3566,15 @@ a:focus, a:hover {
   .footer__grey a:hover {
     color: #d9d9d9; }
 
+.slider-container {
+  overflow: visible; }
+
+.bx-viewport {
+  height: auto !important; }
+
 .slider-lg__wrap {
-  margin-top: 30px; }
+  margin-top: 30px;
+  margin-left: 0; }
 .slider-lg__controls {
   display: inline-block; }
 .slider-lg__item {

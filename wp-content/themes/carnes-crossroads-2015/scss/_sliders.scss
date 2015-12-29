@@ -3,9 +3,18 @@
 
 // MULTIPLE IMAGE CAROSELS
 
+.slider-container {
+    overflow: visible;
+}
+
+.bx-viewport {
+    height: auto !important;
+}
+
 .slider-lg {
     &__wrap {
         margin-top: 30px;
+        margin-left: 0;
     }
 
     &__controls {

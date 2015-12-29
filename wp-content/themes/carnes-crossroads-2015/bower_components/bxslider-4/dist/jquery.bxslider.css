@@ -14,6 +14,7 @@
   position: relative;
   margin: 0 -15px;
   padding: 0;
+  width: 3000px;
   *zoom: 1;
   -ms-touch-action: pan-y;
   touch-action: pan-y;
