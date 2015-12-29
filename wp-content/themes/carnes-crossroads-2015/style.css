@@ -3324,6 +3324,53 @@ a:focus, a:hover {
     letter-spacing: 1px;
     margin: 15px 5px 0; }
 
+.dropdown-toggle {
+  min-width: 275px;
+  padding: 10px 15px;
+  margin-right: 20px;
+  border-radius: 0;
+  border: none;
+  outline: none;
+  font-family: "minion-pro", serif;
+  font-size: 1.05rem;
+  font-style: italic;
+  font-weight: 400;
+  color: #828181; }
+  .dropdown-toggle .caret {
+    margin-left: 25px;
+    color: #828181;
+    border-top: 6px solid #828181 !important;
+    border-right: 6px solid transparent;
+    border-left: 6px solid transparent; }
+
+.dropdown-menu {
+  min-width: 275px;
+  padding: 0;
+  margin: 0;
+  border-radius: 0;
+  border: none; }
+  .dropdown-menu li {
+    margin: 10px 0;
+    text-align: left;
+    font-family: "minion-pro", serif, serif;
+    font-size: 1rem;
+    font-style: italic;
+    font-weight: 400;
+    color: #828181; }
+  .dropdown-menu li a:hover {
+    background-color: #828181; }
+
+.events-headline-contact {
+  margin-top: 50px; }
+  .events-headline-contact h2 {
+    margin-bottom: 75px; }
+  .events-headline-contact h4 {
+    margin-left: 15px;
+    font-size: 1rem;
+    font-weight: 500; }
+  .events-headline-contact .btn {
+    margin: 25px 0 0 8px; }
+
 .gfield {
   display: inline-block;
   border-radius: 0;
@@ -3355,7 +3402,10 @@ a:focus, a:hover {
   border: 1px solid #ddd;
   outline: none;
   font-family: "Nunito", sans-serif, sans-serif;
-  font-size: 0.8rem; }
+  font-size: 0.8rem;
+  background: url(./img/icon-caret.png) no-repeat 95% center;
+  background-size: 13px;
+  color: darkgray; }
 
 .gform_wrapper .gform_body .gform_fields .gfield .gfield_checkbox li input[type=checkbox] {
   -webkit-appearance: none;
@@ -3422,53 +3472,6 @@ a:focus, a:hover {
   font-size: 1rem;
   text-transform: uppercase;
   color: #919194; }
-
-.dropdown-toggle {
-  min-width: 275px;
-  padding: 10px 15px;
-  margin-right: 20px;
-  border-radius: 0;
-  border: none;
-  outline: none;
-  font-family: "minion-pro", serif;
-  font-size: 1.05rem;
-  font-style: italic;
-  font-weight: 400;
-  color: #828181; }
-  .dropdown-toggle .caret {
-    margin-left: 25px;
-    color: #828181;
-    border-top: 6px solid #828181 !important;
-    border-right: 6px solid transparent;
-    border-left: 6px solid transparent; }
-
-.dropdown-menu {
-  min-width: 275px;
-  padding: 0;
-  margin: 0;
-  border-radius: 0;
-  border: none; }
-  .dropdown-menu li {
-    margin: 10px 0;
-    text-align: left;
-    font-family: "minion-pro", serif, serif;
-    font-size: 1rem;
-    font-style: italic;
-    font-weight: 400;
-    color: #828181; }
-  .dropdown-menu li a:hover {
-    background-color: #828181; }
-
-.events-headline-contact {
-  margin-top: 50px; }
-  .events-headline-contact h2 {
-    margin-bottom: 75px; }
-  .events-headline-contact h4 {
-    margin-left: 15px;
-    font-size: 1rem;
-    font-weight: 500; }
-  .events-headline-contact .btn {
-    margin: 25px 0 0 8px; }
 
 .main-nav {
   width: 100%;
