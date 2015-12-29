@@ -11,7 +11,8 @@
   "require": {
     "nesbot/carbon": "1.18.0",
     "facebook/php-sdk-v4": "~5.0",
-    "guzzlehttp/guzzle": "~6.0"
+    "guzzlehttp/guzzle": "~6.0",
+    "cocur/slugify": "~1.4"
   },
   "autoload": {
     "files": ["inc/TwitterAPIExchange.php", "inc/calendar-build.php"],

@@ -1,7 +1,7 @@
 {% extends 'base.twig' %}
 {% block template %}
 
-    <section class="hero__page" style="background-image: url('{{ page.thumbnail.get_src }}')">
+    <section class="hero__page" style="background-image: url('{{ page.thumbnail.src }}')">
         <div class="hero__content-tab-{{ page.getHeroColor }}">
         <div class="hero__content-inner">
             <h1>{{ page.title }}</h1>
@@ -20,10 +20,12 @@
             {% if loop.index is odd %}
         <div class="row">
             <div class="col-xs-12 col-md-7">
+                {% if child_page.getGalleryImages|length > 1 %}
                 <div class="slider-sm__nav pull-right">
                     <span class="prev-sm"></span>
                     <span class="next-sm"></span>
                 </div>
+                {% endif %}
                 <div class="slider-sm__wrap slider-sm">
                     {% for image in child_page.getGalleryImages %}
                         <div class="slider-sm__item" style="background-image: url('{{ image.get_src }}');">
@@ -36,27 +38,54 @@
                     {% endfor %}
                 </div>
             </div>
-            <div class="col-xs-12 col-md-4 col-md-offset-1 text-left">
+            <div class="col-xs-12 col-md-4 col-md-offset-1 text-left child-content">
                 <h4>{{ child_page.title }}</h4>
-                <p>{{ child_page.content|truncate(100) }}</p>
+                {% if child_page.content|length > 450 %}
+                    {% set expandLink = '<a class="expand-link">&nbsp;&hellip;Read More</a>' %}
+                    {% set firstParagraph = child_page.content|truncateToFirstParagraph(expandLink) %}
+                    {{ firstParagraph }}<span class="more-content" style="display:none;">
+                    <p>{{ child_page.content|slice(firstParagraph|length - expandLink|length) }}</p></span>
+                {% else %}
+                    <p>
+                        {{ child_page.content }}
+                    </p>
+                {% endif %}
+                {% if child_page.getButton %}
+                    {% set button = child_page.getButton %}
+                    <a class="btn btn-green-small" href="{{ button.link }}">{{ button.title }}</a>
+                {% endif %}
             </div>
         </div>
             {% else %}
 
                 <div class="row">
-                    <div class="col-xs-12 col-md-4 text-right">
+                    <div class="col-xs-12 col-md-4 text-right child-content">
                         <h4>{{ child_page.title }}</h4>
-                        <p>{{ child_page.content|truncate(100) }}</p>
-                        {#<a class="btn btn-green-small">Charleston Visitors Bureau</a>#}
+                        {% if child_page.content|length > 450 %}
+                            {% set expandLink = '<a class="expand-link">&nbsp;&hellip;Read More</a>' %}
+                            {% set firstParagraph = child_page.content|truncateToFirstParagraph(expandLink) %}
+                            {{ firstParagraph }}<span class="more-content" style="display:none;">
+                            <p>{{ child_page.content|slice(firstParagraph|length - expandLink|length) }}</p></span>
+                        {% else %}
+                            <p>
+                                {{ child_page.content }}
+                            </p>
+                        {% endif %}
+                        {% if child_page.getButton %}
+                            {% set button = child_page.getButton %}
+                            <a class="btn btn-green-small" href="{{ button.link }}">{{ button.title }}</a>
+                        {% endif %}
                     </div>
                     <div class="col-xs-12 col-md-7 col-md-offset-1">
+                        {% if child_page.getGalleryImages|length > 1 %}
                         <div class="slider-sm__nav pull-right">
                             <span class="prev-sm"></span>
                             <span class="next-sm"></span>
                         </div>
+                        {% endif %}
                         <div class="slider-sm__wrap slider-sm">
                             {% for image in child_page.getGalleryImages %}
-                                <div class="slider-sm__item" style="background-image: url('{{ image.get_src }}');">
+                                <div class="slider-sm__item" style="background-image: url('{{ image.get_src|resize(718,350) }}');">
                                     {% if image.caption %}
                                         <div class="slider-sm__caption">
                                             <span>{{ image.caption }}</span>

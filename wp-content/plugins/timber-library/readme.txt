@@ -2,7 +2,7 @@
 Contributors: jarednova, lggorman
 Tags: template engine, templates, twig
 Requires at least: 3.7
-Stable tag: 0.22.3
+Stable tag: 0.22.4
 Tested up to: 4.3.1
 PHP version: 5.3.0 or greater
 License: GPLv2 or later
@@ -17,7 +17,7 @@ Once Timber is installed and activated in your plugin directory, it gives any Wo
 
 ### Looking for docs?
 * **[Project Page](http://upstatement.com/timber)**
-* [Timber Documentation](https://jarednova.github.io/timber/)
+* [Timber Documentation](https://github.com/jarednova/timber/wiki/)
 * [Twig Reference (from SensioLabs)](http://twig.sensiolabs.org/doc/templates.html)
 _Twig is the template language powering Timber; if you need a little background on what a template language is, [Twig's homepage has an overview](http://twig.sensiolabs.org/)_
 * **[Video Tutorials](https://github.com/jarednova/timber/wiki/Video-Tutorials)**
@@ -41,7 +41,12 @@ Timber is great for any WordPress developer who cares about writing good, mainta
 
 == Changelog ==
 
+= 0.22.4 =
+* Fixed [bug](https://github.com/jarednova/timber/issues/785) in get_calling_script file (thanks @gwagroves)
+* Added tons of new tests and docs (thanks @lggorman and @jarednova)
+
 = 0.22.3 =
+* Fix to comment threadding (thanks @josephbergdoll)
 * Fixed-up conditional for when comments are being moderated (thanks @lggorman)
 * Fixed hooks for when attachments are deleted (thanks @lgaechter)
 * Added a new filter for `list` (thanks @lggorman)
