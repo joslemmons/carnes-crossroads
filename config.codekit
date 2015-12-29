@@ -66207,6 +66207,17 @@
 		"outputPathIsSetByUser": 0,
 		"processed": 0
 		},
+	"\/wp-content\/uploads\/2015\/11\/CC-Bocci-Selects-2014-16-300dpi-718x350-c-default.jpg": {
+		"fileType": 16384,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"initialSize": 104293,
+		"inputAbbreviatedPath": "\/wp-content\/uploads\/2015\/11\/CC-Bocci-Selects-2014-16-300dpi-718x350-c-default.jpg",
+		"outputAbbreviatedPath": "\/wp-content\/uploads\/2015\/11\/CC-Bocci-Selects-2014-16-300dpi-718x350-c-default.jpg",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"processed": 0
+		},
 	"\/wp-content\/uploads\/2015\/11\/CC-Bocci-Selects-2014-16-300dpi-768x512.jpg": {
 		"fileType": 16384,
 		"ignore": 0,
@@ -66537,6 +66548,17 @@
 		"outputPathIsSetByUser": 0,
 		"processed": 0
 		},
+	"\/wp-content\/uploads\/2015\/11\/CC-Home-Interiors-Selects-2014-05-300dpi_edit-718x350-c-default.jpg": {
+		"fileType": 16384,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"initialSize": 66212,
+		"inputAbbreviatedPath": "\/wp-content\/uploads\/2015\/11\/CC-Home-Interiors-Selects-2014-05-300dpi_edit-718x350-c-default.jpg",
+		"outputAbbreviatedPath": "\/wp-content\/uploads\/2015\/11\/CC-Home-Interiors-Selects-2014-05-300dpi_edit-718x350-c-default.jpg",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"processed": 0
+		},
 	"\/wp-content\/uploads\/2015\/11\/CC-Home-Interiors-Selects-2014-05-300dpi_edit-768x540.jpg": {
 		"fileType": 16384,
 		"ignore": 0,
@@ -66588,6 +66610,17 @@
 		"initialSize": 17610,
 		"inputAbbreviatedPath": "\/wp-content\/uploads\/2015\/11\/CC-Model-Row-Selects-2014-02-15inw-300dpi-1-300x161.jpg",
 		"outputAbbreviatedPath": "\/wp-content\/uploads\/2015\/11\/CC-Model-Row-Selects-2014-02-15inw-300dpi-1-300x161.jpg",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"processed": 0
+		},
+	"\/wp-content\/uploads\/2015\/11\/CC-Model-Row-Selects-2014-02-15inw-300dpi-1-718x350-c-default.jpg": {
+		"fileType": 16384,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"initialSize": 80573,
+		"inputAbbreviatedPath": "\/wp-content\/uploads\/2015\/11\/CC-Model-Row-Selects-2014-02-15inw-300dpi-1-718x350-c-default.jpg",
+		"outputAbbreviatedPath": "\/wp-content\/uploads\/2015\/11\/CC-Model-Row-Selects-2014-02-15inw-300dpi-1-718x350-c-default.jpg",
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0,
 		"processed": 0
@@ -67149,6 +67182,17 @@
 		"initialSize": 23602,
 		"inputAbbreviatedPath": "\/wp-content\/uploads\/2015\/11\/marsh-300x150.jpg",
 		"outputAbbreviatedPath": "\/wp-content\/uploads\/2015\/11\/marsh-300x150.jpg",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"processed": 0
+		},
+	"\/wp-content\/uploads\/2015\/11\/marsh-718x350-c-default.jpg": {
+		"fileType": 16384,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"initialSize": 123067,
+		"inputAbbreviatedPath": "\/wp-content\/uploads\/2015\/11\/marsh-718x350-c-default.jpg",
+		"outputAbbreviatedPath": "\/wp-content\/uploads\/2015\/11\/marsh-718x350-c-default.jpg",
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0,
 		"processed": 0
@@ -67842,6 +67886,17 @@
 		"initialSize": 20814,
 		"inputAbbreviatedPath": "\/wp-content\/uploads\/2015\/12\/page-ss-coast-300x171.jpg",
 		"outputAbbreviatedPath": "\/wp-content\/uploads\/2015\/12\/page-ss-coast-300x171.jpg",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"processed": 0
+		},
+	"\/wp-content\/uploads\/2015\/12\/page-ss-coast-718x350-c-default.jpg": {
+		"fileType": 16384,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"initialSize": 78541,
+		"inputAbbreviatedPath": "\/wp-content\/uploads\/2015\/12\/page-ss-coast-718x350-c-default.jpg",
+		"outputAbbreviatedPath": "\/wp-content\/uploads\/2015\/12\/page-ss-coast-718x350-c-default.jpg",
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0,
 		"processed": 0

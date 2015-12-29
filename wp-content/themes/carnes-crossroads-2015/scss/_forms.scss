@@ -2,93 +2,197 @@
 // ===================================
 
 
-.contact__checkbox {
-    width: 100%;
-    position: relative;
-
-    p {
-        margin: 0 0 0 3.5rem;
-        font-family: $font-sans;
-        font-weight: $weight-regular;
-        font-size: 0.8rem;
-        text-transform: uppercase;
-        line-height: 0;
-        color: $cc-med-grey;
-    }
-
-    input[type="checkbox"] {
-        visibility: hidden;
-
-        &:checked + label:after {
-            opacity: 1;
-        }
-    }
-
-    & label {
-        cursor: pointer;
-        position: absolute;
-        width: 2.5rem;
-        height: 2.5rem;
-        top: 0;
-        left: 0;
-        border: 1px solid $input-border;
-    }
-
-    & label:after {
-        opacity: 0.3;
-        content: '';
-        position: absolute;
-        width: 1.5rem;
-        height: 0.65rem;
-        background: transparent;
-        top: 0.65rem;
-        left: 0.5rem;
-        border: 2px solid $input-border;
-        border-top: none;
-        border-right: none;
-
-        -webkit-transform: rotate(-45deg);
-        -moz-transform: rotate(-45deg);
-        -o-transform: rotate(-45deg);
-        -ms-transform: rotate(-45deg);
-        transform: rotate(-45deg);
-    }
-
-    & label:hover::after {
-        opacity: 0.7;
-    }
-}
-
-.form-control {
-    height: 3.5rem;
+.gfield {
+    display: inline-block;
     border-radius: 0;
-    font-family: $font-sans;
-    font-weight: $weight-regular;
     font-size: 0.8rem;
-    text-transform: uppercase;
-    width: 100%;
+    width: 50%;
     text-align: left;
     color: $cc-med-grey;
 }
 
-.btn-group-full {
-    width: 100%;
-    line-height: 0;
+.gform_wrapper .hidden_label input.large,
+.gform_wrapper .hidden_label select.large,
+.gform_wrapper .top_label input.large,
+.gform_wrapper .top_label select.large {
+    width: 93% !important;
+    margin-bottom: 10px;
+    height: 3.5rem;
+    text-indent: 15px;
+    font-family: $font-sans;
+    font-weight: $weight-regular;
+    font-size: 0.8rem;
+    text-transform: uppercase;
+    color: $cc-med-grey;
+}
 
-    .caret {
-        margin-top: 5px;
-        float: right;
-        color: $cc-med-grey;
-        border-top:   6px solid $cc-med-grey !important;
-        border-right: 6px solid transparent;
-        border-left:  6px solid transparent;
+.gform_wrapper .gform_body .gform_fields .gfield select {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    padding: $padding-base-vertical 0;
+    border-radius: 0;
+    border: 1px solid #ddd;
+    outline: none;
+    font-family: $font-sans;
+    font-size: 0.8rem;
+}
+
+.gform_wrapper .gform_body .gform_fields .gfield .gfield_checkbox li input[type=checkbox] {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    margin-right: 20px;
+    background-color: $white;
+    border: 1px solid $input-border;
+    padding: 20px;
+    border-radius: 0;
+    display: inline-block;
+    position: relative;
+
+    &:active, &:checked:active {
+        background-color: $white;
     }
 
-    .dropdown-menu {
-        margin: 0 12px;
-        width: 93%;
+    &:checked {
+        background-color: $white;
+        color: #99a1a7;
+    }
+
+    &:checked:after {
+        content: '\2714';
+        font-size: 1.5rem;
+        position: absolute;
+        top: 4px;
+        left: 10px;
+        color: $cc-lt-grey;
     }
 }
+
+.gform_wrapper .gfield_checkbox li label,
+.gform_wrapper .gfield_radio li label {
+    margin-top: 15px !important;
+    font-family: $font-sans !important;
+    font-weight: $weight-regular !important;
+    font-size: 0.8rem !important;
+}
+
+.gform_wrapper .gform_footer {
+    margin-top: -55px !important;
+}
+
+.gform_wrapper .gform_footer input[type=submit] {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    padding-left: 20px;
+    padding-right: 20px;
+    position: relative;
+    font-family: $font-serif;
+    font-weight: $weight-regular;
+    font-size: 1rem;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    color: $white;
+    background-color: $cc-green;
+    border: 1px solid darken($cc-green, 10);
+    outline: 5px solid $cc-green;
+    left: 81%;
+
+    &:hover {
+        color: $white;
+        text-shadow: 0 2px 10px rgba($black, .5);
+        background-color: darken($cc-green, 2);
+        border: 1px solid darken($cc-green, 10);
+        outline: 5px solid darken($cc-green, 2);;
+    }
+}
+
+.gform_confirmation_message {
+    margin-top: 10px;
+    font-family: $font-sans;
+    font-weight: $weight-regular;
+    font-size: 1rem;
+    text-transform: uppercase;
+    color: $cc-lt-grey;
+}
+
+
+// .contact__checkbox {
+//     width: 100%;
+//     position: relative;
+
+//     p {
+//         margin: 0 0 0 3.5rem;
+//         font-family: $font-sans;
+//         font-weight: $weight-regular;
+//         font-size: 0.8rem;
+//         text-transform: uppercase;
+//         line-height: 0;
+//         color: $cc-med-grey;
+//     }
+
+//     input[type="checkbox"] {
+//         visibility: hidden;
+
+//         &:checked + label:after {
+//             opacity: 1;
+//         }
+//     }
+
+//     & label {
+//         cursor: pointer;
+//         position: absolute;
+//         width: 2.5rem;
+//         height: 2.5rem;
+//         top: 0;
+//         left: 0;
+//         border: 1px solid $input-border;
+//     }
+
+//     & label:after {
+//         opacity: 0.3;
+//         content: '';
+//         position: absolute;
+//         width: 1.5rem;
+//         height: 0.65rem;
+//         background: transparent;
+//         top: 0.65rem;
+//         left: 0.5rem;
+//         border: 2px solid $input-border;
+//         border-top: none;
+//         border-right: none;
+
+//         -webkit-transform: rotate(-45deg);
+//         -moz-transform: rotate(-45deg);
+//         -o-transform: rotate(-45deg);
+//         -ms-transform: rotate(-45deg);
+//         transform: rotate(-45deg);
+//     }
+
+//     & label:hover::after {
+//         opacity: 0.7;
+//     }
+// }
+
+// .btn-group-full {
+//     width: 100%;
+//     line-height: 0;
+
+//     .caret {
+//         margin-top: 5px;
+//         float: right;
+//         color: $cc-med-grey;
+//         border-top:   6px solid $cc-med-grey !important;
+//         border-right: 6px solid transparent;
+//         border-left:  6px solid transparent;
+//     }
+
+//     .dropdown-menu {
+//         margin: 0 12px;
+//         width: 93%;
+//     }
+// }
 
 .dropdown-toggle {
     min-width: 275px;
