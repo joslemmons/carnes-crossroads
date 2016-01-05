@@ -3485,13 +3485,13 @@ a:focus, a:hover {
     position: relative;
     width: 100%; }
   .main-nav__logo {
-    width: 225px;
-    margin: 0 0 0 8%;
-    float: left; }
+    width: 15%;
+    margin: 0 0 0 6%;
+    float: left;
+    max-width: 225px; }
   .main-nav__sub {
-    width: 60%;
     margin: 0;
-    padding: 0 8% 0 0;
+    padding: 0 6% 0 0;
     float: right;
     list-style-type: none;
     text-align: right; }
@@ -3504,36 +3504,45 @@ a:focus, a:hover {
       background: url(./img/grad-divider.png) no-repeat left top; }
     .main-nav__sub-item a {
       color: #414d0f;
-      font-size: 1rem;
+      font-size: 0.85rem;
       font-family: "proxima-nova", sans-serif, sans-serif;
       font-weight: 700;
       text-transform: uppercase;
       letter-spacing: 2px; }
+      @media (min-width: 1775px) {
+        .main-nav__sub-item a {
+          font-size: 1rem; } }
     .main-nav__sub-item a:hover {
       color: #9bb824; }
   .main-nav__primary {
-    width: 70%;
     margin: 0;
     float: right;
-    padding: 0 8% 0 10px;
+    padding: 0 6% 0 10px;
     list-style-type: none;
     text-align: right;
     background: url(./img/grad-green.png) no-repeat right top/cover; }
   .main-nav__primary-item {
-    margin: 0 0 0 35px;
+    margin: 0 0 0 20px;
     height: 100%;
-    padding: 30px 0;
+    padding: 25px 0;
     display: inline-block; }
+    @media (min-width: 1550px) {
+      .main-nav__primary-item {
+        margin: 0 0 0 35px;
+        padding: 30px 0; } }
     .main-nav__primary-item:first-of-type {
       padding-left: 50px;
       background: url(./img/grad-divider.png) no-repeat left top; }
     .main-nav__primary-item a {
       color: #fff;
-      font-size: 1.25rem;
+      font-size: 1rem;
       letter-spacing: 2px;
       font-family: "minion-pro", serif, serif;
       font-weight: 700;
       text-transform: uppercase; }
+      @media (min-width: 1675px) {
+        .main-nav__primary-item a {
+          font-size: 1.25rem; } }
     .main-nav__primary-item a:hover {
       text-shadow: 0 2px 10px rgba(0, 0, 0, 0.5); }
 

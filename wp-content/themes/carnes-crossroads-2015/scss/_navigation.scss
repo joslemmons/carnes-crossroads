@@ -15,15 +15,15 @@
     }
 
     &__logo {
-        width: 225px;
-        margin: 0 0 0 8%;
+        width: 15%;
+        margin: 0 0 0 6%;
         float: left;
+        max-width: 225px;
     }
 
     &__sub {
-        width: 60%;
         margin: 0;
-        padding: 0 8% 0 0;
+        padding: 0 6% 0 0;
         float: right;
         list-style-type: none;
         text-align: right;
@@ -41,11 +41,15 @@
 
         a {
             color: $cc-dk-green;
-            font-size: 1rem;
+            font-size: 0.85rem;
             font-family: $font-sans;
             font-weight: $weight-bold;
             text-transform: uppercase;
             letter-spacing: 2px;
+
+            @media (min-width: 1675px) {
+                font-size: 1rem;
+            }
         }
 
         a:hover {
@@ -54,20 +58,24 @@
     }
 
     &__primary {
-        width: 70%;
         margin: 0;
         float: right;
-        padding: 0 8% 0 10px;
+        padding: 0 6% 0 10px;
         list-style-type: none;
         text-align: right;
         background: url(./img/grad-green.png) no-repeat right top / cover;
     }
 
     &__primary-item {
-        margin: 0 0 0 35px;
+        margin: 0 0 0 20px;
         height: 100%;
-        padding: 30px 0;
+        padding: 25px 0;
         display: inline-block;
+
+        @media (min-width: 1550px) {
+            margin: 0 0 0 35px;
+            padding: 30px 0;
+        }
 
         &:first-of-type {
             padding-left: 50px;
@@ -76,11 +84,15 @@
 
         a {
             color: $white;
-            font-size: 1.25rem;
+            font-size: 1rem;
             letter-spacing: 2px;
             font-family: $font-serif;
             font-weight: $weight-bold;
             text-transform: uppercase;
+
+            @media (min-width: 1675px) {
+                font-size: 1.25rem;
+            }
         }
 
         a:hover {
