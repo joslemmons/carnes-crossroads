@@ -20,7 +20,7 @@
         @include center(x);
 
         h1 {
-            font-size: 2.5rem;
+            font-size: 3rem;
             letter-spacing: 1.5px;
         }
 
@@ -54,6 +54,7 @@
         width: 100%;
         text-align: left;
         overflow: hidden;
+        background: url(./img/bg-hero-home.jpg) no-repeat center center / cover;
     }
 
     &__page {
@@ -116,7 +117,7 @@
 
     &--contact {
         @extend .page-content;
-        padding-bottom: 0;
+        padding: 0;
     }
 
     &--footer {
@@ -211,16 +212,16 @@
 .block-tab {
     position: absolute;
     padding: 30px;
-    min-width: 300px;
+    min-width: 350px;
     background: $white;
 
     p {
         margin: 10px 0;
         font-family: $font-sans;
         font-weight: $weight-regular;
-        font-size: 0.75rem;
-        line-height: 1.6;
-        letter-spacing: 1px;
+        font-size: 1em;
+        line-height: 1.4;
+        letter-spacing: 0.5px;
         text-transform: uppercase;
         color: $cc-med-grey;
     }
@@ -232,8 +233,8 @@
         margin: 15px 0 0 0;
         font-family: $font-sans;
         font-weight: $weight-medium;
-        font-size: 0.75rem;
-        letter-spacing: 2px;
+        font-size: 1rem;
+        letter-spacing: 1px;
         text-transform: uppercase;
         color: #756340;
         background: url(./img/icon-arrow.png) no-repeat center right;

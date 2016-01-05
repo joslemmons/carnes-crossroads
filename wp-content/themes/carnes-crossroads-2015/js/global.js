@@ -3,7 +3,7 @@ jQuery(function ($) {
 
     $.each($('div.slider-lg'), function (i, el) {
         $(el).bxSlider({
-            slideWidth: 300,
+            slideWidth: 325,
             minSlides: 2,
             maxSlides: 5,
             moveSlides: 1,

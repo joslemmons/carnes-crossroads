@@ -7,17 +7,26 @@
     a {
         font-family: $font-serif;
         font-weight: $weight-regular;
-        font-size: 0.85rem;
+        font-size: 1.35rem;
         text-transform: uppercase;
         letter-spacing: 2px;
         color: $white;
         text-shadow: 0 0 10px rgba(#555d59, .5);
 
         &:hover {
-            color: darken($white, 5);
             text-shadow: 0 0 10px rgba(#555d59, 1);
         }
     }
+}
+
+.hero__home .btn-group,
+.hero__home .btn-green {
+    margin-top: 175px;
+}
+
+.hero__home .btn-green {
+    padding: 16px 38px;
+    font-size: 1.25rem;
 }
 
 video {

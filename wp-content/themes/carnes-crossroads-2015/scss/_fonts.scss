@@ -9,8 +9,8 @@
 // ===================================
 
 $minion              : "minion-pro", serif;
-$nunito              : "Nunito", sans-serif;
-$font-sans           : $nunito, sans-serif;
+$proxima             : "proxima-nova", sans-serif;
+$font-sans           : $proxima, sans-serif;
 $font-serif          : $minion, serif;
 
 
@@ -48,7 +48,7 @@ h1, h2, h3, h4, h5, h6 {
 h1 {
     font-family: $font-serif;
     font-weight: $weight-regular;
-    font-size: 6rem;
+    font-size: 6.35rem;
     line-height: 1;
     text-transform: none;
     color: $white;
@@ -67,7 +67,7 @@ h2 {
 h3 {
     font-family: $font-serif;
     font-weight: $weight-regular;
-    font-size: 1.7rem;
+    font-size: 2rem;
     line-height: 1;
     text-transform: none;
     color: $cc-brown;
@@ -93,7 +93,7 @@ h6 {
 }
 
 p, ol, ul {
-    font-size: 1.125em;
+    font-size: 1rem;
     line-height: 1.5;
 
     @media (max-width: $screen-sm-max) {
