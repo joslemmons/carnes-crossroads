@@ -16,14 +16,14 @@
 
     &__logo {
         width: 15%;
-        margin: 0 0 0 6%;
+        margin: 0 0 0 5%;
         float: left;
         max-width: 225px;
     }
 
     &__sub {
         margin: 0;
-        padding: 0 6% 0 0;
+        padding: 0 5% 0 0;
         float: right;
         list-style-type: none;
         text-align: right;
@@ -60,7 +60,7 @@
     &__primary {
         margin: 0;
         float: right;
-        padding: 0 6% 0 10px;
+        padding: 0 5% 0 10px;
         list-style-type: none;
         text-align: right;
         background: url(./img/grad-green.png) no-repeat right top / cover;

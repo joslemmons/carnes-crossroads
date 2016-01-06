@@ -3198,10 +3198,13 @@ h2 {
 h3 {
   font-family: "minion-pro", serif, serif;
   font-weight: 400;
-  font-size: 2rem;
+  font-size: 1.80rem;
   line-height: 1;
   text-transform: none;
   color: #3d3421; }
+  @media (min-width: 1675px) {
+    h3 {
+      font-size: 1.85rem; } }
 
 h4 {
   margin-bottom: 20px;
@@ -3362,16 +3365,14 @@ a:focus, a:hover {
   .dropdown-menu li a:hover {
     background-color: #828181; }
 
-.events-headline-contact {
-  margin-top: 50px; }
-  .events-headline-contact h2 {
-    margin-bottom: 75px; }
-  .events-headline-contact h4 {
-    margin-left: 15px;
-    font-size: 1rem;
-    font-weight: 500; }
-  .events-headline-contact .btn {
-    margin: 25px 0 0 8px; }
+.events-headline-contact h2 {
+  margin-bottom: 75px; }
+.events-headline-contact h4 {
+  margin-left: 15px;
+  font-size: 1rem;
+  font-weight: 500; }
+.events-headline-contact .btn {
+  margin: 25px 0 0 8px; }
 
 .gfield {
   display: inline-block;
@@ -3380,6 +3381,9 @@ a:focus, a:hover {
   width: 50%;
   text-align: left;
   color: #828181; }
+
+.events__form-container .gfield {
+  width: 40%; }
 
 .gform_wrapper .hidden_label input.large,
 .gform_wrapper .hidden_label select.large,
@@ -3394,6 +3398,12 @@ a:focus, a:hover {
   font-size: 1rem;
   text-transform: uppercase;
   color: #828181; }
+
+.events__form-container .gform_wrapper .hidden_label input.large,
+.events__form-container .gform_wrapper .hidden_label select.large,
+.events__form-container .gform_wrapper .top_label input.large,
+.events__form-container .gform_wrapper .top_label select.large {
+  height: 4rem; }
 
 .gform_wrapper .gform_body .gform_fields .gfield select {
   -webkit-appearance: none;
@@ -3443,6 +3453,9 @@ a:focus, a:hover {
 .gform_wrapper .gform_footer {
   margin-top: -75px !important; }
 
+.events__form-container .gform_wrapper .gform_footer {
+  margin-top: -80px !important; }
+
 .gform_wrapper .gform_footer input[type=submit] {
   -webkit-appearance: none;
   -moz-appearance: none;
@@ -3486,12 +3499,12 @@ a:focus, a:hover {
     width: 100%; }
   .main-nav__logo {
     width: 15%;
-    margin: 0 0 0 6%;
+    margin: 0 0 0 5%;
     float: left;
     max-width: 225px; }
   .main-nav__sub {
     margin: 0;
-    padding: 0 6% 0 0;
+    padding: 0 5% 0 0;
     float: right;
     list-style-type: none;
     text-align: right; }
@@ -3509,7 +3522,7 @@ a:focus, a:hover {
       font-weight: 700;
       text-transform: uppercase;
       letter-spacing: 2px; }
-      @media (min-width: 1775px) {
+      @media (min-width: 1675px) {
         .main-nav__sub-item a {
           font-size: 1rem; } }
     .main-nav__sub-item a:hover {
@@ -3517,7 +3530,7 @@ a:focus, a:hover {
   .main-nav__primary {
     margin: 0;
     float: right;
-    padding: 0 6% 0 10px;
+    padding: 0 5% 0 10px;
     list-style-type: none;
     text-align: right;
     background: url(./img/grad-green.png) no-repeat right top/cover; }
@@ -3576,7 +3589,8 @@ a:focus, a:hover {
   display: inline-block;
   margin: 0 7px; }
   .footer__social-item img {
-    height: 1.2rem; }
+    height: 1.2rem;
+    opacity: 0.45; }
   .footer__social-item a:hover {
     opacity: 0.7; }
 .footer__nav {
@@ -3628,15 +3642,30 @@ a:focus, a:hover {
   display: inline-block; }
 .slider-lg__item {
   position: relative;
+  padding: 0 40px;
   margin-right: 30px;
-  width: 300px;
-  height: 400px;
+  height: 460px;
   display: inline-block;
-  background-color: #fff;
+  background-color: #cbc3b6;
   background-size: cover;
   background-position: center center;
   background-repeat: no-repeat;
   overflow: hidden; }
+  .slider-lg__item .social-quote {
+    position: absolute;
+    top: 20%;
+    display: block;
+    font-family: "minion-pro", serif, serif;
+    font-size: 1.3rem;
+    color: #fff; }
+    .slider-lg__item .social-quote span {
+      font-style: normal;
+      color: #3d3421; }
+.slider-lg__social {
+  position: absolute;
+  height: 1.65rem;
+  bottom: 15px;
+  right: 30px; }
 
 .prev-lg,
 .next-lg {
@@ -3980,18 +4009,30 @@ video {
 
 .block-tab, .block-tab--top-left, .block-tab--top-right, .block-tab--bottom-left, .block-tab--bottom-right, .block-tab--full-bottom {
   position: absolute;
-  padding: 30px;
+  padding: 25px 30px 10px;
   min-width: 350px;
+  min-height: 145px;
   background: #fff; }
+  @media (min-width: 1675px) {
+    .block-tab, .block-tab--top-left, .block-tab--top-right, .block-tab--bottom-left, .block-tab--bottom-right, .block-tab--full-bottom {
+      min-height: 160px; } }
+  .block-tab a, .block-tab--top-left a, .block-tab--top-right a, .block-tab--bottom-left a, .block-tab--bottom-right a, .block-tab--full-bottom a {
+    color: #3d3421; }
+    .block-tab a:hover, .block-tab--top-left a:hover, .block-tab--top-right a:hover, .block-tab--bottom-left a:hover, .block-tab--bottom-right a:hover, .block-tab--full-bottom a:hover {
+      color: #6f5e3c; }
   .block-tab p, .block-tab--top-left p, .block-tab--top-right p, .block-tab--bottom-left p, .block-tab--bottom-right p, .block-tab--full-bottom p {
-    margin: 10px 0;
+    margin: 5px 0;
     font-family: "proxima-nova", sans-serif, sans-serif;
     font-weight: 400;
-    font-size: 1em;
+    font-size: 0.85em;
     line-height: 1.4;
     letter-spacing: 0.5px;
     text-transform: uppercase;
     color: #828181; }
+    @media (min-width: 1675px) {
+      .block-tab p, .block-tab--top-left p, .block-tab--top-right p, .block-tab--bottom-left p, .block-tab--bottom-right p, .block-tab--full-bottom p {
+        font-size: 0.9rem;
+        margin: 10px 0; } }
   .block-tab__link {
     position: relative;
     display: inline-block;
@@ -4022,14 +4063,22 @@ video {
     left: 0;
     bottom: 0; }
 
+.events__headline-container {
+  padding-bottom: 55px;
+  margin-bottom: 55px;
+  border-bottom: 1px solid #ccc; }
+.events__form-container {
+  margin-top: 30px;
+  padding-left: 0; }
+
 .calendar {
-  width: 100%;
+  width: 85%;
   padding: 0 0 15px 0;
   position: relative;
   text-align: center;
   background: #fff;
   font-family: "proxima-nova", sans-serif, sans-serif;
-  font-size: 1.15rem; }
+  font-size: 1.1rem; }
   .calendar table {
     width: 100%; }
   .calendar__month {
@@ -4041,7 +4090,7 @@ video {
     padding: 20px 0;
     font-family: "proxima-nova", sans-serif, sans-serif;
     font-weight: 400;
-    font-size: 1.75rem;
+    font-size: 1.65rem;
     text-transform: none; }
   .calendar thead {
     margin: 0 auto;
@@ -4057,10 +4106,10 @@ video {
   .calendar td {
     border: none;
     border-radius: 50%;
-    height: 2.7em;
-    line-height: 2.7em;
+    height: 2.9rem;
+    line-height: 2.9rem;
     text-align: center;
-    width: 2.7em; }
+    width: 2.9rem; }
   .calendar .current-day {
     background: #d6a83f;
     color: #fff; }

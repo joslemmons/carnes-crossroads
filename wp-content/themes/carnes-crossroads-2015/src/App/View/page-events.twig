@@ -11,143 +11,166 @@
 
 <section class="page-content--white-floral-top">
     <div class="container">
-        <div class="row extra-bottom">
+        <div class="row events__headline-container">
             <div class="col-xs-12 col-md-4">
                 <div class="calendar">
                     {{ function('build_calendar', 12, 2015, []) }}
                 </div>
             </div>
-            <div class="col-xs-12 col-md-7 col-md-offset-1 events-headline-contact">
+            <div class="col-xs-12 col-md-8 events__form-container">
                 <h2>{{ page.getHeadline }}</h2>
-                <div class="row">
-                    <h4>{{ page.getContactFormTitle }}</h4>
-                    {{ function('gravity_form', page.getContactFormId, false, false) }}
-                </div>
+                <p>The parks at Carnes Crossroads are designed to serve as the focal point and favorite gathering place within each neighborhood, providing countless opportunities to connect with family and friends within the exceptional setting of this community. Some parks will have swimming pools, basketball courts, playing fields or playgrounds, while others offer quaint gardens and lake views. </p>
+                {# <h4>{{ page.getContactFormTitle }}</h4> #}
+                {{ function('gravity_form', page.getContactFormId, false, false) }}
             </div>
         </div>
-        {# COMMUNITY SLIDER #}
+
         <div class="row">
-            <h3 class="pull-left">Headline about the community &amp; lifestyle</h3>
-            <div class="slider-lg__controls pull-right">
-                <span class="prev-lg"></span>
-                <span class="next-lg"></span>
+            <div class="col-xs-12 col-md-4">
+                <p>list</p>
             </div>
-        </div>
-        <div class="row slider-lg__wrap slider-lg">
-            <div class="slider-lg__item" style="background-image: url({{ template_uri }}/img/slider-1.jpg);">
-                <div class="block-tab--full-bottom">
-                    <h3>Schools</h3>
-                    <p>Subhead Descriptor</p>
+            <div class="col-xs-12 col-md-8">
+                {# COMMUNITY SLIDER #}
+                <div class="row">
+                    <h3 class="pull-left">Community Events &amp; Information</h3>
+                    <div class="slider-lg__controls pull-right">
+                        <span class="prev-lg"></span>
+                        <span class="next-lg"></span>
+                    </div>
                 </div>
-            </div>
-            <div class="slider-lg__item" style="background-image: url({{ template_uri }}/img/slider-2.jpg);">
-                <div class="block-tab--full-bottom">
-                    <h3>Parks &amp; Trails</h3>
-                    <p>Subhead Descriptor</p>
+                <div class="row slider-lg__wrap slider-lg">
+                    <div class="slider-lg__item" style="background-image: url({{ template_uri }}/img/slider-ev-1.jpg);">
+                        <div class="block-tab--full-bottom">
+                            <h3><a href="#">Fall Hoedown</a></h3>
+                            <p>October 21, 2015</p>
+                        </div>
+                    </div>
+                    <div class="slider-lg__item" style="background-image: url({{ template_uri }}/img/slider-ev-2.jpg);">
+                        <div class="block-tab--full-bottom">
+                            <h3><a href="#">Wieland Model Home Tour</a></h3>
+                            <p>October 29, 2015</p>
+                        </div>
+                    </div>
+                    <div class="slider-lg__item" style="background-image: url({{ template_uri }}/img/slider-ev-3.jpg);">
+                        <div class="block-tab--full-bottom">
+                            <h3><a href="#">Meet Darlene McElveen</a></h3>
+                            <p>Welcome Our New Team Member</p>
+                        </div>
+                    </div>
+                    <div class="slider-lg__item" style="background-image: url({{ template_uri }}/img/slider-ev-4.jpg);">
+                        <div class="block-tab--full-bottom">
+                            <h3><a href="#">Fall Farmers' Market</a></h3>
+                            <p>November 4, 2015</p>
+                        </div>
+                    </div>
+                    <div class="slider-lg__item" style="background-image: url({{ template_uri }}/img/slider-ev-5.jpg);">
+                        <div class="block-tab--full-bottom">
+                            <h3><a href="#">Construction Begins on Northwood Academy</a></h3>
+                            <p>Information Gathering<br/>December 10, 2015</p>
+                        </div>
+                    </div>
                 </div>
-            </div>
-            <div class="slider-lg__item" style="background-image: url({{ template_uri }}/img/slider-3.jpg);">
-                <div class="block-tab--full-bottom">
-                    <h3>Amenities</h3>
-                    <p>Subhead Descriptor</p>
-                </div>
-            </div>
-            <div class="slider-lg__item" style="background-image: url({{ template_uri }}/img/slider-4.jpg);">
-                <div class="block-tab--full-bottom">
-                    <h3>Shopping &amp; Dining</h3>
-                    <p>Subhead Descriptor</p>
-                </div>
-            </div>
-            <div class="slider-lg__item" style="background-image: url({{ template_uri }}/img/slider-5.jpg);">
-                <div class="block-tab--full-bottom">
-                    <h3>The Green Barn</h3>
-                    <p>Subhead Descriptor</p>
-                </div>
-            </div>
-        </div>
 
-        {# LOCAL SLIDER #}
-        <div class="row extra-top">
-            <h3 class="pull-left">Headline about the community &amp; lifestyle</h3>
-            <div class="slider-lg__controls pull-right">
-                <span class="prev-lg"></span>
-                <span class="next-lg"></span>
-            </div>
-        </div>
-        <div class="row slider-lg__wrap slider-lg">
-            <div class="slider-lg__item" style="background-image: url({{ template_uri }}/img/slider-1.jpg);">
-                <div class="block-tab--full-bottom">
-                    <h3>Schools</h3>
-                    <p>Subhead Descriptor</p>
+                {# LOCAL SLIDER #}
+                <div class="row extra-top">
+                    <h3 class="pull-left">Recent News</h3>
+                    <div class="slider-lg__controls pull-right">
+                        <span class="prev-lg"></span>
+                        <span class="next-lg"></span>
+                    </div>
                 </div>
-            </div>
-            <div class="slider-lg__item" style="background-image: url({{ template_uri }}/img/slider-2.jpg);">
-                <div class="block-tab--full-bottom">
-                    <h3>Parks &amp; Trails</h3>
-                    <p>Subhead Descriptor</p>
+                <div class="row slider-lg__wrap slider-lg">
+                    <div class="slider-lg__item" style="background-image: url({{ template_uri }}/img/slider-ev-6.jpg);">
+                        <div class="block-tab--full-bottom">
+                            <h3>Goose Creek Fall Festival</h3>
+                            <p>October 31, 2015</p>
+                        </div>
+                    </div>
+                    <div class="slider-lg__item" style="background-image: url({{ template_uri }}/img/slider-ev-7.jpg);">
+                        <div class="block-tab--full-bottom">
+                            <h3>Summerville 5K</h3>
+                            <p>November 12, 2015</p>
+                        </div>
+                    </div>
+                    <div class="slider-lg__item" style="background-image: url({{ template_uri }}/img/slider-ev-8.jpg);">
+                        <div class="block-tab--full-bottom">
+                            <h3>Coastal Carolina Fair</h3>
+                            <p>October 29-November 8, 2015</p>
+                        </div>
+                    </div>
+                    <div class="slider-lg__item" style="background-image: url({{ template_uri }}/img/slider-ev-9.jpg);">
+                        <div class="block-tab--full-bottom">
+                            <h3>Charleston Restaurant Week</h3>
+                            <p>September 9-20, 2015</p>
+                        </div>
+                    </div>
+                    <div class="slider-lg__item" style="background-image: url({{ template_uri }}/img/slider-ev-10.jpg);">
+                        <div class="block-tab--full-bottom">
+                            <h3>SC Aquarium</h3>
+                            <p>Downtown Charleston</p>
+                        </div>
+                    </div>
                 </div>
-            </div>
-            <div class="slider-lg__item" style="background-image: url({{ template_uri }}/img/slider-3.jpg);">
-                <div class="block-tab--full-bottom">
-                    <h3>Amenities</h3>
-                    <p>Subhead Descriptor</p>
-                </div>
-            </div>
-            <div class="slider-lg__item" style="background-image: url({{ template_uri }}/img/slider-4.jpg);">
-                <div class="block-tab--full-bottom">
-                    <h3>Shopping &amp; Dining</h3>
-                    <p>Subhead Descriptor</p>
-                </div>
-            </div>
-            <div class="slider-lg__item" style="background-image: url({{ template_uri }}/img/slider-5.jpg);">
-                <div class="block-tab--full-bottom">
-                    <h3>The Green Barn</h3>
-                    <p>Subhead Descriptor</p>
-                </div>
-            </div>
-        </div>
 
-        {# SOCIAL SLIDER #}
-        <div class="row extra-top">
-            <h3 class="pull-left">Headline about the community &amp; lifestyle</h3>
-            <div class="slider-lg__controls pull-right">
-                <span class="prev-lg"></span>
-                <span class="next-lg"></span>
+                {# SOCIAL SLIDER #}
+                <div class="row extra-top">
+                    <h3 class="pull-left">Social Feed</h3>
+                    <div class="slider-lg__controls pull-right">
+                        <span class="prev-lg"></span>
+                        <span class="next-lg"></span>
+                    </div>
+                </div>
+                <div class="row slider-lg__wrap slider-lg">
+                    <div class="slider-lg__item" style="background-image: url({{ template_uri }}/img/slider-ev-11.jpg);">
+                        <div class="block-tab--full-bottom">
+                            <h3>@CarnesCrossroads</h3>
+                            <p>Subhead Descriptor<br/>#northwoodacademy</p>
+                            <img src="{{ template_uri }}/img/icon-social-ig.png" class="slider-lg__social">
+                        </div>
+                    </div>
+                    <div class="slider-lg__item">
+                        <div class="social-quote">
+                            See why buying a new home<br/>
+                            is the best option for you.<br/>
+                            Schedule a home tour today!<br/>
+                            <span>#CarnesCrossroads</span>
+                        </div>
+                        <div class="block-tab--full-bottom">
+                            <h3>Carnes Crossroads</h3>
+                            <p>September 20, 2015</p>
+                            <img src="{{ template_uri }}/img/icon-social-fb.png" class="slider-lg__social">
+                        </div>
+                    </div>
+                    <div class="slider-lg__item" style="background-image: url({{ template_uri }}/img/slider-ev-12.jpg);">
+                        <div class="block-tab--full-bottom">
+                            <h3>@CarnesCrossroads</h3>
+                            <p>Subhead Descriptor<br/>#CCfallfestival</p>
+                            <img src="{{ template_uri }}/img/icon-social-ig.png" class="slider-lg__social">
+                        </div>
+                    </div>
+                    <div class="slider-lg__item">
+                        <div class="social-quote">
+                            See why buying a new home<br/>
+                            is the best option for you.<br/>
+                            Schedule a home tour today!<br/>
+                            <span>#CarnesCrossroads</span>
+                        </div>
+                        <div class="block-tab--full-bottom">
+                            <h3>Carnes Crossroads</h3>
+                            <p>September 20, 2015</p>
+                            <img src="{{ template_uri }}/img/icon-social-tw.png" class="slider-lg__social">
+                        </div>
+                    </div>
+                    <div class="slider-lg__item" style="background-image: url({{ template_uri }}/img/slider-ev-13.jpg);">
+                        <div class="block-tab--full-bottom">
+                            <h3>@CarnesCrossroads</h3>
+                            <p>Subhead Descriptor<br/>#CCFallFestival</p>
+                            <img src="{{ template_uri }}/img/icon-social-ig.png" class="slider-lg__social">
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
-        <div class="row slider-lg__wrap slider-lg">
-            <div class="slider-lg__item" style="background-image: url({{ template_uri }}/img/slider-1.jpg);">
-                <div class="block-tab--full-bottom">
-                    <h3>Schools</h3>
-                    <p>Subhead Descriptor</p>
-                </div>
-            </div>
-            <div class="slider-lg__item" style="background-image: url({{ template_uri }}/img/slider-2.jpg);">
-                <div class="block-tab--full-bottom">
-                    <h3>Parks &amp; Trails</h3>
-                    <p>Subhead Descriptor</p>
-                </div>
-            </div>
-            <div class="slider-lg__item" style="background-image: url({{ template_uri }}/img/slider-3.jpg);">
-                <div class="block-tab--full-bottom">
-                    <h3>Amenities</h3>
-                    <p>Subhead Descriptor</p>
-                </div>
-            </div>
-            <div class="slider-lg__item" style="background-image: url({{ template_uri }}/img/slider-4.jpg);">
-                <div class="block-tab--full-bottom">
-                    <h3>Shopping &amp; Dining</h3>
-                    <p>Subhead Descriptor</p>
-                </div>
-            </div>
-            <div class="slider-lg__item" style="background-image: url({{ template_uri }}/img/slider-5.jpg);">
-                <div class="block-tab--full-bottom">
-                    <h3>The Green Barn</h3>
-                    <p>Subhead Descriptor</p>
-                </div>
-            </div>
-        </div>
-
     </div>
 </section>
 

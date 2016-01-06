@@ -211,19 +211,37 @@
 
 .block-tab {
     position: absolute;
-    padding: 30px;
+    padding: 25px 30px 10px;
     min-width: 350px;
+    min-height: 145px;
     background: $white;
 
+    @media (min-width: 1675px) {
+        min-height: 160px;
+    }
+
+    a {
+        color: $cc-brown;
+
+        &:hover {
+            color: lighten($cc-brown, 15);
+        }
+    }
+
     p {
-        margin: 10px 0;
+        margin: 5px 0;
         font-family: $font-sans;
         font-weight: $weight-regular;
-        font-size: 1em;
+        font-size: 0.85em;
         line-height: 1.4;
         letter-spacing: 0.5px;
         text-transform: uppercase;
         color: $cc-med-grey;
+
+        @media (min-width: 1675px) {
+            font-size: 0.9rem;
+            margin: 10px 0;
+        }
     }
 
     &__link {
@@ -270,5 +288,18 @@
         right: 0;
         left: 0;
         bottom: 0;
+    }
+}
+
+.events {
+    &__headline-container {
+        padding-bottom: 55px;
+        margin-bottom: 55px;
+        border-bottom: 1px solid #ccc;
+    }
+
+    &__form-container {
+        margin-top: 30px;
+        padding-left: 0;
     }
 }

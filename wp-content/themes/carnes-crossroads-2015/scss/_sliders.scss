@@ -29,15 +29,36 @@
 
     &__item {
         position: relative;
+        padding: 0 40px;
         margin-right: 30px;
-        width: 300px;
-        height: 400px;
+        height: 460px;
         display: inline-block;
-        background-color: $white;
+        background-color: #cbc3b6;
         background-size: cover;
         background-position: center center;
         background-repeat: no-repeat;
         overflow: hidden;
+
+        .social-quote {
+            position: absolute;
+            top: 20%;
+            display: block;
+            font-family: $font-serif;
+            font-size: 1.3rem;
+            color: $white;
+
+            span {
+                font-style: normal;
+                color: $cc-brown;
+            }
+        }
+    }
+
+    &__social {
+        position: absolute;
+        height: 1.65rem;
+        bottom: 15px;
+        right: 30px;
     }
 }
 

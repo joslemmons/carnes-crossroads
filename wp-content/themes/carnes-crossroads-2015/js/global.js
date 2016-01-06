@@ -3,11 +3,11 @@ jQuery(function ($) {
 
     $.each($('div.slider-lg'), function (i, el) {
         $(el).bxSlider({
-            slideWidth: 325,
+            slideWidth: 335,
             minSlides: 2,
             maxSlides: 5,
             moveSlides: 1,
-            slideMargin: 30,
+            slideMargin: 15,
             pager: false,
             nextSelector: $(el).parent().find('span.next-lg'),
             prevSelector: $(el).parent().find('span.prev-lg'),

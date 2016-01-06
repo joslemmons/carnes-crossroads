@@ -49,7 +49,7 @@
 }
 
 .events-headline-contact {
-    margin-top: 50px;
+    // margin-top: 50px;
 
     h2 {
         margin-bottom: 75px;
@@ -80,6 +80,10 @@
     color: $cc-med-grey;
 }
 
+.events__form-container .gfield {
+    width: 40%;
+}
+
 .gform_wrapper .hidden_label input.large,
 .gform_wrapper .hidden_label select.large,
 .gform_wrapper .top_label input.large,
@@ -93,6 +97,13 @@
     font-size: 1rem;
     text-transform: uppercase;
     color: $cc-med-grey;
+}
+
+.events__form-container .gform_wrapper .hidden_label input.large,
+.events__form-container .gform_wrapper .hidden_label select.large,
+.events__form-container .gform_wrapper .top_label input.large,
+.events__form-container .gform_wrapper .top_label select.large {
+    height: 4rem;
 }
 
 .gform_wrapper .gform_body .gform_fields .gfield select {
@@ -151,6 +162,10 @@
 
 .gform_wrapper .gform_footer {
     margin-top: -75px !important;
+}
+
+.events__form-container .gform_wrapper .gform_footer {
+    margin-top: -80px !important;
 }
 
 .gform_wrapper .gform_footer input[type=submit] {

@@ -2,13 +2,13 @@
 // ===================================
 
 .calendar {
-    width: 100%;
+    width: 85%;
     padding: 0 0 15px 0;
     position: relative;
     text-align: center;
     background: $white;
     font-family: $font-sans;
-    font-size: 1.15rem;
+    font-size: 1.1rem;
 
     & table {
         width: 100%;
@@ -23,7 +23,7 @@
         padding: 20px 0;
         font-family: $font-sans;
         font-weight: $weight-regular;
-        font-size: 1.75rem;
+        font-size: 1.65rem;
         text-transform: none;
     }
 
@@ -51,10 +51,10 @@
     & td {
         border: none;
         border-radius: 50%;
-        height: 2.7em;
-        line-height: 2.7em;
+        height: 2.9rem;
+        line-height: 2.9rem;
         text-align: center;
-        width: 2.7em;
+        width: 2.9rem;
     }
 
     .current-day {

@@ -67,10 +67,14 @@ h2 {
 h3 {
     font-family: $font-serif;
     font-weight: $weight-regular;
-    font-size: 2rem;
+    font-size: 1.80rem;
     line-height: 1;
     text-transform: none;
     color: $cc-brown;
+
+    @media (min-width: 1675px) {
+        font-size: 1.85rem;
+    }
 }
 
 h4 {
