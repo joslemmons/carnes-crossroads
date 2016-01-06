@@ -3385,6 +3385,10 @@ a:focus, a:hover {
 .events__form-container .gfield {
   width: 40%; }
 
+.gform_wrapper .hidden_label input.medium,
+.gform_wrapper .hidden_label select.medium,
+.gform_wrapper .top_label input.medium,
+.gform_wrapper .top_label select.medium,
 .gform_wrapper .hidden_label input.large,
 .gform_wrapper .hidden_label select.large,
 .gform_wrapper .top_label input.large,
@@ -3399,6 +3403,10 @@ a:focus, a:hover {
   text-transform: uppercase;
   color: #828181; }
 
+.events__form-container .gform_wrapper .hidden_label input.medium,
+.events__form-container .gform_wrapper .hidden_label select.medium,
+.events__form-container .gform_wrapper .top_label input.medium,
+.events__form-container .gform_wrapper .top_label select.medium,
 .events__form-container .gform_wrapper .hidden_label input.large,
 .events__form-container .gform_wrapper .hidden_label select.large,
 .events__form-container .gform_wrapper .top_label input.large,
