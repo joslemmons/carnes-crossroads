@@ -5,9 +5,7 @@
     width: 100%;
     padding: 20px 0 0 0;
     background: url(./img/pattern-green.jpg) repeat center center;
-    position: relative;
-    float: left;
-    z-index: 999;
+    overflow: hidden;
 
     &__inner-wrap {
         position: relative;
@@ -17,14 +15,14 @@
     &__logo {
         width: 15%;
         margin: 0 0 0 5%;
-        float: left;
         max-width: 225px;
+        float: left;
     }
 
     &__sub {
         margin: 0;
-        padding: 0 5% 0 0;
         float: right;
+        padding: 0 5% 0 0;
         list-style-type: none;
         text-align: right;
     }
@@ -59,6 +57,7 @@
 
     &__primary {
         margin: 0;
+        max-width: 70%;
         float: right;
         padding: 0 5% 0 10px;
         list-style-type: none;
