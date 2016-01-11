@@ -50285,6 +50285,17 @@
 		"outputPathIsSetByUser": 0,
 		"processed": 0
 		},
+	"\/wp-content\/themes\/carnes-crossroads-2015\/img\/icon-social-goog.png": {
+		"fileType": 32768,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"initialSize": 767,
+		"inputAbbreviatedPath": "\/wp-content\/themes\/carnes-crossroads-2015\/img\/icon-social-goog.png",
+		"outputAbbreviatedPath": "\/wp-content\/themes\/carnes-crossroads-2015\/img\/icon-social-goog.png",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"processed": 0
+		},
 	"\/wp-content\/themes\/carnes-crossroads-2015\/img\/icon-social-ig.png": {
 		"fileType": 32768,
 		"ignore": 0,
@@ -66711,6 +66722,17 @@
 		"outputPathIsSetByUser": 0,
 		"processed": 0
 		},
+	"\/wp-content\/uploads\/2015\/11\/CC-Front-Porch-Selects-2014-06-300dpi-1-e1452550568706.jpg": {
+		"fileType": 16384,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"initialSize": 137856,
+		"inputAbbreviatedPath": "\/wp-content\/uploads\/2015\/11\/CC-Front-Porch-Selects-2014-06-300dpi-1-e1452550568706.jpg",
+		"outputAbbreviatedPath": "\/wp-content\/uploads\/2015\/11\/CC-Front-Porch-Selects-2014-06-300dpi-1-e1452550568706.jpg",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"processed": 0
+		},
 	"\/wp-content\/uploads\/2015\/11\/CC-Front-Porch-Selects-2014-06-300dpi-1.jpg": {
 		"fileType": 16384,
 		"ignore": 0,
@@ -68214,6 +68236,17 @@
 		"initialSize": 13673,
 		"inputAbbreviatedPath": "\/wp-content\/uploads\/2015\/12\/cx-plan-web-440x245-300x167.jpg",
 		"outputAbbreviatedPath": "\/wp-content\/uploads\/2015\/12\/cx-plan-web-440x245-300x167.jpg",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"processed": 0
+		},
+	"\/wp-content\/uploads\/2015\/12\/cx-plan-web-440x245-718x350-c-default.jpg": {
+		"fileType": 16384,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"initialSize": 47620,
+		"inputAbbreviatedPath": "\/wp-content\/uploads\/2015\/12\/cx-plan-web-440x245-718x350-c-default.jpg",
+		"outputAbbreviatedPath": "\/wp-content\/uploads\/2015\/12\/cx-plan-web-440x245-718x350-c-default.jpg",
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0,
 		"processed": 0
