@@ -3594,7 +3594,7 @@ a:focus, a:hover {
 .footer__social-item {
   list-style-type: none;
   display: inline-block;
-  margin: 0 7px; }
+  margin: 0 8px; }
   .footer__social-item img {
     height: 1.2rem;
     opacity: 0.45; }
