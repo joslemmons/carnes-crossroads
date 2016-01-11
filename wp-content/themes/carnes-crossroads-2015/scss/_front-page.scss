@@ -4,6 +4,10 @@
 .hero__map-link {
     margin: 100px auto 0 auto;
 
+    @media (max-height: 780px) {
+        margin-top: 75px;
+    }
+
     a {
         font-family: $font-serif;
         font-weight: $weight-regular;
@@ -22,6 +26,10 @@
 .hero__home .btn-group,
 .hero__home .btn-green {
     margin-top: 125px;
+
+    @media (max-height: 780px) {
+        margin-top: 70px;
+    }
 }
 
 .hero__home .btn-green {

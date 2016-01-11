@@ -16,7 +16,7 @@
             </ul>
         </div>
         <a class="btn btn-green">Search</a>
-        <div class="hero__map-link"><a href="#">View Area Map</a></div>
+        <div class="hero__map-link"><a href="/area-map">View Area Map</a></div>
     </div>
 
     {# <img class="ie-only bg" src="{{ template_uri }}/img/bg-hero-home.jpg">
@@ -78,8 +78,9 @@
         <div class="row slider-lg__wrap slider-lg">
             {% for item in page.getHorizontalSliderItems %}
                 <div class="slider-lg__item" style="background-image: url('{{ item.image.get_src }}');">
+                    <a href="#" class="slider-lg__item-link"></a>
                     <div class="block-tab--full-bottom">
-                        <h3>{{ item.title }}</h3>
+                        <a href=""><h3>{{ item.title }}</h3></a>
                         <p>{{ item.subtitle }}</p>
                     </div>
                 </div>

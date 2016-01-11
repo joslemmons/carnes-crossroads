@@ -3673,6 +3673,12 @@ a:focus, a:hover {
     .slider-lg__item .social-quote span {
       font-style: normal;
       color: #3d3421; }
+.slider-lg__item-link {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0; }
 .slider-lg__social {
   position: absolute;
   height: 1.65rem;
@@ -3761,6 +3767,9 @@ a:focus, a:hover {
 
 .hero__map-link {
   margin: 100px auto 0 auto; }
+  @media (max-height: 780px) {
+    .hero__map-link {
+      margin-top: 75px; } }
   .hero__map-link a {
     font-family: "minion-pro", serif, serif;
     font-weight: 400;
@@ -3776,6 +3785,11 @@ a:focus, a:hover {
 .hero__home .btn-green,
 .hero__home .btn-green-small {
   margin-top: 125px; }
+  @media (max-height: 780px) {
+    .hero__home .btn-group,
+    .hero__home .btn-green,
+    .hero__home .btn-green-small {
+      margin-top: 70px; } }
 
 .hero__home .btn-green, .hero__home .btn-green-small {
   padding: 16px 38px;
@@ -4053,9 +4067,9 @@ video {
   @media (min-width: 1675px) {
     .block-tab, .block-tab--top-left, .block-tab--top-right, .block-tab--bottom-left, .block-tab--bottom-right, .block-tab--full-bottom {
       min-height: 160px; } }
-  .block-tab a, .block-tab--top-left a, .block-tab--top-right a, .block-tab--bottom-left a, .block-tab--bottom-right a, .block-tab--full-bottom a {
+  .block-tab a, .block-tab--top-left a, .block-tab--top-right a, .block-tab--bottom-left a, .block-tab--bottom-right a, .block-tab--full-bottom a, .block-tab a h3, .block-tab--top-left a h3, .block-tab--top-right a h3, .block-tab--bottom-left a h3, .block-tab--bottom-right a h3, .block-tab--full-bottom a h3 {
     color: #3d3421; }
-    .block-tab a:hover, .block-tab--top-left a:hover, .block-tab--top-right a:hover, .block-tab--bottom-left a:hover, .block-tab--bottom-right a:hover, .block-tab--full-bottom a:hover {
+    .block-tab a:hover, .block-tab--top-left a:hover, .block-tab--top-right a:hover, .block-tab--bottom-left a:hover, .block-tab--bottom-right a:hover, .block-tab--full-bottom a:hover, .block-tab a h3:hover, .block-tab--top-left a h3:hover, .block-tab--top-right a h3:hover, .block-tab--bottom-left a h3:hover, .block-tab--bottom-right a h3:hover, .block-tab--full-bottom a h3:hover {
       color: #6f5e3c; }
   .block-tab p, .block-tab--top-left p, .block-tab--top-right p, .block-tab--bottom-left p, .block-tab--bottom-right p, .block-tab--full-bottom p {
     margin: 5px 0;
