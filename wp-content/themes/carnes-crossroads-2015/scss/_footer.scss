@@ -51,6 +51,15 @@
         }
     }
 
+    &__logo {
+        position: relative;
+        margin-top: -50px;
+
+        img {
+            width: 85%;
+        }
+    }
+
     &__nav {
         margin: 10px 0;
 
