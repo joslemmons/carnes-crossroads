@@ -1,6 +1,7 @@
 jQuery(function ($) {
     //$('.dropdown-toggle').dropdown();
 
+    //Carousels - bxslider
     $.each($('div.slider-lg'), function (i, el) {
         $(el).bxSlider({
             slideWidth: 335,
@@ -16,6 +17,7 @@ jQuery(function ($) {
         });
     });
 
+    //Slideshows - slick.js
     $('.slider-sm').slick({
         dots: false,
         infinite: true,
@@ -27,9 +29,24 @@ jQuery(function ($) {
         cssEase: 'linear'
     });
 
+    //Read More link
     $('.expand-link').click(function () {
         $(this).hide();
         $(this).closest('div.child-content').find('span.more-content').show();
+    });
+
+    //Smooth Scroll
+    $('a[href*=#]:not([href=#])').click(function() {
+        if (location.pathname.replace(/^\//,'') == this.pathname.replace(/^\//,'') && location.hostname == this.hostname) {
+            var target = $(this.hash);
+            target = target.length ? target : $('[name=' + this.hash.slice(1) +']');
+            if (target.length) {
+                $('html,body').animate({
+                    scrollTop: target.offset().top
+                }, 1000);
+                return false;
+            }
+        }
     });
 
 });

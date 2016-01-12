@@ -78,6 +78,7 @@
 
     &__page {
         position: relative;
+        margin-top: 140px;
         height: 65%;
         width: 100%;
         overflow: hidden;
@@ -312,14 +313,74 @@
 
 .events {
     &__headline-container {
-        padding-bottom: 55px;
-        margin-bottom: 55px;
-        border-bottom: 1px solid #ccc;
+        .btn-green {
+            margin-top: 25px;
+        }
     }
 
     &__form-container {
-        margin-top: 30px;
-        padding-left: 0;
+        padding-bottom: 100px;
+        border-bottom: 1px solid #ccc;
+        border-top: 1px solid #ccc;
+
+        h4 {
+            margin-bottom: 0;
+            color: $cc-med-grey;
+        }
+
+        .gform_wrapper {
+            max-width: 100%;
+            margin: 0;
+        }
+
+        .gfield {
+            width: 45%;
+        }
+
+        .gform_wrapper .gform_footer input[type=submit] {
+            left: 0;
+            float: right;
+        }
+    }
+}
+
+.category-list {
+    h4 {
+        font-size: 1rem;
+        color: $cc-med-grey;
+        margin: 0 0 0 5px;
+    }
+
+    hr {
+        margin: 10px 0;
+        width: 75%;
+        border-top: 1px solid #ccc;
+    }
+
+    &__categories {
+        padding: 0 0 0 10px;
+        list-style-type: none;
+    }
+
+    &__item {
+        margin-bottom: 15px;
+
+        a {
+            font-family: $font-sans;
+            text-transform: uppercase;
+            font-size: 0.85rem;
+            color: $cc-med-grey;
+        }
+
+        a:hover {
+            color: darken($cc-med-grey, 20);
+            text-decoration: underline !important;
+        }
+    }
+
+    &__social {
+        padding: 0;
+        margin-bottom: 75px;
     }
 }
 
