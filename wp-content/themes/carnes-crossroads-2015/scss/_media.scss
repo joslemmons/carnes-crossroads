@@ -1,77 +1,5 @@
-// Front Page Styles
+// Media
 // ===================================
-
-.hero__map-link {
-    margin: 100px auto 0 auto;
-
-    @media (max-height: 780px) {
-        margin-top: 75px;
-    }
-
-    a {
-        font-family: $font-serif;
-        font-weight: $weight-regular;
-        font-size: 1.35rem;
-        text-transform: uppercase;
-        letter-spacing: 2px;
-        color: $white;
-        text-shadow: 0 0 10px rgba(#555d59, .5);
-
-        &:hover {
-            text-shadow: 0 0 10px rgba(#555d59, 1);
-        }
-    }
-}
-
-.hero__home .btn-group,
-.hero__home .btn-green {
-    margin-top: 125px;
-
-    @media (max-height: 780px) {
-        margin-top: 70px;
-    }
-}
-
-.hero__home .btn-green {
-    padding: 16px 38px;
-    font-size: 1.25rem;
-}
-
-video {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    min-width: 100%;
-    min-height: 100%;
-    width: auto;
-    height: auto;
-    z-index: -100;
-    -webkit-transform: translateX(-50%) translateY(-50%);
-    transform: translateX(-50%) translateY(-50%);
-    background: url(./img/bg-hero-home.jpg) no-repeat center center / cover;
-    overflow: hidden;
-}
-
-.play-btn-container {
-    position: absolute;
-    z-index: 999;
-    opacity: 1;
-    @include center(xy);
-    @include transition(all, 0.2s, ease-in-out, 0s);
-
-    &:hover {
-        opacity: 0.8;
-    }
-
-    a {
-        color: #fff;
-    }
-
-    .play-icon img {
-        width: 75px;
-        position: relative;
-    }
-}
 
 .video-overlay {
     position: fixed;
@@ -102,7 +30,7 @@ video {
     display: inline-block;
     vertical-align: middle;
     background: rgba(0,0,0,0);
-    color: #fff;
+    color: $white;
     padding: 5px;
     cursor: default;
     height: 75%;
@@ -128,6 +56,7 @@ video {
         font-size: 28px;
         line-height: 1.4em;
         padding: 10px 80px;
+        font-family: $font-sans;
     }
 
     .close-button {
@@ -139,6 +68,7 @@ video {
         line-height: 20px;
         margin: auto 0;
         font-size: 20px;
+        font-family: $font-sans;
         cursor: pointer;
     }
 

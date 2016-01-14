@@ -11,28 +11,59 @@
 
 <section class="page-content--white-floral-top">
     <div class="container">
+
         <div class="row events__headline-container">
             <div class="col-xs-12 col-md-4">
                 <div class="calendar">
                     {{ function('build_calendar', 12, 2015, []) }}
                 </div>
             </div>
-            <div class="col-xs-12 col-md-8 events__form-container">
-                <h2>{{ page.getHeadline }}</h2>
-                <p>The parks at Carnes Crossroads are designed to serve as the focal point and favorite gathering place within each neighborhood, providing countless opportunities to connect with family and friends within the exceptional setting of this community. Some parks will have swimming pools, basketball courts, playing fields or playgrounds, while others offer quaint gardens and lake views. </p>
-                {# <h4>{{ page.getContactFormTitle }}</h4> #}
+            <div class="col-xs-12 col-md-8">
+                <h2>Featured Article Headline</h2>
+                <p>The parks at Carnes Crossroads are designed to serve as the focal point and favorite gathering place within each neighborhood, providing countless opportunities to connect with family and friends within the exceptional setting of this community. Some parks will have swimming pools, basketball courts, playing fields or playgrounds, while others offer quaint gardens and lake views. The parks at Carnes Crossroads are designed to serve as the focal point and favorite gathering place within each neighborhood, providing countless opportunities to connect with family and friends within the exceptional setting of this community.</p>
+                <a href="#" class="btn btn-green">Read More</a>
+            </div>
+        </div>
+    </div>
+</section>
+<section class="page-content events__form-container">
+    <div class="container">
+        <div class="row">
+            <div class="col-xs-12">
+                <h4>{{ page.getContactFormTitle }}</h4>
                 {{ function('gravity_form', page.getContactFormId, false, false) }}
             </div>
         </div>
-
+    </div>
+</section>
+<section class="page-content--white">
+    <div class="container">
         <div class="row">
-            <div class="col-xs-12 col-md-4">
-                <p>list</p>
+            <div class="col-xs-12 col-md-3 category-list">
+                <h4>Follow Us</h4>
+                <hr>
+                <ul class="category-list__social">
+                    <li class="footer__social-item"><a href="https://www.twitter.com/carnesxroads"><img src="{{ template_uri }}/img/icon-social-tw.png"/></a></li>
+                    <li class="footer__social-item"><a href="https://www.facebook.com/CarnesCrossroads"><img src="{{ template_uri }}/img/icon-social-fb.png"/></a></li>
+                    <li class="footer__social-item"><a href="https://www.youtube.com/user/CarnesXroads"><img src="{{ template_uri }}/img/icon-social-yt.png"/></a></li>
+                    <li class="footer__social-item"><a href="https://www.instagram.com/carnescrossroads/"><img src="{{ template_uri }}/img/icon-social-ig.png"/></a></li>
+                    <li class="footer__social-item"><a href="https://www.pinterest.com/carnesxroads/"><img src="{{ template_uri }}/img/icon-social-pn.png"/></a></li>
+                    <li class="footer__social-item"><a href="https://plus.google.com/u/0/+Carnescharleston"><img src="{{ template_uri }}/img/icon-social-goog.png"/></a></li>
+                </ul>
+                <h4>Categories</h4>
+                <hr>
+                <ul class="category-list__categories">
+                    <li class="category-list__item"><a href="#">News</a></li>
+                    <li class="category-list__item"><a href="#">Area Events</a></li>
+                    <li class="category-list__item"><a href="#">Category</a></li>
+                    <li class="category-list__item"><a href="#">Last Category</a></li>
+                </ul>
             </div>
-            <div class="col-xs-12 col-md-8">
+
+            <div class="col-xs-12 col-md-9">
                 {# COMMUNITY SLIDER #}
                 <div class="row">
-                    <h3 class="pull-left">Community Events &amp; Information</h3>
+                    <h3 class="pull-left">Community Events &amp; Information</h3><a href="#">View All</a>
                     <div class="slider-lg__controls pull-right">
                         <span class="prev-lg"></span>
                         <span class="next-lg"></span>
@@ -40,32 +71,37 @@
                 </div>
                 <div class="row slider-lg__wrap slider-lg">
                     <div class="slider-lg__item" style="background-image: url({{ template_uri }}/img/slider-ev-1.jpg);">
+                        <a href="#" class="slider-lg__item-link"></a>
                         <div class="block-tab--full-bottom">
-                            <h3><a href="#">Fall Hoedown</a></h3>
+                            <a href="#"><h3>Fall Hoedown</h3></a>
                             <p>October 21, 2015</p>
                         </div>
                     </div>
                     <div class="slider-lg__item" style="background-image: url({{ template_uri }}/img/slider-ev-2.jpg);">
+                        <a href="#" class="slider-lg__item-link"></a>
                         <div class="block-tab--full-bottom">
-                            <h3><a href="#">Wieland Model Home Tour</a></h3>
+                            <a href="#"><h3>Wieland Model Home Tour</h3></a>
                             <p>October 29, 2015</p>
                         </div>
                     </div>
                     <div class="slider-lg__item" style="background-image: url({{ template_uri }}/img/slider-ev-3.jpg);">
+                        <a href="#" class="slider-lg__item-link"></a>
                         <div class="block-tab--full-bottom">
-                            <h3><a href="#">Meet Darlene McElveen</a></h3>
+                            <a href="#"><h3>Meet Darlene McElveen</h3></a>
                             <p>Welcome Our New Team Member</p>
                         </div>
                     </div>
                     <div class="slider-lg__item" style="background-image: url({{ template_uri }}/img/slider-ev-4.jpg);">
+                        <a href="#" class="slider-lg__item-link"></a>
                         <div class="block-tab--full-bottom">
-                            <h3><a href="#">Fall Farmers' Market</a></h3>
+                            <a href="#"><h3>Fall Farmers' Market</h3></a>
                             <p>November 4, 2015</p>
                         </div>
                     </div>
                     <div class="slider-lg__item" style="background-image: url({{ template_uri }}/img/slider-ev-5.jpg);">
+                        <a href="#" class="slider-lg__item-link"></a>
                         <div class="block-tab--full-bottom">
-                            <h3><a href="#">Construction Begins on Northwood Academy</a></h3>
+                            <a href="#"><h3>Construction Begins on Northwood Academy</h3></a>
                             <p>Information Gathering<br/>December 10, 2015</p>
                         </div>
                     </div>
@@ -81,32 +117,37 @@
                 </div>
                 <div class="row slider-lg__wrap slider-lg">
                     <div class="slider-lg__item" style="background-image: url({{ template_uri }}/img/slider-ev-6.jpg);">
+                        <a href="#" class="slider-lg__item-link"></a>
                         <div class="block-tab--full-bottom">
-                            <h3>Goose Creek Fall Festival</h3>
+                            <a href=""><h3>Goose Creek Fall Festival</h3></a>
                             <p>October 31, 2015</p>
                         </div>
                     </div>
                     <div class="slider-lg__item" style="background-image: url({{ template_uri }}/img/slider-ev-7.jpg);">
+                        <a href="#" class="slider-lg__item-link"></a>
                         <div class="block-tab--full-bottom">
-                            <h3>Summerville 5K</h3>
+                            <a href=""><h3>Summerville 5K</h3></a>
                             <p>November 12, 2015</p>
                         </div>
                     </div>
                     <div class="slider-lg__item" style="background-image: url({{ template_uri }}/img/slider-ev-8.jpg);">
+                        <a href="#" class="slider-lg__item-link"></a>
                         <div class="block-tab--full-bottom">
-                            <h3>Coastal Carolina Fair</h3>
+                            <a href=""><h3>Coastal Carolina Fair</h3></a>
                             <p>October 29-November 8, 2015</p>
                         </div>
                     </div>
                     <div class="slider-lg__item" style="background-image: url({{ template_uri }}/img/slider-ev-9.jpg);">
+                        <a href="#" class="slider-lg__item-link"></a>
                         <div class="block-tab--full-bottom">
-                            <h3>Charleston Restaurant Week</h3>
+                            <a href=""><h3>Charleston Restaurant Week</h3></a>
                             <p>September 9-20, 2015</p>
                         </div>
                     </div>
                     <div class="slider-lg__item" style="background-image: url({{ template_uri }}/img/slider-ev-10.jpg);">
+                        <a href="#" class="slider-lg__item-link"></a>
                         <div class="block-tab--full-bottom">
-                            <h3>SC Aquarium</h3>
+                            <a href=""><h3>SC Aquarium</h3></a>
                             <p>Downtown Charleston</p>
                         </div>
                     </div>
@@ -122,10 +163,11 @@
                 </div>
                 <div class="row slider-lg__wrap slider-lg">
                     <div class="slider-lg__item" style="background-image: url({{ template_uri }}/img/slider-ev-11.jpg);">
+                        <a href="#" class="slider-lg__item-link"></a>
                         <div class="block-tab--full-bottom">
-                            <h3>@CarnesCrossroads</h3>
+                            <a href="https://www.instagram.com/carnescrossroads/" target="blank"><h3>@CarnesCrossroads</h3></a>
                             <p>Subhead Descriptor<br/>#northwoodacademy</p>
-                            <img src="{{ template_uri }}/img/icon-social-ig.png" class="slider-lg__social">
+                            <a href="https://www.instagram.com/carnescrossroads/" target="blank"><img src="{{ template_uri }}/img/icon-social-ig.png" class="slider-lg__social"></a>
                         </div>
                     </div>
                     <div class="slider-lg__item">
@@ -135,17 +177,19 @@
                             Schedule a home tour today!<br/>
                             <span>#CarnesCrossroads</span>
                         </div>
+                        <a href="#" class="slider-lg__item-link"></a>
                         <div class="block-tab--full-bottom">
-                            <h3>Carnes Crossroads</h3>
+                            <a href="https://www.facebook.com/CarnesCrossroads" target="blank"><h3>Carnes Crossroads</h3></a>
                             <p>September 20, 2015</p>
-                            <img src="{{ template_uri }}/img/icon-social-fb.png" class="slider-lg__social">
+                            <a href="https://www.facebook.com/CarnesCrossroads" target="blank"><img src="{{ template_uri }}/img/icon-social-fb.png" class="slider-lg__social"></a>
                         </div>
                     </div>
                     <div class="slider-lg__item" style="background-image: url({{ template_uri }}/img/slider-ev-12.jpg);">
+                        <a href="#" class="slider-lg__item-link"></a>
                         <div class="block-tab--full-bottom">
-                            <h3>@CarnesCrossroads</h3>
+                            <a href="https://www.instagram.com/carnescrossroads/" target="blank"><h3>@CarnesCrossroads</h3></a>
                             <p>Subhead Descriptor<br/>#CCfallfestival</p>
-                            <img src="{{ template_uri }}/img/icon-social-ig.png" class="slider-lg__social">
+                            <a href="https://www.instagram.com/carnescrossroads/" target="blank"><img src="{{ template_uri }}/img/icon-social-ig.png" class="slider-lg__social"></a>
                         </div>
                     </div>
                     <div class="slider-lg__item">
@@ -155,17 +199,19 @@
                             Schedule a home tour today!<br/>
                             <span>#CarnesCrossroads</span>
                         </div>
+                        <a href="#" class="slider-lg__item-link"></a>
                         <div class="block-tab--full-bottom">
-                            <h3>Carnes Crossroads</h3>
+                            <a href="https://www.twitter.com/carnesxroads" target="blank"><h3>Carnes Crossroads</h3></a>
                             <p>September 20, 2015</p>
-                            <img src="{{ template_uri }}/img/icon-social-tw.png" class="slider-lg__social">
+                            <a href="https://www.twitter.com/carnesxroads" target="blank"><img src="{{ template_uri }}/img/icon-social-tw.png" class="slider-lg__social"></a>
                         </div>
                     </div>
                     <div class="slider-lg__item" style="background-image: url({{ template_uri }}/img/slider-ev-13.jpg);">
+                        <a href="#" class="slider-lg__item-link"></a>
                         <div class="block-tab--full-bottom">
-                            <h3>@CarnesCrossroads</h3>
+                            <a href="https://www.instagram.com/carnescrossroads/" target="blank"><h3>@CarnesCrossroads</h3></a>
                             <p>Subhead Descriptor<br/>#CCFallFestival</p>
-                            <img src="{{ template_uri }}/img/icon-social-ig.png" class="slider-lg__social">
+                            <a href="https://www.instagram.com/carnescrossroads/" target="blank"><img src="{{ template_uri }}/img/icon-social-ig.png" class="slider-lg__social"></a>
                         </div>
                     </div>
                 </div>

@@ -39,15 +39,27 @@
     &__social-item {
         list-style-type: none;
         display: inline-block;
-        margin: 0 7px;
+        margin: 0 8px;
 
-        img {
+        a img {
             height: 1.2rem;
-            opacity: 0.45;
+            opacity: 0.4;
+            -webkit-backface-visibility: hidden;
+            -webkit-transform: translateZ(0);
+            @include transition(opacity, 0.2s, ease-in-out, 0s);
         }
 
-        a:hover {
-            opacity: 0.7;
+        a img:hover {
+            opacity: 0.6;
+        }
+    }
+
+    &__logo {
+        position: relative;
+        margin-top: -50px;
+
+        img {
+            width: 85%;
         }
     }
 

@@ -8,8 +8,8 @@ Version: 1.0
 
 // Globals
 // ===================================
-@import "variables",
-        "lib/bootstrap",
+@import "lib/bootstrap",
+        "variables",
         "fonts",
         "cn-mixins";
 
@@ -19,6 +19,7 @@ Version: 1.0
 // ===================================
 @import "base",
         "buttons",
+        "media",
         "forms",
         "navigation",
         "footer",
