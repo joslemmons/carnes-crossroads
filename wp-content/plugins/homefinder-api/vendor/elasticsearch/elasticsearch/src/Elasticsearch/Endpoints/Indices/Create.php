@@ -1,8 +1,8 @@
 <?php
 /**
  * User: zach
- * Date: 06/04/2013
- * Time: 13:33:19 pm
+ * Date: 01/20/2014
+ * Time: 14:34:49 pm
  */
 
 namespace Elasticsearch\Endpoints\Indices;
@@ -12,11 +12,16 @@ use Elasticsearch\Common\Exceptions;
 
 /**
  * Class Create
+ *
+ * @category Elasticsearch
  * @package Elasticsearch\Endpoints\Indices
+ * @author   Zachary Tong <zachary.tong@elasticsearch.com>
+ * @license  http://www.apache.org/licenses/LICENSE-2.0 Apache2
+ * @link     http://elasticsearch.org
  */
+
 class Create extends AbstractEndpoint
 {
-
     /**
      * @param array $body
      *
@@ -29,14 +34,11 @@ class Create extends AbstractEndpoint
             return $this;
         }
 
-        if (is_array($body) !== true) {
-            throw new Exceptions\InvalidArgumentException(
-                'Body must be an array'
-            );
-        }
+
         $this->body = $body;
         return $this;
     }
+
 
 
     /**
@@ -45,18 +47,21 @@ class Create extends AbstractEndpoint
      */
     protected function getURI()
     {
-
         if (isset($this->index) !== true) {
             throw new Exceptions\RuntimeException(
                 'index is required for Create'
             );
         }
-
         $index = $this->index;
         $uri   = "/$index";
 
+        if (isset($index) === true) {
+            $uri = "/$index";
+        }
+
         return $uri;
     }
+
 
     /**
      * @return string[]
@@ -65,8 +70,10 @@ class Create extends AbstractEndpoint
     {
         return array(
             'timeout',
+            'master_timeout',
         );
     }
+
 
     /**
      * @return string

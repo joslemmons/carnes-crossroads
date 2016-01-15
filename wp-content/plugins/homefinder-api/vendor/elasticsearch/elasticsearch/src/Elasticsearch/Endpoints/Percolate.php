@@ -1,8 +1,8 @@
 <?php
 /**
  * User: zach
- * Date: 06/04/2013
- * Time: 13:33:19 pm
+ * Date: 01/20/2014
+ * Time: 14:34:49 pm
  */
 
 namespace Elasticsearch\Endpoints;
@@ -12,11 +12,16 @@ use Elasticsearch\Common\Exceptions;
 
 /**
  * Class Percolate
+ *
+ * @category Elasticsearch
  * @package Elasticsearch\Endpoints
+ * @author   Zachary Tong <zachary.tong@elasticsearch.com>
+ * @license  http://www.apache.org/licenses/LICENSE-2.0 Apache2
+ * @link     http://elasticsearch.org
  */
+
 class Percolate extends AbstractEndpoint
 {
-
     /**
      * @param array $body
      *
@@ -29,14 +34,11 @@ class Percolate extends AbstractEndpoint
             return $this;
         }
 
-        if (is_array($body) !== true) {
-            throw new Exceptions\InvalidArgumentException(
-                'Body must be an array'
-            );
-        }
+
         $this->body = $body;
         return $this;
     }
+
 
 
     /**
@@ -45,25 +47,28 @@ class Percolate extends AbstractEndpoint
      */
     protected function getURI()
     {
-
         if (isset($this->index) !== true) {
             throw new Exceptions\RuntimeException(
                 'index is required for Percolate'
             );
         }
-
         if (isset($this->type) !== true) {
             throw new Exceptions\RuntimeException(
                 'type is required for Percolate'
             );
         }
-
         $index = $this->index;
         $type  = $this->type;
+        $id    = $this->id;
         $uri   = "/$index/$type/_percolate";
+
+        if (isset($id) === true) {
+            $uri = "/$index/$type/$id/_percolate";
+        }
 
         return $uri;
     }
+
 
     /**
      * @return string[]
@@ -71,9 +76,28 @@ class Percolate extends AbstractEndpoint
     protected function getParamWhitelist()
     {
         return array(
-            'prefer_local',
+            'routing',
+            'preference',
+            'ignore_unavailable',
+            'allow_no_indices',
+            'expand_wildcards',
+            'percolate_index',
+            'percolate_type',
+            'version',
+            'version_type',
         );
     }
+
+
+    /**
+     * @return array
+     * @throws \Elasticsearch\Common\Exceptions\RuntimeException
+     */
+    protected function getBody()
+    {
+        return $this->body;
+    }
+
 
     /**
      * @return string

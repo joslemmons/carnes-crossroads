@@ -7,16 +7,13 @@
 
 namespace Elasticsearch;
 
-use Elasticsearch\Common\Exceptions\MaxRetriesException;
 use Elasticsearch\Common\Exceptions\TransportException;
 use Elasticsearch\Common\Exceptions;
 use Elasticsearch\ConnectionPool\AbstractConnectionPool;
-use Elasticsearch\ConnectionPool\ConnectionPool;
 use Elasticsearch\Connections\AbstractConnection;
 use Elasticsearch\Connections\ConnectionInterface;
 use Elasticsearch\Serializers\SerializerInterface;
-use Elasticsearch\Sniffers\Sniffer;
-use Monolog\Logger;
+use Psr\Log\LoggerInterface;
 
 /**
  * Class Transport
@@ -30,7 +27,7 @@ use Monolog\Logger;
 class Transport
 {
     /**
-     * @var \Pimple
+     * @var \Pimple\Container
      */
     private $params;
 
@@ -50,28 +47,33 @@ class Transport
     private $serializer;
 
     /**
-     * @var Logger
+     * @var LoggerInterface
      */
     private $log;
+
+    /** @var  int */
+    private $retryAttempts;
+
+    /** @var  AbstractConnection */
+    private $lastConnection;
 
 
     /**
      * Transport class is responsible for dispatching requests to the
      * underlying cluster connections
      *
-     * @param array   $hosts  Array of hosts in cluster
-     * @param \Pimple $params DIC containing dependencies
-     * @param Logger  $log    Monolog logger object
+     * @param array                    $hosts  Array of hosts in cluster
+     * @param \Pimple\Container        $params DIC containing dependencies
+     * @param \Psr\Log\LoggerInterface $log    Monolog logger object
      *
-     * @throws Exceptions\InvalidArgumentException
-     * @throws Exceptions\BadMethodCallException
+     * @throws Common\Exceptions\InvalidArgumentException
      */
-    public function __construct($hosts, $params, $log)
+    public function __construct($hosts, $params, LoggerInterface $log)
     {
         $this->log = $log;
 
         if (is_array($hosts) !== true) {
-            $this->log->addCritical('Hosts parameter must be an array');
+            $this->log->critical('Hosts parameter must be an array');
             throw new Exceptions\InvalidArgumentException('Hosts parameter must be an array');
         }
 
@@ -81,8 +83,12 @@ class Transport
         $this->seeds = $hosts;
         $this->setConnections($hosts);
 
+        if (isset($this->params['retries']) !== true || $this->params['retries'] === null) {
+            $this->params['retries'] = count($hosts) -1;
+        }
+
         if ($params['sniffOnStart'] === true) {
-            $this->log->addNotice('Sniff on Start.');
+            $this->log->notice('Sniff on Start.');
             $this->connectionPool->scheduleCheck();
         }
 
@@ -139,12 +145,13 @@ class Transport
         try {
             $connection  = $this->getConnection();
         } catch (Exceptions\NoNodesAvailableException $exception) {
-            $this->log->addCritical('No alive nodes found in cluster');
+            $this->log->critical('No alive nodes found in cluster');
             throw $exception;
         }
 
-        $shouldRetry = true;
-        $response    = array();
+        $response             = array();
+        $caughtException      = null;
+        $this->lastConnection = $connection;
 
         try {
             if (isset($body) === true) {
@@ -159,8 +166,9 @@ class Transport
             );
 
             $connection->markAlive();
+            $this->retryAttempts = 0;
 
-            $data = $this->serializer->deserialize($response['text']);
+            $data = $this->serializer->deserialize($response['text'], $response['info']);
 
             return array(
                 'status' => $response['status'],
@@ -170,24 +178,61 @@ class Transport
 
         } catch (Exceptions\Curl\OperationTimeoutException $exception) {
             $this->connectionPool->scheduleCheck();
+            $caughtException = $exception;
+
+        } catch (Exceptions\ClientErrorResponseException $exception) {
+            throw $exception;   //We need 4xx errors to go straight to the user, no retries
+
+        } catch (Exceptions\ServerErrorResponseException $exception) {
+            throw $exception;   //We need 5xx errors to go straight to the user, no retries
 
         } catch (TransportException $exception) {
             $connection->markDead();
             $this->connectionPool->scheduleCheck();
-            $shouldRetry = $this->shouldRetry($method, $uri, $params, $body);
+            $caughtException = $exception;
         }
 
+        $shouldRetry = $this->shouldRetry($method, $uri, $params, $body);
         if ($shouldRetry === true) {
             return $this->performRequest($method, $uri, $params, $body);
+        }
+
+        if ($caughtException !== null) {
+            throw $caughtException;
         }
 
         return $response;
     }
 
 
+    /**
+     * @param $method
+     * @param $uri
+     * @param $params
+     * @param $body
+     *
+     * @return bool
+     */
     public function shouldRetry($method, $uri, $params, $body)
     {
-        return true;
+        if ($this->retryAttempts < $this->params['retries']) {
+            $this->retryAttempts += 1;
+            return true;
+        }
+
+        return false;
+    }
+
+
+    /**
+     * Returns the last used connection so that it may be inspected.  Mainly
+     * for debugging/testing purposes.
+     *
+     * @return AbstractConnection
+     */
+    public function getLastConnection()
+    {
+        return $this->lastConnection;
     }
 
 
@@ -202,14 +247,9 @@ class Transport
     {
         $connections = array();
         foreach ($hosts as $host) {
-            if (isset($host['port']) === true) {
-                $connections[] = $this->params['connection'](
-                    $host['host'],
-                    $host['port']
-                );
-            } else {
-                $connections[] = $this->params['connection']($host['host']);
-            }
+            $connections[] = $this->params['connection'](
+                $host
+            );
         }
 
         return $connections;

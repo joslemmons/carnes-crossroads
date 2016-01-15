@@ -92,7 +92,7 @@ abstract class AbstractEndpoint
                 throw $exception;
             } else {
                 //TODO return null or dedicated object here instead?
-                return array('data' => array());
+                return array('data' => $exception->getMessage());
             }
         }
 
@@ -108,7 +108,12 @@ abstract class AbstractEndpoint
      */
     public function setParams($params)
     {
+        if (is_object($params) === true) {
+            $params = (array)$params;
+        }
+
         $this->checkUserParams($params);
+        $params = $this->convertCustom($params);
         $this->params = $this->convertArraysToStrings($params);
         $this->extractIgnore();
         return $this;
@@ -127,6 +132,7 @@ abstract class AbstractEndpoint
         }
 
         if (is_array($index) === true) {
+            $index = array_map('trim', $index);
             $index = implode(",", $index);
         }
 
@@ -147,6 +153,7 @@ abstract class AbstractEndpoint
         }
 
         if (is_array($type) === true) {
+            $type = array_map('trim', $type);
             $type = implode(",", $type);
         }
 
@@ -252,11 +259,15 @@ abstract class AbstractEndpoint
             return; //no params, just return.
         }
 
-        $whitelist = $this->getParamWhitelist();
+        $whitelist = array_merge($this->getParamWhitelist(), array('ignore', 'custom', 'curlOpts', 'filter_path'));
 
         foreach ($params as $key => $value) {
             if (array_search($key, $whitelist) === false) {
-                throw new UnexpectedValueException($key . ' is not a valid parameter');
+                throw new UnexpectedValueException(sprintf(
+                    '"%s" is not a valid parameter. Allowed parameters are: "%s"',
+                    $key,
+                    implode('", "', $whitelist)
+                ));
             }
         }
 
@@ -271,16 +282,39 @@ abstract class AbstractEndpoint
         }
     }
 
+    private function convertCustom($params)
+    {
+        if (isset($params['custom']) === true) {
+            foreach ($params['custom'] as $k => $v) {
+                $params[$k] = $v;
+            }
+            unset($params['custom']);
+        }
+        return $params;
+    }
+
 
     private function convertArraysToStrings($params)
     {
         foreach ($params as &$param) {
             if (is_array($param) === true) {
-                $param = implode(",", $param);
+                if ($this->isNestedArray($param) !== true){
+                    $param = implode(",", $param);
+                }
+
             }
         }
 
         return $params;
+    }
+
+    private function isNestedArray($a) {
+        foreach ($a as $v) {
+            if (is_array($v)) {
+                return true;
+            }
+        }
+        return false;
     }
 
 }

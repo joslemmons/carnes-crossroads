@@ -7,6 +7,7 @@
 
 namespace Elasticsearch\Tests\Connections;
 use Elasticsearch;
+use Mockery as m;
 
 /**
  * Class CurlMultiConnectionTest
@@ -21,6 +22,10 @@ use Elasticsearch;
 class CurlMultiConnectionTest extends \PHPUnit_Framework_TestCase
 {
 
+    public function tearDown()
+    {
+        m::close();
+    }
 
     /**
      * Test no multihandle
@@ -33,14 +38,13 @@ class CurlMultiConnectionTest extends \PHPUnit_Framework_TestCase
      */
     public function testNoMultihandle()
     {
-        $host = 'localhost';
-        $port = 9200;
+        $hostDetails = array('host' => 'localhost', 'port' => 9200);
         $connectionParams = null;
 
         $log = $this->getMockBuilder('\Monolog\Logger')
             ->disableOriginalConstructor()
             ->getMock();
-        $connection = new Elasticsearch\Connections\CurlMultiConnection($host, $port, $connectionParams, $log, $log);
+        $connection = new Elasticsearch\Connections\CurlMultiConnection($hostDetails, $connectionParams, $log, $log);
 
     }//end testNoMultihandle()
 
@@ -49,163 +53,52 @@ class CurlMultiConnectionTest extends \PHPUnit_Framework_TestCase
      * Test bad host name
      *
      * @expectedException \Elasticsearch\Common\Exceptions\TransportException
-     * @expectedExceptionMessage Curl error: Couldn't resolve host 'localhost5'
      *
      * @covers \Elasticsearch\Connections\CurlMultiConnection::performRequest
      * @return void
      */
     public function testBadHost()
     {
-        $host = 'localhost5';
-        $port = 9200;
+        $hostDetails = array('host' => 'localhost5', 'port' => 9200);
         $connectionParams['curlMultiHandle'] = curl_multi_init();
 
         $log = $this->getMockBuilder('\Monolog\Logger')
             ->disableOriginalConstructor()
             ->getMock();
-        $connection = new Elasticsearch\Connections\CurlMultiConnection($host, $port, $connectionParams, $log, $log);
+        $connection = new Elasticsearch\Connections\CurlMultiConnection($hostDetails, $connectionParams, $log, $log);
         $ret = $connection->performRequest('GET', '/');
 
     }//end testBadHost()
 
 
-    /**
-     * Test bad port number
-     *
-     * @expectedException \Elasticsearch\Common\Exceptions\TransportException
-     * @expectedExceptionMessage Curl error: couldn't connect to host
-     *
-     * @covers \Elasticsearch\Connections\CurlMultiConnection::performRequest
-     * @return void
-     */
-    public function testBadPort()
+    public function testPingTimeout()
     {
-        $host = 'localhost';
-        $port = 9800;
+
+        $hostDetails = array('host' => 'localhost', 'port' => 9800);
+
+        $opts = array();
         $connectionParams['curlMultiHandle'] = curl_multi_init();
-        $log = $this->getMockBuilder('\Monolog\Logger')
-            ->disableOriginalConstructor()
-            ->getMock();
+        $that = $this;
 
-        $connection = new Elasticsearch\Connections\CurlMultiConnection($host, $port, $connectionParams, $log, $log);
-        $ret = $connection->performRequest('GET', '/');
+        $argsValidator = function($args) use ($that) {
+            $that->assertEquals($args[155], 5000);
+            $that->assertEquals($args[156], 5000);
 
-    }//end testBadPort()
+            return true;
+        };
 
+        $log = m::mock('Psr\Log\LoggerInterface')->shouldReceive('debug')->with("Curl Options:", \Mockery::on($argsValidator))->getMock();
+        $trace = m::mock('Psr\Log\LoggerInterface');
 
-    /**
-     * Test nonexistant endpoint
-     *
-     *
-     * @covers \Elasticsearch\Connections\CurlMultiConnection::performRequest
-     * @return void
-     */
-    public function testNonexistantEndpoint()
-    {
-        $host = 'localhost';
-        $port = 9200;
-        $connectionParams['curlMultiHandle'] = curl_multi_init();
-        $log = $this->getMockBuilder('\Monolog\Logger')
-            ->disableOriginalConstructor()
-            ->getMock();
+        $connection = new Elasticsearch\Connections\CurlMultiConnection($hostDetails, $connectionParams, $log, $trace);
+        try{
+            $ret = $connection->performRequest('GET', '/', null, null, array('timeout' => 5000));
+        } catch (\Exception $e) {
 
-        $connection = new Elasticsearch\Connections\CurlMultiConnection($host, $port, $connectionParams, $log, $log);
-        $ret = $connection->performRequest('GET', '/abc');
-
-        $this->assertEquals(400, $ret['status']);
-
-    }//end testNonexistantEndpoint()
+        }
 
 
-    /**
-     * Test query params
-     *
-     * @covers \Elasticsearch\Connections\CurlMultiConnection::performRequest
-     * @return void
-     */
-    public function testQueryParams()
-    {
-        $host = 'localhost';
-        $port = 9200;
-        $connectionParams['curlMultiHandle'] = curl_multi_init();
-        $log = $this->getMockBuilder('\Monolog\Logger')
-            ->disableOriginalConstructor()
-            ->getMock();
-
-        $connection = new Elasticsearch\Connections\CurlMultiConnection($host, $port, $connectionParams, $log, $log);
-        $params['pretty'] = 'true';
-
-        $ret = $connection->performRequest('GET', '/', $params);
-
-        $this->assertEquals(200, $ret['status']);
-
-        $expectedURI = 'http://localhost:9200/?pretty=true';
-        $this->assertEquals($expectedURI, $ret['info']['url']);
-
-    }//end testQueryParams()
+    }
 
 
-    /**
-     * Test query URI
-     *
-     * @covers \Elasticsearch\Connections\CurlMultiConnection::performRequest
-     * @return void
-     */
-    public function testQueryURI()
-    {
-        $host = 'localhost';
-        $port = 9200;
-        $connectionParams['curlMultiHandle'] = curl_multi_init();
-        $log = $this->getMockBuilder('\Monolog\Logger')
-            ->disableOriginalConstructor()
-            ->getMock();
-
-        $connection = new Elasticsearch\Connections\CurlMultiConnection($host, $port, $connectionParams, $log, $log);
-
-        $ret = $connection->performRequest('GET', '/_cluster/nodes/');
-
-        $expectedURI = 'http://localhost:9200/_cluster/nodes/';
-        $this->assertEquals($expectedURI, $ret['info']['url']);
-
-    }//end testQueryURI()
-
-
-    /**
-     * Test query body
-     *
-     * @covers \Elasticsearch\Connections\CurlMultiConnection::performRequest
-     * @return void
-     */
-    public function testQueryBody()
-    {
-        $host = 'localhost';
-        $port = 9200;
-        $connectionParams['curlMultiHandle'] = curl_multi_init();
-        $log = $this->getMockBuilder('\Monolog\Logger')
-            ->disableOriginalConstructor()
-            ->getMock();
-
-        $connection = new Elasticsearch\Connections\CurlMultiConnection($host, $port, $connectionParams, $log, $log);
-
-        $body = '{"testsetting":"123"}';
-
-        /*
-            The index _doesnotexist is used with an underscore
-            because ES won't create it...invalid.
-        */
-
-        $ret = $connection->performRequest('POST', '/_doesnotexist', null, $body);
-
-        $this->assertEquals(400, $ret['status']);
-
-        $expectedURI = 'http://localhost:9200/_doesnotexist';
-        $this->assertEquals($expectedURI, $ret['info']['url']);
-
-        // Best we can do to make sure the post actually posted.
-        $this->assertEquals(strlen(($body)), $ret['info']['size_upload']);
-
-
-    }//end testQueryBody()
-
-
-}//end class
+}

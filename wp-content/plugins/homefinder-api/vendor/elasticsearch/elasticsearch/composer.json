@@ -11,24 +11,37 @@
   ],
   "require": {
     "php": ">=5.3.9",
-    "monolog/monolog": "1.5.0",
-    "pimple/pimple": "v1.0.2",
-    "guzzle/guzzle": "~3.7"
+    "monolog/monolog": "~1.11",
+    "pimple/pimple": "~3.0",
+    "guzzle/guzzle": "~3.0",
+    "psr/log": "~1.0",
+    "ext-curl": "*"
   },
   "require-dev": {
     "phpunit/phpunit": "3.7.*",
-    "mockery/mockery": "dev-master@dev",
-    "squizlabs/php_codesniffer": "1.*",
-    "phpmd/phpmd" : "1.4.*",
-    "twig/twig": "1.*",
+    "mockery/mockery": "0.9.4",
     "athletic/athletic": "~0.1",
-    "symfony/yaml": "2.4.*@dev"
+    "symfony/yaml": "2.4.3 as 2.4.2",
+    "satooshi/php-coveralls": "dev-master",
+    "mikey179/vfsStream": "~1.2",
+    "twig/twig": "1.*",
+    "cpliakas/git-wrapper": "~1.0"
   },
   "autoload": {
-    "psr-0": {
-      "Elasticsearch": "src/",
-      "Elasticsearch\\Tests" : "tests/",
-      "Elasticsearch\\Benchmarks" : "benchmarks/"
+    "psr-4": {
+      "Elasticsearch\\": "src/Elasticsearch/"
     }
-  }
+  },
+  "autoload-dev": {
+    "psr-4": {
+      "Elasticsearch\\Tests\\":      "tests/Elasticsearch/Tests/",
+      "Elasticsearch\\Benchmarks\\": "benchmarks/Elasticsearch/Benchmarks/"
+    }
+  },
+  "repositories": [
+    {
+      "type": "vcs",
+      "url": "https://github.com/polyfractal/Yaml"
+    }
+  ]
 }

@@ -35,7 +35,12 @@ class PropertyBaseListing
     public $pb__ItemStatus__c;
     public $pb__CommunityId__c;
     public $pb__MLSNumber__c;
+    public $HTML_Description__c;
     public $asset;
+    public $LastModifiedDate;
+    public $X3D_Tours__c;
+    public $FLV_Tour_URL__c;
+    public $PDF_Floorplan_URL__c;
 
     public function __construct($pbase_list_item)
     {
@@ -66,6 +71,11 @@ class PropertyBaseListing
         $this->pb__CommunityId__c = $pbase_list_item['pb__CommunityId__c'];
         $this->pb__MLSNumber__c = $pbase_list_item['pb__MLSNumber__c'];
         $this->asset = $pbase_list_item['asset'];
+        $this->HTML_Description__c = $pbase_list_item['HTML_Description__c'];
+        $this->LastModifiedDate = $pbase_list_item['LastModifiedDate'];
+        $this->X3D_Tours__c = $pbase_list_item['X3D_Tours__c'];
+        $this->FLV_Tour_URL__c = $pbase_list_item['FLV_Tour_URL__c'];
+        $this->PDF_Floorplan_URL__c = $pbase_list_item['PDF_Floorplan_URL__c'];
     }
 
 }
