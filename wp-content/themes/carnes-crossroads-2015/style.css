@@ -4142,6 +4142,10 @@ video {
   .page-content--footer {
     padding: 50px 0 0 0;
     border-top: 1px solid #919194; }
+  .page-content__copy-block {
+    margin-top: 50px; }
+    .page-content__copy-block p {
+      margin-bottom: 35px; }
 
 .block, .block--large, .block--small, .block--button, .block--button-green, .block--button-orange, .block--button-red {
   position: relative;

@@ -147,6 +147,14 @@
         border-top: 1px solid $cc-lt-grey;
     }
 
+    &__copy-block {
+        margin-top: 50px;
+
+        p {
+            margin-bottom: 35px;
+        }
+    }
+
 }
 
 .block {

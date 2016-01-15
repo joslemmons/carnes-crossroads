@@ -1,0 +1,31 @@
+{% extends 'base.twig' %}
+{% block template %}
+
+<section class="hero__page" style="background-image: url('{{ page.thumbnail.src }}')">
+    <div class="hero__content-tab-orange">
+        <div class="hero__content-inner">
+            <h1>{{ page.title }}</h1>
+        </div>
+    </div>
+</section>
+
+<section class="page-content--white-floral-top">
+    <div class="container">
+        <div class="row">
+            <div class="col-xs-12 col-md-8 col-md-offset-2 text-center">
+                <h2>{{ page.getHeadline }}</h2>
+            </div>
+            <div class="col-xs-8 col-md-offset-2 page-content__copy-block">
+                <p>{{ page.content }}</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+    {% if page.getQuicklinkBoxes %}
+{% include "partials/link-widgets.twig" %}
+    {% endif %}
+
+{% include "partials/contact-foot.twig" %}
+
+{% endblock %}
