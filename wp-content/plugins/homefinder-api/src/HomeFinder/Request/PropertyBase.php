@@ -1,7 +1,9 @@
 <?php namespace HomeFinder\Request;
 
+use HomeFinder\Model\HomeFinderFilters;
 use HomeFinder\Model\Property;
 use HomeFinder\Model\PropertyBaseListing;
+use HomeFinder\Model\Result;
 
 class PropertyBase
 {
@@ -12,31 +14,31 @@ class PropertyBase
     const STATUS_OK = 'success';
     const STATUS_ERROR = 'error';
 
-    public static function getFeatured()
-    {
-        $pbase_response_raw = wp_remote_get('http://danielisland.force.com/pb__WebserviceWeblisting2?' . http_build_query(array(
-                'token' => 'a1hsGpjkpgdGwvEGzA8btIsG',
-                'format' => 'json',
-                'fields' => 'Id,pb__UnitView__c,pb__UnitType__c,pb__ItemType__c,pb__IsListed__c,Listing_Date__c,Builder_Name__C,Builder_Name_Website__c,Resale__c,pb__Latitude__c,pb__Longitude__c,pb__TotalAreaSqft__c,pb__UnitBedrooms__c,Full_Bathrooms__c,Half_Bathrooms__c,pb__IsForSale__c,pb__IsForLease__c,Project_Name__c,AddressWeb__c,pb__PurchaseListPrice__c,LastPurchasePrice__c,pb__ProjectId__c,Is_Featured__c,pb__ItemStatus__c,pb__CommunityId__c,pb__MLSNumber__c',
-                'record_type' => '6_Unit,3_Plot',
-                'max_pb__PurchaseListPrice__c' => 'any',
-                'min_pb__PurchaseListPrice__c' => '0',
-                'pb__CommunityId__c' => 'a0A800000077YaiEAE',
-//                'sort' => 'pb__PurchaseListPrice__c+ASC',
-                'sort' => 'pb__PurchaseListPrice__c',
-                'in_pb__UnitBedrooms__c' => '',
-                'is_for_sale' => 'Sale',
-                'reference_number' => '',
-                'emirate' => 'any',
-                'type' => 'any',
-                'community' => 'any',
-                'PicklistFields' => 'pb__UnitView__c',
-                'pb__IsListed__c' => 'true',
-                'page_limit' => '25',
-                'Is_Featured__c' => 'true'
-            )));
+    const API_ENDPOINT = 'http://danielisland.force.com/pb__WebserviceWeblisting2';
 
-        $properties = array();
+    private static $_default_request_url_params = array(
+        'token' => 'a1hsGpjkpgdGwvEGzA8btIsG',
+        'format' => 'xml',
+        'record_type' => '6_Unit,3_Plot',
+        'max_pb__PurchaseListPrice__c' => 'any',
+        'min_pb__PurchaseListPrice__c' => '0',
+        'pb__CommunityId__c' => 'a0A800000077YaiEAE',
+        'sort' => 'pb__PurchaseListPrice__c ASC',
+        'in_pb__UnitBedrooms__c' => '',
+        'is_for_sale' => 'Sale',
+        'reference_number' => '',
+        'emirate' => 'any',
+        'type' => 'any',
+        'community' => 'any',
+        'PicklistFields' => 'pb__UnitView__c',
+        'pb__IsListed__c' => 'true',
+        'pb_isAvailable__c' => 'true',
+        'page_limit' => '6'
+    );
+
+    private static function _extractDataFromXMLResponse($pbase_response_raw)
+    {
+        $listings = array();
         if ($pbase_response_raw) {
             $response = self::withData($pbase_response_raw);
 
@@ -46,18 +48,224 @@ class PropertyBase
                 $item_list = json_decode(json_encode($item_list), true);
 
                 if (true === isset($item_list['item'])) {
-                    $item_list = $item_list['item'];
-                }
-
-                foreach ($item_list as $item) {
-                    $pbase_listing = new PropertyBaseListing($item);
-                    $property = Property::withPropertyBaseListing($pbase_listing);
-                    $properties[] = $property;
+                    $listings = $item_list['item'];
                 }
             }
         }
 
-        return $properties;
+        return $listings;
+    }
+
+    private static function _extractTotalFromXMLResponse($pbase_response_raw)
+    {
+        $total = 0;
+        if ($pbase_response_raw) {
+            $response = self::withData($pbase_response_raw);
+
+            if (true === isset($response->body) && true === isset($response->body['pagination'])) {
+                $pagination = $response->body['pagination'];
+
+                $pagination = json_decode(json_encode($pagination), true);
+
+                if (true === isset($pagination['numberOfItems'])) {
+                    $total = $pagination['numberOfItems'];
+                }
+            }
+        }
+
+        return $total;
+    }
+
+    /**
+     * These are the fields that you want returned with the response. ie. if you put Id, then the Id will be given back
+     * in the request
+     *
+     * This is a list of available fields as of 12/8/15
+     * https://na8.salesforce.com/01I80000000XaZq?setupid=CustomObjects
+     *
+     * @return string
+     */
+    private static function _getDefaultRequestFields()
+    {
+        return implode(',', array(
+            'Id',
+            'pb__UnitView__c',
+            'pb__UnitType__c',
+            'pb__ItemType__c',
+            'pb__IsListed__c',
+            'Listing_Date__c',
+            'Builder_Name__C',
+            'Builder_Name_Website__c',
+            'Resale__c',
+            'pb__Latitude__c',
+            'pb__Longitude__c',
+            'pb__TotalAreaSqft__c',
+            'pb__UnitBedrooms__c',
+            'Full_Bathrooms__c',
+            'Half_Bathrooms__c',
+            'pb__IsForSale__c',
+            'pb__IsForLease__c',
+            'Project_Name__c',
+            'AddressWeb__c',
+            'pb__PurchaseListPrice__c',
+            'LastPurchasePrice__c',
+            'pb__ProjectId__c',
+            'Is_Featured__c',
+            'pb__ItemStatus__c',
+            'pb__CommunityId__c',
+            'pb__MLSNumber__c',
+            'HTML_Description__c',
+            'LastModifiedDate',
+            'X3D_Tours__c',
+            'FLV_Tour_URL__c',
+            'PDF_Floorplan_URL__c'
+        ));
+    }
+
+    /**
+     * @param HomeFinderFilters $filters
+     * @param int $per_page
+     * @param int $page
+     * @return Result
+     */
+    public static function getWithFilters(HomeFinderFilters $filters, $per_page = 24, $page = 1, $sort = 'DESC')
+    {
+        $default_url_params = array_merge(
+            PropertyBase::$_default_request_url_params,
+            array(
+                'page_limit' => $per_page,
+                'page' => $page
+            ),
+            $filters->getFiltersAsArrayForPropertyBaseRequest()
+        );
+
+        $pbase_response_raw = wp_remote_get(PropertyBase::API_ENDPOINT . '?' . http_build_query(
+                $default_url_params +
+                array(
+                    'fields' => PropertyBase::_getDefaultRequestFields(),
+                    'sort' => 'pb__PurchaseListPrice__c ' . $sort
+                )));
+
+        $properties = array();
+        $item_list = PropertyBase::_extractDataFromXMLResponse($pbase_response_raw);
+
+        if (isset($item_list['Id'])) {
+            // only returned 1 result
+            $pbase_listing = new PropertyBaseListing($item_list);
+            $property = Property::withPropertyBaseListing($pbase_listing);
+            $properties[] = $property;
+        } else {
+            foreach ($item_list as $item) {
+                $pbase_listing = new PropertyBaseListing($item);
+                $property = Property::withPropertyBaseListing($pbase_listing);
+                $properties[] = $property;
+            }
+        }
+
+        $result = Result::withTotalAndPerPageAndCurrentItems(PropertyBase::_extractTotalFromXMLResponse($pbase_response_raw), $per_page, $properties);
+
+        return $result;
+    }
+
+    /**
+     * @param int $per_page
+     * @param int $page
+     * @return Result
+     */
+    public static function getFeatured($per_page = 24, $page = 1, $sort = 'DESC')
+    {
+        $default_url_params = array_merge(PropertyBase::$_default_request_url_params, array(
+            'page_limit' => $per_page,
+            'page' => $page
+        ));
+
+        $pbase_response_raw = wp_remote_get(PropertyBase::API_ENDPOINT . '?' . http_build_query(
+                $default_url_params +
+                array(
+                    'fields' => PropertyBase::_getDefaultRequestFields(),
+                    'Is_Featured__c' => 'true',
+                    'sort' => 'pb__PurchaseListPrice__c ' . $sort
+                )));
+
+        $properties = array();
+        $item_list = PropertyBase::_extractDataFromXMLResponse($pbase_response_raw);
+
+        if (isset($item_list['Id'])) {
+            // only returned 1 result
+            $pbase_listing = new PropertyBaseListing($item_list);
+            $property = Property::withPropertyBaseListing($pbase_listing);
+            $properties[] = $property;
+        } else {
+            foreach ($item_list as $item) {
+                $pbase_listing = new PropertyBaseListing($item);
+                $property = Property::withPropertyBaseListing($pbase_listing);
+                $properties[] = $property;
+            }
+        }
+
+        $result = Result::withTotalAndPerPageAndCurrentItems(PropertyBase::_extractTotalFromXMLResponse($pbase_response_raw), $per_page, $properties);
+
+        return $result;
+    }
+
+    public static function getRecentlyListed($per_page = 24, $page = 1, $sort = 'DESC')
+    {
+        $default_url_params = array_merge(PropertyBase::$_default_request_url_params, array(
+            'page_limit' => $per_page,
+            'page' => $page
+        ));
+
+        $pbase_response_raw = wp_remote_get(PropertyBase::API_ENDPOINT . '?' . http_build_query(
+                $default_url_params +
+                array(
+                    'fields' => PropertyBase::_getDefaultRequestFields(),
+                    'sort' => 'Listing_Date__c ' . $sort
+                )));
+
+        $properties = array();
+        $item_list = PropertyBase::_extractDataFromXMLResponse($pbase_response_raw);
+
+        if (isset($item_list['Id'])) {
+            // only returned 1 result
+            $pbase_listing = new PropertyBaseListing($item_list);
+            $property = Property::withPropertyBaseListing($pbase_listing);
+            $properties[] = $property;
+        } else {
+            foreach ($item_list as $item) {
+                $pbase_listing = new PropertyBaseListing($item);
+                $property = Property::withPropertyBaseListing($pbase_listing);
+                $properties[] = $property;
+            }
+        }
+
+        $result = Result::withTotalAndPerPageAndCurrentItems(PropertyBase::_extractTotalFromXMLResponse($pbase_response_raw), $per_page, $properties);
+
+        return $result;
+    }
+
+    /**
+     * @param $id
+     * @return \HomeFinder\Model\Property|bool
+     */
+    public static function getByPropertyBaseId($id)
+    {
+        $pbase_response_raw = wp_remote_get(PropertyBase::API_ENDPOINT . '?' . http_build_query(
+                PropertyBase::$_default_request_url_params +
+                array(
+                    'Id' => $id,
+                    'fields' => PropertyBase::_getDefaultRequestFields()
+                )));
+
+        $item_list = PropertyBase::_extractDataFromXMLResponse($pbase_response_raw);
+
+        if (true === empty($item_list)) {
+            return false;
+        }
+
+        $pbase_listing = new PropertyBaseListing($item_list);
+        $property = Property::withPropertyBaseListing($pbase_listing);
+
+        return $property;
     }
 
     private static function withData($data)

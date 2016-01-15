@@ -1,8 +1,8 @@
 <?php
 /**
  * User: zach
- * Date: 06/04/2013
- * Time: 13:33:19 pm
+ * Date: 01/20/2014
+ * Time: 14:34:49 pm
  */
 
 namespace Elasticsearch\Endpoints\Indices\Mapping;
@@ -12,11 +12,16 @@ use Elasticsearch\Common\Exceptions;
 
 /**
  * Class Put
+ *
+ * @category Elasticsearch
  * @package Elasticsearch\Endpoints\Indices\Mapping
+ * @author   Zachary Tong <zachary.tong@elasticsearch.com>
+ * @license  http://www.apache.org/licenses/LICENSE-2.0 Apache2
+ * @link     http://elasticsearch.org
  */
+
 class Put extends AbstractEndpoint
 {
-
     /**
      * @param array $body
      *
@@ -29,14 +34,12 @@ class Put extends AbstractEndpoint
             return $this;
         }
 
-        if (is_array($body) !== true) {
-            throw new Exceptions\InvalidArgumentException(
-                'Body must be an array'
-            );
-        }
+
         $this->body = $body;
         return $this;
     }
+
+
 
     /**
      * @throws \Elasticsearch\Common\Exceptions\RuntimeException
@@ -44,25 +47,24 @@ class Put extends AbstractEndpoint
      */
     protected function getURI()
     {
-
-        if (isset($this->index) !== true) {
-            throw new Exceptions\RuntimeException(
-                'index is required for Put'
-            );
-        }
-
         if (isset($this->type) !== true) {
             throw new Exceptions\RuntimeException(
                 'type is required for Put'
             );
         }
-
         $index = $this->index;
-        $type  = $this->type;
-        $uri = "/$index/$type/_mapping";
+        $type = $this->type;
+        $uri   = "/_mapping/$type";
+
+        if (isset($index) === true && isset($type) === true) {
+            $uri = "/$index/$type/_mapping";
+        } elseif (isset($type) === true) {
+            $uri = "/_mapping/$type";
+        }
 
         return $uri;
     }
+
 
     /**
      * @return string[]
@@ -72,15 +74,11 @@ class Put extends AbstractEndpoint
         return array(
             'ignore_conflicts',
             'timeout',
+            'master_timeout',
+            'ignore_unavailable',
+            'allow_no_indices',
+            'expand_wildcards',
         );
-    }
-
-    /**
-     * @return string
-     */
-    protected function getMethod()
-    {
-        return 'PUT';
     }
 
 
@@ -91,9 +89,17 @@ class Put extends AbstractEndpoint
     protected function getBody()
     {
         if (isset($this->body) !== true) {
-            throw new Exceptions\RuntimeException('Body is required for Put');
+            throw new Exceptions\RuntimeException('Body is required for Put Mapping');
         }
-
         return $this->body;
+    }
+
+
+    /**
+     * @return string
+     */
+    protected function getMethod()
+    {
+        return 'PUT';
     }
 }

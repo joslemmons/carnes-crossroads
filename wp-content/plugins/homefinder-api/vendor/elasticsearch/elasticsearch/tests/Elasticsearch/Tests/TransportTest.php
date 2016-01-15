@@ -68,11 +68,48 @@ class TransportTest extends \PHPUnit_Framework_TestCase
         };
 
         // Eww...
-        $params = m::mock('Pimple')
+        $params = m::mock('\Pimple\Container')
                       ->shouldReceive('offsetGet')->with('connectionPool')->andReturn($mockConnectionPoolFxn)->getMock()
                       ->shouldReceive('offsetGet')->with('serializer')->andReturn($mockSerializer)->getMock()
                       ->shouldReceive('offsetGet')->with('connection')->andReturn($mockConnectionFxn)->getMock()
-                      ->shouldReceive('offsetGet')->with('sniffOnStart')->andReturn(true)->getMock();
+                      ->shouldReceive('offsetGet')->with('sniffOnStart')->andReturn(true)->getMock()
+                      ->shouldReceive('offsetExists')->with('retries')->andReturn(false)->getMock()
+                      ->shouldReceive('offsetSet')->with('retries', 0)->getMock()
+                      ->shouldReceive('offsetGet')->with('retries')->andReturn(1)->getMock();
+
+        $transport = new Elasticsearch\Transport($hosts, $params, $log);
+    }
+
+    public function testSetRetries()
+    {
+        $log = $this->getMockBuilder('\Monolog\Logger')
+               ->disableOriginalConstructor()
+               ->getMock();
+
+        $hosts = array(array('host' => 'localhost'));
+
+        $mockConnectionPool = m::mock('\Elasticsearch\ConnectionPool\StaticConnectionPool')
+                              ->shouldReceive('scheduleCheck')->once()->getMock();
+
+        $mockConnectionPoolFxn = function($connections) use ($mockConnectionPool) {
+            return $mockConnectionPool;
+        };
+
+        $mockSerializer = m::mock('\Elasticsearch\Serializers\SerializerInterface');
+
+        $mockConnection = m::mock('\Elasticsearch\Connections\ConnectionInterface');
+        $mockConnectionFxn = function($host, $port = null) use ($mockConnection) {
+            return $mockConnection;
+        };
+
+        // Eww...
+        $params = m::mock('\Pimple\Container')
+                  ->shouldReceive('offsetGet')->with('connectionPool')->andReturn($mockConnectionPoolFxn)->getMock()
+                  ->shouldReceive('offsetGet')->with('serializer')->andReturn($mockSerializer)->getMock()
+                  ->shouldReceive('offsetGet')->with('connection')->andReturn($mockConnectionFxn)->getMock()
+                  ->shouldReceive('offsetGet')->with('sniffOnStart')->andReturn(true)->getMock()
+                  ->shouldReceive('offsetExists')->with('retries')->andReturn(true)->getMock()
+                  ->shouldReceive('offsetGet')->with('retries')->andReturn(2)->getMock();
 
         $transport = new Elasticsearch\Transport($hosts, $params, $log);
     }
@@ -99,11 +136,14 @@ class TransportTest extends \PHPUnit_Framework_TestCase
         };
 
         // Eww...
-        $params = m::mock('Pimple')
+        $params = m::mock('\Pimple\Container')
                   ->shouldReceive('offsetGet')->with('connectionPool')->andReturn($mockConnectionPoolFxn)->getMock()
                   ->shouldReceive('offsetGet')->with('serializer')->andReturn($mockSerializer)->getMock()
                   ->shouldReceive('offsetGet')->with('connection')->andReturn($mockConnectionFxn)->getMock()
-                  ->shouldReceive('offsetGet')->with('sniffOnStart')->andReturn(false)->getMock();
+                  ->shouldReceive('offsetGet')->with('sniffOnStart')->andReturn(false)->getMock()
+                  ->shouldReceive('offsetExists')->with('retries')->andReturn(false)->getMock()
+                  ->shouldReceive('offsetSet')->with('retries', 0)->getMock()
+                  ->shouldReceive('offsetGet')->with('retries')->andReturn(1)->getMock();
 
         $transport = new Elasticsearch\Transport($hosts, $params, $log);
     }
@@ -130,11 +170,14 @@ class TransportTest extends \PHPUnit_Framework_TestCase
         };
 
         // Eww...
-        $params = m::mock('Pimple')
+        $params = m::mock('\Pimple\Container')
                   ->shouldReceive('offsetGet')->with('connectionPool')->andReturn($mockConnectionPoolFxn)->getMock()
                   ->shouldReceive('offsetGet')->with('serializer')->andReturn($mockSerializer)->getMock()
                   ->shouldReceive('offsetGet')->with('connection')->andReturn($mockConnectionFxn)->getMock()
-                  ->shouldReceive('offsetGet')->with('sniffOnStart')->andReturn(false)->getMock();
+                  ->shouldReceive('offsetGet')->with('sniffOnStart')->andReturn(false)->getMock()
+                  ->shouldReceive('offsetExists')->with('retries')->andReturn(false)->getMock()
+                  ->shouldReceive('offsetSet')->with('retries', 1)->getMock()
+                  ->shouldReceive('offsetGet')->with('retries')->andReturn(2)->getMock();
 
         $transport = new Elasticsearch\Transport($hosts, $params, $log);
     }
@@ -153,7 +196,7 @@ class TransportTest extends \PHPUnit_Framework_TestCase
         $response = array(
             'text' => 'texty text',
             'status'   => '200',
-            'info'     => ''
+            'info'     => array()
         );
 
         $mockConnection = m::mock('\Elasticsearch\Connections\AbstractConnection')
@@ -172,16 +215,19 @@ class TransportTest extends \PHPUnit_Framework_TestCase
         };
 
         $mockSerializer = m::mock('\Elasticsearch\Serializers\SerializerInterface')
-                          ->shouldReceive('deserialize')->with($response['text'])->andReturn('out')->getMock();
+                          ->shouldReceive('deserialize')->with($response['text'], array())->andReturn('out')->getMock();
 
 
 
         // Eww...
-        $pimple = m::mock('Pimple')
+        $pimple = m::mock('\Pimple\Container')
                   ->shouldReceive('offsetGet')->with('connectionPool')->andReturn($mockConnectionPoolFxn)->getMock()
                   ->shouldReceive('offsetGet')->with('serializer')->andReturn($mockSerializer)->getMock()
                   ->shouldReceive('offsetGet')->with('connection')->andReturn($mockConnectionFxn)->getMock()
-                  ->shouldReceive('offsetGet')->with('sniffOnStart')->andReturn(false)->getMock();
+                  ->shouldReceive('offsetGet')->with('sniffOnStart')->andReturn(false)->getMock()
+                  ->shouldReceive('offsetExists')->with('retries')->andReturn(false)->getMock()
+                  ->shouldReceive('offsetSet')->with('retries', 0)->getMock()
+                  ->shouldReceive('offsetGet')->with('retries')->andReturn(1)->getMock();
 
         $transport = new Elasticsearch\Transport($hosts, $pimple, $log);
         $ret = $transport->performRequest($method, $uri, $params, $body);
@@ -210,7 +256,7 @@ class TransportTest extends \PHPUnit_Framework_TestCase
         $response = array(
             'text' => 'texty text',
             'status'   => '200',
-            'info'     => ''
+            'info'     => array()
         );
         $serializedBody = 'out_serialized';
 
@@ -232,16 +278,19 @@ class TransportTest extends \PHPUnit_Framework_TestCase
 
         $mockSerializer = m::mock('\Elasticsearch\Serializers\SerializerInterface')
                           ->shouldReceive('serialize')->with($body)->andReturn($serializedBody)->getMock()
-                          ->shouldReceive('deserialize')->with($response['text'])->andReturn('out_deserialize')->getMock();
+                          ->shouldReceive('deserialize')->with($response['text'], array())->andReturn('out_deserialize')->getMock();
 
 
 
         // Eww...
-        $pimple = m::mock('Pimple')
+        $pimple = m::mock('\Pimple\Container')
                   ->shouldReceive('offsetGet')->with('connectionPool')->andReturn($mockConnectionPoolFxn)->getMock()
                   ->shouldReceive('offsetGet')->with('serializer')->andReturn($mockSerializer)->getMock()
                   ->shouldReceive('offsetGet')->with('connection')->andReturn($mockConnectionFxn)->getMock()
-                  ->shouldReceive('offsetGet')->with('sniffOnStart')->andReturn(false)->getMock();
+                  ->shouldReceive('offsetGet')->with('sniffOnStart')->andReturn(false)->getMock()
+                  ->shouldReceive('offsetExists')->with('retries')->andReturn(false)->getMock()
+                  ->shouldReceive('offsetSet')->with('retries', 0)->getMock()
+                  ->shouldReceive('offsetGet')->with('retries')->andReturn(1)->getMock();
 
         $transport = new Elasticsearch\Transport($hosts, $pimple, $log);
         $ret = $transport->performRequest($method, $uri, $params, $body);
@@ -269,7 +318,7 @@ class TransportTest extends \PHPUnit_Framework_TestCase
         $response = array(
             'text' => 'texty text',
             'status'   => '200',
-            'info'     => ''
+            'info'     => array()
         );
 
         $mockConnection = m::mock('\Elasticsearch\Connections\AbstractConnection')
@@ -289,16 +338,19 @@ class TransportTest extends \PHPUnit_Framework_TestCase
         };
 
         $mockSerializer = m::mock('\Elasticsearch\Serializers\SerializerInterface')
-                          ->shouldReceive('deserialize')->with($response['text'])->andReturn('out')->getMock();
+                          ->shouldReceive('deserialize')->with($response['text'], array())->andReturn('out')->getMock();
 
 
 
         // Eww...
-        $pimple = m::mock('Pimple')
+        $pimple = m::mock('\Pimple\Container')
                   ->shouldReceive('offsetGet')->with('connectionPool')->andReturn($mockConnectionPoolFxn)->getMock()
                   ->shouldReceive('offsetGet')->with('serializer')->andReturn($mockSerializer)->getMock()
                   ->shouldReceive('offsetGet')->with('connection')->andReturn($mockConnectionFxn)->getMock()
-                  ->shouldReceive('offsetGet')->with('sniffOnStart')->andReturn(false)->getMock();
+                  ->shouldReceive('offsetGet')->with('sniffOnStart')->andReturn(false)->getMock()
+                  ->shouldReceive('offsetExists')->with('retries')->andReturn(false)->getMock()
+                  ->shouldReceive('offsetSet')->with('retries', 0)->getMock()
+                  ->shouldReceive('offsetGet')->with('retries')->andReturn(1)->getMock();
 
         $transport = new Elasticsearch\Transport($hosts, $pimple, $log);
         $ret = $transport->performRequest($method, $uri, $params, $body);
@@ -330,7 +382,7 @@ class TransportTest extends \PHPUnit_Framework_TestCase
         $response = array(
             'text' => 'texty text',
             'status'   => '200',
-            'info'     => ''
+            'info'     => array()
         );
 
         $mockConnection = m::mock('\Elasticsearch\Connections\AbstractConnection');
@@ -348,11 +400,14 @@ class TransportTest extends \PHPUnit_Framework_TestCase
         $mockSerializer = m::mock('\Elasticsearch\Serializers\SerializerInterface');
 
         // Eww...
-        $pimple = m::mock('Pimple')
+        $pimple = m::mock('\Pimple\Container')
                   ->shouldReceive('offsetGet')->with('connectionPool')->andReturn($mockConnectionPoolFxn)->getMock()
                   ->shouldReceive('offsetGet')->with('connection')->andReturn($mockConnectionFxn)->getMock()
                   ->shouldReceive('offsetGet')->with('serializer')->andReturn($mockSerializer)->getMock()
-                  ->shouldReceive('offsetGet')->with('sniffOnStart')->andReturn(false)->getMock();
+                  ->shouldReceive('offsetGet')->with('sniffOnStart')->andReturn(false)->getMock()
+                  ->shouldReceive('offsetExists')->with('retries')->andReturn(false)->getMock()
+                  ->shouldReceive('offsetSet')->with('retries', 0)->getMock()
+                  ->shouldReceive('offsetGet')->with('retries')->andReturn(1)->getMock();
 
         $transport = new Elasticsearch\Transport($hosts, $pimple, $log);
         $transport->performRequest($method, $uri, $params, $body);
@@ -374,7 +429,7 @@ class TransportTest extends \PHPUnit_Framework_TestCase
         $response = array(
             'text' => 'texty text',
             'status'   => '200',
-            'info'     => ''
+            'info'     => array()
         );
 
         $mockConnection = m::mock('\Elasticsearch\Connections\AbstractConnection')
@@ -395,16 +450,19 @@ class TransportTest extends \PHPUnit_Framework_TestCase
         };
 
         $mockSerializer = m::mock('\Elasticsearch\Serializers\SerializerInterface')
-                          ->shouldReceive('deserialize')->with($response['text'])->andReturn('out')->getMock();
+                          ->shouldReceive('deserialize')->with($response['text'], array())->andReturn('out')->getMock();
 
 
 
         // Eww...
-        $pimple = m::mock('Pimple')
+        $pimple = m::mock('\Pimple\Container')
                   ->shouldReceive('offsetGet')->with('connectionPool')->andReturn($mockConnectionPoolFxn)->getMock()
                   ->shouldReceive('offsetGet')->with('serializer')->andReturn($mockSerializer)->getMock()
                   ->shouldReceive('offsetGet')->with('connection')->andReturn($mockConnectionFxn)->getMock()
-                  ->shouldReceive('offsetGet')->with('sniffOnStart')->andReturn(false)->getMock();
+                  ->shouldReceive('offsetGet')->with('sniffOnStart')->andReturn(false)->getMock()
+                  ->shouldReceive('offsetExists')->with('retries')->andReturn(false)->getMock()
+                  ->shouldReceive('offsetSet')->with('retries', 0)->getMock()
+                  ->shouldReceive('offsetGet')->with('retries')->andReturn(1)->getMock();
 
         $transport = new Elasticsearch\Transport($hosts, $pimple, $log);
         $ret = $transport->performRequest($method, $uri, $params, $body);

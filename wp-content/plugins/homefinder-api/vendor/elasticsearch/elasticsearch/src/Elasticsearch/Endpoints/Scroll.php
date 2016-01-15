@@ -1,72 +1,89 @@
 <?php
 /**
  * User: zach
- * Date: 6/13/13
- * Time: 2:41 PM
+ * Date: 01/20/2014
+ * Time: 14:34:49 pm
  */
 
 namespace Elasticsearch\Endpoints;
 
-use Elasticsearch\Common\Exceptions\InvalidArgumentException;
 use Elasticsearch\Endpoints\AbstractEndpoint;
 use Elasticsearch\Common\Exceptions;
 
 /**
  * Class Scroll
+ *
+ * @category Elasticsearch
  * @package Elasticsearch\Endpoints
+ * @author   Zachary Tong <zachary.tong@elasticsearch.com>
+ * @license  http://www.apache.org/licenses/LICENSE-2.0 Apache2
+ * @link     http://elasticsearch.org
  */
+
 class Scroll extends AbstractEndpoint
 {
+    // The scroll ID
+    private $scroll_id;
 
-    protected $scrollID;
+    private $clear = false;
+
 
     /**
-     * @param string $query
+     * @param array $body
      *
-     * @return $this
      * @throws \Elasticsearch\Common\Exceptions\InvalidArgumentException
+     * @return $this
      */
-    public function setBody($query)
+    public function setBody($body)
     {
-        if (isset($query) !== true) {
+        if (isset($body) !== true) {
             return $this;
         }
 
-        if (is_string($query) !== true) {
-            throw new InvalidArgumentException(
-                'body must be a string'
-            );
-        }
-        $this->body = $query;
+
+        $this->body = $body;
+        return $this;
+    }
+
+
+    public function setClearScroll($clear)
+    {
+        $this->clear = $clear;
         return $this;
     }
 
 
     /**
-     * @param string $scrollID
+     * @param $scroll_id
      *
      * @return $this
      */
-    public function setScrollID($scrollID)
+    public function setScrollId($scroll_id)
     {
-        $this->scrollID = $scrollID;
+        if (isset($scroll_id) !== true) {
+            return $this;
+        }
+
+        $this->scroll_id = $scroll_id;
         return $this;
     }
+
 
     /**
      * @return string
      */
     protected function getURI()
     {
-        $uri      = '/_search/scroll/';
-        $scrollID = $this->scrollID;
+        $scroll_id = $this->scroll_id;
+        $uri   = "/_search/scroll";
 
-        if (isset($scrollID) === true) {
-            $uri = "/_search/scroll/$scrollID";
+        if (isset($scroll_id) === true) {
+            $uri = "/_search/scroll/$scroll_id";
         }
 
         return $uri;
     }
+
 
     /**
      * @return string[]
@@ -79,12 +96,16 @@ class Scroll extends AbstractEndpoint
         );
     }
 
+
     /**
      * @return string
      */
     protected function getMethod()
     {
+        if ($this->clear == true) {
+            return 'DELETE';
+        }
+
         return 'GET';
     }
-
 }

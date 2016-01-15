@@ -9,7 +9,10 @@ namespace Elasticsearch\Connections;
 
 
 use Elasticsearch\Common\Exceptions\AlreadyExpiredException;
+use Elasticsearch\Common\Exceptions\Authentication401Exception;
+use Elasticsearch\Common\Exceptions\BadRequest400Exception;
 use Elasticsearch\Common\Exceptions\Conflict409Exception;
+use Elasticsearch\Common\Exceptions\Forbidden403Exception;
 use Elasticsearch\Common\Exceptions\InvalidArgumentException;
 use Elasticsearch\Common\Exceptions\Missing404Exception;
 use Elasticsearch\Common\Exceptions\NoDocumentsToGetException;
@@ -21,37 +24,51 @@ use \Guzzle\Http\Client;
 use Guzzle\Http\Exception\ClientErrorResponseException;
 use Guzzle\Http\Exception\CurlException;
 use Guzzle\Http\Exception\ServerErrorResponseException;
+use Guzzle\Http\Message\EntityEnclosingRequest;
 use Guzzle\Http\Message\Request;
 use Guzzle\Http\Message\Response;
+use Psr\Log\LoggerInterface;
 
 class GuzzleConnection extends AbstractConnection implements ConnectionInterface
 {
     /** @var  Client */
     private $guzzle;
 
+    private $lastRequest = array();
+
 
     /**
-     * @param string          $host             Host string
-     * @param int             $port             Host port
-     * @param array           $connectionParams Array of connection parameters
-     * @param \Monolog\Logger $log              Monolog logger object
-     * @param \Monolog\Logger $trace            Monolog logger object (for curl traces)
+     * @param array                    $hostDetails
+     * @param array                    $connectionParams Array of connection parameters
+     * @param \Psr\Log\LoggerInterface $log              logger object
+     * @param \Psr\Log\LoggerInterface $trace            logger object (for curl traces)
      *
      * @throws \Elasticsearch\Common\Exceptions\InvalidArgumentException
      * @return \Elasticsearch\Connections\GuzzleConnection
      */
-    public function __construct($host, $port, $connectionParams, $log, $trace)
+    public function __construct($hostDetails, $connectionParams, LoggerInterface $log, LoggerInterface $trace)
     {
         if (isset($connectionParams['guzzleClient']) !== true) {
-            $log->addCritical('guzzleClient must be set in connectionParams');
+            $log->critical('guzzleClient must be set in connectionParams');
             throw new InvalidArgumentException('guzzleClient must be set in connectionParams');
         }
 
-        if (isset($port) !== true) {
-            $port = 9200;
+        if (isset($hostDetails['port']) !== true) {
+            $hostDetails['port'] = 9200;
         }
+
+        if (isset($hostDetails['scheme']) !== true) {
+            $hostDetails['scheme'] = 'http';
+        }
+
         $this->guzzle = $connectionParams['guzzleClient'];
-        return parent::__construct($host, $port, $connectionParams, $log, $trace);
+        unset($connectionParams['guzzleClient']);
+
+        if (isset($connectionParams['connectionParams'])) {
+            $this->connectionParams += $connectionParams['connectionParams'];
+        }
+
+        parent::__construct($hostDetails, $connectionParams, $log, $trace);
 
     }
 
@@ -81,6 +98,8 @@ class GuzzleConnection extends AbstractConnection implements ConnectionInterface
     {
 
         $uri = $this->getURI($uri, $params);
+
+        $options += $this->connectionParams;
         $request = $this->buildGuzzleRequest($method, $uri, $body, $options);
         $response = $this->sendRequest($request, $body);
 
@@ -90,6 +109,15 @@ class GuzzleConnection extends AbstractConnection implements ConnectionInterface
             'info'   => $response->getInfo(),
         );
 
+    }
+
+
+    /**
+     * @return array
+     */
+    public function getLastRequestInfo()
+    {
+        return $this->lastRequest;
     }
 
 
@@ -126,9 +154,30 @@ class GuzzleConnection extends AbstractConnection implements ConnectionInterface
         }
 
         if (isset($body) === true) {
-            $request = $this->guzzle->$method($uri, array(), $body, $options);
+            $this->lastRequest = array( 'request' => array(
+                'uri'     => $uri,
+                'body'    => $body,
+                'options' => $options,
+                'method'  => $method
+            ));
+
+            /** @var EntityEnclosingRequest $request */
+            $request = $this->guzzle->$method($uri, array('content-type' => 'application/json'), $body, $options);
+            if (isset($options['auth'])) {
+                $request->setAuth($options['auth'][0],$options['auth'][1],$options['auth'][2]);
+            }
+
         } else {
-            $request = $this->guzzle->$method($uri, array(), $options);
+            $this->lastRequest = array( 'request' => array(
+                'uri'     => $uri,
+                'body'    => null,
+                'options' => $options,
+                'method'  => $method
+            ));
+            $request = $this->guzzle->$method($uri, array(), array(), $options);
+            if (isset($options['auth'])) {
+                $request->setAuth($options['auth'][0],$options['auth'][1],$options['auth'][2]);
+            }
         }
 
         return $request;
@@ -158,7 +207,7 @@ class GuzzleConnection extends AbstractConnection implements ConnectionInterface
 
         } catch (\Exception $exception) {
             $error = 'Unexpected error: ' . $exception->getMessage();
-            $this->log->addCritical($error);
+            $this->log->critical($error);
             throw new TransportException($error);
         }
 
@@ -186,16 +235,16 @@ class GuzzleConnection extends AbstractConnection implements ConnectionInterface
         $responseBody  = $request->getResponse()->getBody(true);
 
         $exceptionText = "$statusCode Server Exception: $exceptionText\n$responseBody";
-        $this->log->addError($exceptionText);
+        $this->log->error($exceptionText);
 
         if ($statusCode === 500 && strpos($responseBody, "RoutingMissingException") !== false) {
-            throw new RoutingMissingException($exceptionText, $statusCode, $exception);
+            throw new RoutingMissingException($responseBody, $statusCode, $exception);
         } elseif ($statusCode === 500 && preg_match('/ActionRequestValidationException.+ no documents to get/',$responseBody) === 1) {
-            throw new NoDocumentsToGetException($exceptionText, $statusCode, $exception);
+            throw new NoDocumentsToGetException($responseBody, $statusCode, $exception);
         } elseif ($statusCode === 500 && strpos($responseBody, 'NoShardAvailableActionException') !== false) {
-            throw new NoShardAvailableException($exceptionText, $statusCode, $exception);
+            throw new NoShardAvailableException($responseBody, $statusCode, $exception);
         } else {
-            throw new ServerErrorResponseException($exceptionText, $statusCode, $exception);
+            throw new \Elasticsearch\Common\Exceptions\ServerErrorResponseException($responseBody, $statusCode, $exception);
         }
 
 
@@ -213,13 +262,19 @@ class GuzzleConnection extends AbstractConnection implements ConnectionInterface
         $exceptionText = "$statusCode Server Exception: $exceptionText\n$responseBody";
 
         if ($statusCode === 400 && strpos($responseBody, "AlreadyExpiredException") !== false) {
-            throw new AlreadyExpiredException($exceptionText, $statusCode, $exception);
+            throw new AlreadyExpiredException($responseBody, $statusCode, $exception);
+        } elseif ($statusCode === 401) {
+            throw new Authentication401Exception($responseBody, $statusCode, $exception);
+        } elseif ($statusCode === 403) {
+            throw new Forbidden403Exception($responseBody, $statusCode, $exception);
         } elseif ($statusCode === 404) {
-            throw new Missing404Exception($exceptionText, $statusCode, $exception);
+            throw new Missing404Exception($responseBody, $statusCode, $exception);
         } elseif ($statusCode === 409) {
-            throw new Conflict409Exception($exceptionText, $statusCode, $exception);
+            throw new Conflict409Exception($responseBody, $statusCode, $exception);
         } elseif ($statusCode === 400 && strpos($responseBody, 'script_lang not supported') !== false) {
-            throw new ScriptLangNotSupportedException($exceptionText. $statusCode);
+            throw new ScriptLangNotSupportedException($responseBody. $statusCode);
+        } elseif ($statusCode === 400) {
+            throw new BadRequest400Exception($responseBody, $statusCode, $exception);
         }
     }
 
@@ -231,14 +286,24 @@ class GuzzleConnection extends AbstractConnection implements ConnectionInterface
      */
     private function logErrorDueToFailure(Request $request, \Exception $exception, $body)
     {
-        $response = $request->getResponse();
+        $response     = $request->getResponse();
+        $headers      = $request->getHeaders()->getAll();
+        $info         = $response->getInfo();
+        $responseBody = $response->getBody(true);
+        $status       = $response->getStatusCode();
+
+        $this->lastRequest['response']['body']    = $responseBody;
+        $this->lastRequest['response']['info']    = $info;
+        $this->lastRequest['response']['status']  = $status;
 
         $this->logRequestFail(
             $request->getMethod(),
             $request->getUrl(),
+            $body,
+            $headers,
             $response->getInfo('total_time'),
             $response->getStatusCode(),
-            $body,
+            $responseBody,
             $exception->getMessage()
         );
     }
@@ -250,7 +315,7 @@ class GuzzleConnection extends AbstractConnection implements ConnectionInterface
     private function processCurlError(CurlException $exception)
     {
         $error = 'Curl error: ' . $exception->getMessage();
-        $this->log->addError($error);
+        $this->log->error($error);
         $this->throwCurlException($exception->getErrorNo(), $exception->getError());
     }
 
@@ -260,14 +325,22 @@ class GuzzleConnection extends AbstractConnection implements ConnectionInterface
      */
     private function processSuccessfulRequest(Request $request, $body)
     {
-        $response = $request->getResponse();
+        $response     = $request->getResponse();
+        $headers      = $request->getHeaders()->getAll();
+        $responseBody = $response->getBody(true);
+        $status       = $response->getStatusCode();
+
+        $this->lastRequest['response']['body']    = $responseBody;
+        $this->lastRequest['response']['info']    = $response->getInfo();
+        $this->lastRequest['response']['status']  = $status;
 
         $this->logRequestSuccess(
             $request->getMethod(),
             $request->getUrl(),
             $body,
-            $response->getStatusCode(),
-            $response->getBody(true),
+            $headers,
+            $status,
+            $responseBody,
             $response->getInfo('total_time')
         );
     }

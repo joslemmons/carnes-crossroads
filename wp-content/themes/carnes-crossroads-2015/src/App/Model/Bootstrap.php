@@ -16,8 +16,12 @@ class Bootstrap
         VisualEditor::init();
         ContactFooter::init();
 
+        date_default_timezone_set('America/New_York');
+
         add_theme_support('post-thumbnails');
         add_theme_support('menus');
+
+        add_shortcode('nggallery', '__return_false');
 
         self::_notifyAdminOfMissingPlugins();
 
@@ -54,6 +58,8 @@ class Bootstrap
         Page::bootstrap();
         FrontPage::bootstrap();
         NewsAndEventsPage::bootstrap();
+        LandingPage::bootstrap();
+        AccountPage::bootstrap();
     }
 
 }

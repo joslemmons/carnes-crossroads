@@ -18,44 +18,15 @@ namespace Elasticsearch\Namespaces;
  */
 class ClusterNamespace extends AbstractNamespace
 {
+
     /**
-     * $params['fields']        = (list) A comma-separated list of fields for `fielddata` metric (supports wildcards)
-     *        ['metric_family'] = (enum) Limit the information returned to a certain metric family
-     *        ['metric']        = (enum) Limit the information returned for `indices` family to a specific metric
-     *        ['node_id']       = (list) A comma-separated list of node IDs or names to limit the returned information; use `_local` to return information from the node you're connecting to, leave empty to get information from all nodes
-     *        ['all']           = (boolean) Return all available information
-     *        ['clear']         = (boolean) Reset the default level of detail
-     *        ['fs']            = (boolean) Return information about the filesystem
-     *        ['http']          = (boolean) Return information about HTTP
-     *        ['indices']       = (boolean) Return information about indices
-     *        ['jvm']           = (boolean) Return information about the JVM
-     *        ['network']       = (boolean) Return information about network
-     *        ['os']            = (boolean) Return information about the operating system
-     *        ['process']       = (boolean) Return information about the Elasticsearch process
-     *        ['thread_pool']   = (boolean) Return information about the thread pool
-     *        ['transport']     = (boolean) Return information about transport
-     *
-     * @param $params array Associative array of parameters
-     *
-     * @return array
+     * @return callable
      */
-    public function nodeStats($params = array())
-    {
-        $nodeID = $this->extractArgument($params, 'node_id');
-        unset($params['node_id']);
-
-
-        /** @var callback $endpointBuilder */
-        $endpointBuilder = $this->dicEndpoints;
-
-        /** @var \Elasticsearch\Endpoints\Cluster\Node\Stats $endpoint */
-        $endpoint = $endpointBuilder('Cluster\Node\Stats');
-        $endpoint->setNodeID($nodeID);
-        $endpoint->setParams($params);
-        $response = $endpoint->performRequest();
-        return $response['data'];
+    public static function build() {
+        return function ($dicParams) {
+            return new ClusterNamespace($dicParams['transport'], $dicParams['endpoint']);
+        };
     }
-
 
     /**
      * $params['index']                      = (string) Limit the information returned to a specific index
@@ -75,7 +46,7 @@ class ClusterNamespace extends AbstractNamespace
     public function health($params = array())
     {
         $index = $this->extractArgument($params, 'index');
-        unset($params['index']);
+
 
 
         /** @var callback $endpointBuilder */
@@ -94,6 +65,7 @@ class ClusterNamespace extends AbstractNamespace
      * $params['dry_run']         = (boolean) Simulate the operation only and return the resulting state
      *        ['filter_metadata'] = (boolean) Don't return cluster state metadata (default: false)
      *        ['body']            = (boolean) Don't return cluster state metadata (default: false)
+     *        ['explain']         = (boolean) Return an explanation of why the commands can or cannot be executed
      *
      * @param $params array Associative array of parameters
      *
@@ -102,7 +74,7 @@ class ClusterNamespace extends AbstractNamespace
     public function reroute($params = array())
     {
         $body = $this->extractArgument($params, 'body');
-        unset($params['body']);
+
 
 
         /** @var callback $endpointBuilder */
@@ -115,72 +87,6 @@ class ClusterNamespace extends AbstractNamespace
         $response = $endpoint->performRequest();
         return $response['data'];
     }
-
-
-    /**
-     * $params['node_id']     = (list) A comma-separated list of node IDs or names to limit the returned information; use `_local` to return information from the node you're connecting to, leave empty to get information from all nodes
-     *        ['all']         = (boolean) Return all available information
-     *        ['clear']       = (boolean) Reset the default settings
-     *        ['http']        = (boolean) Return information about HTTP
-     *        ['jvm']         = (boolean) Return information about the JVM
-     *        ['network']     = (boolean) Return information about network
-     *        ['os']          = (boolean) Return information about the operating system
-     *        ['plugin']      = (boolean) Return information about plugins
-     *        ['process']     = (boolean) Return information about the Elasticsearch process
-     *        ['settings']    = (boolean) Return information about node settings
-     *        ['thread_pool'] = (boolean) Return information about the thread pool
-     *        ['transport']   = (boolean) Return information about transport
-     *
-     * @param $params array Associative array of parameters
-     *
-     * @return array
-     */
-    public function nodeInfo($params = array())
-    {
-        $nodeID = $this->extractArgument($params, 'node_id');
-        unset($params['node_id']);
-
-
-        /** @var callback $endpointBuilder */
-        $endpointBuilder = $this->dicEndpoints;
-
-        /** @var \Elasticsearch\Endpoints\Cluster\Node\Info $endpoint */
-        $endpoint = $endpointBuilder('Cluster\Node\Info');
-        $endpoint->setNodeID($nodeID);
-        $endpoint->setParams($params);
-        $response = $endpoint->performRequest();
-        return $response['data'];
-    }
-
-
-    /**
-     * $params['node_id']   = (list) A comma-separated list of node IDs or names to limit the returned information; use `_local` to return information from the node you're connecting to, leave empty to get information from all nodes
-     *        ['interval']  = (time) The interval for the second sampling of threads
-     *        ['snapshots'] = (number) Number of samples of thread stacktrace (default: 10)
-     *        ['threads']   = (number) Specify the number of threads to provide information for (default: 3)
-     *        ['type']      = (enum) The type to sample (default: cpu)
-     *
-     * @param $params array Associative array of parameters
-     *
-     * @return array
-     */
-    public function nodeHotThreads($params = array())
-    {
-        $nodeID = $this->extractArgument($params, 'node_id');
-        unset($params['node_id']);
-
-
-        /** @var callback $endpointBuilder */
-        $endpointBuilder = $this->dicEndpoints;
-
-        /** @var \Elasticsearch\Endpoints\Cluster\Node\HotThreads $endpoint */
-        $endpoint = $endpointBuilder('Cluster\Node\HotThreads');
-        $endpoint->setNodeID($nodeID);
-        $endpoint->setParams($params);
-        $response = $endpoint->performRequest();
-        return $response['data'];
-    }
-
 
     /**
      * $params['filter_blocks']          = (boolean) Do not return information about blocks
@@ -198,40 +104,40 @@ class ClusterNamespace extends AbstractNamespace
      */
     public function state($params = array())
     {
+        $index = $this->extractArgument($params, 'index');
+        $metric = $this->extractArgument($params, 'metric');
 
         /** @var callback $endpointBuilder */
         $endpointBuilder = $this->dicEndpoints;
 
         /** @var \Elasticsearch\Endpoints\Cluster\State $endpoint */
         $endpoint = $endpointBuilder('Cluster\State');
-        $endpoint->setParams($params);
+        $endpoint->setParams($params)
+                 ->setIndex($index)
+                 ->setMetric($metric);
         $response = $endpoint->performRequest();
         return $response['data'];
     }
 
-
     /**
-     * $params['node_id'] = (list) A comma-separated list of node IDs or names to perform the operation on; use `_local` to perform the operation on the node you're connected to, leave empty to perform the operation on all nodes
-     *        ['delay']   = (time) Set the delay for the operation (default: 1s)
-     *        ['exit']    = (boolean) Exit the JVM as well (default: true)
+     * $params['flat_settings']          = (boolean) Return settings in flat format (default: false)
+     *        ['human'] = (boolean) Whether to return time and byte values in human-readable format.
      *
      * @param $params array Associative array of parameters
      *
      * @return array
      */
-    public function nodeShutdown($params = array())
+    public function stats($params = array())
     {
         $nodeID = $this->extractArgument($params, 'node_id');
-        unset($params['node_id']);
-
 
         /** @var callback $endpointBuilder */
         $endpointBuilder = $this->dicEndpoints;
 
-        /** @var \Elasticsearch\Endpoints\Cluster\Node\Shutdown $endpoint */
-        $endpoint = $endpointBuilder('Cluster\Node\Shutdown');
-        $endpoint->setNodeID($nodeID);
-        $endpoint->setParams($params);
+        /** @var \Elasticsearch\Endpoints\Cluster\Stats $endpoint */
+        $endpoint = $endpointBuilder('Cluster\Stats');
+        $endpoint->setNodeID($nodeID)
+                 ->setParams($params);
         $response = $endpoint->performRequest();
         return $response['data'];
     }
@@ -247,7 +153,7 @@ class ClusterNamespace extends AbstractNamespace
     public function putSettings($params = array())
     {
         $body = $this->extractArgument($params, 'body');
-        unset($params['body']);
+
 
 
         /** @var callback $endpointBuilder */
@@ -274,15 +180,31 @@ class ClusterNamespace extends AbstractNamespace
 
         /** @var \Elasticsearch\Endpoints\Cluster\Settings\Put $endpoint */
         $endpoint = $endpointBuilder('Cluster\Settings\Get');
+        $endpoint->setParams($params);
         $response = $endpoint->performRequest();
         return $response['data'];
     }
 
 
+    /**
+     * $params['local']   = (bool) Return local information, do not retrieve the state from master node (default: false)
+     *        ['master_timeout']  = (time) Specify timeout for connection to master
+     *
+     * @param $params array Associative array of parameters
+     *
+     * @return array
+     */
+    public function pendingTasks($params = array())
+    {
 
+        /** @var callback $endpointBuilder */
+        $endpointBuilder = $this->dicEndpoints;
 
-
-
-
+        /** @var \Elasticsearch\Endpoints\Cluster\PendingTasks $endpoint */
+        $endpoint = $endpointBuilder('Cluster\PendingTasks');
+        $endpoint->setParams($params);
+        $response = $endpoint->performRequest();
+        return $response['data'];
+    }
 
 }

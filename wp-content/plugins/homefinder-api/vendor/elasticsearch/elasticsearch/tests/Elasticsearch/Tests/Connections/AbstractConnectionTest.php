@@ -31,14 +31,15 @@ class AbstractConnectionTest extends \PHPUnit_Framework_TestCase
 
     public function testPing()
     {
+        $logger = new Elasticsearch\Common\EmptyLogger();
+
         $stub = $this->getMockForAbstractClass(
             'Elasticsearch\Connections\AbstractConnection',
             array(
-                'localhost',
-                9200,
+                array('host' => 'localhost', 'port' => 9200),
                 array(),
-                null,
-                null
+                $logger,
+                $logger
             )
         );
 
@@ -58,14 +59,15 @@ class AbstractConnectionTest extends \PHPUnit_Framework_TestCase
 
     public function testPingBadCode()
     {
+        $logger = new Elasticsearch\Common\EmptyLogger();
+
         $stub = $this->getMockForAbstractClass(
             'Elasticsearch\Connections\AbstractConnection',
             array(
-                'localhost',
-                9200,
+                array('host' => 'localhost', 'port' => 9200),
                 array(),
-                null,
-                null
+                $logger,
+                $logger
             )
         );
 
@@ -86,14 +88,14 @@ class AbstractConnectionTest extends \PHPUnit_Framework_TestCase
 
     public function testPingTimeout()
     {
+        $logger = new Elasticsearch\Common\EmptyLogger();
         $stub = $this->getMockForAbstractClass(
             'Elasticsearch\Connections\AbstractConnection',
             array(
-                'localhost',
-                9200,
+                array('host' => 'localhost', 'port' => 9200),
                 array(),
-                null,
-                null
+                $logger,
+                $logger
             )
         );
 
@@ -109,6 +111,24 @@ class AbstractConnectionTest extends \PHPUnit_Framework_TestCase
         $ret = $stub->ping();
 
         $this->assertFalse($ret);
+    }
+
+    public function testURLPrefix()
+    {
+        $logger = new Elasticsearch\Common\EmptyLogger();
+
+        $stub = $this->getMockForAbstractClass(
+            'Elasticsearch\Connections\AbstractConnection',
+            array(
+                array('host' => 'localhost', 'port' => 9200, 'path' => '/prefix'),
+                array(),
+                $logger,
+                $logger
+            )
+        );
+
+        /** @var AbstractConnection $stub */
+        $this->assertEquals('http://localhost:9200/prefix', $stub->getHost());
     }
 
 }

@@ -1,0 +1,18 @@
+<p>
+    <strong>Name:</strong> {{ name }}<br/>
+    <strong>Email:</strong> {{ email }}<br/>
+    <strong>Message:</strong> {{ message }}
+</p>
+
+<p>
+    <img src="{{ property.getFeaturedImageSrc }}" width="150"/><br/>
+    <strong>{{ property.getAddress }}</strong><br/>
+    MLS #{{ property.getMLSNumber }}<br/>
+    {{ property.getNeighborhood }}
+</p>
+
+<p>
+    <a href="{{ property.link }}">View Property</a>
+</p>
+
+

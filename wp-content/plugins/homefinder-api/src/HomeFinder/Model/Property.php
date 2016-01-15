@@ -1,5 +1,9 @@
 <?php namespace HomeFinder\Model;
 
+use App\Model\Twig;
+use HomeFinder\Request\MLS;
+use HomeFinder\Request\PropertyBase;
+
 class Property
 {
     /* @var PropertyBaseListing */
@@ -32,15 +36,20 @@ class Property
     public $community_id;
     public $mls_number;
     public $assets;
+    public $description;
+    public $last_modified_date;
+    public $X3D_tour_link;
+    public $address_street;
+    public $address_city;
+    public $address_zip;
 
     public static function withPropertyBaseListing(PropertyBaseListing $pb_base_listing)
     {
         $instance = new Property();
-        $instance->_pb_base_listing = $pb_base_listing;
 
         $instance->property_base_id = $pb_base_listing->Id;
         $instance->unit_view = $pb_base_listing->pb__UnitView__c;
-        $instance->unit_type = $pb_base_listing->pb__UnitType__c;
+        $instance->unit_type = (empty($pb_base_listing->pb__UnitType__c)) ? 'Homesite' : $pb_base_listing->pb__UnitType__c;
         $instance->item_type = $pb_base_listing->pb__ItemType__c;
         $instance->is_listed = $pb_base_listing->pb__IsListed__c;
         $instance->listing_date = $pb_base_listing->Listing_Date__c;
@@ -63,17 +72,116 @@ class Property
         $instance->is_featured = $pb_base_listing->Is_Featured__c;
         $instance->item_status = $pb_base_listing->pb__ItemStatus__c;
         $instance->community_id = $pb_base_listing->pb__CommunityId__c;
-        $instance->mls_number = $pb_base_listing->pb__MLSNumber__c;
+        $instance->mls_number = (empty($pb_base_listing->pb__MLSNumber__c)) ? '' : $pb_base_listing->pb__MLSNumber__c;
+        $instance->description = $pb_base_listing->HTML_Description__c;
         $instance->assets = $pb_base_listing->asset;
+        $instance->last_modified_date = $pb_base_listing->LastModifiedDate;
+        $instance->X3D_tour_link = $pb_base_listing->X3D_Tours__c;
+
+        SEO::addProperty($instance);
 
         return $instance;
+    }
+
+    public function getPropertyType()
+    {
+        if (is_array($this->unit_type) && empty($this->unit_type)) {
+            return 'Homesite';
+        }
+
+        return $this->unit_type;
     }
 
     public static function withMLSListing(MLSListing $mls_listing)
     {
         $instance = new Property();
 
+        $instance->unit_view = $mls_listing->lot_description;
+        $instance->unit_type = '';
+        $instance->item_type = '';
+        $instance->is_listed = true;
+        $instance->listing_date = $mls_listing->list_date;
+        $instance->builder_name = '';
+        $instance->builder_website = '';
+        $instance->resale = ($mls_listing->new_owned === "Pre-Owned") ? true : false;
+        $instance->latitude = '';
+        $instance->longitude = '';
+        $instance->total_area_sqft = $mls_listing->apx_sqft;
+        $instance->unit_bedrooms = $mls_listing->bedrooms;
+        $instance->full_bathrooms = $mls_listing->baths_full;
+        $instance->half_bathrooms = $mls_listing->baths_half;
+        $instance->is_for_sale = true;
+        $instance->is_for_lease = false;
+        $instance->project_name = $mls_listing->subdivision;
+        $instance->address_web = sprintf('%s %s %s', $mls_listing->street_num, $mls_listing->street_name, $mls_listing->street_suffix);
+        $instance->purchase_list_price = $mls_listing->list_price;
+        $instance->last_purchase_price = $mls_listing->old_price;
+        $instance->project_id = '';
+        $instance->is_featured = false;
+        $instance->item_status = $mls_listing->status;
+        $instance->community_id = '';
+        $instance->mls_number = $mls_listing->z_textsearch_mls_num;
+        $instance->description = $mls_listing->public_remarks;
+        $instance->assets = explode(',', $mls_listing->photo_filenames);
+        $instance->last_modified_date = $mls_listing->date_updated;
+        $instance->X3D_tour_link = $mls_listing->un_branded_virtual_tour;
+
+        // do some data finagling to match how pbase works
+
+        // MLS uses VAC/RES instead of Home, Townhome, etc like pbase.
+        if ($mls_listing->class === 'VAC') {
+            $instance->unit_type = 'Homesite';
+        } elseif ($mls_listing->class === 'RES') {
+            $instance->unit_type = $mls_listing->sub_type;
+            $instance->unit_type = str_replace('Single Family Attached', 'Attached', $instance->unit_type);
+            $instance->unit_type = str_replace('Single Family Detached', 'Detached', $instance->unit_type);
+        } else {
+
+        }
+
+        // MLS sends an acreage amount. Set that to the total area sqft that's used in the property view.
+        // note: if we want to show Acreage in the future along with total area sqft... we'll need a new field
+        // in pbase since pbase sends acreage in total area sqft.
+        if ($mls_listing->class === 'VAC') {
+            $instance->total_area_sqft = $mls_listing->acreage;
+        }
+
+        SEO::addProperty($instance);
+
         return $instance;
+    }
+
+    /**
+     * If the $id contains 'pb_' then go to Property Base for data else go to MLS
+     *
+     * @param $id
+     * @return Property|bool
+     */
+    public static function withId($id)
+    {
+        if (false !== stristr($id, 'pb_')) {
+            $id = str_replace('pb_', '', $id);
+            $property = PropertyBase::getByPropertyBaseId($id);
+        } else {
+            $property = MLS::getByMLSNumber($id);
+        }
+
+        return $property;
+    }
+
+    /**
+     * @return string
+     */
+    public function link()
+    {
+        $id = $this->getId();
+        $address = Twig::slugify($this->getAddress());
+        return home_url() . "/real-estate/home-finder/properties/$address/$id/";
+    }
+
+    public function getLastModifiedDate()
+    {
+        return $this->last_modified_date;
     }
 
     /**
@@ -84,6 +192,272 @@ class Property
         return $this->is_listed === 'true';
     }
 
+    public function getFeaturedImageSrc()
+    {
+        if ($this->isFromPropertyBase()) {
+            $assets = $this->assets;
+            $featured_image = array_shift($assets);
 
+            if (isset($featured_image['midresUrl'])) {
+                return $featured_image['midresUrl'];
+            }
+        } else {
+            $assets = $this->assets;
+
+            if (is_array($assets) && !empty($assets)) {
+                return array_shift($assets);
+            }
+        }
+    }
+
+    /**
+     * @return array
+     */
+    public function getImages()
+    {
+        $assets = $this->assets;
+
+        $images = array();
+        if ($this->isFromPropertyBase()) {
+            //        $floor_plan_url = '';
+
+        foreach ($assets as $asset) {
+            if (
+                isset($asset['url']) &&
+                isset($asset['mimeType']) &&
+                false !== stristr($asset['mimeType'], 'image') &&
+                false === stristr($asset['url'], 'fplan')
+            ) {
+                $images[] = $asset['url'];
+            }
+
+//            if (false !== stristr($asset['url'], 'fplan')) {
+//                $floor_plan_url = $asset['url'];
+//            }
+        }
+
+            // stick the floor plan at the end of the images
+            // DI would rather not show the floor plans in the gallery
+//        if ('' !== $floor_plan_url) {
+//            $images[] = $floor_plan_url;
+//        }
+        } else {
+            $images = $assets;
+        }
+
+        return $images;
+    }
+
+    public function getFloorPlanDocumentLink()
+    {
+        $assets = $this->assets;
+        $floor_plan_document_link = '';
+        if ($this->isFromPropertyBase()) {
+            $floor_plan_document_link = '';
+            foreach ($assets as $asset) {
+                if (false !== stristr($asset['url'], 'fplan')) {
+                    $floor_plan_document_link = $asset['url'];
+                }
+            }
+        }
+
+        return $floor_plan_document_link;
+    }
+
+    public function getAddress()
+    {
+        return $this->address_web;
+    }
+
+    public function getNeighborhood()
+    {
+        return $this->project_name;
+    }
+
+    public function getFullBathroomCount()
+    {
+        return $this->full_bathrooms;
+    }
+
+    public function getHalfBathroomCount()
+    {
+        return $this->half_bathrooms;
+    }
+
+    public function getBedroomCount()
+    {
+        return $this->unit_bedrooms;
+    }
+
+    public function getTotalAreaSquareFootage()
+    {
+        if ($this->isFromPropertyBase()) {
+            if ('Homesite' === $this->getPropertyType()) {
+                // return as acres
+                return $this->total_area_sqft * .0000229;
+            } else {
+                return $this->total_area_sqft;
+            }
+        } else {
+            return $this->total_area_sqft;
+        }
+    }
+
+    public function getTotalAreaSquareFootageUnitOfMeasurement()
+    {
+        if ('Homesite' === $this->getPropertyType()) {
+            return 'ACRES';
+        } else {
+            return 'SQ FT';
+        }
+    }
+
+    public function getPurchaseListPrice()
+    {
+        return $this->purchase_list_price;
+    }
+
+    public function getMLSNumber()
+    {
+        return $this->mls_number;
+    }
+
+    public function getUnitView()
+    {
+        return $this->unit_view;
+    }
+
+    public function getDescription()
+    {
+        $description = $this->description;
+        $description = str_replace('<STYLE>', '<!-- ', $description);
+        $description = str_replace('</STYLE>', ' -->', $description);
+
+        // a better way to get the data out of the html fragment... but it screws up encoding
+//        return $this->description;
+//        $dom = html5qp($this->description);
+//        return $dom->html();
+//        $domd = new \DOMDocument('1.0', 'UTF-8');
+//        $domd->loadHTML($this->description);
+//        return $domd->saveHTML();
+//
+//        // remove <style>
+//        $nodeList = $domd->getElementsByTagName('style');
+//        for ($nodeIdx = $nodeList->length; --$nodeIdx >= 0;) {
+//            $node = $nodeList->item($nodeIdx);
+//            $node->parentNode->removeChild($node);
+//        }
+//
+//        // remove the <ul> that is stuck in there if there are no <li> tags
+//        $nodeList = $domd->getElementsByTagName('li');
+//        if ($nodeList->length === 0) {
+//            $node = $domd->getElementsByTagName('ul')->item(0);
+////            $description = $this->_getInnerHTMLOfDOMNode($node);
+//            $description = $domd->saveHTML($node);
+//        } else {
+//            $description = $domd->saveHTML();
+//        }
+
+        return $description;
+    }
+
+    public function getId()
+    {
+        if ($this->property_base_id) {
+            return 'pb_' . $this->property_base_id;
+        }
+
+        return $this->mls_number;
+    }
+
+    /**
+     * http://stackoverflow.com/questions/2087103/how-to-get-innerhtml-of-domnode
+     *
+     * @param \DOMNode $element
+     * @return string
+     */
+    private function _getInnerHTMLOfDOMNode(\DOMNode $element)
+    {
+        $innerHTML = "";
+        $children = $element->childNodes;
+
+        foreach ($children as $child) {
+            $innerHTML .= $element->ownerDocument->saveHTML($child);
+        }
+
+        return $innerHTML;
+    }
+
+    /**
+     * @return bool
+     */
+    public function isFromPropertyBase()
+    {
+        return ($this->property_base_id) ? true : false;
+    }
+
+    public function isFromMLS()
+    {
+        return !$this->isFromPropertyBase();
+    }
+
+    public function getX3DTourLink()
+    {
+        $link = '';
+        if (isset($this->X3D_tour_link) && $this->X3D_tour_link !== '') {
+            $link = $this->X3D_tour_link;
+        }
+
+        return $link;
+    }
+
+    /**
+     * uses YouTube
+     *
+     * @return string
+     */
+    public function getVideoLink()
+    {
+        $assets = $this->assets;
+
+        $video_url = '';
+        foreach ($assets as $asset) {
+//            if (
+//                isset($asset['url']) &&
+//                isset($asset['mimeType']) &&
+//                false !== stristr($asset['mimeType'], 'video')
+//            ) {
+//                $video_url = $asset['url'];
+//            }
+
+            if (false === isset($asset['mimeType'])) {
+                // maybe a youtube video
+                if (
+                    isset($asset['category']) && 'Videos' === $asset['category'] &&
+                    isset($asset['isExternalLink']) && "true" === $asset['isExternalLink']
+                ) {
+                    $video_url = $this->_getYouTubeUrlFromPbaseUrl($asset['url']);
+                }
+
+            }
+        }
+
+        return $video_url;
+    }
+
+    private function _getYouTubeUrlFromPbaseUrl($url)
+    {
+        preg_match("/(?<=\?v=)([a-zA-Z0-9_-]+)/", $url, $matches);
+        if (isset($matches[0])) {
+            return "http://www.youtube.com/embed/" . $matches[0] . "?rel=0";
+        }
+
+        return '';
+    }
+
+    public function getIMapToolTip()
+    {
+        return '<div>' . $this->address_web . ' <a href="' . $this->link() . '" class="showProperty" data-property-id="' . $this->getId() . '" data-property-address="' . $this->getAddress() . '">Link</a></div>';
+    }
 
 }

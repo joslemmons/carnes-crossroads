@@ -1,8 +1,8 @@
 <?php
 /**
  * User: zach
- * Date: 05/31/2013
- * Time: 16:47:11 pm
+ * Date: 01/20/2014
+ * Time: 14:34:49 pm
  */
 
 namespace Elasticsearch\Endpoints;
@@ -12,11 +12,16 @@ use Elasticsearch\Common\Exceptions;
 
 /**
  * Class Mget
+ *
+ * @category Elasticsearch
  * @package Elasticsearch\Endpoints
+ * @author   Zachary Tong <zachary.tong@elasticsearch.com>
+ * @license  http://www.apache.org/licenses/LICENSE-2.0 Apache2
+ * @link     http://elasticsearch.org
  */
+
 class Mget extends AbstractEndpoint
 {
-
     /**
      * @param array $body
      *
@@ -29,14 +34,11 @@ class Mget extends AbstractEndpoint
             return $this;
         }
 
-        if (is_array($body) !== true) {
-            throw new Exceptions\InvalidArgumentException(
-                'Body must be an array'
-            );
-        }
+
         $this->body = $body;
         return $this;
     }
+
 
 
     /**
@@ -44,14 +46,21 @@ class Mget extends AbstractEndpoint
      */
     protected function getURI()
     {
-        $uri = array();
-        $uri[] = $this->index;
-        $uri[] = $this->type;
-        $uri[] = '_mget';
-        $uri =  array_filter($uri);
+        $index = $this->index;
+        $type = $this->type;
+        $uri   = "/_mget";
 
-        return '/' . implode('/', $uri);
+        if (isset($index) === true && isset($type) === true) {
+            $uri = "/$index/$type/_mget";
+        } elseif (isset($index) === true) {
+            $uri = "/$index/_mget";
+        } elseif (isset($type) === true) {
+            $uri = "/_all/$type/_mget";
+        }
+
+        return $uri;
     }
+
 
     /**
      * @return string[]
@@ -60,20 +69,34 @@ class Mget extends AbstractEndpoint
     {
         return array(
             'fields',
-            'parent',
             'preference',
             'realtime',
             'refresh',
-            'routing',
+            '_source',
+            '_source_exclude',
+            '_source_include',
         );
     }
+
+
+    /**
+     * @return array
+     * @throws \Elasticsearch\Common\Exceptions\RuntimeException
+     */
+    protected function getBody()
+    {
+        if (isset($this->body) !== true) {
+            throw new Exceptions\RuntimeException('Body is required for MGet');
+        }
+        return $this->body;
+    }
+
 
     /**
      * @return string
      */
     protected function getMethod()
     {
-        return 'GET';
+        return 'POST';
     }
-
 }

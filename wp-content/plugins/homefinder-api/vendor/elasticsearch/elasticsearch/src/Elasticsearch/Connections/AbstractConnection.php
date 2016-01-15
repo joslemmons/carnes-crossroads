@@ -11,10 +11,10 @@ use Elasticsearch\Common\Exceptions\Curl\CouldNotConnectToHost;
 use Elasticsearch\Common\Exceptions\Curl\CouldNotResolveHostException;
 use Elasticsearch\Common\Exceptions\Curl\OperationTimeoutException;
 use Elasticsearch\Common\Exceptions\TransportException;
-use Monolog\Logger;
+use Psr\Log\LoggerInterface;
 
 /**
- * Abstrat Class AbstractConnection
+ * Abstract Class AbstractConnection
  *
  * @category Elasticsearch
  * @package  Elasticsearch\Connections
@@ -27,7 +27,7 @@ abstract class AbstractConnection implements ConnectionInterface
     /**
      * @var string
      */
-    protected $transportSchema = 'http';
+    protected $transportSchema = 'http';    // TODO depreciate this default
 
     /**
      * @var string
@@ -35,19 +35,19 @@ abstract class AbstractConnection implements ConnectionInterface
     protected $host;
 
     /**
-     * @var Logger
+     * @var LoggerInterface
      */
     protected $log;
 
     /**
-     * @var Logger
+     * @var LoggerInterface
      */
     protected $trace;
 
     /**
      * @var array
      */
-    protected $connectionParams;
+    protected $connectionParams = array();
 
     /** @var bool  */
     protected $isAlive = false;
@@ -55,6 +55,11 @@ abstract class AbstractConnection implements ConnectionInterface
     /** @var float  */
     private $pingTimeout = 1;    //TODO expose this
 
+    /** @var int  */
+    private $lastPing = 0;
+
+    /** @var int  */
+    private $failedPings = 0;
 
     /**
      * @param       $method
@@ -70,21 +75,47 @@ abstract class AbstractConnection implements ConnectionInterface
     /** @return string */
     abstract public function getTransportSchema();
 
+    /** @return array */
+    abstract public function getLastRequestInfo();
+
+
     /**
      * Constructor
      *
-     * @param string $host             Host string
-     * @param string $port             Host port
-     * @param array  $connectionParams Array of connection-specific parameters
-     * @param Logger $log              Monolog Logger object
-     * @param Logger $trace
+     * @param array                    $hostDetails
+     * @param array                    $connectionParams Array of connection-specific parameters
+     * @param \Psr\Log\LoggerInterface $log              Logger object
+     * @param \Psr\Log\LoggerInterface $trace
      */
-    public function __construct($host, $port, $connectionParams, $log, $trace)
+    public function __construct($hostDetails, $connectionParams, LoggerInterface $log, LoggerInterface $trace)
     {
-        $this->host             = $this->transportSchema . '://' . $host . ':' . $port;
+        if (isset($hostDetails['scheme'])) {
+            $this->transportSchema = $hostDetails['scheme'];
+        }
+
+        if (isset($hostDetails['user']) && isset($hostDetails['pass'])) {
+            if (isset($connectionParams['auth'][0]) !== true) {
+                $connectionParams['auth'][0] = $hostDetails['user'];
+            }
+            if (isset($connectionParams['auth'][1]) !== true) {
+                $connectionParams['auth'][1] = $hostDetails['pass'];
+            }
+            if (isset($connectionParams['auth'][2]) !== true) {
+                $connectionParams['auth'][2] = 'Basic';
+            }
+        }
+
+        $host = $this->transportSchema.'://'.$hostDetails['host'].':'.$hostDetails['port'];
+        if (isset($hostDetails['path']) === true) {
+            $host .= $hostDetails['path'];
+        }
+        $this->host             = $host;
         $this->log              = $log;
         $this->trace            = $trace;
-        $this->connectionParams = $connectionParams;
+        if (isset($connectionParams) === true) {
+            $this->connectionParams = $connectionParams;
+        }
+
 
     }
 
@@ -95,30 +126,32 @@ abstract class AbstractConnection implements ConnectionInterface
      * @param string $method
      * @param string $fullURI
      * @param string $body
+     * @param array  $headers
      * @param string $statusCode
      * @param string $response
      * @param string $duration
      *
      * @return void
      */
-    public function logRequestSuccess($method, $fullURI, $body, $statusCode, $response, $duration)
+    public function logRequestSuccess($method, $fullURI, $body, $headers, $statusCode, $response, $duration)
     {
-        $this->log->addDebug('Request Body', array($body));
-        $this->log->addInfo(
+        $this->log->debug('Request Body', array($body));
+        $this->log->info(
             'Request Success:',
             array(
                 'method'    => $method,
                 'uri'       => $fullURI,
+                'headers'   => $headers,
                 'HTTP code' => $statusCode,
                 'duration'  => $duration,
             )
         );
-        $this->log->addDebug('Response', array($response));
+        $this->log->debug('Response', array($response));
 
         // Build the curl command for Trace.
         $curlCommand = $this->buildCurlCommand($method, $fullURI, $body);
-        $this->trace->addInfo($curlCommand);
-        $this->trace->addDebug(
+        $this->trace->info($curlCommand);
+        $this->trace->debug(
             'Response:',
             array(
                 'response'  => $response,
@@ -138,6 +171,7 @@ abstract class AbstractConnection implements ConnectionInterface
      * @param string      $method
      * @param string      $fullURI
      * @param string      $body
+     * @param array       $headers
      * @param string      $duration
      * @param null|string $statusCode
      * @param null|string $response
@@ -149,28 +183,30 @@ abstract class AbstractConnection implements ConnectionInterface
         $method,
         $fullURI,
         $body,
+        $headers,
         $duration,
         $statusCode = null,
         $response = null,
         $exception = null
     ) {
-        $this->log->addDebug('Request Body', array($body));
-        $this->log->addInfo(
-            'Request Success:',
+        $this->log->debug('Request Body', array($body));
+        $this->log->warning(
+            'Request Failure:',
             array(
                 'method'    => $method,
                 'uri'       => $fullURI,
+                'headers'   => $headers,
                 'HTTP code' => $statusCode,
                 'duration'  => $duration,
                 'error'     => $exception,
             )
         );
-        $this->log->addDebug('Response', array($response));
+        $this->log->warning('Response', array($response));
 
         // Build the curl command for Trace.
         $curlCommand = $this->buildCurlCommand($method, $fullURI, $body);
-        $this->trace->addInfo($curlCommand);
-        $this->trace->addDebug(
+        $this->trace->info($curlCommand);
+        $this->trace->debug(
             'Response:',
             array(
                 'response'  => $response,
@@ -193,18 +229,17 @@ abstract class AbstractConnection implements ConnectionInterface
         try {
             $response = $this->performRequest('HEAD', '', null, null, $options);
 
-        } catch (OperationTimeoutException $exception) {
-            $this->isAlive = false;
+        } catch (TransportException $exception) {
+            $this->markDead();
             return false;
-
         }
 
 
         if ($response['status'] === 200) {
-            $this->isAlive = true;
+            $this->markAlive();
             return true;
         } else {
-            $this->isAlive = false;
+            $this->markDead();
             return false;
         }
     }
@@ -215,7 +250,7 @@ abstract class AbstractConnection implements ConnectionInterface
     public function sniff()
     {
         $options = array('timeout' => $this->pingTimeout);
-        return $this->performRequest('GET', '/_cluster/nodes', null, null, $options);
+        return $this->performRequest('GET', '/_nodes/_all/clear', null, null, $options);
 
     }
 
@@ -231,12 +266,43 @@ abstract class AbstractConnection implements ConnectionInterface
 
     public function markAlive()
     {
+        $this->failedPings = 0;
         $this->isAlive = true;
+        $this->lastPing = time();
     }
 
     public function markDead()
     {
         $this->isAlive = false;
+        $this->failedPings += 1;
+        $this->lastPing = time();
+    }
+
+
+    /**
+     * @return int
+     */
+    public function getLastPing()
+    {
+        return $this->lastPing;
+    }
+
+
+    /**
+     * @return int
+     */
+    public function getPingFailures()
+    {
+        return $this->failedPings;
+    }
+
+
+    /**
+     * @return string
+     */
+    public function getHost()
+    {
+        return $this->host;
     }
 
 
