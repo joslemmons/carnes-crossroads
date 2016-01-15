@@ -7,6 +7,7 @@
 
     &__content-wrap {
         width: 75%;
+        margin-top: 30px;
         text-align: center;
         position: absolute;
         @include center(xy);
@@ -67,9 +68,9 @@
     }
 
     &__home {
-        display: block;
         position: relative;
-        height: 80%;
+        margin-top: 100px;
+        height: 85%;
         width: 100%;
         text-align: left;
         overflow: hidden;
@@ -78,8 +79,8 @@
 
     &__page {
         position: relative;
-        margin-top: 140px;
-        height: 65%;
+        margin-top: 100px;
+        height: 70%;
         width: 100%;
         overflow: hidden;
         background-position: center center;

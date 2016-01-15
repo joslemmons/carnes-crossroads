@@ -2,10 +2,15 @@
 // ===================================
 
 .main-nav {
+    position: fixed;
     width: 100%;
+    top: 0;
+    left: 0;
     padding: 20px 0 0 0;
     background: url(./img/pattern-green.jpg) repeat center center;
     overflow: hidden;
+    z-index: 9999;
+    @include transition(all, 0.3s, ease-in-out, 0s);
 
     &__inner-wrap {
         position: relative;
@@ -45,7 +50,7 @@
             text-transform: uppercase;
             letter-spacing: 2px;
 
-            @media (min-width: 1675px) {
+            @media (min-width: $screen-xlg) {
                 font-size: 1rem;
             }
         }
@@ -89,7 +94,7 @@
             font-weight: $weight-bold;
             text-transform: uppercase;
 
-            @media (min-width: 1675px) {
+            @media (min-width: $screen-xlg) {
                 font-size: 1.25rem;
             }
         }
@@ -98,4 +103,37 @@
             text-shadow: 0 2px 10px rgba($black, .5);
         }
     }
+}
+
+.main-nav.smaller {
+    padding: 13px 0 0 0;
+
+    .main-nav__logo {
+        width: 9%;
+    }
+
+    .main-nav__primary {
+        width: 80%;
+    }
+
+    .main-nav__primary-item {
+        padding: 17px 0;
+
+        &:first-of-type {
+            padding-left: 50px;
+        }
+    }
+
+    .main-nav__sub {
+        width: 80%;
+    }
+
+    .main-nav__sub-item {
+        padding: 8px 0;
+
+        &:first-of-type {
+            padding-left: 35px;
+        }
+    }
+
 }

@@ -46988,6 +46988,49 @@
 		"outputStyle": 1,
 		"syntaxCheckerStyle": 1
 		},
+	"\/wp-content\/themes\/carnes-crossroads-2015\/bower_components\/classie\/bower.json": {
+		"fileType": 524288,
+		"ignore": 1,
+		"ignoreWasSetByUser": 0,
+		"inputAbbreviatedPath": "\/wp-content\/themes\/carnes-crossroads-2015\/bower_components\/classie\/bower.json",
+		"orderOutput": 0,
+		"outputAbbreviatedPath": "\/wp-content\/themes\/carnes-crossroads-2015\/bower_components\/classie\/bower-min.json",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"outputStyle": 1
+		},
+	"\/wp-content\/themes\/carnes-crossroads-2015\/bower_components\/classie\/classie.js": {
+		"fileType": 64,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"inputAbbreviatedPath": "\/wp-content\/themes\/carnes-crossroads-2015\/bower_components\/classie\/classie.js",
+		"outputAbbreviatedPath": "\/wp-content\/themes\/carnes-crossroads-2015\/bower_components\/classie\/classie.min.js",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"outputStyle": 1,
+		"syntaxCheckerStyle": 1
+		},
+	"\/wp-content\/themes\/carnes-crossroads-2015\/bower_components\/classie\/README.md": {
+		"criticStyle": 0,
+		"enableFootnotes": 1,
+		"enableLabels": 1,
+		"enableSmartQuotes": 1,
+		"escapeLineBreaks": 0,
+		"fileType": 4096,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"inputAbbreviatedPath": "\/wp-content\/themes\/carnes-crossroads-2015\/bower_components\/classie\/README.md",
+		"maskEmailAddresses": 1,
+		"outputAbbreviatedPath": "\/wp-content\/themes\/carnes-crossroads-2015\/bower_components\/classie\/README.html",
+		"outputFormat": 0,
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"outputStyle": 0,
+		"parseMetadata": 1,
+		"processHTML": 0,
+		"randomFootnoteNumbers": 0,
+		"useCompatibilityMode": 0
+		},
 	"\/wp-content\/themes\/carnes-crossroads-2015\/bower_components\/jquery\/bower.json": {
 		"fileType": 524288,
 		"ignore": 1,
@@ -66837,6 +66880,17 @@
 		"outputPathIsSetByUser": 0,
 		"processed": 0
 		},
+	"\/wp-content\/uploads\/2015\/11\/CC-Model-Row-Selects-2014-02-15inw-300dpi-1-e1452551877689-718x350-c-default.jpg": {
+		"fileType": 16384,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"initialSize": 77302,
+		"inputAbbreviatedPath": "\/wp-content\/uploads\/2015\/11\/CC-Model-Row-Selects-2014-02-15inw-300dpi-1-e1452551877689-718x350-c-default.jpg",
+		"outputAbbreviatedPath": "\/wp-content\/uploads\/2015\/11\/CC-Model-Row-Selects-2014-02-15inw-300dpi-1-e1452551877689-718x350-c-default.jpg",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"processed": 0
+		},
 	"\/wp-content\/uploads\/2015\/11\/CC-Model-Row-Selects-2014-02-15inw-300dpi-1-e1452551877689.jpg": {
 		"fileType": 16384,
 		"ignore": 0,
@@ -67218,6 +67272,17 @@
 		"initialSize": 72741,
 		"inputAbbreviatedPath": "\/wp-content\/uploads\/2015\/11\/CC-Pool-Selects-2014-_034-300DPI-768x512.jpg",
 		"outputAbbreviatedPath": "\/wp-content\/uploads\/2015\/11\/CC-Pool-Selects-2014-_034-300DPI-768x512.jpg",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"processed": 0
+		},
+	"\/wp-content\/uploads\/2015\/11\/CC-Pool-Selects-2014-_034-300DPI-e1452551816843-718x350-c-default.jpg": {
+		"fileType": 16384,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"initialSize": 37231,
+		"inputAbbreviatedPath": "\/wp-content\/uploads\/2015\/11\/CC-Pool-Selects-2014-_034-300DPI-e1452551816843-718x350-c-default.jpg",
+		"outputAbbreviatedPath": "\/wp-content\/uploads\/2015\/11\/CC-Pool-Selects-2014-_034-300DPI-e1452551816843-718x350-c-default.jpg",
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0,
 		"processed": 0
