@@ -7,3 +7,4 @@ wp_enqueue_script('slick-js', get_template_directory_uri() . '/bower_components/
 wp_enqueue_style('slick-css', get_template_directory_uri() . '/bower_components/slick-carousel/slick/slick.css', array(), false, false);
 
 Timber::render('page-default.twig', $context);
+

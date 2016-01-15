@@ -8,6 +8,7 @@
     "respond-minmax": "~1.4.2",
     "modernizr": "~2.8.3",
     "bxslider-4": "bxSlider#~4.2.5",
-    "slick-carousel": "~1.5.9"
+    "slick-carousel": "~1.5.9",
+    "classie": "~1.0.1"
   }
 }
