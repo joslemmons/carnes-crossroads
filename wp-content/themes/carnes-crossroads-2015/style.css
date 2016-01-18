@@ -3224,7 +3224,8 @@ h6 {
 
 p, ol, ul {
   font-size: 1rem;
-  line-height: 1.5; }
+  line-height: 1.5;
+  font-family: "minion-pro", serif, serif; }
   @media (max-width: 991px) {
     p, ol, ul {
       font-size: 15px; } }
@@ -3406,6 +3407,18 @@ a:focus, a:hover {
 
 .player .video-wrapper {
   background: none !important; }
+
+.youtube-video-wrapper {
+  position: relative;
+  padding-bottom: 52.65%;
+  padding-top: 25px;
+  height: 0; }
+  .youtube-video-wrapper iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%; }
 
 .dropdown-toggle {
   min-width: 470px;
@@ -4146,6 +4159,11 @@ video {
     margin-top: 50px; }
     .page-content__copy-block p {
       margin-bottom: 35px; }
+  .page-content ul li, .page-content--white ul li, .page-content--white-floral ul li, .page-content--white-floral-top ul li, .page-content--tan ul li, .page-content--contact ul li, .page-content--footer ul li {
+    margin-bottom: 15px;
+    font-family: "minion-pro", serif, serif;
+    font-size: 1.15rem;
+    color: #3d3421; }
 
 .block, .block--large, .block--small, .block--button, .block--button-green, .block--button-orange, .block--button-red {
   position: relative;
@@ -4308,6 +4326,18 @@ video {
   top: 800px;
   margin-top: -800px;
   z-index: 999; }
+
+.builder-logo {
+  margin-top: 70px;
+  width: 40%;
+  float: left; }
+  .builder-logo img {
+    width: 100%;
+    height: auto; }
+
+.builder-btn {
+  margin-top: 90px;
+  float: right; }
 
 .calendar {
   width: 85%;
