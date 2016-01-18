@@ -400,6 +400,51 @@
     }
 }
 
+.category-items {
+    h2 {
+        margin-bottom: 50px;
+    }
+
+    &__card {
+        padding-left: 0;
+        padding-right: 55px;
+        margin-bottom: 95px;
+
+        h4 {
+            margin-bottom: 5px;
+            font-size: 1.25rem;
+            color: $cc-brown;
+            @include transition(all, 0.2s, ease-in-out, 0s);
+        }
+
+        h4:hover {
+            color: lighten($cc-brown, 10);
+        }
+
+        img {
+            margin-bottom: 20px;
+            max-width: 100%;
+        }
+
+        &-date {
+            font-family: $font-sans;
+            font-size: 0.8rem;
+            text-transform: uppercase;
+            color: $cc-med-grey;
+        }
+
+        &-date a {
+            color: $cc-med-grey;
+            text-decoration: none;
+
+            &:hover {
+                color: darken($cc-med-grey, 10);
+                text-decoration: underline !important;
+            }
+        }
+    }
+}
+
 .map-overlay {
     background: transparent;
     position: relative;

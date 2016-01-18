@@ -3479,6 +3479,10 @@ a:focus, a:hover {
 .events__form-container .gfield {
   width: 40%; }
 
+.gform_wrapper .hidden_label input.small,
+.gform_wrapper .hidden_label select.small,
+.gform_wrapper .top_label input.small,
+.gform_wrapper .top_label select.small,
 .gform_wrapper .hidden_label input.medium,
 .gform_wrapper .hidden_label select.medium,
 .gform_wrapper .top_label input.medium,
@@ -3497,6 +3501,10 @@ a:focus, a:hover {
   text-transform: uppercase;
   color: #828181; }
 
+.events__form-container .gform_wrapper .hidden_label input.small,
+.events__form-container .gform_wrapper .hidden_label select.small,
+.events__form-container .gform_wrapper .top_label input.small,
+.events__form-container .gform_wrapper .top_label select.small,
 .events__form-container .gform_wrapper .hidden_label input.medium,
 .events__form-container .gform_wrapper .hidden_label select.medium,
 .events__form-container .gform_wrapper .top_label input.medium,
@@ -3556,7 +3564,8 @@ a:focus, a:hover {
   margin-top: -75px !important; }
 
 .events__form-container .gform_wrapper .gform_footer {
-  margin-top: -80px !important; }
+  margin-top: -80px !important;
+  padding-top: 0; }
 
 .gform_wrapper .gform_footer input[type=submit] {
   -webkit-appearance: none;
@@ -4317,6 +4326,37 @@ video {
 .category-list__social {
   padding: 0;
   margin-bottom: 75px; }
+
+.category-items h2 {
+  margin-bottom: 50px; }
+.category-items__card {
+  padding-left: 0;
+  padding-right: 55px;
+  margin-bottom: 95px; }
+  .category-items__card h4 {
+    margin-bottom: 5px;
+    font-size: 1.25rem;
+    color: #3d3421;
+    -webkit-transition: all 0.2s ease-in-out 0s;
+    -moz-transition: all 0.2s ease-in-out 0s;
+    -o-transition: all 0.2s ease-in-out 0s;
+    transition: all 0.2s ease-in-out 0s; }
+  .category-items__card h4:hover {
+    color: #5e5033; }
+  .category-items__card img {
+    margin-bottom: 20px;
+    max-width: 100%; }
+  .category-items__card-date {
+    font-family: "proxima-nova", sans-serif, sans-serif;
+    font-size: 0.8rem;
+    text-transform: uppercase;
+    color: #828181; }
+  .category-items__card-date a {
+    color: #828181;
+    text-decoration: none; }
+    .category-items__card-date a:hover {
+      color: #686868;
+      text-decoration: underline !important; }
 
 .map-overlay {
   background: transparent;

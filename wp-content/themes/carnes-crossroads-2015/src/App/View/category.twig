@@ -1,0 +1,96 @@
+{% extends 'base.twig' %}
+{% block template %}
+
+<section class="hero__page" style="background-image: url({{ template_uri }}/img/bg-hero-events.jpg)">
+    <div class="hero__content-tab-{{ page.getHeroColor }}">
+        <div class="hero__content-inner">
+            <h1>{{ page.title }}</h1>
+        </div>
+    </div>
+</section>
+
+<section class="page-content--white">
+    <div class="container">
+        <div class="row">
+            <div class="col-xs-12 col-md-3 category-list">
+                <h4>Follow Us</h4>
+                <hr>
+                <ul class="category-list__social">
+                    <li class="footer__social-item"><a href="https://www.twitter.com/carnesxroads"><img src="{{ template_uri }}/img/icon-social-tw.png"/></a></li>
+                    <li class="footer__social-item"><a href="https://www.facebook.com/CarnesCrossroads"><img src="{{ template_uri }}/img/icon-social-fb.png"/></a></li>
+                    <li class="footer__social-item"><a href="https://www.youtube.com/user/CarnesXroads"><img src="{{ template_uri }}/img/icon-social-yt.png"/></a></li>
+                    <li class="footer__social-item"><a href="https://www.instagram.com/carnescrossroads/"><img src="{{ template_uri }}/img/icon-social-ig.png"/></a></li>
+                    <li class="footer__social-item"><a href="https://www.pinterest.com/carnesxroads/"><img src="{{ template_uri }}/img/icon-social-pn.png"/></a></li>
+                    <li class="footer__social-item"><a href="https://plus.google.com/u/0/+Carnescharleston"><img src="{{ template_uri }}/img/icon-social-goog.png"/></a></li>
+                </ul>
+                <h4>Categories</h4>
+                <hr>
+                <ul class="category-list__categories">
+                    <li class="category-list__item"><a href="#">News</a></li>
+                    <li class="category-list__item"><a href="#">Area Events</a></li>
+                    <li class="category-list__item"><a href="#">Category</a></li>
+                    <li class="category-list__item"><a href="/category/all">View All</a></li>
+                </ul>
+            </div>
+
+             <div class="col-xs-12 col-md-9 category-items">
+                <h2>All Categories</h2>
+                <div class="col-xs-4 category-items__card">
+                    <img src="{{ template_uri }}/img/cc-lowcountry.jpg">
+                    <a href="#"><h4>Item Title</h4></a>
+                    <p class="category-items__card-date">January 23, 2016&nbsp;&nbsp;|&nbsp;&nbsp;<a href="#">Category</a></p>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+                    tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+                    quis nostrud exercitation ullamco.</p>
+                </div>
+                <div class="col-xs-4 category-items__card">
+                    <img src="{{ template_uri }}/img/cc-lowcountry.jpg">
+                    <a href="#"><h4>Item Title</h4></a>
+                    <p class="category-items__card-date">January 23, 2016&nbsp;&nbsp;|&nbsp;&nbsp;<a href="#">Category</a></p>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+                    tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+                    quis nostrud exercitation ullamco.</p>
+                </div>
+                <div class="col-xs-4 category-items__card">
+                    <img src="{{ template_uri }}/img/cc-lowcountry.jpg">
+                    <a href="#"><h4>Item Title</h4></a>
+                    <p class="category-items__card-date">January 23, 2016&nbsp;&nbsp;|&nbsp;&nbsp;<a href="#">Category</a></p>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+                    tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+                    quis nostrud exercitation ullamco.</p>
+                </div>
+                <div class="col-xs-4 category-items__card">
+                    <img src="{{ template_uri }}/img/cc-lowcountry.jpg">
+                    <a href="#"><h4>Item Title</h4></a>
+                    <p class="category-items__card-date">January 23, 2016&nbsp;&nbsp;|&nbsp;&nbsp;<a href="#">Category</a></p>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+                    tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+                    quis nostrud exercitation ullamco.</p>
+                </div>
+                <div class="col-xs-4 category-items__card">
+                    <img src="{{ template_uri }}/img/cc-lowcountry.jpg">
+                    <a href="#"><h4>Item Title</h4></a>
+                    <p class="category-items__card-date">January 23, 2016&nbsp;&nbsp;|&nbsp;&nbsp;<a href="#">Category</a></p>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+                    tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+                    quis nostrud exercitation ullamco.</p>
+                </div>
+                <div class="col-xs-4 category-items__card">
+                    <img src="{{ template_uri }}/img/cc-lowcountry.jpg">
+                    <a href="#"><h4>Item Title</h4></a>
+                    <p class="category-items__card-date">January 23, 2016&nbsp;&nbsp;|&nbsp;&nbsp;<a href="#">Category</a></p>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+                    tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+                    quis nostrud exercitation ullamco.</p>
+                </div>
+
+            </div>
+        </div>
+    </div>
+</section>
+
+{% include "partials/link-widgets.twig" %}
+
+{% include "partials/contact-foot.twig" %}
+
+{% endblock %}
