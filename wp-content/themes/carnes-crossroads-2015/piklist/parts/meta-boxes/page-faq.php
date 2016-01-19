@@ -1,7 +1,7 @@
 <?php
 /*
  * Title: FAQ Options (Carnes Crossroads 2015 Theme)
- * Id: 57
+ * Id: 21
  */
 
 use App\Model\FAQPage;
@@ -19,10 +19,13 @@ piklist('field', array(
             'columns' => 12
         ),
         array(
-            'type' => 'text',
+            'type' => 'textarea',
             'field' => FAQPage::$field_faq_answer,
             'label' => 'Answer',
-            'columns' => 12
+            'columns' => 12,
+            'attributes' => array(
+                'rows' => 6
+            )
         )
     )
 ));

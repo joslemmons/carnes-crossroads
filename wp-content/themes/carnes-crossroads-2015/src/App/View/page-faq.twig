@@ -18,7 +18,18 @@
         </div>
 
         <div class="row">
-
+            <div class="col-lg-12">
+                {% if page.getQuestionAndAnswers %}
+                    <ul>
+                        {% for faq in page.getQuestionAndAnswers %}
+                            <li>
+                                <span class="faq-question">{{ faq.question }}</span>
+                                <span style="display:none;" class="faq-answer">{{ faq.answer }}</span>
+                            </li>
+                        {% endfor %}
+                    </ul>
+                {% endif %}
+            </div>
         </div>
     </div>
 

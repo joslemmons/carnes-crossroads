@@ -6,12 +6,14 @@
 
 global $post;
 
+use App\Model\FAQPage;
+use App\Model\FrontPage;
 use App\Model\Helper;
 use App\Model\Page;
 
 $post = Timber::get_post($post->ID);
 
-if ($post->id !== 23 && $post->id !== 57) {
+if ($post->id !== FrontPage::PAGE_ID && $post->id !== FAQPage::PAGE_ID) {
     if (false === $post->parent()) {
         // this is a primary page
 

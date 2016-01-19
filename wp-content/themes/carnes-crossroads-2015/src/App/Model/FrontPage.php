@@ -2,6 +2,8 @@
 
 class FrontPage extends \TimberPost
 {
+    const PAGE_ID = 23;
+
     // top featured
     public static $field_top_featured_group_primary_items;
     public static $field_top_featured_group_primary_title;
