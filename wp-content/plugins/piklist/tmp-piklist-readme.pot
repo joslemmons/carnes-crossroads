@@ -1,0 +1,1512 @@
+msgid ""
+msgstr "MIME-Version: 1.0\n"
+
+#. Name.
+msgid "PIKLIST | Rapid development framework"
+msgstr ""
+
+#. Short description.
+msgid ""
+"Piklist is the most powerful framework available for WordPress.\n"
+"Easy for beginners... built for developers. Piklist helps you build things - fast."
+msgstr ""
+
+#. Screenshot description.
+msgid "Less code required: Creating fields in Piklist is super simple, and in most cases the same code can be used anywhere: Post Types, Settings, Taxonomies, User Profiles and Widgets."
+msgstr ""
+
+#. Screenshot description.
+msgid "Post relationships: You'll wish all relationships were this easy."
+msgstr ""
+
+#. Screenshot description.
+msgid "Add-mores: The infinite repeater field."
+msgstr ""
+
+#. Screenshot description.
+msgid "WorkFlows: The tab system you never knew was possible."
+msgstr ""
+
+#. Screenshot description.
+msgid "Multiple user roles: Better security, more flexibility."
+msgstr ""
+
+#. Found in description header.
+msgid "Piklist is the most powerful framework available for WordPress."
+msgstr ""
+
+#. Found in description header.
+msgid "Piklist makes it easy to:"
+msgstr ""
+
+#. Found in description header.
+msgid "LEARN MORE"
+msgstr ""
+
+#. Found in description header.
+msgid "Customize everything in WordPress"
+msgstr ""
+
+#. Found in description header.
+msgid "Better Custom Post Types"
+msgstr ""
+
+#. Found in description header.
+msgid "Codeless Meta Boxes"
+msgstr ""
+
+#. Found in description header.
+msgid "Simple Widgets"
+msgstr ""
+
+#. Found in description header.
+msgid "Powerful Fields"
+msgstr ""
+
+#. Found in description header.
+msgid "Lots of field types (and more coming soon!)"
+msgstr ""
+
+#. Found in description header.
+msgid "Choose a content type for your field (You can even mix-n-match on one form)"
+msgstr ""
+
+#. Found in description header.
+msgid "Mix Field and Content types (i.e. Taxonomies as radio buttons)"
+msgstr ""
+
+#. Found in description header.
+msgid "Getting Started with Piklist is Easy."
+msgstr ""
+
+#. Found in description list item.
+msgid "Build Fields for Settings page, Widgets, Custom Post Types, Custom Taxonomies and User Profiles with minimal code."
+msgstr ""
+
+#. Found in description list item.
+msgid "Conditionally show fields (or their values), based on Post Status and/or User Role."
+msgstr ""
+
+#. Found in description list item.
+msgid "Define Custom Post Statuses"
+msgstr ""
+
+#. Found in description list item.
+msgid "Relate Post-to-Posts."
+msgstr ""
+
+#. Found in description list item.
+msgid "<a href=\"http://piklist.com\">and more...</a>"
+msgstr ""
+
+#. Found in description list item.
+msgid "<a href=\"http://piklist.com/user-guide/\">Piklist User Guide</a>"
+msgstr ""
+
+#. Found in description list item.
+msgid "Post Types"
+msgstr ""
+
+#. Found in description list item.
+msgid "Taxonomies"
+msgstr ""
+
+#. Found in description list item.
+msgid "User Profiles"
+msgstr ""
+
+#. Found in description list item.
+msgid "Media"
+msgstr ""
+
+#. Found in description list item.
+msgid "Settings"
+msgstr ""
+
+#. Found in description list item.
+msgid "Admin Pages"
+msgstr ""
+
+#. Found in description list item.
+msgid "Widgets"
+msgstr ""
+
+#. Found in description list item.
+msgid "Dashboard"
+msgstr ""
+
+#. Found in description list item.
+msgid "Help Tabs"
+msgstr ""
+
+#. Found in description list item.
+msgid "Admin Notices"
+msgstr ""
+
+#. Found in description list item.
+msgid "Pointers"
+msgstr ""
+
+#. Found in description list item.
+msgid "Powerful Custom Post Types "
+msgstr ""
+
+#. Found in description list item.
+msgid "Relate Custom Post Types to each other. "
+msgstr ""
+
+#. Found in description list item.
+msgid "Add your own post statuses. "
+msgstr ""
+
+#. Found in description list item.
+msgid "Group fields in a meta box, by placing them all in one file."
+msgstr ""
+
+#. Found in description list item.
+msgid "Add a comment block at the top of your file to define the meta box attributes "
+msgstr ""
+
+#. Found in description list item.
+msgid "Hide/Show based on the post status. "
+msgstr ""
+
+#. Found in description list item.
+msgid "Hide/Show based on the users capability. "
+msgstr ""
+
+#. Found in description list item.
+msgid "Sort meta boxes with granular control. "
+msgstr ""
+
+#. Found in description list item.
+msgid "Lock the box, so users cannot move or hide them."
+msgstr ""
+
+#. Found in description list item.
+msgid "Add meta box to a specific Page/Post ID."
+msgstr ""
+
+#. Found in description list item.
+msgid "Create one file for your Widget settings, and one for your output... all done!"
+msgstr ""
+
+#. Found in description list item.
+msgid "ANY field or groups of fields can be a repeater."
+msgstr ""
+
+#. Found in description list item.
+msgid "Validate and Sanitize any field."
+msgstr ""
+
+#. Found in description list item.
+msgid "text"
+msgstr ""
+
+#. Found in description list item.
+msgid "textarea"
+msgstr ""
+
+#. Found in description list item.
+msgid "checkbox"
+msgstr ""
+
+#. Found in description list item.
+msgid "radio"
+msgstr ""
+
+#. Found in description list item.
+msgid "select"
+msgstr ""
+
+#. Found in description list item.
+msgid "post editor"
+msgstr ""
+
+#. Found in description list item.
+msgid "file upload"
+msgstr ""
+
+#. Found in description list item.
+msgid "image upload"
+msgstr ""
+
+#. Found in description list item.
+msgid "hidden"
+msgstr ""
+
+#. Found in description list item.
+msgid "html"
+msgstr ""
+
+#. Found in description list item.
+msgid "date chooser "
+msgstr ""
+
+#. Found in description list item.
+msgid "color picker"
+msgstr ""
+
+#. Found in description list item.
+msgid "add more"
+msgstr ""
+
+#. Found in description list item.
+msgid "HTML5"
+msgstr ""
+
+#. Found in description list item.
+msgid "post"
+msgstr ""
+
+#. Found in description list item.
+msgid "post_meta"
+msgstr ""
+
+#. Found in description list item.
+msgid "comment"
+msgstr ""
+
+#. Found in description list item.
+msgid "comment_meta"
+msgstr ""
+
+#. Found in description list item.
+msgid "term"
+msgstr ""
+
+#. Found in description list item.
+msgid "term_meta"
+msgstr ""
+
+#. Found in description list item.
+msgid "user"
+msgstr ""
+
+#. Found in description list item.
+msgid "user_meta"
+msgstr ""
+
+#. Found in description list item.
+msgid "media"
+msgstr ""
+
+#. Found in description list item.
+msgid "media_meta"
+msgstr ""
+
+#. Found in description list item.
+msgid "Hide/Show based on another form field. "
+msgstr ""
+
+#. Found in description list item.
+msgid "Hide/Show based on the post status."
+msgstr ""
+
+#. Found in description list item.
+msgid "Hide/Show based on the users capability."
+msgstr ""
+
+#. Found in description list item.
+msgid "Hide form fields, and just show field values"
+msgstr ""
+
+#. Found in description paragraph.
+msgid "<strong>CURRENTLY IN BETA</strong>"
+msgstr ""
+
+#. Found in description paragraph.
+msgid "Easy for beginners... built for developers. Piklist helps you build things - fast."
+msgstr ""
+
+#. Found in description paragraph.
+msgid "Piklist is a rapid development framework for WordPress that will let you concentrate on the main focus of your plugin or theme, and let Piklist handle everything else."
+msgstr ""
+
+#. Found in description paragraph.
+msgid "<a href=\"http://wordpress.tv/2012/09/04/steve-bruner-and-kevin-miller-building-powerful-websites-and-web-applications-with-piklist/\">Watch the Piklist presentation from WordCamp NYC &gt;</a>:"
+msgstr ""
+
+#. Found in description paragraph.
+msgid "<a href=\"https://piklist.com/user-guide/tutorials/getting-started-with-piklist/\">Read our getting started tutorial.</a>"
+msgstr ""
+
+#. Found in installation list item.
+msgid "Install and activate Piklist like any other plugin."
+msgstr ""
+
+#. Found in installation list item.
+msgid "DEVELOPERS: Learn how to develop Piklist Powered <a href=\"https://piklist.com/user-guide/tutorials/giving-your-theme-some-piklist-power/\">Themes</a> and <a href=\"https://piklist.com/user-guide/tutorials/writing-a-plugin-for-piklist/\">Plugins</a>."
+msgstr ""
+
+#. Found in changelog list item.
+msgid "FIXED: Updated upgrade script."
+msgstr ""
+
+#. Found in changelog list item.
+msgid "FIX: Sanitization plays nice with Validation."
+msgstr ""
+
+#. Found in changelog list item.
+msgid "ENHANCED: CSS updates."
+msgstr ""
+
+#. Found in changelog list item.
+msgid "ENHANCED: Added default editor style and removed theme style from non post content editors."
+msgstr ""
+
+#. Found in changelog list item.
+msgid "ENHANCED: Tightened save method to POST only."
+msgstr ""
+
+#. Found in changelog list item.
+msgid "FIX: Slashes issue with text fields."
+msgstr ""
+
+#. Found in changelog list item.
+msgid "FIX: Typo in setting name, shortocde_ui."
+msgstr ""
+
+#. Found in changelog list item.
+msgid "FIX: Lots of little fixes."
+msgstr ""
+
+#. Found in changelog list item.
+msgid "Requires WordPress v4.0."
+msgstr ""
+
+#. Found in changelog list item.
+msgid "NEW: WorkFlow Bar!"
+msgstr ""
+
+#. Found in changelog list item.
+msgid "NEW: Save individual Options, not just serialized Settings."
+msgstr ""
+
+#. Found in changelog list item.
+msgid "NEW: Validation rule: 'disabled', to make a field disabled."
+msgstr ""
+
+#. Found in changelog list item.
+msgid "NEW: unset_value option for checkboxes."
+msgstr ""
+
+#. Found in changelog list item.
+msgid "ENHANCED: Removed old responsive_admin() function."
+msgstr ""
+
+#. Found in changelog list item.
+msgid "ENHANCED: Dragging the editor in add-mores is easier."
+msgstr ""
+
+#. Found in changelog list item.
+msgid "ENHANCED: Validation and Sanitization updates."
+msgstr ""
+
+#. Found in changelog list item.
+msgid "FIX: Validation and Sanitiztion in multi-level grouped add-mores."
+msgstr ""
+
+#. Found in changelog list item.
+msgid "ENHANCED: File field and Editor highlight better when required."
+msgstr ""
+
+#. Found in changelog list item.
+msgid "FIX: Settings tabs are now backwards compatible with the new Workflow system."
+msgstr ""
+
+#. Found in changelog list item.
+msgid "FIX: Piklist allows posts to save normally. Thanks Mehdi for letting us test on your site!"
+msgstr ""
+
+#. Found in changelog list item.
+msgid "FIX: Validation rules within groups work as expected."
+msgstr ""
+
+#. Found in changelog list item.
+msgid "FIX: Validating certain fields within widgets work as expected."
+msgstr ""
+
+#. Found in changelog list item.
+msgid "FIX: Editors in add-mores now retain content markup."
+msgstr ""
+
+#. Found in changelog list item.
+msgid "FIX: Multiple User Roles are now saving."
+msgstr ""
+
+#. Found in changelog list item.
+msgid "FIXED: Updates run normally."
+msgstr ""
+
+#. Found in changelog list item.
+msgid "FIXED: Set args_order to 0 if not set."
+msgstr ""
+
+#. Found in changelog list item.
+msgid "Fixes"
+msgstr ""
+
+#. Found in changelog list item.
+msgid "ENHANCED: Allow client-side and server-side validation to work together."
+msgstr ""
+
+#. Found in changelog list item.
+msgid "Tons of fixes and enhancements."
+msgstr ""
+
+#. Found in changelog list item.
+msgid "Started Unit Testing."
+msgstr ""
+
+#. Found in changelog list item.
+msgid "NEW: \"Post Format\" parameter for comment blocks."
+msgstr ""
+
+#. Found in changelog list item.
+msgid "ENHANCED: Changed how assigning sections to WorkFlows. Now they work like all other Piklist features."
+msgstr ""
+
+#. Found in changelog list item.
+msgid "ENHANCED: Data structure updated."
+msgstr ""
+
+#. Found in changelog list item.
+msgid "ENHANCED: Easily display post statuses in a select field. Demos updated as well."
+msgstr ""
+
+#. Found in changelog list item.
+msgid "ENHANCED: OPTGROUP support for Selects."
+msgstr ""
+
+#. Found in changelog list item.
+msgid "FIXED: Sometimes getimagesize can't get the image size."
+msgstr ""
+
+#. Found in changelog list item.
+msgid "NEW: Custom Post Statuses work in quick edit."
+msgstr ""
+
+#. Found in changelog list item.
+msgid "NEW: admin-login-message partial."
+msgstr ""
+
+#. Found in changelog list item.
+msgid "ENHANCED: URL Validation update. Props @jasontheadams"
+msgstr ""
+
+#. Found in changelog list item.
+msgid "FIX: Security update for admin notices. @props joostdevalk"
+msgstr ""
+
+#. Found in changelog list item.
+msgid "ENHANCED: 'limit' validation rule now support character and word count."
+msgstr ""
+
+#. Found in changelog list item.
+msgid "ENHANCED: Multiple templates can be assigned in comment block. Props @jasontheadams"
+msgstr ""
+
+#. Found in changelog list item.
+msgid "ENHANCED: Revisions work as expected."
+msgstr ""
+
+#. Found in changelog list item.
+msgid "CHANGE: 'anchor' parameter is now 'anchor_id'"
+msgstr ""
+
+#. Found in changelog list item.
+msgid "CHANGE: 'type' parameter is now 'post_type'"
+msgstr ""
+
+#. Found in changelog list item.
+msgid "CHANGE: 'name' parameter is now 'title'"
+msgstr ""
+
+#. Found in changelog list item.
+msgid "CHANGE: 'box' parameter is now 'meta_box'"
+msgstr ""
+
+#. Found in changelog list item.
+msgid "CHANGE: 'ID' parameter for class-piklist-dashboard is now 'Extend'"
+msgstr ""
+
+#. Found in changelog list item.
+msgid "Requires WordPress 3.8"
+msgstr ""
+
+#. Found in changelog list item.
+msgid "NEW: 'list_table_filter' parameter adds taxonomy filter to list table."
+msgstr ""
+
+#. Found in changelog list item.
+msgid "NEW: 'meta_box_filter' parameter adds taxonomy filter to meta boxes."
+msgstr ""
+
+#. Found in changelog list item.
+msgid "NEW: Dynamic Meta Boxes"
+msgstr ""
+
+#. Found in changelog list item.
+msgid "ENHANCED: Added easier pulling of Add-more data. Props @jasontheadams"
+msgstr ""
+
+#. Found in changelog list item.
+msgid "ENHANCED: 'multiple' =&gt; false works with Media Uploader."
+msgstr ""
+
+#. Found in changelog list item.
+msgid "ENHANCED: 'sortable' =&gt; true/false works with Add-mores."
+msgstr ""
+
+#. Found in changelog list item.
+msgid "FIXED: Non-image files can be removed from file upload field."
+msgstr ""
+
+#. Found in changelog list item.
+msgid "ENHANCED: Updates to group fields."
+msgstr ""
+
+#. Found in changelog list item.
+msgid "Lots and lots of bug fixes."
+msgstr ""
+
+#. Found in changelog list item.
+msgid "ENHANCED: Query enhancements"
+msgstr ""
+
+#. Found in changelog list item.
+msgid "ENHANCED: Add custom classes to widgets."
+msgstr ""
+
+#. Found in changelog list item.
+msgid "ENHANCED: Admin notices can now dismiss."
+msgstr ""
+
+#. Found in changelog list item.
+msgid "ENHANCED: Allow 'page' parameter to work on individual Workflow tabs."
+msgstr ""
+
+#. Found in changelog list item.
+msgid "FIXED: Notice on conditional scripts."
+msgstr ""
+
+#. Found in changelog list item.
+msgid "FIXED: Replaced wpdb::esc_like() for like_escape() in WordPress 4.0+"
+msgstr ""
+
+#. Found in changelog list item.
+msgid "ENHANCED: WordPress Meta Query."
+msgstr ""
+
+#. Found in changelog list item.
+msgid "ENHANCED: Allow HTML5 inputs."
+msgstr ""
+
+#. Found in changelog list item.
+msgid "ENHANCED: Allow Piklist to set default Validation and Sanitization rules for fields."
+msgstr ""
+
+#. Found in changelog list item.
+msgid "ENHANCED: Add new Workflow position 'permalink', to support WordPress 4.1 'edit_form_before_permalink' hook."
+msgstr ""
+
+#. Found in changelog list item.
+msgid "ENHANCED: Demos are 100% localized."
+msgstr ""
+
+#. Found in changelog list item.
+msgid "ENHANCED: Allow targeting of Default page template"
+msgstr ""
+
+#. Found in changelog list item.
+msgid "ENHANCED: Allow for different sizes of images previews."
+msgstr ""
+
+#. Found in changelog list item.
+msgid "FIXED: Updated editors"
+msgstr ""
+
+#. Found in changelog list item.
+msgid "FIXED: Better Javascript wrapping"
+msgstr ""
+
+#. Found in changelog list item.
+msgid "FIXED: Drag and drop issues work as expected."
+msgstr ""
+
+#. Found in changelog list item.
+msgid "FIXED: Editors work nicely in grouped add-mores."
+msgstr ""
+
+#. Found in changelog list item.
+msgid "FIXED: Tool tips look great in the main post column and the side sortables."
+msgstr ""
+
+#. Found in changelog list item.
+msgid "Lots of bug fixes."
+msgstr ""
+
+#. Found in changelog list item.
+msgid "NEW: Admin notices"
+msgstr ""
+
+#. Found in changelog list item.
+msgid "FIXED: show_admin_column works for User Taxonomies"
+msgstr ""
+
+#. Found in changelog list item.
+msgid "FIXED: Front end forms work with media_handle_sideload()"
+msgstr ""
+
+#. Found in changelog list item.
+msgid "NEW: username_exists validation rule"
+msgstr ""
+
+#. Found in changelog list item.
+msgid "NEW: email_exists validation rule"
+msgstr ""
+
+#. Found in changelog list item.
+msgid "NEW: Front end forms!"
+msgstr ""
+
+#. Found in changelog list item.
+msgid "ENHANCED: WordPress 4.0 support."
+msgstr ""
+
+#. Found in changelog list item.
+msgid "FIXED: Notice on Piklist about page."
+msgstr ""
+
+#. Found in changelog list item.
+msgid "FIXED: Duplicate \"Settings Saved\" messages are gone."
+msgstr ""
+
+#. Found in changelog list item.
+msgid "FIXED: Broken link on About page."
+msgstr ""
+
+#. Found in changelog list item.
+msgid "ENHANCED: CSS tweak for ul.piklist-tab-bar"
+msgstr ""
+
+#. Found in changelog list item.
+msgid "NEW: Pointers!"
+msgstr ""
+
+#. Found in changelog list item.
+msgid "FIXED: Typo in Demos"
+msgstr ""
+
+#. Found in changelog list item.
+msgid "ENHANCED: Updated Widgets"
+msgstr ""
+
+#. Found in changelog list item.
+msgid "ENHANCED: Editor enhancement for group fields."
+msgstr ""
+
+#. Found in changelog list item.
+msgid "FIXED: Added Taxonomy support for non-multiple fields."
+msgstr ""
+
+#. Found in changelog list item.
+msgid "FIXED: Update to save_post action."
+msgstr ""
+
+#. Found in changelog list item.
+msgid "FIXED: Post Relationships work as expected."
+msgstr ""
+
+#. Found in changelog list item.
+msgid "FIXED: Radio buttons save properly in Settings."
+msgstr ""
+
+#. Found in changelog list item.
+msgid "FIXED: Removed object_id from fields."
+msgstr ""
+
+#. Found in changelog list item.
+msgid "FIXED: Language files load properly."
+msgstr ""
+
+#. Found in changelog list item.
+msgid "FIXED: Locked notice works correctly on Multisite."
+msgstr ""
+
+#. Found in changelog list item.
+msgid "ENHANCED: Field conditions support add-mores."
+msgstr ""
+
+#. Found in changelog list item.
+msgid "ENHANCED: Field conditions support serialize groups."
+msgstr ""
+
+#. Found in changelog list item.
+msgid "ENHANCED: Field Columns switch to right margins."
+msgstr ""
+
+#. Found in changelog list item.
+msgid "ENHANCED: Right Now widget css update."
+msgstr ""
+
+#. Found in changelog list item.
+msgid "The most stable version of Piklist yet."
+msgstr ""
+
+#. Found in changelog list item.
+msgid "Tons of performance updates."
+msgstr ""
+
+#. Found in changelog list item.
+msgid "NEW: Field validation."
+msgstr ""
+
+#. Found in changelog list item.
+msgid "NEW: Field sanitization."
+msgstr ""
+
+#. Found in changelog list item.
+msgid "NEW: label_class attribute"
+msgstr ""
+
+#. Found in changelog list item.
+msgid "ENHANCED: Field conditions."
+msgstr ""
+
+#. Found in changelog list item.
+msgid "ENHANCED: Faster, reengineered Widget system."
+msgstr ""
+
+#. Found in changelog list item.
+msgid "ENHANCED: Piklist Widgets work better in Theme Customizer."
+msgstr ""
+
+#. Found in changelog list item.
+msgid "ENHANCED: Filter everything by user role."
+msgstr ""
+
+#. Found in changelog list item.
+msgid "ENHANCED: Tooltips match WordPress default themes."
+msgstr ""
+
+#. Found in changelog list item.
+msgid "ENHANCED: index.php files are ignored in parts folders."
+msgstr ""
+
+#. Found in changelog list item.
+msgid "FIXED: Quick edit buttons work properly."
+msgstr ""
+
+#. Found in changelog list item.
+msgid "FIXED: Textarea values do not carry over in Add-Mores. Props Daniel Rampanelli"
+msgstr ""
+
+#. Found in changelog list item.
+msgid "FIXED: Preview button only shows for Public Post Types. Props Daniel Rampanelli"
+msgstr ""
+
+#. Found in changelog list item.
+msgid "FIXED: Adding fields to an already save Add-More works properly. Props Daniel Rampanelli"
+msgstr ""
+
+#. Found in changelog list item.
+msgid "FIXED: Autosaves triggered by \"Preview Changes\". Props Daniel Rampanelli"
+msgstr ""
+
+#. Found in changelog list item.
+msgid "FIXED: Field attributes properly accept a zero value. Props @jasontheadams"
+msgstr ""
+
+#. Found in changelog list item.
+msgid "FIXED: piklist_empty_post_title filter now works as expected."
+msgstr ""
+
+#. Found in changelog list item.
+msgid "Lots and lots and lots and lots of bug fixes."
+msgstr ""
+
+#. Found in changelog list item.
+msgid "FIXED: Menu icon size no longer conflicts with other plugins."
+msgstr ""
+
+#. Found in changelog list item.
+msgid "FIXED: Upgrade script works on older version of mysql."
+msgstr ""
+
+#. Found in changelog list item.
+msgid "FIXED: Update to class-piklist-user"
+msgstr ""
+
+#. Found in changelog list item.
+msgid "FIXED: User registrations emails no longer conflict with other plugins (i.e. BuddyPress)"
+msgstr ""
+
+#. Found in changelog list item.
+msgid "FIXED: check_update function respects new plugins."
+msgstr ""
+
+#. Found in changelog list item.
+msgid "FIXED: notice from post_row_actions function."
+msgstr ""
+
+#. Found in changelog list item.
+msgid "FIXED: Addmore field bug fix."
+msgstr ""
+
+#. Found in changelog list item.
+msgid "FIXED: Checkboxes save properly."
+msgstr ""
+
+#. Found in changelog list item.
+msgid "NEW: Multiselect field."
+msgstr ""
+
+#. Found in changelog list item.
+msgid "NEW DEMO: Post Editor in an Add-more."
+msgstr ""
+
+#. Found in changelog list item.
+msgid "IMPROVED: Add-mores are better than ever."
+msgstr ""
+
+#. Found in changelog list item.
+msgid "FIXED: Dashboard widgets drag-and-drop properly."
+msgstr ""
+
+#. Found in changelog list item.
+msgid "FIXED: Fixed Notices."
+msgstr ""
+
+#. Found in changelog list item.
+msgid "FIXED: Add-mores can now contain empty values."
+msgstr ""
+
+#. Found in changelog list item.
+msgid "FIXED: body_class function works better with Jetpack."
+msgstr ""
+
+#. Found in changelog list item.
+msgid "NEW: Add Tooltip Help to any Piklist field."
+msgstr ""
+
+#. Found in changelog list item.
+msgid "NEW: post_states parameter."
+msgstr ""
+
+#. Found in changelog list item.
+msgid "NEW: Set page icon on Taxonomy and User Taxonomy pages."
+msgstr ""
+
+#. Found in changelog list item.
+msgid "NEW: Dashicons now included."
+msgstr ""
+
+#. Found in changelog list item.
+msgid "NEW: Piklist grid css."
+msgstr ""
+
+#. Found in changelog list item.
+msgid "IMPROVED: Comma-seperated list of Taxonomies can be passed in a term file."
+msgstr ""
+
+#. Found in changelog list item.
+msgid "IMPROVED: Comma-separated lists of Post Types or Taxonomies in meta-boxes or term files can contain spaces."
+msgstr ""
+
+#. Found in changelog list item.
+msgid "IMPROVED: Use $page_icon instead of $icon."
+msgstr ""
+
+#. Found in changelog list item.
+msgid "IMPROVED: Use $menu_icon instead of $icon_url."
+msgstr ""
+
+#. Found in changelog list item.
+msgid "FIXED: Editing text boxes for Add-mores work in Firefox."
+msgstr ""
+
+#. Found in changelog list item.
+msgid "FIXED: Dashboard widget layout saves properly."
+msgstr ""
+
+#. Found in changelog list item.
+msgid "FIXED: $attributes in Editor field should be $options."
+msgstr ""
+
+#. Found in changelog list item.
+msgid "FIXED: Custom Post Statuses retain order when used with multiple CPTs."
+msgstr ""
+
+#. Found in changelog list item.
+msgid "IMPROVED: Multiple Author Roles are turned off by default."
+msgstr ""
+
+#. Found in changelog list item.
+msgid "IMPROVED: Add-mores are now even more awesome."
+msgstr ""
+
+#. Found in changelog list item.
+msgid "FIXED: Checkboxes."
+msgstr ""
+
+#. Found in changelog list item.
+msgid "FIXED: Tab Spacing."
+msgstr ""
+
+#. Found in changelog list item.
+msgid "FIXED: User Taxonomy data saves properly."
+msgstr ""
+
+#. Found in changelog list item.
+msgid "FIXED: WorkFlow tabs save properly for Post Types."
+msgstr ""
+
+#. Found in changelog list item.
+msgid "FIXED: Widgets work better than ever."
+msgstr ""
+
+#. Found in changelog list item.
+msgid "FIXED: Lots of bugs squashed!"
+msgstr ""
+
+#. Found in changelog list item.
+msgid "NEW: Comment Field."
+msgstr ""
+
+#. Found in changelog list item.
+msgid "IMPROVED: Assets for Javascript fields only load when the field is in use."
+msgstr ""
+
+#. Found in changelog list item.
+msgid "FIXED: Windows Path Error."
+msgstr ""
+
+#. Found in changelog list item.
+msgid "FIXED: Image upload for Widgets."
+msgstr ""
+
+#. Found in changelog list item.
+msgid "NEW: Replace standard Right Now widget on WordPress dashboard."
+msgstr ""
+
+#. Found in changelog list item.
+msgid "FIXED: REALLY fixed the Javascript error that broke visual editor and Help Tabs."
+msgstr ""
+
+#. Found in changelog list item.
+msgid "FIXED: Widgets"
+msgstr ""
+
+#. Found in changelog list item.
+msgid "FIXED: Javascript error that broke visual editor and Help Tabs."
+msgstr ""
+
+#. Found in changelog list item.
+msgid "NEW: Upload File field!"
+msgstr ""
+
+#. Found in changelog list item.
+msgid "Bug Fixes"
+msgstr ""
+
+#. Found in changelog list item.
+msgid "Now requires WordPress 3.4+."
+msgstr ""
+
+#. Found in changelog list item.
+msgid "NEW: Infinite Add-Mores!"
+msgstr ""
+
+#. Found in changelog list item.
+msgid "NEW: Relationship field!"
+msgstr ""
+
+#. Found in changelog list item.
+msgid "NEW: Multiple User Roles!"
+msgstr ""
+
+#. Found in changelog list item.
+msgid "NEW: User Taxonomies!"
+msgstr ""
+
+#. Found in changelog list item.
+msgid "NEW: Work Flow!"
+msgstr ""
+
+#. Found in changelog list item.
+msgid "NEW: Help Tabs!"
+msgstr ""
+
+#. Found in changelog list item.
+msgid "NEW: Dashboard Widgets!"
+msgstr ""
+
+#. Found in changelog list item.
+msgid "NEW: Required option for fields!"
+msgstr ""
+
+#. Found in changelog list item.
+msgid "New: Remove Meta Box around custom fields!"
+msgstr ""
+
+#. Found in changelog list item.
+msgid "NEW: Show meta fields by Page Template. Props @James_Mc."
+msgstr ""
+
+#. Found in changelog list item.
+msgid "NEW: hide_screen_options parameter when registering Post Types."
+msgstr ""
+
+#. Found in changelog list item.
+msgid "NEW: admin_body_class parameter when registering Post Types."
+msgstr ""
+
+#. Found in changelog list item.
+msgid "NEW: Remove Save functionality for settings page."
+msgstr ""
+
+#. Found in changelog list item.
+msgid "NEW: Change Save button text."
+msgstr ""
+
+#. Found in changelog list item.
+msgid "NEW: French translation by Daniel Ménard."
+msgstr ""
+
+#. Found in changelog list item.
+msgid "NEW: Slovak translation by Branco."
+msgstr ""
+
+#. Found in changelog list item.
+msgid "IMPROVED: Extended admin_body_class for Post Types and Taxonomies."
+msgstr ""
+
+#. Found in changelog list item.
+msgid "IMPROVED: Better display for settings page for both Tabs/no Tabs, and single line."
+msgstr ""
+
+#. Found in changelog list item.
+msgid "IMPROVED: Add or auto generate Form ID."
+msgstr ""
+
+#. Found in changelog list item.
+msgid "IMPROVED: Stops Webkit browsers from auto-filling user fields in the admin."
+msgstr ""
+
+#. Found in changelog list item.
+msgid "IMPROVED: More localized strings. Props @Daniel Ménard."
+msgstr ""
+
+#. Found in changelog list item.
+msgid "FIXED: HTTPS works properly."
+msgstr ""
+
+#. Found in changelog list item.
+msgid "FIXED: Comment field no longer duplicates comments."
+msgstr ""
+
+#. Found in changelog list item.
+msgid "FIXED: Administrators can edit other users meta."
+msgstr ""
+
+#. Found in changelog list item.
+msgid "FIXED: HTML escaped neccessary fields."
+msgstr ""
+
+#. Found in changelog list item.
+msgid "FIXED: Better garbage collection."
+msgstr ""
+
+#. Found in changelog list item.
+msgid "FIXED: CSS for h2.nav-tab-wrapper."
+msgstr ""
+
+#. Found in changelog list item.
+msgid "NEW: Plugin updates...the Piklist way."
+msgstr ""
+
+#. Found in changelog list item.
+msgid "FIXED: Long Post Status lists now wrap nicely."
+msgstr ""
+
+#. Found in changelog list item.
+msgid "FIXED: Add-mores save correctly when adding/deleting rows."
+msgstr ""
+
+#. Found in changelog list item.
+msgid "FIXED: Media meta saves without errors."
+msgstr ""
+
+#. Found in changelog list item.
+msgid "FIXED: Settings save properly when using multiple tabs."
+msgstr ""
+
+#. Found in changelog list item.
+msgid "FIXED: Logged-in user can now save user meta for any user."
+msgstr ""
+
+#. Found in changelog list item.
+msgid "FIXED: Fixed typo in self:: function in class-piklist-taxonomy. Props @James_Mc"
+msgstr ""
+
+#. Found in changelog list item.
+msgid "FIXED: Empty Time and Date fields no longer return \"false\"."
+msgstr ""
+
+#. Found in changelog list item.
+msgid "NEW: Disable Piklist Deactivation."
+msgstr ""
+
+#. Found in changelog list item.
+msgid "NEW: Customize the \"Enter Title Here\" text in Post Type Titles."
+msgstr ""
+
+#. Found in changelog list item.
+msgid "FIXED: Error when saving Media meta. Props @James_Mc"
+msgstr ""
+
+#. Found in changelog list item.
+msgid "FIXED: Removed legacy less_styles() function."
+msgstr ""
+
+#. Found in changelog list item.
+msgid "FIXED: Added Text Domain to all localized strings."
+msgstr ""
+
+#. Found in changelog list item.
+msgid "FIXED: Metaboxes jQuery conflict fixed for Firefox."
+msgstr ""
+
+#. Found in changelog list item.
+msgid "IMPROVED: Better upgrade notice in admin."
+msgstr ""
+
+#. Found in changelog list item.
+msgid "IMPROVED: Nicer jQuery animation for certain fields."
+msgstr ""
+
+#. Found in changelog list item.
+msgid "IMPROVED: Update uninstall.php to remove Piklist tables."
+msgstr ""
+
+#. Found in changelog list item.
+msgid "FIXED: Conditionals now working."
+msgstr ""
+
+#. Found in changelog list item.
+msgid "Our most significant update since the initial release:"
+msgstr ""
+
+#. Found in changelog list item.
+msgid "NEW: Add Taxonomy Meta!"
+msgstr ""
+
+#. Found in changelog list item.
+msgid "NEW: Add User Meta!"
+msgstr ""
+
+#. Found in changelog list item.
+msgid "NEW: Add Media Meta!"
+msgstr ""
+
+#. Found in changelog list item.
+msgid "NEW: New super powers for tax_query and meta_query!"
+msgstr ""
+
+#. Found in changelog list item.
+msgid "NEW: Add meta box to a specific Page/Post ID. Props @kattagami and @James_Mc"
+msgstr ""
+
+#. Found in changelog list item.
+msgid "FIXED: Network Activated plugins did not work properly."
+msgstr ""
+
+#. Found in changelog list item.
+msgid "FIXED: In function post_type_labels, view_item should be singularize. Props @James_Mc"
+msgstr ""
+
+#. Found in changelog list item.
+msgid "FIXED: Allow creating of field-less meta boxes. Props @James_Mc"
+msgstr ""
+
+#. Found in changelog list item.
+msgid "FIXED: Register Taxonomies before Custom Post Types. Props @Daniel Ménard"
+msgstr ""
+
+#. Found in changelog list item.
+msgid "NEW: uninstall.php file added."
+msgstr ""
+
+#. Found in changelog list item.
+msgid "NEW: Language folder added."
+msgstr ""
+
+#. Found in changelog list item.
+msgid "FIXED: Stopped some installs from receiving upgrade notices."
+msgstr ""
+
+#. Found in changelog list item.
+msgid "FIXED: Settings Tabs in submenu's didn't always work."
+msgstr ""
+
+#. Found in changelog list item.
+msgid "IMPROVED: Taxonomy save function."
+msgstr ""
+
+#. Found in changelog list item.
+msgid "NEW: Auto-columns for checkboxes and radio buttons."
+msgstr ""
+
+#. Found in changelog list item.
+msgid "NEW: Asset loader supports admin."
+msgstr ""
+
+#. Found in changelog list item.
+msgid "NEW: Save button can be removed for individual Settings pages."
+msgstr ""
+
+#. Found in changelog list item.
+msgid "NEW: Show file uploads in Piklist Demos."
+msgstr ""
+
+#. Found in changelog list item.
+msgid "FIXED: Publish box fixes."
+msgstr ""
+
+#. Found in changelog list item.
+msgid "FIXED: Taxonomy save/edit."
+msgstr ""
+
+#. Found in changelog list item.
+msgid "FIXED: 3.3.2 support."
+msgstr ""
+
+#. Found in changelog list item.
+msgid "NEW: New field! Upload files."
+msgstr ""
+
+#. Found in changelog list item.
+msgid "NEW: Added new Piklist XML class."
+msgstr ""
+
+#. Found in changelog list item.
+msgid "NEW: Updated Piklist get_terms function."
+msgstr ""
+
+#. Found in changelog list item.
+msgid "NEW: Removed ability to run any shortcode in a widget. Moved to WordPress-Helpers plugin."
+msgstr ""
+
+#. Found in changelog list item.
+msgid "FIXED: notice issues."
+msgstr ""
+
+#. Found in changelog list item.
+msgid "FIXED: Publish box wasn't always publishing."
+msgstr ""
+
+#. Found in changelog list item.
+msgid "FIXED: Fixed settings issues with multisite."
+msgstr ""
+
+#. Found in changelog list item.
+msgid "FIXED: Grouped fields were not laying out properly."
+msgstr ""
+
+#. Found in changelog list item.
+msgid "FIXED: Group fields stying"
+msgstr ""
+
+#. Found in changelog list item.
+msgid "NEW: Field names and ID's are now prefixed on frontend."
+msgstr ""
+
+#. Found in changelog list item.
+msgid "FIXED: Published posts revert to draft on save."
+msgstr ""
+
+#. Found in changelog list item.
+msgid "FIXED: Tabbed Settings page were not saving."
+msgstr ""
+
+#. Found in changelog list item.
+msgid "NEW: Allow multiple nested fields."
+msgstr ""
+
+#. Found in changelog list item.
+msgid "NEW: Implemented GET Field value function."
+msgstr ""
+
+#. Found in changelog list item.
+msgid "FIXED: add-more fields."
+msgstr ""
+
+#. Found in changelog list item.
+msgid "FIXED: Conditonal fields."
+msgstr ""
+
+#. Found in changelog list item.
+msgid "FIXED: Auto update fields."
+msgstr ""
+
+#. Found in changelog list item.
+msgid "FIXED: issue with plugin folders alphabetically higher than \"piklist\"."
+msgstr ""
+
+#. Found in changelog list item.
+msgid "FIXED: path issue on Windows server."
+msgstr ""
+
+#. Found in changelog list item.
+msgid "NEW: Implemented GET Field value function.Advanced Search capabilities function."
+msgstr ""
+
+#. Found in changelog list item.
+msgid "FIXED: Publish box set to Priority:Core, so meta boxes can be added before it."
+msgstr ""
+
+#. Found in changelog list item.
+msgid "IMPROVED: Forced Publish Meta Box to always be at top right."
+msgstr ""
+
+#. Found in changelog list item.
+msgid "IMPROVED: Added has_archive to register_custom_post_types function."
+msgstr ""
+
+#. Found in changelog list item.
+msgid "FIXED: PHP Notice issues."
+msgstr ""
+
+#. Found in changelog list item.
+msgid "FIXED: Added rule to flush permalinks when registering a new post type if needed."
+msgstr ""
+
+#. Found in changelog list item.
+msgid "FIXED: default post title fallback."
+msgstr ""
+
+#. Found in changelog list item.
+msgid "FIXED: Taxonomy scope bug on show value."
+msgstr ""
+
+#. Found in changelog list item.
+msgid "FIXED: bug with Post-to-Post relationships."
+msgstr ""
+
+#. Found in changelog list item.
+msgid "FIXED: Child theme support."
+msgstr ""
+
+#. Found in changelog list item.
+msgid "FIXED: bug with frontend forms."
+msgstr ""
+
+#. Found in changelog list item.
+msgid "NEW: Added support to register a plugin with Piklist by using the Plugin Type comment."
+msgstr ""
+
+#. Found in changelog list item.
+msgid "IMPROVED: Updated fields so that post_meta is the default scope for meta-boxes."
+msgstr ""
+
+#. Found in changelog list item.
+msgid "FIXED: Meta Box Sort for non-ordered meta boxes."
+msgstr ""
+
+#. Found in changelog list item.
+msgid "FIXED: Updated Theme Path."
+msgstr ""
+
+#. Found in changelog list item.
+msgid "IMPROVED: Meta Boxes now respect new theme folder structure."
+msgstr ""
+
+#. Found in changelog list item.
+msgid "IMPROVED: Global meta boxes now work on default post types."
+msgstr ""
+
+#. Found in changelog list item.
+msgid "FIXED: Conditional Tag for Style Loading."
+msgstr ""
+
+#. Found in changelog list item.
+msgid "FIXED: Add-On Registration."
+msgstr ""
+
+#. Found in changelog list item.
+msgid "IMPROVED: Updated Status Ranges."
+msgstr ""
+
+#. Found in changelog list item.
+msgid "FIXED: Directory Parse Bug."
+msgstr ""
+
+#. Found in changelog list item.
+msgid "Initial release!"
+msgstr ""
+
+#. Found in faq header.
+msgid "What does this plugin do?"
+msgstr ""
+
+#. Found in faq header.
+msgid "I'm a beginner, is Piklist for me?"
+msgstr ""
+
+#. Found in faq header.
+msgid "I'm a developer, is Piklist for me?"
+msgstr ""
+
+#. Found in faq header.
+msgid "Where's the User Interface?"
+msgstr ""
+
+#. Found in faq header.
+msgid "What's the best way to get started with Piklist?"
+msgstr ""
+
+#. Found in faq list item.
+msgid "Install and activate the plugin."
+msgstr ""
+
+#. Found in faq list item.
+msgid "Go through our <a href=\"https://piklist.com/user-guide/tutorials/getting-started-with-piklist/\">Getting Started with Piklist</a> tutorial."
+msgstr ""
+
+#. Found in faq list item.
+msgid "<a href=\"https://piklist.com/user-guide/tutorials/piklists-built-demos/\">Activate the built-in Demos</a> to get an idea of what you can build. If you like something in the demos, you can just copy and paste it into your own project."
+msgstr ""
+
+#. Found in faq list item.
+msgid "Ask questions on our <a href=\"https://piklist.com/support/\">Support Forum</a>. (We love hearing from our users)"
+msgstr ""
+
+#. Found in faq paragraph.
+msgid "Piklist provides a stable framework for building amazing things with WordPress."
+msgstr ""
+
+#. Found in faq paragraph.
+msgid "Piklist makes it very easy for beginners to <a href=\"https://piklist.com/user-guide/tutorials/getting-started-with-piklist/\">get started</a>. In most cases you can just copy and paste code you find in the Piklist built-in Demos, one of our tutorials or in the support forums."
+msgstr ""
+
+#. Found in faq paragraph.
+msgid "Piklist was originally built for developers. It was inspired by Ruby on Rails, jQuery and Django. Piklist is a fast and concise plugin that encourages WordPress rapid development. It simplifies many of the more difficult tasks in WordPress and adds functionality not presently common in WordPress core."
+msgstr ""
+
+#. Found in faq paragraph.
+msgid "We’ve worked hard to make Piklist easy to use for beginners, and powerful enough for Developers… and our users all agree!"
+msgstr ""
+
+#. Found in faq paragraph.
+msgid "Piklist is a code-based framework, which means it has no user interface. We believe this is one of the biggest benefits to using Piklist. At first glance, UI based field builders look easier, but in our experience they are not. Code based systems allow you greater flexibility in your field configurations and development, and will save you time in the long run. With Piklist you can usually use the same code you have written in one section and use it in another, allowing you to copy and paste, and save tons of time."
+msgstr ""
+
+#. Found in faq paragraph.
+msgid "Piklist comes with built-in Demos. If you find a field you like, just copy the code and paste it into your project... seriously, it's that easy."
+msgstr ""
+
+#. Found in faq paragraph.
+msgid "Code-based frameworks also allows you to version control your code, which is very difficult to do with a UI based framework. All you have to do is press delete by accident in a UI-based system, and you've just lost your work. With version control that never happens."
+msgstr ""
