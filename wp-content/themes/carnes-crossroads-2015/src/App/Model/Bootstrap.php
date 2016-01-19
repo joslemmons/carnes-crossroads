@@ -60,6 +60,7 @@ class Bootstrap
         NewsAndEventsPage::bootstrap();
         LandingPage::bootstrap();
         AccountPage::bootstrap();
+        FAQPage::bootstrap();
     }
 
 }

@@ -11,7 +11,7 @@ use App\Model\Page;
 
 $post = Timber::get_post($post->ID);
 
-if ($post->id !== 23) {
+if ($post->id !== 23 && $post->id !== 57) {
     if (false === $post->parent()) {
         // this is a primary page
 
