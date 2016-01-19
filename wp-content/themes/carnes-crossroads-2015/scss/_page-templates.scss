@@ -80,10 +80,21 @@
     &__page {
         position: relative;
         margin-top: 100px;
-        height: 70%;
+        height: 68%;
         width: 100%;
         overflow: hidden;
         background-position: center center;
+        background-repeat: no-repeat;
+        background-size: cover;
+    }
+
+    &__article {
+        position: relative;
+        margin-top: 100px;
+        height: 45%;
+        width: 100%;
+        overflow: hidden;
+        background-position: bottom center;
         background-repeat: no-repeat;
         background-size: cover;
     }
@@ -443,6 +454,22 @@
                 text-decoration: underline !important;
             }
         }
+    }
+
+    &__article {
+        h2 {
+            margin-bottom: 5px;
+        }
+
+        img {
+            margin: 20px 0 30px;
+            max-width: 100%;
+        }
+
+        p {
+            margin-bottom: 20px;
+        }
+
     }
 }
 

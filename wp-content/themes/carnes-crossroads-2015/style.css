@@ -1013,7 +1013,7 @@ pre {
     margin-left: 91.6666666667%; } }
 @media (min-width: 1200px) {
   .container {
-    max-width: 1430px; }
+    max-width: 1230px; }
 
   .col-lg-1,
   .col-lg-2,
@@ -4122,10 +4122,19 @@ video {
   .hero__page {
     position: relative;
     margin-top: 100px;
-    height: 70%;
+    height: 68%;
     width: 100%;
     overflow: hidden;
     background-position: center center;
+    background-repeat: no-repeat;
+    background-size: cover; }
+  .hero__article {
+    position: relative;
+    margin-top: 100px;
+    height: 45%;
+    width: 100%;
+    overflow: hidden;
+    background-position: bottom center;
     background-repeat: no-repeat;
     background-size: cover; }
 
@@ -4356,6 +4365,13 @@ video {
     .category-items__card-date a:hover {
       color: #686868;
       text-decoration: underline !important; }
+.category-items__article h2 {
+  margin-bottom: 5px; }
+.category-items__article img {
+  margin: 20px 0 30px;
+  max-width: 100%; }
+.category-items__article p {
+  margin-bottom: 20px; }
 
 .map-overlay {
   background: transparent;
