@@ -26,65 +26,54 @@
                 <h4>Categories</h4>
                 <hr>
                 <ul class="category-list__categories">
-                    <li class="category-list__item"><a href="#">News</a></li>
-                    <li class="category-list__item"><a href="#">Area Events</a></li>
-                    <li class="category-list__item"><a href="#">Category</a></li>
-                    <li class="category-list__item"><a href="/category/all">View All</a></li>
+                    {% for category in categories %}
+                        <li class="category-list__item{% if category.name == categoryName %} active{% endif %}"><a
+                                    href="{{ category.link }}">{{ category.name }}</a></li>
+                    {% endfor %}
                 </ul>
             </div>
 
              <div class="col-xs-12 col-md-9 category-items">
-                <h2>All Categories</h2>
+                 <h2>{{ categoryName }}</h2>
+
+                 {% for post in posts %}
                 <div class="col-xs-4 category-items__card">
-                    <img src="{{ template_uri }}/img/cc-lowcountry.jpg">
-                    <a href="#"><h4>Item Title</h4></a>
-                    <p class="category-items__card-date">January 23, 2016&nbsp;&nbsp;|&nbsp;&nbsp;<a href="#">Category</a></p>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-                    tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-                    quis nostrud exercitation ullamco.</p>
+                    <a href="{{ post.link }}">
+                        <img src="{{ post.thumbnail.src|resize(242,197) }}">
+                    </a>
+                    <a href="{{ post.link }}"><h4>{{ post.title }}</h4></a>
+                    <p class="category-items__card-date">{{ post.display_date }} | {% for term in post.terms('category') %}<a
+                        href="{{ term.link }}">{{ term.name }}</a>{% if loop.last == faslse %},{% endif %}{% endfor %}
+                    </p>
+                    <p>{{ post.content|truncate(30) }}</p>
                 </div>
-                <div class="col-xs-4 category-items__card">
-                    <img src="{{ template_uri }}/img/cc-lowcountry.jpg">
-                    <a href="#"><h4>Item Title</h4></a>
-                    <p class="category-items__card-date">January 23, 2016&nbsp;&nbsp;|&nbsp;&nbsp;<a href="#">Category</a></p>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-                    tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-                    quis nostrud exercitation ullamco.</p>
-                </div>
-                <div class="col-xs-4 category-items__card">
-                    <img src="{{ template_uri }}/img/cc-lowcountry.jpg">
-                    <a href="#"><h4>Item Title</h4></a>
-                    <p class="category-items__card-date">January 23, 2016&nbsp;&nbsp;|&nbsp;&nbsp;<a href="#">Category</a></p>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-                    tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-                    quis nostrud exercitation ullamco.</p>
-                </div>
-                <div class="col-xs-4 category-items__card">
-                    <img src="{{ template_uri }}/img/cc-lowcountry.jpg">
-                    <a href="#"><h4>Item Title</h4></a>
-                    <p class="category-items__card-date">January 23, 2016&nbsp;&nbsp;|&nbsp;&nbsp;<a href="#">Category</a></p>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-                    tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-                    quis nostrud exercitation ullamco.</p>
-                </div>
-                <div class="col-xs-4 category-items__card">
-                    <img src="{{ template_uri }}/img/cc-lowcountry.jpg">
-                    <a href="#"><h4>Item Title</h4></a>
-                    <p class="category-items__card-date">January 23, 2016&nbsp;&nbsp;|&nbsp;&nbsp;<a href="#">Category</a></p>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-                    tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-                    quis nostrud exercitation ullamco.</p>
-                </div>
-                <div class="col-xs-4 category-items__card">
-                    <img src="{{ template_uri }}/img/cc-lowcountry.jpg">
-                    <a href="#"><h4>Item Title</h4></a>
-                    <p class="category-items__card-date">January 23, 2016&nbsp;&nbsp;|&nbsp;&nbsp;<a href="#">Category</a></p>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-                    tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-                    quis nostrud exercitation ullamco.</p>
-                </div>
+                 {% endfor %}
 
             </div>
+
+            {% if posts and pagination %}
+                <div class="tool-pagination">
+                    {% if pagination.prev %}
+                        <a href="{{ pagination.prev.link }}"
+                           class="prev {{ pagination.prev.link|length ? '' : 'invisible' }}">Prev</a>
+                    {% endif %}
+                    <ul class="pages">
+                        {% for page in pagination.pages %}
+                            <li>
+                                {% if page.link %}
+                                    <a href="{{ page.link }}" class="{{ page.class }}">{{ page.title }}</a>
+                                {% else %}
+                                    <span class="{{ page.class }}">{{ page.title }}</span>
+                                {% endif %}
+                            </li>
+                        {% endfor %}
+                    </ul>
+                    {% if pagination.next %}
+                        <a href="{{ pagination.next.link }}"
+                           class="next {{ pagination.next.link|length ? '' : 'invisible' }}">Next</a>
+                    {% endif %}
+                </div>
+            {% endif %}
         </div>
     </div>
 </section>

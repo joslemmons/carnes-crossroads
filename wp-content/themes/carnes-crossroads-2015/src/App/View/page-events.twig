@@ -53,10 +53,9 @@
                 <h4>Categories</h4>
                 <hr>
                 <ul class="category-list__categories">
-                    <li class="category-list__item"><a href="#">News</a></li>
-                    <li class="category-list__item"><a href="#">Area Events</a></li>
-                    <li class="category-list__item"><a href="#">Category</a></li>
-                    <li class="category-list__item"><a href="#">View All</a></li>
+                    {% for category in categories %}
+                    <li class="category-list__item"><a href="{{ category.link }}">{{ category.name }}</a></li>
+                    {% endfor %}
                 </ul>
             </div>
 

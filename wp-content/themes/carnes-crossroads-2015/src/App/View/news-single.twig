@@ -26,17 +26,19 @@
                 <h4>Categories</h4>
                 <hr>
                 <ul class="category-list__categories">
-                    <li class="category-list__item"><a href="#">News</a></li>
-                    <li class="category-list__item"><a href="#">Area Events</a></li>
-                    <li class="category-list__item"><a href="#">Category</a></li>
-                    <li class="category-list__item"><a href="/category/all">View All</a></li>
+                    {% for category in categories %}
+                        <li class="category-list__item"><a href="{{ category.link }}">{{ category.name }}</a></li>
+                    {% endfor %}
                 </ul>
             </div>
 
              <div class="col-xs-12 col-md-8 col-md-offset-1 category-items__article">
                 <h2>{{ post.title }}</h2>
-                <p class="category-items__card-date">January 23, 2016&nbsp;&nbsp;|&nbsp;&nbsp;<a href="#">{{ post.category }}</a></p>
-                <img src="{{ post.thumbnail }}">
+                 <p class="category-items__card-date">{{ post.display_date }}
+                     &nbsp;&nbsp;|&nbsp;&nbsp;{% for term in post.terms('category') %}<a
+                     href="{{ term.link }}">{{ term.name }}</a>{% if loop.last == faslse %},{% endif %}{% endfor %}
+                 </p>
+                 <img src="{{ post.thumbnail.src|resize(790,395) }}">
                 <p>{{ post.content }}</p>
             </div>
 
