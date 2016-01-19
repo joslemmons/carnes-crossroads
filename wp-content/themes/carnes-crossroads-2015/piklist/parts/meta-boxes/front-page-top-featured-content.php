@@ -15,7 +15,7 @@ piklist('field', array(
     'label' => 'Top Primary Featured Content',
     'description' => '<img width="170" src="' . get_template_directory_uri() . '/img/admin/front-page-primary.png' . '" />',
     'columns' => 12,
-//    'add_more' => true,
+    'add_more' => true,
     'fields' => array(
         array(
             'type' => 'file',
@@ -114,7 +114,7 @@ piklist('field', array(
     'field' => FrontPage::$field_top_featured_group_secondary_items,
     'label' => 'Top Secondary Featured Content',
     'description' => '<img width="170" src="' . get_template_directory_uri() . '/img/admin/front-page-secondary.png' . '" />',
-//    'add_more' => true,
+    'add_more' => true,
     'fields' => array(
         array(
             'type' => 'file',
@@ -212,7 +212,7 @@ piklist('field', array(
     'field' => FrontPage::$field_top_featured_group_tertiary_items,
     'label' => 'Top tertiary Featured Content',
     'description' => '<img width="170" src="' . get_template_directory_uri() . '/img/admin/front-page-tertiary.png' . '" />',
-//    'add_more' => true,
+    'add_more' => true,
     'fields' => array(
         array(
             'type' => 'text',
