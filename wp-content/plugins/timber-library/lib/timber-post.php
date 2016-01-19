@@ -700,6 +700,7 @@ class TimberPost extends TimberCore implements TimberCoreInterface {
 		return $children;
 	}
 
+
 	/**
 	 * Get the comments for a post
 	 * @internal
@@ -744,7 +745,6 @@ class TimberPost extends TimberCore implements TimberCoreInterface {
 
 		foreach($comments as $key => &$comment) {
 			$timber_comment = new $CommentClass($comment);
-			$timber_comment->reply_link = $this->TimberComment_reply_link($comment->comment_ID, $this->ID);
 			$timber_comments[$timber_comment->id] = $timber_comment;
 		}
 
