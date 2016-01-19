@@ -8,7 +8,7 @@
     left: 0;
     padding: 20px 0 0 0;
     background: url(./img/pattern-green.jpg) repeat center center;
-    overflow: hidden;
+    // overflow: hidden;
     z-index: 9999;
     @include transition(all, 0.3s, ease-in-out, 0s);
 

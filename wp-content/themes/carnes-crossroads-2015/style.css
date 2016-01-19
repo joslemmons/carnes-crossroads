@@ -3248,8 +3248,7 @@ p, ol, ul {
   -webkit-font-smoothing: antialiased; }
 
 html, body {
-  height: 100%;
-  overflow-x: hidden; }
+  height: 100%; }
 
 a {
   -webkit-transition: all 0.2s ease-in-out 0s;
@@ -3605,7 +3604,6 @@ a:focus, a:hover {
   left: 0;
   padding: 20px 0 0 0;
   background: url(./img/pattern-green.jpg) repeat center center;
-  overflow: hidden;
   z-index: 9999;
   -webkit-transition: all 0.3s ease-in-out 0s;
   -moz-transition: all 0.3s ease-in-out 0s;
@@ -4134,7 +4132,8 @@ video {
 .page-content, .page-content--white, .page-content--white-floral, .page-content--white-floral-top, .page-content--tan, .page-content--contact, .page-content--footer {
   position: relative;
   padding: 75px 0;
-  background-color: #fff; }
+  background-color: #fff;
+  overflow-x: hidden; }
   .page-content hr, .page-content--white hr, .page-content--white-floral hr, .page-content--white-floral-top hr, .page-content--tan hr, .page-content--contact hr, .page-content--footer hr {
     margin: 90px -15px;
     border-top: 1px solid #9b8b79; }
