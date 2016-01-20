@@ -1,11 +1,24 @@
 <?php
 
+use App\Model\Config;
 use App\Model\Post;
+use App\Model\Social;
 
 $context = Timber::get_context();
 $context['page'] = Timber::get_post(get_option('page_for_posts'), '\App\Model\NewsAndEventsPage');
 $context['categories'] = Timber::get_terms('category');
-$context['featured_posts'] = Post::getFeaturedNews(1);
-$context['recent_posts'] = Post::getRecentNews();
+$featured_posts = Post::getFeaturedNews(1);
+$context['recent_posts'] = $recent_posts = Post::getRecentNews();
+
+if (empty($featured_posts) === true) {
+    $featured_posts[] = array_shift($recent_posts);
+}
+
+$context['featured_posts'] = $featured_posts;
+
+// TODO: something is up with instagram
+$context['social_feed'] = TimberHelper::transient(Config::getKeyPrefix() . 'recent_social_posts', function () {
+    return Social::getSocialFeed();
+}, 60 * 60);
 
 Timber::render('page-events.twig', $context);

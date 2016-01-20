@@ -60,17 +60,17 @@ $config_options = array(
     'social' => array(
         'instagram' => array(
             'support_approval_workflow' => false,
-            'default_username' => ''
+            'default_username' => 'carnescrossroads'
         ),
         'twitter' => array(
-            'default_username' => ''
+            'default_username' => 'carnesxroads'
         ),
         'facebook' => array(
-            'default_username' => '',
+            'default_username' => 'carnescrossroads',
             'app_id' => '1670472393221980'
         ),
         'youtube' => array(
-            'default_username' => ''
+            'default_username' => 'carnesxroads'
         )
     )
 );

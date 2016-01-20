@@ -1,5 +1,7 @@
 <?php namespace App\Model;
 
+use Carbon\Carbon;
+
 trait SocialSettings
 {
     private static $_settings = null;
@@ -49,5 +51,51 @@ class Social
         );
 
         return $pages;
+    }
+
+    public static function getSocialFeed()
+    {
+        $recent_tweets = Twitter::getRecentTweetsByUser(Twitter::getDefaultUsername(), 6);
+        $recent_facebook_posts = Facebook::getRecentPostsForPage(Facebook::getDefaultUsername(), 6);
+        $recent_instagram_posts = Instagram::getRecentByUser(Instagram::getDefaultUsername(), 6);
+        $recent_youtube_videos = YouTube::getRecentVideosForChannel(YouTube::getDefaultUsername(), 6);
+
+        $recent_social_posts = array();
+        if (false === empty($recent_tweets)) {
+            $recent_social_posts[] = array_shift($recent_tweets);
+        }
+
+        if (false === empty($recent_facebook_posts)) {
+            $recent_social_posts[] = array_shift($recent_facebook_posts);
+        }
+
+        if (false === empty($recent_instagram_posts)) {
+            $recent_social_posts[] = array_shift($recent_instagram_posts);
+        }
+
+        if (false === empty($recent_youtube_videos)) {
+            $recent_social_posts[] = array_shift($recent_youtube_videos);
+        }
+
+        $social_what_s_left = array_merge($recent_tweets, $recent_facebook_posts, $recent_instagram_posts, $recent_youtube_videos);
+        shuffle($social_what_s_left);
+        while (count($recent_social_posts) < 6) {
+            $recent_social_posts[] = array_shift($social_what_s_left);
+        }
+
+        // put in desc order
+        usort($recent_social_posts, function ($el1, $el2) {
+            $el1_created_time = Carbon::createFromTimestamp(strtotime($el1->social_post_created_time));
+            $el2_created_time = Carbon::createFromTimestamp(strtotime($el2->social_post_created_time));
+            if ($el1_created_time === $el2_created_time) {
+                return 0;
+            } elseif ($el1_created_time > $el2_created_time) {
+                return -1;
+            } else {
+                return 1;
+            }
+        });
+
+        return $recent_social_posts;
     }
 }
