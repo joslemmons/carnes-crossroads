@@ -2,6 +2,7 @@
 /*
  * Title: Page Options (Carnes Crossroads 2015 Theme)
  * Post Type: page
+ * new: false
  */
 
 global $post;
@@ -13,8 +14,11 @@ use App\Model\Page;
 
 $post = Timber::get_post($post->ID);
 
-if ($post->id !== FrontPage::PAGE_ID && $post->id !== FAQPage::PAGE_ID) {
-    if (false === $post->parent()) {
+if ($post && $post->id !== FrontPage::PAGE_ID && $post->id !== FAQPage::PAGE_ID) {
+    if (
+        false === $post->parent() ||
+        $post->id === Page::BUILDER_PAGE_ID
+    ) {
         // this is a primary page
 
     piklist('field', array(
@@ -27,6 +31,7 @@ if ($post->id !== FrontPage::PAGE_ID && $post->id !== FAQPage::PAGE_ID) {
         )
     ));
 
+        if ($post->id !== Page::BUILDER_PAGE_ID) {
         piklist('field', array(
             'type' => 'group',
             'field' => Page::$field_quicklinks_group,
@@ -291,6 +296,7 @@ if ($post->id !== FrontPage::PAGE_ID && $post->id !== FAQPage::PAGE_ID) {
                 )
             )
         ));
+        }
 
         $children = $post->children('page');
         if (false === $post->parent() && false === empty($children)) {

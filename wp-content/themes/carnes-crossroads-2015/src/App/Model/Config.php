@@ -2,7 +2,6 @@
 
 class Config
 {
-
     public static $_productionDomains;
 
     public static $_stagingDomains;
@@ -15,6 +14,7 @@ class Config
     private static $_login_logo_src;
     private static $_social_options;
     private static $_add_this_src;
+    private static $_facebook_app_id;
 
     private static $_missing_plugins = null;
 
@@ -43,6 +43,7 @@ class Config
         self::$_login_logo_src = $config_options['login_logo_src'];
         self::$_social_options = $config_options['social'];
         self::$_add_this_src = $config_options['add_this_src'];
+        self::$_facebook_app_id = $config_options['social']['facebook']['app_id'];
     }
 
     public static function getSocialOptions()
@@ -141,6 +142,11 @@ class Config
         }
 
         return time();
+    }
+
+    public static function getFacebookAppId()
+    {
+        return self::$_facebook_app_id;
     }
 
 }

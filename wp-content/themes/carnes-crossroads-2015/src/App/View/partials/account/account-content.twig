@@ -1,0 +1,155 @@
+{% if current_user %}
+<div class="child-page-content" id="account-saved-listings">
+    <div class="child-title">
+        <h3>Saved Listings</h3>
+    </div>
+    <div class="divider"></div>
+    <div class="child-content">
+        {{ page.getFavoritesContent|wpautop }}
+
+        <div class="saved-listings-slider">
+            {% for property in current_user.getSavedProperties(6) %}
+            <div class="slide">
+                <div class="height-container">
+                    <div class="image">
+                        <img src="{{ property.getFeaturedImageSrc|resize(490,390) }}" class="img-responsive">
+                        {% if property.isFromMLS %}
+                        <div class="broker-reciprocity"></div>
+                        {% endif %}
+                    </div>
+                    <div class="title">
+                        {{ property.getAddress }}
+                    </div>
+                    <div class="details">
+                        <div class="neighborhood">{{ property.getPropertyType }}{% if property.getPropertyType and property.getNeighborhood %} | {% endif %}{{ property.getNeighborhood }}</div>
+                        <div class="details">
+                            {% if property.getBedroomCount or property.getFullBathroomCount or property.getHalfBathroomCount %}
+                            <div class="specs">{% if property.getBedroomCount %}{{ property.getBedroomCount }} BR /{% endif %}
+                                {% if property.getFullBathroomCount %}{{ property.getFullBathroomCount }} Full Bath /{% endif %}{% if property.getHalfBathroomCount %}{{ property.getHalfBathroomCount }}  Half Bath{% endif %}
+                            </div>
+                            {% endif %}
+                            {% set numDecimalPlaces = 0 %}
+                            {% if property.getPropertyType == 'Homesite' %}
+                            {% set numDecimalPlaces = 2 %}
+                            {% endif %}
+                            <div class="square-footage">{{ property.getTotalAreaSquareFootage|number_format(numDecimalPlaces) }} {{ property.getTotalAreaSquareFootageUnitOfMeasurement }}</div>
+                            <div class="price">${{ property.getPurchaseListPrice|number_format }}</div>
+                        </div>
+                    </div>
+                </div>
+                <a class="site-btn" href="{{ property.link }}">
+                    View Listing
+                </a>
+                <a href="#" data-property-id="{{ property.getId }}" class="account-unsave-listing">
+                    <div class="trash-icon"></div>
+                    <span class="remove">Remove</span>
+                </a>
+            </div>
+            {% endfor %}
+        </div>
+
+
+        {% if current_user.getSavedProperties(6)|length > 0 %}
+        <hr />
+        <a href="/real-estate/home-finder/saved-listings/">View All Saved Properties</a>
+        {% endif %}
+    </div>
+</div>
+
+<div class="child-page-content" id="saved-searches">
+    <div class="child-title">
+        <h3>Saved Searches</h3>
+    </div>
+    <div class="divider"></div>
+    <div class="child-content">
+        {{ page.getSavedSearchesContent|wpautop }}
+
+        <ul class="saved-searches-list">
+            {% for saved_search in current_user.getSavedSearchFilters %}
+            <li><a href="{{ saved_search.link }}">{{ saved_search.getFriendlyName }}</a><br /><a href="#" class="accountUnSaveSearch" data-un-save-link="{{ saved_search.removeLink }}">
+                <div class="trash-icon"></div>
+                <span class="remove">Remove</span>
+                </a></li>
+            {% endfor %}
+        </ul>
+    </div>
+</div>
+
+<div class="child-page-content" id="notification-options">
+    <div class="child-title">
+        <h3>Notification Options</h3>
+    </div>
+    <div class="divider"></div>
+    <div class="child-content">
+        {{ page.getNotificationsOnListingsOptionsContent|wpautop }}
+
+        <form id="account-email-form">
+            <div>
+                <input name="searchUpdateEmail"
+                       type="radio"
+                       value="none"
+                       id="noSearchUpdates"
+                       {% if current_user.getNotificationOption == 'none' %}
+                       checked="checked"
+                       {% endif %}
+                       />
+                <label for="noSearchUpdates">Do not email me updates on my saved searches</label>
+            </div>
+            <div>
+                <input name="searchUpdateEmail"
+                       type="radio"
+                       value="daily"
+                       id="dailySearchUpdates"
+                       {% if current_user.getNotificationOption == 'daily' %}
+                       checked="checked"
+                       {% endif %}
+                       />
+                <label for="dailySearchUpdates">Send me a <strong>daily</strong> email about updates to my saved
+                    searches</label>
+            </div>
+            <div>
+                <input name="searchUpdateEmail"
+                       type="radio"
+                       value="weekly"
+                       id="weeklySearchUpdates"
+                       {% if current_user.getNotificationOption == 'weekly' %}
+                       checked="checked"
+                       {% endif %}
+                       />
+                <label for="weeklySearchUpdates">Send me a <strong>weekly</strong> email about updates to my saved searches</label>
+            </div>
+            <span class="success-message" style="display:none;">Successfully update notification options</span>
+            <span class="error-message" style="display:none;"></span>
+            <div class="account-btn-container">
+                <button class="site-btn">Update</button>
+            </div>
+        </form>
+    </div>
+</div>
+
+{#<div class="child-page-content" id="update-email-password">#}
+{#<div class="child-title">#}
+{#<h3>Update Email/Password</h3>#}
+{#</div>#}
+{#<div class="child-content">#}
+{#{{ page.getChangeEmailPasswordContent|wpautop }}#}
+{#{{ function('gravity_form', 2, false, false) }}#}
+{#</div>#}
+{#</div>#}
+{% else %}
+<div class="child-page-content" id="account-register">
+    <div class="child-title">
+        <h3>Sign in / Create Account</h3>
+    </div>
+    <div class="divider"></div>
+    <div class="child-content">
+        {{ page.getCreateAccountContent|wpautop }}
+        <form class="account-login">
+            <label for="accountRegisterEmail">Email</label>
+            <input type="text" name="email" id="accountRegisterEmail"/>
+            <button class="site-btn">Sign In / Create Account</button>
+            <span class="error-message" style="display:none;"></span>
+        </form>
+    </div>
+</div>
+{% endif %}

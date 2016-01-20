@@ -1,0 +1,13 @@
+{% for offering in offerings %}
+    <div class="listing offering {% if offering.id == activeOffering.id %}active{% endif %} {% if loop.last %}infinite-check{% endif %}"
+         data-offering-id="{{ offering.id }}"
+         data-offering-link="{{ offering.post_name }}"
+         {% if loop.last and nextPageUrl %}data-infinite-scroll-next-url="{{ nextPageUrl }}"{% endif %}>
+        <div class="listing-img-col" style="background:url('{{ offering.thumbnail.get_src }}') no-repeat 50% 50%; background-size: cover;">
+            {#320x328#}
+        </div>
+        <div class="listing-details-col">
+            {{ offering.post_excerpt }}
+        </div>
+    </div>
+{% endfor %}

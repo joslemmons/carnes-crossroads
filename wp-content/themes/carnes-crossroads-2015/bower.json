@@ -9,6 +9,9 @@
     "modernizr": "~2.8.3",
     "bxslider-4": "bxSlider#~4.2.5",
     "slick-carousel": "~1.5.9",
-    "classie": "~1.0.1"
+    "classie": "~1.0.1",
+    "jquery-waypoints": "~4.0.0",
+    "waypoints": "~4.0.0",
+    "pluralize": "~1.2.1"
   }
 }

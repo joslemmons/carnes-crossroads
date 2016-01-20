@@ -4,8 +4,8 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "9b24921a7e37dd146c3c5143cc44c8da",
-    "content-hash": "bd15d4c838d8e590dfd793758869f8b0",
+    "hash": "23061547d96f6e040530944acb693f38",
+    "content-hash": "ee78751543dbe9795df09fb993ab1aa5",
     "packages": [
         {
             "name": "cocur/slugify",
@@ -394,7 +394,7 @@
         },
         {
             "name": "symfony/translation",
-            "version": "v2.6.12",
+            "version": "v2.6.13",
             "target-dir": "Symfony/Component/Translation",
             "source": {
                 "type": "git",
@@ -450,6 +450,48 @@
             "description": "Symfony Translation Component",
             "homepage": "https://symfony.com",
             "time": "2015-07-08 05:59:48"
+        },
+        {
+            "name": "voodoophp/paginator",
+            "version": "2.1.1",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/mardix/Paginator.git",
+                "reference": "ca116f8e75d7accc9dfcd4d98707cb0c4020ed11"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/mardix/Paginator/zipball/ca116f8e75d7accc9dfcd4d98707cb0c4020ed11",
+                "reference": "ca116f8e75d7accc9dfcd4d98707cb0c4020ed11",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=5.4.0"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-0": {
+                    "Voodoo": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Mardix",
+                    "homepage": "http://github.com/mardix",
+                    "role": "Developer"
+                }
+            ],
+            "description": "Paginator is a simple class that allows you to create pagination. It doesn't require any database connection. It is compatible with Twitter's Bootstrap Framework, by using the CSS class pagination that is also attached.",
+            "homepage": "https://github.com/mardix/Paginator",
+            "keywords": [
+                "page",
+                "pagination"
+            ],
+            "time": "2015-07-22 06:14:43"
         }
     ],
     "packages-dev": [
@@ -498,22 +540,27 @@
         },
         {
             "name": "antecedent/patchwork",
-            "version": "1.3.5",
+            "version": "1.4.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/antecedent/patchwork.git",
-                "reference": "908a233f8a374f02b02ff5e3d6ba687ca506d57d"
+                "reference": "e7b7f0104f0602d57c7085f3bf858ba171a81aef"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/antecedent/patchwork/zipball/908a233f8a374f02b02ff5e3d6ba687ca506d57d",
-                "reference": "908a233f8a374f02b02ff5e3d6ba687ca506d57d",
+                "url": "https://api.github.com/repos/antecedent/patchwork/zipball/e7b7f0104f0602d57c7085f3bf858ba171a81aef",
+                "reference": "e7b7f0104f0602d57c7085f3bf858ba171a81aef",
                 "shasum": ""
             },
             "require": {
-                "php": ">=5.3.0"
+                "php": ">=5.4.0"
             },
             "type": "library",
+            "autoload": {
+                "files": [
+                    "src/QuietBootstrap.php"
+                ]
+            },
             "notification-url": "https://packagist.org/downloads/",
             "license": [
                 "MIT"
@@ -524,8 +571,7 @@
                     "email": "ignas.rudaitis@gmail.com"
                 }
             ],
-            "description": "A pure PHP library that lets you redefine user-defined functions at runtime.",
-            "homepage": "http://antecedent.github.io/patchwork/",
+            "description": "Monkey-patching for PHP, in PHP.",
             "keywords": [
                 "aop",
                 "aspect",
@@ -535,7 +581,7 @@
                 "runkit",
                 "testing"
             ],
-            "time": "2015-10-09 18:20:06"
+            "time": "2016-01-15 21:23:51"
         },
         {
             "name": "doctrine/instantiator",
@@ -1551,16 +1597,16 @@
         },
         {
             "name": "symfony/yaml",
-            "version": "v3.0.0",
+            "version": "v3.0.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/yaml.git",
-                "reference": "177a015cb0e19ff4a49e0e2e2c5fc1c1bee07002"
+                "reference": "3df409958a646dad2bc5046c3fb671ee24a1a691"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony/yaml/zipball/177a015cb0e19ff4a49e0e2e2c5fc1c1bee07002",
-                "reference": "177a015cb0e19ff4a49e0e2e2c5fc1c1bee07002",
+                "url": "https://api.github.com/repos/symfony/yaml/zipball/3df409958a646dad2bc5046c3fb671ee24a1a691",
+                "reference": "3df409958a646dad2bc5046c3fb671ee24a1a691",
                 "shasum": ""
             },
             "require": {
@@ -1596,7 +1642,7 @@
             ],
             "description": "Symfony Yaml Component",
             "homepage": "https://symfony.com",
-            "time": "2015-11-30 12:36:17"
+            "time": "2015-12-26 13:39:53"
         }
     ],
     "aliases": [],

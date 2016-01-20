@@ -3,6 +3,8 @@
 class Page extends \TimberPost
 {
 
+    const BUILDER_PAGE_ID = 38;
+
     public static $field_headline;
     public static $field_gallery_image_attachment_ids;
     public static $field_show_button;

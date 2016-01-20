@@ -8,6 +8,7 @@ $baseDir = dirname($vendorDir);
 return array(
     'phpDocumentor' => array($vendorDir . '/phpdocumentor/reflection-docblock/src'),
     'WP_Mock\\' => array($vendorDir . '/10up/wp_mock'),
+    'Voodoo' => array($vendorDir . '/voodoophp/paginator/src'),
     'Symfony\\Component\\Translation\\' => array($vendorDir . '/symfony/translation'),
     'Prophecy\\' => array($vendorDir . '/phpspec/prophecy/src'),
     'Mockery' => array($vendorDir . '/mockery/mockery/library'),

@@ -1,87 +1,47 @@
-# Patchwork
+# Patchwork 1.4
 
-### Version 1.3.4
+Patchwork implements the [monkey-patching](https://en.wikipedia.org/wiki/Monkey_patch) of user-defined methods in PHP.
 
-A pure PHP library that lets you redefine user-defined functions at runtime. Released under the terms of the [MIT license](http://www.opensource.org/licenses/mit-license.php).
+Internally, it uses a [stream wrapper](http://php.net/manual/en/class.streamwrapper.php) on `file://` to inject a simple interceptor snippet to the beginning of every method.
 
-## Functionality and Limitations
-
-In other words, Patchwork is a partial implementation of [`runkit_function_redefine`](http://php.net/runkit_function_redefine) in userland PHP 5.3 code.
-
-As of now, it only works with user-defined functions and methods, including static, final, and non-public ones.
-
-Internal function redefinition functionality is currently only offered by core PHP extensions: [Runkit](http://php.net/manual/en/book.runkit.php), [ext/test_helpers](https://github.com/sebastianbergmann/php-test-helpers), and
-[krakjoe/uopz](https://github.com/krakjoe/uopz).
-
-It is, however, planned and being developed for Patchwork's next major release.
-
-## Requirements
-
-Patchwork requires at least either Zend's PHP 5.3.0 or HHVM 3.2.0 to run. Compatibility with lower versions of HHVM is possible, but has not been tested.
-
-## Example
-
-All these steps occur at the same runtime:
-
-### 1. Define a function
+## Example: a DIY profiler
 
 ```php
-function size($x)
-{
-    return count($x);
-}
+use function Patchwork\{redefine, relay, getMethod};
 
-size(array(1, 2)); # => 2
-```
+$profiling = fopen('profiling.csv', 'w');
 
-### 2. Replace its definition
-
-```php
-Patchwork\replace("size", function($x)
-{
-    return "huge";
+/**
+ * A minimalistic profiler.
+ *
+ * Catches all userland calls to methods inside the App namespace,
+ * acting as an around-filter.
+ */
+redefine('App\*', function(...$args) use ($profiling) {
+    $begin = microtime(true);
+    relay(); # defaults to original arguments
+    $end = microtime(true);
+    fputcsv($profiling, [getMethod(), $end - $begin]);
 });
-
-size(array(1, 2)); # => "huge"
 ```
 
-### 3. Undo the redefinition
+## Notes
 
-```php
-Patchwork\undoAll();
+* *Method redefinition* is the internally preferred metaphor for Patchwork's behavior.
+* `restoreAll()` and `restore($handle)` end the lifetime of, respectively, all redefinitions, or only one of them, where `$handle = redefine(...)`.
+* Closure `$this` is automatically re-bound to the enclosing class of the method being redefined.
+* The behavior of `__CLASS__`, `static::class` etc. inside redefinitions disregards the metaphor. `getClass()`, `getCalledClass()`, `getMethod()` and `getFunction()` from the `Patchwork` namespace should be used instead.
 
-size(array(1, 2)); # => 2
-```
+## Testing-related uses
 
-## Setup
+Patchwork can be used to stub static methods, which, however, is a controversial practice.
 
-To make the above example actually run, a dummy entry script is needed, one that would would first import Patchwork, and then the rest of the application:
+It should be applied prudently, that is, only after making oneself familiar with its pitfalls and temptations in other programming languages. For instance, in Javascript, Ruby, Python and some others, the native support for monkey-patching has made its testing-related uses more commonplace than in PHP.
 
-```php
-require 'vendor/antecedent/patchwork/Patchwork.php';
-require 'actualEntryScript.php';
-```
+Tests that use monkey-patching are no longer *unit* tests, because they become sensitive to details of implementation, not only those of interface: for example, such a test might no longer pass after switching from `time()` to `DateTime`.
 
-Variations on this setup are possible: see the [Setup](http://antecedent.github.io/patchwork/docs/setup.html) section of the documentation for details.
+That being said, they still have their place where the only economically viable alternative is having no tests at all.
 
-For instance, PHPUnit users will most likely want to use a `--bootstrap vendor/antecedent/patchwork/Patchwork.php` command line option.
+## Other use cases
 
-## Installation using Composer
-
-A sample `composer.json` importing only Patchwork would be as follows:
-
-```json
-{
-    "require-dev": {
-        "antecedent/patchwork": "*"
-    }
-}
-```
-
-## Further Reading
-
-For more information, please refer to the online documentation, which can be accessed and navigated using the top menu of [Patchwork's website](http://antecedent.github.io/patchwork/).
-
-## Issues
-
-If you come across any bugs in Patchwork, please report them [here](https://github.com/antecedent/patchwork/issues). Thank you!
+The current version of Patchwork is not suggested for [AOP](https://en.wikipedia.org/wiki/Aspect-oriented_programming) and other kinds of production usage. The next one will switch from stream wrappers to [stream filters](http://php.net/manual/en/stream.filters.php), which will ensure interoperability with opcode caches.

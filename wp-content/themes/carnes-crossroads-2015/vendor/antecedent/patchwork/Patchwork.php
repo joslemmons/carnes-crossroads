@@ -2,30 +2,26 @@
 
 /**
  * @author     Ignas Rudaitis <ignas.rudaitis@gmail.com>
- * @copyright  2010-2015 Ignas Rudaitis
+ * @copyright  2010-2016 Ignas Rudaitis
  * @license    http://www.opensource.org/licenses/mit-license.html
- * @link       http://antecedent.github.com/patchwork
  */
 namespace Patchwork;
 
-require_once __DIR__ . "/src/Exceptions.php";
-require_once __DIR__ . "/src/Interceptor.php";
-require_once __DIR__ . "/src/Preprocessor.php";
-require_once __DIR__ . "/src/Utils.php";
-require_once __DIR__ . "/src/Stack.php";
+require_once __DIR__ . '/src/Exceptions.php';
+require_once __DIR__ . '/src/CallRerouting.php';
+require_once __DIR__ . '/src/CodeManipulation.php';
+require_once __DIR__ . '/src/Utils.php';
+require_once __DIR__ . '/src/Stack.php';
+require_once __DIR__ . '/src/Config.php';
 
-function replace($original, $replacement)
+function redefine($what, callable $asWhat)
 {
-    return Interceptor\patch($original, $replacement);
+    return CallRerouting\connect($what, $asWhat);
 }
 
-/**
- * @deprecated
- * @alias replace
- */
-function replaceLater($function, $replacement)
+function relay(array $args = null)
 {
-    return replace($function, $replacement);
+    return CallRerouting\relay($args);
 }
 
 function fallBack()
@@ -33,64 +29,92 @@ function fallBack()
     throw new Exceptions\NoResult;
 }
 
-/**
- * @alias fallBack
- */
-function pass()
+function restore(CallRerouting\Handle $handle)
 {
-    fallBack();
+    $handle->expire();
 }
 
-function callOriginal(array $args = null)
+function restoreAll()
 {
-    return Interceptor\callOriginal($args);
+    CallRerouting\disconnectAll();
 }
 
-function undo(Interceptor\PatchHandle $handle)
-{
-    $handle->removePatches();
-}
-
-function undoAll()
-{
-    Interceptor\unpatchAll();
-}
-
-function silence(Interceptor\PatchHandle $handle)
+function silence(CallRerouting\Handle $handle)
 {
     $handle->silence();
 }
 
-function enableCaching($location, $assertWritable = true)
+function getClass()
 {
-    Preprocessor\setCacheLocation($location, $assertWritable);
+    return Stack\top('class');
 }
 
-function blacklist($path)
+function getCalledClass()
 {
-    Preprocessor\exclude($path);
+    return Stack\topCalledClass();
 }
+
+function getFunction()
+{
+    return Stack\top('function');
+}
+
+function getMethod()
+{
+    return getClass() . '::' . getFunction();
+}
+
+function configure()
+{
+    Config\locate();
+}
+
+Utils\alias('Patchwork', [
+    'redefine'   => ['replace', 'replaceLater'],
+    'relay'      => 'callOriginal',
+    'fallBack'   => 'pass',
+    'restore'    => 'undo',
+    'restoreAll' => 'undoAll',
+]);
+
+configure();
+
+call_user_func(function() {
+    $unwantedCallables = array_filter(
+        Utils\getUserDefinedCallables(),
+        'Patchwork\Utils\isMissedForeignName'
+    );
+    if ($unwantedCallables != []) {
+        trigger_error(
+            'Please import Patchwork from a point in your code where no user-defined function, ' .
+            'class or trait is yet defined. ' . reset($unwantedCallables) . '() and possibly ' .
+            'others currently violate this.',
+            E_USER_WARNING
+        );
+    }
+});
 
 if (Utils\runningOnHHVM()) {
     # no preprocessor needed on HHVM;
     # just let Patchwork become a wrapper for fb_intercept()
-    spl_autoload_register('Patchwork\Interceptor\deployQueue');
-    register_shutdown_function('Patchwork\undoAll');
+    spl_autoload_register('Patchwork\CallRerouting\deployQueue');
     return;
 }
 
-enableCaching(__DIR__ . '/cache', false);
+CodeManipulation\Stream::wrap();
 
-Preprocessor\Stream::wrap();
+CodeManipulation\register([
+    CodeManipulation\Actions\CodeManipulation\propagateThroughEval(),
+    CodeManipulation\Actions\CallRerouting\injectCallInterceptionCode(),
+    CodeManipulation\Actions\CallRerouting\injectQueueDeploymentCode(),
+]);
 
-Preprocessor\attach(array(
-    Preprocessor\Callbacks\Preprocessor\propagateThroughEval(),
-    Preprocessor\Callbacks\Interceptor\injectCallInterceptionCode(),
-    Preprocessor\Callbacks\Interceptor\injectQueueDeploymentCode(),
-));
-
-Preprocessor\onImport(array(
-    Preprocessor\Callbacks\Interceptor\markPreprocessedFiles(),
-));
+CodeManipulation\onImport([
+    CodeManipulation\Actions\CallRerouting\markPreprocessedFiles(),
+]);
 
 Utils\clearOpcodeCaches();
+
+if (isset($argv) && realpath($argv[0]) === __FILE__) {
+    require 'src/Console.php';
+}

@@ -15,12 +15,18 @@ class Twig
         $twig->addFilter('twitterify', new \Twig_Filter_Function(array(get_class(), 'twitterify')));
         $twig->addFilter('slugify', new \Twig_Filter_Function(array(get_class(), 'slugify')));
         $twig->addFilter('truncateToFirstParagraph', new \Twig_Filter_Function(array(get_class(), 'truncateToFirstParagraph')));
+        $twig->addFilter('combineLines', new \Twig_Filter_Function(array(get_class(), 'combineLines')));
         return $twig;
     }
 
     public static function addExtensions($twig)
     {
         return $twig;
+    }
+
+    public static function combineLines($text)
+    {
+        return str_replace(array("\r", "\n"), "", $text);
     }
 
     public static function slugify($text)

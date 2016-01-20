@@ -2,9 +2,8 @@
 
 /**
  * @author     Ignas Rudaitis <ignas.rudaitis@gmail.com>
- * @copyright  2010-2015 Ignas Rudaitis
+ * @copyright  2010-2016 Ignas Rudaitis
  * @license    http://www.opensource.org/licenses/mit-license.html
- * @link       http://antecedent.github.com/patchwork
  */
 namespace Patchwork\Stack;
 
@@ -12,7 +11,7 @@ use Patchwork\Exceptions;
 
 function push($offset, $calledClass, array $argsOverride = null)
 {
-    State::$items[] = array($offset, $calledClass, $argsOverride);
+    State::$items[] = [$offset, $calledClass, $argsOverride];
 }
 
 function pop()
@@ -91,5 +90,5 @@ function allCalledClasses()
 
 class State
 {
-    static $items = array();
+    static $items = [];
 }

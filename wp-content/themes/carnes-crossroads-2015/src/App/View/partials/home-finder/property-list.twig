@@ -1,0 +1,57 @@
+{% set activePropertyId = activeProperty.getId %}
+{% for property in properties %}
+    <div class="listing {% if property.getId == activePropertyId %}active{% endif %} {% if loop.last %}infinite-check{% endif %}" data-property-id="{{ property.getId }}"
+         data-property-address="{{ property.getAddress|slugify }}"
+            {% if loop.last and nextPageUrl %}data-infinite-scroll-next-url="{{ nextPageUrl }}"{% endif %}>
+        <div class="listing-img-col" style="background:url('{{ property.getFeaturedImageSrc }}') no-repeat 50% 50%; background-size: cover;">
+            {% if property.isFromMLS %}
+            <div class="broker-reciprocity"></div>
+            {% endif %}
+        </div>
+        <div class="listing-details-col">
+            <div class="listing-address">{{ property.getAddress }}</div>
+            <div class="listing-neighborhood">{{ property.getPropertyType }}{% if property.getPropertyType and property.getNeighborhood %} | {% endif %}{{ property.getNeighborhood }}</div>
+            <div class="listing-details">
+                {% if property.getBedroomCount or property.getFullBathroomCount or property.getHalfBathroomCount %}
+                    <div class="specs">{% if property.getBedroomCount %}{{ property.getBedroomCount }} BR /{% endif %}
+                        {% if property.getFullBathroomCount %}{{ property.getFullBathroomCount }} Full Bath /{% endif %}{% if property.getHalfBathroomCount %}{{ property.getHalfBathroomCount }}  Half Bath{% endif %}
+                    </div>
+                {% endif %}
+                {% set numDecimalPlaces = 0 %}
+                {% if property.getPropertyType == 'Homesite' %}
+                    {% set numDecimalPlaces = 2 %}
+                {% endif %}
+                <div class="square-footage">{{ property.getTotalAreaSquareFootage|number_format(numDecimalPlaces) }} {{ property.getTotalAreaSquareFootageUnitOfMeasurement }}</div>
+                <div class="price">${{ property.getPurchaseListPrice|number_format }}</div>
+            </div>
+        </div>
+    </div>
+{% endfor %}
+{% if properties|length == 0 %}
+    <div class="end-results">
+        End of Results
+    </div>
+{% endif %}
+{% if properties|length > 0 %}
+    <script>
+        if (typeof locations === 'undefined') {
+            locations = [];
+        }
+
+        {% for property in properties %}
+        {% if property.latitude and property.longitude and property.isFromPropertyBase %}
+
+        locations.push([
+            '{{ property.address_web }}',
+            '{{ property.latitude }}',
+            '{{ property.longitude }}',
+            '4',
+            '{{ property.link }}',
+            '{% filter combineLines|escape('js') %}{% include 'partials/home-finder/map-tool-tip.twig' with { property: property } only %}{% endfilter %}',
+            {% if property.getPropertyType == 'Homesite' %}0{% else %}'{{ property.getPropertyType }}'{% endif %}
+        ]);
+
+        {% endif %}
+        {% endfor %}
+    </script>
+{% endif %}

@@ -1,0 +1,117 @@
+<div class="modal fade" id="modal-request-showing" tabindex="-1" role="dialog">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="primary-page">
+                <div class="primary-page-header">
+                    <div class="logo-container">
+                        <div class="container-fluid">
+                            <div class="row">
+                                <div class="col-lg-11 col-lg-offset-1">
+                                    <div class="logo">
+                                        <a href="/">
+                                            <img src="{{ template_uri }}/img/daniel-island-logo.png"/>
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="page-title"
+                         style="background: url('{{ property.getFeaturedImageSrc }}') 50% 50% no-repeat #000000; background-size: cover;">
+                        <div class="black-overlay"></div>
+                        <div class="container">
+                            <div class="row">
+                                <div class="col-md-12">
+                                    <h1>Request Showing</h1>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="page-content">
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-md-12 col-right">
+                                <div class="primary-content">
+    
+                                        <div class="listing-address">{{ property.getAddress }}</div>
+                                        <div class="listing-price">${{ property.getPurchaseListPrice|number_format }}</div>
+                                        <div class="listing-specs">
+                                            {% if property.getBedroomCount or property.getFullBathroomCount or property.getHalfBathroomCount %}
+                                            {% if property.getBedroomCount %}{{ property.getBedroomCount }} BR /{% endif %}
+                                                {% if property.getFullBathroomCount %}{{ property.getFullBathroomCount }} Full Bath /{% endif %}{% if property.getHalfBathroomCount %}{{ property.getHalfBathroomCount }}  Half Bath{% endif %}
+                                            {% endif %}
+                                            {% set numDecimalPlaces = 0 %}
+                                            {% if property.getPropertyType == 'Homesite' %}
+                                            {% set numDecimalPlaces = 2 %}
+                                            {% endif %}
+                                            {{ property.getTotalAreaSquareFootage|number_format(numDecimalPlaces) }} {{ property.getTotalAreaSquareFootageUnitOfMeasurement }}
+
+                                        </div>
+                                        
+                                    
+                                        <div class="listing-neighborhood">
+                                            <div class="item-padding">{{ property.getPropertyType }}{% if property.getPropertyType and property.getNeighborhood %}</div> | {% endif %}<div class="item-padding">{{ property.getNeighborhood }}</div>
+                                        </div>
+
+                                        <span style="display:none;" class="success-message">Your request to view this listing has successfully been submitted. Thank you for your interest.</span>
+
+                                        <form class="request-showing">
+                                            <input type="hidden" name="propertyId" value="{{ property.getId }}"/>
+                                            <input type="hidden" name="link" value="{{ property.link }}"/>
+                                            <label>Name</label>
+                                            <input type="text" name="name"/>
+                                            <label>Email<span class="red">*</span></label>
+                                            <input type="text" name="email"/>
+                                            {% if function('is_user_logged_in') == false %}
+                                            <p>Would you like to create an account? An account allows you to save listings, save searches, and receive updates via email daily or weekly on your search results.</p>
+                                            <div class="account">
+                                                <label>Yes</label>
+                                                <input type="checkbox" name="createAccount"/>
+                                            </div>
+                                            {% endif %}
+                                            <label>Questions/Comments?</label>
+                                            <textarea name="message"></textarea>
+                                            <span style="display:none;" class="error-message"></span>
+                                            <button class="site-btn">Send</button>
+                                            <div class="required">* Required</div>
+                                        </form>
+                                    </div>
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="footer-logo visible-sm visible-xs">
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-md-12">
+                                <div class="logo">
+                                    <a href="/">
+                                        <img src="{{ template_uri }}/img/daniel-island-logo-color.png" class="img-responsive"/>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="container-fluid">
+                    <div class="row">
+                        <div class="col-md-offset-3 col-md-9">
+                            <img src="{{ template_uri }}/img/footer-streetscape.jpg" alt="Daniel Island Streetscape"
+                                 class="img-responsive"/>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <a class="back-top" href="#">
+                <svg width="15" height="15">
+                    <image xlink:href="{{ template_uri }}/img/top-arrow.svg" src="{{ template_uri }}/img/top-arrow.png" width="15"
+                           height="15"/>
+                </svg>
+            </a>
+
+        </div>
+    </div>
+</div>

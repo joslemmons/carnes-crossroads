@@ -1,0 +1,38 @@
+<div class="listing-images">
+    {% for image in offering.getGallery %}
+        <div><a href="{{ image_src|resize(787,450) }}" class="color-box-group"><img src="{{ image.get_src|resize(787,450) }}"></a></div>
+    {% endfor %}
+</div>
+
+<div class="single-listing-content">
+    <div class="listing-actions">
+        <div class="share action-link">
+            <a href="#">Share
+                <div class="star-icon">
+                    <svg width="16" height="16">
+                        <image xlink:href="{{ template_uri }}/img/share.svg"
+                               src="{{ template_uri }}/img/share.png" width="16" height="16"/>
+                    </svg>
+                </div>
+            </a>
+        </div>
+        <div class="print action-link">
+            <a href="#">Print
+                <div class="star-icon">
+                    <svg width="16" height="16">
+                        <image xlink:href="{{ template_uri }}/img/printer.svg"
+                               src="{{ template_uri }}/img/printer.png" width="16" height="16"/>
+                    </svg>
+                </div>
+            </a>
+        </div>
+    </div>
+
+    <div class="listing-address">
+        {{ offering.title }}
+    </div>
+
+    <div class="listing-details">
+        {{ offering.content }}
+    </div>
+</div>

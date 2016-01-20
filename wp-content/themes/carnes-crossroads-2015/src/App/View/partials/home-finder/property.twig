@@ -1,0 +1,182 @@
+{% if property %}
+<div class="visible-sm visible-xs back-to-listings">
+    <span>
+        <div class="back-icon">
+            <svg width="16" height="16">
+                <image xlink:href="{{ template_uri }}/img/backspace.svg"
+                       src="{{ template_uri }}/img/backspace.png" width="16" height="16"/>
+            </svg>
+        </div>
+        Back to All Listings
+    </span>
+</div>
+<div class="listing-images">
+    {% for image_src in property.getImages %}
+        <div>
+            <a href="{{ image_src }}" {% if function('wp_is_mobile') == false %}class="color-box-group"{% else %}onclick="return false;"{% endif %}>
+                <img src="{{ image_src }}"></a>
+        </div>
+    {% endfor %}
+</div>
+
+<div class="single-listing-content">
+    <div class="listing-actions">
+        <div class="save action-link">
+
+            <div class="saved"
+                 {% if current_user.hasSavedProperty(property) == false %}style="display:none;"{% endif %}>
+                <a href="#" data-property-id="{{ property.id }}">Saved
+                    <div class="star-icon">
+                        <svg width="16" height="16">
+                            <image xlink:href="{{ template_uri }}/img/star-full-yellow.svg"
+                                   src="{{ template_uri }}/img/star-full-yellow.png" width="16" height="16"/>
+                        </svg>
+                    </div>
+                </a>
+            </div>
+            <div class="not-saved"
+                 {% if current_user.hasSavedProperty(property) == true %}style="display:none;"{% endif %}>
+                <a href="#" data-property-id="{{ property.id }}">Save
+                    <div class="star-icon">
+                        <svg width="16" height="16">
+                            <image xlink:href="{{ template_uri }}/img/star-full.svg"
+                                   src="{{ template_uri }}/img/star-full.png" width="16" height="16"/>
+                        </svg>
+                    </div>
+                </a>
+            </div>
+        </div>
+        <div class="share action-link">
+            {% set tweet_share = property.getFriendlyName~' on @danielisland '~property.link|url_encode %}
+            {% set email_subject_share = '[Daniel Island Real Estate] '~property.getAddress|url_encode %}
+            {% set email_body_share = property.getFriendlyName~' '~property.link|url_encode %}
+            {% set facebook_app_id = function('\\App\\Model\\Config::getFacebookAppId') %}
+            {% set domain = property.link|url_encode %}
+            {% set facebook_share_name = property.getAddress~' on Daniel Island Real Estate'|url_encode %}
+            {% set facebook_share_description = property.getFriendlyName|url_encode %}
+            {% set facebook_share_caption = property.link|url_encode %}
+            {% set facebook_share_context = property.link|url_encode %}
+            {% set facebook_share_image_src = property.getFeaturedImageSrc|url_encode %}
+            <a class="open-share-widget">Share
+                <div class="star-icon">
+                    <svg width="16" height="16">
+                        <image xlink:href="{{ template_uri }}/img/share.svg"
+                               src="{{ template_uri }}/img/share.png" width="16" height="16"/>
+                    </svg>
+                </div>
+            </a>
+            <div class="share-widget">
+                <span class="share-text">Share</span>
+                <a href="https://www.facebook.com/dialog/feed?app_id={{ facebook_app_id }}&display=popup&name={{ facebook_share_name }}&description={{ facebook_share_description }}&caption={{ facebook_share_caption }}&link={{ domain }}&redirect_uri={{ domain }}&picture={{ facebook_share_image_src }}"
+                   target="new">
+                    <div class="fb-icon share-icon"></div>
+                </a>
+                <a href="http://twitter.com/home?status={{ tweet_share }}" target="new">
+                    <div class="twitter-icon share-icon"></div>
+                </a>
+                <a href="mailto:?subject={{ email_subject_share }}&body={{ email_body_share }}">
+                    <div class="email-icon share-icon"></div>
+                </a>
+                <div class="arrow"></div>
+            </div>
+        </div>
+        <div class="print action-link">
+            <a target="_blank" href="{{ property.link }}print/">Print
+                <div class="star-icon">
+                    <svg width="16" height="16">
+                        <image xlink:href="{{ template_uri }}/img/printer.svg"
+                               src="{{ template_uri }}/img/printer.png" width="16" height="16"/>
+                    </svg>
+                </div>
+            </a>
+        </div>
+    </div>
+
+    <div class="listing-address">
+        {{ property.getAddress }}
+    </div>
+    <div class="optional-btns">
+            {% if property.getX3DTourLink %}
+            <a class="optional-link" href="{{ property.getX3DTourLink }}" target="_blank">
+                3D Home Tour
+                <div class="icon-block">
+                    <svg width="16" height="16">
+                        <image xlink:href="{{ template_uri }}/img/cube.svg"
+                               src="{{ template_uri }}/img/cube.png" width="16" height="16"/>
+                    </svg>
+                </div>
+            </a>
+            {% endif %}
+            {% if property.getVideoLink %}
+            <a class="video-play optional-link" href="{{ property.getVideoLink }}">
+                View Video
+                <div class="icon-block">
+                    <svg width="16" height="16">
+                        <image xlink:href="{{ template_uri }}/img/film.svg"
+                               src="{{ template_uri }}/img/film.png" width="16" height="16"/>
+                    </svg>
+                </div>
+            </a>
+            {% endif %}
+        </div>
+    <div class="listing-price">
+        ${{ property.getPurchaseListPrice|number_format }}
+    </div>
+
+    <div class="listing-specs">
+        {% set numDecimalPlaces = 0 %}
+        {% if property.getPropertyType == 'Homesite' %}
+        {% set numDecimalPlaces = 2 %}
+        {% endif %}
+        {% if property.getBedroomCount %}{{ property.getBedroomCount }} BR / {% endif %}{% if property.getFullBathroomCount %}{{ property.getFullBathroomCount }} Full Bath / {% endif %}{% if property.getHalfBathroomCount %}{{ property.getHalfBathroomCount }}  Half Bath / {% endif %}{% if property.getTotalAreaSquareFootage %}{{ property.getTotalAreaSquareFootage|number_format(numDecimalPlaces) }} {{ property.getTotalAreaSquareFootageUnitOfMeasurement }}{% endif %}
+    </div>
+
+    <div class="listing-neighborhood">
+        <div class="item-padding">
+            <a href="#" class="filterByPropertyType"
+               data-property-type="{{ property.getPropertyType }}">{{ property.getPropertyType }}</a></div>{% if property.getPropertyType and property.getNeighborhood %} | {% endif %}
+        <div class="item-padding"><a href="#" class="filterByNeighborhood"
+                                     data-neighborhood="{{ property.getNeighborhood }}">{{ property.getNeighborhood }}</a></div>{% if property.getUnitView %} | <div class="item-padding">{{ property.getUnitView }}</div>{% endif %}
+    </div>
+
+    <div class="action-buttons-container">
+        {% if property.isFromPropertyBase and property.latitude and property.longitude %}
+            <a class="site-btn" id="viewOnMap" data-latitude="{{ property.latitude }}"
+               data-longitude="{{ property.longitude }}" data-address="{{ property.address_web }}"
+               data-link="{{ property.link }}" data-property-type="{{ property.getPropertyType }}"
+               data-tool-tip="{% filter escape|combineLines %}{% include 'partials/home-finder/map-tool-tip.twig' with { property: property } only %}{% endfilter %}">View
+                on Map</a>
+        {% endif %}
+        <a class="site-btn" id="requestShowing" data-property-id="{{ property.getId }}">Request Showing</a>
+        {% if property.getFloorPlanDocumentLink %}
+        <a class="site-btn color-box-floor-plan" target="_blank" href="{{ property.getFloorPlanDocumentLink }}">View Floorplan</a>
+        {% endif %}
+        
+    </div>
+
+    <div class="listing-details">
+        {{ property.getDescription }}
+    </div>
+
+    {% if property.isFromMLS %}
+    <div class="broker-reciprocity">
+        <span class="disclaimer">
+            The data relating to real estate for sale on this web site comes in part from the Broker Reciprocity SM Program of the Charleston Trident Multiple Listing Service. All of the information provided by Charleston Trident Multiple Listing Service is deemed reliable but not guaranteed.
+            {#TODO: Listing provided by "xyz real estate office name goes here#}
+        </span>
+    </div>
+    {% endif %}
+</div>
+<div class="visible-sm visible-xs back-to-listings">
+    <span>
+        <div class="back-icon">
+            <svg width="16" height="16">
+                <image xlink:href="{{ template_uri }}/img/backspace.svg"
+                       src="{{ template_uri }}/img/backspace.png" width="16" height="16"/>
+            </svg>
+        </div>
+        Back to All Listings
+    </span>
+</div>
+{% include "partials/modal-homefinder-request-showing.twig" %}
+{% endif %}

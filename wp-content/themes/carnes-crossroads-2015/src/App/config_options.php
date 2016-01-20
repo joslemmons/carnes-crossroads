@@ -66,7 +66,8 @@ $config_options = array(
             'default_username' => ''
         ),
         'facebook' => array(
-            'default_username' => ''
+            'default_username' => '',
+            'app_id' => '1670472393221980'
         ),
         'youtube' => array(
             'default_username' => ''
