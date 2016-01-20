@@ -48,7 +48,7 @@ $config_options = array(
     'require_auth' => false,
 
     // set the url for this typekit kit
-    'typekit_src' => '',
+    'typekit_src' => 'https://use.typekit.net/xxt2zzn.js',
 
     // set the src for add this
     'add_this_src' => '//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-55fb015f8f7cff12',

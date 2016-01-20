@@ -272,6 +272,13 @@ class Page extends \TimberPost
         return $button;
     }
 
+    public static function getBreadcrumbs()
+    {
+        if (function_exists('yoast_breadcrumb')) {
+            return yoast_breadcrumb('', '', false);
+        }
 
+        return '';
+    }
 
 }

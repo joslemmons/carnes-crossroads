@@ -2,6 +2,8 @@
 
 class AccountPage extends Page
 {
+    const PAGE_ID = 257;
+
     public static $field_what_s_new_content;
     public static $field_favorites_content;
     public static $field_saved_searches_content;

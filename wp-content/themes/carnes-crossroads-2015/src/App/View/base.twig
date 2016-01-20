@@ -14,16 +14,19 @@
         <META HTTP-EQUIV="Expires" CONTENT="-1"/>
         <meta charset="utf-8"/>
         <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
-        <title>Carnes Crossroads</title>
-        <meta name="description" content=""/>
+        <title>{{ seo_title }}</title>
+        <meta name="description" content="{{ seo_description }}"/>
         <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"/>
         <link rel="apple-touch-icon-precomposed" href="{{ template_uri }}/img/apple-icon.png"/>
         <link rel="shortcut icon" href="{{ template_uri }}/img/favicon.ico" sizes="32x32"/>
 
-        <link href="{{ template_uri }}/bower_components/bxslider-4/dist/jquery.bxslider.css" rel="stylesheet" />
-
-        <script src="https://use.typekit.net/xxt2zzn.js"></script>
-        <script>try{Typekit.load({ async: true });}catch(e){}</script>
+        {% if typekit_src %}
+            <script src="{{ typekit_src }}"></script>
+            <script>try {
+                    Typekit.load({async: true});
+                } catch (e) {
+                }</script>
+        {% endif %}
 
         {{ wp_head() }}
 
@@ -73,6 +76,29 @@ your browser</a> to improve your experience.</p>
                 b.parentNode.insertBefore(a, b)
             }, 1);
         </script>
+        {% endif %}
+
+        {% if facebook_app_id %}
+            <script>
+                window.fbAsyncInit = function () {
+                    FB.init({
+                        appId: '{{ facebook_app_id }}',
+                        xfbml: true,
+                        version: 'v2.5'
+                    });
+                };
+
+                (function (d, s, id) {
+                    var js, fjs = d.getElementsByTagName(s)[0];
+                    if (d.getElementById(id)) {
+                        return;
+                    }
+                    js = d.createElement(s);
+                    js.id = id;
+                    js.src = "//connect.facebook.net/en_US/sdk.js";
+                    fjs.parentNode.insertBefore(js, fjs);
+                }(document, 'script', 'facebook-jssdk'));
+            </script>
         {% endif %}
 
         {% if add_this_src %}

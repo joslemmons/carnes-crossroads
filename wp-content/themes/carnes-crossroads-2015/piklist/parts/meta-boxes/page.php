@@ -7,6 +7,7 @@
 
 global $post;
 
+use App\Model\AccountPage;
 use App\Model\FAQPage;
 use App\Model\FrontPage;
 use App\Model\Helper;
@@ -14,7 +15,11 @@ use App\Model\Page;
 
 $post = Timber::get_post($post->ID);
 
-if ($post && $post->id !== FrontPage::PAGE_ID && $post->id !== FAQPage::PAGE_ID) {
+if (
+    $post && $post->id !== FrontPage::PAGE_ID &&
+    $post->id !== FAQPage::PAGE_ID &&
+    $post->id !== AccountPage::PAGE_ID
+) {
     if (
         false === $post->parent() ||
         $post->id === Page::BUILDER_PAGE_ID

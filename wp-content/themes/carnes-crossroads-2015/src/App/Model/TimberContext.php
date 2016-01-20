@@ -1,5 +1,7 @@
 <?php namespace App\Model;
 
+use HomeFinder\Model\User;
+
 class TimberContext
 {
     public static function init()
@@ -7,6 +9,41 @@ class TimberContext
         add_filter('timber_context', array(get_class(), 'registerMenu'));
         add_filter('timber_context', array(get_class(), 'addToTimberContext'));
         add_filter('timber_context', array(get_class(), 'addFooterData'));
+        add_filter('timber_context', array(get_class(), 'addAccount'));
+        add_filter('timber_context', array(get_class(), 'addSEO'));
+    }
+
+    public static function addSEO($data)
+    {
+        global $post;
+
+        $title = wp_title('', false);
+        $description = '';
+
+        if (class_exists('\WPSEO_Frontend')) {
+            $instance = \WPSEO_Frontend::get_instance();
+            $title = $instance->title(false);
+            $description = $instance->metadesc(false);
+        }
+
+        if (isset($post) && '' === $description) {
+            $description = trim(preg_replace('/\s\s+/', ' ', strip_tags($post->post_content)));
+            if (160 < strlen($description)) {
+                $description = substr($description, 0, 157) . '...';
+            }
+        }
+
+        $data['seo_title'] = $title;
+        $data['seo_description'] = $description;
+        return $data;
+    }
+
+    public static function addAccount($data)
+    {
+        $data['current_user'] = User::getCurrentlyLoggedUser();
+        $data['account_page'] = \Timber::get_post(AccountPage::PAGE_ID, '\App\Model\AccountPage');
+
+        return $data;
     }
 
     public static function addFooterData($data)
@@ -42,6 +79,7 @@ class TimberContext
         $data['primary_menu'] = new \TimberMenu('Primary Menu');
         $data['header_menu'] = new \TimberMenu('Header Menu');
         $data['footer_menu'] = new \TimberMenu('Footer Menu');
+        $data['home_finder_menu'] = new \TimberMenu('Home Finder Menu');
 
         return $data;
     }
