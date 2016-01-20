@@ -18,11 +18,13 @@
                     {{ function('build_calendar', 12, 2015, []) }}
                 </div>
             </div>
+            {% for post in featured_posts %}
             <div class="col-xs-12 col-md-8">
-                <h2>Featured Article Headline</h2>
-                <p>The parks at Carnes Crossroads are designed to serve as the focal point and favorite gathering place within each neighborhood, providing countless opportunities to connect with family and friends within the exceptional setting of this community. Some parks will have swimming pools, basketball courts, playing fields or playgrounds, while others offer quaint gardens and lake views. The parks at Carnes Crossroads are designed to serve as the focal point and favorite gathering place within each neighborhood, providing countless opportunities to connect with family and friends within the exceptional setting of this community.</p>
-                <a href="#" class="btn btn-green">Read More</a>
+                <h2>{{ post.title }}</h2>
+                <p>{{ post.content|truncate(80) }}</p>
+                <a href="{{ post.link }}" class="btn btn-green">Read More</a>
             </div>
+            {% endfor %}
         </div>
     </div>
 </section>

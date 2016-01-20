@@ -61,6 +61,7 @@ class Bootstrap
         LandingPage::bootstrap();
         AccountPage::bootstrap();
         FAQPage::bootstrap();
+        Post::bootstrap();
     }
 
 }
