@@ -136,6 +136,7 @@
             font-family: $font-serif;
             font-size: 1.15rem;
             color: $cc-brown;
+            margin-bottom: 20px;
         }
 
         .bx-wrapper {
@@ -270,6 +271,7 @@
 
     a, a h3 {
         color: $cc-brown;
+        text-decoration: none;
 
         &:hover {
             color: lighten($cc-brown, 15);
@@ -295,7 +297,7 @@
     &__link {
         position: relative;
         display: inline-block;
-        padding-right: 35px;
+        padding-right: 30px;
         margin: 15px 0 0 0;
         font-family: $font-sans;
         font-weight: $weight-medium;
@@ -303,8 +305,14 @@
         letter-spacing: 1px;
         text-transform: uppercase;
         color: #756340;
-        background: url(./img/icon-arrow.png) no-repeat center right;
+        background: url(./img/icon-arrow.png) no-repeat;
+        background-position: center right;
         background-size: 1.25rem;
+        @include transition(0.2s all);
+
+        &:hover {
+            padding-right: 33px;
+        }
     }
 
     &--top-left {

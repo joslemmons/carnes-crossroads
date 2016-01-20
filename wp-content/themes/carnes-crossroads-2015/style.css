@@ -3251,12 +3251,12 @@ html, body {
   height: 100%; }
 
 a {
+  color: #768e1c;
   -webkit-transition: 0.2s all;
   transition: 0.2s all; }
 
 a:focus, a:hover {
-  text-decoration: none !important;
-  color: #cccccc; }
+  color: #536314; }
 
 *:focus {
   outline: 0; }
@@ -3325,6 +3325,29 @@ a:focus, a:hover {
     font-size: 0.7rem;
     letter-spacing: 1px;
     margin: 15px 5px 0; }
+
+.btn-grey {
+  padding: 8px 13px;
+  margin-top: 15px;
+  position: relative;
+  font-family: "proxima-nova", sans-serif, sans-serif;
+  font-weight: 400;
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  color: #fff;
+  background-color: #919194; }
+  .btn-grey:hover {
+    color: #fff;
+    background-color: #77777b; }
+
+.expand-link {
+  font-style: italic;
+  color: #3d3421;
+  cursor: pointer;
+  text-decoration: none !important; }
+  .expand-link:hover {
+    color: #1c180f; }
 
 .video-overlay {
   position: fixed;
@@ -3630,7 +3653,8 @@ a:focus, a:hover {
       font-family: "proxima-nova", sans-serif, sans-serif;
       font-weight: 700;
       text-transform: uppercase;
-      letter-spacing: 2px; }
+      letter-spacing: 2px;
+      text-decoration: none; }
       @media (min-width: 1685px) {
         .main-nav__sub-item a {
           font-size: 1rem; } }
@@ -3662,7 +3686,8 @@ a:focus, a:hover {
       letter-spacing: 2px;
       font-family: "minion-pro", serif, serif;
       font-weight: 700;
-      text-transform: uppercase; }
+      text-transform: uppercase;
+      text-decoration: none; }
       @media (min-width: 1685px) {
         .main-nav__primary-item a {
           font-size: 1.25rem; } }
@@ -3742,7 +3767,8 @@ a:focus, a:hover {
       font-size: 0.78rem;
       text-transform: uppercase;
       letter-spacing: 0.5px;
-      color: #919194; }
+      color: #919194;
+      text-decoration: none; }
       .footer__nav-item a:hover {
         color: #525254; }
 .footer__grey {
@@ -4144,7 +4170,8 @@ video {
     .page-content--white-floral-top p {
       font-family: "minion-pro", serif, serif;
       font-size: 1.15rem;
-      color: #3d3421; }
+      color: #3d3421;
+      margin-bottom: 20px; }
     .page-content--white-floral-top .bx-wrapper {
       margin-top: 0 !important; }
   .page-content--tan {
@@ -4226,7 +4253,8 @@ video {
     .block-tab, .block-tab--top-left, .block-tab--top-right, .block-tab--bottom-left, .block-tab--bottom-right, .block-tab--full-bottom {
       min-height: 160px; } }
   .block-tab a, .block-tab--top-left a, .block-tab--top-right a, .block-tab--bottom-left a, .block-tab--bottom-right a, .block-tab--full-bottom a, .block-tab a h3, .block-tab--top-left a h3, .block-tab--top-right a h3, .block-tab--bottom-left a h3, .block-tab--bottom-right a h3, .block-tab--full-bottom a h3 {
-    color: #3d3421; }
+    color: #3d3421;
+    text-decoration: none; }
     .block-tab a:hover, .block-tab--top-left a:hover, .block-tab--top-right a:hover, .block-tab--bottom-left a:hover, .block-tab--bottom-right a:hover, .block-tab--full-bottom a:hover, .block-tab a h3:hover, .block-tab--top-left a h3:hover, .block-tab--top-right a h3:hover, .block-tab--bottom-left a h3:hover, .block-tab--bottom-right a h3:hover, .block-tab--full-bottom a h3:hover {
       color: #6f5e3c; }
   .block-tab p, .block-tab--top-left p, .block-tab--top-right p, .block-tab--bottom-left p, .block-tab--bottom-right p, .block-tab--full-bottom p {
@@ -4245,7 +4273,7 @@ video {
   .block-tab__link {
     position: relative;
     display: inline-block;
-    padding-right: 35px;
+    padding-right: 30px;
     margin: 15px 0 0 0;
     font-family: "proxima-nova", sans-serif, sans-serif;
     font-weight: 500;
@@ -4253,8 +4281,13 @@ video {
     letter-spacing: 1px;
     text-transform: uppercase;
     color: #756340;
-    background: url(./img/icon-arrow.png) no-repeat center right;
-    background-size: 1.25rem; }
+    background: url(./img/icon-arrow.png) no-repeat;
+    background-position: center right;
+    background-size: 1.25rem;
+    -webkit-transition: 0.2s all;
+    transition: 0.2s all; }
+    .block-tab__link:hover {
+      padding-right: 33px; }
   .block-tab--top-left {
     top: 0;
     left: 0; }

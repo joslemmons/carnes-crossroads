@@ -49,6 +49,7 @@
             font-weight: $weight-bold;
             text-transform: uppercase;
             letter-spacing: 2px;
+            text-decoration: none;
 
             @media (min-width: $screen-xlg) {
                 font-size: 1rem;
@@ -93,6 +94,7 @@
             font-family: $font-serif;
             font-weight: $weight-bold;
             text-transform: uppercase;
+            text-decoration: none;
 
             @media (min-width: $screen-xlg) {
                 font-size: 1.25rem;

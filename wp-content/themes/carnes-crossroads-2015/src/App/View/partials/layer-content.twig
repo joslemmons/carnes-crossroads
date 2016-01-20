@@ -1,6 +1,6 @@
 {% set shouldLinkToNewPage = false %}
 {% if child_page.content|length > 450 and child_page.content|length < 700 %}
-    {% set expandLink = '<a class="expand-link">&nbsp;&hellip;Read More</a>' %}
+    {% set expandLink = '<a class="expand-link">&nbsp;&hellip;&nbsp;Read More</a>' %}
     {% set firstParagraph = child_page.content|truncateToFirstParagraph(expandLink) %}
     {{ firstParagraph }}<span class="more-content" style="display:none;">
     <p>{{ child_page.content|slice(firstParagraph|length - expandLink|length) }}</p></span>
@@ -18,5 +18,5 @@
     <a class="btn btn-green-small" href="{{ button.link }}">{{ button.title }}</a>
 {% endif %}
 {% if shouldLinkToNewPage %}
-    <a class="btn btn-green-small" href="{{ child_page.link }}">Learn More</a>
+    <a class="btn btn-grey" href="{{ child_page.link }}">Learn More</a>
 {% endif %}

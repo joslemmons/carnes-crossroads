@@ -42,3 +42,32 @@
         margin: 15px 5px 0;
     }
 }
+
+.btn-grey {
+    padding: 8px 13px;
+    margin-top: 15px;
+    position: relative;
+    font-family: $font-sans;
+    font-weight: $weight-regular;
+    font-size: 0.75rem;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    color: $white;
+    background-color: $cc-lt-grey;
+
+    &:hover {
+        color: $white;
+        background-color: darken($cc-lt-grey, 10);
+    }
+}
+
+.expand-link {
+    font-style: italic;
+    color: $cc-brown;
+    cursor: pointer;
+    text-decoration: none !important;
+
+    &:hover {
+        color: darken($cc-brown, 10);
+    }
+}

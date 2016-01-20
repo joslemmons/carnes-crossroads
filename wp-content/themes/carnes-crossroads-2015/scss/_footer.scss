@@ -79,6 +79,7 @@
                 text-transform: uppercase;
                 letter-spacing: 0.5px;
                 color: $cc-lt-grey;
+                text-decoration: none;
 
                 &:hover {
                     color: darken($cc-lt-grey, 25);
