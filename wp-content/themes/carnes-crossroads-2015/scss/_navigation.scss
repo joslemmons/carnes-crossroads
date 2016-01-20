@@ -139,3 +139,24 @@
     }
 
 }
+
+.breadcrumbs {
+    margin: -5px 0 30px 0;
+
+    span {
+        margin: 0 10px 0 0;
+        font-family: $font-sans;
+        font-weight: $weight-regular;
+        font-size: 0.8rem;
+        text-transform: uppercase;
+        letter-spacing: 0.5px;
+
+        a {
+            color: $cc-green;
+        }
+
+        a:hover {
+            color: darken($cc-green, 15);
+        }
+    }
+}
