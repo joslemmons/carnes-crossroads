@@ -57,7 +57,7 @@ video {
     z-index: 999;
     opacity: 1;
     @include center(xy);
-    @include transition(all, 0.2s, ease-in-out, 0s);
+    @include transition(0.2s all);
 
     &:hover {
         opacity: 0.8;
@@ -86,7 +86,7 @@ video {
     z-index: 9999999999;
     opacity: 0;
     cursor: pointer;
-    @include transition(all, 0.5s, ease-in-out, 0s);
+    @include transition(0.5s all);
 
     &:before {
         content: '';
@@ -107,7 +107,7 @@ video {
     cursor: default;
     height: 75%;
     max-height: 75%;
-    @include transition(all, 0.3s, ease-in-out, 0s);
+    @include transition(0.3s all);
 
     .iframeWrapper {
         left: 5px;

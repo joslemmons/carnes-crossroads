@@ -79,7 +79,7 @@
     opacity: .6;
     content: none;
     margin-right: 15px;
-    @include transition(all, 0.2s, ease-in-out, 0s);
+    @include transition(0.2s all);
 
     &:hover {
         opacity: .8;
@@ -151,7 +151,7 @@
     opacity: 1;
     content: none;
     z-index: 999;
-    @include transition(all, 0.2s, ease-in-out, 0s);
+    @include transition(0.2s all);
 
     &:hover {
         opacity: 0.6;

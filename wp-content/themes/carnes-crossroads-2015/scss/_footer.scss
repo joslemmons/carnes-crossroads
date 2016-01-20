@@ -46,7 +46,7 @@
             opacity: 0.4;
             -webkit-backface-visibility: hidden;
             -webkit-transform: translateZ(0);
-            @include transition(opacity, 0.2s, ease-in-out, 0s);
+            @include transition(0.2s all);
         }
 
         a img:hover {

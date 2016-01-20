@@ -3251,8 +3251,8 @@ html, body {
   height: 100%; }
 
 a {
-  -webkit-transition: all, 0.2s, ease-in-out, 0s;
-  transition: all, 0.2s, ease-in-out, 0s; }
+  -webkit-transition: 0.2s all;
+  transition: 0.2s all; }
 
 a:focus, a:hover {
   text-decoration: none !important;
@@ -3310,7 +3310,9 @@ a:focus, a:hover {
   color: #fff;
   background-color: #768e1c;
   border: 1px solid #536314;
-  outline: 5px solid #768e1c; }
+  outline: 5px solid #768e1c;
+  -webkit-transition: 0.2s all;
+  transition: 0.2s all; }
   .btn-green:hover, .btn-green-small:hover {
     color: #fff;
     text-shadow: 0 2px 10px rgba(0, 0, 0, 0.5);
@@ -3337,8 +3339,8 @@ a:focus, a:hover {
   z-index: 9999999999;
   opacity: 0;
   cursor: pointer;
-  -webkit-transition: all, 0.5s, ease-in-out, 0s;
-  transition: all, 0.5s, ease-in-out, 0s; }
+  -webkit-transition: 0.5s all;
+  transition: 0.5s all; }
   .video-overlay:before {
     content: '';
     display: inline-block;
@@ -3356,8 +3358,8 @@ a:focus, a:hover {
   cursor: default;
   height: 75%;
   max-height: 75%;
-  -webkit-transition: all, 0.3s, ease-in-out, 0s;
-  transition: all, 0.3s, ease-in-out, 0s; }
+  -webkit-transition: 0.3s all;
+  transition: 0.3s all; }
   .video-popup .iframeWrapper {
     left: 5px;
     right: 5px;
@@ -3599,8 +3601,8 @@ a:focus, a:hover {
   padding: 20px 0 0 0;
   background: url(./img/pattern-green.jpg) repeat center center;
   z-index: 9999;
-  -webkit-transition: all, 0.3s, ease-in-out, 0s;
-  transition: all, 0.3s, ease-in-out, 0s; }
+  -webkit-transition: 0.3s all;
+  transition: 0.3s all; }
   .main-nav__inner-wrap {
     position: relative;
     width: 100%; }
@@ -3718,8 +3720,8 @@ a:focus, a:hover {
     opacity: 0.4;
     -webkit-backface-visibility: hidden;
     -webkit-transform: translateZ(0);
-    -webkit-transition: opacity, 0.2s, ease-in-out, 0s;
-    transition: opacity, 0.2s, ease-in-out, 0s; }
+    -webkit-transition: 0.2s all;
+    transition: 0.2s all; }
   .footer__social-item a img:hover {
     opacity: 0.6; }
 .footer__logo {
@@ -3816,8 +3818,8 @@ a:focus, a:hover {
   opacity: .6;
   content: none;
   margin-right: 15px;
-  -webkit-transition: all, 0.2s, ease-in-out, 0s;
-  transition: all, 0.2s, ease-in-out, 0s; }
+  -webkit-transition: 0.2s all;
+  transition: 0.2s all; }
   .prev-lg:hover,
   .next-lg:hover {
     opacity: .8; }
@@ -3870,8 +3872,8 @@ a:focus, a:hover {
   opacity: 1;
   content: none;
   z-index: 999;
-  -webkit-transition: all, 0.2s, ease-in-out, 0s;
-  transition: all, 0.2s, ease-in-out, 0s; }
+  -webkit-transition: 0.2s all;
+  transition: 0.2s all; }
   .prev-sm:hover,
   .next-sm:hover,
   .slick-prev:hover,
@@ -3948,8 +3950,8 @@ video {
   -webkit-transform: translateX(-50%) translateY(-50%);
   -moz-transform: translateX(-50%) translateY(-50%);
   transform: translateX(-50%) translateY(-50%);
-  -webkit-transition: all, 0.2s, ease-in-out, 0s;
-  transition: all, 0.2s, ease-in-out, 0s; }
+  -webkit-transition: 0.2s all;
+  transition: 0.2s all; }
   .play-btn-container:hover {
     opacity: 0.8; }
   .play-btn-container a {
@@ -3971,8 +3973,8 @@ video {
   z-index: 9999999999;
   opacity: 0;
   cursor: pointer;
-  -webkit-transition: all, 0.5s, ease-in-out, 0s;
-  transition: all, 0.5s, ease-in-out, 0s; }
+  -webkit-transition: 0.5s all;
+  transition: 0.5s all; }
   .video-overlay:before {
     content: '';
     display: inline-block;
@@ -3990,8 +3992,8 @@ video {
   cursor: default;
   height: 75%;
   max-height: 75%;
-  -webkit-transition: all, 0.3s, ease-in-out, 0s;
-  transition: all, 0.3s, ease-in-out, 0s; }
+  -webkit-transition: 0.3s all;
+  transition: 0.3s all; }
   .video-popup .iframeWrapper {
     left: 5px;
     right: 5px;
@@ -4178,8 +4180,8 @@ video {
     margin-top: 30px;
     padding: 12px;
     background-size: 110%;
-    -webkit-transition: all, 0.3s, ease-in-out, 0s;
-    transition: all, 0.3s, ease-in-out, 0s; }
+    -webkit-transition: 0.3s all;
+    transition: 0.3s all; }
     .block--button:hover, .block--button-green:hover, .block--button-orange:hover, .block--button-red:hover {
       background-size: 120%; }
     .block--button-green {
@@ -4323,8 +4325,8 @@ video {
     margin-bottom: 5px;
     font-size: 1.25rem;
     color: #3d3421;
-    -webkit-transition: all, 0.2s, ease-in-out, 0s;
-    transition: all, 0.2s, ease-in-out, 0s; }
+    -webkit-transition: 0.2s all;
+    transition: 0.2s all; }
   .category-items__card h4:hover {
     color: #5e5033; }
   .category-items__card img {
@@ -4370,68 +4372,8 @@ video {
   margin-top: 90px;
   float: right; }
 
-.calendar {
-  width: 85%;
-  padding: 0 0 15px 0;
-  position: relative;
-  text-align: center;
-  background: #fff;
-  font-family: "proxima-nova", sans-serif, sans-serif;
-  font-size: 1.1rem; }
-  .calendar table {
-    width: 100%; }
-  .calendar__month {
-    width: 100%;
-    background: #d6a83f;
-    position: relative;
-    color: #fff;
-    margin: 0 auto -5px auto;
-    padding: 20px 0;
-    font-family: "proxima-nova", sans-serif, sans-serif;
-    font-weight: 400;
-    font-size: 1.65rem;
-    text-transform: none; }
-  .calendar thead {
-    margin: 0 auto;
-    color: #fff;
-    background: #d6a83f;
-    font-weight: 700;
-    text-transform: uppercase; }
-    .calendar thead td {
-      margin: 0;
-      border-radius: 0; }
-  .calendar tbody {
-    color: #7c8a95; }
-  .calendar td {
-    border: none;
-    border-radius: 50%;
-    height: 2.9rem;
-    line-height: 2.9rem;
-    text-align: center;
-    width: 2.9rem; }
-  .calendar .current-day {
-    background: #d6a83f;
-    color: #fff; }
-    .calendar .current-day:after {
-      background: #fff; }
-  .calendar .event {
-    cursor: pointer;
-    position: relative; }
-    .calendar .event:after {
-      background: #d6a83f;
-      border-radius: 50%;
-      top: .5rem;
-      right: .5rem;
-      display: block;
-      content: '';
-      height: .4em;
-      width: .4em;
-      margin: -.25em 0 0 -.25em;
-      position: absolute; }
-
 @media screen {
   .home-finder {
-    background: #f4f0e9;
     position: relative; }
     .home-finder .top-container {
       width: 100%;
@@ -4481,18 +4423,17 @@ video {
         display: none; } }
 @media screen {
       .home-finder .home-finder-nav a {
-        color: #695e49;
+        color: #3d3421;
         border-bottom: 1px solid #fcf9ee; }
         .home-finder .home-finder-nav a:hover {
-          color: black;
-          border-bottom: 1px solid #9f9d5c; }
+          color: black; }
       .home-finder .home-finder-nav ul {
         margin: 0;
         padding: 0; }
         .home-finder .home-finder-nav ul li {
           display: inline-block;
-          font-family: "baskerville-urw", serif;
-          color: #695e49;
+          font-family: "minion-pro", serif, serif;
+          color: #3d3421;
           font-size: 14px;
           /* Approximation due to font substitution */
           font-weight: 400;
@@ -4514,8 +4455,8 @@ video {
       .home-finder .home-finder-nav .left-col {
         float: right;
         text-align: right;
-        font-family: "proxima-nova", sans-serif;
-        color: #695e49;
+        font-family: "proxima-nova", sans-serif, sans-serif;
+        color: #3d3421;
         font-size: 10px;
         /* Approximation due to font substitution */
         font-weight: 400;
@@ -4533,7 +4474,7 @@ video {
           font-size: 12px; } }
 @media screen {
         .home-finder .home-finder-nav .left-col a {
-          color: #695e49; }
+          color: #3d3421; }
           .home-finder .home-finder-nav .left-col a:hover {
             color: black; }
         .home-finder .home-finder-nav .left-col .search-count {
@@ -4571,8 +4512,8 @@ video {
           background-size: 18px;
           width: 245px;
           padding: 10px 33px 10px 15px;
-          font-family: "proxima-nova", sans-serif;
-          color: #695e49;
+          font-family: "proxima-nova", sans-serif, sans-serif;
+          color: #3d3421;
           font-size: .75em;
           /* Approximation due to font substitution */
           font-weight: 400;
@@ -4597,12 +4538,12 @@ video {
           margin-bottom: 20px; } }
 @media screen {
         .home-finder .home-finder-filters .filter-options a#filter-clearAll {
-          font-family: "Oswald", sans-serif;
+          font-family: "proxima-nova", sans-serif, sans-serif;
           text-transform: uppercase;
           font-size: 12px;
           margin-right: 10px;
           border-bottom: 1px solid #e4e2d6;
-          color: #695e49;
+          color: #3d3421;
           position: relative;
           top: 3px; } }
         @media screen and (max-width: 991px) {
@@ -4613,7 +4554,6 @@ video {
             margin-bottom: 5px; } }
 @media screen {
           .home-finder .home-finder-filters .filter-options a#filter-clearAll:hover {
-            border-bottom: #9f9d5c;
             color: black; }
         .home-finder .home-finder-filters .filter-options select {
           -webkit-appearance: none;
@@ -4622,8 +4562,8 @@ video {
           background: #fff url("img/select-arrow.png") no-repeat 90% 50%;
           background-size: 8px;
           width: 165px;
-          font-family: "proxima-nova", sans-serif;
-          color: #695e49;
+          font-family: "proxima-nova", sans-serif, sans-serif;
+          color: #3d3421;
           font-size: 10px;
           /* Approximation due to font substitution */
           font-weight: 400;
@@ -4653,8 +4593,8 @@ video {
         background: #fff url("img/plus.png") no-repeat 90% 50%;
         background-size: 8px;
         width: 165px;
-        font-family: "proxima-nova", sans-serif;
-        color: #695e49;
+        font-family: "proxima-nova", sans-serif, sans-serif;
+        color: #3d3421;
         font-size: 10px;
         /* Approximation due to font substitution */
         font-weight: 400;
@@ -4685,7 +4625,7 @@ video {
         .home-finder .home-finder-filters button:hover {
           background: #fcf9ee url("img/plus.png") no-repeat 95% 50%;
           background-size: 8px;
-          color: #695e49; }
+          color: #3d3421; }
       .home-finder .home-finder-filters input[type="checkbox"] {
         margin-right: 5px; }
       .home-finder .home-finder-filters .more-options {
@@ -4700,7 +4640,6 @@ video {
         height: auto; } }
 @media screen {
       .home-finder .home-finder-main .all-listings-col {
-        background: #f4f0e9;
         height: 800px;
         overflow: auto;
         padding: 0;
@@ -4724,8 +4663,8 @@ video {
           height: 24px;
           margin: 40px auto; }
         .home-finder .home-finder-main .all-listings-col .end-results {
-          font-family: "proxima-nova", sans-serif;
-          color: #695e49;
+          font-family: "proxima-nova", sans-serif, sans-serif;
+          color: #3d3421;
           font-size: .75em;
           /* Approximation due to font substitution */
           font-weight: 400;
@@ -4739,7 +4678,6 @@ video {
           margin-bottom: 20px;
           width: 100%; }
         .home-finder .home-finder-main .all-listings-col .listings-header {
-          background: #f4f0e9;
           padding: 15px 30px 40px; } }
         @media screen and (max-width: 991px) {
           .home-finder .home-finder-main .all-listings-col .listings-header {
@@ -4748,8 +4686,8 @@ video {
           .home-finder .home-finder-main .all-listings-col .listings-header a {
             border: none; }
           .home-finder .home-finder-main .all-listings-col .listings-header h2.listings-title {
-            font-family: "baskerville-urw", serif;
-            color: #695e49;
+            font-family: "minion-pro", serif, serif;
+            color: #3d3421;
             font-size: 2em;
             /* Approximation due to font substitution */
             font-weight: 500;
@@ -4762,8 +4700,8 @@ video {
           .home-finder .home-finder-main .all-listings-col .listings-header .results-search {
             margin-bottom: 45px; }
           .home-finder .home-finder-main .all-listings-col .listings-header .results-count, .home-finder .home-finder-main .all-listings-col .listings-header #saveSearchSection {
-            font-family: "proxima-nova", sans-serif;
-            color: #695e49;
+            font-family: "proxima-nova", sans-serif, sans-serif;
+            color: #3d3421;
             font-size: .75em;
             /* Approximation due to font substitution */
             font-weight: 400;
@@ -4779,8 +4717,8 @@ video {
             position: relative;
             top: 2px; }
           .home-finder .home-finder-main .all-listings-col .listings-header .view-on-map #viewListingsOnMap {
-            font-family: "proxima-nova", sans-serif;
-            color: #695e49;
+            font-family: "proxima-nova", sans-serif, sans-serif;
+            color: #3d3421;
             font-size: .75em;
             /* Approximation due to font substitution */
             font-weight: 400;
@@ -4802,8 +4740,8 @@ video {
             background: #fff url("img/select-arrow.png") no-repeat 95% 50%;
             background-size: 8px;
             width: 100%;
-            font-family: "proxima-nova", sans-serif;
-            color: #695e49;
+            font-family: "proxima-nova", sans-serif, sans-serif;
+            color: #3d3421;
             font-size: 10px;
             /* Approximation due to font substitution */
             font-weight: 400;
@@ -4820,26 +4758,25 @@ video {
               outline: none; }
         .home-finder .home-finder-main .all-listings-col .listings-wrapper .listing {
           background: #fff;
-          border: 1px solid #f4f0e9;
           overflow: hidden;
           height: 200px;
-          color: #695e49; }
+          color: #3d3421; }
           .home-finder .home-finder-main .all-listings-col .listings-wrapper .listing:hover {
-            background: #536377;
+            background: #3d3421;
             color: #fff;
             cursor: pointer; } }
           @media screen and (max-width: 991px) {
             .home-finder .home-finder-main .all-listings-col .listings-wrapper .listing:hover {
               background: #fff;
-              color: #695e49; } }
+              color: #3d3421; } }
 @media screen {
           .home-finder .home-finder-main .all-listings-col .listings-wrapper .listing.active {
             background: #e4e2d6;
-            color: #695e49; } }
+            color: #3d3421; } }
           @media screen and (max-width: 991px) {
             .home-finder .home-finder-main .all-listings-col .listings-wrapper .listing.active {
               background: #fff;
-              color: #695e49; } }
+              color: #3d3421; } }
 @media screen {
           .home-finder .home-finder-main .all-listings-col .listings-wrapper .listing .listing-img-col {
             height: 200px;
@@ -4870,7 +4807,7 @@ video {
               width: 58%; } }
 @media screen {
             .home-finder .home-finder-main .all-listings-col .listings-wrapper .listing .listing-details-col .listing-address {
-              font-family: "baskerville-urw", serif;
+              font-family: "minion-pro", serif, serif;
               font-size: 20px;
               /* Approximation due to font substitution */
               font-weight: 400;
@@ -4879,7 +4816,7 @@ video {
               text-align: left;
               margin-bottom: 12px; }
             .home-finder .home-finder-main .all-listings-col .listings-wrapper .listing .listing-details-col .listing-neighborhood {
-              font-family: "Oswald", sans-serif;
+              font-family: "proxima-nova", sans-serif, sans-serif;
               font-size: 12px;
               /* Approximation due to font substitution */
               font-weight: 400;
@@ -4890,7 +4827,7 @@ video {
               margin-bottom: 14px;
               letter-spacing: 1px; }
             .home-finder .home-finder-main .all-listings-col .listings-wrapper .listing .listing-details-col .listing-details {
-              font-family: "proxima-nova", sans-serif;
+              font-family: "proxima-nova", sans-serif, sans-serif;
               font-size: 13px;
               /* Approximation due to font substitution */
               font-weight: 400;
@@ -4927,9 +4864,8 @@ video {
           height: auto; } }
 @media screen {
         .home-finder .home-finder-main .single-listing-col .back-to-listings {
-          background: #9f9d5c;
           width: 100%;
-          font-family: "proxima-nova", sans-serif;
+          font-family: "proxima-nova", sans-serif, sans-serif;
           color: #fff;
           font-size: 12px;
           /* Approximation due to font substitution */
@@ -4960,7 +4896,7 @@ video {
             height: 200px; } }
 @media screen {
         .home-finder .home-finder-main .single-listing-col .listing-images .slick-prev, .home-finder .home-finder-main .single-listing-col .listing-images .slick-next {
-          border: 1px solid #695e49;
+          border: 1px solid #3d3421;
           background-color: #fff;
           width: 36px;
           height: 30px;
@@ -4974,8 +4910,8 @@ video {
             top: 200px; } }
 @media screen {
           .home-finder .home-finder-main .single-listing-col .listing-images .slick-prev:before, .home-finder .home-finder-main .single-listing-col .listing-images .slick-next:before {
-            color: #695e49;
-            font-family: "baskerville-urw", serif; }
+            color: #3d3421;
+            font-family: "minion-pro", serif, serif; }
         .home-finder .home-finder-main .single-listing-col .listing-images .slick-prev {
           right: 80px;
           left: auto; }
@@ -4993,8 +4929,8 @@ video {
             max-width: 100%; } }
 @media screen {
           .home-finder .home-finder-main .single-listing-col .single-listing-content .listing-actions {
-            font-family: "proxima-nova", sans-serif;
-            color: #695e49;
+            font-family: "proxima-nova", sans-serif, sans-serif;
+            color: #3d3421;
             font-size: 12px;
             /* Approximation due to font substitution */
             font-weight: 400;
@@ -5008,7 +4944,7 @@ video {
               margin-right: 15px;
               position: relative; }
               .home-finder .home-finder-main .single-listing-col .single-listing-content .listing-actions .action-link a {
-                color: #695e49; }
+                color: #3d3421; }
                 .home-finder .home-finder-main .single-listing-col .single-listing-content .listing-actions .action-link a:hover {
                   color: black;
                   border-bottom: none;
@@ -5093,16 +5029,16 @@ video {
                 margin: auto;
                 bottom: -13px; }
           .home-finder .home-finder-main .single-listing-col .single-listing-content .listing-address {
-            font-family: "baskerville-urw", serif;
-            color: #695e49;
+            font-family: "minion-pro", serif, serif;
+            color: #3d3421;
             font-size: 36px;
             font-weight: 400;
             line-height: 1.5;
             text-align: left;
             margin-top: 25px; }
           .home-finder .home-finder-main .single-listing-col .single-listing-content .optional-btns {
-            font-family: "proxima-nova", sans-serif;
-            color: #695e49;
+            font-family: "proxima-nova", sans-serif, sans-serif;
+            color: #3d3421;
             font-size: 12px;
             /* Approximation due to font substitution */
             font-weight: 400;
@@ -5113,7 +5049,7 @@ video {
             letter-spacing: 1px;
             margin-top: 0px; }
             .home-finder .home-finder-main .single-listing-col .single-listing-content .optional-btns a.optional-link {
-              color: #695e49;
+              color: #3d3421;
               display: inline-block;
               margin-right: 15px;
               border-bottom: none; }
@@ -5126,8 +5062,8 @@ video {
               top: 2px; }
           .home-finder .home-finder-main .single-listing-col .single-listing-content .listing-price {
             display: inline-block;
-            font-family: "Oswald", sans-serif;
-            color: #695e49;
+            font-family: "proxima-nova", sans-serif, sans-serif;
+            color: #3d3421;
             font-size: 24px;
             /* Approximation due to font substitution */
             font-weight: 400;
@@ -5144,8 +5080,8 @@ video {
 @media screen {
           .home-finder .home-finder-main .single-listing-col .single-listing-content .listing-specs {
             display: inline-block;
-            font-family: "proxima-nova", sans-serif;
-            color: #695e49;
+            font-family: "proxima-nova", sans-serif, sans-serif;
+            color: #3d3421;
             font-size: 18px;
             /* Approximation due to font substitution */
             font-weight: 400;
@@ -5155,8 +5091,8 @@ video {
             text-transform: uppercase;
             letter-spacing: 1px; }
           .home-finder .home-finder-main .single-listing-col .single-listing-content .listing-neighborhood {
-            font-family: "Oswald", sans-serif;
-            color: #695e49;
+            font-family: "proxima-nova", sans-serif, sans-serif;
+            color: #3d3421;
             font-size: 16px;
             /* Approximation due to font substitution */
             font-weight: 400;
@@ -5180,7 +5116,7 @@ video {
               .home-finder .home-finder-main .single-listing-col .single-listing-content .listing-neighborhood .item-padding:first-child {
                 margin-left: 0; }
             .home-finder .home-finder-main .single-listing-col .single-listing-content .listing-neighborhood a {
-              color: #695e49; }
+              color: #3d3421; }
           .home-finder .home-finder-main .single-listing-col .single-listing-content .action-buttons-container {
             margin-top: 40px;
             margin-bottom: 50px; }
@@ -5195,8 +5131,8 @@ video {
                 text-align: left; } }
 @media screen {
           .home-finder .home-finder-main .single-listing-col .single-listing-content .listing-details, .home-finder .home-finder-main .single-listing-col .single-listing-content .listing-details p, .home-finder .home-finder-main .single-listing-col .single-listing-content .listing-details ul, .home-finder .home-finder-main .single-listing-col .single-listing-content .listing-details ol {
-            font-family: "cronos-pro", sans-serif;
-            color: #695e49;
+            font-family: "minion-pro", serif, serif;
+            color: #3d3421;
             font-weight: 400; }
           .home-finder .home-finder-main .single-listing-col .single-listing-content .listing-details ul, .home-finder .home-finder-main .single-listing-col .single-listing-content .listing-details ol {
             margin-top: 30px;
@@ -5211,8 +5147,847 @@ video {
           padding-top: 30px;
           line-height: 1; }
           .home-finder .home-finder-main .single-listing-col .broker-reciprocity .disclaimer {
-            font-family: "cronos-pro", sans-serif;
-            color: #695e49;
+            font-family: "minion-pro", serif, serif;
+            color: #3d3421;
+            font-weight: 400;
+            font-size: 12px;
+            line-height: 1; } }
+.calendar {
+  width: 85%;
+  padding: 0 0 15px 0;
+  position: relative;
+  text-align: center;
+  background: #fff;
+  font-family: "proxima-nova", sans-serif, sans-serif;
+  font-size: 1.1rem; }
+  .calendar table {
+    width: 100%; }
+  .calendar__month {
+    width: 100%;
+    background: #d6a83f;
+    position: relative;
+    color: #fff;
+    margin: 0 auto -5px auto;
+    padding: 20px 0;
+    font-family: "proxima-nova", sans-serif, sans-serif;
+    font-weight: 400;
+    font-size: 1.65rem;
+    text-transform: none; }
+  .calendar thead {
+    margin: 0 auto;
+    color: #fff;
+    background: #d6a83f;
+    font-weight: 700;
+    text-transform: uppercase; }
+    .calendar thead td {
+      margin: 0;
+      border-radius: 0; }
+  .calendar tbody {
+    color: #7c8a95; }
+  .calendar td {
+    border: none;
+    border-radius: 50%;
+    height: 2.9rem;
+    line-height: 2.9rem;
+    text-align: center;
+    width: 2.9rem; }
+  .calendar .current-day {
+    background: #d6a83f;
+    color: #fff; }
+    .calendar .current-day:after {
+      background: #fff; }
+  .calendar .event {
+    cursor: pointer;
+    position: relative; }
+    .calendar .event:after {
+      background: #d6a83f;
+      border-radius: 50%;
+      top: .5rem;
+      right: .5rem;
+      display: block;
+      content: '';
+      height: .4em;
+      width: .4em;
+      margin: -.25em 0 0 -.25em;
+      position: absolute; }
+
+@media screen {
+  .home-finder {
+    position: relative; }
+    .home-finder .top-container {
+      width: 100%;
+      height: 190px;
+      background: url(img/bg-home-finder.jpg) no-repeat 50% 50%;
+      background-size: cover; } }
+    @media screen and (max-width: 991px) {
+      .home-finder .top-container {
+        height: 90px; } }
+@media screen {
+      .home-finder .top-container .logo {
+        position: absolute;
+        top: 60px;
+        left: 40px; } }
+      @media screen and (min-width: 1200px) {
+        .home-finder .top-container .logo {
+          left: 0px;
+          position: relative; } }
+      @media screen and (max-width: 991px) {
+        .home-finder .top-container .logo {
+          left: 0px;
+          top: 20px;
+          position: relative; } }
+@media screen {
+        .home-finder .top-container .logo a {
+          border: none; }
+          .home-finder .top-container .logo a:hover {
+            border: none; }
+        .home-finder .top-container .logo img {
+          max-width: 185px; } }
+        @media screen and (max-width: 991px) {
+          .home-finder .top-container .logo img {
+            max-width: 105px; } }
+@media screen {
+    .home-finder .home-finder-nav {
+      background: #fcf9ee;
+      width: 100%;
+      padding: 20px 20px; } }
+    @media screen and (max-width: 991px) {
+      .home-finder .home-finder-nav {
+        padding: 10px 0; } }
+    @media screen and (min-width: 1200px) {
+      .home-finder .home-finder-nav {
+        padding: 20px 40px; } }
+    @media screen and (max-width: 991px) {
+      .home-finder .home-finder-nav ul.home-finder-nav-list {
+        display: none; } }
+@media screen {
+      .home-finder .home-finder-nav a {
+        color: #3d3421;
+        border-bottom: 1px solid #fcf9ee; }
+        .home-finder .home-finder-nav a:hover {
+          color: black; }
+      .home-finder .home-finder-nav ul {
+        margin: 0;
+        padding: 0; }
+        .home-finder .home-finder-nav ul li {
+          display: inline-block;
+          font-family: "minion-pro", serif, serif;
+          color: #3d3421;
+          font-size: 14px;
+          /* Approximation due to font substitution */
+          font-weight: 400;
+          line-height: 1;
+          text-align: left;
+          text-transform: uppercase;
+          list-style-type: none;
+          letter-spacing: 1px; } }
+        @media screen and (max-width: 1250px) {
+          .home-finder .home-finder-nav ul li {
+            font-size: 12px; } }
+@media screen {
+          .home-finder .home-finder-nav ul li::after {
+            content: "|";
+            margin-left: 5px; }
+          .home-finder .home-finder-nav ul li:last-child::after {
+            content: "";
+            margin-left: 5px; }
+      .home-finder .home-finder-nav .left-col {
+        float: right;
+        text-align: right;
+        font-family: "proxima-nova", sans-serif, sans-serif;
+        color: #3d3421;
+        font-size: 10px;
+        /* Approximation due to font substitution */
+        font-weight: 400;
+        line-height: 30px;
+        /* Approximation due to font substitution */
+        text-transform: uppercase;
+        letter-spacing: 1px; } }
+      @media screen and (max-width: 991px) {
+        .home-finder .home-finder-nav .left-col {
+          float: none;
+          text-align: center;
+          font-size: 10px; } }
+      @media screen and (min-width: 1200px) {
+        .home-finder .home-finder-nav .left-col {
+          font-size: 12px; } }
+@media screen {
+        .home-finder .home-finder-nav .left-col a {
+          color: #3d3421; }
+          .home-finder .home-finder-nav .left-col a:hover {
+            color: black; }
+        .home-finder .home-finder-nav .left-col .search-count {
+          display: inline-block;
+          margin-right: 20px; }
+    .home-finder .home-finder-filters {
+      background: #e4e2d6;
+      width: 100%;
+      padding: 15px 40px 10px;
+      overflow: auto; } }
+    @media screen and (max-width: 991px) {
+      .home-finder .home-finder-filters {
+        padding: 0 20px;
+        height: auto;
+        min-height: 105px;
+        -webkit-transition: 2s all;
+        transition: 2s all; }
+        .home-finder .home-finder-filters.hide-filters {
+          padding: 0 20px;
+          height: 0;
+          min-height: 0; } }
+@media screen {
+      .home-finder .home-finder-filters .home-finder-search {
+        float: left;
+        display: inline-block; } }
+      @media screen and (max-width: 991px) {
+        .home-finder .home-finder-filters .home-finder-search {
+          float: none;
+          display: block;
+          margin-bottom: 5px; } }
+@media screen {
+        .home-finder .home-finder-filters .home-finder-search input[type="search"] {
+          border: none;
+          background: #ffffff url("img/search.png") no-repeat 95% 50%;
+          background-size: 18px;
+          width: 245px;
+          padding: 10px 33px 10px 15px;
+          font-family: "proxima-nova", sans-serif, sans-serif;
+          color: #3d3421;
+          font-size: .75em;
+          /* Approximation due to font substitution */
+          font-weight: 400;
+          line-height: 1;
+          /* Approximation due to font substitution */
+          text-align: left;
+          text-transform: uppercase;
+          letter-spacing: 1px; } }
+        @media screen and (max-width: 991px) {
+          .home-finder .home-finder-filters .home-finder-search input[type="search"] {
+            width: 100%;
+            margin-top: 20px; } }
+@media screen {
+          .home-finder .home-finder-filters .home-finder-search input[type="search"]:focus {
+            outline: none; }
+      .home-finder .home-finder-filters .filter-options {
+        float: right; } }
+      @media screen and (max-width: 991px) {
+        .home-finder .home-finder-filters .filter-options {
+          float: none;
+          display: none;
+          margin-bottom: 20px; } }
+@media screen {
+        .home-finder .home-finder-filters .filter-options a#filter-clearAll {
+          font-family: "proxima-nova", sans-serif, sans-serif;
+          text-transform: uppercase;
+          font-size: 12px;
+          margin-right: 10px;
+          border-bottom: 1px solid #e4e2d6;
+          color: #3d3421;
+          position: relative;
+          top: 3px; } }
+        @media screen and (max-width: 991px) {
+          .home-finder .home-finder-filters .filter-options a#filter-clearAll {
+            display: block;
+            top: auto;
+            margin-top: 20px;
+            margin-bottom: 5px; } }
+@media screen {
+          .home-finder .home-finder-filters .filter-options a#filter-clearAll:hover {
+            color: black; }
+        .home-finder .home-finder-filters .filter-options select {
+          -webkit-appearance: none;
+          -moz-appearance: none;
+          appearance: none;
+          background: #fff url("img/select-arrow.png") no-repeat 90% 50%;
+          background-size: 8px;
+          width: 165px;
+          font-family: "proxima-nova", sans-serif, sans-serif;
+          color: #3d3421;
+          font-size: 10px;
+          /* Approximation due to font substitution */
+          font-weight: 400;
+          line-height: 1;
+          /* Approximation due to font substitution */
+          text-align: left;
+          border-radius: 0;
+          border: none;
+          padding: 12px 15px;
+          margin-bottom: 5px;
+          text-transform: uppercase; } }
+        @media screen and (max-width: 1250px) {
+          .home-finder .home-finder-filters .filter-options select {
+            width: 120px; } }
+        @media screen and (max-width: 991px) {
+          .home-finder .home-finder-filters .filter-options select {
+            width: 100%;
+            background: #fff url("img/select-arrow.png") no-repeat 95% 50%;
+            background-size: 8px; } }
+@media screen {
+          .home-finder .home-finder-filters .filter-options select:focus {
+            outline: none; }
+      .home-finder .home-finder-filters button {
+        -webkit-appearance: none;
+        -moz-appearance: none;
+        appearance: none;
+        background: #fff url("img/plus.png") no-repeat 90% 50%;
+        background-size: 8px;
+        width: 165px;
+        font-family: "proxima-nova", sans-serif, sans-serif;
+        color: #3d3421;
+        font-size: 10px;
+        /* Approximation due to font substitution */
+        font-weight: 400;
+        line-height: 1;
+        /* Approximation due to font substitution */
+        text-align: left;
+        border-radius: 0;
+        border: none;
+        padding: 12px 15px;
+        margin-bottom: 5px;
+        text-transform: uppercase;
+        display: inline-block;
+        float: right;
+        margin-left: 5px;
+        -webkit-transition: 0.3s all;
+        transition: 0.3s all; } }
+      @media screen and (max-width: 991px) {
+        .home-finder .home-finder-filters button {
+          width: 100%;
+          background: #fff url("img/plus.png") no-repeat 95% 50%;
+          background-size: 8px;
+          display: block;
+          float: none;
+          margin: 0 auto 20px; } }
+@media screen {
+        .home-finder .home-finder-filters button:focus {
+          outline: none; }
+        .home-finder .home-finder-filters button:hover {
+          background: #fcf9ee url("img/plus.png") no-repeat 95% 50%;
+          background-size: 8px;
+          color: #3d3421; }
+      .home-finder .home-finder-filters input[type="checkbox"] {
+        margin-right: 5px; }
+      .home-finder .home-finder-filters .more-options {
+        display: none; }
+    .home-finder .home-finder-main {
+      width: 100%;
+      height: 800px;
+      overflow: hidden;
+      position: relative; } }
+    @media screen and (max-width: 991px) {
+      .home-finder .home-finder-main {
+        height: auto; } }
+@media screen {
+      .home-finder .home-finder-main .all-listings-col {
+        height: 800px;
+        overflow: auto;
+        padding: 0;
+        -ms-overflow-style: -ms-autohiding-scrollbar; }
+        .home-finder .home-finder-main .all-listings-col::scrollbar {
+          display: none; }
+        .home-finder .home-finder-main .all-listings-col::-webkit-scrollbar {
+          display: none; }
+        .home-finder .home-finder-main .all-listings-col::-ms-scrollbar {
+          display: none; }
+        .home-finder .home-finder-main .all-listings-col::-moz-scrollbars {
+          display: none; } }
+      @media screen and (max-width: 991px) {
+        .home-finder .home-finder-main .all-listings-col {
+          height: 849px; } }
+@media screen {
+        .home-finder .home-finder-main .all-listings-col .loading {
+          background: url(img/loading.gif) no-repeat 50% 50%;
+          background-size: cover;
+          width: 24px;
+          height: 24px;
+          margin: 40px auto; }
+        .home-finder .home-finder-main .all-listings-col .end-results {
+          font-family: "proxima-nova", sans-serif, sans-serif;
+          color: #3d3421;
+          font-size: .75em;
+          /* Approximation due to font substitution */
+          font-weight: 400;
+          line-height: 1;
+          /* Approximation due to font substitution */
+          text-align: center;
+          letter-spacing: 2px;
+          text-transform: uppercase;
+          display: inline-block;
+          margin-top: 20px;
+          margin-bottom: 20px;
+          width: 100%; }
+        .home-finder .home-finder-main .all-listings-col .listings-header {
+          padding: 15px 30px 40px; } }
+        @media screen and (max-width: 991px) {
+          .home-finder .home-finder-main .all-listings-col .listings-header {
+            padding: 15px 30px 20px; } }
+@media screen {
+          .home-finder .home-finder-main .all-listings-col .listings-header a {
+            border: none; }
+          .home-finder .home-finder-main .all-listings-col .listings-header h2.listings-title {
+            font-family: "minion-pro", serif, serif;
+            color: #3d3421;
+            font-size: 2em;
+            /* Approximation due to font substitution */
+            font-weight: 500;
+            text-align: left;
+            text-transform: capitalize; } }
+          @media screen and (max-width: 991px) {
+            .home-finder .home-finder-main .all-listings-col .listings-header h2.listings-title {
+              margin-top: 0; } }
+@media screen {
+          .home-finder .home-finder-main .all-listings-col .listings-header .results-search {
+            margin-bottom: 45px; }
+          .home-finder .home-finder-main .all-listings-col .listings-header .results-count, .home-finder .home-finder-main .all-listings-col .listings-header #saveSearchSection {
+            font-family: "proxima-nova", sans-serif, sans-serif;
+            color: #3d3421;
+            font-size: .75em;
+            /* Approximation due to font substitution */
+            font-weight: 400;
+            line-height: 1;
+            /* Approximation due to font substitution */
+            text-align: left;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            display: inline-block; }
+          .home-finder .home-finder-main .all-listings-col .listings-header .view-on-map .map-icon {
+            display: inline-block;
+            margin-right: 5px;
+            position: relative;
+            top: 2px; }
+          .home-finder .home-finder-main .all-listings-col .listings-header .view-on-map #viewListingsOnMap {
+            font-family: "proxima-nova", sans-serif, sans-serif;
+            color: #3d3421;
+            font-size: .75em;
+            /* Approximation due to font substitution */
+            font-weight: 400;
+            line-height: 1;
+            /* Approximation due to font substitution */
+            text-align: left;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            display: inline-block;
+            text-align: left;
+            margin-top: 10px; }
+            .home-finder .home-finder-main .all-listings-col .listings-header .view-on-map #viewListingsOnMap:hover {
+              color: black;
+              border-bottom: none; }
+          .home-finder .home-finder-main .all-listings-col .listings-header .listings-type select {
+            -webkit-appearance: none;
+            -moz-appearance: none;
+            appearance: none;
+            background: #fff url("img/select-arrow.png") no-repeat 95% 50%;
+            background-size: 8px;
+            width: 100%;
+            font-family: "proxima-nova", sans-serif, sans-serif;
+            color: #3d3421;
+            font-size: 10px;
+            /* Approximation due to font substitution */
+            font-weight: 400;
+            line-height: 1;
+            /* Approximation due to font substitution */
+            text-align: left;
+            border-radius: 0;
+            border: none;
+            padding: 10px 15px;
+            margin-bottom: 5px;
+            text-transform: uppercase;
+            font-weight: bold; }
+            .home-finder .home-finder-main .all-listings-col .listings-header .listings-type select:focus {
+              outline: none; }
+        .home-finder .home-finder-main .all-listings-col .listings-wrapper .listing {
+          background: #fff;
+          overflow: hidden;
+          height: 200px;
+          color: #3d3421; }
+          .home-finder .home-finder-main .all-listings-col .listings-wrapper .listing:hover {
+            background: #3d3421;
+            color: #fff;
+            cursor: pointer; } }
+          @media screen and (max-width: 991px) {
+            .home-finder .home-finder-main .all-listings-col .listings-wrapper .listing:hover {
+              background: #fff;
+              color: #3d3421; } }
+@media screen {
+          .home-finder .home-finder-main .all-listings-col .listings-wrapper .listing.active {
+            background: #e4e2d6;
+            color: #3d3421; } }
+          @media screen and (max-width: 991px) {
+            .home-finder .home-finder-main .all-listings-col .listings-wrapper .listing.active {
+              background: #fff;
+              color: #3d3421; } }
+@media screen {
+          .home-finder .home-finder-main .all-listings-col .listings-wrapper .listing .listing-img-col {
+            height: 200px;
+            width: 40%;
+            float: left;
+            position: relative; } }
+          @media screen and (max-width: 991px) {
+            .home-finder .home-finder-main .all-listings-col .listings-wrapper .listing .listing-img-col {
+              width: 40%; } }
+          @media screen and (min-width: 1600px) {
+            .home-finder .home-finder-main .all-listings-col .listings-wrapper .listing .listing-img-col {
+              max-width: 160px; } }
+@media screen {
+          .home-finder .home-finder-main .all-listings-col .listings-wrapper .listing .broker-reciprocity {
+            position: absolute;
+            bottom: 0;
+            right: 0;
+            background: #fff url(img/broker-reciprocity.png) no-repeat 50% 50%;
+            background-size: 60px;
+            width: 75px;
+            height: 20px; }
+          .home-finder .home-finder-main .all-listings-col .listings-wrapper .listing .listing-details-col {
+            float: left;
+            padding: 22px 5px 5px 25px;
+            max-width: 60%; } }
+          @media screen and (max-width: 991px) {
+            .home-finder .home-finder-main .all-listings-col .listings-wrapper .listing .listing-details-col {
+              width: 58%; } }
+@media screen {
+            .home-finder .home-finder-main .all-listings-col .listings-wrapper .listing .listing-details-col .listing-address {
+              font-family: "minion-pro", serif, serif;
+              font-size: 20px;
+              /* Approximation due to font substitution */
+              font-weight: 400;
+              line-height: 1;
+              /* Approximation due to font substitution */
+              text-align: left;
+              margin-bottom: 12px; }
+            .home-finder .home-finder-main .all-listings-col .listings-wrapper .listing .listing-details-col .listing-neighborhood {
+              font-family: "proxima-nova", sans-serif, sans-serif;
+              font-size: 12px;
+              /* Approximation due to font substitution */
+              font-weight: 400;
+              line-height: 1;
+              /* Approximation due to font substitution */
+              text-align: left;
+              text-transform: uppercase;
+              margin-bottom: 14px;
+              letter-spacing: 1px; }
+            .home-finder .home-finder-main .all-listings-col .listings-wrapper .listing .listing-details-col .listing-details {
+              font-family: "proxima-nova", sans-serif, sans-serif;
+              font-size: 13px;
+              /* Approximation due to font substitution */
+              font-weight: 400;
+              line-height: 1.5;
+              /* Approximation due to font substitution */
+              text-align: left;
+              text-transform: uppercase; }
+      .home-finder .home-finder-main .single-listing-col {
+        height: 800px;
+        background: #fff;
+        overflow-y: scroll;
+        padding: 0;
+        -ms-overflow-style: -ms-autohiding-scrollbar;
+        -webkit-transition: 1s all;
+        transition: 1s all;
+        top: 0; }
+        .home-finder .home-finder-main .single-listing-col::scrollbar {
+          display: none; }
+        .home-finder .home-finder-main .single-listing-col::-webkit-scrollbar {
+          display: none; }
+        .home-finder .home-finder-main .single-listing-col::-ms-scrollbar {
+          display: none; }
+        .home-finder .home-finder-main .single-listing-col::-moz-scrollbars {
+          display: none; } }
+      @media screen and (max-width: 991px) {
+        .home-finder .home-finder-main .single-listing-col {
+          height: 0; } }
+      @media screen and (max-width: 991px) {
+        .home-finder .home-finder-main .single-listing-col.move-up {
+          opacity: 1 !important;
+          top: -849px;
+          margin-bottom: -849px;
+          display: block;
+          height: auto; } }
+@media screen {
+        .home-finder .home-finder-main .single-listing-col .back-to-listings {
+          width: 100%;
+          font-family: "proxima-nova", sans-serif, sans-serif;
+          color: #fff;
+          font-size: 12px;
+          /* Approximation due to font substitution */
+          font-weight: 400;
+          line-height: 2;
+          /* Approximation due to font substitution */
+          text-align: left;
+          text-transform: uppercase;
+          letter-spacing: 1px;
+          padding: 10px 20px;
+          display: block;
+          border: none; }
+          .home-finder .home-finder-main .single-listing-col .back-to-listings:hover {
+            cursor: pointer; }
+          .home-finder .home-finder-main .single-listing-col .back-to-listings .back-icon {
+            display: inline-block;
+            position: relative;
+            top: 3px;
+            margin-right: 5px; }
+        .home-finder .home-finder-main .single-listing-col .listing-images img {
+          height: 450px;
+          width: auto; } }
+        @media screen and (max-width: 991px) {
+          .home-finder .home-finder-main .single-listing-col .listing-images img {
+            height: 300px; } }
+        @media screen and (max-width: 767px) {
+          .home-finder .home-finder-main .single-listing-col .listing-images img {
+            height: 200px; } }
+@media screen {
+        .home-finder .home-finder-main .single-listing-col .listing-images .slick-prev, .home-finder .home-finder-main .single-listing-col .listing-images .slick-next {
+          border: 1px solid #3d3421;
+          background-color: #fff;
+          width: 36px;
+          height: 30px;
+          z-index: 10;
+          top: 451px; } }
+        @media screen and (max-width: 991px) {
+          .home-finder .home-finder-main .single-listing-col .listing-images .slick-prev, .home-finder .home-finder-main .single-listing-col .listing-images .slick-next {
+            top: 300px; } }
+        @media screen and (max-width: 767px) {
+          .home-finder .home-finder-main .single-listing-col .listing-images .slick-prev, .home-finder .home-finder-main .single-listing-col .listing-images .slick-next {
+            top: 200px; } }
+@media screen {
+          .home-finder .home-finder-main .single-listing-col .listing-images .slick-prev:before, .home-finder .home-finder-main .single-listing-col .listing-images .slick-next:before {
+            color: #3d3421;
+            font-family: "minion-pro", serif, serif; }
+        .home-finder .home-finder-main .single-listing-col .listing-images .slick-prev {
+          right: 80px;
+          left: auto; }
+        .home-finder .home-finder-main .single-listing-col .listing-images .slick-next {
+          right: 40px;
+          left: auto; }
+        .home-finder .home-finder-main .single-listing-col .listing-images .slick-slide img {
+          border-right: 1px solid #fff; }
+        .home-finder .home-finder-main .single-listing-col .single-listing-content {
+          padding: 40px 100px 20px;
+          max-width: 900px; } }
+        @media screen and (max-width: 991px) {
+          .home-finder .home-finder-main .single-listing-col .single-listing-content {
+            padding: 20px;
+            max-width: 100%; } }
+@media screen {
+          .home-finder .home-finder-main .single-listing-col .single-listing-content .listing-actions {
+            font-family: "proxima-nova", sans-serif, sans-serif;
+            color: #3d3421;
+            font-size: 12px;
+            /* Approximation due to font substitution */
+            font-weight: 400;
+            line-height: 1;
+            /* Approximation due to font substitution */
+            text-align: left;
+            text-transform: uppercase;
+            letter-spacing: 1px; }
+            .home-finder .home-finder-main .single-listing-col .single-listing-content .listing-actions .action-link {
+              display: inline-block;
+              margin-right: 15px;
+              position: relative; }
+              .home-finder .home-finder-main .single-listing-col .single-listing-content .listing-actions .action-link a {
+                color: #3d3421; }
+                .home-finder .home-finder-main .single-listing-col .single-listing-content .listing-actions .action-link a:hover {
+                  color: black;
+                  border-bottom: none;
+                  cursor: pointer; }
+            .home-finder .home-finder-main .single-listing-col .single-listing-content .listing-actions .star-icon {
+              display: inline-block;
+              position: relative;
+              top: 2px; }
+            .home-finder .home-finder-main .single-listing-col .single-listing-content .listing-actions .addthis_sharing_toolbox {
+              display: inline-block;
+              position: relative;
+              top: 3px;
+              margin-left: 5px; }
+            .home-finder .home-finder-main .single-listing-col .single-listing-content .listing-actions .share-widget {
+              position: absolute;
+              background: #9f9f9f;
+              top: -70px;
+              left: -50px;
+              color: #fff;
+              padding: 20px;
+              text-align: center;
+              width: 180px;
+              z-index: 1;
+              opacity: 0;
+              -webkit-transition: 0.5s all;
+              transition: 0.5s all; }
+              .home-finder .home-finder-main .single-listing-col .single-listing-content .listing-actions .share-widget.open {
+                opacity: 1;
+                top: -90px; }
+              .home-finder .home-finder-main .single-listing-col .single-listing-content .listing-actions .share-widget a {
+                color: #fff; }
+              .home-finder .home-finder-main .single-listing-col .single-listing-content .listing-actions .share-widget span.share-text {
+                position: relative;
+                top: -4px;
+                margin-right: 5px; }
+              .home-finder .home-finder-main .single-listing-col .single-listing-content .listing-actions .share-widget .fb-icon {
+                width: 18px;
+                height: 18px;
+                background: url(img/social-facebook-white.png) no-repeat 50% 50%;
+                background-size: cover;
+                display: inline-block;
+                margin-right: 8px;
+                position: relative;
+                top: 0;
+                -webkit-transition: 0.5s all;
+                transition: 0.5s all; }
+                .home-finder .home-finder-main .single-listing-col .single-listing-content .listing-actions .share-widget .fb-icon:hover {
+                  top: 4px; }
+              .home-finder .home-finder-main .single-listing-col .single-listing-content .listing-actions .share-widget .twitter-icon {
+                width: 18px;
+                height: 18px;
+                background: url(img/social-twitter-white.png) no-repeat 50% 50%;
+                background-size: cover;
+                display: inline-block;
+                margin-right: 8px;
+                position: relative;
+                top: 0;
+                -webkit-transition: 0.5s all;
+                transition: 0.5s all; }
+                .home-finder .home-finder-main .single-listing-col .single-listing-content .listing-actions .share-widget .twitter-icon:hover {
+                  top: 4px; }
+              .home-finder .home-finder-main .single-listing-col .single-listing-content .listing-actions .share-widget .email-icon {
+                width: 18px;
+                height: 18px;
+                background: url(img/email.png) no-repeat 50% 50%;
+                background-size: cover;
+                display: inline-block;
+                position: relative;
+                top: 0;
+                -webkit-transition: 0.5s all;
+                transition: 0.5s all; }
+                .home-finder .home-finder-main .single-listing-col .single-listing-content .listing-actions .share-widget .email-icon:hover {
+                  top: 4px; }
+              .home-finder .home-finder-main .single-listing-col .single-listing-content .listing-actions .share-widget .arrow {
+                position: absolute;
+                background: url(img/select-arrow.png) no-repeat 50% 50%;
+                background-size: cover;
+                width: 16px;
+                height: 14px;
+                left: 0;
+                right: 0;
+                margin: auto;
+                bottom: -13px; }
+          .home-finder .home-finder-main .single-listing-col .single-listing-content .listing-address {
+            font-family: "minion-pro", serif, serif;
+            color: #3d3421;
+            font-size: 36px;
+            font-weight: 400;
+            line-height: 1.5;
+            text-align: left;
+            margin-top: 25px; }
+          .home-finder .home-finder-main .single-listing-col .single-listing-content .optional-btns {
+            font-family: "proxima-nova", sans-serif, sans-serif;
+            color: #3d3421;
+            font-size: 12px;
+            /* Approximation due to font substitution */
+            font-weight: 400;
+            line-height: 1;
+            /* Approximation due to font substitution */
+            text-align: left;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-top: 0px; }
+            .home-finder .home-finder-main .single-listing-col .single-listing-content .optional-btns a.optional-link {
+              color: #3d3421;
+              display: inline-block;
+              margin-right: 15px;
+              border-bottom: none; }
+              .home-finder .home-finder-main .single-listing-col .single-listing-content .optional-btns a.optional-link:hover {
+                color: black;
+                border-bottom: none; }
+            .home-finder .home-finder-main .single-listing-col .single-listing-content .optional-btns .icon-block {
+              display: inline-block;
+              position: relative;
+              top: 2px; }
+          .home-finder .home-finder-main .single-listing-col .single-listing-content .listing-price {
+            display: inline-block;
+            font-family: "proxima-nova", sans-serif, sans-serif;
+            color: #3d3421;
+            font-size: 24px;
+            /* Approximation due to font substitution */
+            font-weight: 400;
+            line-height: 1;
+            /* Approximation due to font substitution */
+            text-align: left;
+            margin-top: 24px;
+            margin-right: 34px; } }
+          @media screen and (max-width: 991px) {
+            .home-finder .home-finder-main .single-listing-col .single-listing-content .listing-price {
+              display: block;
+              width: 100%;
+              margin-bottom: 20px; } }
+@media screen {
+          .home-finder .home-finder-main .single-listing-col .single-listing-content .listing-specs {
+            display: inline-block;
+            font-family: "proxima-nova", sans-serif, sans-serif;
+            color: #3d3421;
+            font-size: 18px;
+            /* Approximation due to font substitution */
+            font-weight: 400;
+            line-height: 1;
+            /* Approximation due to font substitution */
+            text-align: left;
+            text-transform: uppercase;
+            letter-spacing: 1px; }
+          .home-finder .home-finder-main .single-listing-col .single-listing-content .listing-neighborhood {
+            font-family: "proxima-nova", sans-serif, sans-serif;
+            color: #3d3421;
+            font-size: 16px;
+            /* Approximation due to font substitution */
+            font-weight: 400;
+            line-height: 1.5;
+            /* Approximation due to font substitution */
+            text-align: left;
+            margin-top: 18px;
+            text-transform: uppercase;
+            letter-spacing: 2px; } }
+          @media screen and (max-width: 991px) {
+            .home-finder .home-finder-main .single-listing-col .single-listing-content .listing-neighborhood {
+              font-size: 12px; } }
+@media screen {
+            .home-finder .home-finder-main .single-listing-col .single-listing-content .listing-neighborhood .item-padding {
+              display: inline-block;
+              margin: 0 15px; } }
+            @media screen and (max-width: 991px) {
+              .home-finder .home-finder-main .single-listing-col .single-listing-content .listing-neighborhood .item-padding {
+                margin: 0 5px; } }
+@media screen {
+              .home-finder .home-finder-main .single-listing-col .single-listing-content .listing-neighborhood .item-padding:first-child {
+                margin-left: 0; }
+            .home-finder .home-finder-main .single-listing-col .single-listing-content .listing-neighborhood a {
+              color: #3d3421; }
+          .home-finder .home-finder-main .single-listing-col .single-listing-content .action-buttons-container {
+            margin-top: 40px;
+            margin-bottom: 50px; }
+            .home-finder .home-finder-main .single-listing-col .single-listing-content .action-buttons-container .site-btn {
+              margin-right: 10px;
+              width: 100%;
+              text-align: center;
+              margin-bottom: 5px; } }
+            @media screen and (min-width: 1200px) {
+              .home-finder .home-finder-main .single-listing-col .single-listing-content .action-buttons-container .site-btn {
+                width: auto;
+                text-align: left; } }
+@media screen {
+          .home-finder .home-finder-main .single-listing-col .single-listing-content .listing-details, .home-finder .home-finder-main .single-listing-col .single-listing-content .listing-details p, .home-finder .home-finder-main .single-listing-col .single-listing-content .listing-details ul, .home-finder .home-finder-main .single-listing-col .single-listing-content .listing-details ol {
+            font-family: "minion-pro", serif, serif;
+            color: #3d3421;
+            font-weight: 400; }
+          .home-finder .home-finder-main .single-listing-col .single-listing-content .listing-details ul, .home-finder .home-finder-main .single-listing-col .single-listing-content .listing-details ol {
+            margin-top: 30px;
+            margin-bottom: 30px;
+            padding-left: 0px; }
+            .home-finder .home-finder-main .single-listing-col .single-listing-content .listing-details ul li, .home-finder .home-finder-main .single-listing-col .single-listing-content .listing-details ol li {
+              margin-left: 17px; }
+        .home-finder .home-finder-main .single-listing-col .broker-reciprocity {
+          position: relative;
+          background: #fff url(img/broker-reciprocity.png) no-repeat 0% 0%;
+          background-size: 80px;
+          padding-top: 30px;
+          line-height: 1; }
+          .home-finder .home-finder-main .single-listing-col .broker-reciprocity .disclaimer {
+            font-family: "minion-pro", serif, serif;
+            color: #3d3421;
             font-weight: 400;
             font-size: 12px;
             line-height: 1; } }

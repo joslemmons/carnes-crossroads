@@ -10,7 +10,7 @@
     background: url(./img/pattern-green.jpg) repeat center center;
     // overflow: hidden;
     z-index: 9999;
-    @include transition(all, 0.3s, ease-in-out, 0s);
+    @include transition(0.3s all);
 
     &__inner-wrap {
         position: relative;

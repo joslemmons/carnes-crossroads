@@ -14,7 +14,7 @@
     z-index: 9999999999;
     opacity: 0;
     cursor: pointer;
-    @include transition(all, 0.5s, ease-in-out, 0s);
+    @include transition(0.5s all);
 
     &:before {
         content: '';
@@ -35,7 +35,7 @@
     cursor: default;
     height: 75%;
     max-height: 75%;
-    @include transition(all, 0.3s, ease-in-out, 0s);
+    @include transition(0.3s all);
 
     .iframeWrapper {
         left: 5px;

@@ -1,6 +1,6 @@
 @media screen {
     .home-finder {
-        background: $beige;
+        // background: $beige;
         position: relative;
 
         .top-container {
@@ -9,7 +9,7 @@
             background: url(img/bg-home-finder.jpg) no-repeat 50% 50%;
             background-size: cover;
 
-            @media (max-width: $screen-sm-max) { 
+            @media (max-width: $screen-sm-max) {
                 height: 90px;
             }
 
@@ -18,12 +18,12 @@
                 top: 60px;
                 left: 40px;
 
-                @media (min-width: $screen-lg) { 
+                @media (min-width: $screen-lg) {
                     left: 0px;
                     position: relative;
                 }
 
-                @media (max-width: $screen-sm-max) { 
+                @media (max-width: $screen-sm-max) {
                     left: 0px;
                     top: 20px;
                     position: relative;
@@ -40,7 +40,7 @@
                 img {
                     max-width: 185px;
 
-                    @media (max-width: $screen-sm-max) { 
+                    @media (max-width: $screen-sm-max) {
                         max-width: 105px;
                     }
                 }
@@ -53,27 +53,27 @@
             width: 100%;
             padding: 20px 20px;
 
-            @media (max-width: $screen-sm-max) { 
+            @media (max-width: $screen-sm-max) {
                 padding: 10px 0;
             }
-            
-            @media (min-width: $screen-lg) { 
+
+            @media (min-width: $screen-lg) {
                 padding: 20px 40px;
             }
 
             ul.home-finder-nav-list {
-                @media (max-width: $screen-sm-max) { 
+                @media (max-width: $screen-sm-max) {
                     display: none;
                 }
             }
 
             a {
-                color: $brown;
+                color: $cc-brown;
                 border-bottom: 1px solid #fcf9ee;
 
                 &:hover {
-                    color: darken($brown,40%);
-                    border-bottom: 1px solid $gold;
+                    color: darken($cc-brown,40%);
+                    // border-bottom: 1px solid $gold;
                 }
             }
 
@@ -83,8 +83,8 @@
 
                 li {
                     display: inline-block;
-                    font-family: $baskerville;
-                    color: $brown;
+                    font-family: $font-serif;
+                    color: $cc-brown;
                     font-size: 14px; /* Approximation due to font substitution */
                     font-weight: 400;
                     line-height: 1;
@@ -93,7 +93,7 @@
                     list-style-type: none;
                     letter-spacing: 1px;
 
-                    @media (max-width: 1250px) { 
+                    @media (max-width: 1250px) {
                         font-size: 12px;
                     }
 
@@ -114,29 +114,29 @@
             .left-col {
                 float: right;
                 text-align: right;
-                font-family: $proxima;
-                color: $brown;
+                font-family: $font-sans;
+                color: $cc-brown;
                 font-size: 10px; /* Approximation due to font substitution */
                 font-weight: 400;
                 line-height: 30px; /* Approximation due to font substitution */
                 text-transform: uppercase;
                 letter-spacing: 1px;
 
-                @media (max-width: $screen-sm-max) { 
+                @media (max-width: $screen-sm-max) {
                     float: none;
                     text-align: center;
                     font-size: 10px;
                 }
-                
-                @media (min-width: $screen-lg) { 
+
+                @media (min-width: $screen-lg) {
                     font-size: 12px;
                 }
 
                 a {
-                    color: $brown;
+                    color: $cc-brown;
 
                     &:hover {
-                        color: darken($brown,40%);
+                        color: darken($cc-brown,40%);
                     }
                 }
 
@@ -153,7 +153,7 @@
             padding: 15px 40px 10px;
             overflow: auto;
 
-            @media (max-width: $screen-sm-max) { 
+            @media (max-width: $screen-sm-max) {
                 padding: 0 20px;
                 height: auto;
                 min-height: 105px;
@@ -170,8 +170,8 @@
                 float: left;
                 display: inline-block;
 
-                @media (max-width: $screen-sm-max) { 
-                    float: none; 
+                @media (max-width: $screen-sm-max) {
+                    float: none;
                     display: block;
                     margin-bottom: 5px;
                 }
@@ -182,8 +182,8 @@
                     background-size: 18px;
                     width: 245px;
                     padding: 10px 33px 10px 15px;
-                    font-family: $proxima;
-                    color:  $brown;
+                    font-family: $font-sans;
+                    color:  $cc-brown;
                     font-size: .75em;/* Approximation due to font substitution */
                     font-weight: 400;
                     line-height: 1;/* Approximation due to font substitution */
@@ -202,26 +202,26 @@
                 }
             }
 
-            .filter-options {  
+            .filter-options {
                 float: right;
 
-                @media (max-width: $screen-sm-max) { 
+                @media (max-width: $screen-sm-max) {
                     float: none;
                     display: none;
                     margin-bottom: 20px;
                 }
 
                 a#filter-clearAll {
-                    font-family: $oswald;
+                    font-family: $font-sans;
                     text-transform: uppercase;
                     font-size: 12px;
                     margin-right: 10px;
                     border-bottom: 1px solid #e4e2d6;
-                    color: $brown;
+                    color: $cc-brown;
                     position: relative;
                     top: 3px;
 
-                    @media (max-width: $screen-sm-max) { 
+                    @media (max-width: $screen-sm-max) {
                         display: block;
                         top: auto;
                         margin-top: 20px;
@@ -229,20 +229,20 @@
                     }
 
                     &:hover {
-                        border-bottom: $gold;
-                        color: darken($brown,40%);
+                        // border-bottom: $gold;
+                        color: darken($cc-brown,40%);
                     }
                 }
 
-                select { 
+                select {
                     -webkit-appearance: none;
                     -moz-appearance: none;
                     appearance: none;
                     background: $white url('img/select-arrow.png') no-repeat 90% 50%;
                     background-size: 8px;
                     width: 165px;
-                    font-family: $proxima;
-                    color:  $brown;
+                    font-family: $font-sans;
+                    color:  $cc-brown;
                     font-size: 10px;/* Approximation due to font substitution */
                     font-weight: 400;
                     line-height: 1;/* Approximation due to font substitution */
@@ -253,11 +253,11 @@
                     margin-bottom: 5px;
                     text-transform: uppercase;
 
-                    @media (max-width: 1250px) { 
+                    @media (max-width: 1250px) {
                         width: 120px;
                     }
 
-                    @media (max-width: $screen-sm-max) { 
+                    @media (max-width: $screen-sm-max) {
                         width: 100%;
                         background: $white url('img/select-arrow.png') no-repeat 95% 50%;
                         background-size: 8px;
@@ -269,15 +269,15 @@
                 }
             }
 
-            button { 
+            button {
                 -webkit-appearance: none;
                 -moz-appearance: none;
                 appearance: none;
                 background: $white url('img/plus.png') no-repeat 90% 50%;
                 background-size: 8px;
                 width: 165px;
-                font-family: $proxima;
-                color:  $brown;
+                font-family: $font-sans;
+                color:  $cc-brown;
                 font-size: 10px;/* Approximation due to font substitution */
                 font-weight: 400;
                 line-height: 1;/* Approximation due to font substitution */
@@ -292,7 +292,7 @@
                 margin-left: 5px;
                 @include transition(0.3s all);
 
-                @media (max-width: $screen-sm-max) { 
+                @media (max-width: $screen-sm-max) {
                     width: 100%;
                     background: $white url('img/plus.png') no-repeat 95% 50%;
                     background-size: 8px;
@@ -308,7 +308,7 @@
                 &:hover {
                     background: #fcf9ee url('img/plus.png') no-repeat 95% 50%;
                     background-size: 8px;
-                    color: $brown;
+                    color: $cc-brown;
                 }
             }
 
@@ -332,7 +332,7 @@
             }
 
             .all-listings-col {
-                background: $beige;
+                // background: $beige;
                 height: 800px;
                 overflow: auto;
                 padding: 0;
@@ -357,7 +357,7 @@
                 @media (max-width: $screen-sm-max) {
                     height: 849px;
                 }
-                
+
                 .loading {
                     background: url(img/loading.gif) no-repeat 50% 50%;
                     background-size: cover;
@@ -365,10 +365,10 @@
                     height: 24px;
                     margin: 40px auto;
                 }
-                
+
                 .end-results {
-                    font-family: $proxima;
-                    color: $brown;
+                    font-family: $font-sans;
+                    color: $cc-brown;
                     font-size: .75em; /* Approximation due to font substitution */
                     font-weight: 400;
                     line-height: 1; /* Approximation due to font substitution */
@@ -382,20 +382,20 @@
                 }
 
                 .listings-header {
-                    background: $beige;
+                    // background: $beige;
                     padding: 15px 30px 40px;
 
                     @media (max-width: $screen-sm-max) {
                         padding: 15px 30px 20px;
                     }
 
-                    a { 
+                    a {
                         border: none;
                     }
 
                     h2.listings-title {
-                        font-family: $baskerville;
-                        color: $brown;
+                        font-family: $font-serif;
+                        color: $cc-brown;
                         font-size: 2em; /* Approximation due to font substitution */
                         font-weight: 500;
                         text-align: left;
@@ -411,8 +411,8 @@
                     }
 
                     .results-count, #saveSearchSection {
-                        font-family: $proxima;
-                        color: $brown;
+                        font-family: $font-sans;
+                        color: $cc-brown;
                         font-size: .75em; /* Approximation due to font substitution */
                         font-weight: 400;
                         line-height: 1; /* Approximation due to font substitution */
@@ -431,8 +431,8 @@
                         }
 
                         #viewListingsOnMap {
-                            font-family: $proxima;
-                            color: $brown;
+                            font-family: $font-sans;
+                            color: $cc-brown;
                             font-size: .75em; /* Approximation due to font substitution */
                             font-weight: 400;
                             line-height: 1; /* Approximation due to font substitution */
@@ -444,7 +444,7 @@
                             margin-top: 10px;
 
                             &:hover {
-                                color: darken($brown,40%);
+                                color: darken($cc-brown,40%);
                                 border-bottom: none;
                             }
                         }
@@ -459,8 +459,8 @@
                             background: $white url('img/select-arrow.png') no-repeat 95% 50%;
                             background-size: 8px;
                             width: 100%;
-                            font-family: $proxima;
-                            color:  $brown;
+                            font-family: $font-sans;
+                            color:  $cc-brown;
                             font-size: 10px;/* Approximation due to font substitution */
                             font-weight: 400;
                             line-height: 1;/* Approximation due to font substitution */
@@ -483,29 +483,29 @@
 
                     .listing {
                         background: $white;
-                        border: 1px solid $beige;
+                        // border: 1px solid $beige;
                         overflow: hidden;
                         height: 200px;
-                        color: $brown;
+                        color: $cc-brown;
 
                         &:hover {
-                            background: $blue;
+                            background: $cc-brown;
                             color: $white;
                             cursor: pointer;
 
                             @media (max-width: $screen-sm-max) {
                                 background: $white;
-                                color: $brown;
+                                color: $cc-brown;
                             }
                         }
 
                         &.active {
                             background: #e4e2d6;
-                            color: $brown;
+                            color: $cc-brown;
 
                             @media (max-width: $screen-sm-max) {
                                 background: $white;
-                                color: $brown;
+                                color: $cc-brown;
                             }
                         }
 
@@ -532,7 +532,7 @@
                             background: $white url(img/broker-reciprocity.png) no-repeat 50% 50%;
                             background-size: 60px;
                             width: 75px;
-                            height: 20px;    
+                            height: 20px;
                         }
 
                         .listing-details-col {
@@ -545,7 +545,7 @@
                             }
 
                             .listing-address {
-                                font-family: $baskerville;
+                                font-family: $font-serif;
                                 font-size: 20px; /* Approximation due to font substitution */
                                 font-weight: 400;
                                 line-height: 1; /* Approximation due to font substitution */
@@ -554,7 +554,7 @@
                             }
 
                             .listing-neighborhood {
-                                font-family: $oswald;
+                                font-family: $font-sans;
                                 font-size: 12px; /* Approximation due to font substitution */
                                 font-weight: 400;
                                 line-height: 1; /* Approximation due to font substitution */
@@ -566,7 +566,7 @@
                             }
 
                             .listing-details {
-                                font-family: $proxima;
+                                font-family: $font-sans;
                                 font-size: 13px; /* Approximation due to font substitution */
                                 font-weight: 400;
                                 line-height: 1.5; /* Approximation due to font substitution */
@@ -618,9 +618,9 @@
                 }
 
                 .back-to-listings {
-                    background: $gold;
+                    // background: $gold;
                     width: 100%;
-                    font-family: $proxima;
+                    font-family: $font-sans;
                     color: $white;
                     font-size: 12px; /* Approximation due to font substitution */
                     font-weight: 400;
@@ -659,7 +659,7 @@
                     }
 
                     .slick-prev, .slick-next {
-                        border: 1px solid $brown;
+                        border: 1px solid $cc-brown;
                         background-color: $white;
                         width: 36px;
                         height: 30px;
@@ -675,8 +675,8 @@
                         }
 
                         &:before {
-                            color: $brown;
-                            font-family: $baskerville;
+                            color: $cc-brown;
+                            font-family: $font-serif;
                         }
                     }
 
@@ -707,8 +707,8 @@
                     }
 
                     .listing-actions {
-                        font-family: $proxima;
-                        color: $brown;
+                        font-family: $font-sans;
+                        color: $cc-brown;
                         font-size: 12px; /* Approximation due to font substitution */
                         font-weight: 400;
                         line-height: 1; /* Approximation due to font substitution */
@@ -722,10 +722,10 @@
                             position: relative;
 
                             a {
-                                color: $brown;
+                                color: $cc-brown;
 
                                 &:hover {
-                                    color: darken($brown,40%);
+                                    color: darken($cc-brown,40%);
                                     border-bottom: none;
                                     cursor: pointer;
                                 }
@@ -744,7 +744,7 @@
                             top: 3px;
                             margin-left: 5px;
                         }
-                        
+
                         .share-widget {
                             position: absolute;
                             background: #9f9f9f;
@@ -757,23 +757,23 @@
                             z-index: 1;
                             opacity: 0;
                             @include transition(.5s all);
-                            
+
                             &.open {
                                 opacity: 1;
                                 top: -90px;
                             }
-                            
+
                             a {
                                 color: $white;
                             }
-                            
+
                             span.share-text {
                                 position: relative;
                                 top: -4px;
                                 margin-right: 5px;
                             }
-        
-                            
+
+
                             .fb-icon {
                                 width: 18px;
                                 height: 18px;
@@ -784,13 +784,13 @@
                                 position: relative;
                                 top: 0;
                                 @include transition(.5s all);
-                                
+
                                 &:hover {
                                     top: 4px;
                                 }
-                                
+
                             }
-                            
+
                             .twitter-icon {
                                 width: 18px;
                                 height: 18px;
@@ -801,12 +801,12 @@
                                 position: relative;
                                 top: 0;
                                 @include transition(.5s all);
-                                
+
                                 &:hover {
                                     top: 4px;
                                 }
                             }
-                            
+
                             .email-icon {
                                 width: 18px;
                                 height: 18px;
@@ -816,12 +816,12 @@
                                 position: relative;
                                 top: 0;
                                 @include transition(.5s all);
-                                
+
                                 &:hover {
                                     top: 4px;
                                 }
                             }
-                            
+
                             .arrow {
                                 position: absolute;
                                 background: url(img/select-arrow.png) no-repeat 50% 50%;
@@ -837,18 +837,18 @@
                     }
 
                     .listing-address {
-                        font-family: $baskerville;
-                        color: $brown;
+                        font-family: $font-serif;
+                        color: $cc-brown;
                         font-size: 36px;
                         font-weight: 400;
-                        line-height: 1.5; 
+                        line-height: 1.5;
                         text-align: left;
                         margin-top: 25px;
                     }
-                    
+
                     .optional-btns {
-                            font-family: $proxima;
-                            color: $brown;
+                            font-family: $font-sans;
+                            color: $cc-brown;
                             font-size: 12px; /* Approximation due to font substitution */
                             font-weight: 400;
                             line-height: 1; /* Approximation due to font substitution */
@@ -858,13 +858,13 @@
                             margin-top: 0px;
 
                             a.optional-link {
-                                color: $brown;
+                                color: $cc-brown;
                                 display: inline-block;
                                 margin-right: 15px;
                                 border-bottom: none;
 
                                 &:hover {
-                                    color: darken($brown,40%);
+                                    color: darken($cc-brown,40%);
                                     border-bottom: none;
                                 }
 
@@ -879,8 +879,8 @@
 
                     .listing-price {
                         display: inline-block;
-                        font-family: $oswald;
-                        color: $brown;
+                        font-family: $font-sans;
+                        color: $cc-brown;
                         font-size: 24px; /* Approximation due to font substitution */
                         font-weight: 400;
                         line-height: 1; /* Approximation due to font substitution */
@@ -897,8 +897,8 @@
 
                     .listing-specs {
                         display: inline-block;
-                        font-family: $proxima;
-                        color: $brown;
+                        font-family: $font-sans;
+                        color: $cc-brown;
                         font-size: 18px; /* Approximation due to font substitution */
                         font-weight: 400;
                         line-height: 1; /* Approximation due to font substitution */
@@ -908,8 +908,8 @@
                     }
 
                     .listing-neighborhood {
-                        font-family: $oswald;
-                        color: $brown;
+                        font-family: $font-sans;
+                        color: $cc-brown;
                         font-size: 16px; /* Approximation due to font substitution */
                         font-weight: 400;
                         line-height: 1.5; /* Approximation due to font substitution */
@@ -937,7 +937,7 @@
 
 
                         a {
-                            color: $brown;
+                            color: $cc-brown;
                         }
                     }
 
@@ -951,7 +951,7 @@
                             width: 100%;
                             text-align: center;
                             margin-bottom: 5px;
-                            
+
                             @media (min-width: $screen-lg) {
                                 width: auto;
                                 text-align: left;
@@ -960,8 +960,8 @@
                     }
 
                     .listing-details, .listing-details p, .listing-details ul, .listing-details ol {
-                        font-family: $cronos;
-                        color: $brown;
+                        font-family: $font-serif;
+                        color: $cc-brown;
                         font-weight: 400;
                     }
 
@@ -984,8 +984,8 @@
                     line-height: 1;
 
                     .disclaimer {
-                        font-family: $cronos;
-                        color: $brown;
+                        font-family: $font-serif;
+                        color: $cc-brown;
                         font-weight: 400;
                         font-size: 12px;
                         line-height: 1;

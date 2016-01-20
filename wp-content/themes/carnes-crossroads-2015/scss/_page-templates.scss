@@ -201,7 +201,7 @@
         margin-top: 30px;
         padding: 12px;
         background-size: 110%;
-        @include transition(all, 0.3s, ease-in-out, 0s);
+        @include transition(0.3s all);
 
         &:hover {
             background-size: 120%;
@@ -426,7 +426,7 @@
             margin-bottom: 5px;
             font-size: 1.25rem;
             color: $cc-brown;
-            @include transition(all, 0.2s, ease-in-out, 0s);
+            @include transition(0.2s all);
         }
 
         h4:hover {
