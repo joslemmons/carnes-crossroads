@@ -3711,7 +3711,7 @@ a:focus, a:hover {
       padding-left: 35px; }
 
 .breadcrumbs {
-  margin: -5px 0 30px 0; }
+  margin: -5px 0 35px 0; }
   .breadcrumbs span {
     margin: 0 10px 0 0;
     font-family: "proxima-nova", sans-serif, sans-serif;
@@ -4420,50 +4420,20 @@ video {
 
 @media screen {
   .home-finder {
+    background: #f4f0e9;
     position: relative; }
-    .home-finder .top-container {
-      width: 100%;
-      height: 190px;
-      background: url(img/bg-home-finder.jpg) no-repeat 50% 50%;
-      background-size: cover; } }
-    @media screen and (max-width: 991px) {
-      .home-finder .top-container {
-        height: 90px; } }
-@media screen {
-      .home-finder .top-container .logo {
-        position: absolute;
-        top: 60px;
-        left: 40px; } }
-      @media screen and (min-width: 1200px) {
-        .home-finder .top-container .logo {
-          left: 0px;
-          position: relative; } }
-      @media screen and (max-width: 991px) {
-        .home-finder .top-container .logo {
-          left: 0px;
-          top: 20px;
-          position: relative; } }
-@media screen {
-        .home-finder .top-container .logo a {
-          border: none; }
-          .home-finder .top-container .logo a:hover {
-            border: none; }
-        .home-finder .top-container .logo img {
-          max-width: 185px; } }
-        @media screen and (max-width: 991px) {
-          .home-finder .top-container .logo img {
-            max-width: 105px; } }
-@media screen {
     .home-finder .home-finder-nav {
       background: #fcf9ee;
       width: 100%;
-      padding: 20px 20px; } }
+      padding: 30px 20px 20px;
+      position: absolute;
+      top: 100px; } }
     @media screen and (max-width: 991px) {
       .home-finder .home-finder-nav {
         padding: 10px 0; } }
     @media screen and (min-width: 1200px) {
       .home-finder .home-finder-nav {
-        padding: 20px 40px; } }
+        padding: 40px 50px 20px 50px; } }
     @media screen and (max-width: 991px) {
       .home-finder .home-finder-nav ul.home-finder-nav-list {
         display: none; } }
@@ -4686,6 +4656,7 @@ video {
         height: auto; } }
 @media screen {
       .home-finder .home-finder-main .all-listings-col {
+        background: #f4f0e9;
         height: 800px;
         overflow: auto;
         padding: 0;
@@ -4724,6 +4695,7 @@ video {
           margin-bottom: 20px;
           width: 100%; }
         .home-finder .home-finder-main .all-listings-col .listings-header {
+          background: #f4f0e9;
           padding: 15px 30px 40px; } }
         @media screen and (max-width: 991px) {
           .home-finder .home-finder-main .all-listings-col .listings-header {
@@ -4804,6 +4776,7 @@ video {
               outline: none; }
         .home-finder .home-finder-main .all-listings-col .listings-wrapper .listing {
           background: #fff;
+          border: 1px solid #f4f0e9;
           overflow: hidden;
           height: 200px;
           color: #3d3421; }
@@ -5259,50 +5232,20 @@ video {
 
 @media screen {
   .home-finder {
+    background: #f4f0e9;
     position: relative; }
-    .home-finder .top-container {
-      width: 100%;
-      height: 190px;
-      background: url(img/bg-home-finder.jpg) no-repeat 50% 50%;
-      background-size: cover; } }
-    @media screen and (max-width: 991px) {
-      .home-finder .top-container {
-        height: 90px; } }
-@media screen {
-      .home-finder .top-container .logo {
-        position: absolute;
-        top: 60px;
-        left: 40px; } }
-      @media screen and (min-width: 1200px) {
-        .home-finder .top-container .logo {
-          left: 0px;
-          position: relative; } }
-      @media screen and (max-width: 991px) {
-        .home-finder .top-container .logo {
-          left: 0px;
-          top: 20px;
-          position: relative; } }
-@media screen {
-        .home-finder .top-container .logo a {
-          border: none; }
-          .home-finder .top-container .logo a:hover {
-            border: none; }
-        .home-finder .top-container .logo img {
-          max-width: 185px; } }
-        @media screen and (max-width: 991px) {
-          .home-finder .top-container .logo img {
-            max-width: 105px; } }
-@media screen {
     .home-finder .home-finder-nav {
       background: #fcf9ee;
       width: 100%;
-      padding: 20px 20px; } }
+      padding: 30px 20px 20px;
+      position: absolute;
+      top: 100px; } }
     @media screen and (max-width: 991px) {
       .home-finder .home-finder-nav {
         padding: 10px 0; } }
     @media screen and (min-width: 1200px) {
       .home-finder .home-finder-nav {
-        padding: 20px 40px; } }
+        padding: 40px 50px 20px 50px; } }
     @media screen and (max-width: 991px) {
       .home-finder .home-finder-nav ul.home-finder-nav-list {
         display: none; } }
@@ -5525,6 +5468,7 @@ video {
         height: auto; } }
 @media screen {
       .home-finder .home-finder-main .all-listings-col {
+        background: #f4f0e9;
         height: 800px;
         overflow: auto;
         padding: 0;
@@ -5563,6 +5507,7 @@ video {
           margin-bottom: 20px;
           width: 100%; }
         .home-finder .home-finder-main .all-listings-col .listings-header {
+          background: #f4f0e9;
           padding: 15px 30px 40px; } }
         @media screen and (max-width: 991px) {
           .home-finder .home-finder-main .all-listings-col .listings-header {
@@ -5643,6 +5588,7 @@ video {
               outline: none; }
         .home-finder .home-finder-main .all-listings-col .listings-wrapper .listing {
           background: #fff;
+          border: 1px solid #f4f0e9;
           overflow: hidden;
           height: 200px;
           color: #3d3421; }

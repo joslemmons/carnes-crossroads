@@ -1,6 +1,8 @@
 // Template Page Styles
 // ===================================
 
+$navbar-offset: 100px;
+
 .hero {
     margin: 0;
     display: block;
@@ -69,7 +71,7 @@
 
     &__home {
         position: relative;
-        margin-top: 100px;
+        margin-top: $navbar-offset;
         height: 85%;
         width: 100%;
         text-align: left;
@@ -79,7 +81,7 @@
 
     &__page {
         position: relative;
-        margin-top: 100px;
+        margin-top: $navbar-offset;
         height: 68%;
         width: 100%;
         overflow: hidden;
@@ -90,7 +92,7 @@
 
     &__article {
         position: relative;
-        margin-top: 100px;
+        margin-top: $navbar-offset;
         height: 45%;
         width: 100%;
         overflow: hidden;

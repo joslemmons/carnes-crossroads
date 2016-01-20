@@ -1,64 +1,66 @@
 @media screen {
     .home-finder {
-        // background: $beige;
+        background: $beige;
         position: relative;
 
-        .top-container {
-            width: 100%;
-            height: 190px;
-            background: url(img/bg-home-finder.jpg) no-repeat 50% 50%;
-            background-size: cover;
+        // .top-container {
+        //     width: 100%;
+        //     height: 190px;
+        //     background: url(img/bg-home-finder.jpg) no-repeat 50% 50%;
+        //     background-size: cover;
 
-            @media (max-width: $screen-sm-max) {
-                height: 90px;
-            }
+        //     @media (max-width: $screen-sm-max) {
+        //         height: 90px;
+        //     }
 
-            .logo {
-                position: absolute;
-                top: 60px;
-                left: 40px;
+        //     .logo {
+        //         position: absolute;
+        //         top: 60px;
+        //         left: 40px;
 
-                @media (min-width: $screen-lg) {
-                    left: 0px;
-                    position: relative;
-                }
+        //         @media (min-width: $screen-lg) {
+        //             left: 0px;
+        //             position: relative;
+        //         }
 
-                @media (max-width: $screen-sm-max) {
-                    left: 0px;
-                    top: 20px;
-                    position: relative;
-                }
+        //         @media (max-width: $screen-sm-max) {
+        //             left: 0px;
+        //             top: 20px;
+        //             position: relative;
+        //         }
 
-                a {
-                    border: none;
+        //         a {
+        //             border: none;
 
-                    &:hover {
-                        border: none;
-                    }
-                }
+        //             &:hover {
+        //                 border: none;
+        //             }
+        //         }
 
-                img {
-                    max-width: 185px;
+        //         img {
+        //             max-width: 185px;
 
-                    @media (max-width: $screen-sm-max) {
-                        max-width: 105px;
-                    }
-                }
+        //             @media (max-width: $screen-sm-max) {
+        //                 max-width: 105px;
+        //             }
+        //         }
 
-            }
-        }
+        //     }
+        // }
 
         .home-finder-nav {
             background: #fcf9ee;
             width: 100%;
-            padding: 20px 20px;
+            padding: 30px 20px 20px;
+            position: absolute;
+            top: $navbar-offset;
 
             @media (max-width: $screen-sm-max) {
                 padding: 10px 0;
             }
 
             @media (min-width: $screen-lg) {
-                padding: 20px 40px;
+                padding: 40px 50px 20px 50px;
             }
 
             ul.home-finder-nav-list {
@@ -332,7 +334,7 @@
             }
 
             .all-listings-col {
-                // background: $beige;
+                background: $beige;
                 height: 800px;
                 overflow: auto;
                 padding: 0;
@@ -382,7 +384,7 @@
                 }
 
                 .listings-header {
-                    // background: $beige;
+                    background: $beige;
                     padding: 15px 30px 40px;
 
                     @media (max-width: $screen-sm-max) {
@@ -483,7 +485,7 @@
 
                     .listing {
                         background: $white;
-                        // border: 1px solid $beige;
+                        border: 1px solid $beige;
                         overflow: hidden;
                         height: 200px;
                         color: $cc-brown;
