@@ -1,6 +1,6 @@
 <?php
 
-include('vendor/autoload.php');
+require(get_template_directory() . '/vendor/autoload.php');
 
 // this function is apache only. make it for nginx too
 // http://www.php.net/manual/en/function.getallheaders.php#84262

@@ -16,9 +16,5 @@
   },
   "autoload": {
     "psr-4": {"HomeFinder\\": "src/HomeFinder/"}
-  },
-  "require-dev": {
-    "10up/wp_mock": "dev-master",
-    "phpunit/phpunit": "^4.8"
   }
 }
