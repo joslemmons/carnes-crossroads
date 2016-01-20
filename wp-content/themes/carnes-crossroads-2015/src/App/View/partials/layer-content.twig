@@ -1,0 +1,22 @@
+{% set shouldLinkToNewPage = false %}
+{% if child_page.content|length > 450 and child_page.content|length < 700 %}
+    {% set expandLink = '<a class="expand-link">&nbsp;&hellip;Read More</a>' %}
+    {% set firstParagraph = child_page.content|truncateToFirstParagraph(expandLink) %}
+    {{ firstParagraph }}<span class="more-content" style="display:none;">
+    <p>{{ child_page.content|slice(firstParagraph|length - expandLink|length) }}</p></span>
+{% elseif child_page.content|length >= 800 %}
+    {% set shouldLinkToNewPage = true %}
+    {% set firstParagraph = child_page.content|truncate(70) %}
+    {{ firstParagraph }}
+{% else %}
+    <p>
+        {{ child_page.content }}
+    </p>
+{% endif %}
+{% if child_page.getButton %}
+    {% set button = child_page.getButton %}
+    <a class="btn btn-green-small" href="{{ button.link }}">{{ button.title }}</a>
+{% endif %}
+{% if shouldLinkToNewPage %}
+    <a class="btn btn-green-small" href="{{ child_page.link }}">Learn More</a>
+{% endif %}

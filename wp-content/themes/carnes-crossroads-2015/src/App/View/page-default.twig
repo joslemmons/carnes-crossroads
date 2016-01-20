@@ -35,20 +35,7 @@
 
             <div class="col-xs-12 col-md-4 col-md-offset-1 text-left child-content">
                 <h4>{{ child_page.title }}</h4>
-                {% if child_page.content|length > 450 %}
-                    {% set expandLink = '<a class="expand-link">&nbsp;&hellip;Read More</a>' %}
-                    {% set firstParagraph = child_page.content|truncateToFirstParagraph(expandLink) %}
-                    {{ firstParagraph }}<span class="more-content" style="display:none;">
-                    <p>{{ child_page.content|slice(firstParagraph|length - expandLink|length) }}</p></span>
-                {% else %}
-                    <p>
-                        {{ child_page.content }}
-                    </p>
-                {% endif %}
-                {% if child_page.getButton %}
-                    {% set button = child_page.getButton %}
-                    <a class="btn btn-green-small" href="{{ button.link }}">{{ button.title }}</a>
-                {% endif %}
+                {% include "partials/layer-content.twig" %}
             </div>
         </div>
             {% else %}
@@ -56,20 +43,7 @@
                 <div class="row">
                     <div class="col-xs-12 col-md-4 text-right child-content">
                         <h4>{{ child_page.title }}</h4>
-                        {% if child_page.content|length > 450 %}
-                            {% set expandLink = '<a class="expand-link">&nbsp;&hellip;Read More</a>' %}
-                            {% set firstParagraph = child_page.content|truncateToFirstParagraph(expandLink) %}
-                            {{ firstParagraph }}<span class="more-content" style="display:none;">
-                            <p>{{ child_page.content|slice(firstParagraph|length - expandLink|length) }}</p></span>
-                        {% else %}
-                            <p>
-                                {{ child_page.content }}
-                            </p>
-                        {% endif %}
-                        {% if child_page.getButton %}
-                            {% set button = child_page.getButton %}
-                            <a class="btn btn-green-small" href="{{ button.link }}">{{ button.title }}</a>
-                        {% endif %}
+                        {% include "partials/layer-content.twig" %}
                     </div>
                     <div class="col-xs-12 col-md-7 col-md-offset-1">
                         {% if child_page.getGalleryImages|length > 1 %}
