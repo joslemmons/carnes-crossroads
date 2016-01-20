@@ -7,7 +7,7 @@
         {% set headerImage = page.parent.thumbnail %}
     {% endif %}
 
-    <section class="hero__page" style="background-image: url('{{ headerImage.src }}')">
+    <section class="hero__page" style="background-image: url('{{ headerImage.src|resize(1500) }}')">
         <div class="hero__content-tab-{{ page.getHeroColor }}">
         <div class="hero__content-inner">
             <h1>{{ page.title }}</h1>

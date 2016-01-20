@@ -412,6 +412,7 @@ class Instagram extends \TimberPost
                 $instance->social_post_image_src = $post->images->standard_resolution->url;
                 $instance->social_post_link = $post->link;
                 $instance->social_post_type = 'instagram';
+                $instance->social_post_message = $post->caption->text;
                 $data[] = $instance;
             }
 

@@ -147,16 +147,13 @@
                         {% if social_post.social_post_type == 'facebook' %}
                             <div class="slider-lg__item">
                                 <div class="social-quote">
-                                    See why buying a new home<br/>
-                                    is the best option for you.<br/>
-                                    Schedule a home tour today!<br/>
-                                    <span>#CarnesCrossroads</span>
+                                    {{ social_post.social_post_message|truncate(15) }}
                                 </div>
-                                <a href="#" class="slider-lg__item-link"></a>
+                                <a href="{{ social_post.social_post_link }}" class="slider-lg__item-link"></a>
                                 <div class="block-tab--full-bottom">
                                     <a href="https://www.facebook.com/CarnesCrossroads" target="blank"><h3>Carnes
                                             Crossroads</h3></a>
-                                    <p>September 20, 2015</p>
+                                    <p>{{ social_post.social_post_created_time|date('M d, Y') }}</p>
                                     <a href="https://www.facebook.com/CarnesCrossroads" target="blank"><img
                                                 src="{{ template_uri }}/img/icon-social-fb.png"
                                                 class="slider-lg__social"></a>
@@ -164,27 +161,34 @@
                             </div>
                         {% elseif social_post.social_post_type == 'instagram' %}
                             <div class="slider-lg__item"
-                                 style="background-image: url({{ template_uri }}/img/slider-ev-11.jpg);">
-                        <a href="#" class="slider-lg__item-link"></a>
+                                 style="background-image: url({{ social_post.social_post_image_src }});">
+                        <a href="{{ social_post.social_post_link }}" class="slider-lg__item-link"></a>
                         <div class="block-tab--full-bottom">
-                            <a href="https://www.instagram.com/carnescrossroads/" target="blank"><h3>@CarnesCrossroads</h3></a>
-                            <p>Subhead Descriptor<br/>#northwoodacademy</p>
+                            <a href="{{ social_post.social_post_link }}" target="blank"><h3>CarnesCrossroads</h3></a>
+                            {{ social_post.social_post_message }}
                             <a href="https://www.instagram.com/carnescrossroads/" target="blank"><img src="{{ template_uri }}/img/icon-social-ig.png" class="slider-lg__social"></a>
                         </div>
                     </div>
                         {% elseif social_post.social_post_type == 'youtube' %}
+                            <div class="slider-lg__item"
+                                 style="background-image: url({{ social_post.social_post_image_src }});">
+                                <a href="{{ social_post.social_post_link }}" class="slider-lg__item-link"></a>
+                                <div class="block-tab--full-bottom">
+                                    {{ social_post.social_post_message|truncate(12) }}
+                                    <a href="https://www.instagram.com/CarnesXroads/" target="blank"><img
+                                                src="{{ template_uri }}/img/icon-social-yt.png"
+                                                class="slider-lg__social"></a>
+                                </div>
+                            </div>
                         {% elseif social_post.social_post_type == 'twitter' %}
                             <div class="slider-lg__item">
                         <div class="social-quote">
-                            See why buying a new home<br/>
-                            is the best option for you.<br/>
-                            Schedule a home tour today!<br/>
-                            <span>#CarnesCrossroads</span>
+                            {{ social_post.social_post_message|twitterify }}
                         </div>
-                        <a href="#" class="slider-lg__item-link"></a>
+                                <a href="{{ social_post.social_post_link }}" class="slider-lg__item-link"></a>
                         <div class="block-tab--full-bottom">
-                            <a href="https://www.twitter.com/carnesxroads" target="blank"><h3>Carnes Crossroads</h3></a>
-                            <p>September 20, 2015</p>
+                            <a href="https://www.twitter.com/carnesxroads" target="blank"><h3>@carnesxroads</h3></a>
+                            <p>{{ social_post.social_post_created_time|date('M d, Y') }}</p>
                             <a href="https://www.twitter.com/carnesxroads" target="blank"><img src="{{ template_uri }}/img/icon-social-tw.png" class="slider-lg__social"></a>
                         </div>
                     </div>

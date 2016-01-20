@@ -131,17 +131,21 @@ class Config
     /**
      * This file is auto generated via Beanstalk
      *
-     * @return int|string
+     * @return int|string|bool
      */
     public static function getAppVersion()
     {
-        if (file_exists(ABSPATH . '/.revision')) {
-            $version = file_get_contents(ABSPATH . '/.revision');
+        if (Helper::isProduction() || Helper::isStaging()) {
+            if (file_exists(ABSPATH . '/.revision')) {
+                $version = file_get_contents(ABSPATH . '/.revision');
 
-            return trim($version);
+                return trim($version);
+            }
+
+            return time();
         }
 
-        return time();
+        return false;
     }
 
     public static function getFacebookAppId()
