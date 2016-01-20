@@ -37,270 +37,270 @@ if (
     ));
 
         if ($post->id !== Page::BUILDER_PAGE_ID) {
-        piklist('field', array(
-            'type' => 'group',
-            'field' => Page::$field_quicklinks_group,
-            'label' => 'Quicklinks',
-            'description' => 'Three boxes at the bottom of the page. By default the quicklinks boxes are "community map", "plan your visit", and "upcoming events".<br /><img width="175" src="' . get_template_directory_uri() . '/img/admin/quicklinks.png' . '" />',
-            'fields' => array(
-                array(
-                    'type' => 'radio',
-                    'field' => Page::$field_use_custom_quicklinks,
-                    'label' => 'Use Custom Quicklink Boxes?',
-                    'choices' => Page::getUseCustomQuicklinksOptionsForPiklist(),
-                    'value' => Page::USE_DEFAULT_QUICKLINKS
-                ),
-                array(
-                    'type' => 'file',
-                    'field' => Page::$field_quicklinks_group_item_one_image_attachment_id,
-                    'label' => 'Box One Image',
-                    'conditions' => array(
-                        array(
-                            'field' => Page::$field_quicklinks_group . ':' . Page::$field_use_custom_quicklinks,
-                            'value' => Page::USE_CUSTOM_QUICKLINKS
-                        )
-                    ),
-                    'columns' => 12
-                ),
-                array(
-                    'type' => 'text',
-                    'field' => Page::$field_quicklinks_group_item_one_title,
-                    'label' => 'Box One Title',
-                    'columns' => 12,
-                    'conditions' => array(
-                        array(
-                            'field' => Page::$field_quicklinks_group . ':' . Page::$field_use_custom_quicklinks,
-                            'value' => Page::USE_CUSTOM_QUICKLINKS
-                        )
-                    )
-                ),
-                array(
-                    'type' => 'text',
-                    'field' => Page::$field_quicklinks_group_item_one_subtitle,
-                    'label' => 'Box One Sub Title',
-                    'columns' => 12,
-                    'conditions' => array(
-                        array(
-                            'field' => Page::$field_quicklinks_group . ':' . Page::$field_use_custom_quicklinks,
-                            'value' => Page::USE_CUSTOM_QUICKLINKS
-                        )
-                    )
-                ),
-                array(
-                    'type' => 'radio',
-                    'field' => Page::$field_quicklinks_group_item_one_action,
-                    'label' => 'Box One Button Action',
-                    'choices' => Page::getChildPageButtonLinkOptionsForPiklist(),
-                    'value' => Page::IS_LINK_TO_PAGE,
-                    'conditions' => array(
-                        array(
-                            'field' => Page::$field_quicklinks_group . ':' . Page::$field_use_custom_quicklinks,
-                            'value' => Page::USE_CUSTOM_QUICKLINKS
-                        )
-                    )
-                ),
-                array(
-                    'type' => 'select',
-                    'field' => Page::$field_quicklinks_group_item_one_action_page_to_link_to,
-                    'label' => 'Link to Internal Page',
-                    'columns' => 12,
-                    'choices' => Helper::getPagesForPiklist(),
-                    'conditions' => array(
-                        array(
-                            'field' => Page::$field_quicklinks_group . ':' . Page::$field_quicklinks_group_item_one_action,
-                            'value' => Page::IS_LINK_TO_PAGE
-                        ),
-                        array(
-                            'field' => Page::$field_quicklinks_group . ':' . Page::$field_use_custom_quicklinks,
-                            'value' => Page::USE_CUSTOM_QUICKLINKS
-                        )
-                    )
-                ),
-                array(
-                    'type' => 'text',
-                    'field' => Page::$field_quicklinks_group_item_one_action_custom_link,
-                    'label' => 'Custom Link',
-                    'description' => 'ie. http://google.com',
-                    'columns' => 12,
-                    'conditions' => array(
-                        array(
-                            'field' => Page::$field_quicklinks_group . ':' . Page::$field_quicklinks_group_item_one_action,
-                            'value' => Page::IS_CUSTOM_LINK
-                        ),
-                        array(
-                            'field' => Page::$field_quicklinks_group . ':' . Page::$field_use_custom_quicklinks,
-                            'value' => Page::USE_CUSTOM_QUICKLINKS
-                        )
-                    )
-                ),
-                array(
-                    'type' => 'file',
-                    'field' => Page::$field_quicklinks_group_item_two_image_attachment_id,
-                    'label' => 'Box Two Image',
-                    'conditions' => array(
-                        array(
-                            'field' => Page::$field_quicklinks_group . ':' . Page::$field_use_custom_quicklinks,
-                            'value' => Page::USE_CUSTOM_QUICKLINKS
-                        )
-                    ),
-                    'columns' => 12
-                ),
-                array(
-                    'type' => 'text',
-                    'field' => Page::$field_quicklinks_group_item_two_title,
-                    'label' => 'Box Two Title',
-                    'columns' => 12,
-                    'conditions' => array(
-                        array(
-                            'field' => Page::$field_quicklinks_group . ':' . Page::$field_use_custom_quicklinks,
-                            'value' => Page::USE_CUSTOM_QUICKLINKS
-                        )
-                    )
-                ),
-                array(
-                    'type' => 'text',
-                    'field' => Page::$field_quicklinks_group_item_two_subtitle,
-                    'label' => 'Box Two Sub Title',
-                    'columns' => 12,
-                    'conditions' => array(
-                        array(
-                            'field' => Page::$field_quicklinks_group . ':' . Page::$field_use_custom_quicklinks,
-                            'value' => Page::USE_CUSTOM_QUICKLINKS
-                        )
-                    )
-                ),
-                array(
-                    'type' => 'radio',
-                    'field' => Page::$field_quicklinks_group_item_two_action,
-                    'label' => 'Box Two Button Action',
-                    'choices' => Page::getChildPageButtonLinkOptionsForPiklist(),
-                    'value' => Page::IS_LINK_TO_PAGE,
-                    'conditions' => array(
-                        array(
-                            'field' => Page::$field_quicklinks_group . ':' . Page::$field_use_custom_quicklinks,
-                            'value' => Page::USE_CUSTOM_QUICKLINKS
-                        )
-                    )
-                ),
-                array(
-                    'type' => 'select',
-                    'field' => Page::$field_quicklinks_group_item_two_action_page_to_link_to,
-                    'label' => 'Link to Internal Page',
-                    'columns' => 12,
-                    'choices' => Helper::getPagesForPiklist(),
-                    'conditions' => array(
-                        array(
-                            'field' => Page::$field_quicklinks_group . ':' . Page::$field_quicklinks_group_item_two_action,
-                            'value' => Page::IS_LINK_TO_PAGE
-                        ),
-                        array(
-                            'field' => Page::$field_quicklinks_group . ':' . Page::$field_use_custom_quicklinks,
-                            'value' => Page::USE_CUSTOM_QUICKLINKS
-                        )
-                    )
-                ),
-                array(
-                    'type' => 'text',
-                    'field' => Page::$field_quicklinks_group_item_two_action_custom_link,
-                    'label' => 'Custom Link',
-                    'description' => 'ie. http://google.com',
-                    'columns' => 12,
-                    'conditions' => array(
-                        array(
-                            'field' => Page::$field_quicklinks_group . ':' . Page::$field_quicklinks_group_item_two_action,
-                            'value' => Page::IS_CUSTOM_LINK
-                        ),
-                        array(
-                            'field' => Page::$field_quicklinks_group . ':' . Page::$field_use_custom_quicklinks,
-                            'value' => Page::USE_CUSTOM_QUICKLINKS
-                        )
-                    )
-                ),
-                array(
-                    'type' => 'file',
-                    'field' => Page::$field_quicklinks_group_item_three_image_attachment_id,
-                    'label' => 'Box Three Image',
-                    'conditions' => array(
-                        array(
-                            'field' => Page::$field_quicklinks_group . ':' . Page::$field_use_custom_quicklinks,
-                            'value' => Page::USE_CUSTOM_QUICKLINKS
-                        )
-                    ),
-                    'columns' => 12
-                ),
-                array(
-                    'type' => 'text',
-                    'field' => Page::$field_quicklinks_group_item_three_title,
-                    'label' => 'Box Three Title',
-                    'columns' => 12,
-                    'conditions' => array(
-                        array(
-                            'field' => Page::$field_quicklinks_group . ':' . Page::$field_use_custom_quicklinks,
-                            'value' => Page::USE_CUSTOM_QUICKLINKS
-                        )
-                    )
-                ),
-                array(
-                    'type' => 'text',
-                    'field' => Page::$field_quicklinks_group_item_three_subtitle,
-                    'label' => 'Box Three Sub Title',
-                    'columns' => 12,
-                    'conditions' => array(
-                        array(
-                            'field' => Page::$field_quicklinks_group . ':' . Page::$field_use_custom_quicklinks,
-                            'value' => Page::USE_CUSTOM_QUICKLINKS
-                        )
-                    )
-                ),
-                array(
-                    'type' => 'radio',
-                    'field' => Page::$field_quicklinks_group_item_three_action,
-                    'label' => 'Box Three Button Action',
-                    'choices' => Page::getChildPageButtonLinkOptionsForPiklist(),
-                    'value' => Page::IS_LINK_TO_PAGE,
-                    'conditions' => array(
-                        array(
-                            'field' => Page::$field_quicklinks_group . ':' . Page::$field_use_custom_quicklinks,
-                            'value' => Page::USE_CUSTOM_QUICKLINKS
-                        )
-                    )
-                ),
-                array(
-                    'type' => 'select',
-                    'field' => Page::$field_quicklinks_group_item_three_action_page_to_link_to,
-                    'label' => 'Link to Internal Page',
-                    'columns' => 12,
-                    'choices' => Helper::getPagesForPiklist(),
-                    'conditions' => array(
-                        array(
-                            'field' => Page::$field_quicklinks_group . ':' . Page::$field_quicklinks_group_item_three_action,
-                            'value' => Page::IS_LINK_TO_PAGE
-                        ),
-                        array(
-                            'field' => Page::$field_quicklinks_group . ':' . Page::$field_use_custom_quicklinks,
-                            'value' => Page::USE_CUSTOM_QUICKLINKS
-                        )
-                    )
-                ),
-                array(
-                    'type' => 'text',
-                    'field' => Page::$field_quicklinks_group_item_three_action_custom_link,
-                    'label' => 'Custom Link',
-                    'description' => 'ie. http://google.com',
-                    'columns' => 12,
-                    'conditions' => array(
-                        array(
-                            'field' => Page::$field_quicklinks_group . ':' . Page::$field_quicklinks_group_item_three_action,
-                            'value' => Page::IS_CUSTOM_LINK
-                        ),
-                        array(
-                            'field' => Page::$field_quicklinks_group . ':' . Page::$field_use_custom_quicklinks,
-                            'value' => Page::USE_CUSTOM_QUICKLINKS
-                        )
-                    )
-                )
-            )
-        ));
+//        piklist('field', array(
+//            'type' => 'group',
+//            'field' => Page::$field_quicklinks_group,
+//            'label' => 'Quicklinks',
+//            'description' => 'Three boxes at the bottom of the page. By default the quicklinks boxes are "community map", "plan your visit", and "upcoming events".<br /><img width="175" src="' . get_template_directory_uri() . '/img/admin/quicklinks.png' . '" />',
+//            'fields' => array(
+//                array(
+//                    'type' => 'radio',
+//                    'field' => Page::$field_use_custom_quicklinks,
+//                    'label' => 'Use Custom Quicklink Boxes?',
+//                    'choices' => Page::getUseCustomQuicklinksOptionsForPiklist(),
+//                    'value' => Page::USE_DEFAULT_QUICKLINKS
+//                ),
+//                array(
+//                    'type' => 'file',
+//                    'field' => Page::$field_quicklinks_group_item_one_image_attachment_id,
+//                    'label' => 'Box One Image',
+//                    'conditions' => array(
+//                        array(
+//                            'field' => Page::$field_quicklinks_group . ':' . Page::$field_use_custom_quicklinks,
+//                            'value' => Page::USE_CUSTOM_QUICKLINKS
+//                        )
+//                    ),
+//                    'columns' => 12
+//                ),
+//                array(
+//                    'type' => 'text',
+//                    'field' => Page::$field_quicklinks_group_item_one_title,
+//                    'label' => 'Box One Title',
+//                    'columns' => 12,
+//                    'conditions' => array(
+//                        array(
+//                            'field' => Page::$field_quicklinks_group . ':' . Page::$field_use_custom_quicklinks,
+//                            'value' => Page::USE_CUSTOM_QUICKLINKS
+//                        )
+//                    )
+//                ),
+//                array(
+//                    'type' => 'text',
+//                    'field' => Page::$field_quicklinks_group_item_one_subtitle,
+//                    'label' => 'Box One Sub Title',
+//                    'columns' => 12,
+//                    'conditions' => array(
+//                        array(
+//                            'field' => Page::$field_quicklinks_group . ':' . Page::$field_use_custom_quicklinks,
+//                            'value' => Page::USE_CUSTOM_QUICKLINKS
+//                        )
+//                    )
+//                ),
+//                array(
+//                    'type' => 'radio',
+//                    'field' => Page::$field_quicklinks_group_item_one_action,
+//                    'label' => 'Box One Button Action',
+//                    'choices' => Page::getChildPageButtonLinkOptionsForPiklist(),
+//                    'value' => Page::IS_LINK_TO_PAGE,
+//                    'conditions' => array(
+//                        array(
+//                            'field' => Page::$field_quicklinks_group . ':' . Page::$field_use_custom_quicklinks,
+//                            'value' => Page::USE_CUSTOM_QUICKLINKS
+//                        )
+//                    )
+//                ),
+//                array(
+//                    'type' => 'select',
+//                    'field' => Page::$field_quicklinks_group_item_one_action_page_to_link_to,
+//                    'label' => 'Link to Internal Page',
+//                    'columns' => 12,
+//                    'choices' => Helper::getPagesForPiklist(),
+//                    'conditions' => array(
+//                        array(
+//                            'field' => Page::$field_quicklinks_group . ':' . Page::$field_quicklinks_group_item_one_action,
+//                            'value' => Page::IS_LINK_TO_PAGE
+//                        ),
+//                        array(
+//                            'field' => Page::$field_quicklinks_group . ':' . Page::$field_use_custom_quicklinks,
+//                            'value' => Page::USE_CUSTOM_QUICKLINKS
+//                        )
+//                    )
+//                ),
+//                array(
+//                    'type' => 'text',
+//                    'field' => Page::$field_quicklinks_group_item_one_action_custom_link,
+//                    'label' => 'Custom Link',
+//                    'description' => 'ie. http://google.com',
+//                    'columns' => 12,
+//                    'conditions' => array(
+//                        array(
+//                            'field' => Page::$field_quicklinks_group . ':' . Page::$field_quicklinks_group_item_one_action,
+//                            'value' => Page::IS_CUSTOM_LINK
+//                        ),
+//                        array(
+//                            'field' => Page::$field_quicklinks_group . ':' . Page::$field_use_custom_quicklinks,
+//                            'value' => Page::USE_CUSTOM_QUICKLINKS
+//                        )
+//                    )
+//                ),
+//                array(
+//                    'type' => 'file',
+//                    'field' => Page::$field_quicklinks_group_item_two_image_attachment_id,
+//                    'label' => 'Box Two Image',
+//                    'conditions' => array(
+//                        array(
+//                            'field' => Page::$field_quicklinks_group . ':' . Page::$field_use_custom_quicklinks,
+//                            'value' => Page::USE_CUSTOM_QUICKLINKS
+//                        )
+//                    ),
+//                    'columns' => 12
+//                ),
+//                array(
+//                    'type' => 'text',
+//                    'field' => Page::$field_quicklinks_group_item_two_title,
+//                    'label' => 'Box Two Title',
+//                    'columns' => 12,
+//                    'conditions' => array(
+//                        array(
+//                            'field' => Page::$field_quicklinks_group . ':' . Page::$field_use_custom_quicklinks,
+//                            'value' => Page::USE_CUSTOM_QUICKLINKS
+//                        )
+//                    )
+//                ),
+//                array(
+//                    'type' => 'text',
+//                    'field' => Page::$field_quicklinks_group_item_two_subtitle,
+//                    'label' => 'Box Two Sub Title',
+//                    'columns' => 12,
+//                    'conditions' => array(
+//                        array(
+//                            'field' => Page::$field_quicklinks_group . ':' . Page::$field_use_custom_quicklinks,
+//                            'value' => Page::USE_CUSTOM_QUICKLINKS
+//                        )
+//                    )
+//                ),
+//                array(
+//                    'type' => 'radio',
+//                    'field' => Page::$field_quicklinks_group_item_two_action,
+//                    'label' => 'Box Two Button Action',
+//                    'choices' => Page::getChildPageButtonLinkOptionsForPiklist(),
+//                    'value' => Page::IS_LINK_TO_PAGE,
+//                    'conditions' => array(
+//                        array(
+//                            'field' => Page::$field_quicklinks_group . ':' . Page::$field_use_custom_quicklinks,
+//                            'value' => Page::USE_CUSTOM_QUICKLINKS
+//                        )
+//                    )
+//                ),
+//                array(
+//                    'type' => 'select',
+//                    'field' => Page::$field_quicklinks_group_item_two_action_page_to_link_to,
+//                    'label' => 'Link to Internal Page',
+//                    'columns' => 12,
+//                    'choices' => Helper::getPagesForPiklist(),
+//                    'conditions' => array(
+//                        array(
+//                            'field' => Page::$field_quicklinks_group . ':' . Page::$field_quicklinks_group_item_two_action,
+//                            'value' => Page::IS_LINK_TO_PAGE
+//                        ),
+//                        array(
+//                            'field' => Page::$field_quicklinks_group . ':' . Page::$field_use_custom_quicklinks,
+//                            'value' => Page::USE_CUSTOM_QUICKLINKS
+//                        )
+//                    )
+//                ),
+//                array(
+//                    'type' => 'text',
+//                    'field' => Page::$field_quicklinks_group_item_two_action_custom_link,
+//                    'label' => 'Custom Link',
+//                    'description' => 'ie. http://google.com',
+//                    'columns' => 12,
+//                    'conditions' => array(
+//                        array(
+//                            'field' => Page::$field_quicklinks_group . ':' . Page::$field_quicklinks_group_item_two_action,
+//                            'value' => Page::IS_CUSTOM_LINK
+//                        ),
+//                        array(
+//                            'field' => Page::$field_quicklinks_group . ':' . Page::$field_use_custom_quicklinks,
+//                            'value' => Page::USE_CUSTOM_QUICKLINKS
+//                        )
+//                    )
+//                ),
+//                array(
+//                    'type' => 'file',
+//                    'field' => Page::$field_quicklinks_group_item_three_image_attachment_id,
+//                    'label' => 'Box Three Image',
+//                    'conditions' => array(
+//                        array(
+//                            'field' => Page::$field_quicklinks_group . ':' . Page::$field_use_custom_quicklinks,
+//                            'value' => Page::USE_CUSTOM_QUICKLINKS
+//                        )
+//                    ),
+//                    'columns' => 12
+//                ),
+//                array(
+//                    'type' => 'text',
+//                    'field' => Page::$field_quicklinks_group_item_three_title,
+//                    'label' => 'Box Three Title',
+//                    'columns' => 12,
+//                    'conditions' => array(
+//                        array(
+//                            'field' => Page::$field_quicklinks_group . ':' . Page::$field_use_custom_quicklinks,
+//                            'value' => Page::USE_CUSTOM_QUICKLINKS
+//                        )
+//                    )
+//                ),
+//                array(
+//                    'type' => 'text',
+//                    'field' => Page::$field_quicklinks_group_item_three_subtitle,
+//                    'label' => 'Box Three Sub Title',
+//                    'columns' => 12,
+//                    'conditions' => array(
+//                        array(
+//                            'field' => Page::$field_quicklinks_group . ':' . Page::$field_use_custom_quicklinks,
+//                            'value' => Page::USE_CUSTOM_QUICKLINKS
+//                        )
+//                    )
+//                ),
+//                array(
+//                    'type' => 'radio',
+//                    'field' => Page::$field_quicklinks_group_item_three_action,
+//                    'label' => 'Box Three Button Action',
+//                    'choices' => Page::getChildPageButtonLinkOptionsForPiklist(),
+//                    'value' => Page::IS_LINK_TO_PAGE,
+//                    'conditions' => array(
+//                        array(
+//                            'field' => Page::$field_quicklinks_group . ':' . Page::$field_use_custom_quicklinks,
+//                            'value' => Page::USE_CUSTOM_QUICKLINKS
+//                        )
+//                    )
+//                ),
+//                array(
+//                    'type' => 'select',
+//                    'field' => Page::$field_quicklinks_group_item_three_action_page_to_link_to,
+//                    'label' => 'Link to Internal Page',
+//                    'columns' => 12,
+//                    'choices' => Helper::getPagesForPiklist(),
+//                    'conditions' => array(
+//                        array(
+//                            'field' => Page::$field_quicklinks_group . ':' . Page::$field_quicklinks_group_item_three_action,
+//                            'value' => Page::IS_LINK_TO_PAGE
+//                        ),
+//                        array(
+//                            'field' => Page::$field_quicklinks_group . ':' . Page::$field_use_custom_quicklinks,
+//                            'value' => Page::USE_CUSTOM_QUICKLINKS
+//                        )
+//                    )
+//                ),
+//                array(
+//                    'type' => 'text',
+//                    'field' => Page::$field_quicklinks_group_item_three_action_custom_link,
+//                    'label' => 'Custom Link',
+//                    'description' => 'ie. http://google.com',
+//                    'columns' => 12,
+//                    'conditions' => array(
+//                        array(
+//                            'field' => Page::$field_quicklinks_group . ':' . Page::$field_quicklinks_group_item_three_action,
+//                            'value' => Page::IS_CUSTOM_LINK
+//                        ),
+//                        array(
+//                            'field' => Page::$field_quicklinks_group . ':' . Page::$field_use_custom_quicklinks,
+//                            'value' => Page::USE_CUSTOM_QUICKLINKS
+//                        )
+//                    )
+//                )
+//            )
+//        ));
         }
 
         $children = $post->children('page');
