@@ -122,8 +122,8 @@
                 <option value="3" {% if '3' == filters.getBathrooms|split(',')[0] %}selected="selected"{% endif %}>3+ Bathrooms</option>
                 <option value="4" {% if '4' == filters.getBathrooms|split(',')[0] %}selected="selected"{% endif %}>4+ Bathrooms</option>
             </select>
-            <label>Include Plans</label>
-            <input type="checkbox" id="filter-includePlans" value="yes" />
+            <input type="checkbox" id="filter-includePlans" class="pull-right" value="yes" />
+            <label for="filter-includePlans">Include Plans</label>
             {#<button type="button" class="hidden-sm hidden-xs more-button">More</button>#}
             <div class="more-options">
                 {#<select id="filter-lastUpdate">#}
