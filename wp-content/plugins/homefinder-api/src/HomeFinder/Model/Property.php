@@ -271,7 +271,9 @@ class Property
 
     public function getNeighborhood()
     {
-        return $this->project_name;
+        // always show Carnes Crossroads
+//        return $this->project_name;
+        return 'Carnes Crossroads';
     }
 
     public function getFullBathroomCount()

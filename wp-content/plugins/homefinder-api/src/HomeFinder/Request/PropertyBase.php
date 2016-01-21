@@ -22,7 +22,7 @@ class PropertyBase
         'record_type' => '6_Unit,3_Plot',
         'max_pb__PurchaseListPrice__c' => 'any',
         'min_pb__PurchaseListPrice__c' => '0',
-        'pb__CommunityId__c' => 'a0A800000077YaiEAE',
+        'pb__CommunityId__c' => 'a0A800000077YasEAE',
         'sort' => 'pb__PurchaseListPrice__c ASC',
         'in_pb__UnitBedrooms__c' => '',
         'is_for_sale' => 'Sale',

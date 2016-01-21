@@ -4,6 +4,7 @@ define('WP_DEBUG', true);
 define('WP_DEBUG_LOG', true);
 define('WP_DEBUG_DISPLAY', true);
 define('DISALLOW_FILE_EDIT', true);
+define('WP_DISABLE_TRANSIENTS', true);
 
 // Are we in SSL mode?
 if (!empty($_SERVER['HTTPS']) && $_SERVER['HTTPS'] != 'off') {

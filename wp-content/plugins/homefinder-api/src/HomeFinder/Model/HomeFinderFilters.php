@@ -225,7 +225,6 @@ class HomeFinderFilters
      */
     public function shouldIncludeMLS()
     {
-        return false;
         return $this->_searchMLS;
     }
 

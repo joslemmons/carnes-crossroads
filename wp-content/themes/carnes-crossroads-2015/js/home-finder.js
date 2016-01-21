@@ -588,8 +588,8 @@ jQuery(function ($) {
     });
 
     // misc vars
-    var mapMinZoom = 15;
-    var mapMaxZoom = 17;
+    var mapMinZoom = 17;
+    var mapMaxZoom = 19;
 
 //set custom tiles (maptype)
     var diOptions = {
@@ -609,8 +609,8 @@ jQuery(function ($) {
 
 //<?php if ( $z_query->query->is_archive ) { ?>
     // remove below to zoom into properties
-    bounds.extend(new google.maps.LatLng(32.83064187300698, -79.93316068560326));	//set min x/y
-    bounds.extend(new google.maps.LatLng(32.89325262945007, -79.88402077618287));	//set max x/y
+    //bounds.extend(new google.maps.LatLng(32.83064187300698, -79.93316068560326));	//set min x/y
+    //bounds.extend(new google.maps.LatLng(32.89325262945007, -79.88402077618287));	//set max x/y
 //<?php } ?>
 
     /**
@@ -746,7 +746,7 @@ jQuery(function ($) {
     function initImap(properties) {
         var myOptions = {
             zoom: mapMinZoom,
-            center: new google.maps.LatLng(32.850595, -79.911171),
+            center: new google.maps.LatLng(33.055457, -80.103917),
             navigationControl: true,
             mapTypeControl: false,
             scaleControl: false,
@@ -799,7 +799,7 @@ jQuery(function ($) {
                 map.setCenter(new google.maps.LatLng(locations[0][1], locations[0][2]));
             }
             else {
-                map.setCenter(new google.maps.LatLng(32.850595, -79.911171));
+                map.setCenter(new google.maps.LatLng(33.055457, -80.103917));
             }
         });
 

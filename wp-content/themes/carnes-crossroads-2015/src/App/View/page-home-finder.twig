@@ -73,37 +73,34 @@
 
         <div class="filter-options">
             <a href="#" id="filter-clearAll">Clear</a>
-            <select id="filter-propertyType">
-                <option value="">Property Type</option>
-                <option value="home" {% if 'home' in filters.getPropertyTypes %}selected="selected"{% endif %}>Single
-                    Family Home
-                </option>
-                <option value="condominium"
-                        {% if 'condominium' in filters.getPropertyTypes %}selected="selected"{% endif %}>Condominium
-                </option>
-                <option value="townhome" {% if 'townhome' in filters.getPropertyTypes %}selected="selected"{% endif %}>
-                    Townhome
-                </option>
-                <option value="homesite" {% if 'homesite' in filters.getPropertyTypes %}selected="selected"{% endif %}>
-                    Homesite
-                </option>
-            </select>
-            <select id="filter-neighborhood">
-                <option value="">Neighborhood</option>
-                {% for pbaseId, name in function('\\HomeFinder\\Model\\HomeFinderFilters::getPropertyBaseNeighborhoods') %}
-                <option value="{{ pbaseId }}"
-                        {% if pbaseId in filters.getNeighborhoods %}selected="selected"{% endif %}>{{ name }}</option>
-                {% endfor %}
-            </select>
+            {#<select id="filter-propertyType">#}
+            {#<option value="">Property Type</option>#}
+            {#<option value="home" {% if 'home' in filters.getPropertyTypes %}selected="selected"{% endif %}>Single#}
+            {#Family Home#}
+            {#</option>#}
+            {#<option value="condominium"#}
+            {#{% if 'condominium' in filters.getPropertyTypes %}selected="selected"{% endif %}>Condominium#}
+            {#</option>#}
+            {#<option value="townhome" {% if 'townhome' in filters.getPropertyTypes %}selected="selected"{% endif %}>#}
+            {#Townhome#}
+            {#</option>#}
+            {#<option value="homesite" {% if 'homesite' in filters.getPropertyTypes %}selected="selected"{% endif %}>#}
+            {#Homesite#}
+            {#</option>#}
+            {#</select>#}
+            {#<select id="filter-neighborhood">#}
+            {#<option value="">Neighborhood</option>#}
+            {#{% for pbaseId, name in function('\\HomeFinder\\Model\\HomeFinderFilters::getPropertyBaseNeighborhoods') %}#}
+            {#<option value="{{ pbaseId }}"#}
+            {#{% if pbaseId in filters.getNeighborhoods %}selected="selected"{% endif %}>{{ name }}</option>#}
+            {#{% endfor %}#}
+            {#</select>#}
             <select id="filter-price">
                 <option value="">Price</option>
-                <option value="0-250000" {% if '250000' == filters.getMaxPrice %}selected="selected"{% endif %}>Under $250,000</option>
-                <option value="250000-500000" {% if '250000' == filters.getMinPrice %}selected="selected"{% endif %}>$250,000 - $500,000</option>
-                <option value="500000-750000" {% if '500000' == filters.getMinPrice %}selected="selected"{% endif %}>$500,000 - $750,000</option>
-                <option value="750000-1000000" {% if '750000' == filters.getMinPrice %}selected="selected"{% endif %}>$750,000 - $1,000,000</option>
-                <option value="1000000-1500000" {% if '1000000' == filters.getMinPrice %}selected="selected"{% endif %}>$1,000,000 - $1,500,000</option>
-                <option value="1500000-3000000" {% if '1500000' == filters.getMinPrice %}selected="selected"{% endif %}>$1,500,000 - $3,000,000</option>
-                <option value="3000000-any" {% if '3000000' == filters.getMinPrice %}selected="selected"{% endif %}>$3,000,000 and up</option>
+                <option value="0-2750000" {% if '275000' == filters.getMaxPrice %}selected="selected"{% endif %}>Under $275,000</option>
+                <option value="275000-300000" {% if '275000' == filters.getMinPrice %}selected="selected"{% endif %}>$275,000 - $300,000</option>
+                <option value="300000-350000" {% if '300000' == filters.getMinPrice %}selected="selected"{% endif %}>$300,000 - $350,000</option>
+                <option value="350000-any" {% if '350000' == filters.getMinPrice %}selected="selected"{% endif %}>$350,000 - and up</option>
             </select>
             <select id="filter-bedrooms">
                 <option value="">Bedrooms</option>
