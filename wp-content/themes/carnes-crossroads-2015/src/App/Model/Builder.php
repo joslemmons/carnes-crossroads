@@ -133,10 +133,10 @@ class Builder extends Page
     public static function getBedroomChoicesForPiklist()
     {
         $return = array();
-        $numbers = range(1, 10);
+        $numbers = range(0, 10);
         foreach ($numbers as $number) {
             $plural = '';
-            if ($number > 1) {
+            if ($number > 1 || $number === 0) {
                 $plural = 's';
             }
             $return[$number] = $number . ' Bedroom' . $plural;
@@ -148,10 +148,10 @@ class Builder extends Page
     public static function getFullBathroomChoicesForPiklist()
     {
         $return = array();
-        $numbers = range(1, 10);
+        $numbers = range(0, 10);
         foreach ($numbers as $number) {
             $plural = '';
-            if ($number > 1) {
+            if ($number > 1 || $number === 0) {
                 $plural = 's';
             }
             $return[$number] = $number . ' Full Bathroom' . $plural;
@@ -163,10 +163,10 @@ class Builder extends Page
     public static function getHalfBathroomChoicesForPiklist()
     {
         $return = array();
-        $numbers = range(1, 10);
+        $numbers = range(0, 10);
         foreach ($numbers as $number) {
             $plural = '';
-            if ($number > 1) {
+            if ($number > 1 || $number === 0) {
                 $plural = 's';
             }
             $return[$number] = $number . ' Half Bathroom' . $plural;
@@ -217,6 +217,8 @@ class Builder extends Page
                 $floor_plan_attachment_id = array_pop($floor_plan_attachment_id);
             }
             $floor_plan->floor_plan_src = wp_get_attachment_url($floor_plan_attachment_id);
+
+            $floor_plan->builder = $this;
 
             $floor_plans[] = $floor_plan;
         }
