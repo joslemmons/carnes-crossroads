@@ -58,10 +58,10 @@
         <div>
             {% if function('is_user_logged_in') %}
             <span class="account-links">
-                <a href="#" class="showAccountPage">Saved Listings {{ current_user.getSavedPropertyIds|length }}</a> /
+                <a href="#" class="showAccountPage">Saved Listings {{ current_user.getSavedPropertyIds|length }}</a>
+                &nbsp;/&nbsp;
                 <a href="#" class="showAccountPage">Saved Searches {{ current_user.getRawSavedSearches|length }}</a>
-            </span> /
-            <span class="account-link">
+                &nbsp;/&nbsp;
                 <a href="{{ function('wp_logout_url', function('get_permalink', 35)) }}">Logout</a>
             </span>
             {% else %}
