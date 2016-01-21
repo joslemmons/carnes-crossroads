@@ -36,6 +36,10 @@
 
 .footer {
 
+    &__social {
+        margin: 0;
+    }
+
     &__social-item {
         list-style-type: none;
         display: inline-block;
@@ -56,7 +60,7 @@
 
     &__logo {
         position: relative;
-        margin-top: -50px;
+        margin-top: -35px;
 
         img {
             width: 85%;

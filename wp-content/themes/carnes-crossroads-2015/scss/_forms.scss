@@ -148,6 +148,7 @@
     border-radius: 0;
     display: inline-block;
     position: relative;
+    outline: none;
 
     &:active, &:checked:active {
         background-color: $white;
@@ -177,7 +178,7 @@
 }
 
 .gform_wrapper .gform_footer {
-    margin-top: -75px !important;
+    margin-top: -85px !important;
 }
 
 .events__form-container .gform_wrapper .gform_footer {
@@ -200,7 +201,7 @@
     background-color: $cc-green;
     border: 1px solid darken($cc-green, 10);
     outline: 5px solid $cc-green;
-    left: 81%;
+    left: 78%;
 
     &:hover {
         color: $white;
