@@ -3661,7 +3661,9 @@ a:focus, a:hover {
     width: 13%;
     margin: 0 0 0 5%;
     max-width: 225px;
-    float: left; }
+    float: left;
+    -webkit-transition: 0.3s all;
+    transition: 0.3s all; }
   .main-nav__sub {
     margin: 0;
     float: right;
@@ -3671,7 +3673,9 @@ a:focus, a:hover {
   .main-nav__sub-item {
     margin: 0 0 0 25px;
     padding: 15px 0;
-    display: inline-block; }
+    display: inline-block;
+    -webkit-transition: 0.3s all;
+    transition: 0.3s all; }
     .main-nav__sub-item:first-of-type {
       padding-left: 35px;
       background: url(./img/grad-divider.png) no-repeat left top; }
@@ -3695,12 +3699,16 @@ a:focus, a:hover {
     padding: 0 5% 0 10px;
     list-style-type: none;
     text-align: right;
-    background: url(./img/grad-green.png) no-repeat right top/cover; }
+    background: url(./img/grad-green.png) no-repeat right top/cover;
+    -webkit-transition: 1s all;
+    transition: 1s all; }
   .main-nav__primary-item {
     margin: 0 0 0 20px;
     height: 100%;
     padding: 25px 0;
-    display: inline-block; }
+    display: inline-block;
+    -webkit-transition: 0.3s all;
+    transition: 0.3s all; }
     @media (min-width: 1550px) {
       .main-nav__primary-item {
         margin: 0 0 0 35px;
@@ -3723,9 +3731,7 @@ a:focus, a:hover {
       text-shadow: 0 2px 10px rgba(0, 0, 0, 0.5); }
 
 .main-nav.smaller {
-  padding: 10px 0 0 0;
-  -webkit-transition: 0.3s all;
-  transition: 0.3s all; }
+  padding: 10px 0 0 0; }
   .main-nav.smaller .main-nav__logo {
     margin-top: 5px;
     width: 140px; }
