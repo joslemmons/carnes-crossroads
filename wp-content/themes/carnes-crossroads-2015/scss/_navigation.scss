@@ -18,7 +18,7 @@
     }
 
     &__logo {
-        width: 15%;
+        width: 13%;
         margin: 0 0 0 5%;
         max-width: 225px;
         float: left;
@@ -108,10 +108,12 @@
 }
 
 .main-nav.smaller {
-    padding: 13px 0 0 0;
+    padding: 10px 0 0 0;
+    @include transition(0.3s all);
 
     .main-nav__logo {
-        width: 9%;
+        margin-top: 5px;
+        width: 140px;
     }
 
     .main-nav__primary {
