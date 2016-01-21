@@ -4,6 +4,8 @@ use HomeFinder\Model\HomeFinderFilters;
 
 class FloorPlan
 {
+    public $isFloorPlan = true;
+
     public $title;
     public $description;
     public $featured_images;
@@ -15,6 +17,15 @@ class FloorPlan
     public $brochure_src;
     public $floor_plan_src;
     public $builder;
+
+    public function getFeaturedImageSrc()
+    {
+        if (is_array($this->featured_images)) {
+            $featured_image = array_shift($this->featured_images);
+        }
+
+        return $featured_image;
+    }
 
     public static function withFilter(HomeFinderFilters $filters)
     {
@@ -36,10 +47,14 @@ class FloorPlan
                 }
             }
 
+            if ($filters->getMinPrice() !== false && $filters->getMaxPrice() !== false) {
             if ($floor_plan->price < $filters->getMinPrice() || $floor_plan->price > $filters->getMaxPrice()) {
                 return false;
             }
+            }
 
+
+            if ($filters->getBedrooms() !== false) {
             $bedrooms = $filters->getBedrooms();
             if ($bedrooms !== false) {
                 $bedrooms = array_shift($bedrooms);
@@ -49,6 +64,10 @@ class FloorPlan
                 }
             }
 
+            }
+
+
+            if ($filters->getBathrooms() !== false) {
             $bathrooms = $filters->getBathrooms();
             if ($bathrooms !== false) {
                 $bathrooms = array_shift($bathrooms);
@@ -57,6 +76,10 @@ class FloorPlan
                     return false;
                 }
             }
+            }
+
+            return true;
+
         });
 
         return $floor_plans;
