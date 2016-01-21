@@ -16,6 +16,7 @@ class Twig
         $twig->addFilter('slugify', new \Twig_Filter_Function(array(get_class(), 'slugify')));
         $twig->addFilter('truncateToFirstParagraph', new \Twig_Filter_Function(array(get_class(), 'truncateToFirstParagraph')));
         $twig->addFilter('combineLines', new \Twig_Filter_Function(array(get_class(), 'combineLines')));
+        $twig->addFilter('youtubeify', new \Twig_Filter_Function(array(get_class(), 'youtubeify')));
         return $twig;
     }
 
@@ -33,6 +34,24 @@ class Twig
     {
         $slugify = new Slugify();
         return $slugify->slugify($text);
+    }
+
+    public static function youtubeify($url)
+    {
+        if (stristr($url, 'embed') !== false) {
+            return $url;
+        }
+
+        $matches = array();
+        preg_match('/[\\?\\&]v=([^\\?\\&]+)/', $url, $matches);
+
+        if (isset($matches[1]) === false) {
+            return $url;
+        }
+
+        $id = $matches[1];
+
+        return "https://www.youtube.com/embed/$id?rel=0&showinfo=0&color=white&iv_load_policy=3";
     }
 
     public static function twitterify($ret)
