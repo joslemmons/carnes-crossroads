@@ -4802,14 +4802,15 @@ video {
       .home-finder .home-finder-filters .account-links {
         display: inline-block;
         float: left;
-        font-family: "Oswald", sans-serif;
-        text-transform: uppercase;
-        font-size: 12px;
-        color: #3d3421;
         position: relative;
-        top: 10px;
+        top: 7px;
         left: 15px; }
-        .home-finder .home-finder-filters .account-links:hover {
+        .home-finder .home-finder-filters .account-links a {
+          font-family: "Oswald", sans-serif;
+          text-transform: uppercase;
+          font-size: 12px;
+          color: #3d3421; }
+        .home-finder .home-finder-filters .account-links a:hover {
           text-decoration: underline; }
       .home-finder .home-finder-filters .home-finder-search {
         float: left;
@@ -5567,14 +5568,15 @@ video {
       .home-finder .home-finder-filters .account-links {
         display: inline-block;
         float: left;
-        font-family: "Oswald", sans-serif;
-        text-transform: uppercase;
-        font-size: 12px;
-        color: #3d3421;
         position: relative;
-        top: 10px;
+        top: 7px;
         left: 15px; }
-        .home-finder .home-finder-filters .account-links:hover {
+        .home-finder .home-finder-filters .account-links a {
+          font-family: "Oswald", sans-serif;
+          text-transform: uppercase;
+          font-size: 12px;
+          color: #3d3421; }
+        .home-finder .home-finder-filters .account-links a:hover {
           text-decoration: underline; }
       .home-finder .home-finder-filters .home-finder-search {
         float: left;
