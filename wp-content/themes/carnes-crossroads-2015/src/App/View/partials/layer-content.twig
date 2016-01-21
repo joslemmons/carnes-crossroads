@@ -13,10 +13,6 @@
         {{ child_page.content }}
     </p>
 {% endif %}
-{% if child_page.getButton %}
-    {% set button = child_page.getButton %}
-    <a class="btn btn-green-small" href="{{ button.link }}">{{ button.title }}</a>
-{% endif %}
 {% if shouldLinkToNewPage %}
-    <a class="btn btn-grey" href="{{ child_page.link }}">Learn More</a>
+    <a class="btn btn-green-small" href="{{ child_page.link }}">Learn More</a>
 {% endif %}

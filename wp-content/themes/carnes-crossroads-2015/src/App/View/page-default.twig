@@ -25,10 +25,12 @@
         </div>
         {% endif %}
 
+        {% include "partials/page-single.twig" %}
+
+        <hr />
+
         {% if page.children %}
             {% include "partials/page-show-layers.twig" %}
-        {% else %}
-            {% include "partials/page-single.twig" %}
         {% endif %}
 
         {% if page.title == 'Location' %}

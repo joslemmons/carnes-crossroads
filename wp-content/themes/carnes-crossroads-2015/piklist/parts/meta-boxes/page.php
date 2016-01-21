@@ -328,75 +328,75 @@ if (
             'label' => 'Gallery'
         ));
 
-        piklist('field', array(
-            'type' => 'radio',
-            'field' => Page::$field_show_button,
-            'label' => 'Show link under content?',
-            'choices' => Page::getButtonChoicesForPiklist()
-        ));
-
-        piklist('field', array(
-            'type' => 'radio',
-            'field' => Page::$field_button_action,
-            'label' => 'Link Action',
-            'choices' => Page::getChildPageButtonLinkOptionsForPiklist(),
-            'value' => Page::IS_LINK_TO_PAGE,
-            'conditions' => array(
-                array(
-                    'field' => Page::$field_show_button,
-                    'value' => Page::SHOW_BUTTON
-                )
-            )
-        ));
-
-        piklist('field', array(
-            'type' => 'select',
-            'field' => Page::$field_button_page_to_link_to,
-            'label' => 'Link to Internal Page',
-            'columns' => 12,
-            'choices' => Helper::getPagesForPiklist(),
-            'conditions' => array(
-                array(
-                    'field' => Page::$field_show_button,
-                    'value' => Page::SHOW_BUTTON
-                ),
-                array(
-                    'field' => Page::$field_button_action,
-                    'value' => Page::IS_LINK_TO_PAGE
-                )
-            )
-        ));
-
-        piklist('field', array(
-            'type' => 'text',
-            'field' => Page::$field_button_custom_link,
-            'label' => 'Custom Link',
-            'description' => 'ie. http://google.com',
-            'columns' => 12,
-            'conditions' => array(
-                array(
-                    'field' => Page::$field_show_button,
-                    'value' => Page::SHOW_BUTTON
-                ),
-                array(
-                    'field' => Page::$field_button_action,
-                    'value' => Page::IS_CUSTOM_LINK
-                )
-            )
-        ));
-
-        piklist('field', array(
-            'type' => 'text',
-            'field' => Page::$field_button_text,
-            'label' => 'Button Text',
-            'columns' => 12,
-            'conditions' => array(
-                array(
-                    'field' => Page::$field_show_button,
-                    'value' => Page::SHOW_BUTTON
-                )
-            )
-        ));
+//        piklist('field', array(
+//            'type' => 'radio',
+//            'field' => Page::$field_show_button,
+//            'label' => 'Show link under content?',
+//            'choices' => Page::getButtonChoicesForPiklist()
+//        ));
+//
+//        piklist('field', array(
+//            'type' => 'radio',
+//            'field' => Page::$field_button_action,
+//            'label' => 'Link Action',
+//            'choices' => Page::getChildPageButtonLinkOptionsForPiklist(),
+//            'value' => Page::IS_LINK_TO_PAGE,
+//            'conditions' => array(
+//                array(
+//                    'field' => Page::$field_show_button,
+//                    'value' => Page::SHOW_BUTTON
+//                )
+//            )
+//        ));
+//
+//        piklist('field', array(
+//            'type' => 'select',
+//            'field' => Page::$field_button_page_to_link_to,
+//            'label' => 'Link to Internal Page',
+//            'columns' => 12,
+//            'choices' => Helper::getPagesForPiklist(),
+//            'conditions' => array(
+//                array(
+//                    'field' => Page::$field_show_button,
+//                    'value' => Page::SHOW_BUTTON
+//                ),
+//                array(
+//                    'field' => Page::$field_button_action,
+//                    'value' => Page::IS_LINK_TO_PAGE
+//                )
+//            )
+//        ));
+//
+//        piklist('field', array(
+//            'type' => 'text',
+//            'field' => Page::$field_button_custom_link,
+//            'label' => 'Custom Link',
+//            'description' => 'ie. http://google.com',
+//            'columns' => 12,
+//            'conditions' => array(
+//                array(
+//                    'field' => Page::$field_show_button,
+//                    'value' => Page::SHOW_BUTTON
+//                ),
+//                array(
+//                    'field' => Page::$field_button_action,
+//                    'value' => Page::IS_CUSTOM_LINK
+//                )
+//            )
+//        ));
+//
+//        piklist('field', array(
+//            'type' => 'text',
+//            'field' => Page::$field_button_text,
+//            'label' => 'Button Text',
+//            'columns' => 12,
+//            'conditions' => array(
+//                array(
+//                    'field' => Page::$field_show_button,
+//                    'value' => Page::SHOW_BUTTON
+//                )
+//            )
+//        ));
     }
 
 }
