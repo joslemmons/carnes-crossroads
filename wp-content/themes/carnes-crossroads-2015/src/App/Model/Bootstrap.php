@@ -21,6 +21,10 @@ class Bootstrap
         add_theme_support('post-thumbnails');
         add_theme_support('menus');
 
+        add_action('init', function () {
+            remove_post_type_support('page', 'custom-fields');
+        });
+
         add_shortcode('nggallery', '__return_false');
 
         self::_notifyAdminOfMissingPlugins();

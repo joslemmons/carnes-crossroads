@@ -247,7 +247,7 @@ class HomeFinder extends Router
 
         $to_email = 'developer@chernoffnewman.com';
         if (Helper::isProduction()) {
-            $to_email = 'homefinder@danielisland.com';
+            $to_email = 'carneshomefinder@carnesrealestate.com';
         }
 
         try {
