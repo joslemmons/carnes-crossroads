@@ -1,6 +1,8 @@
 <?php namespace HomeFinder\Model;
 
+use App\Model\Builder;
 use App\Model\Config;
+use App\Model\FloorPlan;
 use App\Model\NewOfferings;
 use HomeFinder\Request\MLS;
 use HomeFinder\Request\PropertyBase;
@@ -34,6 +36,17 @@ class HomeFinder
                     // combine pbase with mls
                     $total = (int)$result->total + (int)$mls_result->total;
                     $items = array_merge($result->items, $mls_result->items);
+
+                    $result = Result::withTotalAndPerPageAndCurrentItems($total, count($items), $items);
+                }
+            }
+
+            if (true === $filters->shouldIncludePlans()) {
+                $floor_plans = FloorPlan::withFilter($filters);
+
+                if (false !== $floor_plans && is_array($floor_plans) && false === empty($floor_plans)) {
+                    $total = (int)$result->total + count($floor_plans);
+                    $items = array_merge($result->items, $floor_plans);
 
                     $result = Result::withTotalAndPerPageAndCurrentItems($total, count($items), $items);
                 }

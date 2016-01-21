@@ -218,6 +218,8 @@ class Builder extends Page
             }
             $floor_plan->floor_plan_src = wp_get_attachment_url($floor_plan_attachment_id);
 
+            $floor_plan->builder = $this;
+
             $floor_plans[] = $floor_plan;
         }
 

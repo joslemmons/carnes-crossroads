@@ -21,6 +21,8 @@ class HomeFinderFilters
     private $_view = array();
     private $_searchMLS = false;
     private $_searchAddress = '';
+    private $_includePlans = false;
+    private $_builderId = '';
 
     private $_rawPropertyTypes = array();
     private $_rawNeighborhoods = array();
@@ -29,6 +31,8 @@ class HomeFinderFilters
     private $_rawBathrooms = array();
     private $_rawSearchMLS = '';
     private $_rawSearchAddress = '';
+    private $_rawIncludePlans = '';
+    private $_rawBuilderId = '';
 
     private $_propertiesToExclude = array();
 
@@ -79,6 +83,24 @@ class HomeFinderFilters
 
         $filters->setShouldSearchMLS($shouldSearchMLS);
 
+        $shouldIncludePlans = (isset($data['includeMLS'])) ? sanitize_text_field($data['includeMLS']) : false;
+        if ($shouldIncludePlans === 'true') {
+            $shouldIncludePlans = true;
+        }
+        else {
+            $shouldIncludePlans = false;
+        }
+
+        $filters->setShouldIncludePlans($shouldIncludePlans);
+
+        $builderId = (isset($data['builderId'])) ? filter_var($data['builderId'], FILTER_SANITIZE_NUMBER_INT) : false;
+        if ($builderId !== false && $builderId !== '') {
+            $filters->setBuilderId($builderId);
+        }
+        else {
+            $filters->setBuilderId(false);
+        }
+
         $searchAddress = (isset($data['searchAddress'])) ? sanitize_text_field($data['searchAddress']) : '';
         $filters->setSearchAddress($searchAddress);
 
@@ -89,6 +111,7 @@ class HomeFinderFilters
         $filters->_rawBathrooms = $data['bathrooms'];
         $filters->_rawSearchMLS = ($shouldSearchMLS) ? 'true' : 'false';
         $filters->_rawSearchAddress = $searchAddress;
+        $filters->_rawIncludePlans = $shouldIncludePlans;
 
         // add the various filters passed as GET params to $filters
         $filters->setPropertyTypes($data['propertyTypes']);
@@ -149,6 +172,24 @@ class HomeFinderFilters
 
         $filters->setShouldSearchMLS($shouldSearchMLS);
 
+        $shouldIncludePlans = (isset($_REQUEST['includeMLS'])) ? sanitize_text_field($_REQUEST['includeMLS']) : false;
+        if ($shouldIncludePlans === 'true') {
+            $shouldIncludePlans = true;
+        }
+        else {
+            $shouldIncludePlans = false;
+        }
+
+        $filters->setShouldIncludePlans($shouldIncludePlans);
+        
+        $builderId = (isset($_REQUEST['builderId'])) ? filter_var($_REQUEST['builderId'], FILTER_SANITIZE_NUMBER_INT) : false;
+        if ($builderId !== false && $builderId !== '') {
+            $filters->setBuilderId($builderId);
+        }
+        else {
+            $filters->setBuilderId(false);
+        }
+
         $searchAddress = (isset($_REQUEST['searchAddress'])) ? sanitize_text_field($_REQUEST['searchAddress']) : '';
         $filters->setSearchAddress($searchAddress);
 
@@ -159,6 +200,7 @@ class HomeFinderFilters
         $filters->_rawBathrooms = self::_getFilterFromRequestByKey('bathrooms');
         $filters->_rawSearchMLS = ($shouldSearchMLS) ? 'true' : 'false';
         $filters->_rawSearchAddress = $searchAddress;
+        $filters->_rawIncludePlans = $shouldIncludePlans;
 
         // add the various filters passed as GET params to $filters
         $filters->setPropertyTypes(self::_getFilterFromRequestByKey('propertyTypes'));
@@ -231,6 +273,30 @@ class HomeFinderFilters
     public function setShouldSearchMLS($should)
     {
         $this->_searchMLS = $should;
+    }
+
+    public function getBuilderId()
+    {
+        if ($this->_builderId === '') {
+            return false;
+        }
+
+        return $this->_builderId;
+    }
+
+    public function setBuilderId($builderId)
+    {
+        $this->_builderId = $builderId;
+    }
+
+    public function shouldIncludePlans()
+    {
+        return $this->_includePlans;
+    }
+
+    public function setShouldIncludePlans($should)
+    {
+        $this->_includePlans = $should;
     }
 
     public function setSearchAddress($address)
@@ -382,7 +448,7 @@ class HomeFinderFilters
     public function getFiltersAsHashToUseAsId()
     {
         $slug = new Slugify();
-        return $slug->slugify($this->getFriendlyName() . ' ' . $this->_searchMLS . ' ' . $this->_searchAddress);
+        return $slug->slugify($this->getFriendlyName() . ' ' . $this->_searchMLS . ' ' . $this->_searchAddress . ' ' . $this->_includePlans);
     }
 
     public function getAreaFiltersForMLSRequest()
