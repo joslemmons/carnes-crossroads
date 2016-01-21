@@ -18,10 +18,11 @@
     }
 
     &__logo {
-        width: 15%;
+        width: 13%;
         margin: 0 0 0 5%;
         max-width: 225px;
         float: left;
+        @include transition(0.3s all);
     }
 
     &__sub {
@@ -36,6 +37,7 @@
         margin: 0 0 0 25px;
         padding: 15px 0;
         display: inline-block;
+        @include transition(0.3s all);
 
         &:first-of-type {
             padding-left: 35px;
@@ -69,6 +71,7 @@
         list-style-type: none;
         text-align: right;
         background: url(./img/grad-green.png) no-repeat right top / cover;
+        @include transition(1s all);
     }
 
     &__primary-item {
@@ -76,6 +79,7 @@
         height: 100%;
         padding: 25px 0;
         display: inline-block;
+        @include transition(0.3s all);
 
         @media (min-width: 1550px) {
             margin: 0 0 0 35px;
@@ -108,10 +112,11 @@
 }
 
 .main-nav.smaller {
-    padding: 13px 0 0 0;
+    padding: 10px 0 0 0;
 
     .main-nav__logo {
-        width: 9%;
+        margin-top: 5px;
+        width: 140px;
     }
 
     .main-nav__primary {
