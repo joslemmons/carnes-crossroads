@@ -95,6 +95,12 @@
             {#{% if pbaseId in filters.getNeighborhoods %}selected="selected"{% endif %}>{{ name }}</option>#}
             {#{% endfor %}#}
             {#</select>#}
+            <select id="filter-builders">
+                <option value="">Builders</option>
+                {% for builder in function('\\App\\Model\\Builder::all') %}
+                    <option value="{{ builder.id }}">{{ builder.title }}</option>
+                {% endfor %}
+            </select>
             <select id="filter-price">
                 <option value="">Price</option>
                 <option value="0-2750000" {% if '275000' == filters.getMaxPrice %}selected="selected"{% endif %}>Under $275,000</option>
@@ -116,6 +122,8 @@
                 <option value="3" {% if '3' == filters.getBathrooms|split(',')[0] %}selected="selected"{% endif %}>3+ Bathrooms</option>
                 <option value="4" {% if '4' == filters.getBathrooms|split(',')[0] %}selected="selected"{% endif %}>4+ Bathrooms</option>
             </select>
+            <label>Include Plans</label>
+            <input type="checkbox" id="filter-includePlans" value="yes" />
             {#<button type="button" class="hidden-sm hidden-xs more-button">More</button>#}
             <div class="more-options">
                 {#<select id="filter-lastUpdate">#}
@@ -218,9 +226,9 @@
                             <option {% if isFeaturedListings %}selected="selected"{% endif %}
                                     value="featured-listings">Featured Listings
                             </option>
-                            <option {% if isNewOfferings %}selected="selected"{% endif %} value="new-offerings">New
-                                Offerings
-                            </option>
+                            {#<option {% if isNewOfferings %}selected="selected"{% endif %} value="new-offerings">New#}
+                            {#Offerings#}
+                            {#</option>#}
                             <option {% if isRecentlyListed %}selected="selected"{% endif %} value="recently-listed">
                                 Recently Listed
                             </option>
