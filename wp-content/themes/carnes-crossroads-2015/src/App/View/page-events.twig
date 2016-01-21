@@ -64,6 +64,7 @@
 
             <div class="col-xs-12 col-md-9">
                 {# EVENTS SLIDER #}
+                {% if tribe_events %}
                 <div>
                 <div class="row">
                     <h3 class="pull-left">Community Events &amp; Information</h3>
@@ -84,6 +85,7 @@
                 </div>
                     {% endfor %}
                 </div>
+                {% endif %}
 
                 {# NEWS SLIDER #}
                 <div>
