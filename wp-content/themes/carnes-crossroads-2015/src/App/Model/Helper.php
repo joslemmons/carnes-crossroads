@@ -203,50 +203,49 @@ class Helper
         $field_video_attachment_id = (isset($fields['video_attachment_id'])) ? $fields['video_attachment_id'] : null;
         $field_video_custom_link = (isset($fields['video_custom_link'])) ? $fields['video_custom_link'] : null;
 
-        $num = count($items[$field_title]);
-        for ($i = 0; $i < $num; $i++) {
-            if ('' === trim($items[$field_title][$i])) {
+        foreach ($items as $item) {
+            if ('' === trim($item[$field_title])) {
                 continue;
             }
 
             $image = null;
             if (null !== $field_image_attachment_id) {
-                $image_attachment_id = array_pop($items[$field_image_attachment_id][$i]);
+                $image_attachment_id = array_pop($item[$field_image_attachment_id]);
                 $image = new \TimberImage($image_attachment_id);
             }
 
             $url = null;
             if (null !== $field_link_action && null !== $field_link_action_page_id && null !== $field_link_action_custom_link) {
-                if (FrontPage::IS_LINK_TO_PAGE === array_pop($items[$field_link_action][$i])) {
-                    $page_id = $items[$field_link_action_page_id][$i];
+                if (FrontPage::IS_LINK_TO_PAGE === array_pop($item[$field_link_action])) {
+                    $page_id = $item[$field_link_action_page_id];
                     $url = get_page_link($page_id);
                 } else {
-                    $url = $items[$field_link_action_custom_link][$i];
+                    $url = $item[$field_link_action_custom_link];
                 }
             }
 
             $video_src = null;
             if (null !== $field_has_video && null !== $field_video_attachment_id && null !== $field_video_custom_link) {
-                $video_action_choice = array_pop($items[$field_has_video][$i]);
+                $video_action_choice = array_pop($item[$field_has_video]);
                 if (FrontPage::HAS_VIDEO_AS_ATTACHMENT === $video_action_choice) {
-                    $video_attachment_id = $items[$field_video_attachment_id][$i];
+                    $video_attachment_id = $item[$field_video_attachment_id];
                     $video_src = wp_get_attachment_url($video_attachment_id);
                 }
 
                 if (FrontPage::HAS_VIDEO_AS_LINK === $video_action_choice) {
-                    $video_src = $items[$field_video_custom_link][$i];
+                    $video_src = $item[$field_video_custom_link];
                 }
             }
 
             $link_text = null;
             if (null !== $field_link_action_text) {
-                $link_text = $items[$field_link_action_text][$i];
+                $link_text = $item[$field_link_action_text];
             }
 
             $content[] = array(
                 'image' => $image,
-                'title' => $items[$field_title][$i],
-                'subtitle' => $items[$field_sub_title][$i],
+                'title' => $item[$field_title],
+                'subtitle' => $item[$field_sub_title],
                 'button' => array(
                     'title' => $link_text,
                     'link' => $url
