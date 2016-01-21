@@ -83,7 +83,7 @@ class HomeFinderFilters
 
         $filters->setShouldSearchMLS($shouldSearchMLS);
 
-        $shouldIncludePlans = (isset($data['includeMLS'])) ? sanitize_text_field($data['includeMLS']) : false;
+        $shouldIncludePlans = (isset($data['includePlans'])) ? sanitize_text_field($data['includePlans']) : false;
         if ($shouldIncludePlans === 'true') {
             $shouldIncludePlans = true;
         }
@@ -172,7 +172,7 @@ class HomeFinderFilters
 
         $filters->setShouldSearchMLS($shouldSearchMLS);
 
-        $shouldIncludePlans = (isset($_REQUEST['includeMLS'])) ? sanitize_text_field($_REQUEST['includeMLS']) : false;
+        $shouldIncludePlans = (isset($_REQUEST['includePlans'])) ? sanitize_text_field($_REQUEST['includePlans']) : false;
         if ($shouldIncludePlans === 'true') {
             $shouldIncludePlans = true;
         }
