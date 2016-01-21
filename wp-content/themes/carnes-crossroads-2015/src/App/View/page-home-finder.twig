@@ -22,7 +22,7 @@
         </div>
     </div> #}
 
-    <div class="home-finder-nav">
+{#     <div class="home-finder-nav">
         <div class="container-fluid">
             <div class="row">
                 <div class="col-md-8">
@@ -41,18 +41,32 @@
                                         class="showAccountPage">Saved Searches {{ current_user.getRawSavedSearches|length }}</a></span>
                         / <span class="account-link"><a href="{{ function('wp_logout_url', function('get_permalink', 35)) }}">Logout</a></span>
                         {% else %}
-                        <a href="#" class="showAccountPage"><span
-                                                                  class="account-links">Sign In / Create Account</span></a>
+                        <a href="#" class="showAccountPage"><span class="account-links">Sign In / Create Account</span></a>
                         {% endif %}
                     </div>
                 </div>
             </div>
         </div>
-    </div>
+    </div> #}
 
     <div class="home-finder-filters{% if isSingle %} hide-filters{% endif %}">
         <div class="home-finder-search">
             <input type="search" placeholder="Search Address" id="filter-searchAddress" value="{{ filters.getSearchAddress }}">
+        </div>
+
+        {# potential new location for account #}
+        <div>
+            {% if function('is_user_logged_in') %}
+            <span class="account-links">
+                <a href="#" class="showAccountPage">Saved Listings {{ current_user.getSavedPropertyIds|length }}</a> /
+                <a href="#" class="showAccountPage">Saved Searches {{ current_user.getRawSavedSearches|length }}</a>
+            </span> /
+            <span class="account-link">
+                <a href="{{ function('wp_logout_url', function('get_permalink', 35)) }}">Logout</a>
+            </span>
+            {% else %}
+            <a href="#" class="showAccountPage"><span class="account-links">Sign In / Create Account</span></a>
+            {% endif %}
         </div>
 
         <button type="button" class="visible-sm visible-xs more-button toggle-more">More</button>

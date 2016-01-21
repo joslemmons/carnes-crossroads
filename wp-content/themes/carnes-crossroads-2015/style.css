@@ -14,6 +14,7 @@ Version: 1.0
  * Designed and built with all the love in the world by @mdo and @fat.
  */
 /*! normalize.css v2.1.0 | MIT License | git.io/normalize */
+@import url(https://fonts.googleapis.com/css?family=Oswald);
 article,
 aside,
 details,
@@ -3348,6 +3349,33 @@ a:focus, a:hover {
   .expand-link:hover {
     color: #1c180f; }
 
+.site-btn {
+  display: inline-block;
+  background: #fff;
+  border: 1px solid #3d3421;
+  font-family: "baskerville-urw", serif;
+  color: #3d3421;
+  font-size: 12px;
+  font-weight: 400;
+  line-height: 1;
+  text-align: left;
+  padding: 14px 50px;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  -webkit-transition: 0.3s all;
+  transition: 0.3s all; }
+  @media (max-width: 991px) {
+    .site-btn {
+      width: 100%;
+      display: block;
+      margin-bottom: 8px;
+      text-align: center; } }
+  .site-btn:hover {
+    background: #3d3421;
+    color: #fff;
+    cursor: pointer;
+    border: 1px solid #3d3421; }
+
 .video-overlay {
   position: fixed;
   top: 0;
@@ -3934,6 +3962,331 @@ a:focus, a:hover {
   background: url(./img/icon-prev-next.png) no-repeat center right/cover;
   right: 15px; }
 
+@media screen {
+  .modal-open {
+    overflow: hidden; }
+
+  .modal {
+    display: none;
+    overflow: hidden;
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    z-index: 1070;
+    -webkit-overflow-scrolling: touch;
+    outline: 0;
+    color: #000; }
+
+  .modal.fade .modal-dialog {
+    -webkit-transform: translate(125%, 0);
+    -ms-transform: translate(125%, 0);
+    -o-transform: translate(125%, 0);
+    transform: translate(125%, 0);
+    -webkit-transition: -webkit-transform 0.3s ease-out;
+    -o-transition: -o-transform 0.3s ease-out;
+    transition: transform 0.3s ease-out; }
+
+  .modal.in .modal-dialog {
+    -webkit-transform: translate(0, 0);
+    -ms-transform: translate(0, 0);
+    -o-transform: translate(0, 0);
+    transform: translate(0, 0); }
+
+  .modal-open .modal {
+    overflow-x: hidden;
+    overflow-y: auto; }
+
+  .modal-dialog {
+    position: relative;
+    width: 85%;
+    margin: 0;
+    float: right;
+    max-width: 1170px;
+    height: 100%; }
+
+  .modal-content {
+    position: relative;
+    background-color: #ffffff;
+    border: none;
+    border-radius: 0px;
+    -webkit-box-shadow: 0 3px 9px rgba(0, 0, 0, 0.5);
+    box-shadow: 0 3px 9px rgba(0, 0, 0, 0.5);
+    -webkit-background-clip: padding-box;
+    background-clip: padding-box;
+    outline: 0;
+    min-height: 100%;
+    padding: 0px; } }
+  @media screen and (max-width: 991px) {
+    .modal-content {
+      padding: 0px; } }
+
+@media screen {
+  .modal-backdrop {
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    z-index: 1040;
+    background-color: #000000;
+    transition: opacity 0.1s; }
+
+  .modal-backdrop.fade {
+    opacity: 0;
+    filter: alpha(opacity=0); }
+
+  .modal-backdrop.in {
+    opacity: 0.7;
+    filter: alpha(opacity=70); }
+
+  .modal-header {
+    padding: 15px;
+    border-bottom: 1px solid #e5e5e5;
+    min-height: 16.42857143px; }
+
+  .modal .close {
+    display: block;
+    background: none;
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    letter-spacing: 0;
+    z-index: 11;
+    -webkit-transition: 0.3s all;
+    transition: 0.3s all; } }
+  @media screen and (max-width: 991px) {
+    .modal .close {
+      right: 5px;
+      top: 5px; } }
+
+@media screen {
+  .modal-title {
+    margin: 0;
+    line-height: 1.42857143; }
+
+  .modal-body {
+    position: relative;
+    padding: 0;
+    background: #fff; }
+
+  .modal-footer {
+    padding: 15px;
+    text-align: right;
+    border-top: 1px solid #e5e5e5; }
+
+  .modal-footer .btn + .btn {
+    margin-left: 5px;
+    margin-bottom: 0; }
+
+  .modal-footer .btn-group .btn + .btn {
+    margin-left: -1px; }
+
+  .modal-footer .btn-block + .btn-block {
+    margin-left: 0; }
+
+  .modal-scrollbar-measure {
+    position: absolute;
+    top: -9999px;
+    width: 50px;
+    height: 50px;
+    overflow: scroll; } }
+@media screen and (min-width: 768px) {
+  .modal-dialog {
+    width: 90%;
+    margin: 0;
+    float: right;
+    max-width: 1170px; }
+
+  .modal-content {
+    -webkit-box-shadow: 0 5px 15px rgba(0, 0, 0, 0.5);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.5); }
+
+  .modal-sm {
+    width: 300px; } }
+@media screen and (min-width: 992px) {
+  .modal-lg {
+    width: 90%;
+    max-width: 1170px; } }
+@media screen {
+  .clearfix:before,
+  .clearfix:after,
+  .modal-footer:before,
+  .modal-footer:after {
+    content: " ";
+    display: table; }
+
+  .clearfix:after,
+  .modal-footer:after {
+    clear: both; }
+
+  .center-block {
+    display: block;
+    margin-left: auto;
+    margin-right: auto; }
+
+  .pull-right {
+    float: right !important; }
+
+  .pull-left {
+    float: left !important; }
+
+  .hide {
+    display: none !important; }
+
+  .show {
+    display: block !important; }
+
+  .invisible {
+    visibility: hidden; }
+
+  .text-hide {
+    font: 0/0 a;
+    color: transparent;
+    text-shadow: none;
+    background-color: transparent;
+    border: 0; }
+
+  .hidden {
+    display: none !important; }
+
+  .affix {
+    position: fixed; }
+
+  .modal-dialog .primary-page .primary-page-header .page-title {
+    padding: 395px 40px 45px;
+    width: 100%; }
+  .modal-dialog .primary-page .primary-page-header .logo-container .logo {
+    display: none; }
+  .modal-dialog .primary-page .page-content .child-page-content .child-imagery img, .modal-dialog .primary-page .page-content--white .child-page-content .child-imagery img, .modal-dialog .primary-page .page-content--white-floral .child-page-content .child-imagery img, .modal-dialog .primary-page .page-content--white-floral-top .child-page-content .child-imagery img, .modal-dialog .primary-page .page-content--tan .child-page-content .child-imagery img, .modal-dialog .primary-page .page-content--contact .child-page-content .child-imagery img, .modal-dialog .primary-page .page-content--footer .child-page-content .child-imagery img {
+    display: none; }
+  .modal-dialog .primary-page .page-content .child-page-content .child-imagery img:first-child, .modal-dialog .primary-page .page-content--white .child-page-content .child-imagery img:first-child, .modal-dialog .primary-page .page-content--white-floral .child-page-content .child-imagery img:first-child, .modal-dialog .primary-page .page-content--white-floral-top .child-page-content .child-imagery img:first-child, .modal-dialog .primary-page .page-content--tan .child-page-content .child-imagery img:first-child, .modal-dialog .primary-page .page-content--contact .child-page-content .child-imagery img:first-child, .modal-dialog .primary-page .page-content--footer .child-page-content .child-imagery img:first-child {
+    display: block; }
+  .modal-dialog .featured-post {
+    display: none; }
+  .modal-dialog .featured-post:first-child {
+    display: block; }
+  .modal-dialog .page-content, .modal-dialog .page-content--white, .modal-dialog .page-content--white-floral, .modal-dialog .page-content--white-floral-top, .modal-dialog .page-content--tan, .modal-dialog .page-content--contact, .modal-dialog .page-content--footer {
+    padding: 0 40px; } }
+  @media screen and (max-width: 991px) {
+    .modal-dialog .page-content, .modal-dialog .page-content--white, .modal-dialog .page-content--white-floral, .modal-dialog .page-content--white-floral-top, .modal-dialog .page-content--tan, .modal-dialog .page-content--contact, .modal-dialog .page-content--footer {
+      padding: 0; } }
+
+@media screen {
+  #modal-request-showing .primary-page .page-content, #modal-request-showing .primary-page .page-content--white, #modal-request-showing .primary-page .page-content--white-floral, #modal-request-showing .primary-page .page-content--white-floral-top, #modal-request-showing .primary-page .page-content--tan, #modal-request-showing .primary-page .page-content--contact, #modal-request-showing .primary-page .page-content--footer {
+    margin-bottom: 0; }
+
+  .modal-dialog .black-overlay {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    margin: auto;
+    background: rgba(0, 0, 0, 0.5); }
+  .modal-dialog .listing-address {
+    font-family: "baskerville-urw", serif;
+    color: #695e49;
+    font-size: 36px;
+    font-weight: 400;
+    line-height: 1.5;
+    text-align: left;
+    margin-top: 25px; }
+  .modal-dialog .listing-price {
+    display: inline-block;
+    font-family: "Oswald", sans-serif;
+    color: #695e49;
+    font-size: 24px;
+    /* Approximation due to font substitution */
+    font-weight: 400;
+    line-height: 1;
+    /* Approximation due to font substitution */
+    text-align: left;
+    margin-top: 24px;
+    margin-right: 34px; }
+  .modal-dialog .listing-specs {
+    display: inline-block;
+    font-family: "proxima-nova", sans-serif;
+    color: #695e49;
+    font-size: 18px;
+    /* Approximation due to font substitution */
+    font-weight: 400;
+    line-height: 1;
+    /* Approximation due to font substitution */
+    text-align: left;
+    text-transform: uppercase;
+    letter-spacing: 1px; }
+  .modal-dialog .listing-neighborhood {
+    font-family: "Oswald", sans-serif;
+    color: #695e49;
+    font-size: 16px;
+    /* Approximation due to font substitution */
+    font-weight: 400;
+    line-height: 1;
+    /* Approximation due to font substitution */
+    text-align: left;
+    margin-top: 18px;
+    text-transform: uppercase;
+    letter-spacing: 2px; }
+    .modal-dialog .listing-neighborhood .item-padding {
+      display: inline-block;
+      margin: 0 15px; }
+      .modal-dialog .listing-neighborhood .item-padding:first-child {
+        margin-left: 0; }
+    .modal-dialog .listing-neighborhood a {
+      color: #695e49; }
+  .modal-dialog .success-message {
+    display: block;
+    margin-top: 40px; }
+  .modal-dialog form.request-showing {
+    padding-top: 40px;
+    padding-bottom: 40px; }
+    .modal-dialog form.request-showing label {
+      font-family: "proxima-nova", sans-serif;
+      text-transform: uppercase;
+      font-size: 12px; }
+    .modal-dialog form.request-showing .red {
+      color: red; }
+    .modal-dialog form.request-showing input, .modal-dialog form.request-showing textarea {
+      background: #fff;
+      width: 100%;
+      font-family: "proxima-nova", sans-serif;
+      color: #695e49;
+      font-size: 14px;
+      /* Approximation due to font substitution */
+      font-weight: 400;
+      line-height: 1;
+      /* Approximation due to font substitution */
+      text-align: left;
+      border-radius: 0;
+      border: 1px solid #695e49;
+      padding: 10px 15px;
+      margin-bottom: 5px;
+      text-transform: uppercase;
+      margin-bottom: 20px; }
+      .modal-dialog form.request-showing input:focus, .modal-dialog form.request-showing textarea:focus {
+        outline: none; }
+      .modal-dialog form.request-showing input.error, .modal-dialog form.request-showing textarea.error {
+        background: pink;
+        border: 1px solid red; }
+    .modal-dialog form.request-showing input[type="checkbox"] {
+      width: auto; }
+    .modal-dialog form.request-showing .site-btn {
+      margin-top: 20px; }
+    .modal-dialog form.request-showing .required {
+      margin-top: 20px;
+      font-family: "proxima-nova", sans-serif;
+      text-transform: uppercase;
+      font-size: 12px; }
+    .modal-dialog form.request-showing .error-message {
+      display: block;
+      color: red;
+      font-family: "Oswald", sans-serif;
+      font-size: 16px;
+      text-transform: uppercase; } }
 .hero__map-link {
   margin: 100px auto 0 auto; }
   @media (max-height: 780px) {
@@ -4134,7 +4487,7 @@ video {
     border: 1px solid #b5b4b4; }
   .hero__home {
     position: relative;
-    margin-top: 100px;
+    margin-top: 145px;
     height: 85%;
     width: 100%;
     text-align: left;
@@ -4142,7 +4495,7 @@ video {
     background: url(./img/bg-hero-home.jpg) no-repeat center center/cover; }
   .hero__page {
     position: relative;
-    margin-top: 100px;
+    margin-top: 145px;
     height: 68%;
     width: 100%;
     overflow: hidden;
@@ -4151,7 +4504,7 @@ video {
     background-size: cover; }
   .hero__article {
     position: relative;
-    margin-top: 100px;
+    margin-top: 145px;
     height: 45%;
     width: 100%;
     overflow: hidden;
@@ -4421,86 +4774,19 @@ video {
 @media screen {
   .home-finder {
     background: #f4f0e9;
-    position: relative; }
-    .home-finder .home-finder-nav {
-      background: #fcf9ee;
-      width: 100%;
-      padding: 30px 20px 20px;
-      position: absolute;
-      top: 100px; } }
-    @media screen and (max-width: 991px) {
-      .home-finder .home-finder-nav {
-        padding: 10px 0; } }
-    @media screen and (min-width: 1200px) {
-      .home-finder .home-finder-nav {
-        padding: 40px 50px 20px 50px; } }
-    @media screen and (max-width: 991px) {
-      .home-finder .home-finder-nav ul.home-finder-nav-list {
-        display: none; } }
-@media screen {
-      .home-finder .home-finder-nav a {
-        color: #3d3421;
-        border-bottom: 1px solid #fcf9ee; }
-        .home-finder .home-finder-nav a:hover {
-          color: black; }
-      .home-finder .home-finder-nav ul {
-        margin: 0;
-        padding: 0; }
-        .home-finder .home-finder-nav ul li {
-          display: inline-block;
-          font-family: "minion-pro", serif, serif;
-          color: #3d3421;
-          font-size: 14px;
-          /* Approximation due to font substitution */
-          font-weight: 400;
-          line-height: 1;
-          text-align: left;
-          text-transform: uppercase;
-          list-style-type: none;
-          letter-spacing: 1px; } }
-        @media screen and (max-width: 1250px) {
-          .home-finder .home-finder-nav ul li {
-            font-size: 12px; } }
-@media screen {
-          .home-finder .home-finder-nav ul li::after {
-            content: "|";
-            margin-left: 5px; }
-          .home-finder .home-finder-nav ul li:last-child::after {
-            content: "";
-            margin-left: 5px; }
-      .home-finder .home-finder-nav .left-col {
-        float: right;
-        text-align: right;
-        font-family: "proxima-nova", sans-serif, sans-serif;
-        color: #3d3421;
-        font-size: 10px;
-        /* Approximation due to font substitution */
-        font-weight: 400;
-        line-height: 30px;
-        /* Approximation due to font substitution */
-        text-transform: uppercase;
-        letter-spacing: 1px; } }
-      @media screen and (max-width: 991px) {
-        .home-finder .home-finder-nav .left-col {
-          float: none;
-          text-align: center;
-          font-size: 10px; } }
-      @media screen and (min-width: 1200px) {
-        .home-finder .home-finder-nav .left-col {
-          font-size: 12px; } }
-@media screen {
-        .home-finder .home-finder-nav .left-col a {
-          color: #3d3421; }
-          .home-finder .home-finder-nav .left-col a:hover {
-            color: black; }
-        .home-finder .home-finder-nav .left-col .search-count {
-          display: inline-block;
-          margin-right: 20px; }
+    position: relative;
+    padding-top: 145px; }
+    .home-finder .row {
+      margin-left: 0 !important;
+      margin-right: 0 !important; }
     .home-finder .home-finder-filters {
       background: #e4e2d6;
       width: 100%;
-      padding: 15px 40px 10px;
+      padding: 30px 40px 25px;
       overflow: auto; } }
+    @media screen and (min-width: 1550px) {
+      .home-finder .home-finder-filters {
+        padding: 45px 30px 25px; } }
     @media screen and (max-width: 991px) {
       .home-finder .home-finder-filters {
         padding: 0 20px;
@@ -4513,9 +4799,27 @@ video {
           height: 0;
           min-height: 0; } }
 @media screen {
+      .home-finder .home-finder-filters .account-links {
+        display: inline-block;
+        float: left;
+        font-family: "Oswald", sans-serif;
+        text-transform: uppercase;
+        font-size: 12px;
+        color: #3d3421;
+        position: relative;
+        top: 10px;
+        left: 15px; }
+        .home-finder .home-finder-filters .account-links:hover {
+          text-decoration: underline; }
       .home-finder .home-finder-filters .home-finder-search {
         float: left;
-        display: inline-block; } }
+        display: inline-block; }
+        .home-finder .home-finder-filters .home-finder-search a {
+          color: #3d3421;
+          border-bottom: 1px solid #fcf9ee; }
+          .home-finder .home-finder-filters .home-finder-search a:hover {
+            color: black;
+            border-bottom: 1px solid #9f9d5c; } }
       @media screen and (max-width: 991px) {
         .home-finder .home-finder-filters .home-finder-search {
           float: none;
@@ -4554,7 +4858,7 @@ video {
           margin-bottom: 20px; } }
 @media screen {
         .home-finder .home-finder-filters .filter-options a#filter-clearAll {
-          font-family: "proxima-nova", sans-serif, sans-serif;
+          font-family: "Oswald", sans-serif;
           text-transform: uppercase;
           font-size: 12px;
           margin-right: 10px;
@@ -4570,12 +4874,13 @@ video {
             margin-bottom: 5px; } }
 @media screen {
           .home-finder .home-finder-filters .filter-options a#filter-clearAll:hover {
+            border-bottom: #9f9d5c;
             color: black; }
         .home-finder .home-finder-filters .filter-options select {
           -webkit-appearance: none;
           -moz-appearance: none;
           appearance: none;
-          background: #fff url("img/select-arrow.png") no-repeat 90% 50%;
+          background: #fff url("img/icon-caret.png") no-repeat 90% 50%;
           background-size: 8px;
           width: 165px;
           font-family: "proxima-nova", sans-serif, sans-serif;
@@ -4597,7 +4902,7 @@ video {
         @media screen and (max-width: 991px) {
           .home-finder .home-finder-filters .filter-options select {
             width: 100%;
-            background: #fff url("img/select-arrow.png") no-repeat 95% 50%;
+            background: #fff url("img/icon-caret.png") no-repeat 95% 50%;
             background-size: 8px; } }
 @media screen {
           .home-finder .home-finder-filters .filter-options select:focus {
@@ -4704,7 +5009,7 @@ video {
           .home-finder .home-finder-main .all-listings-col .listings-header a {
             border: none; }
           .home-finder .home-finder-main .all-listings-col .listings-header h2.listings-title {
-            font-family: "minion-pro", serif, serif;
+            font-family: "baskerville-urw", serif;
             color: #3d3421;
             font-size: 2em;
             /* Approximation due to font substitution */
@@ -4755,8 +5060,8 @@ video {
             -webkit-appearance: none;
             -moz-appearance: none;
             appearance: none;
-            background: #fff url("img/select-arrow.png") no-repeat 95% 50%;
-            background-size: 8px;
+            background: #fff url("img/icon-caret.png") no-repeat 95% 50%;
+            background-size: 9px;
             width: 100%;
             font-family: "proxima-nova", sans-serif, sans-serif;
             color: #3d3421;
@@ -4781,7 +5086,7 @@ video {
           height: 200px;
           color: #3d3421; }
           .home-finder .home-finder-main .all-listings-col .listings-wrapper .listing:hover {
-            background: #3d3421;
+            background: #828181;
             color: #fff;
             cursor: pointer; } }
           @media screen and (max-width: 991px) {
@@ -4826,7 +5131,7 @@ video {
               width: 58%; } }
 @media screen {
             .home-finder .home-finder-main .all-listings-col .listings-wrapper .listing .listing-details-col .listing-address {
-              font-family: "minion-pro", serif, serif;
+              font-family: "baskerville-urw", serif;
               font-size: 20px;
               /* Approximation due to font substitution */
               font-weight: 400;
@@ -4835,7 +5140,7 @@ video {
               text-align: left;
               margin-bottom: 12px; }
             .home-finder .home-finder-main .all-listings-col .listings-wrapper .listing .listing-details-col .listing-neighborhood {
-              font-family: "proxima-nova", sans-serif, sans-serif;
+              font-family: "Oswald", sans-serif;
               font-size: 12px;
               /* Approximation due to font substitution */
               font-weight: 400;
@@ -4915,12 +5220,11 @@ video {
             height: 200px; } }
 @media screen {
         .home-finder .home-finder-main .single-listing-col .listing-images .slick-prev, .home-finder .home-finder-main .single-listing-col .listing-images .slick-next {
-          border: 1px solid #3d3421;
           background-color: #fff;
-          width: 36px;
+          width: 30px;
           height: 30px;
           z-index: 10;
-          top: 451px; } }
+          top: 483px; } }
         @media screen and (max-width: 991px) {
           .home-finder .home-finder-main .single-listing-col .listing-images .slick-prev, .home-finder .home-finder-main .single-listing-col .listing-images .slick-next {
             top: 300px; } }
@@ -4930,13 +5234,15 @@ video {
 @media screen {
           .home-finder .home-finder-main .single-listing-col .listing-images .slick-prev:before, .home-finder .home-finder-main .single-listing-col .listing-images .slick-next:before {
             color: #3d3421;
-            font-family: "minion-pro", serif, serif; }
+            font-family: "baskerville-urw", serif; }
         .home-finder .home-finder-main .single-listing-col .listing-images .slick-prev {
           right: 80px;
-          left: auto; }
+          left: auto;
+          background: url(./img/icon-prev-next.png) no-repeat center left/cover; }
         .home-finder .home-finder-main .single-listing-col .listing-images .slick-next {
           right: 40px;
-          left: auto; }
+          left: auto;
+          background: url(./img/icon-prev-next.png) no-repeat center right/cover; }
         .home-finder .home-finder-main .single-listing-col .listing-images .slick-slide img {
           border-right: 1px solid #fff; }
         .home-finder .home-finder-main .single-listing-col .single-listing-content {
@@ -5039,7 +5345,7 @@ video {
                   top: 4px; }
               .home-finder .home-finder-main .single-listing-col .single-listing-content .listing-actions .share-widget .arrow {
                 position: absolute;
-                background: url(img/select-arrow.png) no-repeat 50% 50%;
+                background: url(img/icon-caret.png) no-repeat 50% 50%;
                 background-size: cover;
                 width: 16px;
                 height: 14px;
@@ -5048,7 +5354,7 @@ video {
                 margin: auto;
                 bottom: -13px; }
           .home-finder .home-finder-main .single-listing-col .single-listing-content .listing-address {
-            font-family: "minion-pro", serif, serif;
+            font-family: "baskerville-urw", serif;
             color: #3d3421;
             font-size: 36px;
             font-weight: 400;
@@ -5081,7 +5387,7 @@ video {
               top: 2px; }
           .home-finder .home-finder-main .single-listing-col .single-listing-content .listing-price {
             display: inline-block;
-            font-family: "proxima-nova", sans-serif, sans-serif;
+            font-family: "Oswald", sans-serif;
             color: #3d3421;
             font-size: 24px;
             /* Approximation due to font substitution */
@@ -5110,7 +5416,7 @@ video {
             text-transform: uppercase;
             letter-spacing: 1px; }
           .home-finder .home-finder-main .single-listing-col .single-listing-content .listing-neighborhood {
-            font-family: "proxima-nova", sans-serif, sans-serif;
+            font-family: "Oswald", sans-serif;
             color: #3d3421;
             font-size: 16px;
             /* Approximation due to font substitution */
@@ -5150,7 +5456,7 @@ video {
                 text-align: left; } }
 @media screen {
           .home-finder .home-finder-main .single-listing-col .single-listing-content .listing-details, .home-finder .home-finder-main .single-listing-col .single-listing-content .listing-details p, .home-finder .home-finder-main .single-listing-col .single-listing-content .listing-details ul, .home-finder .home-finder-main .single-listing-col .single-listing-content .listing-details ol {
-            font-family: "minion-pro", serif, serif;
+            font-family: "cronos-pro", sans-serif;
             color: #3d3421;
             font-weight: 400; }
           .home-finder .home-finder-main .single-listing-col .single-listing-content .listing-details ul, .home-finder .home-finder-main .single-listing-col .single-listing-content .listing-details ol {
@@ -5166,7 +5472,7 @@ video {
           padding-top: 30px;
           line-height: 1; }
           .home-finder .home-finder-main .single-listing-col .broker-reciprocity .disclaimer {
-            font-family: "minion-pro", serif, serif;
+            font-family: "cronos-pro", sans-serif;
             color: #3d3421;
             font-weight: 400;
             font-size: 12px;
@@ -5233,86 +5539,19 @@ video {
 @media screen {
   .home-finder {
     background: #f4f0e9;
-    position: relative; }
-    .home-finder .home-finder-nav {
-      background: #fcf9ee;
-      width: 100%;
-      padding: 30px 20px 20px;
-      position: absolute;
-      top: 100px; } }
-    @media screen and (max-width: 991px) {
-      .home-finder .home-finder-nav {
-        padding: 10px 0; } }
-    @media screen and (min-width: 1200px) {
-      .home-finder .home-finder-nav {
-        padding: 40px 50px 20px 50px; } }
-    @media screen and (max-width: 991px) {
-      .home-finder .home-finder-nav ul.home-finder-nav-list {
-        display: none; } }
-@media screen {
-      .home-finder .home-finder-nav a {
-        color: #3d3421;
-        border-bottom: 1px solid #fcf9ee; }
-        .home-finder .home-finder-nav a:hover {
-          color: black; }
-      .home-finder .home-finder-nav ul {
-        margin: 0;
-        padding: 0; }
-        .home-finder .home-finder-nav ul li {
-          display: inline-block;
-          font-family: "minion-pro", serif, serif;
-          color: #3d3421;
-          font-size: 14px;
-          /* Approximation due to font substitution */
-          font-weight: 400;
-          line-height: 1;
-          text-align: left;
-          text-transform: uppercase;
-          list-style-type: none;
-          letter-spacing: 1px; } }
-        @media screen and (max-width: 1250px) {
-          .home-finder .home-finder-nav ul li {
-            font-size: 12px; } }
-@media screen {
-          .home-finder .home-finder-nav ul li::after {
-            content: "|";
-            margin-left: 5px; }
-          .home-finder .home-finder-nav ul li:last-child::after {
-            content: "";
-            margin-left: 5px; }
-      .home-finder .home-finder-nav .left-col {
-        float: right;
-        text-align: right;
-        font-family: "proxima-nova", sans-serif, sans-serif;
-        color: #3d3421;
-        font-size: 10px;
-        /* Approximation due to font substitution */
-        font-weight: 400;
-        line-height: 30px;
-        /* Approximation due to font substitution */
-        text-transform: uppercase;
-        letter-spacing: 1px; } }
-      @media screen and (max-width: 991px) {
-        .home-finder .home-finder-nav .left-col {
-          float: none;
-          text-align: center;
-          font-size: 10px; } }
-      @media screen and (min-width: 1200px) {
-        .home-finder .home-finder-nav .left-col {
-          font-size: 12px; } }
-@media screen {
-        .home-finder .home-finder-nav .left-col a {
-          color: #3d3421; }
-          .home-finder .home-finder-nav .left-col a:hover {
-            color: black; }
-        .home-finder .home-finder-nav .left-col .search-count {
-          display: inline-block;
-          margin-right: 20px; }
+    position: relative;
+    padding-top: 145px; }
+    .home-finder .row {
+      margin-left: 0 !important;
+      margin-right: 0 !important; }
     .home-finder .home-finder-filters {
       background: #e4e2d6;
       width: 100%;
-      padding: 15px 40px 10px;
+      padding: 30px 40px 25px;
       overflow: auto; } }
+    @media screen and (min-width: 1550px) {
+      .home-finder .home-finder-filters {
+        padding: 45px 30px 25px; } }
     @media screen and (max-width: 991px) {
       .home-finder .home-finder-filters {
         padding: 0 20px;
@@ -5325,9 +5564,27 @@ video {
           height: 0;
           min-height: 0; } }
 @media screen {
+      .home-finder .home-finder-filters .account-links {
+        display: inline-block;
+        float: left;
+        font-family: "Oswald", sans-serif;
+        text-transform: uppercase;
+        font-size: 12px;
+        color: #3d3421;
+        position: relative;
+        top: 10px;
+        left: 15px; }
+        .home-finder .home-finder-filters .account-links:hover {
+          text-decoration: underline; }
       .home-finder .home-finder-filters .home-finder-search {
         float: left;
-        display: inline-block; } }
+        display: inline-block; }
+        .home-finder .home-finder-filters .home-finder-search a {
+          color: #3d3421;
+          border-bottom: 1px solid #fcf9ee; }
+          .home-finder .home-finder-filters .home-finder-search a:hover {
+            color: black;
+            border-bottom: 1px solid #9f9d5c; } }
       @media screen and (max-width: 991px) {
         .home-finder .home-finder-filters .home-finder-search {
           float: none;
@@ -5366,7 +5623,7 @@ video {
           margin-bottom: 20px; } }
 @media screen {
         .home-finder .home-finder-filters .filter-options a#filter-clearAll {
-          font-family: "proxima-nova", sans-serif, sans-serif;
+          font-family: "Oswald", sans-serif;
           text-transform: uppercase;
           font-size: 12px;
           margin-right: 10px;
@@ -5382,12 +5639,13 @@ video {
             margin-bottom: 5px; } }
 @media screen {
           .home-finder .home-finder-filters .filter-options a#filter-clearAll:hover {
+            border-bottom: #9f9d5c;
             color: black; }
         .home-finder .home-finder-filters .filter-options select {
           -webkit-appearance: none;
           -moz-appearance: none;
           appearance: none;
-          background: #fff url("img/select-arrow.png") no-repeat 90% 50%;
+          background: #fff url("img/icon-caret.png") no-repeat 90% 50%;
           background-size: 8px;
           width: 165px;
           font-family: "proxima-nova", sans-serif, sans-serif;
@@ -5409,7 +5667,7 @@ video {
         @media screen and (max-width: 991px) {
           .home-finder .home-finder-filters .filter-options select {
             width: 100%;
-            background: #fff url("img/select-arrow.png") no-repeat 95% 50%;
+            background: #fff url("img/icon-caret.png") no-repeat 95% 50%;
             background-size: 8px; } }
 @media screen {
           .home-finder .home-finder-filters .filter-options select:focus {
@@ -5516,7 +5774,7 @@ video {
           .home-finder .home-finder-main .all-listings-col .listings-header a {
             border: none; }
           .home-finder .home-finder-main .all-listings-col .listings-header h2.listings-title {
-            font-family: "minion-pro", serif, serif;
+            font-family: "baskerville-urw", serif;
             color: #3d3421;
             font-size: 2em;
             /* Approximation due to font substitution */
@@ -5567,8 +5825,8 @@ video {
             -webkit-appearance: none;
             -moz-appearance: none;
             appearance: none;
-            background: #fff url("img/select-arrow.png") no-repeat 95% 50%;
-            background-size: 8px;
+            background: #fff url("img/icon-caret.png") no-repeat 95% 50%;
+            background-size: 9px;
             width: 100%;
             font-family: "proxima-nova", sans-serif, sans-serif;
             color: #3d3421;
@@ -5593,7 +5851,7 @@ video {
           height: 200px;
           color: #3d3421; }
           .home-finder .home-finder-main .all-listings-col .listings-wrapper .listing:hover {
-            background: #3d3421;
+            background: #828181;
             color: #fff;
             cursor: pointer; } }
           @media screen and (max-width: 991px) {
@@ -5638,7 +5896,7 @@ video {
               width: 58%; } }
 @media screen {
             .home-finder .home-finder-main .all-listings-col .listings-wrapper .listing .listing-details-col .listing-address {
-              font-family: "minion-pro", serif, serif;
+              font-family: "baskerville-urw", serif;
               font-size: 20px;
               /* Approximation due to font substitution */
               font-weight: 400;
@@ -5647,7 +5905,7 @@ video {
               text-align: left;
               margin-bottom: 12px; }
             .home-finder .home-finder-main .all-listings-col .listings-wrapper .listing .listing-details-col .listing-neighborhood {
-              font-family: "proxima-nova", sans-serif, sans-serif;
+              font-family: "Oswald", sans-serif;
               font-size: 12px;
               /* Approximation due to font substitution */
               font-weight: 400;
@@ -5727,12 +5985,11 @@ video {
             height: 200px; } }
 @media screen {
         .home-finder .home-finder-main .single-listing-col .listing-images .slick-prev, .home-finder .home-finder-main .single-listing-col .listing-images .slick-next {
-          border: 1px solid #3d3421;
           background-color: #fff;
-          width: 36px;
+          width: 30px;
           height: 30px;
           z-index: 10;
-          top: 451px; } }
+          top: 483px; } }
         @media screen and (max-width: 991px) {
           .home-finder .home-finder-main .single-listing-col .listing-images .slick-prev, .home-finder .home-finder-main .single-listing-col .listing-images .slick-next {
             top: 300px; } }
@@ -5742,13 +5999,15 @@ video {
 @media screen {
           .home-finder .home-finder-main .single-listing-col .listing-images .slick-prev:before, .home-finder .home-finder-main .single-listing-col .listing-images .slick-next:before {
             color: #3d3421;
-            font-family: "minion-pro", serif, serif; }
+            font-family: "baskerville-urw", serif; }
         .home-finder .home-finder-main .single-listing-col .listing-images .slick-prev {
           right: 80px;
-          left: auto; }
+          left: auto;
+          background: url(./img/icon-prev-next.png) no-repeat center left/cover; }
         .home-finder .home-finder-main .single-listing-col .listing-images .slick-next {
           right: 40px;
-          left: auto; }
+          left: auto;
+          background: url(./img/icon-prev-next.png) no-repeat center right/cover; }
         .home-finder .home-finder-main .single-listing-col .listing-images .slick-slide img {
           border-right: 1px solid #fff; }
         .home-finder .home-finder-main .single-listing-col .single-listing-content {
@@ -5851,7 +6110,7 @@ video {
                   top: 4px; }
               .home-finder .home-finder-main .single-listing-col .single-listing-content .listing-actions .share-widget .arrow {
                 position: absolute;
-                background: url(img/select-arrow.png) no-repeat 50% 50%;
+                background: url(img/icon-caret.png) no-repeat 50% 50%;
                 background-size: cover;
                 width: 16px;
                 height: 14px;
@@ -5860,7 +6119,7 @@ video {
                 margin: auto;
                 bottom: -13px; }
           .home-finder .home-finder-main .single-listing-col .single-listing-content .listing-address {
-            font-family: "minion-pro", serif, serif;
+            font-family: "baskerville-urw", serif;
             color: #3d3421;
             font-size: 36px;
             font-weight: 400;
@@ -5893,7 +6152,7 @@ video {
               top: 2px; }
           .home-finder .home-finder-main .single-listing-col .single-listing-content .listing-price {
             display: inline-block;
-            font-family: "proxima-nova", sans-serif, sans-serif;
+            font-family: "Oswald", sans-serif;
             color: #3d3421;
             font-size: 24px;
             /* Approximation due to font substitution */
@@ -5922,7 +6181,7 @@ video {
             text-transform: uppercase;
             letter-spacing: 1px; }
           .home-finder .home-finder-main .single-listing-col .single-listing-content .listing-neighborhood {
-            font-family: "proxima-nova", sans-serif, sans-serif;
+            font-family: "Oswald", sans-serif;
             color: #3d3421;
             font-size: 16px;
             /* Approximation due to font substitution */
@@ -5962,7 +6221,7 @@ video {
                 text-align: left; } }
 @media screen {
           .home-finder .home-finder-main .single-listing-col .single-listing-content .listing-details, .home-finder .home-finder-main .single-listing-col .single-listing-content .listing-details p, .home-finder .home-finder-main .single-listing-col .single-listing-content .listing-details ul, .home-finder .home-finder-main .single-listing-col .single-listing-content .listing-details ol {
-            font-family: "minion-pro", serif, serif;
+            font-family: "cronos-pro", sans-serif;
             color: #3d3421;
             font-weight: 400; }
           .home-finder .home-finder-main .single-listing-col .single-listing-content .listing-details ul, .home-finder .home-finder-main .single-listing-col .single-listing-content .listing-details ol {
@@ -5978,7 +6237,7 @@ video {
           padding-top: 30px;
           line-height: 1; }
           .home-finder .home-finder-main .single-listing-col .broker-reciprocity .disclaimer {
-            font-family: "minion-pro", serif, serif;
+            font-family: "cronos-pro", sans-serif;
             color: #3d3421;
             font-weight: 400;
             font-size: 12px;

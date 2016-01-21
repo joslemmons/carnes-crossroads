@@ -71,3 +71,33 @@
         color: darken($cc-brown, 10);
     }
 }
+
+.site-btn {
+    display: inline-block;
+    background: $white;
+    border: 1px solid $cc-brown;
+    font-family: $baskerville;
+    color: $cc-brown;
+    font-size: 12px;
+    font-weight: 400;
+    line-height: 1;
+    text-align: left;
+    padding: 14px 50px;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    @include transition(0.3s all);
+
+    @media (max-width: $screen-sm-max) {
+        width: 100%;
+        display: block;
+        margin-bottom: 8px;
+        text-align: center;
+    }
+
+    &:hover {
+        background: $cc-brown;
+        color: $white;
+        cursor: pointer;
+        border: 1px solid $cc-brown;
+    }
+}

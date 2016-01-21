@@ -11,6 +11,7 @@ class Assets
     public static function enqueue_stylesheets()
     {
         wp_enqueue_style('style-css', get_template_directory_uri() . '/style.css');
+        wp_enqueue_style('jquery-colorbox-css', get_template_directory_uri() . '/js/lib/colorbox/colorbox.css');
         wp_enqueue_style('bxslider-css', get_template_directory_uri() . '/bower_components/bxslider-4/dist/jquery.bxslider.css');
     }
 
