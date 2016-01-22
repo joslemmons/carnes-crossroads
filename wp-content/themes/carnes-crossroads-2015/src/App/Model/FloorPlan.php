@@ -72,6 +72,7 @@ class FloorPlan
             if ($filters->getBedrooms() !== false) {
             $bedrooms = $filters->getBedrooms();
             if ($bedrooms !== false) {
+                $bedrooms = explode(',', $bedrooms);
                 $bedrooms = array_shift($bedrooms);
 
                 if ($floor_plan->bedrooms < $bedrooms) {
@@ -85,8 +86,8 @@ class FloorPlan
             if ($filters->getBathrooms() !== false) {
             $bathrooms = $filters->getBathrooms();
             if ($bathrooms !== false) {
+                $bathrooms = explode(',', $bathrooms);
                 $bathrooms = array_shift($bathrooms);
-
                 if ($floor_plan->full_bathrooms < $bathrooms) {
                     return false;
                 }
