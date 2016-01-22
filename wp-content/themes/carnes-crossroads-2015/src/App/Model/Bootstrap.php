@@ -67,6 +67,7 @@ class Bootstrap
         FAQPage::bootstrap();
         Post::bootstrap();
         Builder::bootstrap();
+        HomesPage::bootstrap();
     }
 
 }

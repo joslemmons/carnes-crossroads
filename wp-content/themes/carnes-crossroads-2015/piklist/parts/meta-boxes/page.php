@@ -10,7 +10,6 @@ global $post;
 use App\Model\AccountPage;
 use App\Model\FAQPage;
 use App\Model\FrontPage;
-use App\Model\Helper;
 use App\Model\Page;
 
 $post = Timber::get_post($post->ID);
@@ -21,8 +20,7 @@ if (
     $post->id !== AccountPage::PAGE_ID
 ) {
     if (
-        false === $post->parent() ||
-        $post->id === Page::BUILDER_PAGE_ID
+        false === $post->parent()
     ) {
         // this is a primary page
 
@@ -328,13 +326,15 @@ if (
             'label' => 'Gallery'
         ));
 
-//        piklist('field', array(
-//            'type' => 'radio',
-//            'field' => Page::$field_show_button,
-//            'label' => 'Show link under content?',
-//            'choices' => Page::getButtonChoicesForPiklist()
-//        ));
-//
+        piklist('field', array(
+            'type' => 'radio',
+            'field' => Page::$field_show_button,
+            'value' => Page::DO_NOT_SHOW_BUTTON,
+            'label' => 'Always show button link to learn more?',
+            'description' => 'If the content is >700 characters, then the learn more button is will be shown no matter the choice here',
+            'choices' => Page::getButtonChoicesForPiklist()
+        ));
+
 //        piklist('field', array(
 //            'type' => 'radio',
 //            'field' => Page::$field_button_action,

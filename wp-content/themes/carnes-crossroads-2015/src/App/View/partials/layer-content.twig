@@ -4,7 +4,7 @@
     {% set firstParagraph = child_page.content|truncateToFirstParagraph(expandLink) %}
     {{ firstParagraph }}<span class="more-content" style="display:none;">
     <p>{{ child_page.content|slice(firstParagraph|length - expandLink|length) }}</p></span>
-{% elseif child_page.content|length >= 800 %}
+{% elseif child_page.content|length >= 700 %}
     {% set shouldLinkToNewPage = true %}
     {% set firstParagraph = child_page.content|truncate(70) %}
     {{ firstParagraph }}
@@ -13,6 +13,6 @@
         {{ child_page.content }}
     </p>
 {% endif %}
-{% if shouldLinkToNewPage %}
+{% if shouldLinkToNewPage or child_page.getButton %}
     <a class="btn btn-green-small" href="{{ child_page.link }}">Learn More</a>
 {% endif %}
