@@ -1,22 +1,25 @@
 {% extends 'base.twig' %}
 {% block template %}
 
-<section class="hero__home" id="intro-video">
+<section class="hero__home" id="intro-video" style="background: url({{ page.thumbnail.src }}) no-repeat center center/cover">
     <div class="hero__content-wrap">
-        <h1>Featured Headline about life at Carnes Crossroads.</h1>
+        <h1>{{ page.getHero.headline }}</h1>
         {# <div class="play-btn-container">
             <a href="{{ video_src }}" data-video-height="1080" data-video-width="1920" class="cnicon-play video-play"><span class="play-icon"><img src="{{ template_uri }}/img/play-icon_x2.png"/></span></a>
         </div> #}
-        <div class="btn-group">
-            <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown">View Move-In Ready Homes <span class="caret"></span></button>
-            <ul class="dropdown-menu" role="menu">
-                <li><a href="">Item 1</a></li>
-                <li><a href="">Item 2</a></li>
-                <li><a href="">Item 3</a></li>
-            </ul>
-        </div>
-        <a class="btn btn-green">Search</a>
-        <div class="hero__map-link"><a href="/area-map">View Area Map</a></div>
+        {% if page.getHero.quicklinks %}
+            <div class="btn-group">
+                <button type="button" class="btn btn-default dropdown-toggle"
+                        data-toggle="dropdown">{{ page.getHero.quicklinks[0].title }} <span class="caret"></span></button>
+                <ul class="dropdown-menu" role="menu">
+                    {% for quicklink in page.getHero.quicklinks %}
+                        <li><a href="{{ quicklink.link }}">{{ quicklink.title }}</a></li>
+                    {% endfor %}
+                </ul>
+            </div>
+            <a class="btn btn-green" href="{{ page.getHero.quicklinks[0].link }}">Search</a>
+        {% endif %}
+        <div class="hero__map-link"><a href="{{ page.getHero.bottom_link }}">{{ page.getHero.bottom_link_text }}</a></div>
     </div>
 
     {# <img class="ie-only bg" src="{{ template_uri }}/img/bg-hero-home.jpg">

@@ -77,6 +77,14 @@ class FrontPage extends \TimberPost
     public static $field_bottom_featured_group_tertiary_link_action_page_to_link_to;
     public static $field_bottom_featured_group_tertiary_link_action_custom_link;
 
+    public static $field_hero;
+    public static $field_hero_headline;
+    public static $field_hero_quicklinks;
+    public static $field_hero_quicklink_link;
+    public static $field_hero_quicklink_title;
+    public static $field_hero_bottom_link;
+    public static $field_hero_bottom_text;
+
     const IS_LINK_TO_PAGE = 'page';
     const IS_CUSTOM_LINK = 'custom';
     const HAS_VIDEO_AS_ATTACHMENT = 'file';
@@ -154,6 +162,14 @@ class FrontPage extends \TimberPost
         self::$field_bottom_featured_group_tertiary_link_action = Config::getKeyPrefix() . 'bottom_featured_group_tertiary_link_action';
         self::$field_bottom_featured_group_tertiary_link_action_page_to_link_to = Config::getKeyPrefix() . 'bottom_featured_group_tertiary_link_action_page_to_link_to';
         self::$field_bottom_featured_group_tertiary_link_action_custom_link = Config::getKeyPrefix() . 'bottom_featured_group_tertiary_link_action_custom_link';
+
+        self::$field_hero = Config::getKeyPrefix() . 'hero';
+        self::$field_hero_headline = Config::getKeyPrefix() . 'hero_headline';
+        self::$field_hero_quicklinks = Config::getKeyPrefix() . 'hero_quicklinks';
+        self::$field_hero_quicklink_link = Config::getKeyPrefix() . 'hero_quicklink_link';
+        self::$field_hero_quicklink_title = Config::getKeyPrefix() . 'hero_quicklink_title';
+        self::$field_hero_bottom_link = Config::getKeyPrefix() . 'hero_bottom_link';
+        self::$field_hero_bottom_text = Config::getKeyPrefix() . 'hero_bottom_text';
     }
 
     public static function getVideoOptionsForPiklist()
@@ -306,6 +322,39 @@ class FrontPage extends \TimberPost
         ));
 
         return $tertiary_items;
+    }
+
+    public function getHero()
+    {
+        $return = array();
+
+        $hero_group = self::$field_hero;
+        $group = $this->$hero_group;
+
+        $headline = $group[self::$field_hero_headline];
+        $return['headline'] = $headline;
+
+        $return['quicklinks'] = array();
+        $quicklinks = $group[self::$field_hero_quicklinks];
+        foreach ($quicklinks as $quicklink) {
+            if (
+                isset($quicklink[self::$field_hero_quicklink_title]) &&
+                isset($quicklink[self::$field_hero_quicklink_link])
+            ) {
+                $return['quicklinks'][] = array(
+                    'title' => $quicklink[self::$field_hero_quicklink_title],
+                    'link' => $quicklink[self::$field_hero_quicklink_link]
+                );
+            }
+        }
+
+        $bottom_link_text = $group[self::$field_hero_bottom_text];
+        $return['bottom_link_text'] = $bottom_link_text;
+
+        $bottom_link = $group[self::$field_hero_bottom_link];
+        $return['bottom_link'] = $bottom_link;
+
+        return $return;
     }
 
 
