@@ -18,9 +18,10 @@ class FloorPlan
     public $floor_plan_src;
     public $builder;
 
-    public function getFeaturedImageSrc()
+    public function getFeaturedImage()
     {
-        if (is_array($this->featured_images)) {
+        $featured_image = $this->featured_images;
+        if (is_array($featured_image)) {
             $featured_image = array_shift($this->featured_images);
         }
 
