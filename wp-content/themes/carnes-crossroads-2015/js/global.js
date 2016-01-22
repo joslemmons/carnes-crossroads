@@ -198,4 +198,11 @@ jQuery(function ($) {
         return false;
     });
 
+    $(document).on('keypress', '#footer-search', function (e) {
+        if (e.which === 13) {
+            var searchValue = $(this).val();
+            window.location = "/?s=" + searchValue;
+        }
+    });
+
 });

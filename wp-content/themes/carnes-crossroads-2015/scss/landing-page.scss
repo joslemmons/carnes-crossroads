@@ -1,0 +1,405 @@
+@media screen {
+    .landing-page {
+        
+        //Header with Logo/Nav
+        .lp-header {
+            background: #f4f0e9;
+            color: $brown; //#695e49;
+            padding-top: 25px;
+            padding-bottom: 25px;
+            
+            .logo {
+                img {
+                    width: 180px;
+                }
+            }
+            
+            @media (max-width: $screen-sm-max) {
+               text-align: center; 
+            }
+            
+            .contact-info {
+                font-family: $proxima;
+                color: $brown;
+                font-size: .6565em; /* Approximation due to font substitution */
+                line-height: 1.714; /* Approximation due to font substitution */
+                text-align: right;
+                text-transform: uppercase;
+                font-weight: bold;
+                margin-bottom: 14px;
+                
+                @media (max-width: $screen-sm-max) {
+                    text-align: center;
+                    margin-top: 10px;
+                }
+            }
+            
+            .btn-row {
+                text-align: right;
+                
+                @media (max-width: $screen-sm-max) {
+                    text-align: center;
+                }
+                
+                a.lp-btn {
+                    display: inline-block;
+                    border: 1px solid $brown;
+                    background: #ffffff;
+                    font-family: $baskerville;
+                    color: $brown;;
+                    font-size: .75em; /* Approximation due to font substitution */
+                    font-weight: 400;
+                    text-transform: uppercase;
+                    width: 215px;
+                    height: 37px;
+                    line-height: 36px;
+                    text-align: center;
+                    margin-left: 25px;
+                    
+                    @media (max-width: $screen-sm-max) {
+                        margin: 0;
+                        width: 49%;
+                    }
+                    
+                    @media (max-width: $screen-xs-max) {
+                        display: block;
+                        width: 80%;
+                        margin: 0 auto 5px;
+                    }
+                    
+                    &:hover {
+                        background: $brown;
+                        color: $white;
+                    }
+                }
+            }
+        }
+        
+        //Diagonal border below top header
+        .header-border {
+            background: url(img/lp-pattern-1.jpg) repeat 0 0;
+            height: 24px;
+        }
+        
+        
+        //Landing Page Header Content
+        .header-content {
+            position: relative;
+            text-align: center;
+            color: $white;
+            
+            .header-content-container {
+                padding-top: 186px;
+                padding-bottom: 88px;
+                
+                @media (max-width: $screen-sm-max) {
+                    padding-top: 40px;
+                    padding-bottom: 40px;
+                }
+                
+                h1 {
+                    font-family: $odense;
+                    font-size: 4.0625em; /* Approximation due to font substitution */
+                    font-weight: 400;
+                    line-height: 1.292; /* Approximation due to font substitution */
+                    text-align: center;
+                }
+                
+                .title-line {
+                    background-color: $white;
+                    width: 231px;
+                    height: 2px;
+                    margin: auto;
+                    margin-bottom: 40px;
+                }
+                
+                .subtitle {
+                    font-family: $baskerville;
+                    font-size: 1em; /* Approximation due to font substitution */
+                    font-weight: 600;
+                    line-height: 1.813; /* Approximation due to font substitution */
+                    text-align: center;
+                    text-transform: uppercase;
+                }
+                
+                .play-icon {
+                    margin-top: 55px;
+                    position: relative;
+                    @include transition(0.3s all);
+                    
+                    img {
+                        width: 52px;
+                    }
+                    
+                    &:hover {
+                        cursor: pointer;
+                        transform: scale(1.25);
+                    }
+                }
+            }
+        }
+        
+        
+        //Main Content
+        .main-content {
+            background: #f4f0e9;
+            padding-top: 141px;
+            padding-bottom: 150px;
+            font-family: $cronos;
+            color: $brown;
+            font-size: 26px; /* Approximation due to font substitution */
+            font-weight: 400;
+            line-height: 1.6; /* Approximation due to font substitution */
+            text-align: center; 
+            
+            @media (max-width: $screen-sm-max) {
+                padding-top: 60px;
+                padding-bottom: 60px;
+                font-size: 21px;
+            }
+            
+            p {
+               font-family: $cronos;
+                color: $brown;
+                font-size: 26px; /* Approximation due to font substitution */
+                font-weight: 400;
+                line-height: 1.6; /* Approximation due to font substitution */
+                text-align: center;  
+                
+                @media (max-width: $screen-sm-max) {
+                    font-size: 21px;
+                }
+            }
+        }
+        
+        //Featured Content
+        .featured-content {
+            margin-top: 83px;
+            margin-bottom: 121px;
+            
+            @media (max-width: $screen-sm-max) {
+                margin-top: 40px;
+                margin-bottom: 60px;
+            }
+            
+            .featured-slider {
+                
+                .slide {
+                    img { 
+                        border: 2px solid $brown;
+                    }
+                }
+            }
+            
+            h1 {
+                font-family: $baskerville;
+                color: $brown;
+                font-size: 1.625em; /* Approximation due to font substitution */
+                font-weight: 400;
+                line-height: 1.385; /* Approximation due to font substitution */
+                text-align: left;
+            }
+        }
+        
+        //Secondary Content 
+        .secondary-content {
+            
+            .content-row {
+                margin-bottom: 105px;
+                
+                @media (max-width: $screen-sm-max) {
+                    margin-bottom: 60px;
+                }
+            }
+            
+            .secondary-title {
+                border-top: 2px solid $brown;
+                background: url(img/lp-secondary-title-bg.jpg) no-repeat 50% 50%;
+                background-size: cover;
+                margin-bottom: 7px;
+                padding: 17px 21px;
+                
+                @media (max-width: $screen-sm-max) {
+                    margin-top: 20px;
+                }
+                
+                h2 {
+                    font-family: $baskerville;
+                    text-transform: uppercase;
+                    color: $brown;
+                    font-size: 1.125em; /* Approximation due to font substitution */
+                    font-weight: 400;
+                    line-height: 1.5; /* Approximation due to font substitution */
+                    text-align: left;
+                    margin: 0;
+                }
+            }
+            
+            .divider {
+                height: 5px;
+                border-top: 1px solid $brown;
+                border-bottom: 2px solid $brown;
+                width: 100%;
+                margin-bottom: 48px;
+            }
+            
+            img { 
+                border: 2px solid $brown;
+            }
+        }
+        
+        .horizontal-list-content {
+            
+            .col-horizontal {
+//                max-width: 245px;
+//                margin-right: 63px;
+                margin-bottom: 102px;
+
+                .image {
+                    margin-bottom: 14px;
+                }
+
+                .title {
+                    font-family: $proxima;
+                    color: $brown;
+                    font-size: .8em; /* Approximation due to font substitution */
+                    font-weight: 400;
+                    line-height: 1.5; /* Approximation due to font substitution */
+                    text-align: left;
+                    text-transform: uppercase;
+                    letter-spacing: 1px;
+                    margin-bottom: 16px;
+                }
+
+                .details {
+                    font-family: $cronos;
+                    color: $brown;
+                    font-size: 1em;
+                    font-weight: 400;
+                    line-height: 1.25;
+                    text-align: left;
+                    margin-bottom: 30px;
+                    height: 130px;
+                    
+                    @media (max-width: $screen-sm-max) {
+                        height: auto;
+                    }
+                    
+                    p {
+                        font-size: 1em;
+                    }
+                }
+
+                .site-btn {
+                    //base styles in base.scss
+                    width: 100%;
+                    text-align: center;
+                }
+
+            }
+        }
+        
+        //Footer with Content
+        .footer-content {
+            
+            .bg-container {
+                position: absolute;
+                width: 100%;
+            }
+            
+            .left-col-bg {
+                background: url(img/lp-footer-logo-bg.jpg) no-repeat 50% 50%;
+                background-size: cover;
+                height: 482px;
+            }
+        
+            .footer-container {
+                
+                @media (max-width: $screen-sm-max) {
+                    width: 100%;
+                    max-width: 100%;
+                }
+            }
+            
+            .right-col-bg {
+                background: #f4f0e9 url(img/lp-footer-right-bg.jpg) no-repeat 50% 50%;
+                background-size: cover;
+                height: 482px;
+            }
+        
+            
+            .left-col-text {
+                padding-top: 150px; 
+                
+                @media (max-width: $screen-sm-max) {
+                    background: url(img/lp-footer-logo-bg.jpg) no-repeat 50% 50%;
+                    background-size: cover;
+                    text-align: center;
+                    padding: 40px 20px;
+                    width: 100%;
+                    max-width: 100%;
+                }
+                
+                img {
+                    width: 358px;
+                }
+            }
+            
+            .right-col-text {
+                padding: 95px 20px 50px 60px;
+                
+                @media (max-width: $screen-sm-max) {
+                    background: #f4f0e9 url(img/lp-footer-right-bg.jpg) no-repeat 50% 50%;
+                    background-size: cover;
+                    padding: 20px;
+                }
+                
+                .footer-content {
+                    @media (max-width: $screen-sm-max) {
+                        max-width: 750px;
+                        margin: auto;
+                        padding: 40px 20px;
+                    }
+                }
+                
+                .title {
+                    font-family: $baskerville;
+                    color: $brown;
+                    font-size: 26px; /* Approximation due to font substitution */
+                    font-weight: 400;
+                    line-height: 1; /* Approximation due to font substitution */
+                    text-align: left;
+                    margin-bottom: 33px;
+                }
+                
+                .content {
+                    font-family: $cronos;
+                    color: $brown;
+                    font-size: 18px; /* Approximation due to font substitution */
+                    font-weight: 400;
+                    line-height: 1.5; /* Approximation due to font substitution */
+                    text-align: left;
+                }
+                
+            }
+            
+        }
+        
+        //Used in multiple rows
+        .content-container {
+                
+            .content {
+                margin-bottom: 40px;
+                font-size: 1.125em;
+                line-height: 1.5;
+                font-family: $cronos;
+                font-weight: 400;
+                color: $brown;
+
+                @media (max-width: $screen-sm-max) {
+                    font-size: 15px;
+                }
+            }
+        }
+    }
+}
