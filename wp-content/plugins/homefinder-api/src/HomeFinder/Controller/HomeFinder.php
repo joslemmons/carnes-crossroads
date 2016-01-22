@@ -47,7 +47,7 @@ class HomeFinder extends Router
         $per_page = \HomeFinder\Model\HomeFinder::LISTINGS_PER_PAGE;
         $page = (isset($params['num']) && false !== filter_var($params['num'], FILTER_VALIDATE_INT)) ? (int)$params['num'] : 1;
 
-        // do not search through MLS 1/20
+        // do not search through MLS 1/20/16
         unset($_REQUEST['searchMLS']);
 
         $filters = HomeFinderFilters::withGETParams();

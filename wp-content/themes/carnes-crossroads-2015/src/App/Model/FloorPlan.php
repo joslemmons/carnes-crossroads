@@ -53,11 +53,18 @@ class FloorPlan
             $floor_plans = array_merge($floor_plans, $builder_floor_plans);
         }
 
-        $floor_plans = array_filter($floor_plans, function ($floor_plan) use ($filters) {
+        $slugify = new Slugify();
+        $floor_plans = array_filter($floor_plans, function ($floor_plan) use ($filters, $slugify) {
             /* @var FloorPlan $floor_plan */
 
-            if ($filters->getBuilderId() !== false) {
-                if ($filters->getBuilderId() !== $floor_plan->builder->id) {
+            if ($filters->getBuilders() !== false) {
+                $builders = $filters->getBuilders();
+                $builders = explode(',', $builders);
+                $builders = array_shift($builders);
+
+                $filter_builder = $slugify->slugify($floor_plan->builder->title());
+
+                if (trim($builders) !== trim($filter_builder)) {
                     return false;
                 }
             }
@@ -70,8 +77,7 @@ class FloorPlan
 
 
             if ($filters->getBedrooms() !== false) {
-            $bedrooms = $filters->getBedrooms();
-            if ($bedrooms !== false) {
+                $bedrooms = $filters->getBedrooms();
                 $bedrooms = explode(',', $bedrooms);
                 $bedrooms = array_shift($bedrooms);
 
@@ -80,18 +86,14 @@ class FloorPlan
                 }
             }
 
-            }
-
 
             if ($filters->getBathrooms() !== false) {
-            $bathrooms = $filters->getBathrooms();
-            if ($bathrooms !== false) {
+                $bathrooms = $filters->getBathrooms();
                 $bathrooms = explode(',', $bathrooms);
                 $bathrooms = array_shift($bathrooms);
                 if ($floor_plan->full_bathrooms < $bathrooms) {
                     return false;
                 }
-            }
             }
 
             return true;

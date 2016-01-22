@@ -194,7 +194,8 @@ jQuery(function ($) {
             bathrooms: getFilterBathrooms(),
             shouldSearchMLS: getShouldSearchMLS(),
             searchAddress: getSearchAddress(),
-            includePlans: getShouldIncludePlans()
+            includePlans: getShouldIncludePlans(),
+            builders: getBuilders()
         };
 
         showLoadingListingsIndicator();
@@ -230,7 +231,8 @@ jQuery(function ($) {
                 bathrooms: filters.bathrooms,
                 searchMLS: filters.shouldSearchMLS,
                 searchAddress: filters.searchAddress,
-                includePlans: filters.includePlans
+                includePlans: filters.includePlans,
+                builders: filters.builders
             },
             function (data) {
                 var html = data.rsp,
@@ -248,6 +250,10 @@ jQuery(function ($) {
 
                 $('div.listings-type').find('select').find('option').first().prop('selected', 'selected');
             });
+    }
+
+    function getBuilders() {
+        return $('#filter-builders').find('option:selected').val();
     }
 
     function getShouldIncludePlans()

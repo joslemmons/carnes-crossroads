@@ -22,7 +22,7 @@ class HomeFinderFilters
     private $_searchMLS = false;
     private $_searchAddress = '';
     private $_includePlans = false;
-    private $_builderId = '';
+    private $_builders = '';
 
     private $_rawPropertyTypes = array();
     private $_rawNeighborhoods = array();
@@ -32,7 +32,7 @@ class HomeFinderFilters
     private $_rawSearchMLS = '';
     private $_rawSearchAddress = '';
     private $_rawIncludePlans = '';
-    private $_rawBuilderId = '';
+    private $_rawBuilders = '';
 
     private $_propertiesToExclude = array();
 
@@ -93,29 +93,23 @@ class HomeFinderFilters
 
         $filters->setShouldIncludePlans($shouldIncludePlans);
 
-        $builderId = (isset($data['builderId'])) ? filter_var($data['builderId'], FILTER_SANITIZE_NUMBER_INT) : false;
-        if ($builderId !== false && $builderId !== '') {
-            $filters->setBuilderId($builderId);
-        }
-        else {
-            $filters->setBuilderId(false);
-        }
-
         $searchAddress = (isset($data['searchAddress'])) ? sanitize_text_field($data['searchAddress']) : '';
         $filters->setSearchAddress($searchAddress);
 
-        $filters->_rawPropertyTypes = $data['propertyTypes'];
-        $filters->_rawNeighborhoods = $data['neighborhoods'];
-        $filters->_rawPrices = $data['prices'];
-        $filters->_rawBedrooms = $data['bedrooms'];
-        $filters->_rawBathrooms = $data['bathrooms'];
+        $filters->_rawPropertyTypes = (isset($data['propertyTypes'])) ? $data['propertyTypes'] : '';
+        $filters->_rawNeighborhoods = (isset($data['neighborhoods'])) ? $data['neighborhoods'] : '';
+        $filters->_rawPrices = (isset($data['prices'])) ? $data['prices'] : '';
+        $filters->_rawBedrooms = (isset($data['bedrooms'])) ? $data['bedrooms'] : '';
+        $filters->_rawBathrooms = (isset($data['bathrooms'])) ? $data['bathrooms'] : '';
         $filters->_rawSearchMLS = ($shouldSearchMLS) ? 'true' : 'false';
         $filters->_rawSearchAddress = $searchAddress;
         $filters->_rawIncludePlans = $shouldIncludePlans;
+        $filters->_rawBuilders = (isset($data['builders'])) ? $data['builders'] : '';
 
         // add the various filters passed as GET params to $filters
         $filters->setPropertyTypes($data['propertyTypes']);
         $filters->setNeighborhoods($data['neighborhoods']);
+        $filters->setBuilders($filters->_rawBuilders);
 
         $prices = $data['prices'];
         if (true === is_array($prices)) {
@@ -181,14 +175,6 @@ class HomeFinderFilters
         }
 
         $filters->setShouldIncludePlans($shouldIncludePlans);
-        
-        $builderId = (isset($_REQUEST['builderId'])) ? filter_var($_REQUEST['builderId'], FILTER_SANITIZE_NUMBER_INT) : false;
-        if ($builderId !== false && $builderId !== '') {
-            $filters->setBuilderId($builderId);
-        }
-        else {
-            $filters->setBuilderId(false);
-        }
 
         $searchAddress = (isset($_REQUEST['searchAddress'])) ? sanitize_text_field($_REQUEST['searchAddress']) : '';
         $filters->setSearchAddress($searchAddress);
@@ -201,10 +187,12 @@ class HomeFinderFilters
         $filters->_rawSearchMLS = ($shouldSearchMLS) ? 'true' : 'false';
         $filters->_rawSearchAddress = $searchAddress;
         $filters->_rawIncludePlans = $shouldIncludePlans;
+        $filters->_rawBuilders = self::_getFilterFromRequestByKey('builders');
 
         // add the various filters passed as GET params to $filters
         $filters->setPropertyTypes(self::_getFilterFromRequestByKey('propertyTypes'));
         $filters->setNeighborhoods(self::_getFilterFromRequestByKey('neighborhoods'));
+        $filters->setBuilders(self::_getFilterFromRequestByKey('builders'));
 
         $prices = self::_getFilterFromRequestByKey('prices');
         if (true === is_array($prices)) {
@@ -256,7 +244,8 @@ class HomeFinderFilters
             'bedrooms' => $this->_rawBedrooms,
             'bathrooms' => $this->_rawBathrooms,
             'searchMLS' => $this->_rawSearchMLS,
-            'searchAddress' => $this->_rawSearchAddress
+            'searchAddress' => $this->_rawSearchAddress,
+            'builders' => $this->_rawBuilders
         );
 
         return $filters;
@@ -275,18 +264,18 @@ class HomeFinderFilters
         $this->_searchMLS = $should;
     }
 
-    public function getBuilderId()
+    public function getBuilders()
     {
-        if ($this->_builderId === '') {
+        if ($this->_builders === '') {
             return false;
         }
 
-        return $this->_builderId;
+        return implode(',', $this->_builders);
     }
 
-    public function setBuilderId($builderId)
+    public function setBuilders($builderId)
     {
-        $this->_builderId = $builderId;
+        $this->_builders = $builderId;
     }
 
     public function shouldIncludePlans()
@@ -448,7 +437,7 @@ class HomeFinderFilters
     public function getFiltersAsHashToUseAsId()
     {
         $slug = new Slugify();
-        return $slug->slugify($this->getFriendlyName() . ' ' . $this->_searchMLS . ' ' . $this->_searchAddress . ' ' . $this->_includePlans);
+        return $slug->slugify($this->getFriendlyName() . ' ' . $this->_searchMLS . ' ' . $this->_searchAddress . ' ' . $this->_includePlans . ' ' . $this->_rawBuilders);
     }
 
     public function getAreaFiltersForMLSRequest()
@@ -630,6 +619,10 @@ class HomeFinderFilters
 
             if (false !== $this->getBathrooms()) {
                 $filters['in_Full_Bathrooms__c'] = $this->getBathrooms();
+            }
+
+            if (false !== $this->getBuilders()) {
+                $filters['like_Builder_Name_Website__c'] = str_replace('-', ' ', $this->getBuilders());
             }
         }
 
