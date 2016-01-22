@@ -103,7 +103,7 @@ class HomeFinderFilters
         $filters->_rawBathrooms = (isset($data['bathrooms'])) ? $data['bathrooms'] : '';
         $filters->_rawSearchMLS = ($shouldSearchMLS) ? 'true' : 'false';
         $filters->_rawSearchAddress = $searchAddress;
-        $filters->_rawIncludePlans = $shouldIncludePlans;
+        $filters->_rawIncludePlans = ($shouldIncludePlans) ? 'true' : 'false';
         $filters->_rawBuilders = (isset($data['builders'])) ? $data['builders'] : '';
 
         // add the various filters passed as GET params to $filters
@@ -186,7 +186,7 @@ class HomeFinderFilters
         $filters->_rawBathrooms = self::_getFilterFromRequestByKey('bathrooms');
         $filters->_rawSearchMLS = ($shouldSearchMLS) ? 'true' : 'false';
         $filters->_rawSearchAddress = $searchAddress;
-        $filters->_rawIncludePlans = $shouldIncludePlans;
+        $filters->_rawIncludePlans = ($shouldIncludePlans) ? 'true' : 'false';
         $filters->_rawBuilders = self::_getFilterFromRequestByKey('builders');
 
         // add the various filters passed as GET params to $filters
@@ -245,7 +245,8 @@ class HomeFinderFilters
             'bathrooms' => $this->_rawBathrooms,
             'searchMLS' => $this->_rawSearchMLS,
             'searchAddress' => $this->_rawSearchAddress,
-            'builders' => $this->_rawBuilders
+            'builders' => $this->_rawBuilders,
+            'includePlans' => $this->_rawIncludePlans
         );
 
         return $filters;
@@ -700,6 +701,19 @@ class HomeFinderFilters
             $bathrooms_count = (int)$bathrooms[0];
             $friendly_bathroom_name = $bathrooms_count . '+ Bathrooms';
             $friendly_name[] = $friendly_bathroom_name;
+        }
+
+        $builders = (isset($raw_filters['builders'])) ? $raw_filters['builders'] : false;
+        if (false !== $builders && is_array($builders) && !empty($builders)) {
+            $builders = $builders[0];
+            $friendly_name[] = ucfirst($builders);
+        }
+
+        $includePlans = (isset($raw_filters['includePlans'])) ? $raw_filters['includePlans'] : false;
+        if (false !== $includePlans && $includePlans !== '') {
+            if ($includePlans === 'true') {
+                $friendly_name[] = 'Include Floor Plans';
+            }
         }
 
         $friendly_name = implode(', ', $friendly_name);

@@ -1,6 +1,14 @@
 jQuery(function ($) {
     //$('.dropdown-toggle').dropdown();
 
+    //vimeo player
+    jQuery('cn-load-videos').ready(function($) {
+        $(document).on('click', '.video-play', function (e) {
+            e.preventDefault();
+            createPopup($(this), " ");
+        });
+    });
+
     //Carousels - bxslider
     $.each($('div.slider-lg'), function (i, el) {
         $(el).bxSlider({
@@ -47,6 +55,147 @@ jQuery(function ($) {
                 return false;
             }
         }
+    });
+
+    // account functionality
+
+    function saveOrUnSaveProperty(propertyId, action) {
+        $.post('/api/home-finder/properties/' + propertyId + '/' + action);
+    }
+
+    $('#modal-account').on('show.bs.modal', function (e) {
+        var $modals = $('div.modal');
+        $.each($modals, function (i, el) {
+            if (($(el).data('bs.modal') || {}).isShown === true) {
+                $(el).modal('hide');
+            }
+        });
+    });
+
+    $(document).on('click', 'a.showAccountPage', function () {
+        var $modal = $('#modal-account');
+
+        if (typeof ($modal.data('bs.modal') || {}).isShown === 'undefined' || ($modal.data('bs.modal') || {}).isShown === false) {
+            $modal.modal('show');
+        }
+        else {
+            return false;
+        }
+
+        $.ajax({
+            type: "GET",
+            url: '/api/home-finder/account-page',
+            data: {},
+            error: function () {
+                $modal.find('div.modal-content div.primary-content').after('<p>Failed to load Account Information. Please try again later. If it fails again, please let us know. <a href="/contact/">Contact Page</a></p>');
+
+            },
+            success: function (data) {
+                var html = data.rsp;
+
+                // refresh content
+                $modal.find('div.modal-content div.child-page-content').remove();
+                $modal.find('div.modal-content div.primary-content').after(html);
+
+                //My Account Slider
+                $('.saved-listings-slider').slick({
+                    infinite: false,
+                    slidesToShow: 3,
+                    slidesToScroll: 1,
+                    autoplay: false,
+                    autoplaySpeed: 8000,
+                    variableWidth: true
+                });
+            }
+        });
+
+        return false;
+    });
+
+    $(document).on('click', '#account-saved-listings a.account-unsave-listing', function () {
+        var propertyId = $(this).attr('data-property-id'),
+            slickSlideNum = $(this).parent().attr('data-slick-index');
+
+        if (confirm('Are you sure?')) {
+            $('.saved-listings-slider').slick('slickRemove', slickSlideNum);
+        }
+
+        saveOrUnSaveProperty(propertyId, 'un-save');
+
+        return false;
+    });
+
+    $(document).on('click', 'a.accountUnSaveSearch', function () {
+        var unSaveLink = $(this).attr('data-un-save-link');
+
+        var savedSearchesCount = parseInt($('#saveSearchSection').find('a.showAccountPage').text().replace('(', '').replace(')', ''));
+        savedSearchesCount--;
+
+        $('#saveSearchSection').find('a.showAccountPage').text('(' + savedSearchesCount + ')');
+
+        $(this).parent().remove();
+
+        $.post(unSaveLink, {}, function (rsp) {
+        });
+
+        return false;
+    });
+
+    $(document).on('click', '#notification-options form button', function () {
+        var choice = $(this).parent().find('input[type="radio"]:checked').val(),
+            $error = $(this).parent().find('span.error-message'),
+            $success = $(this).parent().find('span.success-message');
+
+        $.ajax({
+            type: "POST",
+            url: '/api/home-finder/save-notification-option',
+            data: {
+                choice: choice
+            },
+            error: function (data) {
+                $success.hide();
+                $error.text(data.rsp);
+                $error.show();
+            },
+            success: function (data) {
+                $error.hide();
+                $success.show();
+            }
+        });
+
+        return false;
+    });
+
+    $(document).on('click', '#account-register form button', function () {
+        var email = $(this).parent().find('input[name="email"]').val(),
+            $error = $(this).parent().find('span.error-message'),
+            $success = $(this).parent().find('span.success-message'),
+            $button = $(this),
+            buttonOriginalText = $(this).text();
+
+        $button.text('Signing in...');
+        $button.prop('disabled', true);
+
+        $.ajax({
+            type: "POST",
+            url: '/api/home-finder/sign-in',
+            data: {
+                email: email
+            },
+            error: function (data) {
+                $error.text(data.rsp);
+                $error.show();
+                $button.text(buttonOriginalText);
+                $button.prop('disabled', false);
+            },
+            success: function (data) {
+                $error.hide();
+
+                location.reload();
+            }
+        });
+
+        return false;
     });
 
 });

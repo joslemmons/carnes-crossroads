@@ -98,7 +98,8 @@
             <select id="filter-builders">
                 <option value="">Builders</option>
                 {% for builder in function('\\App\\Model\\Builder::all') %}
-                    <option value="{{ builder.title|slugify }}">{{ builder.title }}</option>
+                    <option value="{{ builder.title|slugify }}"
+                            {% if builder.title|slugify == filters.getBuilders|split(',')[0] %}selected="selected"{% endif %}>{{ builder.title }}</option>
                 {% endfor %}
             </select>
             <select id="filter-price">
@@ -122,7 +123,8 @@
                 <option value="3" {% if '3' == filters.getBathrooms|split(',')[0] %}selected="selected"{% endif %}>3+ Bathrooms</option>
                 <option value="4" {% if '4' == filters.getBathrooms|split(',')[0] %}selected="selected"{% endif %}>4+ Bathrooms</option>
             </select>
-            <input type="checkbox" id="filter-includePlans" class="pull-right" value="yes" />
+            <input type="checkbox" id="filter-includePlans" class="pull-right" value="yes"
+                   {% if filters.shouldIncludePlans %}checked="checked"{% endif %}/>
             <label for="filter-includePlans">Include Plans</label>
             {#<button type="button" class="hidden-sm hidden-xs more-button">More</button>#}
             <div class="more-options">

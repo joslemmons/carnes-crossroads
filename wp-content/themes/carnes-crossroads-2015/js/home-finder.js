@@ -869,7 +869,9 @@ jQuery(function ($) {
             prices: getFilterPrice(),
             bedrooms: getFilterBedrooms(),
             bathrooms: getFilterBathrooms(),
-            shouldSearchMLS: getShouldSearchMLS()
+            shouldSearchMLS: getShouldSearchMLS(),
+            includePlans: getShouldIncludePlans(),
+            builders: getBuilders()
         };
 
         var savedSearchesCount = parseInt($(this).parent().find('a.showAccountPage').text().replace('(', '').replace(')', ''));
