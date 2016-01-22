@@ -483,8 +483,9 @@ jQuery(function ($) {
     $('#filter-clearAll').on('click', function () {
         $('div.home-finder-filters').find('select option:selected').removeProp('selected');
         $('#filter-searchAddress').val('');
+        $('#filter-includePlans').prop('checked', false);
         // trigger a change in order to pull listings again
-        $('#filter-propertyType').trigger('change');
+        $('#filter-builders').trigger('change');
 
         return false;
     });
