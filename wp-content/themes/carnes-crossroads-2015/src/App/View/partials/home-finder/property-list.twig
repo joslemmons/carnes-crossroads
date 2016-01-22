@@ -8,15 +8,15 @@
             </div>
             <div class="listing-details-col">
                 <div class="listing-address">{{ property.title }}</div>
-                <div class="listing-neighborhood">{{ property.builder.title }}</div>
+                <div class="listing-neighborhood">Floor Plan | {{ property.builder.title }}</div>
                 <div class="listing-details">
                     {% if property.bedrooms or property.full_bathrooms or property.half_bathrooms %}
                         <div class="specs">{% if property.bedrooms %}{{ property.bedrooms }} BR /{% endif %}
                             {% if property.full_bathrooms %}{{ property.full_bathrooms }} Full Bath /{% endif %}{% if property.half_bathrooms %}{{ property.half_bathrooms }}  Half Bath{% endif %}
                         </div>
                     {% endif %}
-                    <div class="square-footage">{{ property.square_footage|number_format(numDecimalPlaces) }} sq ft</div>
-                    <div class="price">${{ property.price|number_format }}</div>
+                    <div class="square-footage">{{ property.square_footage|removeNonNumbers|number_format }} sq ft</div>
+                    <div class="price">${{ property.price|removeNonNumbers|number_format }}</div>
                 </div>
             </div>
         </div>

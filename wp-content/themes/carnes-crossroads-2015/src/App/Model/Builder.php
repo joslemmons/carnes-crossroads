@@ -185,6 +185,7 @@ class Builder extends Page
             $floor_plan = new FloorPlan();
             $floor_plan->title = $item[self::$field_floor_plan_title];
             $floor_plan->description = $item[self::$field_floor_plan_description];
+            $floor_plan->square_footage = $item[self::$field_floor_plan_square_footage];
 
             $featured_image_attachment_ids = $item[self::$field_floor_plan_featured_image_attachment_ids];
             if (is_array($featured_image_attachment_ids) === false) {
