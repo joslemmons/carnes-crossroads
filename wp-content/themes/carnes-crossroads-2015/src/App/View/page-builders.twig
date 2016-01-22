@@ -33,11 +33,11 @@
                         Features</a>
                 {% endif %}
                 {% if builder.shouldShowAvailableHomesButton %}
-                    <a href="#" target="new" class="btn-green builder-btn">Available
+                    <a href="/home-finder/search-listings/?builders[]={{ builder.title|slugify }}" class="btn-green builder-btn">Available
                         Homes</a>
                 {% endif %}
                 {% if builder.shouldShowHomePlansButton %}
-                    <a href="#" target="new" class="btn-green builder-btn">Home
+                    <a href="/home-finder/search-listings/?builders[]={{ builder.title|slugify }}&includePlans=true" class="btn-green builder-btn">Home
                         Plans</a>
                 {% endif %}
             </div>
