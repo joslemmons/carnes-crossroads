@@ -2,50 +2,47 @@
 
 use Elasticsearch\Common\Exceptions\ClientErrorResponseException;
 use Elasticsearch\Common\Exceptions\NoNodesAvailableException;
+use Elasticsearch\Common\Exceptions\ServerErrorResponseException;
+use Elasticsearch\Common\Exceptions\TransportException;
 use HomeFinder\Model\HomeFinderFilters;
 use HomeFinder\Model\MLSListing;
 use HomeFinder\Model\Property;
 use HomeFinder\Model\Result;
 
+
 class MLS
 {
+
+    const HOST = 'https://ca531fea426dbc392c21:0919af4654@3a7721e6.qb0x.com:31998';
+
     public static function getByMLSNumber($mls_number)
     {
         // get MLS properties
         $client = new \Elasticsearch\Client(array(
-            'hosts' => array('20bc6e1944d0a586000.qbox.io:80')
+            'hosts' => array(self::HOST)
         ));
 
         try {
         $listings = $client->search(array(
                 'index' => '',
                 'type' => '_all',
-                'body' => array(
-                    'query' => array(
-                        'match' => array(
-                            'is_active' => 1
-                        )
-                    ),
-                    "filter" => array(
-                        "bool" => array(
-                            "must" => array(
-                                array(
-                                    "fquery" => array(
-                                        "query" => array(
-                                            "query_string" => array(
-                                                "query" => "z_textsearch_mls_num:(\"" . $mls_number . "\")"
-                                            )
-                                        ),
-                                        "_cache" => true
-                                    )
-                                )
-                            )
-                        )
-                    )
-                )
+                'body' => [
+                    'query' => [
+                        'bool' => [
+                            'must' => [
+                                ['match' => ['z_textsearch_mls_num' => $mls_number]],
+                                ['match' => ['is_active' => 1]]
+                            ],
+                            'must_not' => [],
+                            'minimum_should_match' => 1
+                        ]
+                    ]
+                ]
             )
         );
         } catch (NoNodesAvailableException $ex) {
+            $listings = array();
+        } catch (TransportException $ex) {
             $listings = array();
         }
 
@@ -83,13 +80,8 @@ class MLS
 
         // get MLS properties
         $client = new \Elasticsearch\Client(array(
-            'hosts' => array('20bc6e1944d0a586000.qbox.io:80')
+            'hosts' => array(self::HOST)
         ));
-
-        $must_not = array();
-        foreach ($mlsNumbersToExclude as $fquery) {
-            $must_not[] = $fquery;
-        }
 
         try {
             $params = [
@@ -105,6 +97,7 @@ class MLS
                                 $priceFilters,
                                 ['match' => ['is_active' => 1]]
                             ],
+                            'must_not' => [],
                             'minimum_should_match' => 1
                         ]
                     ]
@@ -127,10 +120,16 @@ class MLS
                 $params['body']['query']['bool']['must'][] = $bathroomFilters;
             }
 
+            if ($mlsNumbersToExclude) {
+                $params['body']['query']['bool']['must_not'][] = $mlsNumbersToExclude;
+            }
+
             $listings = $client->search($params);
         } catch (NoNodesAvailableException $ex) {
             $listings = array();
         } catch (ClientErrorResponseException $ex) {
+            $listings = array();
+        } catch (ServerErrorResponseException $ex) {
             $listings = array();
         }
 

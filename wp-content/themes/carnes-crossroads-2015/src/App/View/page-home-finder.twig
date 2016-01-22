@@ -263,6 +263,8 @@
             <div class="col-lg-9 col-md-7 single-listing-col{% if isSingle %} move-up{% endif %}">
                 {% if isNewOfferings %}
                 {{ include('partials/home-finder/new-offering.twig', { offering: activeItem, template_uri: theme.link, current_user: current_user }, with_context = false) }}
+                {% elseif isFloorPlans %}
+                    {{ include('partials/home-finder/floor-plan.twig', { floor_plan: activeItem, template_uri: theme.link, current_user: current_user }, with_context = false) }}
                 {% else %}
                 {{ include('partials/home-finder/property.twig', { property: activeItem, template_uri: theme.link, current_user: current_user }, with_context = false) }}
                 {% endif %}

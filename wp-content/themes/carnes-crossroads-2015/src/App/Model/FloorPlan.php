@@ -1,5 +1,6 @@
 <?php namespace App\Model;
 
+use Cocur\Slugify\Slugify;
 use HomeFinder\Model\HomeFinderFilters;
 
 class FloorPlan
@@ -17,6 +18,19 @@ class FloorPlan
     public $brochure_src;
     public $floor_plan_src;
     public $builder;
+
+    public function link()
+    {
+        $slug = new Slugify();
+        $builder = $slug->slugify($this->builder->title());
+        $floor_plan = $slug->slugify($this->title);
+        return 'home-finder/floor-plans/' . $builder . '/' . $floor_plan . '/';
+    }
+
+    public function getImages()
+    {
+        return $this->featured_images;
+    }
 
     public function getFeaturedImage()
     {

@@ -211,17 +211,19 @@ class HomeFinder extends Router
         }
 
         $propertyId = (isset($_POST['propertyId'])) ? sanitize_text_field($_POST['propertyId']) : null;
+        $builder_title = (isset($_POST['builderTitle'])) ? str_replace('-', ' ', sanitize_text_field($_POST['builderTitle'])) : null;
+        $floor_plan_title = (isset($_POST['floorPlanTitle'])) ? str_replace('-', ' ', sanitize_text_field($_POST['floorPlanTitle'])) : null;
         $name = (isset($_POST['name'])) ? sanitize_text_field($_POST['name']) : null;
         $email = (isset($_POST['email'])) ? sanitize_email($_POST['email']) : null;
         $message = (isset($_POST['message'])) ? sanitize_text_field($_POST['message']) : null;
         $shouldCreateAccount = (isset($_POST['shouldCreateAccount'])) ? sanitize_text_field($_POST['shouldCreateAccount']) : false;
         $error_messages = array();
 
-        if (null === $propertyId) {
+        if ($propertyId === null && $builder_title === null && $floor_plan_title === null) {
             self::renderJSON(array(
-                'status' => 404,
-                'rsp' => 'Invalid Property Id'
-            ), 404);
+                'status' => 500,
+                'rsp' => 'Failed to find Listing. Please try again.'
+            ), 500);
         }
 
         if ('' === $email) {
@@ -235,6 +237,9 @@ class HomeFinder extends Router
             $shouldCreateAccount = true;
         }
 
+        $item = null;
+
+        if ($propertyId !== null && $propertyId !== '') {
         $property = Property::withId($propertyId);
         $address = $property->getAddress();
 
@@ -242,6 +247,33 @@ class HomeFinder extends Router
             self::renderJSON(array(
                 'status' => 404,
                 'rsp' => 'Invalid Property Id'
+            ), 404);
+        }
+            $item = $property;
+            $twig_file = 'email/request-showing.twig';
+        } elseif ($builder_title !== null && $builder_title !== '' && $floor_plan_title !== null && $floor_plan_title !== '') {
+            $builder = \App\Model\Builder::withName($builder_title);
+
+            if (!$builder) {
+                self::renderJSON(array(
+                    'rsp' => 'Unable to find Builder'
+                ), 404);
+            }
+
+            $floor_plan = $builder->getFloorPlanByName($floor_plan_title);
+
+            if (!$floor_plan) {
+                self::renderJSON(array(
+                    'rsp' => 'Unable to find Floor Plan'
+                ), 404);
+            }
+
+            $item = $floor_plan;
+            $twig_file = 'email/request-information-on-floor-plan.twig';
+        } else {
+            self::renderJSON(array(
+                'status' => 404,
+                'rsp' => 'Invalid Listing'
             ), 404);
         }
 
@@ -253,9 +285,9 @@ class HomeFinder extends Router
         try {
             $mandrill = new \Mandrill('hpjxvPoVhO64Xh-ZGN3gGw');
             $mandrill->messages->send(array(
-                'html' => \Timber::compile('email/request-showing.twig',
+                'html' => \Timber::compile($twig_file,
                     array(
-                        'property' => $property,
+                        'item' => $item,
                         'name' => $name,
                         'email' => $email,
                         'message' => $message

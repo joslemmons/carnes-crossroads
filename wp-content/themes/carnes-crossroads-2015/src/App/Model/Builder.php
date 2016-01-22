@@ -76,6 +76,24 @@ class Builder extends Page
         return $post_types;
     }
 
+    /**
+     * @param $name
+     * @return Builder|bool|null
+     */
+    public static function withName($name)
+    {
+        $post = get_page_by_title($name, 'object', self::$postType);
+
+        if ($post === null) {
+            return false;
+        }
+
+        return \Timber::get_post(array(
+            'p' => $post->ID,
+            'post_type' => self::$postType
+        ), get_class());
+    }
+
     public static function all()
     {
         return \Timber::get_posts(array(
@@ -173,6 +191,34 @@ class Builder extends Page
         }
 
         return $return;
+    }
+
+    /**
+     * @param $name
+     * @return FloorPlan|null
+     */
+    public function getFloorPlanByName($name)
+    {
+        $builder_floor_plans = $this->getFloorPlans();
+
+        if (!$builder_floor_plans) {
+            return null;
+        }
+
+        $floor_plan = null;
+        foreach ($builder_floor_plans as $builder_floor_plan) {
+            /* @var FloorPlan $builder_floor_plan */
+            if (strtolower(trim($builder_floor_plan->title)) === strtolower(trim($name))) {
+                $floor_plan = $builder_floor_plan;
+                break;
+            }
+        }
+
+        if (!$floor_plan) {
+            return null;
+        }
+
+        return $floor_plan;
     }
 
     public function getFloorPlans()

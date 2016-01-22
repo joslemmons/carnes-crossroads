@@ -1,5 +1,6 @@
 <?php namespace HomeFinder\Model;
 
+use App\Model\Builder;
 use App\Model\Twig;
 use HomeFinder\Request\MLS;
 use HomeFinder\Request\PropertyBase;
@@ -271,9 +272,18 @@ class Property
 
     public function getNeighborhood()
     {
-        // always show Carnes Crossroads
-//        return $this->project_name;
-        return 'Carnes Crossroads';
+        return $this->project_name;
+    }
+
+    public function getBuilderName()
+    {
+        // for some reason the builder name is in builder website not builder name...
+        return $this->builder_website;
+    }
+
+    public function getBuilder()
+    {
+        return Builder::withName($this->getBuilderName());
     }
 
     public function getFullBathroomCount()
