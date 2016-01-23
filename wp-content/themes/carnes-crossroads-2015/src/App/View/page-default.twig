@@ -27,7 +27,7 @@
 
         {% include "partials/page-single.twig" %}
 
-        {% if page.content %}
+        {% if page.content and page.children %}
         <hr />
         {% endif %}
 
