@@ -68,6 +68,7 @@ class Bootstrap
         Post::bootstrap();
         Builder::bootstrap();
         HomesPage::bootstrap();
+        RealEstateAgent::bootstrap();
     }
 
 }

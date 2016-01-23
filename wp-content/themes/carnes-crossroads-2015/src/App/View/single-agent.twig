@@ -1,0 +1,27 @@
+{% extends 'base.twig' %}
+{% block template %}
+
+    <section class="hero__page" style="background-image: url('{{ parent.thumbnail.src|resize(1500) }}')">
+        <div class="hero__content-tab-{{ parent.getHeroColor }}">
+        <div class="hero__content-inner">
+            <h1>{{ parent.title }}</h1>
+        </div>
+    </div>
+</section>
+
+<section class="page-content--white-floral-top">
+    <div class="container">
+
+        {% include "partials/agent-content.twig" %}
+
+    </div>
+
+</section>
+
+    {% if page.getQuicklinkBoxes %}
+{% include "partials/link-widgets.twig" %}
+    {% endif %}
+
+{% include "partials/contact-foot.twig" %}
+
+{% endblock %}

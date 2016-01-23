@@ -1,0 +1,6 @@
+<div class="breadcrumbs">
+    {{ function('\\App\\Model\\Page::getBreadcrumbs') }}
+</div>
+<h2>{{ page.title }}</h2>
+<img src="{{ page.thumbnail.src|resize(790,395) }}">
+<p>{{ page.content }}</p>

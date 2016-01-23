@@ -37,6 +37,8 @@ class Page extends \TimberPost
     public static $field_quicklinks_group_item_three_action_page_to_link_to;
     public static $field_quicklinks_group_item_three_action_custom_link;
 
+    private static $_agents = null;
+
     const IS_LINK_TO_PAGE = 'page';
     const IS_CUSTOM_LINK = 'custom';
     const USE_CUSTOM_QUICKLINKS = 'true';
@@ -281,6 +283,26 @@ class Page extends \TimberPost
         }
 
         return '';
+    }
+
+    /**
+     * @return array
+     */
+    public function getChildren()
+    {
+        switch ($this->slug) {
+            case ('sales-team') :
+                // only do this once. we want the menu to line up with the content
+                if (self::$_agents === null) {
+                    $agents = RealEstateAgent::all();
+                    shuffle($agents);
+                    self::$_agents = $agents;
+                }
+
+                return self::$_agents;
+            default:
+                return $this->children('page', '\App\Model\Page');
+        }
     }
 
 }

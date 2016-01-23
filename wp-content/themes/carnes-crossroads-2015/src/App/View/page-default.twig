@@ -27,11 +27,11 @@
 
         {% include "partials/page-single.twig" %}
 
-        {% if page.content and page.children %}
+        {% if page.content and page.getChildren %}
         <hr />
         {% endif %}
 
-        {% if page.children %}
+        {% if page.getChildren %}
             {% include "partials/page-show-layers.twig" %}
         {% endif %}
 
