@@ -3,7 +3,19 @@
 global $cat;
 
 $context = Timber::get_context();
-$context['page'] = Timber::get_post(false, '\App\Model\Page');
+
+if (true === isset($cat) && $cat !== '') {
+    $posts = Timber::get_posts();
+} else {
+    // all
+    $queryArgs = array(
+        'post_type' => 'post'
+    );
+    query_posts($queryArgs);
+    $posts = Timber::get_posts($queryArgs);
+}
+
+$context['page'] = $posts;
 $context['categories'] = Timber::get_terms('category');
 $context['categoryName'] = get_cat_name($cat);
 $context['posts'] = Timber::get_posts();
