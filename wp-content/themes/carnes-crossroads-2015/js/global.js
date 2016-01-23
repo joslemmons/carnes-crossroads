@@ -82,6 +82,14 @@ jQuery(function ($) {
             return false;
         }
 
+        loadAccountContentInModal();
+
+        return false;
+    });
+
+    function loadAccountContentInModal() {
+        var $modal = $('#modal-account');
+
         $.ajax({
             type: "GET",
             url: '/api/home-finder/account-page',
@@ -108,9 +116,7 @@ jQuery(function ($) {
                 });
             }
         });
-
-        return false;
-    });
+    }
 
     $(document).on('click', '#account-saved-listings a.account-unsave-listing', function () {
         var propertyId = $(this).attr('data-property-id'),
@@ -191,7 +197,14 @@ jQuery(function ($) {
             success: function (data) {
                 $error.hide();
 
-                location.reload();
+                loadAccountContentInModal();
+
+                // if the page is HomeFinder, then reload so all the account functionality works
+                if (typeof CXG !== 'undefined' && CXG.isHomeFinderPage !== 'undefined' && CXG.isHomeFinderPage === true) {
+                    $('#modal-account').on('hide.bs.modal', function () {
+                        location.reload();
+                    });
+                }
             }
         });
 
