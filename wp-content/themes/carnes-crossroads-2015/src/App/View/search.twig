@@ -1,4 +1,83 @@
 {% extends 'base.twig' %}
 {% block template %}
-Search
+    {% if page.thumbnail %}
+        {% set headerImage = page.thumbnail %}
+    {% else %}
+        {% set headerImage = page.parent.thumbnail %}
+    {% endif %}
+
+    <section class="hero__page" style="background-image: url('{{ headerImage.src|resize(1500) }}')">
+        <div class="hero__content-tab-green">
+            <div class="hero__content-inner">
+                <h1>Search</h1>
+            </div>
+        </div>
+    </section>
+
+    <section class="page-content--white-floral-top">
+        <div class="container">
+            <div class="row extra-bottom">
+                <div class="col-xs-12 col-md-8 col-md-offset-2 text-center">
+                    <h2>Search results for "{{ search_term|e }}"</h2>
+                </div>
+            </div>
+
+            <form action="/" method="get">
+                <input type="text" placeholder="enter keywords" name="s"/>
+            </form>
+
+            {% for post in posts %}
+                <div class="search-item">
+                    <h6><a href="{{ post.link }}">{{ post.title }}</a></h6>
+                    {{ post.content|truncate(40) }}
+                </div>
+            {% endfor %}
+
+
+            {% if posts|length == 0 and search_term != '' %}
+                <p>No search results found.</p>
+            {% endif %}
+
+            {% if posts|length == 0 and search_term == '' %}
+                {#show nothing#}
+            {% endif %}
+
+            {% if posts %}
+                <div class="row">
+                    <div class="col-sm-12 post-container">
+                        <div class="tool-pagination">
+                            {% if pagination.prev %}
+                                <a href="{{ pagination.prev.link }}"
+                                   class="prev {{ pagination.prev.link|length ? '' : 'invisible' }}">&laquo; Prev</a>
+                            {% endif %}
+                            <ul class="pages">
+                                {% for page in pagination.pages %}
+                                    <li>
+                                        {% if page.link %}
+                                            <a href="{{ page.link }}" class="{{ page.class }}">{{ page.title }}</a>
+                                        {% else %}
+                                            <span class="{{ page.class }}">{{ page.title }}</span>
+                                        {% endif %}
+                                    </li>
+                                {% endfor %}
+                            </ul>
+                            {% if pagination.next %}
+                                <a href="{{ pagination.next.link }}"
+                                   class="next {{ pagination.next.link|length ? '' : 'invisible' }}">Next &raquo;</a>
+                            {% endif %}
+                        </div>
+                        <!-- /.tool-pagination -->
+                    </div><!-- /.col-sm-12 -->
+                </div><!-- /.row -->
+            {% endif %}
+
+        </div>
+
+    </section>
+
+    {% if page.getQuicklinkBoxes %}
+        {% include "partials/link-widgets.twig" %}
+    {% endif %}
+
+    {% include "partials/contact-foot.twig" %}
 {% endblock %}
