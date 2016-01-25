@@ -1,11 +1,17 @@
-{% for child_page in page.children('page', '\\App\\Model\\Page') %}
+{% for child_page in page.getChildren %}
     {% if loop.index is odd %}
         <div class="row">
 
             <div class="col-xs-12 col-md-7">
+                {% if child_page.getGalleryImages|length > 1 %}
+                    <div class="slider-sm__nav">
+                        <span class="prev-sm"></span>
+                        <span class="next-sm"></span>
+                    </div>
+                {% endif %}
                 <div class="slider-sm">
                     {% for image in child_page.getGalleryImages %}
-                        <div class="slider-sm__item" style="background-image: url('{{ image.get_src }}');">
+                        <div class="slider-sm__item" style="background-image: url('{{ image.src }}');">
                             {% if image.caption %}
                                 <div class="slider-sm__caption"><span>{{ image.caption }}</span></div>
                             {% endif %}
@@ -36,7 +42,7 @@
                 <div class="slider-sm__wrap slider-sm">
                     {% for image in child_page.getGalleryImages %}
                         <div class="slider-sm__item"
-                             style="background-image: url('{{ image.get_src|resize(718,350) }}');">
+                             style="background-image: url('{{ image.src|resize(718,350) }}');">
                             {% if image.caption %}
                                 <div class="slider-sm__caption">
                                     <span>{{ image.caption }}</span>

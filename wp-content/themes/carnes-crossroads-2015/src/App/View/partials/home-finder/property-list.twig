@@ -1,22 +1,25 @@
 {% set activePropertyId = activeProperty.getId %}
 {% for property in properties %}
     {% if property.isFloorPlan %}
-        <div class="listing {% if loop.last %}infinite-check{% endif %}"
+        <div class="listing floor-plan {% if loop.last %}infinite-check{% endif %}"
+             data-floor-plan-link="{{ property.link }}"
+             data-floor-plan-title="{{ property.title|slugify }}"
+             data-builder-title="{{ property.builder.title|slugify }}"
              {% if loop.last and nextPageUrl %}data-infinite-scroll-next-url="{{ nextPageUrl }}"{% endif %}>
             <div class="listing-img-col"
                  style="background:url('{{ property.getFeaturedImage.src }}') no-repeat 50% 50%; background-size: cover;">
             </div>
             <div class="listing-details-col">
                 <div class="listing-address">{{ property.title }}</div>
-                <div class="listing-neighborhood">{{ property.builder.title }}</div>
+                <div class="listing-neighborhood">Floor Plan | {{ property.builder.title }}</div>
                 <div class="listing-details">
                     {% if property.bedrooms or property.full_bathrooms or property.half_bathrooms %}
                         <div class="specs">{% if property.bedrooms %}{{ property.bedrooms }} BR /{% endif %}
                             {% if property.full_bathrooms %}{{ property.full_bathrooms }} Full Bath /{% endif %}{% if property.half_bathrooms %}{{ property.half_bathrooms }}  Half Bath{% endif %}
                         </div>
                     {% endif %}
-                    <div class="square-footage">{{ property.square_footage|number_format(numDecimalPlaces) }} sq ft</div>
-                    <div class="price">${{ property.price|number_format }}</div>
+                    <div class="square-footage">{{ property.square_footage|removeNonNumbers|number_format }} sq ft</div>
+                    <div class="price">${{ property.price|removeNonNumbers|number_format }}</div>
                 </div>
             </div>
         </div>
@@ -31,7 +34,7 @@
         </div>
         <div class="listing-details-col">
             <div class="listing-address">{{ property.getAddress }}</div>
-            <div class="listing-neighborhood">{{ property.getPropertyType }}{% if property.getPropertyType and property.getNeighborhood %} | {% endif %}{{ property.getNeighborhood }}</div>
+            <div class="listing-neighborhood">{{ property.getPropertyType }}{% if property.getPropertyType and property.getBuilderName %} | {% endif %}{{ property.getBuilderName }}</div>
             <div class="listing-details">
                 {% if property.getBedroomCount or property.getFullBathroomCount or property.getHalfBathroomCount %}
                     <div class="specs">{% if property.getBedroomCount %}{{ property.getBedroomCount }} BR /{% endif %}

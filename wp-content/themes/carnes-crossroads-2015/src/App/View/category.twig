@@ -30,11 +30,12 @@
                         <li class="category-list__item{% if category.name == categoryName %} active{% endif %}"><a
                                     href="{{ category.link }}">{{ category.name }}</a></li>
                     {% endfor %}
+                    <li><a class="category-list__item{% if categoryName == false %} active{% endif %}" href="/category/all/">View All</a>
                 </ul>
             </div>
 
              <div class="col-xs-12 col-md-9 category-items">
-                 <h2>{{ categoryName }}</h2>
+                 <h2>{% if categoryName %}{{ categoryName }}{% else %}All Categories{% endif %}</h2>
 
                  {% for post in posts %}
                 <div class="col-xs-4 category-items__card">

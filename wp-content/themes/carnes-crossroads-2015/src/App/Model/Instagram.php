@@ -403,6 +403,11 @@ class Instagram extends \TimberPost
         $fetch_url = "https://api.instagram.com/v1/users/" . $user_id . "/media/recent/?access_token=" . self::getAccessToken();
 
         $result = Helper::fetchData($fetch_url);
+
+        if (null === $result) {
+            return array();
+        }
+
         $result = json_decode($result);
 
         $data = array();
@@ -412,7 +417,6 @@ class Instagram extends \TimberPost
                 $instance->social_post_image_src = $post->images->standard_resolution->url;
                 $instance->social_post_link = $post->link;
                 $instance->social_post_type = 'instagram';
-                $instance->social_post_message = $post->caption->text;
                 $data[] = $instance;
             }
 

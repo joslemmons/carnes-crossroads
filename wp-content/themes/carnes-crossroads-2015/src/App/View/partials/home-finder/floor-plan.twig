@@ -1,0 +1,172 @@
+{% if floor_plan %}
+    <div class="visible-sm visible-xs back-to-listings">
+    <span>
+        <div class="back-icon">
+            <svg width="16" height="16">
+                <image xlink:href="{{ template_uri }}/img/backspace.svg"
+                       src="{{ template_uri }}/img/backspace.png" width="16" height="16"/>
+            </svg>
+        </div>
+        Back to All Listings
+    </span>
+    </div>
+    <div class="listing-images">
+        {% for image in floor_plan.getImages %}
+            <div>
+                <a href="{{ image.src }}" {% if function('wp_is_mobile') == false %}class="color-box-group"
+                   {% else %}onclick="return false;"{% endif %}>
+                    <img src="{{ image.src }}"></a>
+            </div>
+        {% endfor %}
+    </div>
+
+    <div class="single-listing-content">
+        <div class="listing-actions">
+            {#<div class="save action-link">#}
+
+            {#<div class="saved"#}
+            {#{% if current_user.hasSavedFloorPlan(floor_plan) == false %}style="display:none;"{% endif %}>#}
+            {#<a href="#" data-floor-plan-id="{{ floor_plan.id }}">Saved#}
+            {#<div class="star-icon">#}
+            {#<svg width="16" height="16">#}
+            {#<image xlink:href="{{ template_uri }}/img/star-full-yellow.svg"#}
+            {#src="{{ template_uri }}/img/star-full-yellow.png" width="16" height="16"/>#}
+            {#</svg>#}
+            {#</div>#}
+            {#</a>#}
+            {#</div>#}
+            {#<div class="not-saved"#}
+            {#{% if current_user.hasSavedFloorPlan(floor_plan) == true %}style="display:none;"{% endif %}>#}
+            {#<a href="#" data-floor_plan-id="{{ floor_plan.id }}">Save#}
+            {#<div class="star-icon">#}
+            {#<svg width="16" height="16">#}
+            {#<image xlink:href="{{ template_uri }}/img/star-full.svg"#}
+            {#src="{{ template_uri }}/img/star-full.png" width="16" height="16"/>#}
+            {#</svg>#}
+            {#</div>#}
+            {#</a>#}
+            {#</div>#}
+            {#</div>#}
+            <div class="share action-link">
+                {% set tweet_share = floor_plan.getFriendlyName~' on @danielisland '~floor_plan.link|url_encode %}
+                {% set email_subject_share = '[Daniel Island Real Estate] '~floor_plan.getAddress|url_encode %}
+                {% set email_body_share = floor_plan.getFriendlyName~' '~floor_plan.link|url_encode %}
+                {% set facebook_app_id = function('\\App\\Model\\Config::getFacebookAppId') %}
+                {% set domain = floor_plan.link|url_encode %}
+                {% set facebook_share_name = floor_plan.getAddress~' on Daniel Island Real Estate'|url_encode %}
+                {% set facebook_share_description = floor_plan.getFriendlyName|url_encode %}
+                {% set facebook_share_caption = floor_plan.link|url_encode %}
+                {% set facebook_share_context = floor_plan.link|url_encode %}
+                {% set facebook_share_image_src = floor_plan.getFeaturedImageSrc|url_encode %}
+                <a class="open-share-widget">Share
+                    <div class="star-icon">
+                        <svg width="16" height="16">
+                            <image xlink:href="{{ template_uri }}/img/share.svg"
+                                   src="{{ template_uri }}/img/share.png" width="16" height="16"/>
+                        </svg>
+                    </div>
+                </a>
+                <div class="share-widget">
+                    <span class="share-text">Share</span>
+                    <a href="https://www.facebook.com/dialog/feed?app_id={{ facebook_app_id }}&display=popup&name={{ facebook_share_name }}&description={{ facebook_share_description }}&caption={{ facebook_share_caption }}&link={{ domain }}&redirect_uri={{ domain }}&picture={{ facebook_share_image_src }}"
+                       target="new">
+                        <div class="fb-icon share-icon"></div>
+                    </a>
+                    <a href="http://twitter.com/home?status={{ tweet_share }}" target="new">
+                        <div class="twitter-icon share-icon"></div>
+                    </a>
+                    <a href="mailto:?subject={{ email_subject_share }}&body={{ email_body_share }}">
+                        <div class="email-icon share-icon"></div>
+                    </a>
+                    <div class="arrow"></div>
+                </div>
+            </div>
+            <div class="print action-link">
+                <a target="_blank" href="{{ floor_plan.link }}/print/">Print
+                    <div class="star-icon">
+                        <svg width="16" height="16">
+                            <image xlink:href="{{ template_uri }}/img/printer.svg"
+                                   src="{{ template_uri }}/img/printer.png" width="16" height="16"/>
+                        </svg>
+                    </div>
+                </a>
+            </div>
+        </div>
+
+        <div class="listing-address">
+            {{ floor_plan.getAddress }}
+        </div>
+        <div class="optional-btns">
+            {% if floor_plan.getX3DTourLink %}
+                <a class="optional-link" href="{{ floor_plan.getX3DTourLink }}" target="_blank">
+                    3D Home Tour
+                    <div class="icon-block">
+                        <svg width="16" height="16">
+                            <image xlink:href="{{ template_uri }}/img/cube.svg"
+                                   src="{{ template_uri }}/img/cube.png" width="16" height="16"/>
+                        </svg>
+                    </div>
+                </a>
+            {% endif %}
+            {% if floor_plan.getVideoLink %}
+                <a class="video-play optional-link" href="{{ floor_plan.getVideoLink }}">
+                    View Video
+                    <div class="icon-block">
+                        <svg width="16" height="16">
+                            <image xlink:href="{{ template_uri }}/img/film.svg"
+                                   src="{{ template_uri }}/img/film.png" width="16" height="16"/>
+                        </svg>
+                    </div>
+                </a>
+            {% endif %}
+        </div>
+        <div class="listing-price">
+            ${{ floor_plan.price|removeNonNumbers|number_format }}
+        </div>
+
+        <div class="listing-specs">
+            {% if floor_plan.bedrooms or floor_plan.full_bathrooms or floor_plan.half_bathrooms or floor_plan.square_footage %}
+                {% if floor_plan.bedrooms %}{{ floor_plan.bedrooms }} BR /{% endif %}
+                {% if floor_plan.full_bathrooms %}{{ floor_plan.full_bathrooms }} Full Bath /{% endif %}{% if floor_plan.half_bathrooms %}{{ floor_plan.half_bathrooms }}  Half Bath /{% endif %}{% if floor_plan.square_footage %}  {{ floor_plan.square_footage|removeNonNumbers|number_format }} sq ft{% endif %}
+            {% endif %}
+        </div>
+
+        <div class="listing-neighborhood">
+            <div class="item-padding">
+                Floor Plan | {{ floor_plan.builder.title }}
+            </div>
+        </div>
+
+        <div class="action-buttons-container">
+            <a class="site-btn" id="requestShowing" data-floor-plan-id="{{ floor_plan.getId }}">Request Information</a>
+            {% if floor_plan.brochure_src %}
+                <a class="site-btn" target="_blank"
+                   href="{{ floor_plan.brochure_src }}">View
+                    Brochure</a>
+            {% endif %}
+            {% if floor_plan.floor_plan_src %}
+                <a class="site-btn" target="_blank"
+                   href="{{ floor_plan.floor_plan_src }}">View
+                    Floor Plan</a>
+            {% endif %}
+
+        </div>
+
+        <div class="listing-details">
+            {{ floor_plan.description }}
+        </div>
+
+    </div>
+    <div class="visible-sm visible-xs back-to-listings">
+    <span>
+        <div class="back-icon">
+            <svg width="16" height="16">
+                <image xlink:href="{{ template_uri }}/img/backspace.svg"
+                       src="{{ template_uri }}/img/backspace.png" width="16" height="16"/>
+            </svg>
+        </div>
+        Back to All Listings
+    </span>
+    </div>
+    {% include "partials/modal-homefinder-floor-plan-request-showing.twig" %}
+{% endif %}

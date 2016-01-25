@@ -5,6 +5,7 @@ jQuery(function ($) {
     var Router = Backbone.Router.extend({
         routes: {
             'home-finder/properties/:address/:id/': 'showProperty',
+            //'home-finder/'
             'home-finder/featured-listings/': 'showFeaturedListings',
             'home-finder/new-offerings/': 'showNewOfferings',
             'home-finder/recently-listed/': 'showRecentlyListed',
@@ -193,7 +194,8 @@ jQuery(function ($) {
             bathrooms: getFilterBathrooms(),
             shouldSearchMLS: getShouldSearchMLS(),
             searchAddress: getSearchAddress(),
-            includePlans: getShouldIncludePlans()
+            includePlans: getShouldIncludePlans(),
+            builders: getBuilders()
         };
 
         showLoadingListingsIndicator();
@@ -229,7 +231,8 @@ jQuery(function ($) {
                 bathrooms: filters.bathrooms,
                 searchMLS: filters.shouldSearchMLS,
                 searchAddress: filters.searchAddress,
-                includePlans: filters.includePlans
+                includePlans: filters.includePlans,
+                builders: filters.builders
             },
             function (data) {
                 var html = data.rsp,
@@ -247,6 +250,10 @@ jQuery(function ($) {
 
                 $('div.listings-type').find('select').find('option').first().prop('selected', 'selected');
             });
+    }
+
+    function getBuilders() {
+        return $('#filter-builders').find('option:selected').val();
     }
 
     function getShouldIncludePlans()
@@ -297,7 +304,7 @@ jQuery(function ($) {
         return $select.find('option:selected').val();
     }
 
-    $('div.all-listings-col').on('click', 'div.listings-wrapper div.listing:not(.offering)', function () {
+    $('div.all-listings-col').on('click', 'div.listings-wrapper div.listing:not(.offering,.floor-plan)', function () {
         var propertyId = $(this).attr('data-property-id'),
             propertyAddress = $(this).attr('data-property-address');
 
@@ -305,6 +312,34 @@ jQuery(function ($) {
         $(this).addClass('active');
 
         router.navigate('home-finder/properties/' + propertyAddress + '/' + propertyId + '/', {trigger: true});
+    });
+
+    $('div.all-listings-col').on('click', 'div.listings-wrapper div.floor-plan', function () {
+        var link = $(this).attr('data-floor-plan-link'),
+            builderSlug = $(this).attr('data-builder-title'),
+            floorPlanSlug = $(this).attr('data-floor-plan-title');
+
+        $(this).parent().find('div.listing.active').removeClass('active');
+        $(this).addClass('active');
+
+        router.navigate(link, {trigger: false});
+
+        $.get('/api/home-finder/floor-plans/' + builderSlug + '/' + floorPlanSlug, {}, function (data) {
+            var propertyHTML = data.rsp;
+
+            $('div.single-listing-col').html(propertyHTML);
+
+            $('div.single-listing-col .listing-images').slick({
+                dots: false,
+                infinite: true,
+                speed: 300,
+                slidesToShow: 2,
+                centerMode: false,
+                arrows: true,
+                variableWidth: true,
+                respondTo: 'window'
+            });
+        });
     });
 
     $('div.all-listings-col').on('click', 'div.listings-wrapper div.offering', function () {
@@ -454,8 +489,9 @@ jQuery(function ($) {
     $('#filter-clearAll').on('click', function () {
         $('div.home-finder-filters').find('select option:selected').removeProp('selected');
         $('#filter-searchAddress').val('');
+        $('#filter-includePlans').prop('checked', false);
         // trigger a change in order to pull listings again
-        $('#filter-propertyType').trigger('change');
+        $('#filter-builders').trigger('change');
 
         return false;
     });
@@ -478,6 +514,8 @@ jQuery(function ($) {
 
     $(document).on('click', '#modal-request-showing button', function () {
         var propertyId = $(this).parent().find('input[name="propertyId"]').val(),
+            builderTitle = $(this).parent().find('input[name="builderTitle"]').val(),
+            floorPlanTitle = $(this).parent().find('input[name="floorPlanTitle"]').val(),
             name = $(this).parent().find('input[name="name"]').val(),
             email = $(this).parent().find('input[name="email"]').val(),
             link = $(this).parent().find('input[name="link"]').val(),
@@ -498,6 +536,8 @@ jQuery(function ($) {
             url: '/api/home-finder/request-showing',
             data: {
             propertyId: propertyId,
+            builderTitle: builderTitle,
+            floorPlanTitle: floorPlanTitle,
             name: name,
             email: email,
             message: message,
@@ -515,7 +555,7 @@ jQuery(function ($) {
                         break;
                     case (500) :
                     default:
-                        $errorMessage.text('Failed to save message. Please try again. If it still fails, go to the contact page and let us know. Thanks!');
+                        $errorMessage.text('Failed to send request. Please try again. If it still fails, go to the contact page and let us know. Thanks!');
                         $errorMessage.show();
                 }
 
@@ -829,7 +869,9 @@ jQuery(function ($) {
             prices: getFilterPrice(),
             bedrooms: getFilterBedrooms(),
             bathrooms: getFilterBathrooms(),
-            shouldSearchMLS: getShouldSearchMLS()
+            shouldSearchMLS: getShouldSearchMLS(),
+            includePlans: getShouldIncludePlans(),
+            builders: getBuilders()
         };
 
         var savedSearchesCount = parseInt($(this).parent().find('a.showAccountPage').text().replace('(', '').replace(')', ''));

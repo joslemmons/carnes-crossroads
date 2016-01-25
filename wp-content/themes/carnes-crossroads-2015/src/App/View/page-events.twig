@@ -13,12 +13,13 @@
     <div class="container">
 
         <div class="row events__headline-container">
-            <div class="col-xs-12 col-md-4">
-                <div class="calendar">
-                    {{ function('build_calendar', 12, 2015, []) }}
-                </div>
-            </div>
             {% for post in featured_posts %}
+            <div class="col-xs-12 col-md-4">
+                <img src="{{ post.thumbnail.src }}"/>
+                {#<div class="calendar">#}
+                {#{{ function('build_calendar', 12, 2015, []) }}#}
+                {#</div>#}
+            </div>
             <div class="col-xs-12 col-md-8">
                 <h2>{{ post.title }}</h2>
                 <p>{{ post.content|truncate(80) }}</p>
@@ -58,11 +59,13 @@
                     {% for category in categories %}
                     <li class="category-list__item"><a href="{{ category.link }}">{{ category.name }}</a></li>
                     {% endfor %}
+                    <li><a class="category-list__item" href="/category/all/">View All</a>
                 </ul>
             </div>
 
             <div class="col-xs-12 col-md-9">
-                {# COMMUNITY SLIDER #}
+                {# EVENTS SLIDER #}
+                {% if tribe_events %}
                 <div>
                 <div class="row">
                     <h3 class="pull-left">Community Events &amp; Information</h3>
@@ -71,46 +74,21 @@
                         <span class="next-lg"></span>
                     </div>
                 </div>
+                    {% for event in tribe_events %}
                 <div class="row slider-lg__wrap slider-lg">
-                    <div class="slider-lg__item" style="background-image: url({{ template_uri }}/img/slider-ev-1.jpg);">
+                    <div class="slider-lg__item" style="background-image: url({{ function('wp_get_attachment_url', function('get_post_thumbnail_id', event.ID)) }});">
                         <a href="#" class="slider-lg__item-link"></a>
                         <div class="block-tab--full-bottom">
-                            <a href="#"><h3>Fall Hoedown</h3></a>
-                            <p>October 21, 2015</p>
-                        </div>
-                    </div>
-                    <div class="slider-lg__item" style="background-image: url({{ template_uri }}/img/slider-ev-2.jpg);">
-                        <a href="#" class="slider-lg__item-link"></a>
-                        <div class="block-tab--full-bottom">
-                            <a href="#"><h3>Wieland Model Home Tour</h3></a>
-                            <p>October 29, 2015</p>
-                        </div>
-                    </div>
-                    <div class="slider-lg__item" style="background-image: url({{ template_uri }}/img/slider-ev-3.jpg);">
-                        <a href="#" class="slider-lg__item-link"></a>
-                        <div class="block-tab--full-bottom">
-                            <a href="#"><h3>Meet Darlene McElveen</h3></a>
-                            <p>Welcome Our New Team Member</p>
-                        </div>
-                    </div>
-                    <div class="slider-lg__item" style="background-image: url({{ template_uri }}/img/slider-ev-4.jpg);">
-                        <a href="#" class="slider-lg__item-link"></a>
-                        <div class="block-tab--full-bottom">
-                            <a href="#"><h3>Fall Farmers' Market</h3></a>
-                            <p>November 4, 2015</p>
-                        </div>
-                    </div>
-                    <div class="slider-lg__item" style="background-image: url({{ template_uri }}/img/slider-ev-5.jpg);">
-                        <a href="#" class="slider-lg__item-link"></a>
-                        <div class="block-tab--full-bottom">
-                            <a href="#"><h3>Construction Begins on Northwood Academy</h3></a>
-                            <p>Information Gathering<br/>December 10, 2015</p>
+                            <a href="{{ function('get_permalink', event.ID) }}"><h3>{{ event.post_title }}</h3></a>
+                            <p>{{ event.EventStartDate|date }}</p>
                         </div>
                     </div>
                 </div>
+                    {% endfor %}
                 </div>
+                {% endif %}
 
-                {# LOCAL SLIDER #}
+                {# NEWS SLIDER #}
                 <div>
                 <div class="row extra-top">
                     <h3 class="pull-left">Recent News</h3>

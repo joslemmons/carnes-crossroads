@@ -17,12 +17,18 @@ class Twig
         $twig->addFilter('truncateToFirstParagraph', new \Twig_Filter_Function(array(get_class(), 'truncateToFirstParagraph')));
         $twig->addFilter('combineLines', new \Twig_Filter_Function(array(get_class(), 'combineLines')));
         $twig->addFilter('youtubeify', new \Twig_Filter_Function(array(get_class(), 'youtubeify')));
+        $twig->addFilter('removeNonNumbers', new \Twig_Filter_Function(array(get_class(), 'removeNonNumbers')));
         return $twig;
     }
 
     public static function addExtensions($twig)
     {
         return $twig;
+    }
+
+    public static function removeNonNumbers($text)
+    {
+        return preg_replace("/[^0-9]/", "", $text);
     }
 
     public static function combineLines($text)

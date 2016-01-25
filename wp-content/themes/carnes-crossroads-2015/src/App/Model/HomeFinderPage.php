@@ -2,6 +2,8 @@
 
 class HomeFinderPage
 {
+    const PAGE_ID = 17;
+
     public static function enqueueAssets()
     {
         wp_enqueue_script('slick-js', get_template_directory_uri() . '/bower_components/slick-carousel/slick/slick.min.js', array('jquery'), false, true);
@@ -12,6 +14,10 @@ class HomeFinderPage
         wp_localize_script('home-finder-js', 'DI', array(
             'templateUri' => get_template_directory_uri()
         ));
+
+        add_action('wp_footer', function () {
+            echo '<script>var CXG = {}; CXG.isHomeFinderPage = true</script>';
+        });
 
 //        wp_enqueue_script('semantic-ui-js', get_template_directory_uri() . '/bower_components/semantic-ui/dist/semantic.min.js', array(), false, true);
 //        wp_enqueue_script('semantic-ui-css', get_template_directory_uri() . '/bower_components/semantic-ui/dist/semantic.min.css', array(), false, true);

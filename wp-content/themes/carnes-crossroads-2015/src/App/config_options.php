@@ -2,10 +2,14 @@
 
 $config_options = array(
     // ie. chernoffnewman.com
-    'production_domains' => array(),
+    'production_domains' => array(
+        'carnescharleston.com'
+    ),
 
     // ie. staging.chernoffnewman.com
-    'staging_domains' => array(),
+    'staging_domains' => array(
+        'staging.carnescharleston.chernoffnewman.com'
+    ),
 
     // __('your text', {text_domain})
     'text_domain' => 'app_',

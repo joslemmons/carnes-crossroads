@@ -1,0 +1,48 @@
+{% extends 'base.twig' %}
+{% block template %}
+
+    {% if page.thumbnail %}
+        {% set headerImage = page.thumbnail %}
+    {% else %}
+        {% set headerImage = page.parent.thumbnail %}
+    {% endif %}
+
+    <section class="hero__page" style="background-image: url('{{ headerImage.src|resize(1500) }}')">
+        <div class="hero__content-tab-{{ page.getHeroColor }}">
+            <div class="hero__content-inner">
+                <h1>{{ page.title }}</h1>
+            </div>
+        </div>
+    </section>
+
+    <section class="page-content--white-floral-top">
+        <div class="container">
+            {% if page.headline %}
+                <div class="row extra-bottom">
+                    <div class="col-xs-12 col-md-8 col-md-offset-2 text-center">
+                        <h2>{{ page.getHeadline }}</h2>
+                    </div>
+                </div>
+            {% endif %}
+
+            {% include "partials/page-single.twig" %}
+
+            {% if page.content %}
+                <hr/>
+            {% endif %}
+
+            {{ function('tribe_events_before_html') }}
+            {{ function('tribe_get_view') }}
+            {{ function('tribe_events_after_html') }}
+
+        </div>
+
+    </section>
+
+    {% if page.getQuicklinkBoxes %}
+        {% include "partials/link-widgets.twig" %}
+    {% endif %}
+
+    {% include "partials/contact-foot.twig" %}
+
+{% endblock %}

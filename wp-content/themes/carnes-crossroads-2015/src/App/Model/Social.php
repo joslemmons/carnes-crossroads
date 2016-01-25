@@ -60,6 +60,17 @@ class Social
         $recent_instagram_posts = Instagram::getRecentByUser(Instagram::getDefaultUsername(), 6);
         $recent_youtube_videos = YouTube::getRecentVideosForChannel(YouTube::getDefaultUsername(), 6);
 
+        // filter out tweets that are the same as facebook
+        $recent_tweets = array_filter($recent_tweets, function ($tweet) use ($recent_facebook_posts) {
+            foreach ($recent_facebook_posts as $facebook_post) {
+                if (substr($tweet->social_post_message, 0, 10) === substr($facebook_post->social_post_message, 0, 10)) {
+                    return false;
+                }
+            }
+
+            return true;
+        });
+
         $recent_social_posts = array();
         if (false === empty($recent_tweets)) {
             $recent_social_posts[] = array_shift($recent_tweets);

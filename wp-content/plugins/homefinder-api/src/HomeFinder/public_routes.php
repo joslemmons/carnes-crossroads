@@ -23,6 +23,11 @@ Routes::map('/api/home-finder/save-notification-option', array('\HomeFinder\Cont
 Routes::map('/api/home-finder/sign-in', array('\HomeFinder\Controller\User', 'routeSignIn'));
 
 Routes::map('/property-sitemap.xml', array('\HomeFinder\Controller\SEO', 'routeGetPropertySitemap'));
-Routes::map('/real-estate/home-finder/properties/:address/:id/', function ($params) {
+Routes::map('/home-finder/properties/:address/:id/', function ($params) {
     Routes::load('tpl-property.php', $params);
+});
+
+Routes::map('/api/home-finder/floor-plans/:builder_name/:floor_plan_title', array('\HomeFinder\Controller\Builder', 'routeGetFloorPlan'));
+Routes::map('/home-finder/floor-plans/:builder_name/:floor_plan_title/', function ($params) {
+    Routes::load('tpl-floor-plan.php', $params);
 });
