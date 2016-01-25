@@ -444,39 +444,75 @@ $navbar-offset: 145px;
 
     &__card {
         padding-left: 0;
-        padding-right: 55px;
+        padding-right: 35px;
         margin-bottom: 95px;
 
-        h4 {
+        &-title {
+            position: relative;
+            min-height: 115px;
+            margin: 0;
+            padding: 15px;
+            background-color: $white;
+        }
+
+        h3 {
             margin-bottom: 5px;
-            font-size: 1.25rem;
+            font-size: 1.2rem;
+            line-height: 1.1;
             color: $cc-brown;
             @include transition(0.2s all);
         }
 
-        h4:hover {
-            color: lighten($cc-brown, 10);
+        h3:hover {
+            color: lighten($cc-brown, 15);
+        }
+
+        a:hover {
+            text-decoration: none !important;
         }
 
         img {
-            margin-bottom: 20px;
             max-width: 100%;
         }
 
-        &-date {
-            font-family: $font-sans;
-            font-size: 0.8rem;
-            text-transform: uppercase;
-            color: $cc-med-grey;
+        &-cat {
+            margin: 0;
+            padding: 0 15px;
+            font-size: 0.95rem;
+            line-height: 1.2;
         }
 
-        &-date a {
-            color: $cc-med-grey;
+        &-cat a {
+            color: $cc-brown;
+            opacity: 0.6;
             text-decoration: none;
+            font-style: italic;
 
             &:hover {
-                color: darken($cc-med-grey, 10);
+                opacity: 1;
                 text-decoration: underline !important;
+            }
+        }
+
+        &-date {
+            margin: 0;
+            position: absolute;
+            bottom: 13px;
+            font-family: $font-sans;
+            font-size: 0.75rem;
+            color: $cc-med-grey;
+            text-transform: uppercase;
+        }
+
+        &-content {
+            min-height: 110px;
+            margin: 20px 0;
+            padding: 0 15px;
+
+            p {
+                font-size: 0.95rem;
+                color: lighten($cc-brown, 10);
+                line-height: 1.4;
             }
         }
     }

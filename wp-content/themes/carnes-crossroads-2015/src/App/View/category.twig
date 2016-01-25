@@ -34,19 +34,22 @@
                 </ul>
             </div>
 
-             <div class="col-xs-12 col-md-9 category-items">
+             <div class="col-xs-12 col-md-8 col-md-offset-1 category-items">
                  <h2>{% if categoryName %}{{ categoryName }}{% else %}All Categories{% endif %}</h2>
 
                  {% for post in posts %}
-                <div class="col-xs-4 category-items__card">
+                <div class="col-xs-6 col-md-4 category-items__card">
                     <a href="{{ post.link }}">
                         <img src="{{ post.thumbnail.src|resize(242,197) }}">
                     </a>
-                    <a href="{{ post.link }}"><h4>{{ post.title }}</h4></a>
-                    <p class="category-items__card-date">{{ post.display_date }} | {% for term in post.terms('category') %}<a
-                        href="{{ term.link }}">{{ term.name }}</a>{% if loop.last == faslse %},{% endif %}{% endfor %}
-                    </p>
-                    <p>{{ post.content|truncate(30) }}</p>
+                    <div class="category-items__card-title">
+                        <a href="{{ post.link }}"><h3>{{ post.title|truncate(5) }}</h3></a>
+                        <p class="category-items__card-date">{{ post.display_date }}</p>
+                    </div>
+
+                    <div class="category-items__card-content">{{ post.content|truncate(20) }}</div>
+                    <p class="category-items__card-cat">{% for term in post.terms('category') %}<a
+                        href="{{ term.link }}">{{ term.name }}</a>{% if loop.last == faslse %},{% endif %}{% endfor %}</p>
                 </div>
                  {% endfor %}
 
