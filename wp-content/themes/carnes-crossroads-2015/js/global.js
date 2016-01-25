@@ -12,7 +12,7 @@ jQuery(function ($) {
     //Carousels - bxslider
     $.each($('div.slider-lg'), function (i, el) {
         $(el).bxSlider({
-            slideWidth: 335,
+            slideWidth: 325,
             minSlides: 2,
             maxSlides: 5,
             moveSlides: 1,

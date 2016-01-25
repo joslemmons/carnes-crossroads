@@ -14,11 +14,7 @@
 
         <div class="row events__headline-container">
             {% for post in featured_posts %}
-            <div class="col-xs-12 col-md-4">
-                <img src="{{ post.thumbnail.src }}"/>
-                {#<div class="calendar">#}
-                {#{{ function('build_calendar', 12, 2015, []) }}#}
-                {#</div>#}
+            <div class="col-xs-12 col-md-4 events__headline-image" style="background-image: url({{ post.thumbnail.src }});">
             </div>
             <div class="col-xs-12 col-md-8">
                 <h2>{{ post.title }}</h2>
@@ -59,11 +55,11 @@
                     {% for category in categories %}
                     <li class="category-list__item"><a href="{{ category.link }}">{{ category.name }}</a></li>
                     {% endfor %}
-                    <li><a class="category-list__item" href="/category/all/">View All</a>
+                    <li class="category-list__item"><a href="/category/all/">View All</a>
                 </ul>
             </div>
 
-            <div class="col-xs-12 col-md-9">
+            <div class="col-xs-12 col-md-8 col-md-offset-1">
                 {# EVENTS SLIDER #}
                 {% if tribe_events %}
                 <div>
@@ -90,7 +86,7 @@
 
                 {# NEWS SLIDER #}
                 <div>
-                <div class="row extra-top">
+                <div class="row">
                     <h3 class="pull-left">Recent News</h3>
                     <div class="slider-lg__controls pull-right">
                         <span class="prev-lg"></span>
@@ -148,7 +144,7 @@
                         </div>
                     </div>
                         {% elseif social_post.social_post_type == 'youtube' %}
-                            <div class="slider-lg__item"
+                            <div class="slider-lg__item-youtube"
                                  style="background-image: url({{ social_post.social_post_image_src }});">
                                 <a href="{{ social_post.social_post_link }}" class="slider-lg__item-link"></a>
                                 <div class="block-tab--full-bottom">

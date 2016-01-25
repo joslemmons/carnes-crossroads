@@ -356,6 +356,14 @@ $navbar-offset: 145px;
         }
     }
 
+    &__headline-image {
+        height: 350px;
+        width: 30%;
+        margin-right: 3%;
+        background-size: cover;
+        background-position: center center;
+    }
+
     &__form-container {
         padding-bottom: 100px;
         border-bottom: 1px solid #ccc;
@@ -416,10 +424,17 @@ $navbar-offset: 145px;
         }
     }
 
+    .active a {
+        color: darken($cc-med-grey, 20);
+        text-decoration: underline !important;
+    }
+
     &__social {
         padding: 0;
         margin-bottom: 75px;
     }
+
+
 }
 
 .category-items {
