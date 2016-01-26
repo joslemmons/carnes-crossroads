@@ -391,6 +391,10 @@ $navbar-offset: 145px;
 }
 
 .category-list {
+    .btn {
+        margin-bottom: 75px;
+    }
+
     h4 {
         font-size: 1rem;
         color: $cc-med-grey;

@@ -3304,9 +3304,9 @@ a:focus, a:hover {
   position: relative;
   font-family: "minion-pro", serif, serif;
   font-weight: 400;
-  font-size: 1.1rem;
+  font-size: 1rem;
   text-transform: uppercase;
-  letter-spacing: 2px;
+  letter-spacing: 1.75px;
   color: #fff;
   background-color: #768e1c;
   border: 1px solid #536314;
@@ -4735,6 +4735,8 @@ video {
     left: 0;
     float: right; }
 
+.category-list .btn {
+  margin-bottom: 75px; }
 .category-list h4 {
   font-size: 1rem;
   color: #828181;
