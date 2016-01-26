@@ -5,7 +5,6 @@ jQuery(function ($) {
     var Router = Backbone.Router.extend({
         routes: {
             'home-finder/properties/:address/:id/': 'showProperty',
-            //'home-finder/'
             'home-finder/featured-listings/': 'showFeaturedListings',
             'home-finder/new-offerings/': 'showNewOfferings',
             'home-finder/recently-listed/': 'showRecentlyListed',
@@ -429,6 +428,10 @@ jQuery(function ($) {
     });
 
     $('div.home-finder-main').on('click', 'div.save.action-link a', function () {
+        if (typeof CX === 'undefined' || typeof CX.isLoggedIn === 'undefined' || CX.isLoggedIn !== 'true') {
+            $('a.showAccountPage').trigger('click');
+            return false;
+        }
         var propertyId = $(this).attr('data-property-id'),
             toSaveOrUnSave = 'save',
             $that = $(this);
@@ -648,7 +651,7 @@ jQuery(function ($) {
         getTileUrl: function (coord, zoom) {
             var ymax = 1 << zoom;
             var y = ymax - coord.y - 1;
-            url = DI.templateUri + "/img/imap/tiles/" + zoom + "/" + coord.x + "/" + y + ".png";
+            url = CX.templateUri + "/img/imap/tiles/" + zoom + "/" + coord.x + "/" + y + ".png";
             return url;
         },
         tileSize: new google.maps.Size(256, 256),
@@ -680,7 +683,7 @@ jQuery(function ($) {
 
     function setMarkers(map, locations) {
         // Add markers to the map
-        var house_image = new google.maps.MarkerImage(DI.templateUri + '/img/imap/icons/house-icon.png',
+        var house_image = new google.maps.MarkerImage(CX.templateUri + '/img/imap/icons/house-icon.png',
             // This marker is 20 pixels wide by 32 pixels tall.
             new google.maps.Size(20, 32),
             // The origin for this image is 0,0.
@@ -688,7 +691,7 @@ jQuery(function ($) {
             // The anchor for this image is the base of the flagpole at 0,32.
             new google.maps.Point(5, 20));
 
-        var lot_image = new google.maps.MarkerImage(DI.templateUri + '/img/imap/icons/lot-icon.png',
+        var lot_image = new google.maps.MarkerImage(CX.templateUri + '/img/imap/icons/lot-icon.png',
             // This marker is 20 pixels wide by 32 pixels tall.
             new google.maps.Size(20, 32),
             // The origin for this image is 0,0.
@@ -863,6 +866,10 @@ jQuery(function ($) {
 
     /* Account */
     $(document).on('click', '#accountSaveSearch', function () {
+        if (typeof CX === 'undefined' || typeof CX.isLoggedIn === 'undefined' || CX.isLoggedIn !== 'true') {
+            $('a.showAccountPage').trigger('click');
+            return false;
+        }
         var filters = {
             propertyTypes: getFilterPropertyTypes(),
             neighborhoods: getFilterNeighborhoods(),
