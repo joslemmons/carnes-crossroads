@@ -120,10 +120,6 @@
         width: 140px;
     }
 
-    .main-nav__primary {
-        width: 80%;
-    }
-
     .main-nav__primary-item {
         padding: 17px 0;
 
@@ -164,5 +160,35 @@
         a:hover {
             color: darken($cc-green, 15);
         }
+    }
+}
+
+.tool-pagination {
+    a, span {
+        font-family: $font-sans;
+        font-size: 0.9rem;
+        text-transform: uppercase;
+        text-decoration: none !important;
+        border-bottom: none;
+    }
+
+    a:hover {
+        border-bottom: 1px solid $cc-brown;
+    }
+
+    ul {
+        margin: 0;
+        padding: 0;
+        list-style-type: none;
+        display: inline-block;
+    }
+
+    li {
+        margin-right: 8px;
+        display: inline-block;
+    }
+
+    .prev, .next {
+        display: inline-block;
     }
 }
