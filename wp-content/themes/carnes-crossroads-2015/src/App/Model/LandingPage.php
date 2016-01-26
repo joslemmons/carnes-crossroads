@@ -56,6 +56,7 @@ class LandingPage extends \TimberPost
     const GALLERY_NO_VIDEO = 'no video';
     const GALLERY_UPLOAD_VIDEO = 'upload video';
     const GALLERY_LINK_VIDEO = 'link video';
+    const IS_LANDING_PAGE_FORM_SUBMIT = 'true';
 
     public static function bootstrap()
     {
@@ -103,6 +104,111 @@ class LandingPage extends \TimberPost
         self::$field_footer_section_gravity_form_id = Config::getKeyPrefix() . 'footer_section_gravity_form_id';
 
         add_filter('piklist_post_types', array(get_class(), 'registerCPT'));
+        add_action('gform_after_submission', array(get_class(), 'after_submission'), 10, 2);
+    }
+
+    public static function doesFormWantToSubmitAccountToPropertyBase($form)
+    {
+        if (isset($_POST['lp2pb']) && $_POST['lp2pb'] === self::IS_LANDING_PAGE_FORM_SUBMIT) {
+            return true;
+        }
+
+        $fields = $form['fields'];
+        foreach ($fields as $field) {
+            // this is a check to see if a hidden field was added to the form
+            // with the label name of lp2pb "landing page to property base
+            if (
+                isset($field['type']) === true &&
+                $field['type'] === 'hidden' &&
+                $field['label'] === 'lp2pb'
+            ) {
+                return true;
+            }
+        }
+
+        return false;
+    }
+
+    public static function after_submission($entry, $form)
+    {
+        if (self::doesFormWantToSubmitAccountToPropertyBase($form)) {
+            $last_name = null;
+            $email = null;
+            $context = (isset($form['title'])) ? $form['title'] : 'Specific Interactive Unknown';
+            $first_name = null;
+            $phone = null;
+            $notes = null;
+
+            $fields = $form['fields'];
+            foreach ($fields as $field) {
+                if (isset($field['type']) === false) {
+                    continue;
+                }
+
+                switch ($field['type']) {
+                    case ('name') :
+                        // get first/last
+                        $inputs = $field['inputs'];
+                        foreach ($inputs as $input) {
+                            if ($input['label'] === 'First') {
+                                $id = $input['id'];
+                                $first_name = $entry[$id];
+                            }
+
+                            if ($input['label'] === 'Last') {
+                                $id = $input['id'];
+                                $last_name = $entry[$id];
+                            }
+                        }
+                        break;
+                    case ('email') :
+                        $id = $field['id'];
+                        $email = $entry[$id];
+                        break;
+                    case ('phone') :
+                        $id = $field['id'];
+                        $phone = $entry[$id];
+                        break;
+                    case ('textarea') :
+                        $id = $field['id'];
+                        $notes = $entry[$id];
+                    default :
+                        // TODO: collect everything else and append to notes
+                }
+            }
+
+            // check that Property Base required fields have been set
+            if (
+                $last_name !== null &&
+                $email !== null
+            ) {
+                self::_sendWebProspectToPropertyBase($context, $last_name, $email, $first_name, $phone, $notes);
+            }
+        }
+    }
+
+    private static function _sendWebProspectToPropertyBase($context, $last_name, $email, $first_name = '', $phone = '', $notes = '')
+    {
+        $url = 'http://danielisland.apex1.cs7.force.com/pb__WebserviceWebToProspect';
+        if (Helper::isProduction() || Helper::isStaging()) {
+            $url = 'http://danielisland.force.com/pb__WebserviceWebToProspect';
+        }
+
+        wp_remote_post($url, array(
+                'body' => array(
+//                    'debugmode' => 'true',
+                    'FirstName' => $first_name,
+                    'LastName' => $last_name,
+                    'PersonEmail' => $email,
+                    'PersonLeadSource' => 'Web',
+                    'general_Lead_Source__c' => 'Interactive',
+                    'Specific_Lead_Source__c' => $context,
+                    'ContactType__pc' => 'Email',
+                    'Phone' => $phone,
+                    'Notes__c' => $notes
+                )
+            )
+        );
     }
 
     public static function getPostType()
@@ -335,13 +441,21 @@ class LandingPage extends \TimberPost
                 $instance['image'] = new \TimberImage($image_attachment_id);
             }
 
-            if (self::GALLERY_LINK_VIDEO === $section[$field_has_video]) {
-                $instance['video_src'] = $section[$field_video_src];
+            $has_video = $section[$field_has_video];
+            if ($has_video) {
+                if (is_array($has_video)) {
+                    $has_video = array_pop($has_video);
+                }
+
+                if (self::GALLERY_LINK_VIDEO === $has_video) {
+                    $instance['video_src'] = $section[$field_video_src];
+                }
+
+                if (self::GALLERY_UPLOAD_VIDEO === $has_video) {
+                    $instance['video_src'] = wp_get_attachment_url($section[$field_video_attachment_id]);
+                }
             }
 
-            if (self::GALLERY_UPLOAD_VIDEO === $section[$field_has_video]) {
-                $instance['video_src'] = wp_get_attachment_url($section[$field_video_attachment_id]);
-            }
 
             if (self::IS_CUSTOM_LINK === $section[$field_button_action][0]) {
                 $instance['button']['link'] = $section[$field_button_custom_link];
