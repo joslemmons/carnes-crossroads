@@ -343,4 +343,45 @@ class HomeFinder extends Router
             'rsp' => $html
         ));
     }
+
+    public static function routePrintProperty($params = array())
+    {
+        $property_id = (isset($params['id'])) ? $params['id'] : false;
+
+        $property = \TimberHelper::transient(Config::getKeyPrefix() . 'home_finder_' . $property_id, function () use ($property_id) {
+            $property = Property::withId($property_id);
+
+            return $property;
+        }, 60 * 60 * 3);
+
+        if (false === $property) {
+            self::renderJSON(array(
+                'status' => 404,
+                'rsp' => 'Invalid property id'
+            ), 404);
+        }
+
+        \Timber::render('partials/home-finder/print-view-of-property.twig', array(
+            'properties' => array($property)
+        ));
+        exit();
+    }
+
+    public static function routePrintSavedProperties($params = array())
+    {
+        $user = User::getCurrentlyLoggedUser();
+        if ($user) {
+            $properties = $user->getSavedProperties();
+
+            \Timber::render('partials/home-finder/print-view-of-property.twig', array(
+                'properties' => $properties
+            ));
+            exit();
+        }
+
+        self::renderJSON(array(
+            'status' => 404,
+            'rsp' => 'login to print saved properties'
+        ));
+    }
 }
