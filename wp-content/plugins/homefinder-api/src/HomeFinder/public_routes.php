@@ -3,11 +3,13 @@
 use HomeFinder\Controller\HomeFinder;
 
 Routes::map('/api/home-finder/properties/:id', array('\HomeFinder\Controller\HomeFinder', 'routeProperty'));
+Routes::map('/real-estate/home-finder/properties/:address/:id/print/', array('\HomeFinder\Controller\HomeFinder', 'routePrintProperty'));
 Routes::map('/api/home-finder/search', array('\HomeFinder\Controller\HomeFinder', 'routeSearch'));
 Routes::map('/api/home-finder/search/page/:num', array('\HomeFinder\Controller\HomeFinder', 'routeSearch'));
 Routes::map('/api/home-finder/featured-properties/page/:num', array('\HomeFinder\Controller\HomeFinder', 'routeFeaturedProperties'));
 Routes::map('/api/home-finder/recently-listed/page/:num', array('\HomeFinder\Controller\HomeFinder', 'routeRecentlyListed'));
 Routes::map('/api/home-finder/saved-listings/page/:num', array('\HomeFinder\Controller\HomeFinder', 'routeSavedListings'));
+Routes::map('/real-estate/home-finder/saved-listings/print/', array('\HomeFinder\Controller\HomeFinder', 'routePrintSavedProperties'));
 Routes::map('/api/home-finder/new-offerings/:id', array('\HomeFinder\Controller\HomeFinder', 'routeNewOffering'));
 Routes::map('/api/home-finder/new-offerings/page/:num', array('\HomeFinder\Controller\HomeFinder', 'routeNewOfferings'));
 Routes::map('/api/home-finder/new-offerings', array('\HomeFinder\Controller\HomeFinder', 'routeNewOfferings'));
@@ -31,3 +33,5 @@ Routes::map('/api/home-finder/floor-plans/:builder_name/:floor_plan_title', arra
 Routes::map('/home-finder/floor-plans/:builder_name/:floor_plan_title/', function ($params) {
     Routes::load('tpl-floor-plan.php', $params);
 });
+
+

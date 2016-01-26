@@ -1,5 +1,122 @@
-{{ property.getAddress }}
+<!DOCTYPE html>
+<!--[if lt IE 7]>
+<html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>
+<html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>
+<html class="no-js lt-ie9"> <![endif]-->
+<!--[if IE 9]>
+<html class="no-js ie9"> <![endif]-->
+<!--[if gt IE 9]><!-->
+<html class="no-js print-sheet"> <!--<![endif]-->
+    <head>
+        <META HTTP-EQUIV="Pragma" CONTENT="no-cache"/>
+        <META HTTP-EQUIV="Expires" CONTENT="-1"/>
+        <meta charset="utf-8"/>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+        <title>Print Property</title>
+        <meta name="description" content="{{ seo_description }}"/>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"/>
+        <link rel="apple-touch-icon-precomposed" href="{{ template_uri }}/img/apple-icon.png"/>
+        <link rel="shortcut icon" href="{{ template_uri }}/img/favicon.ico" sizes="32x32"/>
+        <link rel="stylesheet" href="{{ template_uri }}/wp-content/themes/daniel-island-2015/style.css"/>
+
+        <script src="https://use.typekit.net/slu5gfl.js"></script>
+        <script>try{Typekit.load({ async: true });}catch(e){}</script>
+
+
+    </head>
+    <body class="print">
+
+        <div class="container">
+            {% for property in properties %}
+            <div class="row">
+                <div class="col-xs-3">
+                    {% if loop.first %}
+                    <div class="di-logo">
+                        <img src="{{ template_uri }}/wp-content/themes/daniel-island-2015/img/print-di-logo.jpg" class="img-responsive"/>
+                    </div>
+                    <div class="print-contact">
+                        <p>
+                            101 River Landing Drive<br>
+                            Charleston, SC 29492<br>
+                            Toll-Free 800-958-5635<br>
+                            Local (843) 971-7100
+                        </p>
+
+                        <span class="title">Hours</span>
+                        <p>
+                            Monday – Saturday<br>9:00 am – 5:30 pm<br>
+                        </p>
+                        <p>
+                            Sunday<br>11:00 am – 5:00 pm
+                        </p>
+                    </div>
+                    {% endif %}
+                </div>
+                <div class="col-xs-9">
+                    <div class="listing-image">
+                        <div class="row">
+                            <div class="col-xs-6 img-left">
+                                <img src="{{ property.getImages[0]|resize(400,300) }}" class="img-responsive">
+                            </div>
+                            <div class="col-xs-6 img-right">
+                                <img src="{{ property.getImages[1]|resize(400,300) }}" class="img-responsive">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="listing-address">
+                        {{ property.getAddress }}
+                    </div>
+                    <div class="listing-price">
+                        ${{ property.getPurchaseListPrice|number_format }}
+                    </div>
+
+                    <div class="listing-specs">
+                        {% set numDecimalPlaces = 0 %}
+                        {% if property.getPropertyType == 'Homesite' %}
+                        {% set numDecimalPlaces = 2 %}
+                        {% endif %}
+                        {% if property.getBedroomCount %}{{ property.getBedroomCount }} BR / {% endif %}{% if property.getFullBathroomCount %}{{ property.getFullBathroomCount }} Full Bath / {% endif %}{% if property.getHalfBathroomCount %}{{ property.getHalfBathroomCount }}  Half Bath / {% endif %}{% if property.getTotalAreaSquareFootage %}{{ property.getTotalAreaSquareFootage|number_format(numDecimalPlaces) }} {{ property.getTotalAreaSquareFootageUnitOfMeasurement }}{% endif %}
+                    </div>
+
+                    <div class="listing-neighborhood">
+                        <div class="item-padding">
+                            {{ property.getPropertyType }}
+                        </div>
+                        {% if property.getPropertyType and property.getNeighborhood %} | {% endif %}
+                        <div class="item-padding">
+                            {{ property.getNeighborhood }}
+                        </div>
+                        {% if property.getUnitView %} |
+                        <div class="item-padding">
+                            {{ property.getUnitView }}
+                        </div>
+                        {% endif %}
+                    </div>
+
+
+                    <div class="listing-details">
+                        {{ property.getDescription }}
+                    </div>
+
+                    {% if property.isFromMLS %}
+                    <div class="broker-reciprocity">
+                        <span class="disclaimer">
+                            The data relating to real estate for sale on this web site comes in part from the Broker Reciprocity SM Program of the Charleston Trident Multiple Listing Service. All of the information provided by Charleston Trident Multiple Listing Service is deemed reliable but not guaranteed.
+                            {#TODO: Listing provided by "xyz real estate office name goes here#}
+                        </span>
+                    </div>
+                    {% endif %}
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+        </div>
 
 <script>
-    window.print();
+window.print();
 </script>
+
+    </body>
+</html>

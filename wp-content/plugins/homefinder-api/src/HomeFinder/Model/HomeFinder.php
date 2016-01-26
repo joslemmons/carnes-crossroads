@@ -19,7 +19,7 @@ class HomeFinder
             $per_page = HomeFinder::LISTINGS_PER_PAGE;
         }
 
-        $result = \TimberHelper::transient(Config::getKeyPrefix() . 'home_finder_properites_search_transient_' . $filters->getFiltersAsHashToUseAsId(), function () use ($filters, $per_page, $page) {
+        $result = \TimberHelper::transient(Config::getKeyPrefix() . 'home_finder_properties_search_transient_' . $per_page . '_' . $page . '_' . $filters->getFiltersAsHashToUseAsId(), function () use ($filters, $per_page, $page) {
             // search pbase
             $result = PropertyBase::getWithFilters($filters, $per_page, $page);
 

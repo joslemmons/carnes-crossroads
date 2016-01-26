@@ -80,6 +80,7 @@ class TimberContext
         $data['header_menu'] = new \TimberMenu('Header Menu');
         $data['footer_menu'] = new \TimberMenu('Footer Menu');
         $data['home_finder_menu'] = new \TimberMenu('Home Finder Menu');
+        $data['account_menu'] = new \TimberMenu('Account Menu');
 
         return $data;
     }

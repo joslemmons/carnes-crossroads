@@ -438,7 +438,7 @@ class HomeFinderFilters
     public function getFiltersAsHashToUseAsId()
     {
         $slug = new Slugify();
-        return $slug->slugify($this->getFriendlyName() . ' ' . $this->_searchMLS . ' ' . $this->_searchAddress . ' ' . $this->_includePlans . ' ' . $this->_rawBuilders);
+        return $slug->slugify($this->getFriendlyName() . ' ' . $this->_searchMLS . ' ' . $this->_searchAddress . ' ' . $this->_includePlans . ' ' . $this->getBuilders());
     }
 
     public function getAreaFiltersForMLSRequest()

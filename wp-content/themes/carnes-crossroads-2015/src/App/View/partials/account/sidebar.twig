@@ -1,5 +1,7 @@
 <div class="sidebar-text">
     <ul>
-        <li><a href="/home-finder/">Home Finder</a></li>
+        {% for item in account_menu.get_items %}
+            <li><a href="{{ item.link }}">{{ item.title }}</a></li>
+        {% endfor %}
     </ul>
 </div>

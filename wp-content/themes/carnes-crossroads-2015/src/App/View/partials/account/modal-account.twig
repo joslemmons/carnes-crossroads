@@ -1,7 +1,7 @@
 <div class="modal fade" id="modal-account" tabindex="-1" role="dialog">
     <div class="modal-dialog" role="document">
         <div class="modal-content">
-            {% include "partials/account/account-base.twig" with {page: account_page, template_uri: template_uri} only %}
+            {% include "partials/account/account-base.twig" with {page: account_page, account_menu: account_menu, template_uri: template_uri} only %}
         </div>
     </div>
 </div>
