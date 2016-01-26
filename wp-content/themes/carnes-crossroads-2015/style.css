@@ -4752,6 +4752,19 @@ video {
   padding-left: 0;
   padding-right: 35px;
   margin-bottom: 95px; }
+  .category-items__card-image {
+    position: relative;
+    height: 175px;
+    width: 100%;
+    background-size: cover;
+    background-position: center center;
+    background-repeat: no-repeat; }
+    .category-items__card-image a {
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0; }
   .category-items__card-title {
     position: relative;
     min-height: 115px;
@@ -4769,8 +4782,6 @@ video {
     color: #6f5e3c; }
   .category-items__card a:hover {
     text-decoration: none !important; }
-  .category-items__card img {
-    max-width: 100%; }
   .category-items__card-cat {
     margin: 0;
     padding: 0 15px;

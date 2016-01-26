@@ -34,14 +34,19 @@
                 </ul>
             </div>
 
-             <div class="col-xs-12 col-md-8 col-md-offset-1 category-items">
-                 <h2>{% if categoryName %}{{ categoryName }}{% else %}All Categories{% endif %}</h2>
+            <div class="col-xs-12 col-md-8 col-md-offset-1 category-items">
+                <h2>{% if categoryName %}{{ categoryName }}{% else %}All Categories{% endif %}</h2>
 
-                 {% for post in posts %}
+                {% for post in posts %}
                 <div class="col-xs-6 col-md-4 category-items__card">
-                    <a href="{{ post.link }}">
-                        <img src="{{ post.thumbnail.src|resize(242,197) }}">
-                    </a>
+                    <div class="category-items__card-image"
+                    {% if post.thumbnail %}
+                    style="background-image:url({{ post.thumbnail.src }})">
+                    {% else %}
+                    style="background-image:url({{ template_uri }}/img/cc-default-th.jpg)">
+                    {% endif %}
+                        <a href="{{ post.link }}"></a>
+                    </div>
                     <div class="category-items__card-title">
                         <a href="{{ post.link }}"><h3>{{ post.title|truncate(5) }}</h3></a>
                         <p class="category-items__card-date">{{ post.display_date }}</p>
@@ -51,33 +56,44 @@
                     <p class="category-items__card-cat">{% for term in post.terms('category') %}<a
                         href="{{ term.link }}">{{ term.name }}</a>{% if loop.last == faslse %},{% endif %}{% endfor %}</p>
                 </div>
-                 {% endfor %}
+                {% endfor %}
 
-            </div>
-
-            {% if posts and pagination %}
+                {% if posts and pagination %}
                 <div class="tool-pagination">
                     {% if pagination.prev %}
-                        <a href="{{ pagination.prev.link }}"
+                    <a href="{{ pagination.prev.link }}"
                            class="prev {{ pagination.prev.link|length ? '' : 'invisible' }}">Prev</a>
                     {% endif %}
                     <ul class="pages">
                         {% for page in pagination.pages %}
-                            <li>
-                                {% if page.link %}
-                                    <a href="{{ page.link }}" class="{{ page.class }}">{{ page.title }}</a>
-                                {% else %}
-                                    <span class="{{ page.class }}">{{ page.title }}</span>
-                                {% endif %}
-                            </li>
+                        <li>
+                            {% if page.link %}
+                            <a href="{{ page.link }}" class="{{ page.class }}">{{ page.title }}</a>
+                            {% else %}
+                            <span class="{{ page.class }}">{{ page.title }}</span>
+                            {% endif %}
+                        </li>
                         {% endfor %}
                     </ul>
                     {% if pagination.next %}
-                        <a href="{{ pagination.next.link }}"
-                           class="next {{ pagination.next.link|length ? '' : 'invisible' }}">Next</a>
+                    <a href="{{ pagination.next.link }}"
+                       class="next {{ pagination.next.link|length ? '' : 'invisible' }}">Next</a>
                     {% endif %}
                 </div>
             {% endif %}
+
+        </div>
+        <div class="col-xs-12 col-md-8 col-md-offset-4">
+            <div class="tool-pagination">
+                <a href="{{ pagination.prev.link }}" class="prev">Prev</a>
+                <ul class="pages">
+                    <li>
+                        <a href="{{ page.link }}" class="{{ page.class }}">Page Title</a>
+                        <span class="{{ page.class }}">Page Title</span>
+                    </li>
+                </ul>
+                <a href="{{ pagination.next.link }}" class="next">Next</a>
+            </div>
         </div>
     </div>
 </section>
