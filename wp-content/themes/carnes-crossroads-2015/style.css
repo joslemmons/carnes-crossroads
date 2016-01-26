@@ -4813,6 +4813,13 @@ video {
       line-height: 1.4; }
 .category-items__article h2 {
   margin-bottom: 5px; }
+.category-items__article-date {
+  margin: 0;
+  position: relative;
+  font-family: "proxima-nova", sans-serif, sans-serif;
+  font-size: 0.75rem;
+  color: #828181;
+  text-transform: uppercase; }
 .category-items__article img {
   margin: 20px 0 30px;
   max-width: 100%; }

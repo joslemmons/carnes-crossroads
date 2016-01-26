@@ -537,6 +537,15 @@ $navbar-offset: 145px;
             margin-bottom: 5px;
         }
 
+        &-date {
+            margin: 0;
+            position: relative;
+            font-family: $font-sans;
+            font-size: 0.75rem;
+            color: $cc-med-grey;
+            text-transform: uppercase;
+        }
+
         img {
             margin: 20px 0 30px;
             max-width: 100%;
