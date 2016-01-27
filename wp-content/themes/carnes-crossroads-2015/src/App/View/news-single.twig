@@ -2,7 +2,7 @@
 {% block template %}
 
 <section class="hero__article" style="background-image: url({{ template_uri }}/img/bg-hero-location.jpg)">
-    <div class="hero__content-tab-red">
+    <div class="hero__content-tab-orange">
         <div class="hero__content-inner">
             <h1>{{ post.category }}</h1>
         </div>
@@ -29,12 +29,13 @@
                     {% for category in categories %}
                         <li class="category-list__item"><a href="{{ category.link }}">{{ category.name }}</a></li>
                     {% endfor %}
+                    <li class="category-list__item"><a href="/category/all/">View All</a>
                 </ul>
             </div>
 
              <div class="col-xs-12 col-md-8 col-md-offset-1 category-items__article">
                 <h2>{{ post.title }}</h2>
-                 <p class="category-items__card-date">{{ post.display_date }}
+                 <p class="category-items__article-date">{{ post.display_date }}
                      &nbsp;&nbsp;|&nbsp;&nbsp;{% for term in post.terms('category') %}<a
                      href="{{ term.link }}">{{ term.name }}</a>{% if loop.last == faslse %},{% endif %}{% endfor %}
                  </p>
