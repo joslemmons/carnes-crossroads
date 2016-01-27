@@ -3660,7 +3660,7 @@ a:focus, a:hover {
     position: relative;
     width: 100%; }
   .main-nav__logo {
-    width: 13%;
+    width: 14%;
     margin: 0 0 0 5%;
     max-width: 225px;
     float: left;
@@ -3720,8 +3720,8 @@ a:focus, a:hover {
       background: url(./img/grad-divider.png) no-repeat left top; }
     .main-nav__primary-item a {
       color: #fff;
-      font-size: 1rem;
-      letter-spacing: 2px;
+      font-size: 1.1rem;
+      letter-spacing: 1.8px;
       font-family: "minion-pro", serif, serif;
       font-weight: 700;
       text-transform: uppercase;
@@ -3735,16 +3735,20 @@ a:focus, a:hover {
 .main-nav.smaller {
   padding: 10px 0 0 0; }
   .main-nav.smaller .main-nav__logo {
-    margin-top: 5px;
+    margin-top: 7px;
     width: 140px; }
   .main-nav.smaller .main-nav__primary-item {
     padding: 17px 0; }
+    .main-nav.smaller .main-nav__primary-item a {
+      font-size: 1rem; }
     .main-nav.smaller .main-nav__primary-item:first-of-type {
       padding-left: 50px; }
   .main-nav.smaller .main-nav__sub {
     width: 80%; }
   .main-nav.smaller .main-nav__sub-item {
     padding: 8px 0; }
+    .main-nav.smaller .main-nav__sub-item a {
+      font-size: 0.8rem; }
     .main-nav.smaller .main-nav__sub-item:first-of-type {
       padding-left: 35px; }
 
@@ -4865,6 +4869,29 @@ video {
 .builder-btn {
   margin-top: 90px;
   float: right; }
+
+.faq-set {
+  margin: 50px 0 0 0;
+  padding: 0;
+  list-style-type: none; }
+  .faq-set .faq-item {
+    margin-bottom: 35px; }
+  .faq-set .faq-question {
+    position: relative;
+    top: 1px;
+    width: auto;
+    cursor: pointer;
+    color: #3d3421;
+    font-family: "proxima-nova", sans-serif, sans-serif;
+    font-size: 1.1rem; }
+    .faq-set .faq-question:hover {
+      color: #5e5033;
+      border-bottom: 1px solid #5e5033; }
+  .faq-set .faq-answer {
+    margin: 5px 0 0 23px;
+    font-family: "minion-pro", serif, serif;
+    line-height: 1.2;
+    color: #686868; }
 
 @media screen {
   .home-finder {

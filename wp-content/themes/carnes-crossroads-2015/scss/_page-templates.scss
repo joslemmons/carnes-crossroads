@@ -176,7 +176,6 @@ $navbar-offset: 145px;
         font-size: 1.15rem;
         color: $cc-brown;
     }
-
 }
 
 .block {
@@ -586,4 +585,37 @@ $navbar-offset: 145px;
 .builder-btn {
     margin-top: 90px;
     float: right;
+}
+
+
+.faq-set {
+    margin: 50px 0 0 0;
+    padding: 0;
+    list-style-type: none;
+
+    .faq-item {
+        margin-bottom: 35px;
+    }
+
+    .faq-question {
+        position: relative;
+        top: 1px;
+        width: auto;
+        cursor: pointer;
+        color: $cc-brown;
+        font-family: $font-sans;
+        font-size: 1.1rem;
+
+        &:hover {
+            color: lighten($cc-brown, 10);
+            border-bottom: 1px solid lighten($cc-brown, 10);
+        }
+    }
+
+    .faq-answer {
+        margin: 5px 0 0 23px;
+        font-family: $font-serif;
+        line-height: 1.2;
+        color: darken($cc-med-grey, 10);
+    }
 }
