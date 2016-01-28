@@ -83,8 +83,8 @@
                 <div class="slider-lg__item" style="background-image: url('{{ item.image.get_src }}');">
                     <a href="{{ item.button.link }}" class="slider-lg__item-link"></a>
                     <div class="block-tab--full-bottom">
-                        <a href=""><h3>{{ item.title }}</h3></a>
-                        <p>{{ item.subtitle }}</p>
+                        <a href="{{ item.button.link }}"><h3>{{ item.title }}</h3></a>
+                        <p>{{ item.subtitle|truncate(8) }}</p>
                     </div>
                 </div>
             {% endfor %}

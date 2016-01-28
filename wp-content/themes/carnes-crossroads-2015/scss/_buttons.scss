@@ -27,6 +27,7 @@
 
     &:hover {
         color: $white;
+        text-decoration: none !important;
         text-shadow: 0 2px 10px rgba($black, .5);
         background-color: darken($cc-green, 2);
         border: 1px solid darken($cc-green, 10);
@@ -40,24 +41,6 @@
         font-size: 0.7rem;
         letter-spacing: 1px;
         margin: 15px 5px 0;
-    }
-}
-
-.btn-grey {
-    padding: 8px 13px;
-    margin-top: 10px;
-    position: relative;
-    font-family: $font-sans;
-    font-weight: $weight-regular;
-    font-size: 0.75rem;
-    text-transform: uppercase;
-    letter-spacing: 0.5px;
-    color: $white;
-    background-color: $cc-lt-grey;
-
-    &:hover {
-        color: $white;
-        background-color: darken($cc-lt-grey, 10);
     }
 }
 
@@ -99,5 +82,26 @@
         color: $white;
         cursor: pointer;
         border: 1px solid $cc-brown;
+    }
+}
+
+.arrow-link {
+    position: relative;
+    padding-right: 25px;
+    margin: 15px 0 0 0;
+    font-family: $font-sans;
+    font-weight: $weight-medium;
+    font-size: 0.9rem;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    color: #756340;
+    background: url(./img/icon-arrow.png) no-repeat;
+    background-position: center right;
+    background-size: 1.1rem;
+    @include transition(0.2s all);
+
+    &:hover {
+        padding-right: 30px;
+        text-decoration: none;
     }
 }

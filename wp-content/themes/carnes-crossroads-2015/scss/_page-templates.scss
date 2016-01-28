@@ -263,7 +263,7 @@ $navbar-offset: 145px;
     position: absolute;
     padding: 25px 30px 10px;
     min-width: 350px;
-    min-height: 145px;
+    min-height: 135px;
     background: $white;
 
     @media (min-width: 1675px) {
@@ -283,7 +283,7 @@ $navbar-offset: 145px;
         margin: 5px 0;
         font-family: $font-sans;
         font-weight: $weight-regular;
-        font-size: 0.85em;
+        font-size: 0.8em;
         line-height: 1.4;
         letter-spacing: 0.5px;
         text-transform: uppercase;
@@ -298,21 +298,21 @@ $navbar-offset: 145px;
     &__link {
         position: relative;
         display: inline-block;
-        padding-right: 30px;
+        padding-right: 25px;
         margin: 15px 0 0 0;
         font-family: $font-sans;
         font-weight: $weight-medium;
-        font-size: 1rem;
+        font-size: 0.9rem;
         letter-spacing: 1px;
         text-transform: uppercase;
         color: #756340;
         background: url(./img/icon-arrow.png) no-repeat;
         background-position: center right;
-        background-size: 1.25rem;
+        background-size: 1.1rem;
         @include transition(0.2s all);
 
         &:hover {
-            padding-right: 33px;
+            padding-right: 30px;
         }
     }
 
@@ -320,24 +320,28 @@ $navbar-offset: 145px;
         @extend .block-tab;
         top: 0;
         left: 0;
+        max-width: 60%;
     }
 
     &--top-right {
         @extend .block-tab;
         top: 0;
         right: 0;
+        max-width: 60%;
     }
 
     &--bottom-left {
         @extend .block-tab;
         bottom: 0;
         left: 0;
+        max-width: 60%;
     }
 
     &--bottom-right {
         @extend .block-tab;
         bottom: 0;
         right: 0;
+        max-width: 60%;
     }
 
     &--full-bottom {
@@ -571,20 +575,41 @@ $navbar-offset: 145px;
     z-index: 999;
 }
 
-.builder-logo {
-    margin-top: 70px;
-    width: 40%;
-    float: left;
 
-    img {
-        width: 100%;
-        height: auto;
+
+.builder-info {
+    position: relative;
+    display: block;
+    margin: 75px 0 0 0;
+    padding: 25px 0 0 0;
+
+    .builder-logo {
+        width: 40%;
+        float: left;
+        @include center(y);
+
+        img {
+            width: 100%;
+            height: auto;
+        }
+    }
+
+    .builder-btn {
+        float: right;
+        @include center(y);
     }
 }
 
-.builder-btn {
-    margin-top: 90px;
+.builders-links {
+    position: relative;
     float: right;
+    width: 38.5%;
+
+    a {
+        margin: 5px 0 15px 0;
+        float: left;
+        color: $cc-med-grey;
+    }
 }
 
 

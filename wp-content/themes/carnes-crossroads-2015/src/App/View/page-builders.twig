@@ -25,21 +25,22 @@
                     <iframe src="{{ builder.getFeaturedVideoSrc|youtubeify }}" frameborder="0" allowfullscreen></iframe>
                 </div>
                 {% endif %}
-                <div class="builder-logo">
-                    <img src="{{ builder.thumbnail.src|resize(235,75) }}">
+                <div class="builder-info">
+                    <div class="builder-logo">
+                        <img src="{{ builder.thumbnail.src }}">
+                    </div>
+                    {% if builder.getStandardFeaturesSrc %}
+                        <a href="{{ builder.getStandardFeaturesSrc }}" target="new" class="btn-green builder-btn">Standard Features</a>
+                    {% endif %}
                 </div>
-                {% if builder.getStandardFeaturesSrc %}
-                    <a href="{{ builder.getStandardFeaturesSrc }}" target="new" class="btn-green builder-btn">Standard
-                        Features</a>
-                {% endif %}
-                {% if builder.shouldShowAvailableHomesButton %}
-                    <a href="/home-finder/search-listings/?builders[]={{ builder.title|slugify }}" class="btn-green builder-btn">Available
-                        Homes</a>
-                {% endif %}
-                {% if builder.shouldShowHomePlansButton %}
-                    <a href="/home-finder/search-listings/?builders[]={{ builder.title|slugify }}&includePlans=true" class="btn-green builder-btn">Home
-                        Plans</a>
-                {% endif %}
+                <div class="builders-links">
+                    {% if builder.shouldShowAvailableHomesButton %}
+                        <a href="/home-finder/search-listings/?builders[]={{ builder.title|slugify }}" class="arrow-link">Available Homes</a>
+                    {% endif %}
+                    {% if builder.shouldShowHomePlansButton %}
+                        <a href="/home-finder/search-listings/?builders[]={{ builder.title|slugify }}&includePlans=true" class="arrow-link">View Home Plans</a>
+                    {% endif %}
+                </div>
             </div>
             <div class="col-xs-12 col-md-5 col-md-offset-1 text-left">
                 <h4>{{ builder.title }}</h4>
