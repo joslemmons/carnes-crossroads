@@ -6,7 +6,7 @@
     width: 100%;
     top: 0;
     left: 0;
-    padding: 20px 0 0 0;
+    padding: 17px 0 0 0;
     background: url(./img/pattern-green.jpg) repeat center center;
     // overflow: hidden;
     z-index: 9999;
@@ -19,8 +19,8 @@
     }
 
     &__logo {
-        width: 14%;
-        margin: 0 0 0 5%;
+        width: 13.5%;
+        margin: 1% 0 0 5%;
         max-width: 225px;
         float: left;
         @include transition(0.3s all);
@@ -66,7 +66,7 @@
 
     &__primary {
         margin: 0;
-        max-width: 70%;
+        max-width: 80%;
         float: right;
         padding: 0 5% 0 10px;
         list-style-type: none;
@@ -78,7 +78,7 @@
     &__primary-item {
         margin: 0 0 0 20px;
         height: 100%;
-        padding: 25px 0;
+        padding: 23px 0;
         display: inline-block;
         @include transition(0.3s all);
 
@@ -94,7 +94,7 @@
 
         a {
             color: $white;
-            font-size: 1.1rem;
+            font-size: 1rem;
             letter-spacing: 1.8px;
             font-family: $font-serif;
             font-weight: $weight-bold;

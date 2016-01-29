@@ -85,3 +85,44 @@
     }
 
 }
+
+.tribe-events {
+
+    &-page-title {
+        text-align: left !important;
+        color: $cc-brown;
+    }
+
+    &-notices {
+        background-color: $ltr-grey;
+    }
+
+    &-calendar {
+        background-color: $white;
+
+        th {
+            background-color: $cc-orange;
+            color: $white;
+            padding: 10px 0;
+            border-right: 1px solid $white;
+        }
+
+        th:last-of-type {
+            border-right: none;
+        }
+    }
+}
+
+
+
+#tribe-events-content {
+
+    .tribe-events-calendar td {
+        height: 130px;
+    }
+
+    table.tribe-events-calendar,
+    .tribe-events-calendar td {
+        border: 1px solid lighten($cc-med-grey, 30);
+    }
+}

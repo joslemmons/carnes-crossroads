@@ -7,15 +7,15 @@
         {% set headerImage = page.parent.thumbnail %}
     {% endif %}
 
-    <section class="hero__page" style="background-image: url('{{ headerImage.src|resize(1500) }}')">
-        <div class="hero__content-tab-{{ page.getHeroColor }}">
+    <section class="hero__page" style="background-image: url({{ template_uri }}/img/bg-hero-events.jpg)">
+        <div class="hero__content-tab-orange">
             <div class="hero__content-inner">
-                <h1>{{ page.title }}</h1>
+                <h1>Calendar of Events</h1>
             </div>
         </div>
     </section>
 
-    <section class="page-content--white-floral-top">
+    <section class="page-content--white">
         <div class="container">
             {% if page.headline %}
                 <div class="row extra-bottom">

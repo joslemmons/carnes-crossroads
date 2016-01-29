@@ -3706,7 +3706,7 @@ a:focus, a:hover {
   width: 100%;
   top: 0;
   left: 0;
-  padding: 20px 0 0 0;
+  padding: 17px 0 0 0;
   background: url(./img/pattern-green.jpg) repeat center center;
   z-index: 9999;
   -webkit-box-shadow: 0 3px 8px rgba(0, 0, 0, 0.25);
@@ -3717,8 +3717,8 @@ a:focus, a:hover {
     position: relative;
     width: 100%; }
   .main-nav__logo {
-    width: 14%;
-    margin: 0 0 0 5%;
+    width: 13.5%;
+    margin: 1% 0 0 5%;
     max-width: 225px;
     float: left;
     -webkit-transition: 0.3s all;
@@ -3753,7 +3753,7 @@ a:focus, a:hover {
       color: #9bb824; }
   .main-nav__primary {
     margin: 0;
-    max-width: 70%;
+    max-width: 80%;
     float: right;
     padding: 0 5% 0 10px;
     list-style-type: none;
@@ -3764,7 +3764,7 @@ a:focus, a:hover {
   .main-nav__primary-item {
     margin: 0 0 0 20px;
     height: 100%;
-    padding: 25px 0;
+    padding: 23px 0;
     display: inline-block;
     -webkit-transition: 0.3s all;
     transition: 0.3s all; }
@@ -3777,7 +3777,7 @@ a:focus, a:hover {
       background: url(./img/grad-divider.png) no-repeat left top; }
     .main-nav__primary-item a {
       color: #fff;
-      font-size: 1.1rem;
+      font-size: 1rem;
       letter-spacing: 1.8px;
       font-family: "minion-pro", serif, serif;
       font-weight: 700;
@@ -4588,7 +4588,7 @@ video {
     border: 1px solid #b5b4b4; }
   .hero__home {
     position: relative;
-    margin-top: 145px;
+    margin-top: 135px;
     height: 85%;
     width: 100%;
     text-align: left;
@@ -4596,7 +4596,7 @@ video {
     background: url(./img/bg-hero-home.jpg) no-repeat center center/cover; }
   .hero__page {
     position: relative;
-    margin-top: 145px;
+    margin-top: 135px;
     height: 68%;
     width: 100%;
     overflow: hidden;
@@ -4605,7 +4605,7 @@ video {
     background-size: cover; }
   .hero__article {
     position: relative;
-    margin-top: 145px;
+    margin-top: 135px;
     height: 45%;
     width: 100%;
     overflow: hidden;
@@ -5003,7 +5003,7 @@ video {
   .home-finder {
     background: #f4f0e9;
     position: relative;
-    padding-top: 145px; }
+    padding-top: 135px; }
     .home-finder .row {
       margin-left: 0 !important;
       margin-right: 0 !important; }
@@ -5793,3 +5793,24 @@ video {
       width: .4em;
       margin: -.25em 0 0 -.25em;
       position: absolute; }
+
+.tribe-events-page-title {
+  text-align: left !important;
+  color: #3d3421; }
+.tribe-events-notices {
+  background-color: #dedede; }
+.tribe-events-calendar {
+  background-color: #fff; }
+  .tribe-events-calendar th {
+    background-color: #d6a83f;
+    color: #fff;
+    padding: 10px 0;
+    border-right: 1px solid #fff; }
+  .tribe-events-calendar th:last-of-type {
+    border-right: none; }
+
+#tribe-events-content .tribe-events-calendar td {
+  height: 130px; }
+#tribe-events-content table.tribe-events-calendar,
+#tribe-events-content .tribe-events-calendar td {
+  border: 1px solid #cecece; }
