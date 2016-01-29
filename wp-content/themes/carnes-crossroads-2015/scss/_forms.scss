@@ -96,9 +96,8 @@
 .gform_wrapper .hidden_label select.large,
 .gform_wrapper .top_label input.large,
 .gform_wrapper .top_label select.large {
-    width: 93% !important;
-    margin-bottom: 5px;
-    height: 4.75rem;
+    width: 90% !important;
+    height: 4.3rem;
     text-indent: 15px;
     font-family: $font-sans;
     font-weight: $weight-regular;
@@ -201,7 +200,7 @@
     background-color: $cc-green;
     border: 1px solid darken($cc-green, 10);
     outline: 5px solid $cc-green;
-    left: 78%;
+    left: 76.5%;
 
     &:hover {
         color: $white;
@@ -219,4 +218,61 @@
     font-size: 1rem;
     text-transform: uppercase;
     color: $cc-lt-grey;
+}
+
+#gform_wrapper_3 {
+    margin: 0;
+
+    .gfield {
+        width: 100%;
+        margin-bottom: 25px;
+    }
+
+    .ginput_complex span input[type=text],
+    .ginput_complex span select {
+        height: 3.5rem;
+        text-indent: 15px;
+        font-family: $font-sans;
+        font-weight: $weight-regular;
+        font-size: 1rem;
+        text-transform: uppercase;
+        color: $cc-med-grey;
+        background-color: $white;
+    }
+
+    .ginput_complex span label {
+        margin-left: 5px;
+        margin-bottom: 40px;
+        font-family: $font-sans;
+        font-weight: $weight-regular;
+        text-transform: uppercase;
+        font-size: 0.9rem;
+        color: $cc-med-grey;
+    }
+
+    .gfield_label {
+        font-family: $font-serif;
+        font-weight: $weight-regular;
+        text-transform: uppercase;
+        font-size: 1.3rem;
+        color: $cc-green;
+    }
+
+    .ginput_container_phone,
+    .ginput_container_email,
+    .ginput_container_select {
+        width: 52%;
+    }
+
+    .ginput_container select {
+        background-color: $white;
+    }
+
+    .ginput_container_textarea textarea {
+        border: 1px solid $input-border;
+    }
+
+    .gform_footer.top_label {
+        margin-top: -100px !important;
+    }
 }

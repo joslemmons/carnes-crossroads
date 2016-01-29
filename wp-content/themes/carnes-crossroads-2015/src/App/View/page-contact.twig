@@ -1,0 +1,76 @@
+{% extends 'base.twig' %}
+{% block template %}
+
+    {% if page.thumbnail %}
+        {% set headerImage = page.thumbnail %}
+    {% else %}
+        {% set headerImage = page.parent.thumbnail %}
+    {% endif %}
+
+    <section class="hero__page" style="background-image: url('{{ headerImage.src|resize(1500) }}')">
+        <div class="hero__content-tab-green">
+        <div class="hero__content-inner">
+            <h1>{{ page.title }}</h1>
+        </div>
+    </div>
+</section>
+
+<section class="page-content--white-floral-top">
+    <div class="container">
+        {# <div class="col-xs-4">
+            <ul class="contact-sidebar">
+                <li class="contact-sidebar__item">
+                    <p class="item-header">Carnes Crossroads Real Estate</p>
+                    <p>513 Wodin Place</p>
+                    <p>Summerville, South Carolina 29483</p>
+                    <p>Phone: (843)761-8600</p>
+                </li>
+                <li class="contact-sidebar__item">
+                    <p class="item-header">Hours</p>
+                    <p>Monday-Saturday: 10:00am - 6:00pm</p>
+                    <p>Sunday: Noon - 6:00pm</p>
+                </li>
+            </ul>
+        </div> #}
+        <div class="col-xs-12 col-md-3 category-list">
+                <h4>Carnes Crossroads Real Estate</h4>
+                <hr>
+                <ul class="category-list__categories">
+                    <li class="category-list__item">
+                        <p>513 Wodin Place</p>
+                        <p>Summerville, SC 29483</p>
+                        <p>Phone: (843)761-8600</p>
+                    </li>
+                </ul>
+                <h4>Hours</h4>
+                <hr>
+                <ul class="category-list__categories">
+                    <li class="category-list__item">
+                        <p>Mon-Sat: 10:00am - 6:00pm</p>
+                        <p>Sunday: Noon - 6:00pm</p>
+                    </li>
+                </ul>
+                <h4>Follow Us</h4>
+                <hr>
+                <ul class="category-list__social">
+                    <li class="footer__social-item"><a href="https://www.twitter.com/carnesxroads"><img src="{{ template_uri }}/img/icon-social-tw.png"/></a></li>
+                    <li class="footer__social-item"><a href="https://www.facebook.com/CarnesCrossroads"><img src="{{ template_uri }}/img/icon-social-fb.png"/></a></li>
+                    <li class="footer__social-item"><a href="https://www.youtube.com/user/CarnesXroads"><img src="{{ template_uri }}/img/icon-social-yt.png"/></a></li>
+                    <li class="footer__social-item"><a href="https://www.instagram.com/carnescrossroads/"><img src="{{ template_uri }}/img/icon-social-ig.png"/></a></li>
+                    <li class="footer__social-item"><a href="https://www.pinterest.com/carnesxroads/"><img src="{{ template_uri }}/img/icon-social-pn.png"/></a></li>
+                    <li class="footer__social-item"><a href="https://plus.google.com/u/0/+Carnescharleston"><img src="{{ template_uri }}/img/icon-social-goog.png"/></a></li>
+                </ul>
+            </div>
+        <div class="col-xs-8 col-md-offset-1">
+            {{ page.content }}
+        </div>
+    </div>
+</section>
+
+    {% if page.getQuicklinkBoxes %}
+{% include "partials/link-widgets.twig" %}
+    {% endif %}
+
+{% include "partials/contact-foot.twig" %}
+
+{% endblock %}

@@ -400,28 +400,32 @@ $navbar-offset: 145px;
 
     h4 {
         font-size: 1rem;
+        line-height: 1.3;
         color: $cc-med-grey;
         margin: 0 0 0 5px;
     }
 
     hr {
         margin: 10px 0;
-        width: 75%;
+        width: 85%;
         border-top: 1px solid #ccc;
     }
 
     &__categories {
-        padding: 0 0 0 10px;
+        margin-bottom: 75px;
+        padding: 0 0 0 8px;
         list-style-type: none;
     }
 
     &__item {
         margin-bottom: 15px;
 
-        a {
+        a, p {
+            margin: 0 0 5px 0;
             font-family: $font-sans;
             text-transform: uppercase;
             font-size: 0.85rem;
+            letter-spacing: 0.5px;
             color: $cc-med-grey;
         }
 
@@ -642,5 +646,32 @@ $navbar-offset: 145px;
         font-family: $font-serif;
         line-height: 1.2;
         color: darken($cc-med-grey, 10);
+    }
+}
+
+.contact-sidebar {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+
+    &__item {
+        width: 75%;
+        margin-bottom: 45px !important;
+
+        .item-header {
+            margin-bottom: 10px;
+            font-family: $font-sans;
+            font-size: 0.9rem;
+            text-transform: uppercase;
+            color: $cc-green;
+            border-bottom: 1px solid $cc-green;
+        }
+
+        p {
+            margin: 5px 0 0 0;
+            font-size: 1rem;
+            font-family: $font-serif;
+            color: $cc-brown;
+        }
     }
 }
