@@ -229,15 +229,32 @@
     }
 
     .ginput_complex span input[type=text],
+    .ginput_container_email input[type=email],
+    .ginput_container_phone input[type=tel],
     .ginput_complex span select {
         height: 3.5rem;
         text-indent: 15px;
         font-family: $font-sans;
         font-weight: $weight-regular;
-        font-size: 1rem;
-        text-transform: uppercase;
+        font-size: 1.1rem;
+        text-transform: none;
         color: $cc-med-grey;
         background-color: $white;
+    }
+
+    .ginput_container_textarea textarea {
+        padding: 15px;
+        font-family: $font-sans;
+        font-weight: $weight-regular;
+        font-size: 1.1rem;
+        text-transform: none;
+        color: $cc-med-grey;
+        background-color: $white;
+        border: 1px solid $input-border;
+
+        &:focus {
+            outline: none;
+        }
     }
 
     .ginput_complex span label {

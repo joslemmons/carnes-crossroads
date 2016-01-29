@@ -3654,15 +3654,28 @@ a:focus, a:hover {
     width: 100%;
     margin-bottom: 25px; }
   #gform_wrapper_3 .ginput_complex span input[type=text],
+  #gform_wrapper_3 .ginput_container_email input[type=email],
+  #gform_wrapper_3 .ginput_container_phone input[type=tel],
   #gform_wrapper_3 .ginput_complex span select {
     height: 3.5rem;
     text-indent: 15px;
     font-family: "proxima-nova", sans-serif, sans-serif;
     font-weight: 400;
-    font-size: 1rem;
-    text-transform: uppercase;
+    font-size: 1.1rem;
+    text-transform: none;
     color: #828181;
     background-color: #fff; }
+  #gform_wrapper_3 .ginput_container_textarea textarea {
+    padding: 15px;
+    font-family: "proxima-nova", sans-serif, sans-serif;
+    font-weight: 400;
+    font-size: 1.1rem;
+    text-transform: none;
+    color: #828181;
+    background-color: #fff;
+    border: 1px solid #ccc; }
+    #gform_wrapper_3 .ginput_container_textarea textarea:focus {
+      outline: none; }
   #gform_wrapper_3 .ginput_complex span label {
     margin-left: 5px;
     margin-bottom: 40px;
