@@ -1,152 +1,160 @@
-@media screen {
-    //See base modal styles in frontpage.modal.scss
+//See base modal styles in frontpage.modal.scss
 
-    //Custom Styles
-    #modal-request-showing {
-        .primary-page .page-content {
-            margin-bottom: 0;
+//Custom Styles
+#modal-request-showing {
+    .primary-page .page-content {
+        margin-bottom: 0;
+    }
+}
+.modal-dialog {
+    h1 {
+        font-size: 4rem;
+    }
+
+    .black-overlay {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        top: 0;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        margin: auto;
+        background: rgba($black, 0.35);
+    }
+
+    .listing-address {
+        font-family: $baskerville;
+        color: $brown;
+        font-size: 36px;
+        font-weight: 400;
+        line-height: 1.5;
+        text-align: left;
+        margin-top: 25px;
+    }
+
+    .listing-price {
+        display: inline-block;
+        font-family: $oswald;
+        color: $brown;
+        font-size: 24px; /* Approximation due to font substitution */
+        font-weight: 400;
+        line-height: 1; /* Approximation due to font substitution */
+        text-align: left;
+        margin-top: 24px;
+        margin-right: 34px;
+    }
+
+    .listing-specs {
+        display: inline-block;
+        font-family: $font-sans;
+        color: $brown;
+        font-size: 18px; /* Approximation due to font substitution */
+        font-weight: 400;
+        line-height: 1; /* Approximation due to font substitution */
+        text-align: left;
+        text-transform: uppercase;
+        letter-spacing: 1px;
+    }
+
+    .listing-neighborhood {
+        font-family: $oswald;
+        color: $brown;
+        font-size: 16px; /* Approximation due to font substitution */
+        font-weight: 400;
+        line-height: 1; /* Approximation due to font substitution */
+        text-align: left;
+        margin-top: 18px;
+        text-transform: uppercase;
+        letter-spacing: 2px;
+
+        .item-padding {
+            display: inline-block;
+            margin: 0 15px;
+
+            &:first-child {
+                margin-left: 0;
+            }
+        }
+
+
+        a {
+            color: $brown;
         }
     }
-    .modal-dialog {
-        .black-overlay {
-            position: absolute;
-            width: 100%;
-            height: 100%;
-            top: 0;
-            bottom: 0;
-            left: 0;
-            right: 0;
-            margin: auto;
-            background: rgba(0,0,0,0.5);
-        }
 
-        .listing-address {
-            font-family: $baskerville;
-            color: $brown;
-            font-size: 36px;
-            font-weight: 400;
-            line-height: 1.5;
-            text-align: left;
-            margin-top: 25px;
-        }
+    .success-message {
+        display: block;
+        margin-top: 40px;
+    }
 
-        .listing-price {
-            display: inline-block;
-            font-family: $oswald;
-            color: $brown;
-            font-size: 24px; /* Approximation due to font substitution */
-            font-weight: 400;
-            line-height: 1; /* Approximation due to font substitution */
-            text-align: left;
-            margin-top: 24px;
-            margin-right: 34px;
-        }
+    form.request-showing {
+        padding-top: 40px;
+        padding-bottom: 40px;
 
-        .listing-specs {
-            display: inline-block;
-            font-family: $proxima;
-            color: $brown;
-            font-size: 18px; /* Approximation due to font substitution */
-            font-weight: 400;
-            line-height: 1; /* Approximation due to font substitution */
-            text-align: left;
+        label {
+            margin-bottom: 7px;
+            font-family: $font-sans;
             text-transform: uppercase;
-            letter-spacing: 1px;
-        }
-
-        .listing-neighborhood {
-            font-family: $oswald;
-            color: $brown;
-            font-size: 16px; /* Approximation due to font substitution */
-            font-weight: 400;
-            line-height: 1; /* Approximation due to font substitution */
-            text-align: left;
-            margin-top: 18px;
-            text-transform: uppercase;
-            letter-spacing: 2px;
-
-            .item-padding {
-                display: inline-block;
-                margin: 0 15px;
-
-                &:first-child {
-                    margin-left: 0;
-                }
-            }
-
-
-            a {
-                color: $brown;
-            }
-        }
-
-        .success-message {
+            font-size: 0.9rem;
             display: block;
-            margin-top: 40px;
+            color: $cc-med-grey;
         }
 
-        form.request-showing {
-            padding-top: 40px;
-            padding-bottom: 40px;
+        .red {
+            color: red;
+        }
 
-            label {
-                font-family: $proxima;
-                text-transform: uppercase;
-                font-size: 12px;
+        input, textarea {
+            width: 100%;
+            margin-bottom: 40px;
+            height: 3.7rem;
+            text-indent: 15px;
+            font-family: $font-sans;
+            font-weight: $weight-regular;
+            font-size: 1rem;
+            text-transform: uppercase;
+            color: $cc-med-grey;
+
+            &:focus {
+                outline: none;
             }
 
-            .red {
-                color: red;
+            &.error {
+                background: pink;
+                border: 1px solid red;
             }
+        }
 
-            input, textarea {
-                background: $white;
-                width: 100%;
-                font-family: $proxima;
-                color:  $brown;
-                font-size: 14px;/* Approximation due to font substitution */
-                font-weight: 400;
-                line-height: 1;/* Approximation due to font substitution */
-                text-align: left;
-                border-radius: 0;
-                border: 1px solid $brown;
-                padding: 10px 15px;
-                margin-bottom: 5px;
-                text-transform: uppercase;
-                margin-bottom: 20px;
+        textarea {
+            padding: 15px;
+            text-indent: 0;
+            height: 175px;
+            background-color: $white;
+            border: 1px solid $input-border;
+        }
 
-                &:focus {
-                    outline: none;
-                }
+        input[type="checkbox"] {
+            width: auto;
+        }
 
-                &.error {
-                    background: pink;
-                    border: 1px solid red;
-                }
-            }
+        .site-btn {
+            margin-top: 20px;
+        }
 
-            input[type="checkbox"] {
-                width: auto;
-            }
+        .required {
+            margin-top: 20px;
+            font-family: $font-sans;
+            text-transform: uppercase;
+            font-size: 12px;
+        }
 
-            .site-btn {
-                margin-top: 20px;
-            }
-
-            .required {
-                margin-top: 20px;
-                font-family: $proxima;
-                text-transform: uppercase;
-                font-size: 12px;
-            }
-
-            .error-message {
-                display: block;
-                color: red;
-                font-family: $oswald;
-                font-size: 16px;
-                text-transform: uppercase;
-            }
+        .error-message {
+            display: block;
+            color: red;
+            font-family: $oswald;
+            font-size: 16px;
+            text-transform: uppercase;
         }
     }
 }
