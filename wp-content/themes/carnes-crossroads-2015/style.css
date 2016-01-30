@@ -3717,9 +3717,11 @@ a:focus, a:hover {
     position: relative;
     width: 100%; }
   .main-nav__logo {
-    width: 13.5%;
-    margin: 1% 0 0 5%;
-    max-width: 225px;
+    position: absolute;
+    width: 15%;
+    margin-top: 6px;
+    margin-left: 5%;
+    max-width: 200px;
     float: left;
     -webkit-transition: 0.3s all;
     transition: 0.3s all; }
@@ -3755,6 +3757,7 @@ a:focus, a:hover {
     margin: 0;
     max-width: 80%;
     float: right;
+    clear: right;
     padding: 0 5% 0 10px;
     list-style-type: none;
     text-align: right;
@@ -3768,10 +3771,6 @@ a:focus, a:hover {
     display: inline-block;
     -webkit-transition: 0.3s all;
     transition: 0.3s all; }
-    @media (min-width: 1550px) {
-      .main-nav__primary-item {
-        margin: 0 0 0 35px;
-        padding: 30px 0; } }
     .main-nav__primary-item:first-of-type {
       padding-left: 50px;
       background: url(./img/grad-divider.png) no-repeat left top; }
@@ -5735,82 +5734,74 @@ video {
             font-weight: 400;
             font-size: 12px;
             line-height: 1; } }
-.calendar {
-  width: 85%;
-  padding: 0 0 15px 0;
-  position: relative;
-  text-align: center;
-  background: #fff;
-  font-family: "proxima-nova", sans-serif, sans-serif;
-  font-size: 1.1rem; }
-  .calendar table {
-    width: 100%; }
-  .calendar__month {
-    width: 100%;
-    background: #d6a83f;
-    position: relative;
-    color: #fff;
-    margin: 0 auto -5px auto;
-    padding: 20px 0;
-    font-family: "proxima-nova", sans-serif, sans-serif;
-    font-weight: 400;
-    font-size: 1.65rem;
-    text-transform: none; }
-  .calendar thead {
-    margin: 0 auto;
-    color: #fff;
-    background: #d6a83f;
-    font-weight: 700;
-    text-transform: uppercase; }
-    .calendar thead td {
-      margin: 0;
-      border-radius: 0; }
-  .calendar tbody {
-    color: #7c8a95; }
-  .calendar td {
-    border: none;
-    border-radius: 50%;
-    height: 2.9rem;
-    line-height: 2.9rem;
-    text-align: center;
-    width: 2.9rem; }
-  .calendar .current-day {
-    background: #d6a83f;
-    color: #fff; }
-    .calendar .current-day:after {
-      background: #fff; }
-  .calendar .event {
-    cursor: pointer;
-    position: relative; }
-    .calendar .event:after {
-      background: #d6a83f;
-      border-radius: 50%;
-      top: .5rem;
-      right: .5rem;
-      display: block;
-      content: '';
-      height: .4em;
-      width: .4em;
-      margin: -.25em 0 0 -.25em;
-      position: absolute; }
-
-.tribe-events-page-title {
+#tribe-events-content .tribe-events-page-title {
   text-align: left !important;
   color: #3d3421; }
-.tribe-events-notices {
+#tribe-events-content .tribe-events-notices {
   background-color: #dedede; }
-.tribe-events-calendar {
+#tribe-events-content .tribe-events-calendar {
   background-color: #fff; }
-  .tribe-events-calendar th {
+  #tribe-events-content .tribe-events-calendar th {
     background-color: #d6a83f;
     color: #fff;
     padding: 10px 0;
     border-right: 1px solid #fff; }
-  .tribe-events-calendar th:last-of-type {
+  #tribe-events-content .tribe-events-calendar th:last-of-type {
     border-right: none; }
-
+#tribe-events-content .tribe-events-month-event-title {
+  margin: 8px !important; }
+#tribe-events-content .tribe-events-meta-group h3 {
+  margin-bottom: 25px;
+  color: #768e1c; }
+#tribe-events-content .tribe-events-meta-group dl dd {
+  margin: 3px 0 20px 0;
+  color: #3d3421;
+  font-size: 0.9rem; }
+#tribe-events-content .tribe-events-meta-group dl dd a {
+  color: #3d3421;
+  text-decoration: underline; }
+#tribe-events-content .tribe-events-meta-group dl dd a:hover {
+  color: #5e5033; }
+#tribe-events-content .tribe-events-meta-group .tribe-venue {
+  margin-bottom: 0; }
 #tribe-events-content .tribe-events-calendar td {
   height: 130px; }
 #tribe-events-content table.tribe-events-calendar,
 #tribe-events-content .tribe-events-calendar td {
   border: 1px solid #cecece; }
+
+.tribe-events-single .tribe-events-back {
+  margin: 0 0 25px 0; }
+.tribe-events-single-event-title {
+  font-family: "minion-pro", serif, serif;
+  font-size: 2.9rem;
+  color: #768e1c;
+  text-shadow: none; }
+.tribe-events-single .tribe-events-schedule {
+  margin: 0; }
+.tribe-events-single .tribe-events-schedule h2,
+.tribe-events-single .tribe-events-schedule span {
+  font-family: "proxima-nova", sans-serif, sans-serif;
+  font-weight: 400;
+  text-transform: uppercase;
+  font-size: 1.3rem;
+  color: #828181;
+  display: inline-block; }
+.tribe-events-single-event-description {
+  margin: 25px 0;
+  padding: 25px 0 0 0;
+  border-top: 1px solid #828181; }
+.tribe-events-single .tribe-events-cal-links {
+  height: 40px;
+  margin: 15px 0; }
+.tribe-events-single .tribe-events-button {
+  clear: none;
+  margin-left: 15px; }
+.tribe-events-single-section {
+  margin: 50px 0;
+  padding: 25px;
+  background-color: #ebebeb; }
+
+span.tribe-address,
+span.tel {
+  font-weight: 400 !important; }

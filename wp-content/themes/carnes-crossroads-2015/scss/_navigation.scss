@@ -19,9 +19,11 @@
     }
 
     &__logo {
-        width: 13.5%;
-        margin: 1% 0 0 5%;
-        max-width: 225px;
+        position: absolute;
+        width: 15%;
+        margin-top: 6px;
+        margin-left: 5%;
+        max-width: 200px;
         float: left;
         @include transition(0.3s all);
     }
@@ -68,6 +70,7 @@
         margin: 0;
         max-width: 80%;
         float: right;
+        clear: right;
         padding: 0 5% 0 10px;
         list-style-type: none;
         text-align: right;
@@ -82,10 +85,10 @@
         display: inline-block;
         @include transition(0.3s all);
 
-        @media (min-width: 1550px) {
-            margin: 0 0 0 35px;
-            padding: 30px 0;
-        }
+        // @media (min-width: 1550px) {
+        //     margin: 0 0 0 35px;
+        //     padding: 30px 0;
+        // }
 
         &:first-of-type {
             padding-left: 50px;
