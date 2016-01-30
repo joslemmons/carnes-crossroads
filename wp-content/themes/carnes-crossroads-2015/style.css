@@ -3518,6 +3518,20 @@ a:focus, a:hover {
 .events-headline-contact .btn {
   margin: 25px 0 0 8px; }
 
+.input-search {
+  width: 100%;
+  height: 4.3rem;
+  text-indent: 20px;
+  font-family: "proxima-nova", sans-serif, sans-serif;
+  font-weight: 400;
+  font-size: 1.1rem;
+  text-transform: uppercase;
+  color: #828181;
+  background-image: url(./img/icon-search.png);
+  background-repeat: no-repeat;
+  background-position: 97% center;
+  background-size: 1.4rem; }
+
 .gfield {
   display: inline-block;
   border-radius: 0;
@@ -5002,6 +5016,12 @@ video {
   margin: 0; }
 .site-map ul li {
   margin: 5px 0; }
+
+.search-item {
+  margin-bottom: 45px; }
+  .search-item h6 {
+    margin-bottom: 5px;
+    text-decoration: underline; }
 
 @media screen {
   .home-finder {

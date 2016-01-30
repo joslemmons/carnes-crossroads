@@ -7,24 +7,30 @@
     {% endif %}
 
     <section class="hero__page" style="background-image: url('{{ headerImage.src|resize(1500) }}')">
-        <div class="hero__content-tab-green">
+        <div class="hero__content-tab-orange">
             <div class="hero__content-inner">
                 <h1>Search</h1>
             </div>
         </div>
     </section>
-
+    <section class="page-content events__form-container">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12">
+                    <form action="/" method="get">
+                        <input type="text" placeholder="enter keywords" name="s" class="input-search"/>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
     <section class="page-content--white-floral-top">
         <div class="container">
             <div class="row extra-bottom">
-                <div class="col-xs-12 col-md-8 col-md-offset-2 text-center">
+                <div class="col-xs-12 text-left">
                     <h2>Search results for "{{ search_term|e }}"</h2>
                 </div>
             </div>
-
-            <form action="/" method="get">
-                <input type="text" placeholder="enter keywords" name="s"/>
-            </form>
 
             {% for post in posts %}
                 <div class="search-item">
