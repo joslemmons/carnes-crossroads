@@ -1,4 +1,36 @@
 {% extends 'base.twig' %}
 {% block template %}
-404
+
+
+<section class="hero__page" style="background-image: url('{{ template_uri }}/img/bg-hero-location.jpg')">
+    <div class="hero__content-tab-red">
+        <div class="hero__content-inner">
+            <h1>Oops!</h1>
+        </div>
+    </div>
+</section>
+
+<section class="page-content--white-floral-top">
+    <div class="container">
+        <div class="col-md-12 site-map">
+            <div>
+                <p>The page you tried to access cannot be found. You may have tried to
+                    use an outdated link or you may have typed the address (URL) incorrectly.</p>
+                <p>There are several ways to find page you are looking for:</p>
+                <ul>
+                    <li>Reload/Refresh the page, as sometimes the 404 can be a fluke.</li>
+                    <li>Check the address (URL) for correctness (Spelling errors etc.).</li>
+                    <li>Use the search feature to find the wanted page.</li>
+                </ul>
+                <hr>
+                <h3>Site Map</h3>
+                <ul class="site-map-list">
+                    {{ function('wp_list_pages') }}
+                </ul>
+            </div>
+        </div>
+    </div>
+</section>
+
+
 {% endblock %}

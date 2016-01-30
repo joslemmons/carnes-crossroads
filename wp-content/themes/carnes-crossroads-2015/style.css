@@ -4998,6 +4998,11 @@ video {
       font-family: "minion-pro", serif, serif;
       color: #3d3421; }
 
+.site-map ul {
+  margin: 0; }
+.site-map ul li {
+  margin: 5px 0; }
+
 @media screen {
   .home-finder {
     background: #f4f0e9;
