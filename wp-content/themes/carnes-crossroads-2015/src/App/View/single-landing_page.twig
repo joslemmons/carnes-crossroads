@@ -37,44 +37,39 @@
 <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade
 your browser</a> to improve your experience.</p>
 <![endif]-->
-        
+
 {#<!--end header from base-->#}
-        
+
 <div class="landing-page">
     <div class="lp-header">
         <div class="container">
             <div class="row">
                 <div class="col-md-6">
                     <div class="logo">
-                        <a href="/">
-                            <img src="{{ template_uri }}/img/daniel-island-charleston-logo.png"/>
-                        </a>
+                        <a href="/"><img src="{{ template_uri }}/img/carnes_logo_wht.svg"/></a>
                     </div>
                 </div>
                 <div class="col-md-6">
                     <div class="row">
                         <div class="col-md-12">
-                            <div class="contact-info">
-                                Call Today (843) 971-7100
-                            </div>
+                            <div class="contact-info">Call Today (843) 761-8600</div>
                         </div>
                         <div class="row btn-row">
                             <div class="col-md-12">
-                                <a class="lp-btn" href="http://www.danielisland.com">Visit Daniel Island</a>
-                                <a class="lp-btn" href="http://www.danielisland.com/contact/">Contact Us</a>
+                                <a class="lp-btn" href="http://www.carnescharleston.com">Visit Carnes Crossroads</a>
+                                <a class="lp-btn" href="http://www.carnestcharleston.com/contact/">Contact Us</a>
                             </div>
                         </div>
-                         
+
                     </div>
                 </div>
             </div>
         </div>
     </div>
-    <div class="header-border"></div>
 
     <div class="header-content"
          style="background: url('{{ post.getHeaderImage.src }}') 50% 50% no-repeat; background-size: cover;">
-    
+
         <div class="header-content-container container">
             <h1>{{ post.getTitle }}</h1>
             <div class="title-line"></div>
@@ -85,10 +80,10 @@ your browser</a> to improve your experience.</p>
             </div>
             {% endif %}
         </div>
-        
+
     </div>
-    
-    <div class="main-content">
+
+    <div class="page-content--white-floral">
         <div class="container">
             <div class="row">
                 <div class="col-md-12">
@@ -97,7 +92,7 @@ your browser</a> to improve your experience.</p>
             </div>
         </div>
     </div>
-    
+
     <div class="featured-content">
         <div class="container">
             <div class="row">
@@ -115,7 +110,7 @@ your browser</a> to improve your experience.</p>
                             {{ post.getFeatured.content }}
                         </div>
                         {% if post.getFeatured.button %}
-                            <a class="site-btn"
+                            <a class="btn-green"
                                href="{{ post.getFeatured.button.link }}">{{ post.getFeatured.button.title }}</a>
                         {% endif %}
                     </div>
@@ -123,8 +118,8 @@ your browser</a> to improve your experience.</p>
             </div>
         </div>
     </div>
-    
-    <div class="secondary-content">
+
+    <div class="page-content--white secondary-content">
         <div class="container">
             {% for item in post.getSecondary %}
             <div class="row content-row">
@@ -136,12 +131,12 @@ your browser</a> to improve your experience.</p>
                         <div class="secondary-title">
                             <h2>{{ item.title }}</h2>
                         </div>
-                        <div class="divider"></div>
+                        {# <div class="divider"></div> #}
                         <div class="content">
                             {{ item.content }}
                         </div>
                         {% if item.button %}
-                            <a class="site-btn" href="{{ item.button.link }}">{{ item.button.title }}</a>
+                            <a class="btn-green" href="{{ item.button.link }}">{{ item.button.title }}</a>
                         {% endif %}
                     </div>
                 </div>
@@ -149,15 +144,14 @@ your browser</a> to improve your experience.</p>
             {% endfor %}
         </div>
     </div>
-    
+
     <div class="horizontal-list-content">
         <div class="container">
-            <div class="row">
+            <div class="row" >
                 {% for item in post.getTertiary %}
                 <div class="col-md-3 col-horizontal">
                     <div class="image">
-                        <img src="{{ item.image.src|resize(720,573) }}"
-                             class="img-responsive">
+                        <img src="{{ item.image.src|resize(720,573) }}" class="img-responsive">
                     </div>
                     <div class="title">
                         {{ item.title }}
@@ -166,16 +160,14 @@ your browser</a> to improve your experience.</p>
                         {{ item.content|truncate(35) }}
                     </div>
                     {% if item.button %}
-                        <a class="site-btn" href="{{ item.button.link }}">
-                            {{ item.button.title }}
-                    </a>
+                        <a class="btn-green" href="{{ item.button.link }}">{{ item.button.title }}</a>
                     {% endif %}
                 </div>
                 {% endfor %}
             </div>
         </div>
     </div>
-    
+
     <div class="footer-content">
         <div class="container-fluid visible-lg visible-md bg-container">
             <div class="row">
@@ -188,12 +180,12 @@ your browser</a> to improve your experience.</p>
             <div class="row">
                 <div class="left-col-text col-md-6">
                     <div class="footer-content">
-                        <img src="{{ template_uri }}/img/daniel-island-real-estate-logo.png" alt="Daniel Island Real Estate"/>
+                        <img src="{{ template_uri }}/img/carnes_logo_wht.svg" alt="Carnes Crossroads Real Estate"/>
                     </div>
                 </div>
                 <div class="right-col-text col-md-6">
                     <div class="footer-content">
-                        <div class="title">{{ post.getFooter.title }}</div> 
+                        <div class="title">{{ post.getFooter.title }}</div>
                         <div class="content">{{ post.getFooter.content }}</div>
                         <div class="lp-form">
                             {{ function('gravity_form', post.getFooter.gravity_form_id, false, false) }}
@@ -204,7 +196,7 @@ your browser</a> to improve your experience.</p>
         </div>
     </div>
 </div>
-        
+
 {#<!--start footer from base-->#}
 
 {{ wp_footer() }}

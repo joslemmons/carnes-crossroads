@@ -37,6 +37,11 @@ jQuery(function ($) {
         cssEase: 'linear'
     });
 
+     /*** Match Height - Landing Page ***/
+    if ($('.match-height').length > 0) {
+        $('.match-height').matchHeight();
+    }
+
     //Read More link
     $('.expand-link').click(function () {
         $(this).hide();
