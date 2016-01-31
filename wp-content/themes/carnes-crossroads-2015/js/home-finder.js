@@ -1,6 +1,138 @@
 jQuery(function ($) {
 
-    var $saveSearchSection = $('#saveSearchSection');
+    var $saveSearchSection = $('#saveSearchSection'),
+        order = 'default';
+
+    function showSavedListings() {
+        $('div.listings-wrapper').fadeTo('slow', 0.3);
+        $saveSearchSection.hide();
+        showLoadingListingsIndicator();
+        $.get('/api/home-finder/saved-listings/page/1', {sort: order}, function (data) {
+            var html = data.rsp,
+                total = data.total;
+
+            hideLoadingListingsIndicator();
+
+            $('h2.listings-title').text('Saved Listings');
+
+            $('div.results-count').text(pluralize('Result', total, true));
+
+            $('div.listings-wrapper').html(html).fadeTo('slow', 1);
+
+            clearFilters();
+            $('#filter-searchAddress').val('');
+        });
+    }
+
+    function showRecentlyListed() {
+        $('div.listings-wrapper').fadeTo('slow', 0.3);
+        $saveSearchSection.hide();
+        showLoadingListingsIndicator();
+        $.get('/api/home-finder/recently-listed/page/1', {}, function (data) {
+            var html = data.rsp,
+                total = data.total;
+
+            hideLoadingListingsIndicator();
+
+            $('h2.listings-title').text('Recently Listed');
+
+            $('div.results-count').text(pluralize('Result', total, true));
+
+            $('div.listings-wrapper').html(html).fadeTo('slow', 1);
+
+            clearFilters();
+            $('#filter-searchAddress').val('');
+        });
+    }
+
+    function showNewOfferings() {
+        $('div.listings-wrapper').fadeTo('slow', 0.3);
+        $saveSearchSection.hide();
+        showLoadingListingsIndicator();
+        $.get('/api/home-finder/new-offerings/page/1', {}, function (data) {
+            var html = data.rsp,
+                total = data.total;
+
+            hideLoadingListingsIndicator();
+
+            $('h2.listings-title').text('New Offerings');
+
+            $('div.results-count').text(pluralize('Result', total, true));
+
+            $('div.listings-wrapper').html(html).fadeTo('slow', 1);
+
+            clearFilters();
+            $('#filter-searchAddress').val('');
+        });
+    }
+
+    function showFeaturedListings() {
+        $('div.listings-wrapper').fadeTo('slow', 0.3);
+        $saveSearchSection.hide();
+        showLoadingListingsIndicator();
+        $.get('/api/home-finder/featured-properties/page/1', {sort: order}, function (data) {
+            var html = data.rsp,
+                total = data.total;
+
+            hideLoadingListingsIndicator();
+
+            $('h2.listings-title').text('Featured Listings');
+
+            $('div.results-count').text(pluralize('Result', total, true));
+
+            $('div.listings-wrapper').html(html).fadeTo('slow', 1);
+
+            clearFilters();
+            $('#filter-searchAddress').val('');
+        });
+    }
+
+    function showAllListings() {
+        $('div.listings-wrapper').fadeTo('slow', 0.3);
+        clearFilters();
+        performSearch('default', true);
+    }
+
+    function showProperty(address, id) {
+        $('div.single-listing-col').fadeTo('slow', 0.3);
+        $.get('/api/home-finder/properties/' + id, {}, function (data) {
+            var propertyHTML = data.rsp;
+
+            $('div.single-listing-col').html(propertyHTML).fadeTo('slow', 1);
+
+
+            $('div.single-listing-col .listing-images').slick({
+                lazyLoad: 'ondemand',
+                dots: false,
+                infinite: true,
+                speed: 300,
+                slidesToShow: 2,
+                slidesToScroll: 1,
+                centerMode: false,
+                arrows: true,
+                variableWidth: true,
+                respondTo: 'window',
+                responsive: [
+                    {
+                        breakpoint: 991,
+                        settings: {
+                            slidesToShow: 1,
+                            slidesToScroll: 1,
+                            infinite: true,
+                            variableWidth: true
+                        }
+                    }
+                ]
+            });
+
+            //addthis.button($('.addthis_sharing_toolbox').get(0), {
+            //    //services_compact: 'facebook,twitter'
+            //    ui_use_css: false
+            //}, {url: window.location.href});
+
+            initColorboxElements();
+        });
+    }
 
     var Router = Backbone.Router.extend({
         routes: {
@@ -8,133 +140,33 @@ jQuery(function ($) {
             'home-finder/featured-listings/': 'showFeaturedListings',
             'home-finder/new-offerings/': 'showNewOfferings',
             'home-finder/recently-listed/': 'showRecentlyListed',
-            'home-finder/saved-listings/': 'showSavedListings'
+            'home-finder/saved-listings/': 'showSavedListings',
+            'home-finder/all-listings/': 'showAllListings'
         },
 
         showSavedListings: function () {
-            $('div.listings-wrapper').fadeTo('slow', 0.3);
-            $saveSearchSection.hide();
-            showLoadingListingsIndicator();
-            $.get('/api/home-finder/saved-listings/page/1', {}, function (data) {
-                var html = data.rsp,
-                    total = data.total;
-
-                hideLoadingListingsIndicator();
-
-                $('h2.listings-title').text('Saved Listings');
-
-                $('div.results-count').text(pluralize('Result', total, true));
-
-                $('div.listings-wrapper').html(html).fadeTo('slow', 1);
-
-                $('div.home-finder-filters').find('select option:selected').removeProp('selected');
-                $('#filter-searchAddress').val('');
-            });
+            showSavedListings();
         },
 
         showRecentlyListed: function () {
-            $('div.listings-wrapper').fadeTo('slow', 0.3);
-            $saveSearchSection.hide();
-            showLoadingListingsIndicator();
-            $.get('/api/home-finder/recently-listed/page/1', {}, function (data) {
-                var html = data.rsp,
-                    total = data.total;
-
-                hideLoadingListingsIndicator();
-
-                $('h2.listings-title').text('Recently Listed');
-
-                $('div.results-count').text(pluralize('Result', total, true));
-
-                $('div.listings-wrapper').html(html).fadeTo('slow', 1);
-
-                $('div.home-finder-filters').find('select option:selected').removeProp('selected');
-                $('#filter-searchAddress').val('');
-            });
+            showRecentlyListed();
 
         },
 
         showNewOfferings: function () {
-            $('div.listings-wrapper').fadeTo('slow', 0.3);
-            $saveSearchSection.hide();
-            showLoadingListingsIndicator();
-            $.get('/api/home-finder/new-offerings/page/1', {}, function (data) {
-                var html = data.rsp,
-                    total = data.total;
-
-                hideLoadingListingsIndicator();
-
-                $('h2.listings-title').text('New Offerings');
-
-                $('div.results-count').text(pluralize('Result', total, true));
-
-                $('div.listings-wrapper').html(html).fadeTo('slow', 1);
-
-                $('div.home-finder-filters').find('select option:selected').removeProp('selected');
-                $('#filter-searchAddress').val('');
-            });
+            showNewOfferings();
         },
 
         showFeaturedListings: function () {
-            $('div.listings-wrapper').fadeTo('slow', 0.3);
-            $saveSearchSection.hide();
-            showLoadingListingsIndicator();
-            $.get('/api/home-finder/featured-properties/page/1', {}, function (data) {
-                var html = data.rsp,
-                    total = data.total;
-
-                hideLoadingListingsIndicator();
-
-                $('h2.listings-title').text('Featured Listings');
-
-                $('div.results-count').text(pluralize('Result', total, true));
-
-                $('div.listings-wrapper').html(html).fadeTo('slow', 1);
-
-                $('div.home-finder-filters').find('select option:selected').removeProp('selected');
-                $('#filter-searchAddress').val('');
-            });
+            showFeaturedListings();
         },
 
         showProperty: function (address, id) {
-            $('div.single-listing-col').fadeTo('slow', 0.3);
-            $.get('/api/home-finder/properties/' + id, {}, function (data) {
-                var propertyHTML = data.rsp;
+            showProperty(address, id);
+        },
 
-                $('div.single-listing-col').html(propertyHTML).fadeTo('slow', 1);
-
-                //$('div.single-listing-col').scrollTop = 0;
-
-                $('div.single-listing-col .listing-images').slick({
-                    dots: false,
-                    infinite: true,
-                    speed: 300,
-                    slidesToShow: 2,
-                    slidesToScroll: 1,
-                    centerMode: false,
-                    arrows: true,
-                    variableWidth: true,
-                    respondTo: 'window',
-                    responsive: [
-                        {
-                            breakpoint: 991,
-                                settings: {
-                                slidesToShow: 1,
-                                slidesToScroll: 1,
-                                infinite: true,
-                                variableWidth: true
-                              }
-                        }
-                    ]
-                });
-
-                //addthis.button($('.addthis_sharing_toolbox').get(0), {
-                //    //services_compact: 'facebook,twitter'
-                //    ui_use_css: false
-                //}, {url: window.location.href});
-
-                initColorboxElements();
-            });
+        showAllListings: function () {
+            showAllListings();
         }
     });
 
@@ -160,15 +192,12 @@ jQuery(function ($) {
         $('div.listings-wrapper div.loading').remove();
     }
 
-    $('div.home-finder-filters').find('select').on('change', function() {
+    $('#filter-price,#filter-bedrooms,#filter-bathrooms,#filter-lastUpdate,#filter-sqft').on('change', function () {
         $('#filter-searchAddress').val('');
+        order = 'default';
         performSearch();
     });
     $('#filter-mlsListing').on('click', function () {
-        $('#filter-searchAddress').val('');
-        performSearch();
-    });
-    $('#filter-includePlans').on('click', function () {
         $('#filter-searchAddress').val('');
         performSearch();
     });
@@ -176,7 +205,7 @@ jQuery(function ($) {
     var throttleSearch = _.throttle(function () {
         if ($(this).val().length > 2) {
             // clear out filters
-            $('div.home-finder-filters').find('select option:selected').removeProp('selected');
+            clearFilters();
 
             performSearch();
         }
@@ -184,7 +213,17 @@ jQuery(function ($) {
 
     $('#filter-searchAddress').on('keyup', throttleSearch);
 
-    function performSearch() {
+    var pauseSearch = false;
+
+    function performSearch(sort, isAllListings) {
+        if (pauseSearch === true) {
+            return;
+        }
+
+        if (typeof sort === 'undefined') {
+            sort = 'default';
+        }
+
         var filters = {
             propertyTypes: getFilterPropertyTypes(),
             neighborhoods: getFilterNeighborhoods(),
@@ -193,10 +232,15 @@ jQuery(function ($) {
             bathrooms: getFilterBathrooms(),
             shouldSearchMLS: getShouldSearchMLS(),
             searchAddress: getSearchAddress(),
+            lastUpdate: getLastUpdate(),
+            squareFootage: getFilterSquareFootage(),
+            homeFeatures: getFilterHomeFeatures(),
+            views: getFilterViews(),
             includePlans: getShouldIncludePlans(),
             builders: getBuilders()
         };
 
+        $('div.results-sort').show();
         showLoadingListingsIndicator();
 
         $('div.listings-wrapper').fadeTo('slow', 0.3);
@@ -206,7 +250,7 @@ jQuery(function ($) {
             $saveSearchSection.hide();
         }
 
-        getListings(filters);
+        getListings(filters, sort, isAllListings);
     }
 
     function isSearchEmpty() {
@@ -215,11 +259,27 @@ jQuery(function ($) {
             getFilterNeighborhoods() === '' &&
             getFilterPrice() === '' &&
             getFilterBedrooms() === '' &&
-            getFilterBathrooms() === ''
+            getFilterBathrooms() === '' &&
+            getLastUpdate() === '' &&
+            getFilterSquareFootage() === '' &&
+            getFilterHomeFeatures() === '' &&
+            getFilterViews() === ''
         );
     }
 
-    function getListings(filters) {
+    function getListings(filters, sort, isAllListings) {
+        if (typeof sort === 'undefined') {
+            sort = 'default';
+        }
+
+        if (typeof isAllListings === 'undefined') {
+            isAllListings = false;
+        }
+
+        if (isAllListings === true) {
+            $saveSearchSection.hide();
+        }
+
         $.get(
             '/api/home-finder/search',
             {
@@ -228,8 +288,13 @@ jQuery(function ($) {
                 prices: filters.prices,
                 bedrooms: filters.bedrooms,
                 bathrooms: filters.bathrooms,
-                searchMLS: filters.shouldSearchMLS,
+                //searchMLS: filters.shouldSearchMLS,
                 searchAddress: filters.searchAddress,
+                sort: sort,
+                //lastUpdate: filters.lastUpdate,
+                //squareFootage: filters.squareFootage,
+                //homeFeatures: filters.homeFeatures,
+                //views: filters.views,
                 includePlans: filters.includePlans,
                 builders: filters.builders
             },
@@ -241,13 +306,18 @@ jQuery(function ($) {
 
                 hideLoadingListingsIndicator();
 
-                $('h2.listings-title').text('Search Listings');
+                if (isAllListings === false) {
+                    $('h2.listings-title').text('Search Listings');
+                    $('div.listings-type').find('select').find('option').first().prop('selected', 'selected');
+                }
+                else {
+                    $('h2.listings-title').text('All Listings');
+                }
 
                 $('div.results-count').text(pluralize('Result', total, true));
 
                 $('div.listings-wrapper').html(html).fadeTo('slow', 1);
 
-                $('div.listings-type').find('select').find('option').first().prop('selected', 'selected');
             });
     }
 
@@ -255,9 +325,24 @@ jQuery(function ($) {
         return $('#filter-builders').find('option:selected').val();
     }
 
-    function getShouldIncludePlans()
-    {
+    function getShouldIncludePlans() {
         return $('#filter-includePlans').is(':checked');
+    }
+
+    function getLastUpdate() {
+        return $('#filter-lastUpdate').val();
+    }
+
+    function getFilterSquareFootage() {
+        return $('#filter-sqft').find('option:selected').val();
+    }
+
+    function getFilterHomeFeatures() {
+        return $('#filter-homeFeatures').multipleSelect('getSelects');
+    }
+
+    function getFilterViews() {
+        return $('#filter-view').multipleSelect('getSelects');
     }
 
     function getSearchAddress() {
@@ -269,17 +354,11 @@ jQuery(function ($) {
     }
 
     function getFilterPropertyTypes() {
-        var propertyTypes,
-            $select = $('#filter-propertyType');
-
-        return $select.find('option:selected').val();
+        return $('#filter-propertyType').multipleSelect('getSelects');
     }
 
     function getFilterNeighborhoods() {
-        var neighborhoods,
-            $select = $('#filter-neighborhood');
-
-        return $select.find('option:selected').val();
+        return $('#filter-neighborhood').multipleSelect('getSelects');
     }
 
     function getFilterPrice() {
@@ -370,20 +449,33 @@ jQuery(function ($) {
 
     $('div.listings-type select').on('change', function () {
         var choice = $(this).find('option:selected').val();
-
+        //('home-finder/' === Backbone.history.getFragment())
         switch (choice) {
             case 'new-offerings':
-                router.navigate('home-finder/new-offerings/', {trigger: true});
+                router.navigate('home-finder/new-offerings/', {trigger: false});
+                $('div.results-sort').hide();
+                showNewOfferings();
                 break;
             case 'recently-listed':
-                router.navigate('home-finder/recently-listed/', {trigger: true});
+                router.navigate('home-finder/recently-listed/', {trigger: false});
+                $('div.results-sort').hide();
+                showRecentlyListed();
                 break;
             case 'saved-listings':
-                router.navigate('home-finder/saved-listings/', {trigger: true});
+                router.navigate('home-finder/saved-listings/', {trigger: false});
+                $('div.results-sort').show();
+                showSavedListings();
+                break;
+            case 'all-listings':
+                router.navigate('home-finder/all-listings/', {trigger: false});
+                $('div.results-sort').show();
+                showAllListings();
                 break;
             case 'featured-listings':
             default:
-                router.navigate('home-finder/featured-listings/', {trigger: true});
+                router.navigate('home-finder/featured-listings/', {trigger: false});
+                $('div.results-sort').show();
+                showFeaturedListings();
         }
     });
 
@@ -428,10 +520,11 @@ jQuery(function ($) {
     });
 
     $('div.home-finder-main').on('click', 'div.save.action-link a', function () {
-        if (typeof CX === 'undefined' || typeof CX.isLoggedIn === 'undefined' || CX.isLoggedIn !== 'true') {
+        if (typeof DI === 'undefined' || typeof DI.isLoggedIn === 'undefined' || DI.isLoggedIn !== 'true') {
             $('a.showAccountPage').trigger('click');
             return false;
         }
+
         var propertyId = $(this).attr('data-property-id'),
             toSaveOrUnSave = 'save',
             $that = $(this);
@@ -460,8 +553,7 @@ jQuery(function ($) {
 
     function initColorboxElements() {
         $('a.color-box-group').colorbox({
-            rel: 'color-box-group',
-            maxWidth: '75%'
+            rel: 'color-box-group'
         });
 
         $('a.color-box-floor-plan').colorbox();
@@ -472,9 +564,11 @@ jQuery(function ($) {
     $(document).on('click', 'a.filterByPropertyType', function () {
         var propertyType = $(this).attr('data-property-type');
 
-        $('div.home-finder-filters').find('select option:selected').removeProp('selected');
+        order = 'default';
+
+        clearFilters();
         $('#filter-propertyType').find('option[value="' + propertyType.toLowerCase() + '"]').prop('selected', 'selected');
-        $('#filter-propertyType').trigger('change');
+        $('#filter-bathrooms').trigger('change');
 
         return false;
     });
@@ -482,22 +576,74 @@ jQuery(function ($) {
     $(document).on('click', 'a.filterByNeighborhood', function () {
         var neighborhood = $(this).attr('data-neighborhood');
 
-        $('div.home-finder-filters').find('select option:selected').removeProp('selected');
+        order = 'default';
+
+        clearFilters();
         $('#filter-neighborhood').find('option:contains(' + neighborhood + ')').prop('selected', 'selected');
-        $('#filter-neighborhood').trigger('change');
+        $('#filter-bathrooms').trigger('change');
 
         return false;
     });
 
-    $('#filter-clearAll').on('click', function () {
+    function clearFilters() {
+        order = 'default';
+        pauseSearch = true;
         $('div.home-finder-filters').find('select option:selected').removeProp('selected');
         $('#filter-searchAddress').val('');
         $('#filter-includePlans').prop('checked', false);
+        $('#filter-propertyType').multipleSelect('uncheckAll');
+        $('#filter-neighborhood').multipleSelect('uncheckAll');
+        $('#filter-homeFeatures').multipleSelect('uncheckAll');
+        $('#filter-view').multipleSelect('uncheckAll');
+        pauseSearch = false;
+    }
+
+    $('#filter-clearAll').on('click', function () {
+        clearFilters();
+
         // trigger a change in order to pull listings again
-        $('#filter-builders').trigger('change');
+        $('#filter-bathrooms').trigger('change');
 
         return false;
     });
+
+    $(document).on('click', 'a.sortByPriceHighToLow', function () {
+        var $listingsType = $('div.listings-type').find('select').find('option:selected');
+
+        if ($listingsType.val() === '' || $listingsType.val() === 'Select Filters' || $listingsType.val() === 'all-listings') {
+            var isAllListings = false;
+            if ($listingsType.val() === 'all-listings') {
+                isAllListings = true;
+            }
+            performSearch('price.desc', isAllListings);
+        }
+        else {
+            order = 'price.desc';
+            $('div.listings-type select').trigger('change');
+        }
+
+        return false;
+    });
+
+    $(document).on('click', 'a.sortByPriceLowToHigh', function () {
+        var $listingsType = $('div.listings-type').find('select').find('option:selected');
+
+        if ($listingsType.val() === '' || $listingsType.val() === 'Select Filters' || $listingsType.val() === 'all-listings') {
+            var isAllListings = false;
+            if ($listingsType.val() === 'all-listings') {
+                isAllListings = true;
+            }
+            performSearch('price.asc', isAllListings);
+        }
+        else {
+            order = 'price.asc';
+            $('div.listings-type select').trigger('change');
+        }
+
+        return false;
+    });
+
+    /** Request Showing **/
 
     $(document).on('click', '#requestShowing', function () {
         var $modal = $('#modal-request-showing');
@@ -538,33 +684,33 @@ jQuery(function ($) {
             type: "POST",
             url: '/api/home-finder/request-showing',
             data: {
-            propertyId: propertyId,
-            builderTitle: builderTitle,
-            floorPlanTitle: floorPlanTitle,
-            name: name,
-            email: email,
-            message: message,
-            shouldCreateAccount: shouldCreateAccount
+                propertyId: propertyId,
+                builderTitle: builderTitle,
+                floorPlanTitle: floorPlanTitle,
+                name: name,
+                email: email,
+                message: message,
+                shouldCreateAccount: shouldCreateAccount
             },
             error: function (data) {
                 $button.prop('disabled', false);
 
-            if (typeof data.responseJSON !== 'undefined') {
-                switch (data.responseJSON.status) {
-                    case (404) :
-                        $button.parent().find('input[name="email"]').addClass('error');
-                        $errorMessage.text(data.responseJSON.rsp);
-                        $errorMessage.show();
-                        break;
-                    case (500) :
-                    default:
-                        $errorMessage.text('Failed to send request. Please try again. If it still fails, go to the contact page and let us know. Thanks!');
-                        $errorMessage.show();
-                }
+                if (typeof data.responseJSON !== 'undefined') {
+                    switch (data.responseJSON.status) {
+                        case (404) :
+                            $button.parent().find('input[name="email"]').addClass('error');
+                            $errorMessage.text(data.responseJSON.rsp);
+                            $errorMessage.show();
+                            break;
+                        case (500) :
+                        default:
+                            $errorMessage.text('Failed to save message. Please try again. If it still fails, go to the contact page and let us know. Thanks!');
+                            $errorMessage.show();
+                    }
 
-                $button.text('Send');
-                $button.prop('disabled', false);
-            }
+                    $button.text('Send');
+                    $button.prop('disabled', false);
+                }
             },
             success: function (data) {
                 $button.prop('disabled', false);
@@ -582,294 +728,14 @@ jQuery(function ($) {
         return false;
     });
 
-    /**
-     *
-     * MAP STUFF
-     *
-     **/
-
-    $('#modal-view-on-map').on('hidden.bs.modal', function (e) {
-        $('#imap').empty();
-    });
-
-    $(document).on('click', '#viewListingsOnMap', function () {
-        var $modal = $('#modal-view-on-map');
-        $modal.modal('show');
-
-        initImap(locations);
-
-        return false;
-    });
-
-    $(document).on('click', '#viewOnMap', function () {
-        var $modal = $('#modal-view-on-map'),
-            latitude = $(this).attr('data-latitude'),
-            longitude = $(this).attr('data-longitude'),
-            address = $(this).attr('data-address'),
-            link = $(this).attr('data-link'),
-            propertyType = $(this).attr('data-property-type'),
-            toolTipHTML = $(this).attr('data-tool-tip');
-
-        if (propertyType === 'Homesite') {
-            propertyType = 0;
-        }
-
-        $modal.modal('show');
-        initImap([
-            [
-                address,
-                latitude,
-                longitude,
-                '4',
-                link,
-                toolTipHTML,
-                propertyType
-            ]
-        ]);
-    });
-
-    $(document).on('click', 'a.showProperty', function () {
-        var propertyId = $(this).attr('data-property-id'),
-            propertyAddress = $(this).attr('data-property-address');
-
-        $('div.listing.active').removeClass('active');
-        $('div.listing[data-property-id="' + propertyId + '"]').addClass('active');
-
-        router.navigate('home-finder/properties/' + propertyAddress + '/' + propertyId + '/', {trigger: true});
-
-        $('#modal-view-on-map').modal('hide');
-
-        return false;
-    });
-
-    // misc vars
-    var mapMinZoom = 17;
-    var mapMaxZoom = 19;
-
-//set custom tiles (maptype)
-    var diOptions = {
-        getTileUrl: function (coord, zoom) {
-            var ymax = 1 << zoom;
-            var y = ymax - coord.y - 1;
-            url = CX.templateUri + "/img/imap/tiles/" + zoom + "/" + coord.x + "/" + y + ".png";
-            return url;
-        },
-        tileSize: new google.maps.Size(256, 256),
-        isPng: true
-    };
-
-    var diMapType = new google.maps.ImageMapType(diOptions);
-    var bounds = new google.maps.LatLngBounds();
-    var geocoder = new google.maps.Geocoder();
-
-//<?php if ( $z_query->query->is_archive ) { ?>
-    // remove below to zoom into properties
-    //bounds.extend(new google.maps.LatLng(32.83064187300698, -79.93316068560326));	//set min x/y
-    //bounds.extend(new google.maps.LatLng(32.89325262945007, -79.88402077618287));	//set max x/y
-//<?php } ?>
-
-    /**
-     * Data for the markers consisting of a name, a LatLng and a zIndex for
-     * the order in which these markers should display on top of each
-     * other.
-     */
-
-
-// googles info pane
-    var infowindow = new google.maps.InfoWindow({
-        size: new google.maps.Size(150, 50)
-    });
-
-
-    function setMarkers(map, locations) {
-        // Add markers to the map
-        var house_image = new google.maps.MarkerImage(CX.templateUri + '/img/imap/icons/house-icon.png',
-            // This marker is 20 pixels wide by 32 pixels tall.
-            new google.maps.Size(20, 32),
-            // The origin for this image is 0,0.
-            new google.maps.Point(0, 0),
-            // The anchor for this image is the base of the flagpole at 0,32.
-            new google.maps.Point(5, 20));
-
-        var lot_image = new google.maps.MarkerImage(CX.templateUri + '/img/imap/icons/lot-icon.png',
-            // This marker is 20 pixels wide by 32 pixels tall.
-            new google.maps.Size(20, 32),
-            // The origin for this image is 0,0.
-            new google.maps.Point(0, 0),
-            // The anchor for this image is the base of the flagpole at 0,32.
-            new google.maps.Point(5, 20));
-
-        var shadow;	//not used
-        /*
-         var shadow = new google.maps.MarkerImage('<?php //echo get_stylesheet_directory_uri();?>/images/house-icon-shadow.png', //should be set to a shadow image
-         // The shadow image is larger in the horizontal dimension
-         // while the position and offset are the same as for the main image.
-         new google.maps.Size(45, 40),
-         new google.maps.Point(0,0),
-         new google.maps.Point(0, 40));*/
-
-        // Shapes define the clickable region of the icon. The type defines an HTML &lt;area&gt; element 'poly' whichtraces out a polygon as a series of X,Y points. The final coordinate closes the poly by connecting to the firstcoordinate. NOT USED
-        var shape = {
-            coord: [1, 1, 1, 32, 20, 32, 20, 1],
-            type: 'poly'
-        };
-
-        for (var i = 0; i < locations.length; i++) {
-            var location = locations[i];
-            var title = location[0];
-            var zIndex = location[3];
-            var theLink = location[4];
-            var html = location[5];
-            var prop_type = location[6];
-
-            if (location[1] && location[2]) {
-                var myLatLng = new google.maps.LatLng(location[1], location[2]);
-
-                if (prop_type != 0)
-                    var icon_image = house_image;
-                else
-                    var icon_image = lot_image;
-
-                var marker = createMarker(map, myLatLng, icon_image, shadow, title, zIndex, theLink, html);
-
-                //<?php if ( $z_query->query->is_archive ) { ?>
-                //	//use this if you want to only show all the points in the map bounds
-                //	bounds.extend(myLatLng);
-                //	map.panTo(myLatLng);
-                //<?php } ?>
-            } else {
-                geocoder.geocode({'address': location[0]}, function (results, status) {
-                    if (status == google.maps.GeocoderStatus.OK) {
-                        // var myLatLng = results[0].geometry.location;
-
-                        if (prop_type)
-                            var icon_image = house_image;
-                        else
-                            var icon_image = lot_image;
-
-                        var marker = createMarker(map, results[0].geometry.location, icon_image, shadow, title, zIndex, theLink, html);
-
-                        //<?php if ( $z_query->query->is_archive ) { ?>
-                        //	//use this if you want to only show all the points in the map bounds
-                        //	bounds.extend(myLatLng);
-                        //	map.panTo(myLatLng);
-                        //<?php } ?>
-                    } else {
-                        alert("Geocode was not successful for the following reason: " + status);
-                    }
-                });
-            }
-
-            //if (i === locations.length - 1) {
-            //    map.panTo(new google.maps.LatLng(location[1], location[2]));
-            //}
-
-        } // end for
-    } // end function setMarkers
-
-    function createMarker(map, myLatLng, image, shadow, title, zIndex, theLink, html) {
-
-        var contentString = html;
-
-        var marker = new google.maps.Marker({
-            position: myLatLng,
-            map: map,
-            //shadow: shadow,
-            icon: image,
-            //shape: shape,
-            //title: title,
-            zIndex: 99999,
-            clickable: true
-        });
-
-        //<?php if ( $z_query->query->is_single ) { ?>
-        //	bounds.extend(myLatLng); // extend bounds of map to show all results
-        //	map.panTo(myLatLng); // centers map to last property
-        //<?php } ?>
-
-        //mouseovers
-        google.maps.event.addListener(marker, "click", function () {
-            infowindow.setContent(contentString);
-            infowindow.open(map, marker);
-
-        });
-
-        return marker;
-    } // end function createMarker
-
-
-    function initImap(properties) {
-        var myOptions = {
-            zoom: mapMinZoom,
-            center: new google.maps.LatLng(33.055457, -80.103917),
-            navigationControl: true,
-            mapTypeControl: false,
-            scaleControl: false,
-            mapTypeId: google.maps.MapTypeId.ROADMAP
-        };
-        var map = new google.maps.Map(document.getElementById("imap"), myOptions);
-        map.overlayMapTypes.insertAt(0, diMapType);
-
-        //needed for gettin pixes from latlng for mouseover div position
-        overlay = new google.maps.OverlayView();
-        overlay.draw = function () {
-        };
-        overlay.setMap(map);
-
-        // don't allow panning pass bounds. Listen for the dragend event
-        //google.maps.event.addListener(map, 'dragend', function () {
-        //
-        //     if ( bounds.contains( map.getCenter() ) ) return;
-        //
-        //    // Out of bounds - Move the map back within the bounds
-        //    var c = map.getCenter(),
-        //        x = c.lng(),
-        //        y = c.lat(),
-        //        maxX = bounds.getNorthEast().lng(),
-        //        maxY = bounds.getNorthEast().lat(),
-        //        minX = bounds.getSouthWest().lng(),
-        //        minY = bounds.getSouthWest().lat();
-        //
-        //    if (x < minX) x = minX;
-        //    if (x > maxX) x = maxX;
-        //    if (y < minY) y = minY;
-        //    if (y > maxY) y = maxY;
-        //
-        //    map.setCenter(new google.maps.LatLng(y, x));
-        //
-        //});
-
-        // restrict max and min zoom in v3 api
-        google.maps.event.addListener(map, "zoom_changed", function () {
-            if (map.getZoom() < mapMinZoom) map.setZoom(mapMinZoom);
-            if (map.getZoom() > mapMaxZoom) map.setZoom(mapMaxZoom);
-        });
-
-        setMarkers(map, properties);
-
-        $("#modal-view-on-map").on("shown.bs.modal", function () {
-            google.maps.event.trigger(map, "resize");
-
-            if (properties.length === 1) {
-                map.setCenter(new google.maps.LatLng(locations[0][1], locations[0][2]));
-            }
-            else {
-                map.setCenter(new google.maps.LatLng(33.055457, -80.103917));
-            }
-        });
-
-        //<?php if ( $z_query->query->is_archive ) { ?>
-        //map.fitBounds(bounds);
-        //<?php } ?>
-
-    } // end function initImap
 
     /* Account */
     $(document).on('click', '#accountSaveSearch', function () {
-        if (typeof CX === 'undefined' || typeof CX.isLoggedIn === 'undefined' || CX.isLoggedIn !== 'true') {
+        if (typeof DI === 'undefined' || typeof DI.isLoggedIn === 'undefined' || DI.isLoggedIn !== 'true') {
             $('a.showAccountPage').trigger('click');
             return false;
         }
+
         var filters = {
             propertyTypes: getFilterPropertyTypes(),
             neighborhoods: getFilterNeighborhoods(),
@@ -877,6 +743,10 @@ jQuery(function ($) {
             bedrooms: getFilterBedrooms(),
             bathrooms: getFilterBathrooms(),
             shouldSearchMLS: getShouldSearchMLS(),
+            lastUpdate: getLastUpdate(),
+            squareFootage: getFilterSquareFootage(),
+            homeFeatures: getFilterHomeFeatures(),
+            views: getFilterViews(),
             includePlans: getShouldIncludePlans(),
             builders: getBuilders()
         };
@@ -893,24 +763,116 @@ jQuery(function ($) {
         return false;
     });
 
+    //Scroll Single Listing to Top
+    $(document).on('click', 'div.listing', function () {
+        $('.single-listing-col').animate({scrollTop: "0px"});
+    });
+
     //Mobile Only
-    $(document).on('click','div.listing',function () {
+    $(document).on('click', 'div.listing', function () {
         $('.single-listing-col').addClass('move-up');
         $('.home-finder-filters').addClass('hide-filters');
     });
 
-    $(document).on('click','div.back-to-listings',function () {
+    $(document).on('click', 'div.back-to-listings', function () {
         $('.single-listing-col').removeClass('move-up');
         $('.home-finder-filters').removeClass('hide-filters');
     });
 
+    $('.all-listings-col').scroll(function () {
+        var scroll = $('.all-listings-col').scrollTop();
+
+        if (scroll >= 250) {
+            $('.home-finder-filters').addClass('hide-filters');
+        } else {
+            $('.home-finder-filters').removeClass('hide-filters');
+        }
+    });
+
     //Share Widget
-    $(document).on('click','.open-share-widget',function () {
+    $(document).on('click', '.open-share-widget', function () {
         $('.share-widget').toggleClass('open');
     });
 
-    $(document).on('click','.share-icon',function () {
+    $(document).on('click', '.share-icon', function () {
         $('.share-widget').removeClass('open');
+    });
+
+    //Multiple Select
+    $('#filter-propertyType').multipleSelect({
+        placeholder: "Property Type",
+        onClick: function (view) {
+            $('#filter-searchAddress').val('');
+            order = 'default';
+            performSearch();
+        },
+        onCheckAll: function () {
+            $('#filter-searchAddress').val('');
+            order = 'default';
+            performSearch();
+        },
+        onUncheckAll: function () {
+            $('#filter-searchAddress').val('');
+            order = 'default';
+            performSearch();
+        }
+    });
+
+    $('#filter-neighborhood').multipleSelect({
+        placeholder: "Neighborhood",
+        onClick: function (view) {
+            $('#filter-searchAddress').val('');
+            order = 'default';
+            performSearch();
+        },
+        onCheckAll: function () {
+            $('#filter-searchAddress').val('');
+            order = 'default';
+            performSearch();
+        },
+        onUncheckAll: function () {
+            $('#filter-searchAddress').val('');
+            order = 'default';
+            performSearch();
+        }
+    });
+
+    $('#filter-homeFeatures').multipleSelect({
+        placeholder: "Home Features",
+        onClick: function (view) {
+            $('#filter-searchAddress').val('');
+            order = 'default';
+            performSearch();
+        },
+        onCheckAll: function () {
+            $('#filter-searchAddress').val('');
+            order = 'default';
+            performSearch();
+        },
+        onUncheckAll: function () {
+            $('#filter-searchAddress').val('');
+            order = 'default';
+            performSearch();
+        }
+    });
+
+    $('#filter-view').multipleSelect({
+        placeholder: "View",
+        onClick: function (view) {
+            $('#filter-searchAddress').val('');
+            order = 'default';
+            performSearch();
+        },
+        onCheckAll: function () {
+            $('#filter-searchAddress').val('');
+            order = 'default';
+            performSearch();
+        },
+        onUncheckAll: function () {
+            $('#filter-searchAddress').val('');
+            order = 'default';
+            performSearch();
+        }
     });
 
 });

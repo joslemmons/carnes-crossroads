@@ -1,7 +1,5 @@
 <?php namespace HomeFinder\Model;
 
-use App\Model\Helper;
-
 class User extends \TimberUser
 {
     const END_USER_ROLE_NAME = 'end_user';
@@ -67,15 +65,12 @@ class User extends \TimberUser
 
     public static function _registerEndUserRole()
     {
-        // allow this one capability if not on production
-        $read = (true === Helper::isProduction() || true === Helper::isStaging()) ? false : true;
-
         remove_role(self::END_USER_ROLE_NAME);
         add_role(
             self::END_USER_ROLE_NAME,
             __('End User'),
             array(
-                'read' => $read
+                'read' => false
             )
         );
     }
@@ -86,7 +81,7 @@ class User extends \TimberUser
     public function markPropertyAsViewed(Property $property)
     {
         if (false == $this->hasViewedProperty($property)) {
-            add_user_meta($this->id, self::VIEWED_PROPERTIES_KEY, $property->getId());
+            add_user_meta($this->ID, self::VIEWED_PROPERTIES_KEY, $property->getId());
         }
     }
 
@@ -105,7 +100,7 @@ class User extends \TimberUser
      */
     public function getViewedProperties()
     {
-        $viewed_property_ids = get_user_meta($this->id, self::VIEWED_PROPERTIES_KEY);
+        $viewed_property_ids = get_user_meta($this->ID, self::VIEWED_PROPERTIES_KEY);
         return $viewed_property_ids;
     }
 
@@ -125,7 +120,7 @@ class User extends \TimberUser
     public function saveProperty(Property $property)
     {
         if (false == $this->hasSavedProperty($property)) {
-            add_user_meta($this->id, self::SAVED_PROPERTIES_KEY, $property->getId());
+            add_user_meta($this->ID, self::SAVED_PROPERTIES_KEY, $property->getId());
         }
     }
 
@@ -135,7 +130,7 @@ class User extends \TimberUser
     public function unSaveProperty(Property $property)
     {
         if (true == $this->hasSavedProperty($property)) {
-            delete_user_meta($this->id, self::SAVED_PROPERTIES_KEY, $property->getId());
+            delete_user_meta($this->ID, self::SAVED_PROPERTIES_KEY, $property->getId());
         }
     }
 
@@ -144,7 +139,7 @@ class User extends \TimberUser
      */
     public function getSavedPropertyIds()
     {
-        $saved_property_ids = get_user_meta($this->id, self::SAVED_PROPERTIES_KEY);
+        $saved_property_ids = get_user_meta($this->ID, self::SAVED_PROPERTIES_KEY);
         return $saved_property_ids;
     }
 
@@ -185,12 +180,26 @@ class User extends \TimberUser
     }
 
     /**
+     * @param \WP_User $user
+     * @return bool
+     */
+    public static function isUserSiteAdmin($user)
+    {
+        return ($user !== false && ($user->has_cap('manage_content') || $user->has_cap('edit_tribe_events')));
+    }
+
+    /**
      * @param $email
      * @return false|\WP_User
      */
     public static function createOrLoginAndAuthenticateUser($email)
     {
         $user = get_user_by('email', $email);
+
+        if ($user !== false && self::isUserSiteAdmin($user)) {
+            // this is one the admin users. Force them to login with a password
+            return false;
+        }
 
         if (false === $user) {
             // doesn't exist. make it!
@@ -200,12 +209,21 @@ class User extends \TimberUser
             } else {
                 $user = get_user_by('id', $user_id);
             }
+
+            if ($user !== false) {
+                $user = new User($user->ID);
+                if ($user) {
+                    $user->sendWelcomeEmail();
+                }
+            }
         }
 
         if (false !== $user) {
+            // make sure the end users who authenticate this way have no capabilities
+            $user->remove_all_caps();
+            $user->add_role(self::END_USER_ROLE_NAME);
             wp_set_current_user($user->ID);
             wp_set_auth_cookie($user->ID);
-//            do_action('wp_login', $user->user_login);
         }
 
         return $user;
@@ -213,10 +231,13 @@ class User extends \TimberUser
 
     public function getRawSavedSearches()
     {
-        $saved_searches = get_user_meta($this->id, self::SAVED_SEARCHES_KEY);
+        $saved_searches = get_user_meta($this->ID, self::SAVED_SEARCHES_KEY);
         return $saved_searches;
     }
 
+    /**
+     * @return HomeFinderFilters[]
+     */
     public function getSavedSearchFilters()
     {
         $raw_saved_searches = $this->getRawSavedSearches();
@@ -234,13 +255,13 @@ class User extends \TimberUser
     {
         if (false == $this->hasSavedSearch($filters)) {
             $raw_filters = $filters->getRawFilters();
-            add_user_meta($this->id, self::SAVED_SEARCHES_KEY, $raw_filters);
+            add_user_meta($this->ID, self::SAVED_SEARCHES_KEY, $raw_filters);
         }
     }
 
     public function unSaveSearch(HomeFinderFilters $filters)
     {
-        delete_user_meta($this->id, self::SAVED_SEARCHES_KEY, $filters->getRawFilters());
+        delete_user_meta($this->ID, self::SAVED_SEARCHES_KEY, $filters->getRawFilters());
     }
 
     public function hasSavedSearch(HomeFinderFilters $filters)
@@ -267,7 +288,7 @@ class User extends \TimberUser
 
     public function getNotificationOption()
     {
-        $option = get_user_meta($this->id, self::NOTIFICATION_OPTIONS_KEY, true);
+        $option = get_user_meta($this->ID, self::NOTIFICATION_OPTIONS_KEY, true);
 
         if ('' === $option) {
             $option = self::NO_NOTIFICATIONS;
@@ -278,7 +299,7 @@ class User extends \TimberUser
 
     public function setNotificationOption($option)
     {
-        update_user_meta($this->id, self::NOTIFICATION_OPTIONS_KEY, $option);
+        update_user_meta($this->ID, self::NOTIFICATION_OPTIONS_KEY, $option);
     }
 
     public static function getNotificationOptions()
@@ -287,6 +308,63 @@ class User extends \TimberUser
             self::NO_NOTIFICATIONS,
             self::DAILY_NOTIFICATIONS,
             self::WEEKLY_NOTIFICATIONS
+        );
+    }
+
+    /**
+     * @return User[]
+     */
+    public static function getUsersWhoWantDailyUpdatesOnSearches()
+    {
+        $users = get_users(array(
+            'meta_key' => self::NOTIFICATION_OPTIONS_KEY,
+            'meta_value' => self::DAILY_NOTIFICATIONS
+        ));
+
+        $users = array_map(function ($user) {
+            return new User($user->ID);
+        }, $users);
+
+        return $users;
+    }
+
+    /**
+     * @return User[]
+     */
+    public static function getUsersWhoWantWeeklyUpdatesOnSearches()
+    {
+        $users = get_users(array(
+            'meta_key' => self::NOTIFICATION_OPTIONS_KEY,
+            'meta_value' => self::WEEKLY_NOTIFICATIONS
+        ));
+
+        $users = array_map(function ($user) {
+            return new User($user->ID);
+        }, $users);
+
+        return $users;
+    }
+
+    public function sendWelcomeEmail()
+    {
+        // an email will be sent to the user every time this function is called.
+        // only do this if you really, really want to send him/her an email
+        $html = \Timber::compile('email/new-account-email.twig', array(
+            'template_uri' => get_template_directory_uri()
+        ));
+
+        $to = $this->user_email;
+
+        $to = sanitize_email($to);
+
+        if ($to === '') {
+            return;
+        }
+
+        wp_mail(
+            $to,
+            '[Carnes Crossroads Real Estate] Account Created on Daniel Island Real Estate',
+            $html
         );
     }
 

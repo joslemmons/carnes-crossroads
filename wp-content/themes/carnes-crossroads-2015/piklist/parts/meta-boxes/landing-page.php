@@ -35,7 +35,7 @@ piklist('field', array(
 piklist('field', array(
     'type' => 'group',
     'label' => 'Featured Content Options',
-    'description' => '<img src="' . get_template_directory_uri() . '/img/admin/lp-featured.png" width="150" />',
+    'description' => '<img src="' . get_template_directory_uri() . '/img/admin/lp-featured.png" width="150" /><br />Size should be 765x466px or better',
     'fields' => array(
         array(
             'type' => 'text',
@@ -50,42 +50,6 @@ piklist('field', array(
             'columns' => 12,
             'attributes' => array(
                 'rows' => 6
-            )
-        ),
-        array(
-            'type' => 'file',
-            'field' => LandingPage::$field_featured_section_image_attachment_id,
-            'label' => 'Image'
-        ),
-        array(
-            'type' => 'radio',
-            'field' => LandingPage::$field_featured_section_has_video,
-            'label' => 'Video Options',
-            'choices' => LandingPage::getHasVideoOptionsForPiklist(),
-            'value' => LandingPage::GALLERY_NO_VIDEO,
-        ),
-        array(
-            'type' => 'file',
-            'field' => LandingPage::$field_featured_section_video_attachment_id,
-            'label' => 'Video',
-            'columns' => 12,
-            'conditions' => array(
-                array(
-                    'field' => LandingPage::$field_featured_section_has_video,
-                    'value' => LandingPage::GALLERY_UPLOAD_VIDEO
-                )
-            )
-        ),
-        array(
-            'type' => 'text',
-            'columns' => 12,
-            'field' => LandingPage::$field_featured_section_video_src,
-            'label' => 'Video Link (YouTube, Vimeo, etc)',
-            'conditions' => array(
-                array(
-                    'field' => LandingPage::$field_featured_section_has_video,
-                    'value' => LandingPage::GALLERY_LINK_VIDEO
-                )
             )
         ),
         array(
@@ -132,8 +96,53 @@ piklist('field', array(
 
 piklist('field', array(
     'type' => 'group',
+    'field' => LandingPage::$field_featured_slides,
+    'add_more' => true,
+    'label' => 'Featured Content Slides',
+    'fields' => array(
+        array(
+            'type' => 'file',
+            'field' => LandingPage::$field_featured_section_image_attachment_id,
+            'label' => 'Image'
+        ),
+        array(
+            'type' => 'radio',
+            'field' => LandingPage::$field_featured_section_has_video,
+            'label' => 'Video Options',
+            'choices' => LandingPage::getHasVideoOptionsForPiklist(),
+            'value' => LandingPage::GALLERY_NO_VIDEO,
+        ),
+        array(
+            'type' => 'file',
+            'field' => LandingPage::$field_featured_section_video_attachment_id,
+            'label' => 'Video',
+            'columns' => 12,
+            'conditions' => array(
+                array(
+                    'field' => LandingPage::$field_featured_slides . ':' . LandingPage::$field_featured_section_has_video,
+                    'value' => LandingPage::GALLERY_UPLOAD_VIDEO
+                )
+            )
+        ),
+        array(
+            'type' => 'text',
+            'columns' => 12,
+            'field' => LandingPage::$field_featured_section_video_src,
+            'label' => 'Video Link (YouTube, Vimeo, etc)',
+            'conditions' => array(
+                array(
+                    'field' => LandingPage::$field_featured_slides . ':' . LandingPage::$field_featured_section_has_video,
+                    'value' => LandingPage::GALLERY_LINK_VIDEO
+                )
+            )
+        )
+    )
+));
+
+piklist('field', array(
+    'type' => 'group',
     'label' => 'Secondary Content Options',
-    'description' => '<img src="' . get_template_directory_uri() . '/img/admin/lp-secondary.png" width="150" />',
+    'description' => '<img src="' . get_template_directory_uri() . '/img/admin/lp-secondary.png" width="150" /><br />Size should be 720x600px or better',
     'field' => LandingPage::$field_secondary_sections,
     'add_more' => true,
     'fields' => array(
@@ -232,7 +241,7 @@ piklist('field', array(
 piklist('field', array(
     'type' => 'group',
     'label' => 'Horizontal List Content Options',
-    'description' => '<img src="' . get_template_directory_uri() . '/img/admin/lp-horizontal-list.png" width="150" />',
+    'description' => '<img src="' . get_template_directory_uri() . '/img/admin/lp-horizontal-list.png" width="150" /><br />Size should be 720x573px or better',
     'field' => LandingPage::$field_tertiary_sections,
     'add_more' => true,
     'fields' => array(
@@ -331,7 +340,7 @@ piklist('field', array(
 piklist('field', array(
     'type' => 'group',
     'label' => 'Footer Options',
-    'description' => '<img src="' . get_template_directory_uri() . '/img/admin/lp-footer.png" width="150" />',
+    'description' => '<img src="' . get_template_directory_uri() . '/img/admin/lp-footer.png" width="150" /><br />Size should be 1200px wide or better',
     'fields' => array(
         array(
             'type' => 'file',

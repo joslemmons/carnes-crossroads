@@ -37,7 +37,7 @@
 <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade
 your browser</a> to improve your experience.</p>
 <![endif]-->
-
+        
 {#<!--end header from base-->#}
 
 <div class="landing-page">
@@ -110,7 +110,7 @@ your browser</a> to improve your experience.</p>
                             {{ post.getFeatured.content }}
                         </div>
                         {% if post.getFeatured.button %}
-                            <a class="btn-green"
+                            <a class="site-btn"
                                href="{{ post.getFeatured.button.link }}">{{ post.getFeatured.button.title }}</a>
                         {% endif %}
                     </div>
@@ -118,8 +118,8 @@ your browser</a> to improve your experience.</p>
             </div>
         </div>
     </div>
-
-    <div class="page-content--white secondary-content">
+    
+    <div class="secondary-content">
         <div class="container">
             {% for item in post.getSecondary %}
             <div class="row content-row">

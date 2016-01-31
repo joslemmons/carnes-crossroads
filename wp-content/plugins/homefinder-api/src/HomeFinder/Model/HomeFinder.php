@@ -1,6 +1,5 @@
 <?php namespace HomeFinder\Model;
 
-use App\Model\Builder;
 use App\Model\Config;
 use App\Model\FloorPlan;
 use App\Model\NewOfferings;
@@ -13,31 +12,126 @@ class HomeFinder
     const LISTINGS_PER_PAGE = 12;
     const DEFAULT_CACHE_TIME = 10800;
 
-    public static function getProperties(HomeFinderFilters $filters, $per_page = null, $page = 1)
+    /**
+     * @param $properties
+     * @param $order_by
+     * @param $order
+     * @return mixed
+     */
+    private static function _sortProperties($properties, $order_by, $order)
+    {
+        switch ($order_by) {
+            case 'price':
+            default:
+                usort($properties, function ($prop_a, $prop_b) use ($order) {
+                    /* @var Property $prop_a */
+                    /* @var Property $prop_b */
+                    $prop_a_price = (float)$prop_a->getPurchaseListPrice();
+                    $prop_b_price = (float)$prop_b->getPurchaseListPrice();
+
+                    if ($prop_a_price === $prop_b_price) {
+                        return 0;
+                    } else if ($prop_a_price > $prop_b_price) {
+                        return ($order === 'desc') ? -1 : 1;
+                    } else {
+                        return ($order === 'desc') ? 1 : -1;
+                    }
+                });
+        }
+
+        return $properties;
+    }
+
+    /**
+     * @param Property[] $properties
+     * @return array
+     */
+    private static function _convertMLSToPropertyBaseProperty(array $properties)
+    {
+        $return = array();
+        foreach ($properties as $property) {
+            if ($property->isFromPropertyBase()) {
+                $return[] = $property;
+                continue;
+            }
+
+//            if (trim($property->mls_number) === '') {
+//                $return[] = $property;
+//                continue;
+//            }
+
+//            $pbase_property = \TimberHelper::transient(Config::getKeyPrefix() . 'home_finder_mls_number_' . $property->mls_number, function () use ($property) {
+//                $property = PropertyBase::getWithMLSNumber($property->mls_number);
+//
+//                return $property;
+//            }, 60 * 60 * 3);
+
+            $pbase_property = \TimberHelper::transient(Config::getKeyPrefix() . 'home_finder_' . $property->getAddress() . '_' . $property->getBedroomCount() . '_' . $property->getFullBathroomCount(), function () use ($property) {
+                $property = PropertyBase::getWithAddressBedroomsAndFullBathrooms($property->getAddress(), $property->getBedroomCount(), $property->getFullBathroomCount());
+
+                return $property;
+            }, 60 * 60 * 3);
+
+            // if we get a pbase property back, then use it. we've successfully converted. Else, use the old property
+            if ($pbase_property !== false) {
+                $return[] = $pbase_property;
+            } else {
+                $return[] = $property;
+            }
+        }
+
+        return $return;
+    }
+
+    /**
+     * @param HomeFinderFilters $filters
+     * @param null $per_page
+     * @param int $page
+     * @param null $order_by
+     * @param null $order
+     * @return Result
+     */
+    public static function getProperties(HomeFinderFilters $filters, $per_page = null, $page = 1, $order_by = null, $order = null)
     {
         if (null === $per_page) {
             $per_page = HomeFinder::LISTINGS_PER_PAGE;
         }
 
-        $result = \TimberHelper::transient(Config::getKeyPrefix() . 'home_finder_properties_search_transient_' . $per_page . '_' . $page . '_' . $filters->getFiltersAsHashToUseAsId(), function () use ($filters, $per_page, $page) {
+        $result = \TimberHelper::transient(Config::getKeyPrefix() . 'home_finder_properties_search_transient_' . $per_page . '_' . $page . '_' . $order_by . '_' . $order . '_' . $filters->getFiltersAsHashToUseAsId(), function () use ($filters, $per_page, $page, $order_by, $order) {
             // search pbase
-            $result = PropertyBase::getWithFilters($filters, $per_page, $page);
+            $result = PropertyBase::getWithFilters($filters, $per_page, $page, $order_by, $order);
+
+            $startSearchingMLS = false;
+            if ($order !== null) {
+                $startSearchingMLS = true;
+            } else {
+                $property_base_properties_count = count($result->items);
+                if ($property_base_properties_count < $per_page) {
+                    $startSearchingMLS = true;
+                }
+            }
 
             // if MLS included, search MLS
-            if (true === $filters->shouldIncludeMLS()) {
-                // ignore overlap between pbase and MLS
-                // TODO: this needs to include past searches for this filter. So... pbase on page 1 pulled a property
-                // TODO: that should continue to be ignored on page 10 of MLS
-                $filters->setPropertiesToExclude($result->items);
+            if ($filters->shouldIncludeMLS() === true) {
+                $items = $result->items;
+                $total = (int)$result->total;
+                $mlsPage = false;
+                if ($startSearchingMLS === true) {
+                    $mlsPage = $filters->getMLSPage();
+                    $mls_result = MLS::getWithFilters($filters, $per_page, $mlsPage, $order_by, $order);
 
-                $mls_result = MLS::getWithFilters($filters, $per_page, $page);
+                    if (false !== $mls_result && is_array($mls_result->items) && false === empty($mls_result->items)) {
+                        // combine pbase with mls
+                        $items = array_merge($result->items, $mls_result->items);
+                        $total += (int)$mls_result->total;
+                    }
+                } else {
+                    $total += (int)MLS::getCountWithFilters($filters);
+                }
 
-                if (false !== $mls_result && is_array($mls_result->items) && false === empty($mls_result->items)) {
-                    // combine pbase with mls
-                    $total = (int)$result->total + (int)$mls_result->total;
-                    $items = array_merge($result->items, $mls_result->items);
-
-                    $result = Result::withTotalAndPerPageAndCurrentItems($total, count($items), $items);
+                $result = Result::withTotalAndPerPageAndCurrentItems($total, count($items), $items);
+                if ($mlsPage !== false) {
+                    $result->mlsPage = $mlsPage + 1;
                 }
             }
 
@@ -53,10 +147,16 @@ class HomeFinder
             }
 
             $paginator = new Paginator('page/(:num)');
-            $paginator->setUrl(home_url() . '/api/home-finder/properties/');
+            $paginator->setUrl(home_url() . '/api/home-finder/search/');
             $paginator->setItems($result->total, $per_page, $per_page);
 
             $result->paginator = $paginator;
+
+            $result->items = self::_convertMLSToPropertyBaseProperty($result->items);
+
+            if ($order !== null) {
+                $result->items = self::_sortProperties($result->items, $order_by, $order);
+            }
 
             return $result;
         }, self::DEFAULT_CACHE_TIME);
@@ -65,32 +165,40 @@ class HomeFinder
     }
 
     /**
-     * @param int $per_page
+     * @param null $per_page
      * @param int $page
-     * @return Result
+     * @param null $order_by
+     * @param null $order
+     * @return mixed
      */
-    public static function getFeaturedProperties($per_page = null, $page = 1)
+    public static function getFeaturedProperties($per_page = null, $page = 1, $order_by = null, $order = null)
     {
         if (null === $per_page) {
             $per_page = HomeFinder::LISTINGS_PER_PAGE;
         }
 
         // 3 hour cache
-        $properties = \TimberHelper::transient(Config::getKeyPrefix() . 'home_finder_featured_properties_transient_' . $per_page . '_' . $page, function () use ($per_page, $page) {
-            $properties_result = PropertyBase::getFeatured($per_page, $page);
+        $properties = \TimberHelper::transient(Config::getKeyPrefix() . 'home_finder_featured_properties_transient_' . $per_page . '_' . $page . '_' . $order_by . '_' . $order, function () use ($per_page, $page, $order_by, $order) {
+            $properties_result = PropertyBase::getFeatured($per_page, $page, $order_by, $order);
             $paginator = new Paginator('page/(:num)');
             $paginator->setUrl(home_url() . '/api/home-finder/featured-properties/');
             $paginator->setItems($properties_result->total, $per_page, $per_page);
 
             $properties_result->paginator = $paginator;
 
+            if ($order !== null) {
+                $properties_result->items = self::_sortProperties($properties_result->items, $order_by, $order);
+            }
+
             return $properties_result;
         }, self::DEFAULT_CACHE_TIME);
 
-        // mix up the results
-        $items = $properties->items;
-        shuffle($items);
-        $properties->items = $items;
+        if ($order === null) {
+            // mix up the results
+            $items = $properties->items;
+            shuffle($items);
+            $properties->items = $items;
+        }
 
         return $properties;
     }
@@ -142,10 +250,38 @@ class HomeFinder
     }
 
     /**
+     * @param null $per_page
+     * @param int $page
+     * @return mixed|Result
+     */
+    public static function getRecentlySold($per_page = null, $page = 1)
+    {
+        if (null === $per_page) {
+            $per_page = HomeFinder::LISTINGS_PER_PAGE;
+        }
+
+        // 3 hour cache
+        $properties = \TimberHelper::transient(Config::getKeyPrefix() . 'home_finder_recently_sold_transient_' . $per_page . '_' . $page, function () use ($per_page, $page) {
+            $properties_result = PropertyBase::getRecentlySold($per_page, $page);
+            $paginator = new Paginator('page/(:num)');
+            $paginator->setUrl(home_url() . '/api/home-finder/recently-sold/');
+            $paginator->setItems($properties_result->total, $per_page, $per_page);
+
+            $properties_result->paginator = $paginator;
+
+            return $properties_result;
+        }, self::DEFAULT_CACHE_TIME);
+
+        return $properties;
+    }
+
+    /**
      * @param User $user
+     * @param null $order_by
+     * @param null $order
      * @return Result
      */
-    public static function getSavedListingsForUser(User $user)
+    public static function getSavedListingsForUser(User $user, $order_by = null, $order = null)
     {
         $result = new Result();
 
@@ -159,6 +295,10 @@ class HomeFinder
 
         $result->per_page = count($saved_property_ids);
         $result->total = count($saved_property_ids);
+
+        if ($order !== null) {
+            $result->items = self::_sortProperties($result->items, $order_by, $order);
+        }
 
         return $result;
     }

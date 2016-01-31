@@ -1,7 +1,12 @@
 <?php
 
-//Routes::map('/login', array('\App\Controller\Auth', 'routeLoginPage'));
-//Routes::map('/api/auth', array('\App\Controller\Auth', 'routeLoginAuth'));
+function redirectThisToThat($this_url, $that_url)
+{
+    Routes::map($this_url, function () use ($that_url) {
+        wp_redirect(home_url() . $that_url);
+        exit();
+    });
+}
 
 Routes::map('/category/all', function () {
     Routes::load('category.php');

@@ -3,11 +3,109 @@
 use App\Controller\Router;
 use App\Model\Config;
 use App\Model\Helper;
+use HomeFinder\Model\HomeFinder;
 use HomeFinder\Model\HomeFinderFilters;
 use HomeFinder\Model\Property;
 
 class User extends Router
 {
+
+    const CRON_ALERT_USERS_OF_NEW_PROPERTIES_FOR_SEARCHES_DAILY = 'app_update_users_on_searches_daily';
+    const CRON_ALERT_USERS_OF_NEW_PROPERTIES_FOR_SEARCHES_WEEKLY = 'app_update_users_on_searches_weekly';
+
+    public static function initCronJobs()
+    {
+        if (false === wp_get_schedule(self::CRON_ALERT_USERS_OF_NEW_PROPERTIES_FOR_SEARCHES_DAILY)) {
+            wp_schedule_event(current_time('timestamp'), 'daily', self::CRON_ALERT_USERS_OF_NEW_PROPERTIES_FOR_SEARCHES_DAILY);
+        }
+        add_action(self::CRON_ALERT_USERS_OF_NEW_PROPERTIES_FOR_SEARCHES_DAILY, array(get_class(), 'cronAlertUsersDailyOfSearches'));
+
+        if (false === wp_get_schedule(self::CRON_ALERT_USERS_OF_NEW_PROPERTIES_FOR_SEARCHES_WEEKLY)) {
+            wp_schedule_event(current_time('timestamp'), 'weekly', self::CRON_ALERT_USERS_OF_NEW_PROPERTIES_FOR_SEARCHES_WEEKLY);
+        }
+        add_action(self::CRON_ALERT_USERS_OF_NEW_PROPERTIES_FOR_SEARCHES_WEEKLY, array(get_class(), 'cronAlertUsersWeeklyOfSearches'));
+    }
+
+    /**
+     * @param \HomeFinder\Model\User $user
+     * @param \HomeFinder\Model\HomeFinderFilters $filter
+     * @param Property[] $properties
+     * @param int $total
+     */
+    private static function _sendEmailToUserWithProperties($user, $filter, $properties, $total)
+    {
+        if (empty($properties)) {
+            return;
+        }
+
+        $html = \Timber::compile('email/saved-search-update.twig', array(
+            'template_uri' => get_template_directory_uri(),
+            'filter' => $filter,
+            'properties' => $properties,
+            'total' => $total
+        ));
+
+        $to = $user->user_email;
+
+        $to = sanitize_email($to);
+
+        if ($to === '') {
+            return;
+        }
+
+        wp_mail(
+            $to,
+            '[Daniel Island Real Estate] Saved Search Update',
+            $html
+        );
+    }
+
+    /**
+     * @param \HomeFinder\Model\User[] $users
+     */
+    public static function updateUsersOnSavedSearches($users)
+    {
+        add_filter('wp_mail_content_type', function () {
+            return 'text/html';
+        });
+
+        foreach ($users as $user) {
+            $filters = $user->getSavedSearchFilters();
+
+            foreach ($filters as $filter) {
+                if ($filter->isEmptySearch()) {
+                    continue;
+                }
+
+                $result = HomeFinder::getProperties($filter, 48);
+                $properties = $result->items;
+                shuffle($properties);
+                $properties = array_slice($properties, 0, 12);
+                $total = $result->total;
+
+                if (empty($properties) === false) {
+                    self::_sendEmailToUserWithProperties($user, $filter, $properties, $total);
+                }
+            }
+        }
+    }
+
+    public static function cronAlertUsersDailyOfSearches()
+    {
+        if (Helper::isProduction() || Helper::isStaging()) {
+            $users = \HomeFinder\Model\User::getUsersWhoWantDailyUpdatesOnSearches();
+            self::updateUsersOnSavedSearches($users);
+        }
+    }
+
+    public static function cronAlertUsersWeeklyOfSearches()
+    {
+        if (Helper::isProduction() || Helper::isStaging()) {
+            $users = \HomeFinder\Model\User::getUsersWhoWantWeeklyUpdatesOnSearches();
+            self::updateUsersOnSavedSearches($users);
+        }
+    }
+
     public static function routeSaveProperty($params = array())
     {
         $property_id = (isset($params['id'])) ? $params['id'] : false;
@@ -89,7 +187,7 @@ class User extends Router
             self::renderJSON(array(), 401);
         }
 
-        $filters = HomeFinderFilters::withGETParams();
+        $filters = HomeFinderFilters::withREQUESTParams();
         $user->saveSearch($filters);
 
         self::renderJSON(array(
@@ -113,7 +211,7 @@ class User extends Router
             self::renderJSON(array(), 401);
         }
 
-        $filters = HomeFinderFilters::withGETParams();
+        $filters = HomeFinderFilters::withREQUESTParams();
         $user->unSaveSearch($filters);
 
         self::renderJSON(array(

@@ -1,5 +1,5 @@
 jQuery(function ($) {
-
+    
     //Featured Slider
     $('.featured-slider').slick({
         dots: false,

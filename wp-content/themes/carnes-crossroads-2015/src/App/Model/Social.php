@@ -95,14 +95,16 @@ class Social
         }
 
         // put in desc order
-        usort($recent_social_posts, function ($el1, $el2) {
+        usort($recent_social_posts, function($el1, $el2) {
             $el1_created_time = Carbon::createFromTimestamp(strtotime($el1->social_post_created_time));
             $el2_created_time = Carbon::createFromTimestamp(strtotime($el2->social_post_created_time));
-            if ($el1_created_time === $el2_created_time) {
+            if($el1_created_time === $el2_created_time) {
                 return 0;
-            } elseif ($el1_created_time > $el2_created_time) {
+            }
+            elseif($el1_created_time > $el2_created_time) {
                 return -1;
-            } else {
+            }
+            else {
                 return 1;
             }
         });

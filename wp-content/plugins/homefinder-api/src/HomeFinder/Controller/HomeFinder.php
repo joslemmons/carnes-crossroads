@@ -15,6 +15,23 @@ class HomeFinder extends Router
     public static function routeSavedListings($params = array())
     {
         $page = (isset($params['num']) && false !== filter_var($params['num'], FILTER_VALIDATE_INT)) ? (int)$params['num'] : 1;
+        $sort = (isset($_REQUEST['sort'])) ? sanitize_text_field($_REQUEST['sort']) : 'default';
+
+        $order = null;
+        $order_by = null;
+        if ($sort !== 'default') {
+            $sort_options = explode('.', $sort);
+            if (count($sort_options) === 2) {
+                // only allow sorting by price asc or desc
+                if (
+                    ($sort_options[1] === 'asc' || $sort_options[1] === 'desc') &&
+                    $sort_options[0] === 'price'
+                ) {
+                    $order_by = $sort_options[0];
+                    $order = $sort_options[1];
+                }
+            }
+        }
 
         $user = User::getCurrentlyLoggedUser();
 
@@ -26,12 +43,24 @@ class HomeFinder extends Router
             ));
         }
 
-        /* @var Result */
-        $result = \HomeFinder\Model\HomeFinder::getSavedListingsForUser($user);
+        if ($page === 1) {
+            /* @var Result */
+            $result = \HomeFinder\Model\HomeFinder::getSavedListingsForUser($user, $order_by, $order);
+        } else {
+            // only 1 page for user saved listings. all are pulled to start. no pagination
+            $result = new Result();
+            $result->items = array();
+            $result->total = 0;
+        }
+
 
         $html = \Timber::compile('partials/home-finder/property-list.twig', array(
             'properties' => $result->items,
-            'nextPageUrl' => '/api/home-finder/saved-listings/page/' . ($page + 1),
+            'nextPageUrl' => '/api/home-finder/saved-listings/page/' . ($page + 1) . '?' . http_build_query(
+                    array(
+                        'sort' => $sort
+                    )
+                ),
             'current_user' => User::getCurrentlyLoggedUser()
         ));
 
@@ -46,18 +75,40 @@ class HomeFinder extends Router
     {
         $per_page = \HomeFinder\Model\HomeFinder::LISTINGS_PER_PAGE;
         $page = (isset($params['num']) && false !== filter_var($params['num'], FILTER_VALIDATE_INT)) ? (int)$params['num'] : 1;
+        $sort = (isset($_REQUEST['sort'])) ? sanitize_text_field($_REQUEST['sort']) : 'default';
 
-        // do not search through MLS 1/20/16
-        unset($_REQUEST['searchMLS']);
+        $order = null;
+        $order_by = null;
+        if ($sort !== 'default') {
+            $sort_options = explode('.', $sort);
+            if (count($sort_options) === 2) {
+                // only allow sorting by price asc or desc
+                if (
+                    ($sort_options[1] === 'asc' || $sort_options[1] === 'desc') &&
+                    $sort_options[0] === 'price'
+                ) {
+                    $order_by = $sort_options[0];
+                    $order = $sort_options[1];
+                }
+            }
+        }
 
-        $filters = HomeFinderFilters::withGETParams();
+        $filters = HomeFinderFilters::withREQUESTParams();
 
         /* @var $result Result */
-        $result = \HomeFinder\Model\HomeFinder::getProperties($filters, $per_page, $page);
+        $result = \HomeFinder\Model\HomeFinder::getProperties($filters, $per_page, $page, $order_by, $order);
+        $filters->setMLSPage($result->mlsPage);
 
         $html = \Timber::compile('partials/home-finder/property-list.twig', array(
             'properties' => $result->items,
-            'nextPageUrl' => '/api/home-finder/search/page/' . ($page + 1) . '?' . http_build_query($filters->getRawFilters()),
+            'nextPageUrl' => '/api/home-finder/search/page/' . ($page + 1) . '?' . http_build_query(
+                    array_merge(
+                        $filters->getRawFilters(),
+                        array(
+                            'sort' => $sort
+                        )
+                    )
+                ),
             'current_user' => User::getCurrentlyLoggedUser()
         ));
 
@@ -72,13 +123,34 @@ class HomeFinder extends Router
     {
         $per_page = \HomeFinder\Model\HomeFinder::LISTINGS_PER_PAGE;
         $page = (isset($params['num']) && false !== filter_var($params['num'], FILTER_VALIDATE_INT)) ? (int)$params['num'] : 1;
+        $sort = (isset($_REQUEST['sort'])) ? sanitize_text_field($_REQUEST['sort']) : 'default';
+
+        $order = null;
+        $order_by = null;
+        if ($sort !== 'default') {
+            $sort_options = explode('.', $sort);
+            if (count($sort_options) === 2) {
+                // only allow sorting by price asc or desc
+                if (
+                    ($sort_options[1] === 'asc' || $sort_options[1] === 'desc') &&
+                    $sort_options[0] === 'price'
+                ) {
+                    $order_by = $sort_options[0];
+                    $order = $sort_options[1];
+                }
+            }
+        }
 
         /* @var Result */
-        $featured_properties_result = \HomeFinder\Model\HomeFinder::getFeaturedProperties($per_page, $page);
+        $featured_properties_result = \HomeFinder\Model\HomeFinder::getFeaturedProperties($per_page, $page, $order_by, $order);
 
         $html = \Timber::compile('partials/home-finder/property-list.twig', array(
             'properties' => $featured_properties_result->items,
-            'nextPageUrl' => '/api/home-finder/featured-properties/page/' . ($page + 1),
+            'nextPageUrl' => '/api/home-finder/featured-properties/page/' . ($page + 1) . '?' . http_build_query(
+                    array(
+                        'sort' => $sort
+                    )
+                ),
             'current_user' => User::getCurrentlyLoggedUser()
         ));
 
@@ -330,7 +402,7 @@ class HomeFinder extends Router
 
     public static function routeGetAccountPageContent($params = array())
     {
-        $page = \Timber::get_post(19919, '\App\Model\AccountPage');
+        $page = \Timber::get_post(257, '\App\Model\AccountPage');
         $current_user = User::getCurrentlyLoggedUser();
 
         $html = \Timber::compile('partials/account/account-content.twig', array(

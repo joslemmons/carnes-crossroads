@@ -1,5 +1,6 @@
 <?php namespace HomeFinder\Request;
 
+use Carbon\Carbon;
 use HomeFinder\Model\HomeFinderFilters;
 use HomeFinder\Model\Property;
 use HomeFinder\Model\PropertyBaseListing;
@@ -118,7 +119,10 @@ class PropertyBase
             'LastModifiedDate',
             'X3D_Tours__c',
             'FLV_Tour_URL__c',
-            'PDF_Floorplan_URL__c'
+            'PDF_Floorplan_URL__c',
+            'Listing_Agent__c',
+            'pb__SalesAgentId__c',
+            'MLS_Page__c'
         ));
     }
 
@@ -126,10 +130,28 @@ class PropertyBase
      * @param HomeFinderFilters $filters
      * @param int $per_page
      * @param int $page
+     * @param string $order_by
+     * @param string $order
      * @return Result
      */
-    public static function getWithFilters(HomeFinderFilters $filters, $per_page = 24, $page = 1, $sort = 'DESC')
+    public static function getWithFilters(HomeFinderFilters $filters, $per_page = 24, $page = 1, $order_by = 'price', $order = 'desc')
     {
+        // use MLS to get by last date... there's no way to filter by last date modified with v0.9 of property base
+        if ($filters->getMinLastUpdate() !== false || $filters->getHomeFeatures() !== false || $filters->getViews() !== false) {
+            return Result::withTotalAndPerPageAndCurrentItems(0, $per_page, array());
+        }
+
+        switch ($order_by) {
+            case ('price') :
+            default:
+                // use the pbase key for price
+                $sort_by = 'pb__PurchaseListPrice__c';
+        }
+
+        if ($order === null) {
+            $order = 'desc';
+        }
+
         $default_url_params = array_merge(
             PropertyBase::$_default_request_url_params,
             array(
@@ -140,11 +162,13 @@ class PropertyBase
         );
 
         $pbase_response_raw = wp_remote_get(PropertyBase::API_ENDPOINT . '?' . http_build_query(
-                $default_url_params +
+                array_merge($default_url_params,
                 array(
                     'fields' => PropertyBase::_getDefaultRequestFields(),
-                    'sort' => 'pb__PurchaseListPrice__c ' . $sort
-                )));
+                    'sort' => $sort_by . ' ' . strtoupper($order)
+                ))
+            )
+        );
 
         $properties = array();
         $item_list = PropertyBase::_extractDataFromXMLResponse($pbase_response_raw);
@@ -170,22 +194,35 @@ class PropertyBase
     /**
      * @param int $per_page
      * @param int $page
+     * @param string $order_by
+     * @param string $order
      * @return Result
      */
-    public static function getFeatured($per_page = 24, $page = 1, $sort = 'DESC')
+    public static function getFeatured($per_page = 24, $page = 1, $order_by = 'price', $order = 'desc')
     {
+        switch ($order_by) {
+            case ('price') :
+            default:
+                // use the pbase key for price
+                $sort_by = 'pb__PurchaseListPrice__c';
+        }
+
+        if ($order === null) {
+            $order = 'desc';
+        }
+
         $default_url_params = array_merge(PropertyBase::$_default_request_url_params, array(
             'page_limit' => $per_page,
             'page' => $page
         ));
 
         $pbase_response_raw = wp_remote_get(PropertyBase::API_ENDPOINT . '?' . http_build_query(
-                $default_url_params +
+                array_merge($default_url_params,
                 array(
                     'fields' => PropertyBase::_getDefaultRequestFields(),
                     'Is_Featured__c' => 'true',
-                    'sort' => 'pb__PurchaseListPrice__c ' . $sort
-                )));
+                    'sort' => $sort_by . ' ' . strtoupper($order)
+                ))));
 
         $properties = array();
         $item_list = PropertyBase::_extractDataFromXMLResponse($pbase_response_raw);
@@ -208,7 +245,7 @@ class PropertyBase
         return $result;
     }
 
-    public static function getRecentlyListed($per_page = 24, $page = 1, $sort = 'DESC')
+    public static function getRecentlyListed($per_page = 24, $page = 1)
     {
         $default_url_params = array_merge(PropertyBase::$_default_request_url_params, array(
             'page_limit' => $per_page,
@@ -216,11 +253,52 @@ class PropertyBase
         ));
 
         $pbase_response_raw = wp_remote_get(PropertyBase::API_ENDPOINT . '?' . http_build_query(
-                $default_url_params +
+                array_merge($default_url_params,
                 array(
                     'fields' => PropertyBase::_getDefaultRequestFields(),
-                    'sort' => 'Listing_Date__c ' . $sort
-                )));
+                    'sort' => 'Listing_Date__c DESC'
+                ))));
+
+        $properties = array();
+        $item_list = PropertyBase::_extractDataFromXMLResponse($pbase_response_raw);
+
+        if (isset($item_list['Id'])) {
+            // only returned 1 result
+            $pbase_listing = new PropertyBaseListing($item_list);
+            $property = Property::withPropertyBaseListing($pbase_listing);
+            $properties[] = $property;
+        } else {
+            foreach ($item_list as $item) {
+                $pbase_listing = new PropertyBaseListing($item);
+                $property = Property::withPropertyBaseListing($pbase_listing);
+                $properties[] = $property;
+            }
+        }
+
+        $result = Result::withTotalAndPerPageAndCurrentItems(PropertyBase::_extractTotalFromXMLResponse($pbase_response_raw), $per_page, $properties);
+
+        return $result;
+    }
+
+    public static function getRecentlySold($per_page = 24, $page = 1)
+    {
+        $default_url_params = PropertyBase::$_default_request_url_params;
+        unset($default_url_params['is_for_sale']);
+        unset($default_url_params['pb__IsListed__c']);
+        unset($default_url_params['pb_isAvailable__c']);
+        $default_url_params = array_merge($default_url_params, array(
+            'page_limit' => $per_page,
+            'page' => $page,
+            'pb__ItemStatus__c' => 'Sold',
+            'get_images' => 'false'
+        ));
+
+        $pbase_response_raw = wp_remote_get(PropertyBase::API_ENDPOINT . '?' . http_build_query(
+                array_merge($default_url_params,
+                array(
+                    'fields' => PropertyBase::_getDefaultRequestFields(),
+                    'sort' => 'LastModifiedDate DESC'
+                ))));
 
         $properties = array();
         $item_list = PropertyBase::_extractDataFromXMLResponse($pbase_response_raw);
@@ -249,11 +327,78 @@ class PropertyBase
      */
     public static function getByPropertyBaseId($id)
     {
+        $default_url_params = array_merge(PropertyBase::$_default_request_url_params, array(
+            'pb__IsListed__c' => '',
+            'pb_isAvailable__c' => '',
+            'is_for_sale' => ''
+        ));
         $pbase_response_raw = wp_remote_get(PropertyBase::API_ENDPOINT . '?' . http_build_query(
-                PropertyBase::$_default_request_url_params +
+                array_merge($default_url_params,
                 array(
                     'Id' => $id,
                     'fields' => PropertyBase::_getDefaultRequestFields()
+                )
+                )));
+
+        $item_list = PropertyBase::_extractDataFromXMLResponse($pbase_response_raw);
+
+        if (true === empty($item_list)) {
+            return false;
+        }
+
+        $pbase_listing = new PropertyBaseListing($item_list);
+        $property = Property::withPropertyBaseListing($pbase_listing);
+
+        return $property;
+    }
+
+    public static function getWithMLSNumber($mls_number)
+    {
+        $default_url_params = array_merge(PropertyBase::$_default_request_url_params, array(
+            'pb__IsListed__c' => '',
+            'pb_isAvailable__c' => '',
+            'is_for_sale' => '',
+            'page_limit' => '1'
+        ));
+
+        $pbase_response_raw = wp_remote_get(PropertyBase::API_ENDPOINT . '?' . http_build_query(
+                array_merge($default_url_params,
+                    array(
+                        'pb__MLSNumber__c' => $mls_number,
+                        'fields' => PropertyBase::_getDefaultRequestFields()
+                    )
+                )));
+
+        $item_list = PropertyBase::_extractDataFromXMLResponse($pbase_response_raw);
+
+        if (true === empty($item_list)) {
+            return false;
+        }
+
+        $pbase_listing = new PropertyBaseListing($item_list);
+        $property = Property::withPropertyBaseListing($pbase_listing);
+
+        if ($property->getMLSNumber() !== $mls_number) {
+            return false;
+        }
+
+        return $property;
+    }
+
+    public static function getWithAddressBedroomsAndFullBathrooms($address, $bedrooms, $full_bathrooms)
+    {
+        $default_url_params = array_merge(PropertyBase::$_default_request_url_params, array(
+            'page_limit' => '1'
+        ));
+
+        $pbase_response_raw = wp_remote_get(PropertyBase::API_ENDPOINT . '?' . http_build_query(
+                array_merge($default_url_params,
+                    array(
+                        'in_pb__UnitBedrooms__c' => $bedrooms,
+                        'in_Full_Bathrooms__c' => $full_bathrooms,
+                        'like_AddressWeb__c' => $address,
+                        'fields' => PropertyBase::_getDefaultRequestFields()
+                    )
                 )));
 
         $item_list = PropertyBase::_extractDataFromXMLResponse($pbase_response_raw);
