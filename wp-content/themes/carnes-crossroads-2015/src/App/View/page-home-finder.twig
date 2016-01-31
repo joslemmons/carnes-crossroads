@@ -73,28 +73,6 @@
 
         <div class="filter-options">
             <a href="#" id="filter-clearAll">Clear</a>
-            {#<select id="filter-propertyType">#}
-            {#<option value="">Property Type</option>#}
-            {#<option value="home" {% if 'home' in filters.getPropertyTypes %}selected="selected"{% endif %}>Single#}
-            {#Family Home#}
-            {#</option>#}
-            {#<option value="condominium"#}
-            {#{% if 'condominium' in filters.getPropertyTypes %}selected="selected"{% endif %}>Condominium#}
-            {#</option>#}
-            {#<option value="townhome" {% if 'townhome' in filters.getPropertyTypes %}selected="selected"{% endif %}>#}
-            {#Townhome#}
-            {#</option>#}
-            {#<option value="homesite" {% if 'homesite' in filters.getPropertyTypes %}selected="selected"{% endif %}>#}
-            {#Homesite#}
-            {#</option>#}
-            {#</select>#}
-            {#<select id="filter-neighborhood">#}
-            {#<option value="">Neighborhood</option>#}
-            {#{% for pbaseId, name in function('\\HomeFinder\\Model\\HomeFinderFilters::getPropertyBaseNeighborhoods') %}#}
-            {#<option value="{{ pbaseId }}"#}
-            {#{% if pbaseId in filters.getNeighborhoods %}selected="selected"{% endif %}>{{ name }}</option>#}
-            {#{% endfor %}#}
-            {#</select>#}
             <select id="filter-builders">
                 <option value="">Builders</option>
                 {% for builder in function('\\App\\Model\\Builder::all') %}
@@ -127,16 +105,14 @@
                    {% if filters.shouldIncludePlans %}checked="checked"{% endif %}/>
             <label for="filter-includePlans">Include Plans</label>
             {#<button type="button" class="hidden-sm hidden-xs more-button">More</button>#}
-            <div class="more-options">
+            {#<div class="more-options">#}
                 {#<select id="filter-lastUpdate">#}
-                {#<option value="">Listing Change Date</option>#}
-                {#<option value="5">5 days ago or less</option>#}
-                {#<option value="15">15 days ago or less</option>#}
-                {#<option value="30">30 days ago or less</option>#}
-                {#<option value="100">100 days ago or less</option>#}
-                {#<option value="200">200 days ago or less</option>#}
-                {#<option value="500">500 days ago or less</option>#}
-                {#<option value="750">750 days ago or less</option>#}
+                    {#<option value="">Listing Change Date</option>#}
+                    {#<option value="1">Yesterday or less</option>#}
+                    {#<option value="5">5 days ago or less</option>#}
+                    {#<option value="15">15 days ago or less</option>#}
+                    {#<option value="30">30 days ago or less</option>#}
+                    {#<option value="100">100 days ago or less</option>#}
                 {#</select>#}
                 {#<select id="filter-communityAmenities">#}
                 {#<option value="">Community Amenities</option>#}
@@ -155,10 +131,10 @@
                 {#<option value="horses-ok">Horses Ok</option>#}
                 {#</select>#}
                 {#<select id="filter-sqft">#}
-                {#<option value="">Square Footage</option>#}
-                {#{% for i in range(500, 4500, 500) %}#}
-                {#<option value="{{ i }}-{{ i + 500 }}">{{ i }} - {{ i + 500 }} sqft</option>#}
-                {#{% endfor %}#}
+                    {#<option value="">Square Footage</option>#}
+                    {#{% for i in range(500, 4500, 500) %}#}
+                        {#<option value="{{ i }}-{{ i + 500 }}">{{ i }} - {{ i + 500 }} sqft</option>#}
+                    {#{% endfor %}#}
                 {#</select>#}
                 {#<select id="filter-acreage">#}
                 {#<option value="">Acreage</option>#}
@@ -169,31 +145,29 @@
                 {#<option value="10-20">10-20 acres</option>#}
                 {#<option value="20+">20+ acres</option>#}
                 {#</select>#}
-                {#<select id="filter-homeFeatures">#}
-                {#<option value="">Home Features</option>#}
-                {#<option value="dock">Dock</option>#}
-                {#<option value="pool">Pool</option>#}
-                {#<option value="fireplace">Fireplace</option>#}
-                {#<option value="elevator">Elevator</option>#}
-                {#<option value="garage">Garage</option>#}
-                {#<option value="master-downstairs">Master Downstairs</option>#}
+                {#<select multiple="multiple" id="filter-homeFeatures">#}
+                    {#<option value="dock">Dock</option>#}
+                    {#<option value="pool">Pool</option>#}
+                    {#<option value="fireplace">Fireplace</option>#}
+                    {#<option value="elevator">Elevator</option>#}
+                    {#<option value="garage">Garage</option>#}
+                    {#<option value="master-downstairs">Master Downstairs</option>#}
                 {#</select>#}
-                {#<select id="filter-view">#}
-                {#<option value="">View</option>#}
-                {#<option value="beachfront">Beachfront</option>#}
-                {#<option value="beach-access">Beach Access</option>#}
-                {#<option value="oceanview">Oceanview</option>#}
-                {#<option value="riverfront">Riverfront</option>#}
-                {#<option value="waterfront-deep">Waterfront - Deep</option>#}
-                {#<option value="tidal-creek">Tidal Creek</option>#}
-                {#<option value="on-golf-course">On Golf Course</option>#}
-                {#<option value="marshfront">Marshfront</option>#}
-                {#<option value="marshview">Marshview</option>#}
-                {#<option value="lakefront">Lakefront</option>#}
-                {#<option value="lagoon">Lagoon</option>#}
-                {#<option value="wooded">Wooded</option>#}
+                {#<select multiple="multiple" id="filter-view">#}
+                    {#<option value="beachfront">Beachfront</option>#}
+                    {#<option value="beach-access">Beach Access</option>#}
+                    {#<option value="oceanview">Oceanview</option>#}
+                    {#<option value="riverfront">Riverfront</option>#}
+                    {#<option value="waterfront-deep">Waterfront - Deep</option>#}
+                    {#<option value="tidal-creek">Tidal Creek</option>#}
+                    {#<option value="on-golf-course">On Golf Course</option>#}
+                    {#<option value="marshfront">Marshfront</option>#}
+                    {#<option value="marshview">Marshview</option>#}
+                    {#<option value="lakefront">Lakefront</option>#}
+                    {#<option value="lagoon">Lagoon</option>#}
+                    {#<option value="wooded">Wooded</option>#}
                 {#</select>#}
-            </div>
+            {#</div>#}
         </div>
     </div>
 
@@ -220,16 +194,30 @@
 
                     </div>
 
+                        {% if result.total > 0 %}
+                    <div class="view-on-map">
+                        <div class="map-icon">
+                            <svg width="16" height="16">
+                                <image xlink:href="{{ template_uri }}/img/map.svg"
+                                       src="{{ template_uri }}/img/map.png" width="16" height="16"/>
+                            </svg>
+                        </div>
+                        <a href="#" id="viewListingsOnMap">View Listings on Map</a>
+                    </div>
+                    {% endif %}
 
-                    {#TODO: sort by price, etc#}
+
                     <div class="listings-type">
                         <select>
                             <option>Select Filters</option>
                             <option {% if isFeaturedListings %}selected="selected"{% endif %}
                                     value="featured-listings">Featured Listings
                             </option>
+                            <option {% if isAllListings %}selected="selected"{% endif %}
+                                    value="all-listings">All Listings
+                            </option>
                             {#<option {% if isNewOfferings %}selected="selected"{% endif %} value="new-offerings">New#}
-                            {#Offerings#}
+                                {#Offerings#}
                             {#</option>#}
                             <option {% if isRecentlyListed %}selected="selected"{% endif %} value="recently-listed">
                                 Recently Listed
@@ -242,17 +230,12 @@
                         </select>
                     </div>
 
-                    {% if result.total > 0 %}
-                    <div class="view-on-map">
-                        <div class="map-icon">
-                            <svg width="16" height="16">
-                                <image xlink:href="{{ template_uri }}/img/map.svg"
-                                       src="{{ template_uri }}/img/map.png" width="16" height="16"/>
-                            </svg>
-                        </div>
-                        <a href="#" id="viewListingsOnMap">View Listings on Map</a>
+                        <div class="results-sort" {% if isNewOfferings or isFilterByAgent %}style="display:none;"{% endif %}>
+                        Sort by Price:
+                        <a href="#" class="sortByPriceHighToLow">High to Low</a> |
+                        <a href="#" class="sortByPriceLowToHigh">Low to High</a>
                     </div>
-                    {% endif %}
+
                 </div>
                 <div class="listings-wrapper">
                     {% if isNewOfferings %}

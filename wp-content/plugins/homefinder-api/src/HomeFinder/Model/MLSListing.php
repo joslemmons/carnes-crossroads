@@ -64,6 +64,7 @@ class MLSListing
     public $co_listing_member_short_id;
     public $un_branded_virtual_tour;
     public $lot_description;
+    public $listing_office_name;
 
     private function _safeGetByKey($key, array $array)
     {
@@ -118,6 +119,7 @@ class MLSListing
         $this->vow_consumer_comment = self::_safeGetByKey('vow_consumer_comment', $source);
         $this->co_listing_member_short_id = self::_safeGetByKey('co_listing_member_short_id', $source);
         $this->listing_member_short_id = self::_safeGetByKey('listing_member_short_id', $source);
+        $this->listing_office_name = self::_safeGetByKey('listing_office_name', $source);
         $this->listing_office_short_id = self::_safeGetByKey('listing_office_short_id', $source);
         $this->photo_filenames = self::_safeGetByKey('photo_filenames', $source);
         $this->z_textsearch_combined_address = self::_safeGetByKey('z_textsearch_combined_address', $source);

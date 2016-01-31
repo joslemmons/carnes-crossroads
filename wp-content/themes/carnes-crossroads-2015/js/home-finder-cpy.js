@@ -136,12 +136,12 @@ jQuery(function ($) {
 
     var Router = Backbone.Router.extend({
         routes: {
-            'home-finder/properties/:address/:id/': 'showProperty',
-            'home-finder/featured-listings/': 'showFeaturedListings',
-            'home-finder/new-offerings/': 'showNewOfferings',
-            'home-finder/recently-listed/': 'showRecentlyListed',
-            'home-finder/saved-listings/': 'showSavedListings',
-            'home-finder/all-listings/': 'showAllListings'
+            'real-estate/home-finder/properties/:address/:id/': 'showProperty',
+            'real-estate/home-finder/featured-listings/': 'showFeaturedListings',
+            'real-estate/home-finder/new-offerings/': 'showNewOfferings',
+            'real-estate/home-finder/recently-listed/': 'showRecentlyListed',
+            'real-estate/home-finder/saved-listings/': 'showSavedListings',
+            'real-estate/home-finder/all-listings/': 'showAllListings'
         },
 
         showSavedListings: function () {
@@ -179,8 +179,8 @@ jQuery(function ($) {
         });
         Backbone.history.started = true;
 
-        if ('home-finder/' === Backbone.history.getFragment()) {
-            router.navigate("home-finder/featured-listings/", {trigger: false, replace: true});
+        if ('real-estate/home-finder/' === Backbone.history.getFragment()) {
+            router.navigate("real-estate/home-finder/featured-listings/", {trigger: false, replace: true});
         }
     }
 
@@ -288,13 +288,13 @@ jQuery(function ($) {
                 prices: filters.prices,
                 bedrooms: filters.bedrooms,
                 bathrooms: filters.bathrooms,
-                //searchMLS: filters.shouldSearchMLS,
+                searchMLS: filters.shouldSearchMLS,
                 searchAddress: filters.searchAddress,
                 sort: sort,
-                //lastUpdate: filters.lastUpdate,
-                //squareFootage: filters.squareFootage,
-                //homeFeatures: filters.homeFeatures,
-                //views: filters.views,
+                lastUpdate: filters.lastUpdate,
+                squareFootage: filters.squareFootage,
+                homeFeatures: filters.homeFeatures,
+                views: filters.views,
                 includePlans: filters.includePlans,
                 builders: filters.builders
             },
@@ -389,7 +389,7 @@ jQuery(function ($) {
         $(this).parent().find('div.listing.active').removeClass('active');
         $(this).addClass('active');
 
-        router.navigate('home-finder/properties/' + propertyAddress + '/' + propertyId + '/', {trigger: true});
+        router.navigate('real-estate/home-finder/properties/' + propertyAddress + '/' + propertyId + '/', {trigger: true});
     });
 
     $('div.all-listings-col').on('click', 'div.listings-wrapper div.floor-plan', function () {
@@ -449,31 +449,31 @@ jQuery(function ($) {
 
     $('div.listings-type select').on('change', function () {
         var choice = $(this).find('option:selected').val();
-        //('home-finder/' === Backbone.history.getFragment())
+        //('real-estate/home-finder/' === Backbone.history.getFragment())
         switch (choice) {
             case 'new-offerings':
-                router.navigate('home-finder/new-offerings/', {trigger: false});
+                router.navigate('real-estate/home-finder/new-offerings/', {trigger: false});
                 $('div.results-sort').hide();
                 showNewOfferings();
                 break;
             case 'recently-listed':
-                router.navigate('home-finder/recently-listed/', {trigger: false});
+                router.navigate('real-estate/home-finder/recently-listed/', {trigger: false});
                 $('div.results-sort').hide();
                 showRecentlyListed();
                 break;
             case 'saved-listings':
-                router.navigate('home-finder/saved-listings/', {trigger: false});
+                router.navigate('real-estate/home-finder/saved-listings/', {trigger: false});
                 $('div.results-sort').show();
                 showSavedListings();
                 break;
             case 'all-listings':
-                router.navigate('home-finder/all-listings/', {trigger: false});
+                router.navigate('real-estate/home-finder/all-listings/', {trigger: false});
                 $('div.results-sort').show();
                 showAllListings();
                 break;
             case 'featured-listings':
             default:
-                router.navigate('home-finder/featured-listings/', {trigger: false});
+                router.navigate('real-estate/home-finder/featured-listings/', {trigger: false});
                 $('div.results-sort').show();
                 showFeaturedListings();
         }

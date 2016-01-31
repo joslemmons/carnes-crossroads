@@ -11,6 +11,7 @@ class LandingPage extends \TimberPost
     public static $field_sub_title;
     public static $field_image_attachment_id;
 
+    public static $field_featured_slides;
     public static $field_featured_section_title;
     public static $field_featured_section_content;
     public static $field_featured_section_image_attachment_id;
@@ -66,6 +67,7 @@ class LandingPage extends \TimberPost
         self::$field_title = Config::getKeyPrefix() . 'title';
         self::$field_sub_title = Config::getKeyPrefix() . 'sub_title';
         self::$field_image_attachment_id = Config::getKeyPrefix() . 'image_attachment_id';
+        self::$field_featured_slides = Config::getKeyPrefix() . 'featured_slides';
         self::$field_featured_section_title = Config::getKeyPrefix() . 'featured_section_title';
         self::$field_featured_section_content = Config::getKeyPrefix() . 'featured_section_content';
         self::$field_featured_section_image_attachment_id = Config::getKeyPrefix() . 'featured_section_image_attachment_id';
@@ -132,9 +134,21 @@ class LandingPage extends \TimberPost
     public static function after_submission($entry, $form)
     {
         if (self::doesFormWantToSubmitAccountToPropertyBase($form)) {
+
+            $post_title = false;
+            if (isset($_POST['lp2pbPostId']) && $_POST['lp2pbPostId'] !== '') {
+                $post_id = filter_var($_POST['lp2pbPostId'], FILTER_VALIDATE_INT);
+                $post_title = get_the_title($post_id);
+            }
+
             $last_name = null;
             $email = null;
             $context = (isset($form['title'])) ? $form['title'] : 'Specific Interactive Unknown';
+
+            if ($post_title !== false && $post_title !== '') {
+                $context = $post_title;
+            }
+
             $first_name = null;
             $phone = null;
             $notes = null;
@@ -299,6 +313,7 @@ class LandingPage extends \TimberPost
 
     public function getFeatured()
     {
+        $slides_group = self::$field_featured_slides;
         $field_title = self::$field_featured_section_title;
         $field_content = self::$field_featured_section_content;
         $field_image_attachment_id = self::$field_featured_section_image_attachment_id;
@@ -311,25 +326,10 @@ class LandingPage extends \TimberPost
         $field_button_title = self::$field_featured_section_button_text;
 
         $featured_data = array();
+        $featured_slides_group = $this->$slides_group;
 
         $featured_data['title'] = $this->$field_title;
         $featured_data['content'] = $this->$field_content;
-
-        $image_attachment_id = $this->$field_image_attachment_id;
-        if ($image_attachment_id) {
-            if (is_array($image_attachment_id)) {
-                $image_attachment_id = array_pop($image_attachment_id);
-            }
-            $featured_data['image'] = new \TimberImage($image_attachment_id);
-        }
-
-        if (self::GALLERY_LINK_VIDEO === $this->$field_has_video) {
-            $featured_data['video_src'] = $this->$field_video_src;
-        }
-
-        if (self::GALLERY_UPLOAD_VIDEO === $this->$field_has_video) {
-            $featured_data['video_src'] = wp_get_attachment_url($this->$field_video_attachment_id);
-        }
 
         if (self::IS_CUSTOM_LINK === $this->$field_button_action) {
             $featured_data['button']['link'] = $this->$field_button_custom_link;
@@ -343,6 +343,36 @@ class LandingPage extends \TimberPost
                     $featured_data['button']['link'] = $page->link();
                     $featured_data['button']['title'] = $this->$field_button_title;
                 }
+            }
+        }
+
+        $featured_data['slides'] = array();
+
+        if ($featured_slides_group) {
+            foreach ($featured_slides_group as $item) {
+                $instance = array();
+
+                $image_attachment_id = $item[$field_image_attachment_id];
+                if ($image_attachment_id) {
+                    if (is_array($image_attachment_id)) {
+                        $image_attachment_id = array_pop($image_attachment_id);
+                    }
+                    $instance['image'] = new \TimberImage($image_attachment_id);
+                }
+
+                $has_video = $item[$field_has_video];
+                if (is_array($has_video)) {
+                    $has_video = array_shift($has_video);
+                }
+                if (self::GALLERY_LINK_VIDEO === $has_video) {
+                    $instance['video_src'] = $item[$field_video_src];
+                }
+
+                if (self::GALLERY_UPLOAD_VIDEO === $has_video) {
+                    $instance['video_src'] = wp_get_attachment_url($item[$field_video_attachment_id]);
+                }
+
+                $featured_data['slides'][] = $instance;
             }
         }
 

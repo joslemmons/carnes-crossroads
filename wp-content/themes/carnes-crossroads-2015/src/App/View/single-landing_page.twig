@@ -99,30 +99,45 @@ your browser</a> to improve your experience.</p>
     </div>
     
     <div class="featured-content">
-        <div class="container">
-            <div class="row">
-                <div class="col-md-8">
-                    <div class="featured-slider">
-                        <div class="slide">
-                            <img src="{{ post.getFeatured.image.src }}" class="img-responsive"/>
+                <div class="container">
+                    <div class="row">
+                        <div class="col-md-8">
+                            <div class="featured-slider">
+                                {% for slide in post.getFeatured.slides %}
+                                    {% if slide.video_src %}
+                                        <div class="slide">
+                                    <div class="icon-container">
+                                        <a href="{{ slide.video_src|youtubeify }}" class="video-play">
+                                            <div class="icon-play">
+                                                <img src="{{ template_uri }}/img/play-icon.png" alt="Play Video" class="img-responsive"/>
+                                            </div>
+                                            <img src="{{ slide.image.src|resize(765,466) }}" class="img-responsive"/>
+                                        </a>
+                                    </div>
+                                </div>
+                                    {% else %}
+                                        <div class="slide">
+                                            <img src="{{ slide.image.src|resize(765,466) }}" class="img-responsive"/>
+                                </div>
+                                    {% endif %}
+                                {% endfor %}
+                            </div>
                         </div>
-                    </div>
-                </div>
-                <div class="col-md-4">
-                    <div class="content-container">
-                        <h1>{{ post.getFeatured.title }}</h1>
-                        <div class="content">
-                            {{ post.getFeatured.content }}
+                        <div class="col-md-4">
+                            <div class="content-container">
+                                <h1>{{ post.getFeatured.title }}</h1>
+                                <div class="content">
+                                    {{ post.getFeatured.content }}
+                                </div>
+                                {% if post.getFeatured.button and post.getFeatured.button.title %}
+                                <a class="site-btn"
+                                   href="{{ post.getFeatured.button.link }}">{{ post.getFeatured.button.title }}</a>
+                                {% endif %}
+                            </div>
                         </div>
-                        {% if post.getFeatured.button %}
-                            <a class="site-btn"
-                               href="{{ post.getFeatured.button.link }}">{{ post.getFeatured.button.title }}</a>
-                        {% endif %}
                     </div>
                 </div>
             </div>
-        </div>
-    </div>
     
     <div class="secondary-content">
         <div class="container">

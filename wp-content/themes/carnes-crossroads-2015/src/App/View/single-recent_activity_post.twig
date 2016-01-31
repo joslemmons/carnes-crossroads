@@ -1,0 +1,299 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]>
+<html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>
+<html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>
+<html class="no-js lt-ie9"> <![endif]-->
+<!--[if IE 9]>
+<html class="no-js ie9"> <![endif]-->
+<!--[if gt IE 9]><!-->
+<html class="no-js"> <!--<![endif]-->
+    <head>
+        <META HTTP-EQUIV="Pragma" CONTENT="no-cache"/>
+        <META HTTP-EQUIV="Expires" CONTENT="-1"/>
+        <meta charset="utf-8"/>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+        <title>{{ seo_title }}</title>
+        <meta name="description" content="{{ seo_description }}"/>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"/>
+        <link rel="apple-touch-icon-precomposed" href="{{ template_uri }}/img/apple-icon.png"/>
+        <link rel="shortcut icon" href="{{ template_uri }}/img/favicon.ico" sizes="32x32"/>
+
+        {% if typekit_src %}
+        <script src="{{ typekit_src }}"></script>
+        <script>try {
+    Typekit.load({async: true});
+} catch (e) {
+}</script>
+        {% endif %}
+
+
+        {{ wp_head() }}
+
+    </head>
+    <body>
+        <!--[if lt IE 7]>
+<p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade
+your browser</a> to improve your experience.</p>
+<![endif]-->
+
+        {#<!--end header from base-->#}
+
+        <div class="landing-page">
+            <div class="lp-header">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-md-6">
+                            <div class="logo">
+                                <a href="/">
+                                    <img src="{{ template_uri }}/img/daniel-island-charleston-logo.png"/>
+                                </a>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="row">
+                                <div class="col-md-12">
+                                    <div class="contact-info">
+                                        Call Today (843) 971-7100
+                                    </div>
+                                </div>
+                                <div class="row btn-row">
+                                    <div class="col-md-12">
+                                        <a class="lp-btn" href="http://www.danielisland.com">DanielIsland.com</a>
+                                        <a class="lp-btn" href="http://www.danielisland.com/contact/">Contact Us</a>
+                                    </div>
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="header-border"></div>
+
+            <div class="header-content"
+                 style="background: url('{{ post.thumbnail.src }}') 50% 50% no-repeat; background-size: cover;">
+
+                <div class="header-content-container container">
+                    <h1>{{ post.title }}</h1>
+                    <div class="title-line"></div>
+                </div>
+
+            </div>
+
+            <div class="main-content recent-activity">
+                <div class="container">
+                    <div class="row">
+
+                        <div class="col-md-3">
+                            {% if recent_sales_activity_menu.get_items %}
+                            <div class="recent_sales_nav">
+                                <ul>
+                                    <li><a href="/">Home</a></li>
+                                    {% for item in recent_sales_activity_menu.get_items %}
+                                    <li><a href="{{ item.link }}">{{ item.title }}</a></li>
+                                    {% endfor %}
+                                </ul>
+                                {#<div class="sidebar-text">#}
+                                  {#  Take a look at Daniel Island Real Estate&rsquo;s latest property&nbsp;offerings. #}
+                                {#</div>#}
+                                {#<a class="site-btn acct-btn" href="/real-estate/home-finder/featured-listings/">Homefinder</a>#}
+                            </div>
+                            {% endif %}
+                        </div>
+                        <div class="col-md-9">
+                            <!--
+<div class="main-content-image">
+<img src="http://daniel-island.danielle.dev/wp-content/uploads/2015/12/sales-team.jpg" class="img-responsive">
+</div>
+-->
+                            {{ post.content }}
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="horizontal-list-content recent-activity-content">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-md-12">
+                            <div class="child-title">
+                                <h3>Recently Listed</h3>
+                            </div>
+                            <div class="divider"></div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        {% for property in post.getRecentlyListedProperties %}
+                        <div class="col-md-3 col-horizontal">
+                            <div class="image">
+
+                                {% set featuredImageSrc = template_uri~'/img/listing-no-image.jpg' %}
+                                {% if property.getFeaturedImageSrc %}
+                                {% set featuredImageSrc = property.getFeaturedImageSrc %}
+                                {% endif %}
+                                <img src="{{ featuredImageSrc|resize(720,573) }}"
+                                     class="img-responsive">
+                            </div>
+                            <div class="title">
+                                {{ property.getAddress }}
+                            </div>
+                            <div class="details">
+                                <div class="neighborhood">{{ property.getPropertyType }}{% if property.getPropertyType and property.getNeighborhood %} | {% endif %}{{ property.getNeighborhood }}</div>
+                                <div class="details">
+                                    {% if property.getBedroomCount or property.getFullBathroomCount or property.getHalfBathroomCount %}
+                                    <div class="specs">{% if property.getBedroomCount %}{{ property.getBedroomCount }} BR /{% endif %}
+                                        {% if property.getFullBathroomCount %}{{ property.getFullBathroomCount }} Full Bath {% if property.getHalfBathroomCount %}/{% endif %}{% endif %}{% if property.getHalfBathroomCount %}{{ property.getHalfBathroomCount }}  Half Bath{% endif %}
+                                    </div>
+                                    {% endif %}
+                                    {% set numDecimalPlaces = 0 %}
+                                    {% if property.getPropertyType == 'Homesite' %}
+                                    {% set numDecimalPlaces = 2 %}
+                                    {% endif %}
+                                    <div class="square-footage">{{ property.getTotalAreaSquareFootage|number_format(numDecimalPlaces) }} {{ property.getTotalAreaSquareFootageUnitOfMeasurement }}</div>
+                                    <div class="price">${{ property.getPurchaseListPrice|number_format }}</div>
+                                </div>
+                            </div>
+                            <a class="site-btn" href="{{ property.link }}">
+                                View Listing
+                            </a>
+                        </div>
+                        {% endfor %}
+                    </div>
+                </div>
+            </div>
+
+            <div class="horizontal-list-content recent-activity-content">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-md-12">
+                            <div class="child-title">
+                                <h3>Recently Sold</h3>
+                            </div>
+                            <div class="divider"></div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        {% for property in post.getRecentlySoldProperties %}
+                        <div class="col-md-3 col-horizontal">
+                            <div class="image">
+                                <div class="ribbon"></div>
+                                {% set featuredImageSrc = template_uri~'/img/listing-no-image.jpg' %}
+                                {% if property.getFeaturedImageSrc %}
+                                {% set featuredImageSrc = property.getFeaturedImageSrc %}
+                                {% endif %}
+                                <img src="{{ featuredImageSrc|resize(720,573) }}"
+                                     class="img-responsive">
+                            </div>
+                            <div class="title">
+                                {{ property.getAddress }}
+                            </div>
+                            <div class="details">
+                                <div class="neighborhood">{{ property.getPropertyType }}{% if property.getPropertyType and property.getNeighborhood %} | {% endif %}{{ property.getNeighborhood }}</div>
+                                <div class="details">
+                                    {% if property.getBedroomCount or property.getFullBathroomCount or property.getHalfBathroomCount %}
+                                    <div class="specs">{% if property.getBedroomCount %}{{ property.getBedroomCount }} BR /{% endif %}
+                                        {% if property.getFullBathroomCount %}{{ property.getFullBathroomCount }} Full Bath {% if property.getHalfBathroomCount %}/{% endif %}{% endif %}{% if property.getHalfBathroomCount %}{{ property.getHalfBathroomCount }}  Half Bath{% endif %}
+                                    </div>
+                                    {% endif %}
+                                    {% set numDecimalPlaces = 0 %}
+                                    {% if property.getPropertyType == 'Homesite' %}
+                                    {% set numDecimalPlaces = 2 %}
+                                    {% endif %}
+                                    <div class="square-footage">{{ property.getTotalAreaSquareFootage|number_format(numDecimalPlaces) }} {{ property.getTotalAreaSquareFootageUnitOfMeasurement }}</div>
+                                    <div class="price">${{ property.getPurchaseListPrice|number_format }}</div>
+                                </div>
+                            </div>
+                        </div>
+                        {% endfor %}
+                    </div>
+                </div>
+            </div>
+
+            <div class="footer-content">
+                <div class="container-fluid visible-lg visible-md bg-container">
+                    <div class="row">
+                        <div class="left-col-bg col-md-6 match-height"
+                             style="background: url('{{ post.getFooter.image.src }}') 50% 50% no-repeat; background-size: cover;"></div>
+                        <div class="right-col-bg col-md-6 match-height"></div>
+                    </div>
+                </div>
+                <div class="container footer-container">
+                    <div class="row">
+                        <div class="left-col-text col-md-6 match-height">
+                            <div class="footer-content">
+                                <img src="{{ template_uri }}/img/daniel-island-real-estate-logo.png" alt="Daniel Island Real Estate"/>
+                            </div>
+                        </div>
+                        <div class="right-col-text col-md-6 match-height">
+                            <div class="footer-content">
+                                <div class="title">{{ post.getFooter.title }}</div> 
+                                <div class="content">{{ post.getFooter.content }}</div>
+                                <div class="lp-form">
+                                    {{ function('gravity_form', post.getFooter.gravity_form_id, false, false) }}
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="page-disclaimer">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-xs-12">
+                            <p>Obtain Property Report required by Federal Law and read before signing anything. No Federal Agency has judged the merits or value if any of this property. Equal Housing Opportunity. Renderings are representative and may differ from actual construction. Amenities described herein are based on current development planning and are subject to change without notice. Prices and availability subject to change. Rick Vale – Broker in Charge.
+                                &copy; 2016 Daniel Island Real Estate.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        {#<!--start footer from base-->#}
+
+        {{ wp_footer() }}
+
+        {% if use_ga %}
+        <script>
+            (function (i, s, o, g, r, a, m) {
+                i['GoogleAnalyticsObject'] = r;
+                i[r] = i[r] || function () {
+                    (i[r].q = i[r].q || []).push(arguments)
+                }, i[r].l = 1 * new Date();
+                a = s.createElement(o),
+                    m = s.getElementsByTagName(o)[0];
+                a.async = 1;
+                a.src = g;
+                m.parentNode.insertBefore(a, m)
+            })(window, document, 'script', '//www.google-analytics.com/analytics.js', 'ga');
+
+            ga('create', '{{ ga_code }}', 'auto');
+            ga('send', 'pageview');
+        </script>
+        {% endif %}
+
+        {% if use_crazyegg %}
+        <script>
+            setTimeout(function () {
+                var a = document.createElement("script");
+                var b = document.getElementsByTagName("script")[0];
+                a.src = document.location.protocol + "//script.crazyegg.com/pages/scripts/0018/5125.js?" + Math.floor(new Date().getTime() / 3600000);
+                a.async = true;
+                a.type = "text/javascript";
+                b.parentNode.insertBefore(a, b)
+            }, 1);
+        </script>
+        {% endif %}
+
+        <!--
+{% if add_this_src %}
+<script type="text/javascript"
+src="{{ add_this_src }}"
+async="async"></script>
+{% endif %}
+-->
+
+    </body>
+</html>

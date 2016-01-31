@@ -9,6 +9,7 @@ class Result
     /* @var $paginator Paginator */
     public $paginator;
     public $items;
+    public $mlsPage;
 
     /**
      * @param $total
@@ -26,6 +27,5 @@ class Result
 
         return $instance;
     }
-
 
 }

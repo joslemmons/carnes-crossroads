@@ -1,6 +1,7 @@
 <?php namespace HomeFinder\Model;
 
 use App\Model\Builder;
+use App\Model\RealEstateAgent;
 use App\Model\Twig;
 use HomeFinder\Request\MLS;
 use HomeFinder\Request\PropertyBase;
@@ -43,6 +44,10 @@ class Property
     public $address_street;
     public $address_city;
     public $address_zip;
+    public $listing_office_name;
+    public $listing_office_id;
+    public $listing_agent_id;
+    public $sales_agent_id;
 
     public static function withPropertyBaseListing(PropertyBaseListing $pb_base_listing)
     {
@@ -53,7 +58,7 @@ class Property
         $instance->unit_type = (empty($pb_base_listing->pb__UnitType__c)) ? 'Homesite' : $pb_base_listing->pb__UnitType__c;
         $instance->item_type = $pb_base_listing->pb__ItemType__c;
         $instance->is_listed = $pb_base_listing->pb__IsListed__c;
-        $instance->listing_date = $pb_base_listing->Listing_Date__c;
+        $instance->listing_date = (empty($pb_base_listing->Listing_Date__c)) ? '' : $pb_base_listing->Listing_Date__c;
         $instance->builder_name = $pb_base_listing->Builder_Name__C;
         $instance->builder_website = $pb_base_listing->Builder_Name_Website__c;
         $instance->resale = $pb_base_listing->Resale__c;
@@ -78,10 +83,33 @@ class Property
         $instance->assets = $pb_base_listing->asset;
         $instance->last_modified_date = $pb_base_listing->LastModifiedDate;
         $instance->X3D_tour_link = $pb_base_listing->X3D_Tours__c;
+        $instance->listing_agent_id = (empty($pb_base_listing->Listing_Agent__c)) ? '' : $pb_base_listing->Listing_Agent__c;
+        $instance->sales_agent_id = (empty($pb_base_listing->pb__SalesAgentId__c)) ? '' : $pb_base_listing->pb__SalesAgentId__c;
 
         SEO::addProperty($instance);
 
         return $instance;
+    }
+
+    public function getListingAgentId()
+    {
+        return $this->listing_agent_id;
+    }
+
+    /**
+     * @return RealEstateAgent|null
+     */
+    public function getRealEstateAgent()
+    {
+        $id = $this->listing_agent_id;
+        $agent = RealEstateAgent::withPropertyBaseListingAgentId($id);
+
+        return $agent;
+    }
+
+    public function getSalesAgentId()
+    {
+        return $this->sales_agent_id;
     }
 
     public function getPropertyType()
@@ -113,7 +141,7 @@ class Property
         $instance->half_bathrooms = $mls_listing->baths_half;
         $instance->is_for_sale = true;
         $instance->is_for_lease = false;
-        $instance->project_name = $mls_listing->subdivision;
+        $instance->project_name = $mls_listing->z_textsearch_neighborhood;
         $instance->address_web = sprintf('%s %s %s', $mls_listing->street_num, $mls_listing->street_name, $mls_listing->street_suffix);
         $instance->purchase_list_price = $mls_listing->list_price;
         $instance->last_purchase_price = $mls_listing->old_price;
@@ -126,6 +154,8 @@ class Property
         $instance->assets = explode(',', $mls_listing->photo_filenames);
         $instance->last_modified_date = $mls_listing->date_updated;
         $instance->X3D_tour_link = $mls_listing->un_branded_virtual_tour;
+        $instance->listing_office_id = $mls_listing->listing_office_short_id;
+        $instance->listing_office_name = $mls_listing->listing_office_name;
 
         // do some data finagling to match how pbase works
 
@@ -196,8 +226,10 @@ class Property
     public function getFeaturedImageSrc()
     {
         if ($this->isFromPropertyBase()) {
-            $assets = $this->assets;
-            $featured_image = array_shift($assets);
+            $featured_image = $this->assets;
+            if (is_array($featured_image) && !empty($featured_image) && isset($featured_image['id']) === false) {
+                $featured_image = array_shift($featured_image);
+            }
 
             if (isset($featured_image['midresUrl'])) {
                 return $featured_image['midresUrl'];
@@ -209,6 +241,8 @@ class Property
                 return array_shift($assets);
             }
         }
+
+        return '';
     }
 
     /**
@@ -265,16 +299,6 @@ class Property
         return $floor_plan_document_link;
     }
 
-    public function getAddress()
-    {
-        return $this->address_web;
-    }
-
-    public function getNeighborhood()
-    {
-        return $this->project_name;
-    }
-
     public function getBuilderName()
     {
         // for some reason the builder name is in builder website not builder name...
@@ -286,8 +310,22 @@ class Property
         return Builder::withName($this->getBuilderName());
     }
 
+    public function getAddress()
+    {
+        return $this->address_web;
+    }
+
+    public function getNeighborhood()
+    {
+        return $this->project_name;
+    }
+
     public function getFullBathroomCount()
     {
+        if (is_array($this->full_bathrooms) && empty($this->full_bathrooms)) {
+            return '0';
+        }
+
         return $this->full_bathrooms;
     }
 
@@ -298,6 +336,10 @@ class Property
 
     public function getBedroomCount()
     {
+        if (is_array($this->unit_bedrooms) && empty($this->unit_bedrooms)) {
+            return '0';
+        }
+
         return $this->unit_bedrooms;
     }
 
@@ -467,9 +509,14 @@ class Property
         return '';
     }
 
-    public function getIMapToolTip()
+    public function getFriendlyName()
     {
-        return '<div>' . $this->address_web . ' <a href="' . $this->link() . '" class="showProperty" data-property-id="' . $this->getId() . '" data-property-address="' . $this->getAddress() . '">Link</a></div>';
+        return sprintf('%s, %s Bedrooms, %s Full Bathrooms, $%s',
+            $this->getAddress(),
+            $this->getBedroomCount(),
+            $this->getFullBathroomCount(),
+            number_format($this->getPurchaseListPrice())
+        );
     }
 
 }

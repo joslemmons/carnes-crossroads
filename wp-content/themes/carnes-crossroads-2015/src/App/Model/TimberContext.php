@@ -81,6 +81,7 @@ class TimberContext
         $data['footer_menu'] = new \TimberMenu('Footer Menu');
         $data['home_finder_menu'] = new \TimberMenu('Home Finder Menu');
         $data['account_menu'] = new \TimberMenu('Account Menu');
+        $data['recent_sales_activity_menu'] = new \TimberMenu('Recent Sales Activity Menu');
 
         return $data;
     }
@@ -94,6 +95,7 @@ class TimberContext
         $data['ga_code'] = Analytics::getGoogleAnalyticsCode();
         $data['use_crazyegg'] = Analytics::shouldIncludeCrazyEgg();
         $data['add_this_src'] = Config::getAddThisSrc();
+        $data['facebook_app_id'] = Config::getFacebookAppId();
 
         return $data;
     }

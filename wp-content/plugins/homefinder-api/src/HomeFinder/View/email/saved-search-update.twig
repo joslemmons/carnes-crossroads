@@ -1,0 +1,11 @@
+<h3>{{ total }} new result{% if total > 1 %}s{% endif %}</h3>
+<p><a href="{{ filter.link }}">{{ filter.getFriendlyName }}</a></p>
+<ul>
+    {% for property in properties %}
+        <li>{{ property.getAddress }}</li>
+    {% endfor %}
+</ul>
+
+<p>
+    <a href="{{ filter.link }}">View Updates on Daniel Island website</a>
+</p>

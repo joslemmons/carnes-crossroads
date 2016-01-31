@@ -2,12 +2,11 @@ jQuery(function ($) {
     //$('.dropdown-toggle').dropdown();
 
     //vimeo player
-    jQuery('cn-load-videos').ready(function($) {
         $(document).on('click', '.video-play', function (e) {
             e.preventDefault();
             createPopup($(this), " ");
+            return false;
         });
-    });
 
     //Carousels - bxslider
     $.each($('div.slider-lg'), function (i, el) {
@@ -189,7 +188,13 @@ jQuery(function ($) {
                 email: email
             },
             error: function (data) {
-                $error.text(data.rsp);
+                if (typeof data.responseJSON !== 'undefined') {
+                    switch (data.responseJSON.status) {
+                        case (500) :
+                        default:
+                            $error.text('Failed to login or create account. Please try again. If it still fails, go to the contact page and let us know. Thanks!');
+                    }
+                }
                 $error.show();
                 $button.text(buttonOriginalText);
                 $button.prop('disabled', false);
@@ -200,7 +205,7 @@ jQuery(function ($) {
                 loadAccountContentInModal();
 
                 // if the page is HomeFinder, then reload so all the account functionality works
-                if (typeof CXG !== 'undefined' && CXG.isHomeFinderPage !== 'undefined' && CXG.isHomeFinderPage === true) {
+                if (typeof DIG !== 'undefined' && DIG.isHomeFinderPage !== 'undefined' && DIG.isHomeFinderPage === true) {
                     $('#modal-account').on('hide.bs.modal', function () {
                         location.reload();
                     });
