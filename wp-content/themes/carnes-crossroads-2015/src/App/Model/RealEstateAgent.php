@@ -117,13 +117,11 @@ class RealEstateAgent extends \TimberPost
         ), get_class());
     }
 
-    public function getGallery()
+    public function getGalleryImages()
     {
         $data = array();
 
-        $data[] = array(
-            'image' => $this->thumbnail()
-        );
+        $data[] = $this->thumbnail();
 
         return $data;
     }
@@ -136,17 +134,15 @@ class RealEstateAgent extends \TimberPost
     /**
      * @return array
      */
-    public function getButtons()
+    public function getButton()
     {
         $field = self::$field_listing_agent_property_base_id;
         $listing_agent_id = $this->$field;
 
         return array(
-            'button' => array(
-                'action' => 'custom',
-                'title' => 'View Listings',
-                'custom_link' => home_url() . '/real-estate/home-finder/search-listings/?listingAgents[]=' . $listing_agent_id
-            )
+            'action' => 'custom',
+            'title' => 'View Listings',
+            'custom_link' => home_url() . '/home-finder/search-listings/?listingAgents[]=' . $listing_agent_id
         );
     }
 }

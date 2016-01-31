@@ -305,4 +305,9 @@ class Page extends \TimberPost
         }
     }
 
+    public function isSalesTeamPage()
+    {
+        return ($this->slug === 'sales-team');
+    }
+
 }

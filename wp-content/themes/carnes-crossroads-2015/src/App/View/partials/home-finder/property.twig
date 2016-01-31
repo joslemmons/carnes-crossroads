@@ -154,6 +154,12 @@
         
     </div>
 
+    {% if property.getRealEstateAgent %}
+        <div class="listing-agent">
+            Listing Agent: <a href="{{ property.getRealEstateAgent.link }}">{{ property.getRealEstateAgent.title }}</a>
+        </div>
+    {% endif %}
+
     <div class="listing-details">
         {{ property.getDescription }}
     </div>

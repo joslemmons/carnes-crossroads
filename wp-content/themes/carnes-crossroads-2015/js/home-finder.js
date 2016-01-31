@@ -225,17 +225,17 @@ jQuery(function ($) {
         }
 
         var filters = {
-            propertyTypes: getFilterPropertyTypes(),
-            neighborhoods: getFilterNeighborhoods(),
+            //propertyTypes: getFilterPropertyTypes(),
+            //neighborhoods: getFilterNeighborhoods(),
             prices: getFilterPrice(),
             bedrooms: getFilterBedrooms(),
             bathrooms: getFilterBathrooms(),
-            shouldSearchMLS: getShouldSearchMLS(),
+            //shouldSearchMLS: getShouldSearchMLS(),
             searchAddress: getSearchAddress(),
-            lastUpdate: getLastUpdate(),
-            squareFootage: getFilterSquareFootage(),
-            homeFeatures: getFilterHomeFeatures(),
-            views: getFilterViews(),
+            //lastUpdate: getLastUpdate(),
+            //squareFootage: getFilterSquareFootage(),
+            //homeFeatures: getFilterHomeFeatures(),
+            //views: getFilterViews(),
             includePlans: getShouldIncludePlans(),
             builders: getBuilders()
         };
@@ -283,8 +283,8 @@ jQuery(function ($) {
         $.get(
             '/api/home-finder/search',
             {
-                propertyTypes: filters.propertyTypes,
-                neighborhoods: filters.neighborhoods,
+                //propertyTypes: filters.propertyTypes,
+                //neighborhoods: filters.neighborhoods,
                 prices: filters.prices,
                 bedrooms: filters.bedrooms,
                 bathrooms: filters.bathrooms,

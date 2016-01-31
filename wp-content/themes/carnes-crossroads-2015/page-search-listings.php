@@ -33,7 +33,7 @@ $context = Timber::get_context();
 $per_page = \HomeFinder\Model\HomeFinder::LISTINGS_PER_PAGE;
 $page = (isset($params['num']) && false !== filter_var($params['num'], FILTER_VALIDATE_INT)) ? (int)$params['num'] : 1;
 
-$filters = HomeFinderFilters::withGETParams();
+$filters = HomeFinderFilters::withREQUESTParams();
 
 /* @var $result Result */
 $result = \HomeFinder\Model\HomeFinder::getProperties($filters, $per_page, $page);

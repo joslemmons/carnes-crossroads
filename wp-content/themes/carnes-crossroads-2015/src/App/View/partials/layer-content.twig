@@ -13,6 +13,20 @@
         {{ child_page.content }}
     </p>
 {% endif %}
+{% if child_page.isRealEstateAgent %}
+    {% for contact in child_page.getContacts %}
+        <div class="agent-contact">
+            <div class="item"><strong>Name: </strong>{{ contact.name }}</div>
+            <div class="item"><strong>Office Phone: </strong>{{ contact.office_phone }}</div>
+            <div class="item"><strong>Mobile Phone: </strong>{{ contact.mobile_phone }}</div>
+            <div class="item"><strong>Email: </strong><a href="mailto:{{ contact.email }}">{{ contact.email }}</a></div>
+        </div>
+    {% endfor %}
+{% endif %}
 {% if shouldLinkToNewPage or child_page.getButton %}
+    {% if child_page.getButton and child_page.isRealEstateAgent %}
+        <a class="btn btn-green-small" href="{{ child_page.getButton.custom_link }}">{{ child_page.getButton.title }}</a>
+    {% else %}
     <a class="btn btn-green-small" href="{{ child_page.link }}">Learn More</a>
+    {% endif %}
 {% endif %}
