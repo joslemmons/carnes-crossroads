@@ -71,7 +71,7 @@ $config_options = array(
         ),
         'facebook' => array(
             'default_username' => 'carnescrossroads',
-            'app_id' => '1670472393221980'
+            'app_id' => '962142577156888'
         ),
         'youtube' => array(
             'default_username' => 'carnesxroads'
