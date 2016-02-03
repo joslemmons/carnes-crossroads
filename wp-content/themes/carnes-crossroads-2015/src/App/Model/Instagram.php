@@ -400,7 +400,7 @@ class Instagram extends \TimberPost
 
     public static function getRecentByUser($user_id, $count = 10)
     {
-        $fetch_url = "https://api.instagram.com/v1/users/" . $user_id . "/media/recent/?access_token=" . self::getAccessToken();
+        $fetch_url = "https://api.instagram.com/v1/users/self/media/recent/?access_token=" . self::getAccessToken();
 
         $result = Helper::fetchData($fetch_url);
 
