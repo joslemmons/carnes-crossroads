@@ -77,6 +77,10 @@ $navbar-offset: 135px;
         text-align: left;
         overflow: hidden;
         background: url(./img/bg-hero-home.jpg) no-repeat center center / cover;
+
+        @media (max-width: 1150px) {
+            margin-top: 120px;
+        }
     }
 
     &__page {
@@ -88,6 +92,10 @@ $navbar-offset: 135px;
         background-position: center center;
         background-repeat: no-repeat;
         background-size: cover;
+
+        @media (max-width: 1150px) {
+            margin-top: 120px;
+        }
     }
 
     &__article {
@@ -99,6 +107,10 @@ $navbar-offset: 135px;
         background-position: bottom center;
         background-repeat: no-repeat;
         background-size: cover;
+
+        @media (max-width: 1150px) {
+            margin-top: 120px;
+        }
     }
 }
 
@@ -268,6 +280,11 @@ $navbar-offset: 135px;
 
     @media (min-width: 1675px) {
         min-height: 160px;
+    }
+
+    @media (max-width: 1150px) {
+        padding: 25px 15px 10px;
+        min-width: 250px;
     }
 
     a, a h3 {

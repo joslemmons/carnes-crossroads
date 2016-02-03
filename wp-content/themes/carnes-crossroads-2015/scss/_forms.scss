@@ -189,6 +189,11 @@
     font-family: $font-sans !important;
     font-weight: $weight-regular !important;
     font-size: 1rem !important;
+
+    @media (max-width: 1150px) {
+        font-size: 0.9rem !important;
+        margin-top: 5px !important;
+    }
 }
 
 .gform_wrapper .gform_footer {
@@ -223,6 +228,10 @@
         background-color: darken($cc-green, 2);
         border: 1px solid darken($cc-green, 10);
         outline: 5px solid darken($cc-green, 2);;
+    }
+
+    @media (max-width: 1150px) {
+        left: 74%;
     }
 }
 
