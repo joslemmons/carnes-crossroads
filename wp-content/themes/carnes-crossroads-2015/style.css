@@ -6312,3 +6312,56 @@ span.tel {
   @media (max-width: 991px) {
     .landing-page .content-container .content {
       font-size: 15px; } }
+
+.cx-logo {
+  margin: 10px 0 45px;
+  padding-right: 15px; }
+
+.print-contact {
+  margin: 0 5px; }
+  .print-contact p {
+    font-family: "proxima-nova", sans-serif, sans-serif;
+    font-size: 0.95rem;
+    line-height: 1.7; }
+  .print-contact .title {
+    display: block;
+    margin-top: 40px;
+    font-family: "minion-pro", serif, serif;
+    font-weight: 700; }
+
+.listing-image {
+  margin: 10px 0 15px; }
+.listing-address {
+  font-family: "baskerville-urw", serif;
+  font-size: 1.75rem;
+  letter-spacing: 0.5px; }
+.listing-price {
+  display: inline-block;
+  margin: 5px 10px 8px 0;
+  font-family: "Oswald", sans-serif;
+  font-size: 1.35rem;
+  letter-spacing: 0.5px; }
+.listing-specs {
+  display: inline-block;
+  font-family: "proxima-nova", sans-serif, sans-serif;
+  font-size: 1.15rem;
+  text-transform: uppercase;
+  letter-spacing: 0.5px; }
+.listing-neighborhood {
+  display: block;
+  margin-bottom: 25px;
+  font-family: "Oswald", sans-serif;
+  font-size: 1rem;
+  text-transform: uppercase; }
+  .listing-neighborhood .item-padding {
+    display: inline-block;
+    margin: 0 15px; }
+    .listing-neighborhood .item-padding:first-child {
+      margin-left: 0; }
+.listing-details {
+  margin-bottom: 55px;
+  font-family: "proxima-nova", sans-serif, sans-serif;
+  font-size: 0.9rem;
+  letter-spacing: 0.5px; }
+  .listing-details li {
+    margin-bottom: 5px; }
