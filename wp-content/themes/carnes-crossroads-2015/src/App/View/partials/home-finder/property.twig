@@ -49,7 +49,7 @@
         <div class="share action-link">
             {% set tweet_share = property.getFriendlyName~' on @carnesxroads '~property.link|url_encode %}
             {% set email_subject_share = '[Carnes Crossroads Real Estate] '~property.getAddress|url_encode %}
-            {% set email_body_share = property.getFriendlyName~' '~property.link|url_encode %}
+            {% set email_body_share = 'I thought you\'d be interested in this property at Carnes Crossroads: '~property.getFriendlyName~' '~property.link|url_encode %}
             {% set facebook_app_id = function('\\App\\Model\\Config::getFacebookAppId') %}
             {% set domain = property.link|url_encode %}
             {% set facebook_share_name = property.getAddress~' on Carnes Crossroads Real Estate'|url_encode %}
@@ -133,8 +133,7 @@
 
     <div class="listing-neighborhood">
         <div class="item-padding">
-            <a href="#" class="filterByPropertyType"
-               data-property-type="{{ property.getPropertyType }}">{{ property.getPropertyType }}</a></div>{% if property.getPropertyType and property.getNeighborhood %} | {% endif %}
+            {{ property.getPropertyType }}</div>{% if property.getPropertyType and property.getNeighborhood %} | {% endif %}
         <div class="item-padding"><a href="/homes/builders/#{{ property.getBuilder.title|slugify }}">{{ property.getBuilder.title}}</a></div>{% if property.getUnitView %} | <div class="item-padding">{{ property.getUnitView }}</div>{% endif %}
     </div>
 
