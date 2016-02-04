@@ -46,8 +46,8 @@
             </div>
             <div class="col-xs-12 col-md-4">
                 {% for item in page.getTopFeaturedSecondaryItems %}
-                    <div class="block--small" {% if item.video_src %}data-video-src="{{ item.video_src }}"{% endif %}
-                         style="background-image: url('{{ item.image.get_src }}');">
+                    <div class="block--small{% if item.video_src %} video-play{% endif %}" {% if item.video_src %}data-video-src="{{ item.video_src }}"{% endif %}
+                         style="background-image: url('{{ item.image.get_src }}');" {% if item.video_src %}href="{{ item.video_src|youtubeify }}"{% endif %}>
                     <div class="block-tab--bottom-right">
                         <h3>{{ item.title }}</h3>
                         <p>{{ item.subtitle }}</p>
