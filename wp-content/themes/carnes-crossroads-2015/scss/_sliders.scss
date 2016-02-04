@@ -122,17 +122,22 @@
 .slider-sm {
     &__nav {
         position: absolute;
-        bottom: 7px;
-        right: 15px;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        min-height: 50px;
+        background-color: $cc-green;
         z-index: 100;
+
+        span {
+            position: relative;
+            float: right;
+        }
     }
 
     &__item {
         position: relative;
-        height: 350px;
-        background-repeat: no-repeat;
-        background-position: center center;
-        background-size: cover;
+        height: 400px;
     }
 
     &__caption {
@@ -141,6 +146,7 @@
         bottom: 0;
         left: 0;
         right: 0;
+        min-height: 50px;
         background-color: $cc-green;
 
         span {
@@ -160,7 +166,7 @@
 .slick-prev,
 .slick-next {
     position: absolute;
-    bottom: 13px;
+    bottom: 10px;
     width: 30px;
     height: 30px;
     cursor: pointer;

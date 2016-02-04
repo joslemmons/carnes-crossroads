@@ -55,7 +55,7 @@ h1, h2, h3, h4, h5, h6 {
 h1 {
     font-family: $font-serif;
     font-weight: $weight-regular;
-    font-size: 6rem;
+    font-size: 5.9rem;
     line-height: 1;
     text-transform: none;
     color: $white;
@@ -74,7 +74,7 @@ h2 {
 h3 {
     font-family: $font-serif;
     font-weight: $weight-regular;
-    font-size: 1.65rem;
+    font-size: 1.5rem;
     line-height: 1;
     text-transform: none;
     color: $cc-brown;
@@ -88,7 +88,7 @@ h4 {
     margin-bottom: 20px;
     font-family: $font-sans;
     font-weight: $weight-bold;
-    font-size: 1.4rem;
+    font-size: 1.3rem;
     letter-spacing: 1.5px;
     line-height: 1;
     text-transform: uppercase;
@@ -96,7 +96,7 @@ h4 {
 }
 
 h5 {
-    font-size: 1.5em;
+    font-size: 1.4em;
 }
 
 h6 {

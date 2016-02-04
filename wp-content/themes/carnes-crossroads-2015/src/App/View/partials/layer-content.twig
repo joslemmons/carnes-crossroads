@@ -6,7 +6,7 @@
     <p>{{ child_page.content|slice(firstParagraph|length - expandLink|length) }}</p></span>
 {% elseif child_page.content|length >= 700 %}
     {% set shouldLinkToNewPage = true %}
-    {% set firstParagraph = child_page.content|truncate(70) %}
+    {% set firstParagraph = child_page.content|truncate(60) %}
     {{ firstParagraph }}
 {% else %}
     <p>

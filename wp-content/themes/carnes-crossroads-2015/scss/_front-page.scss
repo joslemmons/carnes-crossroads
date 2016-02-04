@@ -32,9 +32,10 @@
     }
 }
 
-.hero__home .btn-green {
-    padding: 10px 38px;
-    font-size: 1.25rem;
+.hero__home .btn-green,
+.hero__content-wrap--homes .btn-green {
+    padding: 11px 38px;
+    font-size: 1.2rem;
 }
 
 video {
