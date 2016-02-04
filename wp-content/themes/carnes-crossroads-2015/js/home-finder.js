@@ -21,6 +21,9 @@ jQuery(function ($) {
 
             clearFilters();
             $('#filter-searchAddress').val('');
+
+            // auto click the first result
+            $('div.listings-wrapper').find('div.listing').first().trigger('click');
         });
     }
 
@@ -42,6 +45,9 @@ jQuery(function ($) {
 
             clearFilters();
             $('#filter-searchAddress').val('');
+
+            // auto click the first result
+            $('div.listings-wrapper').find('div.listing').first().trigger('click');
         });
     }
 
@@ -63,6 +69,9 @@ jQuery(function ($) {
 
             clearFilters();
             $('#filter-searchAddress').val('');
+
+            // auto click the first result
+            $('div.listings-wrapper').find('div.listing').first().trigger('click');
         });
     }
 
@@ -84,6 +93,9 @@ jQuery(function ($) {
 
             clearFilters();
             $('#filter-searchAddress').val('');
+
+            // auto click the first result
+            $('div.listings-wrapper').find('div.listing').first().trigger('click');
         });
     }
 
@@ -322,6 +334,8 @@ jQuery(function ($) {
 
                 $('div.listings-wrapper').html(html).fadeTo('slow', 1);
 
+                // auto click the first result
+                $('div.listings-wrapper').find('div.listing').first().trigger('click');
             });
     }
 
