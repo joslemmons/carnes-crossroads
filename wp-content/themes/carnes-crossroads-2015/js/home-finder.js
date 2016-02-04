@@ -192,7 +192,7 @@ jQuery(function ($) {
         $('div.listings-wrapper div.loading').remove();
     }
 
-    $('#filter-price,#filter-bedrooms,#filter-bathrooms,#filter-lastUpdate,#filter-sqft').on('change', function () {
+    $('#filter-price,#filter-bedrooms,#filter-bathrooms,#filter-lastUpdate,#filter-sqft,#filter-builders').on('change', function () {
         $('#filter-searchAddress').val('');
         order = 'default';
         performSearch();
