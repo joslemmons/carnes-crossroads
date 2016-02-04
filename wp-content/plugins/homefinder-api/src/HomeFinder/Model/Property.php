@@ -120,6 +120,10 @@ class Property
             return 'Homesite';
         }
 
+        if ($this->unit_type === 'Home') {
+            return 'Single Family Home';
+        }
+
         return $this->unit_type;
     }
 
