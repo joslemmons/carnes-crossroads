@@ -209,7 +209,7 @@ class Property
     {
         $id = $this->getId();
         $address = Twig::slugify($this->getAddress());
-        return home_url() . "/real-estate/home-finder/properties/$address/$id/";
+        return home_url() . "/home-finder/properties/$address/$id/";
     }
 
     public function getLastModifiedDate()
