@@ -37,22 +37,34 @@ class Twig
         return str_replace(array("\r", "\n"), "", $text);
     }
 
+    private static function _getIdOfYouTubeVideoFromURL($url)
+    {
+        $parts = parse_url($url);
+        if (isset($parts['query'])) {
+            parse_str($parts['query'], $qs);
+            if (isset($qs['v'])) {
+                return $qs['v'];
+            } else if (isset($qs['vi'])) {
+                return $qs['vi'];
+            }
+        }
+        if (isset($parts['path'])) {
+            $path = explode('/', trim($parts['path'], '/'));
+            return $path[count($path) - 1];
+        }
+
+        return false;
+    }
+
     public static function youtubeify($url)
     {
-        if (stristr($url, 'embed') !== false) {
+        $id = self::_getIdOfYouTubeVideoFromURL($url);
+
+        if ($id === false) {
             return $url;
         }
 
-        $matches = array();
-        preg_match('/[\\?\\&]v=([^\\?\\&]+)/', $url, $matches);
-
-        if (isset($matches[1]) === false) {
-            return $url;
-        }
-
-        $id = $matches[1];
-
-        return "https://www.youtube.com/embed/$id?rel=0&showinfo=0&color=white&iv_load_policy=3";
+        return 'http://youtube.com/v/' . $id;
     }
 
     public static function slugify($text)

@@ -69,19 +69,25 @@ class FloorPlan
                 }
             }
 
-            if ($filters->getMinPrice() !== false && $filters->getMaxPrice() !== false) {
-            if ($floor_plan->price < $filters->getMinPrice() || $floor_plan->price > $filters->getMaxPrice()) {
-                return false;
-            }
+            $floor_plan_price = preg_replace("/[^0-9]/", "", $floor_plan->price);
+            if ($filters->getMinPrice() !== false) {
+                if ((int)$floor_plan_price < $filters->getMinPrice()) {
+                    return false;
+                }
             }
 
+            if ($filters->getMaxPrice() !== false) {
+                if ((int)$floor_plan_price > $filters->getMaxPrice()) {
+                    return false;
+                }
+            }
 
             if ($filters->getBedrooms() !== false) {
                 $bedrooms = $filters->getBedrooms();
                 $bedrooms = explode(',', $bedrooms);
                 $bedrooms = array_shift($bedrooms);
 
-                if ($floor_plan->bedrooms < $bedrooms) {
+                if ((int)$floor_plan->bedrooms < (int)$bedrooms) {
                     return false;
                 }
             }
@@ -91,7 +97,7 @@ class FloorPlan
                 $bathrooms = $filters->getBathrooms();
                 $bathrooms = explode(',', $bathrooms);
                 $bathrooms = array_shift($bathrooms);
-                if ($floor_plan->full_bathrooms < $bathrooms) {
+                if ((int)$floor_plan->full_bathrooms < (int)$bathrooms) {
                     return false;
                 }
             }

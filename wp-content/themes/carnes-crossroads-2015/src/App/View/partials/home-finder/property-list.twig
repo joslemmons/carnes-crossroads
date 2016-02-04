@@ -52,7 +52,7 @@
     </div>
     {% endif %}
 {% endfor %}
-{% if properties|length == 0 %}
+{% if properties|length == 0 or (properties|length < 3 and total == properties|length) %}
     <div class="end-results">
         End of Results
     </div>

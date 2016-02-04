@@ -67,6 +67,12 @@ class TimberContext
             'video_custom_link' => ContactFooter::$field_featured_link_action_custom_link,
         ));
 
+        if (count($content) > 1) {
+            $content = array(
+                $content[rand(0, count($content) - 1)]
+            );
+        }
+
         $data['footer_gravity_form_id'] = $gravity_form_id;
         $data['footer_form_title'] = $form_title;
         $data['footer_featured_content'] = $content;

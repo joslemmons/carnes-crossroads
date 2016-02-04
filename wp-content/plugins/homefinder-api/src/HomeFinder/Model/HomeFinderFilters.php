@@ -127,7 +127,7 @@ class HomeFinderFilters
         $filters->setNeighborhoods(self::_getFilterFromArrayByKey($data, 'neighborhoods'));
         $filters->setHomeFeatures(self::_getFilterFromArrayByKey($data, 'homeFeatures'));
         $filters->setViews(self::_getFilterFromArrayByKey($data, 'views'));
-        $filters->setBuilders($filters->_rawBuilders);
+        $filters->setBuilders(self::_getFilterFromArrayByKey($data, 'builders'));
 
         $prices = self::_getFilterFromArrayByKey($data, 'prices');
         if (true === is_array($prices)) {
@@ -247,7 +247,7 @@ class HomeFinderFilters
 
     public function getBuilders()
     {
-        if ($this->_builders === '') {
+        if ($this->_builders === '' || empty($this->_builders)) {
             return false;
         }
 
@@ -786,6 +786,10 @@ class HomeFinderFilters
 
             if (false !== $this->getBathrooms()) {
                 $filters['in_Full_Bathrooms__c'] = $this->getBathrooms();
+            }
+
+            if (false !== $this->getBuilders()) {
+                $filters['like_Builder_Name_Website__c'] = str_replace('-', ' ', $this->getBuilders());
             }
 
             if (false !== $this->getListingAgents()) {

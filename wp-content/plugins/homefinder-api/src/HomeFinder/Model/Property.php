@@ -11,6 +11,8 @@ class Property
     /* @var PropertyBaseListing */
     private $_pb_base_listing;
 
+    public $isFloorPlan = false;
+
     public $property_base_id;
     public $unit_view;
     public $unit_type;
@@ -118,6 +120,10 @@ class Property
             return 'Homesite';
         }
 
+        if ($this->unit_type === 'Home') {
+            return 'Single Family Home';
+        }
+
         return $this->unit_type;
     }
 
@@ -207,7 +213,7 @@ class Property
     {
         $id = $this->getId();
         $address = Twig::slugify($this->getAddress());
-        return home_url() . "/real-estate/home-finder/properties/$address/$id/";
+        return home_url() . "/home-finder/properties/$address/$id/";
     }
 
     public function getLastModifiedDate()

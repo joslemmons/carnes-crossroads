@@ -50,6 +50,11 @@ class HomeFinder
     {
         $return = array();
         foreach ($properties as $property) {
+            if ($property->isFloorPlan === true) {
+                $return[] = $property;
+                continue;
+            }
+
             if ($property->isFromPropertyBase()) {
                 $return[] = $property;
                 continue;
@@ -135,7 +140,8 @@ class HomeFinder
                 }
             }
 
-            if (true === $filters->shouldIncludePlans()) {
+            if (true === $filters->shouldIncludePlans() && $page === 1) {
+                // all floor plans are pulled on the first request.
                 $floor_plans = FloorPlan::withFilter($filters);
 
                 if (false !== $floor_plans && is_array($floor_plans) && false === empty($floor_plans)) {

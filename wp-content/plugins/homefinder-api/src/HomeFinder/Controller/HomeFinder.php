@@ -101,6 +101,7 @@ class HomeFinder extends Router
 
         $html = \Timber::compile('partials/home-finder/property-list.twig', array(
             'properties' => $result->items,
+            'total' => $result->total,
             'nextPageUrl' => '/api/home-finder/search/page/' . ($page + 1) . '?' . http_build_query(
                     array_merge(
                         $filters->getRawFilters(),

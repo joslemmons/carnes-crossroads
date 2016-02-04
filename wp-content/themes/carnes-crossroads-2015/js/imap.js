@@ -67,7 +67,7 @@ jQuery(function ($) {
         $('div.listing.active').removeClass('active');
         $('div.listing[data-property-id="' + propertyId + '"]').addClass('active');
 
-        router.navigate('real-estate/home-finder/properties/' + propertyAddress + '/' + propertyId + '/', {trigger: true});
+        router.navigate('home-finder/properties/' + propertyAddress + '/' + propertyId + '/', {trigger: true});
 
         $('#modal-view-on-map').modal('hide');
 
@@ -115,7 +115,7 @@ jQuery(function ($) {
 
     function setMarkers(map, locations) {
         // Add markers to the map
-        var house_image = new google.maps.MarkerImage(DI.templateUri + '/img/imap/icons/house-icon.png',
+        var house_image = new google.maps.MarkerImage(DI.templateUri + '/img/imap/icons/house-icon-2.png',
             // This marker is 20 pixels wide by 32 pixels tall.
             new google.maps.Size(20, 32),
             // The origin for this image is 0,0.
@@ -123,7 +123,7 @@ jQuery(function ($) {
             // The anchor for this image is the base of the flagpole at 0,32.
             new google.maps.Point(5, 20));
 
-        var lot_image = new google.maps.MarkerImage(DI.templateUri + '/img/imap/icons/lot-icon.png',
+        var lot_image = new google.maps.MarkerImage(DI.templateUri + '/img/imap/icons/lot-icon-2.png',
             // This marker is 20 pixels wide by 32 pixels tall.
             new google.maps.Size(20, 32),
             // The origin for this image is 0,0.
@@ -146,6 +146,8 @@ jQuery(function ($) {
             type: 'poly'
         };
 
+        var markers = [];
+
         for (var i = 0; i < locations.length; i++) {
             var location = locations[i];
             var title = location[0];
@@ -163,6 +165,7 @@ jQuery(function ($) {
                     var icon_image = lot_image;
 
                 var marker = createMarker(map, myLatLng, icon_image, shadow, title, zIndex, theLink, html);
+                markers.push(marker);
 
                 //<?php if ( $z_query->query->is_archive ) { ?>
                 //	//use this if you want to only show all the points in the map bounds
@@ -180,6 +183,7 @@ jQuery(function ($) {
                             var icon_image = lot_image;
 
                         var marker = createMarker(map, results[0].geometry.location, icon_image, shadow, title, zIndex, theLink, html);
+                        markers.push(marker);
 
                         //<?php if ( $z_query->query->is_archive ) { ?>
                         //	//use this if you want to only show all the points in the map bounds
@@ -195,6 +199,8 @@ jQuery(function ($) {
             //if (i === locations.length - 1) {
             //    map.panTo(new google.maps.LatLng(location[1], location[2]));
             //}
+
+            return markers;
 
         } // end for
     } // end function setMarkers
@@ -277,13 +283,17 @@ jQuery(function ($) {
             if (map.getZoom() > mapMaxZoom) map.setZoom(mapMaxZoom);
         });
 
-        setMarkers(map, properties);
+        var markers = setMarkers(map, properties);
 
         $("#modal-view-on-map").on("shown.bs.modal", function () {
             google.maps.event.trigger(map, "resize");
 
             if (properties.length === 1) {
                 map.setCenter(new google.maps.LatLng(properties[0][1], properties[0][2]));
+
+                if (markers.length === 1) {
+                    google.maps.event.trigger(markers[0], 'click');
+                }
             }
             else {
                 map.setCenter(new google.maps.LatLng(33.055457, -80.103917));
