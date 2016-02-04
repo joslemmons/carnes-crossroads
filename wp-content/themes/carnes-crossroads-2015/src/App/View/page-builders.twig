@@ -43,7 +43,7 @@
                 </div>
             </div>
             <div class="col-xs-12 col-md-5 col-md-offset-1 text-left">
-                <h4>{{ builder.title }}</h4>
+                <h4 id="{{ builder.title|slugify }}">{{ builder.title }}</h4>
                 {{ builder.content }}
             </div>
         </div>

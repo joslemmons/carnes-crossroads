@@ -135,8 +135,7 @@
         <div class="item-padding">
             <a href="#" class="filterByPropertyType"
                data-property-type="{{ property.getPropertyType }}">{{ property.getPropertyType }}</a></div>{% if property.getPropertyType and property.getNeighborhood %} | {% endif %}
-        <div class="item-padding"><a href="#" class="filterByBuilder"
-                                     data-builder="{{ property.getBuilder.title }}">{{ property.getBuilder.title}}</a></div>{% if property.getUnitView %} | <div class="item-padding">{{ property.getUnitView }}</div>{% endif %}
+        <div class="item-padding"><a href="/homes/builders/#{{ property.getBuilder.title|slugify }}">{{ property.getBuilder.title}}</a></div>{% if property.getUnitView %} | <div class="item-padding">{{ property.getUnitView }}</div>{% endif %}
     </div>
 
     <div class="action-buttons-container">
