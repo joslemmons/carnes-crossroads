@@ -20,5 +20,6 @@ class SEO
             'stylesheet' => apply_filters('wpseo_stylesheet_url', self::getStylesheet()) . "\n",
             'properties' => $properties
         ));
+        exit();
     }
 }
