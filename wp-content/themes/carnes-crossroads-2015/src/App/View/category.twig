@@ -1,7 +1,7 @@
 {% extends 'base.twig' %}
 {% block template %}
 
-<section class="hero__page" style="background-image: url({{ template_uri }}/img/bg-hero-events.jpg)">
+<section class="hero__page" style="background-image: url({{ news_page.thumbnail.src|resize(1500) }})">
     <div class="hero__content-tab-orange">
         <div class="hero__content-inner">
             <h1>News &amp; Events</h1>
