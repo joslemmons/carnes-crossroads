@@ -5,6 +5,7 @@ use App\Model\Config;
 use App\Model\Helper;
 use HomeFinder\Model\HomeFinder;
 use HomeFinder\Model\HomeFinderFilters;
+use HomeFinder\Model\Metric;
 use HomeFinder\Model\Property;
 
 class User extends Router
@@ -127,6 +128,7 @@ class User extends Router
         $user = \HomeFinder\Model\User::getCurrentlyLoggedUser();
         if ($user) {
             $user->saveProperty($property);
+            Metric::trackFavoriteProperty($property);
 
             self::renderJSON(array(
                 'status' => 200
@@ -283,6 +285,45 @@ class User extends Router
             'rsp' => 'OK'
         ), 200);
     }
+
+    public static function routeShareProperty($params = array())
+    {
+        if (Helper::isPost() === false) {
+            self::renderJSON(array(
+                'rsp' => 'Method Not Allowed'
+            ), 405);
+        }
+
+        $property_id = (isset($params['id'])) ? $params['id'] : false;
+        $social_network = (isset($_POST['network'])) ? sanitize_text_field($_POST['network']) : null;
+
+        $allowed_networks = array('facebook', 'twitter', 'email');
+        if ($social_network === null || in_array($social_network, $allowed_networks) === false) {
+            self::renderJSON(array(
+                'rsp' => 'Social Network not allowed'
+            ), 404);
+        }
+
+        $property = \TimberHelper::transient(Config::getKeyPrefix() . 'home_finder_' . $property_id, function () use ($property_id) {
+            $property = Property::withId($property_id);
+
+            return $property;
+        }, 60 * 60 * 3);
+
+        if (false === $property) {
+            self::renderJSON(array(
+                'status' => 404,
+                'rsp' => 'Invalid property id'
+            ), 404);
+        }
+
+        Metric::trackShareProperty($property, $social_network);
+
+        self::renderJSON(array(
+            'rsp' => 'ok'
+        ), 200);
+    }
+
 
 
 }

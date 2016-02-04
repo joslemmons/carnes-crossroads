@@ -368,4 +368,12 @@ class User extends \TimberUser
         );
     }
 
+    /**
+     * @return mixed
+     */
+    public function getEmail()
+    {
+        return $this->user_email;
+    }
+
 }

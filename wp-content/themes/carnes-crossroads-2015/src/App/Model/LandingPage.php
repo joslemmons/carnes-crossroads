@@ -1,6 +1,7 @@
 <?php namespace App\Model;
 
 use Carbon\Carbon;
+use HomeFinder\Model\Metric;
 
 class LandingPage extends \TimberPost
 {
@@ -139,6 +140,7 @@ class LandingPage extends \TimberPost
             if (isset($_POST['lp2pbPostId']) && $_POST['lp2pbPostId'] !== '') {
                 $post_id = filter_var($_POST['lp2pbPostId'], FILTER_VALIDATE_INT);
                 $post_title = get_the_title($post_id);
+                Metric::trackLandingPageFormSubmission($post_title);
             }
 
             $last_name = null;
@@ -471,7 +473,7 @@ class LandingPage extends \TimberPost
                 $instance['image'] = new \TimberImage($image_attachment_id);
             }
 
-            $has_video = $section[$field_has_video];
+            $has_video = (isset($section[$field_has_video])) ? $section[$field_has_video] : false;
             if ($has_video) {
                 if (is_array($has_video)) {
                     $has_video = array_pop($has_video);

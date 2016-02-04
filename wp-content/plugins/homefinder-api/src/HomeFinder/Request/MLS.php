@@ -1,6 +1,7 @@
 <?php namespace HomeFinder\Request;
 
 use Elasticsearch\Common\Exceptions\ClientErrorResponseException;
+use Elasticsearch\Common\Exceptions\Curl\CouldNotConnectToHost;
 use Elasticsearch\Common\Exceptions\NoNodesAvailableException;
 use Elasticsearch\Common\Exceptions\ServerErrorResponseException;
 use Elasticsearch\Common\Exceptions\TransportException;
@@ -43,6 +44,8 @@ class MLS
         } catch (NoNodesAvailableException $ex) {
             $listings = array();
         } catch (TransportException $ex) {
+            $listings = array();
+        } catch (CouldNotConnectToHost $ex) {
             $listings = array();
         }
 
@@ -170,6 +173,8 @@ class MLS
             $listings = array();
         } catch (ServerErrorResponseException $ex) {
             $listings = array();
+        } catch (CouldNotConnectToHost $ex) {
+            $listings = array();
         }
 
         $properties = array();
@@ -253,6 +258,8 @@ class MLS
         } catch (ClientErrorResponseException $ex) {
             $listings = array();
         } catch (ServerErrorResponseException $ex) {
+            $listings = array();
+        } catch (CouldNotConnectToHost $ex) {
             $listings = array();
         }
 

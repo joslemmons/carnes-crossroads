@@ -10,6 +10,7 @@ return array(
     'Psr\\Log\\' => array($vendorDir . '/psr/log'),
     'Pimple' => array($vendorDir . '/pimple/pimple/src'),
     'Mandrill' => array($vendorDir . '/mandrill/mandrill/src'),
+    'KISSmetrics\\' => array($vendorDir . '/kissmetrics/kissmetrics-php/src'),
     'Guzzle\\Tests' => array($vendorDir . '/guzzle/guzzle/tests'),
     'Guzzle' => array($vendorDir . '/guzzle/guzzle/src'),
     'Carbon' => array($vendorDir . '/nesbot/carbon/src'),
