@@ -1,12 +1,10 @@
 <section class="page-content--contact">
     <div class="container">
         <div class="row">
-            {# START CONTACT FORM #}
             <div class="col-xs-12 col-md-8 contact__wrap">
                 <h3>{{ footer_form_title }}</h3>
                 {{ function('gravity_form', footer_gravity_form_id, false, false) }}
             </div>
-            {# END CONTACT FORM #}
             <div class="col-xs-12 col-md-4">
                 {% for item in footer_featured_content %}
                 <div class="block--large" style="background-image: url('{{ item.image.get_src }}');">
