@@ -802,6 +802,26 @@ jQuery(function ($) {
         $('.share-widget').removeClass('open');
     });
 
+    function saveShareMetric(network, property_id) {
+        $.post('/api/home-finder/properties/' + property_id + '/share', {network: network}, function () {
+        });
+    }
+
+    $(document).on('click', 'div.share-icon.fb-icon', function () {
+        var property_id = $(this).parent().parent().attr('data-property-id');
+        saveShareMetric('facebook', property_id);
+    });
+
+    $(document).on('click', 'div.share-icon.twitter-icon', function () {
+        var property_id = $(this).parent().parent().attr('data-property-id');
+        saveShareMetric('twitter', property_id);
+    });
+
+    $(document).on('click', 'div.share-icon.email-icon', function () {
+        var property_id = $(this).parent().parent().attr('data-property-id');
+        saveShareMetric('email', property_id);
+    });
+
     //Multiple Select
     $('#filter-propertyType').multipleSelect({
         placeholder: "Property Type",

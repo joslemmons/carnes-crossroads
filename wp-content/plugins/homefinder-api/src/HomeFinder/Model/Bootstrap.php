@@ -10,6 +10,7 @@ class Bootstrap
         Routes::init();
         SEO::bootstrap();
         User::bootstrap();
+        Metric::bootstrap();
 
         add_filter('timber_locations', function ($loc) {
             $loc[] = dirname(__DIR__) . '/View';

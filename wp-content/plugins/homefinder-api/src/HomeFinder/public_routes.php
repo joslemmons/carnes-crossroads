@@ -17,6 +17,7 @@ Routes::map('/api/home-finder/recent-listings', array('\HomeFinder\Controller\Ho
 Routes::map('/api/home-finder/recently-viewed', array('\HomeFinder\Controller\HomeFinder', 'routeRecentlyViewed'));
 Routes::map('/api/home-finder/properties/:id/save', array('\HomeFinder\Controller\User', 'routeSaveProperty'));
 Routes::map('/api/home-finder/properties/:id/un-save', array('\HomeFinder\Controller\User', 'routeUnSaveProperty'));
+Routes::map('/api/home-finder/properties/:id/share', array('\HomeFinder\Controller\User', 'routeShareProperty'));
 Routes::map('/api/home-finder/save-search', array('\HomeFinder\Controller\User', 'routeSaveSearch'));
 Routes::map('/api/home-finder/un-save-search', array('\HomeFinder\Controller\User', 'routeUnSaveSearch'));
 Routes::map('/api/home-finder/request-showing', array('\HomeFinder\Controller\HomeFinder', 'routeRequestShowing'));

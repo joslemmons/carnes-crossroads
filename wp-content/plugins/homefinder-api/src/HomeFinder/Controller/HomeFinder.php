@@ -5,6 +5,7 @@ use App\Model\Config;
 use App\Model\Helper;
 use App\Model\NewOfferings;
 use HomeFinder\Model\HomeFinderFilters;
+use HomeFinder\Model\Metric;
 use HomeFinder\Model\Property;
 use HomeFinder\Model\Result;
 use HomeFinder\Model\User;
@@ -94,6 +95,7 @@ class HomeFinder extends Router
         }
 
         $filters = HomeFinderFilters::withREQUESTParams();
+        Metric::trackSearch($filters);
 
         /* @var $result Result */
         $result = \HomeFinder\Model\HomeFinder::getProperties($filters, $per_page, $page, $order_by, $order);
@@ -183,6 +185,7 @@ class HomeFinder extends Router
         if (is_user_logged_in()) {
             $user = User::getCurrentlyLoggedUser();
             $user->markPropertyAsViewed($property);
+            Metric::trackPropertyListingView($property);
         }
 
         $html = \Timber::compile('partials/home-finder/property.twig', array(
@@ -434,6 +437,8 @@ class HomeFinder extends Router
             ), 404);
         }
 
+        Metric::trackPrintProperty($property);
+
         \Timber::render('partials/home-finder/print-view-of-property.twig', array(
             'properties' => array($property)
         ));
@@ -445,6 +450,10 @@ class HomeFinder extends Router
         $user = User::getCurrentlyLoggedUser();
         if ($user) {
             $properties = $user->getSavedProperties();
+
+            foreach ($properties as $property) {
+                Metric::trackPrintProperty($property);
+            }
 
             \Timber::render('partials/home-finder/print-view-of-property.twig', array(
                 'properties' => $properties

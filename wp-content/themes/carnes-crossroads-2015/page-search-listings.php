@@ -2,6 +2,7 @@
 
 use App\Model\HomeFinderPage;
 use HomeFinder\Model\HomeFinderFilters;
+use HomeFinder\Model\Metric;
 use HomeFinder\Model\Result;
 
 function _getFilterFromRequestByKey($key)
@@ -34,6 +35,7 @@ $per_page = \HomeFinder\Model\HomeFinder::LISTINGS_PER_PAGE;
 $page = (isset($params['num']) && false !== filter_var($params['num'], FILTER_VALIDATE_INT)) ? (int)$params['num'] : 1;
 
 $filters = HomeFinderFilters::withREQUESTParams();
+Metric::trackSearch($filters);
 
 /* @var $result Result */
 $result = \HomeFinder\Model\HomeFinder::getProperties($filters, $per_page, $page);

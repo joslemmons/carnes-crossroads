@@ -4,8 +4,8 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "a44d22517a939910abea8fe625d9fb80",
-    "content-hash": "aca7821f91134c8a5ec8dbbc147caf7f",
+    "hash": "3a825073a177507b048ea44f7d04366c",
+    "content-hash": "b343fb25e8929dd163e1cfeb11027e66",
     "packages": [
         {
             "name": "elasticsearch/elasticsearch",
@@ -272,16 +272,16 @@
         },
         {
             "name": "guzzlehttp/psr7",
-            "version": "1.2.1",
+            "version": "1.2.2",
             "source": {
                 "type": "git",
                 "url": "https://github.com/guzzle/psr7.git",
-                "reference": "4d0bdbe1206df7440219ce14c972aa57cc5e4982"
+                "reference": "f5d04bdd2881ac89abde1fb78cc234bce24327bb"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/guzzle/psr7/zipball/4d0bdbe1206df7440219ce14c972aa57cc5e4982",
-                "reference": "4d0bdbe1206df7440219ce14c972aa57cc5e4982",
+                "url": "https://api.github.com/repos/guzzle/psr7/zipball/f5d04bdd2881ac89abde1fb78cc234bce24327bb",
+                "reference": "f5d04bdd2881ac89abde1fb78cc234bce24327bb",
                 "shasum": ""
             },
             "require": {
@@ -326,7 +326,52 @@
                 "stream",
                 "uri"
             ],
-            "time": "2015-11-03 01:34:55"
+            "time": "2016-01-23 01:23:02"
+        },
+        {
+            "name": "kissmetrics/kissmetrics-php",
+            "version": "0.2.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/kissmetrics/kissmetrics-php.git",
+                "reference": "fba96966a44f450d10266c1146231adf3523e7d0"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/kissmetrics/kissmetrics-php/zipball/fba96966a44f450d10266c1146231adf3523e7d0",
+                "reference": "fba96966a44f450d10266c1146231adf3523e7d0",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=5.3"
+            },
+            "require-dev": {
+                "phpunit/phpunit": "3.7.*"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-0": {
+                    "KISSmetrics\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Eugen Rochko",
+                    "email": "eugen@zeonfederated.com",
+                    "homepage": "http://zeonfederated.com",
+                    "role": "Developer"
+                }
+            ],
+            "description": "The KISSmetrics API client",
+            "homepage": "https://github.com/kissmetrics/kissmetrics-php",
+            "keywords": [
+                "kissmetrics"
+            ],
+            "time": "2015-09-22 15:58:38"
         },
         {
             "name": "mandrill/mandrill",

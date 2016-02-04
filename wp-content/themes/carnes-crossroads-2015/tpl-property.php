@@ -4,6 +4,7 @@ global $params;
 
 use App\Model\HomeFinderPage;
 use HomeFinder\Model\HomeFinder;
+use HomeFinder\Model\Metric;
 use HomeFinder\Model\Property;
 use HomeFinder\Model\User;
 
@@ -21,6 +22,7 @@ if (false === $property) {
 if (is_user_logged_in()) {
     $user = User::getCurrentlyLoggedUser();
     $user->markPropertyAsViewed($property);
+    Metric::trackPropertyListingView($property);
 }
 
 // If navigating directly to a property, then we'll show featured properties in the list be default
