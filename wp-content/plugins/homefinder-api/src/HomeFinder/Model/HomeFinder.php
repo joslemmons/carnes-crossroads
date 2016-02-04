@@ -50,6 +50,11 @@ class HomeFinder
     {
         $return = array();
         foreach ($properties as $property) {
+            if ($property->isFloorPlan === true) {
+                $return[] = $property;
+                continue;
+            }
+
             if ($property->isFromPropertyBase()) {
                 $return[] = $property;
                 continue;

@@ -11,6 +11,8 @@ class Property
     /* @var PropertyBaseListing */
     private $_pb_base_listing;
 
+    public $isFloorPlan = false;
+
     public $property_base_id;
     public $unit_view;
     public $unit_type;

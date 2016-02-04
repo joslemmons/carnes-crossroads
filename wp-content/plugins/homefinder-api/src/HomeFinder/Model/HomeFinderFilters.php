@@ -247,7 +247,7 @@ class HomeFinderFilters
 
     public function getBuilders()
     {
-        if ($this->_builders === '') {
+        if ($this->_builders === '' || empty($this->_builders)) {
             return false;
         }
 

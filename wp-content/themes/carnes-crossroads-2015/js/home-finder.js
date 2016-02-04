@@ -201,6 +201,10 @@ jQuery(function ($) {
         $('#filter-searchAddress').val('');
         performSearch();
     });
+    $('#filter-includePlans').on('click', function () {
+        $('#filter-searchAddress').val('');
+        performSearch();
+    });
 
     var throttleSearch = _.throttle(function () {
         if ($(this).val().length > 2) {
