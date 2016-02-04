@@ -3640,7 +3640,7 @@ a:focus, a:hover {
   -webkit-appearance: none;
   -moz-appearance: none;
   appearance: none;
-  padding: 12px 28px;
+  padding: 10px 28px;
   position: relative;
   font-family: "minion-pro", serif, serif;
   font-weight: 400;
@@ -3669,6 +3669,10 @@ a:focus, a:hover {
   font-size: 1rem;
   text-transform: uppercase;
   color: #919194; }
+
+#gform_wrapper_2 .gform_footer {
+  margin-top: -68px !important;
+  padding-top: 0; }
 
 #gform_wrapper_3 {
   margin: 0; }

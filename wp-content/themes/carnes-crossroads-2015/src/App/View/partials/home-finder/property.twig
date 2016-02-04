@@ -68,10 +68,10 @@
             <div class="share-widget" data-property-id="{{ property.id }}">
                 <span class="share-text">Share</span>
                 <a href="https://www.facebook.com/dialog/feed?app_id={{ facebook_app_id }}&display=popup&name={{ facebook_share_name }}&description={{ facebook_share_description }}&caption={{ facebook_share_caption }}&link={{ domain }}&redirect_uri={{ domain }}&picture={{ facebook_share_image_src }}"
-                   target="new">
+                   target="blank">
                     <div class="fb-icon share-icon"></div>
                 </a>
-                <a href="http://twitter.com/home?status={{ tweet_share }}" target="new">
+                <a href="http://twitter.com/home?status={{ tweet_share }}" target="blank">
                     <div class="twitter-icon share-icon"></div>
                 </a>
                 <a href="mailto:?subject={{ email_subject_share }}&body={{ email_body_share }}">
@@ -149,7 +149,7 @@
         {% if property.getFloorPlanDocumentLink %}
         <a class="site-btn color-box-floor-plan" target="_blank" href="{{ property.getFloorPlanDocumentLink }}">View Floorplan</a>
         {% endif %}
-        
+
     </div>
 
     {% if property.getRealEstateAgent %}

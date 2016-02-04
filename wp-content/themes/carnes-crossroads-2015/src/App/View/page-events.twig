@@ -1,7 +1,7 @@
 {% extends 'base.twig' %}
 {% block template %}
 
-<section class="hero__page" style="background-image: url({{ template_uri }}/img/bg-hero-events.jpg)">
+<section class="hero__page" style="background-image: url({{ page.thumbnail.src }})">
     <div class="hero__content-tab-{{ page.getHeroColor }}">
         <div class="hero__content-inner">
             <h1>{{ page.title }}</h1>
@@ -43,12 +43,12 @@
                 <h4>Follow Us</h4>
                 <hr>
                 <ul class="category-list__social">
-                    <li class="footer__social-item"><a href="https://www.twitter.com/carnesxroads"><img src="{{ template_uri }}/img/icon-social-tw.png"/></a></li>
-                    <li class="footer__social-item"><a href="https://www.facebook.com/CarnesCrossroads"><img src="{{ template_uri }}/img/icon-social-fb.png"/></a></li>
-                    <li class="footer__social-item"><a href="https://www.youtube.com/user/CarnesXroads"><img src="{{ template_uri }}/img/icon-social-yt.png"/></a></li>
-                    <li class="footer__social-item"><a href="https://www.instagram.com/carnescrossroads/"><img src="{{ template_uri }}/img/icon-social-ig.png"/></a></li>
-                    <li class="footer__social-item"><a href="https://www.pinterest.com/carnesxroads/"><img src="{{ template_uri }}/img/icon-social-pn.png"/></a></li>
-                    <li class="footer__social-item"><a href="https://plus.google.com/u/0/+Carnescharleston"><img src="{{ template_uri }}/img/icon-social-goog.png"/></a></li>
+                    <li class="footer__social-item"><a href="https://www.twitter.com/carnesxroads" target="blank"><img src="{{ template_uri }}/img/icon-social-tw.png"/></a></li>
+                    <li class="footer__social-item"><a href="https://www.facebook.com/CarnesCrossroads" target="blank"><img src="{{ template_uri }}/img/icon-social-fb.png"/></a></li>
+                    <li class="footer__social-item"><a href="https://www.youtube.com/user/CarnesXroads" target="blank"><img src="{{ template_uri }}/img/icon-social-yt.png"/></a></li>
+                    <li class="footer__social-item"><a href="https://www.instagram.com/carnescrossroads/" target="blank"><img src="{{ template_uri }}/img/icon-social-ig.png"/></a></li>
+                    <li class="footer__social-item"><a href="https://www.pinterest.com/carnesxroads/" target="blank"><img src="{{ template_uri }}/img/icon-social-pn.png"/></a></li>
+                    <li class="footer__social-item"><a href="https://plus.google.com/u/0/+Carnescharleston" target="blank"><img src="{{ template_uri }}/img/icon-social-goog.png"/></a></li>
                 </ul>
                 <h4>Categories</h4>
                 <hr>
@@ -124,7 +124,7 @@
                                 <div class="social-quote">
                                     {{ social_post.social_post_message|truncate(15) }}
                                 </div>
-                                <a href="{{ social_post.social_post_link }}" class="slider-lg__item-link"></a>
+                                <a href="{{ social_post.social_post_link }}" class="slider-lg__item-link" target="blank"></a>
                                 <div class="block-tab--full-bottom">
                                     <a href="https://www.facebook.com/CarnesCrossroads" target="blank"><h3>Carnes
                                             Crossroads</h3></a>
@@ -137,7 +137,7 @@
                         {% elseif social_post.social_post_type == 'instagram' %}
                             <div class="slider-lg__item"
                                  style="background-image: url({{ social_post.social_post_image_src }});">
-                        <a href="{{ social_post.social_post_link }}" class="slider-lg__item-link"></a>
+                        <a href="{{ social_post.social_post_link }}" class="slider-lg__item-link" target="blank"></a>
                         <div class="block-tab--full-bottom">
                             <a href="{{ social_post.social_post_link }}" target="blank"><h3>CarnesCrossroads</h3></a>
                             {{ social_post.social_post_message }}
@@ -147,7 +147,7 @@
                         {% elseif social_post.social_post_type == 'youtube' %}
                             <div class="slider-lg__item-youtube"
                                  style="background-image: url({{ social_post.social_post_image_src }});">
-                                <a href="{{ social_post.social_post_link }}" class="slider-lg__item-link"></a>
+                                <a href="{{ social_post.social_post_link }}" class="slider-lg__item-link" target="blank"></a>
                                 <div class="block-tab--full-bottom">
                                     {{ social_post.social_post_message|truncate(12) }}
                                     <a href="https://www.instagram.com/CarnesXroads/" target="blank"><img
@@ -160,7 +160,7 @@
                         <div class="social-quote">
                             {{ social_post.social_post_message|twitterify }}
                         </div>
-                                <a href="{{ social_post.social_post_link }}" class="slider-lg__item-link"></a>
+                                <a href="{{ social_post.social_post_link }}" class="slider-lg__item-link" target="blank"></a>
                         <div class="block-tab--full-bottom">
                             <a href="https://www.twitter.com/carnesxroads" target="blank"><h3>@carnesxroads</h3></a>
                             <p>{{ social_post.social_post_created_time|date('M d, Y') }}</p>
