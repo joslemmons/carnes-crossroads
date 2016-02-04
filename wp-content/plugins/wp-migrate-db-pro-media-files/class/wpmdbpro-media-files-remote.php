@@ -231,7 +231,7 @@ class WPMDBPro_Media_Files_Remote extends WPMDBPro_Media_Files_Base {
 		$i          = 0;
 		$errors     = array();
 		foreach ( $files as &$file ) {
-			$destination = $upload_dir . $file_paths[ $i ];
+			$destination = $upload_dir . apply_filters( 'wpmdbmf_destination_file_path', $file_paths[ $i ], 'push', $this );
 			$folder      = dirname( $destination );
 
 			if ( false === $this->filesystem->file_exists( $folder ) && false === $this->filesystem->mkdir( $folder ) ) {
@@ -356,7 +356,7 @@ class WPMDBPro_Media_Files_Remote extends WPMDBPro_Media_Files_Base {
 		}
 
 		// compare files to those on the local filesystem
-		$files_to_remove = $this->get_files_not_on_local( $filtered_post['files'] );
+		$files_to_remove = $this->get_files_not_on_local( $filtered_post['files'], 'pull' );
 
 		$return = array(
 			'success'         => 1,

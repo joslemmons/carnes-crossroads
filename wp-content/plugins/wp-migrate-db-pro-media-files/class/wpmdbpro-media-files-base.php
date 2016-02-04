@@ -349,6 +349,10 @@ class WPMDBPro_Media_Files_Base extends WPMDBPro_Addon {
 				continue;
 			}
 
+			if ( apply_filters( 'wpmdbmf_exclude_local_media_file_from_removal', false, $upload_dir, $short_file_path, $this ) ) {
+				continue;
+			}
+
 			$local_media_files[] = $short_file_path;
 		}
 	}
@@ -552,11 +556,12 @@ class WPMDBPro_Media_Files_Base extends WPMDBPro_Addon {
 	/**
 	 * Compare a set of files with those on the local filesystem
 	 *
-	 * @param mixed $files Files to compare
+	 * @param mixed  $files Files to compare
+	 * @param string $intent
 	 *
 	 * @return array $files_to_remove Files that do not exist locally
 	 */
-	function get_files_not_on_local( $files ) {
+	function get_files_not_on_local( $files, $intent ) {
 		if ( ! is_array( $files ) ) {
 			$files = @unserialize( $files );
 		}
@@ -565,7 +570,7 @@ class WPMDBPro_Media_Files_Base extends WPMDBPro_Addon {
 		$files_to_remove = array();
 
 		foreach ( $files as $file ) {
-			if ( ! $this->filesystem->file_exists( $upload_dir . $file ) ) {
+			if ( ! $this->filesystem->file_exists( $upload_dir . apply_filters( 'wpmdbmf_file_not_on_local', $file, $intent, $this ) ) ) {
 				$files_to_remove[] = $file;
 			}
 		}
@@ -743,7 +748,7 @@ class WPMDBPro_Media_Files_Base extends WPMDBPro_Addon {
 		$blogs = wp_get_sites( $args );
 
 		foreach ( $blogs as $blog ) {
-			if ( apply_filters( 'wpmdbmf_include_subsite', true, $blog['blog_id'] ) ) {
+			if ( apply_filters( 'wpmdbmf_include_subsite', true, $blog['blog_id'], $this ) ) {
 				$blog_ids[] = $blog['blog_id'];
 			}
 		}
