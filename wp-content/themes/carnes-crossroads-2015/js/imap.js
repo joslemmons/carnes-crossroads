@@ -200,9 +200,9 @@ jQuery(function ($) {
             //    map.panTo(new google.maps.LatLng(location[1], location[2]));
             //}
 
-            return markers;
-
         } // end for
+
+        return markers;
     } // end function setMarkers
 
     function createMarker(map, myLatLng, image, shadow, title, zIndex, theLink, html) {
