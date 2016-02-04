@@ -1,0 +1,81 @@
+// Print Styles
+// ===================================
+
+.cx-logo {
+    margin: 10px 0 45px;
+    padding-right: 15px;
+}
+
+.print-contact {
+    margin: 0 5px;
+
+    p {
+        font-family: $font-sans;
+        font-size: 0.95rem;
+        line-height: 1.7;
+    }
+
+    .title {
+        display: block;
+        margin-top: 40px;
+        font-family: $font-serif;
+        font-weight: $weight-bold;
+    }
+}
+
+.listing {
+
+    &-image {
+        margin: 10px 0 15px;
+    }
+
+    &-address {
+        font-family: $baskerville;
+        font-size: 1.75rem;
+        letter-spacing: 0.5px;
+    }
+
+    &-price {
+        display: inline-block;
+        margin: 5px 10px 8px 0;
+        font-family: $oswald;
+        font-size: 1.35rem;
+        letter-spacing: 0.5px;
+    }
+
+    &-specs {
+        display: inline-block;
+        font-family: $font-sans;
+        font-size: 1.15rem;
+        text-transform: uppercase;
+        letter-spacing: 0.5px;
+    }
+
+    &-neighborhood {
+        display: block;
+        margin-bottom: 25px;
+        font-family: $oswald;
+        font-size: 1rem;
+        text-transform: uppercase;
+
+        .item-padding {
+            display: inline-block;
+            margin: 0 15px;
+
+            &:first-child {
+                margin-left: 0;
+            }
+        }
+    }
+
+    &-details {
+        margin-bottom: 55px;
+        font-family: $font-sans;
+        font-size: 0.9rem;
+        letter-spacing: 0.5px;
+
+        li {
+            margin-bottom: 5px;
+        }
+    }
+}

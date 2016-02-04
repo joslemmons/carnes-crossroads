@@ -47,6 +47,10 @@
             background: url(./img/grad-divider.png) no-repeat left top;
         }
 
+        @media (max-width: 1150px) {
+            padding: 10px 0;
+        }
+
         a {
             color: $cc-dk-green;
             font-size: 0.85rem;
@@ -85,14 +89,18 @@
         display: inline-block;
         @include transition(0.3s all);
 
-        // @media (min-width: 1550px) {
-        //     margin: 0 0 0 35px;
-        //     padding: 30px 0;
-        // }
+        @media (max-width: 1150px) {
+            margin: 0 0 0 8px;
+            padding: 20px 0;
+        }
 
         &:first-of-type {
             padding-left: 50px;
             background: url(./img/grad-divider.png) no-repeat left top;
+
+            @media (max-width: 1150px) {
+                padding-left: 28px;
+            }
         }
 
         a {
@@ -106,6 +114,11 @@
 
             @media (min-width: $screen-xlg) {
                 font-size: 1.25rem;
+            }
+
+            @media (max-width: 1150px) {
+                font-size: 0.95rem;
+                letter-spacing: 1px;
             }
         }
 

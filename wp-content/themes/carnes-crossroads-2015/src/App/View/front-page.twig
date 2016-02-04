@@ -36,11 +36,14 @@
                 {% for item in page.getTopFeaturedPrimaryItems %}
                     <div class="block--large" {% if item.video_src %}data-video-src="{{ item.video_src }}"{% endif %}
                          style="background-image: url('{{ item.image.get_src }}');">
-                    <div class="block-tab--bottom-left">
-                        <h3>{{ item.title }}</h3>
-                        <p>{{ item.subtitle }}</p>
-                        <a href="{{ item.button.link }}" class="block-tab__link">{{ item.button.title }}</a>
-                    </div>
+                        <div class="play-btn-container">
+                            <a href="{{ video_src }}" data-video-height="1080" data-video-width="1920" class="cnicon-play video-play"><span class="play-icon"><img src="{{ template_uri }}/img/play-icon_x2.png"/></span></a>
+                        </div>
+                        <div class="block-tab--top-left">
+                            <h3>{{ item.title }}</h3>
+                            <p>{{ item.subtitle }}</p>
+                            <a href="{{ item.button.link }}" class="block-tab__link">{{ item.button.title }}</a>
+                        </div>
                 </div>
                 {% endfor %}
             </div>
