@@ -25,6 +25,10 @@
                     </div>
                     {% block page_content %}
                         {#this will be filled in via ajax#}
+                        <div class="account-loading-screen">
+                            <p>Please wait while your account information loads&hellip;</p>
+                            <img src="{{ template_uri }}/img/loading.gif" />
+                        </div>
                     {% endblock %}
                 </div>
             </div>

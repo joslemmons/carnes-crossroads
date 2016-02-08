@@ -1,6 +1,19 @@
 //See base modal styles in frontpage.modal.scss
 
 //Custom Styles
+
+.account-loading-screen {
+    margin-top: 50px;
+    text-align: center;
+    color: $brown;
+
+    img {
+        max-width: 24px;
+        max-height: 24px;
+        margin: auto;
+    }
+}
+
 #modal-request-showing {
     .primary-page .page-content {
         margin-bottom: 0;

@@ -4321,6 +4321,15 @@ a:focus, a:hover {
     .modal-dialog .page-content, .modal-dialog .page-content--white, .modal-dialog .page-content--white-floral, .modal-dialog .page-content--white-floral-top, .modal-dialog .page-content--tan, .modal-dialog .page-content--contact, .modal-dialog .page-content--footer {
       padding: 0; } }
 
+.account-loading-screen {
+  margin-top: 50px;
+  text-align: center;
+  color: #695e49; }
+  .account-loading-screen img {
+    max-width: 24px;
+    max-height: 24px;
+    margin: auto; }
+
 #modal-request-showing .primary-page .page-content, #modal-request-showing .primary-page .page-content--white, #modal-request-showing .primary-page .page-content--white-floral, #modal-request-showing .primary-page .page-content--white-floral-top, #modal-request-showing .primary-page .page-content--tan, #modal-request-showing .primary-page .page-content--contact, #modal-request-showing .primary-page .page-content--footer {
   margin-bottom: 0; }
 
