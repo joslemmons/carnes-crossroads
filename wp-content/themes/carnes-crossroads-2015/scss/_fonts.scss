@@ -39,7 +39,7 @@ $weight-black        : 800;
 
 html, body {
     color: $black;
-    font-size: 1em;
+    font-size: 1rem;
     font-family: $font-sans;
     line-height: 1.5;
 }
@@ -109,7 +109,7 @@ p, ol, ul {
     font-family: $font-serif;
 
     @media (max-width: $screen-sm-max) {
-        font-size: 15px;
+        font-size: 0.8rem;
     }
 }
 

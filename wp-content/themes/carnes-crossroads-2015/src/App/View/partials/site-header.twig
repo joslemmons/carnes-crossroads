@@ -1,6 +1,6 @@
-<nav class="main-nav">
+<nav class="main-nav hidden-xs">
     <div class="main-nav__inner-wrap">
-        <div class="main-nav__logo"><a href="/"><img src="{{ template_uri }}/img/carnes_logo_wht.svg"></a></div>
+        <div class="main-nav__logo"><a href="/"><img src="{{ template_uri }}/img/carnes_logo_wht.svg" alt="Carnes Crossroads"></a></div>
         <ul class="main-nav__sub">
             {% for item in header_menu.get_items %}
                 <li class="main-nav__sub-item"><a href="{{ item.link }}">{{ item.title }}</a></li>
@@ -13,3 +13,47 @@
         </ul>
     </div>
 </nav>
+
+{# MOBILE NAV #}
+<main class="o-content visible-xs">
+    <div class="o-container">
+        <div class="c-buttons">
+            <button id="c-button--slide-right" class="menu-icon c-button">
+                <svg width="28" height="28">
+                    <image xlink:href="{{ theme.link }}/img/menu.svg" src="{{ theme.link }}/img/menu.png" width="28" height="28" />
+                </svg>
+            </button>
+        </div>
+    </div><!-- /o-container -->
+</main><!-- /o-content -->
+
+
+<nav id="c-menu--slide-right" class="c-menu c-menu--slide-right mob-nav visible-xs">
+    <button class="c-menu__close close-menu">
+        <img src="{{ theme.link }}/img/mob-nav-close.png" alt="Close Menu">
+    </button>
+
+    <div class="nav-header">
+        <a href="/">
+            <img src="{{ theme.link }}/img/carnes_logo_wht.svg" alt="Carnes Crossroads">
+        </a>
+    </div>
+    <div class="di-nav">
+        <ul class="c-menu__items">
+            {% for item in primary_menu.get_items %}
+                <li class="c-menu__item"><a href="{{ item.link }}" class="c-menu__link">{{ item.title }}</a></li>
+            {% endfor %}
+        </ul>
+        <ul class="c-menu__items">
+            {% for item in header_menu.get_items %}
+                <li class="c-menu__item"><a href="{{ item.link }}" class="c-menu__link">{{ item.title }}</a></li>
+            {% endfor %}
+        </ul>
+    </div>
+    <div class="site-search">
+        <input type="search">
+    </div>
+</nav>
+
+<div id="c-mask" class="c-mask"></div>
+{# END MOBILE NAV #}

@@ -61,6 +61,24 @@ jQuery(function ($) {
         }
     });
 
+    //Navigation
+    var slideRight = new Menu({
+        wrapper: '#o-wrapper',
+        type: 'slide-right',
+        menuOpenerClass: '.c-button',
+        maskId: '#c-mask'
+    });
+
+    var slideRightBtn = $('#c-button--slide-right,div.open-menu');
+
+    slideRightBtn.on('click', function (e) {
+        e.preventDefault();
+        slideRight.open();
+        return false;
+    });
+
+
+
     // account functionality
 
     function saveOrUnSaveProperty(propertyId, action) {

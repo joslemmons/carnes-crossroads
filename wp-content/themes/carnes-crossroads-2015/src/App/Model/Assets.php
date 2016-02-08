@@ -28,6 +28,7 @@ class Assets
         wp_enqueue_script('global-js', get_template_directory_uri() . '/js/global.js', array('jquery', 'box-slider-js'), false, true);
         wp_enqueue_script('pluralize-js', get_template_directory_uri() . '/bower_components/pluralize/pluralize.js', array(), false, true);
         wp_enqueue_script('jquery-colorbox-js', get_template_directory_uri() . '/js/lib/colorbox/jquery.colorbox-min.js', array('jquery'), false, true);
+        wp_enqueue_script('global-nav-js', get_template_directory_uri() . '/js/lib/menu.js', array('jquery'), false, true);
     }
 
 }

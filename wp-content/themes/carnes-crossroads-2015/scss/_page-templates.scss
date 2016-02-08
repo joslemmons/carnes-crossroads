@@ -36,9 +36,19 @@ $navbar-offset: 135px;
         bottom: 0;
         @include center(x);
 
+        @media (max-width: $screen-xs-max) {
+            padding: 5px 5px 0 5px;
+            width: 80%;
+        }
+
         h1 {
             font-size: 3rem;
             letter-spacing: 1.5px;
+
+            @media (max-width: $screen-xs-max) {
+                font-size: 2rem;
+                letter-spacing: 1px;
+            }
         }
 
         &-red {
@@ -62,6 +72,10 @@ $navbar-offset: 135px;
         border-top: 1px solid darken($cc-med-grey, 20);
         border-left: 1px solid darken($cc-med-grey, 20);
         border-right: 1px solid darken($cc-med-grey, 20);
+
+        @media (max-width: $screen-xs-max) {
+            padding: 20px 20px;
+        }
     }
 
     &__content-inner--homes {
@@ -96,6 +110,11 @@ $navbar-offset: 135px;
         @media (max-width: 1150px) {
             margin-top: 120px;
         }
+
+        @media (max-width: $screen-xs-max) {
+            margin-top: 0;
+            height: 400px;
+        }
     }
 
     &__article {
@@ -119,6 +138,10 @@ $navbar-offset: 135px;
     padding: 75px 0;
     background-color: $white;
     overflow-x: hidden;
+
+    @media (max-width: $screen-xs-max) {
+        padding: 20px 15px;
+    }
 
     hr {
         margin: 90px -15px;
@@ -151,6 +174,10 @@ $navbar-offset: 135px;
             font-size: 1.15rem;
             color: $cc-brown;
             margin-bottom: 20px;
+
+            @media (max-width: $screen-xs-max) {
+                font-size: 1rem;
+            }
         }
 
         .bx-wrapper {
@@ -161,6 +188,10 @@ $navbar-offset: 135px;
     &--tan {
         @extend .page-content;
         background-color: $cc-tan;
+
+        @media (max-width: $screen-xs-max) {
+            padding-bottom: 50px;
+        }
     }
 
     &--contact {
@@ -217,8 +248,15 @@ $navbar-offset: 135px;
         background-size: 110%;
         @include transition(0.3s all);
 
-        &:hover {
-            background-size: 120%;
+        @media (max-width: $screen-xs-max) {
+            padding: 8px;
+            height: 135px;
+        }
+
+        @media (min-width: $screen-xs-max) {
+            &:hover {
+                background-size: 120%;
+            }
         }
 
         &-green {
@@ -245,6 +283,10 @@ $navbar-offset: 135px;
         text-align: center;
         z-index: 999;
 
+        @media (max-width: $screen-xs-max) {
+            padding: 40px 0 0 0;
+        }
+
         span {
             position: absolute;
             width: 100%;
@@ -259,6 +301,12 @@ $navbar-offset: 135px;
             text-transform: uppercase;
             letter-spacing: 1px;
             color: $white;
+
+            @media (max-width: $screen-xs-max) {
+                font-size: 1.35rem;
+                letter-spacing: 0.5px;
+                margin-bottom: 5px;
+            }
         }
 
         p {
@@ -267,6 +315,11 @@ $navbar-offset: 135px;
             text-transform: uppercase;
             letter-spacing: 1px;
             color: #fff2d4;
+
+            @media (max-width: $screen-xs-max) {
+                font-size: 0.8rem;
+                letter-spacing: 0.75px;
+            }
         }
     }
 }
