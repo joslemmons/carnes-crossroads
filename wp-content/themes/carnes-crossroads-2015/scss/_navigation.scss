@@ -357,10 +357,18 @@ body.has-active-menu {
 
 //Custom Nav Styles
 
+.o-wrapper > a {
+    position: absolute;
+    top: 15px;
+    left: 20px;
+    width: 110px;
+    z-index: 5;
+}
+
 .menu-icon {
     position: fixed;
-    top: 62px;
-    right: 40px;
+    top: 25px;
+    right: 20px;
     color: $white;
     z-index: 1080;
     background: none;
@@ -373,15 +381,6 @@ body.has-active-menu {
     -moz-appearance:    none;
     appearance:         none;
     transition: all 0.3s;
-
-    @media (max-width: $screen-sm-max) {
-        top: 28px;
-        right: 20px;
-    }
-
-    &:hover {
-        cursor: pointer;
-    }
 }
 
 .mob-nav {
@@ -394,7 +393,7 @@ body.has-active-menu {
 
 
     a {
-        color: $brown;
+        color: $cc-brown;
         border: none;
 
         &:hover {

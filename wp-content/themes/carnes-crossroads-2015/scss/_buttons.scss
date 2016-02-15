@@ -31,7 +31,15 @@
         text-shadow: 0 2px 10px rgba($black, .5);
         background-color: darken($cc-green, 2);
         border: 1px solid darken($cc-green, 10);
-        outline: 4px solid darken($cc-green, 2);;
+        outline: 4px solid darken($cc-green, 2);
+
+        @media (max-width: $screen-xs-max) {
+            color: $white;
+            background-color: $cc-green;
+            border: 1px solid darken($cc-green, 10);
+            outline: 4px solid $cc-green;
+            text-shadow: none;
+        }
     }
 
     &-small {

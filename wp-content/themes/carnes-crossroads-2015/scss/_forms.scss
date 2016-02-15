@@ -15,6 +15,14 @@
     color: $cc-med-grey;
     text-align: left;
 
+    @media (max-width: $screen-xs-max) {
+        min-width: 0;
+        width: 220px;
+        padding: 12px 15px;
+        font-size: 1rem;
+        margin-right: 0;
+    }
+
     .caret {
         float: right;
         margin-top: 3%;
@@ -22,6 +30,13 @@
         border-top:   10px solid $cc-med-grey !important;
         border-right: 10px solid transparent;
         border-left:  10px solid transparent;
+
+        @media (max-width: $screen-xs-max) {
+            margin-top: 4%;
+            border-top:   7px solid $cc-med-grey !important;
+            border-right: 7px solid transparent;
+            border-left:  7px solid transparent;
+        }
     }
 }
 
@@ -41,15 +56,25 @@
         font-style: italic;
         font-weight: $weight-regular;
         color: $cc-med-grey;
+
+        @media (max-width: $screen-xs-max) {
+            font-size: 1rem;
+            text-indent: 0;
+            padding: 0;
+        }
     }
 
     li a:hover {
         background-color: $cc-med-grey;
     }
+
+    @media (max-width: $screen-xs-max) {
+        min-width: 0;
+        width: 220px;
+    }
 }
 
 .events-headline-contact {
-    // margin-top: 50px;
 
     h2 {
         margin-bottom: 75px;
