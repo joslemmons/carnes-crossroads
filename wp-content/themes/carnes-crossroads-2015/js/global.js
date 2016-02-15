@@ -77,6 +77,17 @@ jQuery(function ($) {
         return false;
     });
 
+    //Back to Top Btn and Hamburger Menu for Mobile
+    $(window).scroll(function() {
+        var scroll = $(window).scrollTop();
+
+        if (scroll >= 250) {
+            $('.menu-icon').addClass('scroll');
+        } else {
+            $('.menu-icon').removeClass('scroll');
+        }
+    });
+
 
 
     // account functionality

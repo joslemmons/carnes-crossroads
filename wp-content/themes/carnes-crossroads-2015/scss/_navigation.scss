@@ -372,7 +372,7 @@ body.has-active-menu {
 .menu-icon {
     position: fixed;
     top: 25px;
-    right: 20px;
+    right: 16px;
     color: $white;
     z-index: 1080;
     background: none;
@@ -385,6 +385,14 @@ body.has-active-menu {
     -moz-appearance:    none;
     appearance:         none;
     transition: all 0.3s;
+
+    &.scroll {
+
+        @media (max-width: $screen-sm-max) {
+            background: $cc-green;
+        }
+
+    }
 }
 
 .mob-nav {
