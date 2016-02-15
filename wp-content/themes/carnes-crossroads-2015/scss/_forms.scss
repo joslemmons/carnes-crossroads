@@ -118,10 +118,21 @@
     width: 50%;
     text-align: left;
     color: $cc-med-grey;
+
+    @media (max-width: $screen-xs-max) {
+        width: 100%;
+        margin: 0;
+    }
 }
 
 .events__form-container .gfield {
     width: 40%;
+}
+
+.gfield_label {
+    @media (max-width: $screen-xs-max) {
+        display: none;
+    }
 }
 
 .gform_wrapper .hidden_label input.small,
@@ -144,6 +155,11 @@
     font-size: 1rem;
     text-transform: uppercase;
     color: $cc-med-grey;
+
+    @media (max-width: $screen-xs-max) {
+        width: 100% !important;
+        height: 3rem;
+    }
 }
 
 .events__form-container .gform_wrapper .hidden_label input.small,
@@ -189,6 +205,11 @@
     position: relative;
     outline: none;
 
+    @media (max-width: $screen-xs-max) {
+        padding: 15px;
+        margin-right: 15px;
+    }
+
     &:active, &:checked:active {
         background-color: $white;
     }
@@ -205,6 +226,11 @@
         top: 4px;
         left: 10px;
         color: $cc-lt-grey;
+
+        @media (max-width: $screen-xs-max) {
+            font-size: 1.2rem;
+            left: 7px;
+        }
     }
 }
 
@@ -219,10 +245,19 @@
         font-size: 0.9rem !important;
         margin-top: 5px !important;
     }
+
+    @media (max-width: $screen-xs-max) {
+        margin-top: 10px !important;
+        font-size: 0.8rem !important;
+    }
 }
 
 .gform_wrapper .gform_footer {
     margin-top: -85px !important;
+
+    @media (max-width: $screen-xs-max) {
+        margin-top: 0 !important;
+    }
 }
 
 .events__form-container .gform_wrapper .gform_footer {
@@ -257,6 +292,12 @@
 
     @media (max-width: 1150px) {
         left: 74%;
+    }
+
+    @media (max-width: $screen-xs-max) {
+        left: 0;
+        width: 100%;
+        font-size: 1rem !important;
     }
 }
 

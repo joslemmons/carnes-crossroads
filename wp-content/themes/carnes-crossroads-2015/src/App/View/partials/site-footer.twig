@@ -2,7 +2,7 @@
     <div class="container">
         <div class="row">
             <div class="col-xs-12">
-                <ul class="footer__social pull-right">
+                <ul class="footer__social">
                     <li class="footer__social-item"><a href="https://www.twitter.com/carnesxroads" target="blank"><img src="{{ template_uri }}/img/icon-social-tw.png"/></a></li>
                     <li class="footer__social-item"><a href="https://www.facebook.com/CarnesCrossroads" target="blank"><img src="{{ template_uri }}/img/icon-social-fb.png"/></a></li>
                     <li class="footer__social-item"><a href="https://www.youtube.com/user/CarnesXroads" target="blank"><img src="{{ template_uri }}/img/icon-social-yt.png"/></a></li>
@@ -22,7 +22,7 @@
                     <input type="text" class="form-control" id="footer-search">
                 </div>
             </div>
-            <div class="col-xs-12 col-md-7">
+            <div class="col-xs-12 col-md-7 hidden-xs">
                 <ul class="footer__nav text-right">
                     {% for item in footer_menu.get_items %}
                     <li class="footer__nav-item"><a href="{{ item.link }}">{{ item.title }}</a></li>
@@ -33,13 +33,26 @@
     </div>
     <div class="footer__grey">
         <div class="container">
-            <div class="row">
+            <div class="row hidden-xs">
                 <div class="col-xs-12 col-md-7">
-                    <p>Carnes Crossroads real Estate&nbsp;&nbsp;|&nbsp;&nbsp;513 Wodin Place, Summerville, SC 29483</p>
+                    <p>Carnes Crossroads Real Estate&nbsp;&nbsp;|&nbsp;&nbsp;513 Wodin Place, Summerville, SC 29483</p>
                     <p><a href="http://www.carnescharleston.com">carnescharleston.com</a>&nbsp;&nbsp;|&nbsp;&nbsp;1-843-761-8600</p>
                 </div>
                 <div class="col-xs-12 col-md-5 text-right">
                     <p>&#169; 2015 Carnes Crossroads Associates&nbsp;&nbsp;|&nbsp;&nbsp;<a href="/privacy">Privacy</a>&nbsp;&nbsp;|&nbsp;&nbsp;<a href="/terms-of-use">Terms of Use</a></p>
+                </div>
+            </div>
+
+            <div class="row visible-xs">
+                <div class="col-xs-12 col-md-7">
+                    <p>Carnes Crossroads Real Estate</p>
+                    <p>513 Wodin Place, Summerville, SC 29483</p>
+                    <p><a href="http://www.carnescharleston.com">carnescharleston.com</a>&nbsp;&nbsp;|&nbsp;&nbsp;1-843-761-8600</p>
+                    <br/>
+                </div>
+                <div class="col-xs-12 col-md-5">
+                    <p>&#169; 2015 Carnes Crossroads Associates</p>
+                    <p><a href="/privacy">Privacy</a>&nbsp;&nbsp;|&nbsp;&nbsp;<a href="/terms-of-use">Terms of Use</a></p>
                 </div>
             </div>
         </div>

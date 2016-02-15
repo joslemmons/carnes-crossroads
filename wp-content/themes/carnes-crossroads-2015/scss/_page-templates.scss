@@ -103,7 +103,7 @@ $navbar-offset: 135px;
 
         @media (max-width: $screen-xs-max) {
             margin-top: 0;
-            height: 475px;
+            height: 90%;
         }
 
         .overlay {
@@ -160,7 +160,7 @@ $navbar-offset: 135px;
     overflow-x: hidden;
 
     @media (max-width: $screen-xs-max) {
-        padding: 20px 15px;
+        padding: 20px auto;
     }
 
     hr {
@@ -210,7 +210,7 @@ $navbar-offset: 135px;
         background-color: $cc-tan;
 
         @media (max-width: $screen-xs-max) {
-            padding-bottom: 50px;
+            padding: 50px 15px;
         }
     }
 
@@ -244,7 +244,6 @@ $navbar-offset: 135px;
 .block {
     position: relative;
     width: 100%;
-    // background-color: $white;
     background-size: cover;
     background-position: center center;
     background-repeat: no-repeat;
@@ -253,11 +252,22 @@ $navbar-offset: 135px;
     &--large {
         @extend .block;
         height: 600px;
+
+        @media (max-width: $screen-xs-max) {
+            height: 400px;
+            margin-bottom: 50px;
+            border: 1px solid $ltr-grey;
+        }
     }
 
     &--small {
         @extend .block;
         height: 400px;
+
+        @media (max-width: $screen-xs-max) {
+            margin-bottom: 50px;
+            border: 1px solid $ltr-grey;
+        }
     }
 
     &--button {
@@ -360,6 +370,12 @@ $navbar-offset: 135px;
         min-width: 250px;
     }
 
+    @media (max-width: $screen-xs-max) {
+        min-width: 100%;
+        min-height: 100px;
+        padding: 15px;
+    }
+
     a, a h3 {
         color: $cc-brown;
         text-decoration: none;
@@ -411,6 +427,12 @@ $navbar-offset: 135px;
         top: 0;
         left: 0;
         max-width: 60%;
+
+        @media (max-width: $screen-xs-max) {
+            top: auto;
+            bottom: 0;
+            left: 0;
+        }
     }
 
     &--top-right {

@@ -357,12 +357,16 @@ body.has-active-menu {
 
 //Custom Nav Styles
 
-.o-wrapper > a {
-    position: absolute;
-    top: 15px;
-    left: 20px;
-    width: 110px;
-    z-index: 5;
+.o-wrapper {
+    display: inline;
+
+    & > a {
+        position: absolute;
+        top: 15px;
+        left: 20px;
+        width: 110px;
+        z-index: 5;
+    }
 }
 
 .menu-icon {

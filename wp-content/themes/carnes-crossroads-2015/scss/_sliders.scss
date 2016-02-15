@@ -25,6 +25,13 @@
 
     &__controls {
         display: inline-block;
+
+        @media (max-width: $screen-xs-max) {
+            float: right;
+            text-align: right;
+            margin-top: 10px;
+            margin-bottom: -5px;
+        }
     }
 
     h3 {
@@ -43,6 +50,10 @@
         background-position: center -100px;
         background-repeat: no-repeat;
         overflow: hidden;
+
+        @media (max-width: $screen-xs-max) {
+            height: 350px;
+        }
 
         .social-quote {
             position: absolute;
