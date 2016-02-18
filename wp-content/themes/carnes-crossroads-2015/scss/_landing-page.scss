@@ -248,24 +248,41 @@
     }
 
     .horizontal-list-content {
-        padding-top: 105px;
+        padding-top: 95px;
+        padding-bottom: 25px;
+
+        .child-title h3 {
+            font-size: 1.85rem;
+            margin-bottom: 20px;
+            color: $cc-brown;
+        }
 
         .col-horizontal {
-            margin-bottom: 100px;
+            margin-bottom: 75px;
             padding: 20px;
 
             .image {
                 margin-bottom: 14px;
+                position: relative;
+
+                .ribbon {
+                    position: absolute;
+                    top: 0;
+                    left: 0;
+                    width: 75px;
+                    height: 75px;
+                    background: url(img/ribbon-sold.png) no-repeat 0% 0%;
+                }
             }
 
             .title {
                 font-family: $font-serif;
                 color: $cc-brown;
-                font-size: 1.125rem; /* Approximation due to font substitution */
+                font-size: 1.25rem;
                 font-weight: $weight-regular;
-                line-height: 1.5; /* Approximation due to font substitution */
+                line-height: 1.3;
                 text-align: left;
-                margin-bottom: 16px;
+                margin-bottom: 12px;
             }
 
             .details {
@@ -273,10 +290,10 @@
                 color: $cc-med-grey;
                 font-size: 0.9rem;
                 font-weight: $weight-regular;
-                line-height: 1.4;
+                line-height: 1.5;
                 text-align: left;
-                margin-bottom: 30px;
-                height: 135px;
+                margin-bottom: 20px;
+                height: 130px;
 
                 @media (max-width: $screen-sm-max) {
                     height: auto;
@@ -284,6 +301,10 @@
 
                 p {
                     font-size: 0.9rem;
+                }
+
+                .neighborhood {
+                    margin-bottom: 10px;
                 }
             }
 
@@ -312,6 +333,8 @@
         }
 
         .footer-container {
+            min-height: 482px;
+
             @media (max-width: $screen-sm-max) {
                 width: 100%;
                 max-width: 100%;
@@ -419,6 +442,22 @@
         }
     }
 
+    .page-disclaimer {
+        position: relative;
+        padding-top: 30px;
+        padding-bottom: 20px;
+        text-align: center;
+        color: $brown;
+
+        @media (max-width: $screen-sm-max) {
+            top: 20px;
+        }
+
+        p {
+            font-size: 12px;
+        }
+    }
+
     //Used in multiple rows
     .content-container {
 
@@ -433,6 +472,20 @@
             @media (max-width: $screen-sm-max) {
                 font-size: 15px;
             }
+        }
+    }
+}
+
+.recent-activity {
+
+    img {
+        max-width: 100%;
+    }
+
+    &-content {
+        .site-btn {
+            text-align: center;
+            width: 100%;
         }
     }
 }

@@ -23,9 +23,9 @@
         {% if typekit_src %}
         <script src="{{ typekit_src }}"></script>
         <script>try {
-    Typekit.load({async: true});
-} catch (e) {
-}</script>
+            Typekit.load({async: true});
+        } catch (e) {
+        }</script>
         {% endif %}
 
 
@@ -40,28 +40,24 @@ your browser</a> to improve your experience.</p>
 
         {#<!--end header from base-->#}
 
-        <div class="landing-page">
+       <div class="landing-page">
             <div class="lp-header">
                 <div class="container">
                     <div class="row">
                         <div class="col-md-6">
                             <div class="logo">
-                                <a href="/">
-                                    <img src="{{ template_uri }}/img/daniel-island-charleston-logo.png"/>
-                                </a>
+                                <a href="/"><img src="{{ template_uri }}/img/carnes_logo_wht.svg"/></a>
                             </div>
                         </div>
                         <div class="col-md-6">
                             <div class="row">
                                 <div class="col-md-12">
-                                    <div class="contact-info">
-                                        Call Today (843) 971-7100
-                                    </div>
+                                    <div class="contact-info">Call Today (843) 761-8600</div>
                                 </div>
                                 <div class="row btn-row">
                                     <div class="col-md-12">
-                                        <a class="lp-btn" href="http://www.danielisland.com">DanielIsland.com</a>
-                                        <a class="lp-btn" href="http://www.danielisland.com/contact/">Contact Us</a>
+                                        <a class="lp-btn" href="http://www.carnescharleston.com">Visit Carnes Crossroads</a>
+                                        <a class="lp-btn" href="http://www.carnestcharleston.com/contact/">Contact Us</a>
                                     </div>
                                 </div>
 
@@ -70,51 +66,39 @@ your browser</a> to improve your experience.</p>
                     </div>
                 </div>
             </div>
-            <div class="header-border"></div>
 
             <div class="header-content"
                  style="background: url('{{ post.thumbnail.src }}') 50% 50% no-repeat; background-size: cover;">
-
                 <div class="header-content-container container">
                     <h1>{{ post.title }}</h1>
                     <div class="title-line"></div>
                 </div>
-
             </div>
 
-            <div class="main-content recent-activity">
+            <div class="page-content--white-floral-top recent-activity">
                 <div class="container">
                     <div class="row">
 
                         <div class="col-md-3">
                             {% if recent_sales_activity_menu.get_items %}
-                            <div class="recent_sales_nav">
-                                <ul>
-                                    <li><a href="/">Home</a></li>
+                            <div class="category-list">
+                                <ul class="category-list__categories">
+                                    <li class="category-list__item"><a href="/">Home</a></li>
                                     {% for item in recent_sales_activity_menu.get_items %}
-                                    <li><a href="{{ item.link }}">{{ item.title }}</a></li>
+                                    <li class="category-list__item"><a href="{{ item.link }}">{{ item.title }}</a></li>
                                     {% endfor %}
                                 </ul>
-                                {#<div class="sidebar-text">#}
-                                  {#  Take a look at Daniel Island Real Estate&rsquo;s latest property&nbsp;offerings. #}
-                                {#</div>#}
-                                {#<a class="site-btn acct-btn" href="/real-estate/home-finder/featured-listings/">Homefinder</a>#}
                             </div>
                             {% endif %}
                         </div>
                         <div class="col-md-9">
-                            <!--
-<div class="main-content-image">
-<img src="http://daniel-island.danielle.dev/wp-content/uploads/2015/12/sales-team.jpg" class="img-responsive">
-</div>
--->
                             {{ post.content }}
                         </div>
                     </div>
                 </div>
             </div>
 
-            <div class="horizontal-list-content recent-activity-content">
+            <div class="page-content--tan horizontal-list-content recent-activity-content">
                 <div class="container">
                     <div class="row">
                         <div class="col-md-12">
@@ -164,7 +148,7 @@ your browser</a> to improve your experience.</p>
                 </div>
             </div>
 
-            <div class="horizontal-list-content recent-activity-content">
+            <div class="page-content--white horizontal-list-content recent-activity-content">
                 <div class="container">
                     <div class="row">
                         <div class="col-md-12">
@@ -214,19 +198,19 @@ your browser</a> to improve your experience.</p>
             <div class="footer-content">
                 <div class="container-fluid visible-lg visible-md bg-container">
                     <div class="row">
-                        <div class="left-col-bg col-md-6 match-height"
+                        <div class="left-col-bg col-md-6"
                              style="background: url('{{ post.getFooter.image.src }}') 50% 50% no-repeat; background-size: cover;"></div>
-                        <div class="right-col-bg col-md-6 match-height"></div>
+                        <div class="right-col-bg col-md-6"></div>
                     </div>
                 </div>
                 <div class="container footer-container">
                     <div class="row">
-                        <div class="left-col-text col-md-6 match-height">
+                        <div class="left-col-text col-md-6">
                             <div class="footer-content">
-                                <img src="{{ template_uri }}/img/daniel-island-real-estate-logo.png" alt="Daniel Island Real Estate"/>
+                                <img src="{{ template_uri }}/img/carnes_logo_wht.svg" alt="Carnes Crossroads Real Estate"/>
                             </div>
                         </div>
-                        <div class="right-col-text col-md-6 match-height">
+                        <div class="right-col-text col-md-6">
                             <div class="footer-content">
                                 <div class="title">{{ post.getFooter.title }}</div>
                                 <div class="content">{{ post.getFooter.content }}</div>
@@ -239,7 +223,7 @@ your browser</a> to improve your experience.</p>
                 </div>
             </div>
 
-            <div class="page-disclaimer">
+            <div class="page-content page-disclaimer">
                 <div class="container">
                     <div class="row">
                         <div class="col-xs-12">
