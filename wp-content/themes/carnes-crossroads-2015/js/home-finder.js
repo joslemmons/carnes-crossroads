@@ -116,7 +116,7 @@ jQuery(function ($) {
             $('div.single-listing-col .listing-images').slick({
                 lazyLoad: 'ondemand',
                 dots: false,
-                infinite: true,
+                infinite: false,
                 speed: 300,
                 slidesToShow: 2,
                 slidesToScroll: 1,
@@ -130,7 +130,7 @@ jQuery(function ($) {
                         settings: {
                             slidesToShow: 1,
                             slidesToScroll: 1,
-                            infinite: true,
+                            infinite: false,
                             variableWidth: true
                         }
                     }
@@ -427,7 +427,7 @@ jQuery(function ($) {
 
             $('div.single-listing-col .listing-images').slick({
                 dots: false,
-                infinite: true,
+                infinite: false,
                 speed: 300,
                 slidesToShow: 2,
                 centerMode: false,
@@ -454,7 +454,7 @@ jQuery(function ($) {
 
             $('div.single-listing-col .listing-images').slick({
                 dots: false,
-                infinite: true,
+                infinite: false,
                 speed: 300,
                 slidesToShow: 2,
                 centerMode: false,
@@ -499,7 +499,7 @@ jQuery(function ($) {
 
     $('.listing-images').slick({
         dots: false,
-        infinite: true,
+        infinite: false,
         speed: 300,
         slidesToShow: 2,
         centerMode: false,
