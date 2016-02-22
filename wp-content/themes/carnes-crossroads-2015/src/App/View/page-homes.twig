@@ -2,7 +2,7 @@
 {% block template %}
 
 
-<section class="hero__page" style="background-image: url('{{ page.thumbnail.src }}')">
+<section class="hero__page--homes" style="background-image: url('{{ page.thumbnail.src }}')">
     <div class="hero__content-wrap--homes">
         {% set hero = page.getHero %}
         <div class="hero__content-inner--homes">
@@ -33,7 +33,7 @@
         {% include "partials/page-single.twig" %}
 
         {% if page.content and page.children %}
-            <hr/>
+            <hr class="hidden-xs">
         {% endif %}
 
         {% if page.children %}
@@ -41,7 +41,7 @@
         {% endif %}
 
             {% if loop.last == false %}
-        <hr>
+        <hr class="hidden-xs">
             {% endif %}
     </div>
 

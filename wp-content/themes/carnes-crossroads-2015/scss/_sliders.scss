@@ -25,10 +25,12 @@
 
     &__controls {
         display: inline-block;
+        float: right;
+        text-align: right;
 
         @media (max-width: $screen-xs-max) {
-            float: right;
-            text-align: right;
+            float: left;
+            text-align: left;
             margin-top: 10px;
             margin-bottom: -5px;
         }
@@ -117,6 +119,11 @@
         width: 100%;
         height: 100%;
     }
+
+    @media (max-width: $screen-xs-max) {
+        width: 35px;
+        height: 35px;
+    }
 }
 
 .prev-lg {
@@ -131,6 +138,10 @@
 // SMALL FADE-IN-OUT SLIDESHOWS
 
 .slider-sm {
+    @media (max-width: $screen-xs-max) {
+        margin-bottom: 25px;
+    }
+
     &__nav {
         position: absolute;
         bottom: 0;
@@ -149,6 +160,10 @@
     &__item {
         position: relative;
         height: 400px;
+
+        @media (max-width: $screen-xs-max) {
+            height: 250px;
+        }
     }
 
     &__caption {

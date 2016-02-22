@@ -1,58 +1,78 @@
 {% for child_page in page.getChildren %}
     {% if loop.index is odd %}
-        <div class="row">
-
+        <div class="row layer-row">
             <div class="col-xs-12 col-md-7 expand-column">
                 {% if child_page.getGalleryImages|length > 1 %}
                 <div class="slider-sm__nav"></div>
                 {% endif %}
                 <div class="slider-sm">
                     {% for image in child_page.getGalleryImages %}
-                        <div class="slider-sm__item" style="background: url('{{ image.src }}') no-repeat center center / cover;">
-                            {% if image.caption %}
-                                <div class="slider-sm__caption">
-                                    <span>{{ image.caption }}</span>
-                                </div>
-                            {% endif %}
+                    <div class="slider-sm__item" style="background: url('{{ image.src }}') no-repeat center center / cover;">
+                        {% if image.caption %}
+                        <div class="slider-sm__caption">
+                            <span>{{ image.caption }}</span>
                         </div>
+                        {% endif %}
+                    </div>
                     {% endfor %}
                 </div>
             </div>
-
             <div class="col-xs-12 col-md-4 col-md-offset-1 text-left child-content">
                 <h4>{{ child_page.title }}</h4>
                 {% include "partials/layer-content.twig" %}
             </div>
         </div>
+
     {% else %}
 
-        <div class="row">
+        <div class="row layer-row hidden-xs">
             <div class="col-xs-12 col-md-4 text-right child-content">
                 <h4>{{ child_page.title }}</h4>
                 {% include "partials/layer-content.twig" %}
             </div>
             <div class="col-xs-12 col-md-7 col-md-offset-1 expand-column">
                 {% if child_page.getGalleryImages|length > 1 %}
-                    <div class="slider-sm__nav pull-right"></div>
+                <div class="slider-sm__nav pull-right"></div>
                 {% endif %}
                 <div class="slider-sm__wrap slider-sm">
                     {% for image in child_page.getGalleryImages %}
-                        <div class="slider-sm__item"
-                             style="background: url('{{ image.src }}') no-repeat center center / cover;">
-                            {% if image.caption %}
-                                <div class="slider-sm__caption">
-                                    <span>{{ image.caption }}</span>
-                                </div>
-                            {% endif %}
+                    <div class="slider-sm__item" style="background: url('{{ image.src }}') no-repeat center center / cover;">
+                        {% if image.caption %}
+                        <div class="slider-sm__caption">
+                            <span>{{ image.caption }}</span>
                         </div>
+                        {% endif %}
+                    </div>
                     {% endfor %}
                 </div>
+            </div>
+        </div>
 
+        <div class="row layer-row visible-xs">
+            <div class="col-xs-12 col-md-7 expand-column">
+                {% if child_page.getGalleryImages|length > 1 %}
+                <div class="slider-sm__nav pull-right"></div>
+                {% endif %}
+                <div class="slider-sm__wrap slider-sm">
+                    {% for image in child_page.getGalleryImages %}
+                    <div class="slider-sm__item" style="background: url('{{ image.src }}') no-repeat center center / cover;">
+                        {% if image.caption %}
+                        <div class="slider-sm__caption">
+                            <span>{{ image.caption }}</span>
+                        </div>
+                        {% endif %}
+                    </div>
+                    {% endfor %}
+                </div>
+            </div>
+            <div class="col-xs-12 col-md-4 col-md-offset-1 text-left child-content">
+                <h4>{{ child_page.title }}</h4>
+                {% include "partials/layer-content.twig" %}
             </div>
         </div>
     {% endif %}
 
     {% if loop.last == false %}
-        <hr>
+        <hr class="hidden-xs">
     {% endif %}
 {% endfor %}

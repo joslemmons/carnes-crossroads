@@ -38,6 +38,10 @@ a:focus, a:hover {
 
 .extra-bottom {
     margin-bottom: 100px;
+
+    @media (max-width: $screen-xs-max) {
+        margin-bottom: 60px;
+    }
 }
 
 .expand-column {

@@ -571,7 +571,8 @@ jQuery(function ($) {
 
     function initColorboxElements() {
         $('a.color-box-group').colorbox({
-            rel: 'color-box-group'
+            rel: 'color-box-group',
+            maxWidth: '75%'
         });
 
         $('a.color-box-floor-plan').colorbox();
