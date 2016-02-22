@@ -6169,7 +6169,7 @@ body.has-active-menu {
             font-size: 12px;
             /* Approximation due to font substitution */
             font-weight: 400;
-            line-height: 1;
+            line-height: 1.4;
             /* Approximation due to font substitution */
             text-align: left;
             text-transform: uppercase;
