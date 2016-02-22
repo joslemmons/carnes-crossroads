@@ -3703,6 +3703,9 @@ video {
   .gfield_label {
     display: none; } }
 
+.gform_wrapper ul li.gfield {
+  margin-bottom: 0; }
+
 .gform_wrapper .hidden_label input.small,
 .gform_wrapper .hidden_label select.small,
 .gform_wrapper .top_label input.small,
@@ -3715,8 +3718,8 @@ video {
 .gform_wrapper .hidden_label select.large,
 .gform_wrapper .top_label input.large,
 .gform_wrapper .top_label select.large {
-  width: 93% !important;
-  height: 4rem;
+  width: 91% !important;
+  height: 3.5rem;
   text-indent: 15px;
   font-family: "proxima-nova", sans-serif, sans-serif;
   font-weight: 400;
@@ -3751,7 +3754,7 @@ video {
 .events__form-container .gform_wrapper .hidden_label select.large,
 .events__form-container .gform_wrapper .top_label input.large,
 .events__form-container .gform_wrapper .top_label select.large {
-  height: 3.7rem; }
+  height: 3.5rem; }
 
 .gform_wrapper .gform_body .gform_fields .gfield select {
   -webkit-appearance: none;
@@ -3774,7 +3777,7 @@ video {
   margin-right: 20px;
   background-color: #fff;
   border: 1px solid #ccc;
-  padding: 20px;
+  padding: 17px;
   border-radius: 0;
   display: inline-block;
   position: relative;
@@ -3790,9 +3793,9 @@ video {
     color: #99a1a7; }
   .gform_wrapper .gform_body .gform_fields .gfield .gfield_checkbox li input[type=checkbox]:checked:after {
     content: '\2714';
-    font-size: 1.5rem;
+    font-size: 1.25rem;
     position: absolute;
-    top: 4px;
+    top: 5px;
     left: 10px;
     color: #919194; }
     @media (max-width: 767px) {
@@ -3805,7 +3808,8 @@ video {
   margin-top: 15px !important;
   font-family: "proxima-nova", sans-serif, sans-serif !important;
   font-weight: 400 !important;
-  font-size: 1rem !important; }
+  font-size: 0.9rem !important;
+  color: #828181; }
   @media (max-width: 1150px) {
     .gform_wrapper .gfield_checkbox li label,
     .gform_wrapper .gfield_radio li label {
@@ -3818,7 +3822,7 @@ video {
       font-size: 0.8rem !important; } }
 
 .gform_wrapper .gform_footer {
-  margin-top: -85px !important; }
+  margin-top: -75px !important; }
   @media (max-width: 767px) {
     .gform_wrapper .gform_footer {
       margin-top: 0 !important; } }
@@ -3881,7 +3885,7 @@ video {
   margin: 0; }
   #gform_wrapper_3 .gfield {
     width: 100%;
-    margin-bottom: 25px; }
+    margin-bottom: 20px; }
     @media (max-width: 767px) {
       #gform_wrapper_3 .gfield {
         margin-bottom: 15px; } }
@@ -3889,11 +3893,11 @@ video {
   #gform_wrapper_3 .ginput_container_email input[type=email],
   #gform_wrapper_3 .ginput_container_phone input[type=tel],
   #gform_wrapper_3 .ginput_complex span select {
-    height: 3.5rem;
+    height: 3rem;
     text-indent: 15px;
     font-family: "proxima-nova", sans-serif, sans-serif;
     font-weight: 400;
-    font-size: 1.1rem;
+    font-size: 1rem;
     text-transform: none;
     color: #828181;
     background-color: #fff; }
@@ -3902,12 +3906,12 @@ video {
       #gform_wrapper_3 .ginput_container_email input[type=email],
       #gform_wrapper_3 .ginput_container_phone input[type=tel],
       #gform_wrapper_3 .ginput_complex span select {
-        height: 3rem; } }
+        height: 2.75rem; } }
   #gform_wrapper_3 .ginput_container_textarea textarea {
     padding: 15px;
     font-family: "proxima-nova", sans-serif, sans-serif;
     font-weight: 400;
-    font-size: 1.1rem;
+    font-size: 1rem;
     text-transform: none;
     color: #828181;
     background-color: #fff;
@@ -3916,11 +3920,11 @@ video {
       outline: none; }
   #gform_wrapper_3 .ginput_complex span label {
     margin-left: 5px;
-    margin-bottom: 40px;
+    margin-bottom: 25px;
     font-family: "proxima-nova", sans-serif, sans-serif;
     font-weight: 400;
     text-transform: uppercase;
-    font-size: 0.9rem;
+    font-size: 0.8rem;
     color: #828181; }
     @media (max-width: 767px) {
       #gform_wrapper_3 .ginput_complex span label {
@@ -3931,7 +3935,7 @@ video {
     font-family: "minion-pro", serif, serif;
     font-weight: 400;
     text-transform: uppercase;
-    font-size: 1.3rem;
+    font-size: 1.15rem;
     color: #768e1c; }
     @media (max-width: 767px) {
       #gform_wrapper_3 .gfield_label {
@@ -3940,7 +3944,7 @@ video {
   #gform_wrapper_3 .ginput_container_phone,
   #gform_wrapper_3 .ginput_container_email,
   #gform_wrapper_3 .ginput_container_select {
-    width: 52%; }
+    width: 50%; }
     @media (max-width: 767px) {
       #gform_wrapper_3 .ginput_container_phone,
       #gform_wrapper_3 .ginput_container_email,
@@ -4066,6 +4070,9 @@ video {
     padding: 17px 0; }
     .main-nav.smaller .main-nav__primary-item a {
       font-size: 1rem; }
+      @media (max-width: 1150px) {
+        .main-nav.smaller .main-nav__primary-item a {
+          font-size: 0.85rem; } }
     .main-nav.smaller .main-nav__primary-item:first-of-type {
       padding-left: 50px; }
   .main-nav.smaller .main-nav__sub {
@@ -4310,7 +4317,7 @@ body.has-active-menu {
         outline: none; }
 
 .contact__wrap {
-  margin-top: 100px; }
+  margin-top: 130px; }
   @media (max-width: 767px) {
     .contact__wrap {
       margin: 50px 0; } }
@@ -4510,7 +4517,7 @@ body.has-active-menu {
 .next-lg {
   background: url(./img/icon-prev-next.png) no-repeat center right/cover; }
 
-@media (max-width: 767px) {
+@media (max-width: 991px) {
   .slider-sm {
     margin-bottom: 25px; } }
 .slider-sm__nav {

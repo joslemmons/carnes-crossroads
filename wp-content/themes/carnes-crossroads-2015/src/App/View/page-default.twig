@@ -38,17 +38,9 @@
         {% if page.title == 'Location' %}
         <hr class="hidden-xs">
         <div class="row">
-            <div class="col-xs-12 hidden-xs">
+            <div class="col-xs-12 expand-column">
                 <h4 id="area-map">Area Map</h4>
-                <div class="map-overlay" onClick="style.pointerEvents='none'"></div>
-                <iframe src="https://mapsengine.google.com/map/embed?mid=zuCLssp4p96c.ke8UttddS_8s"
-                        width="100%" height="800" frameborder="0" style="border:0" allowfullscreen></iframe>
-            </div>
-            <div class="col-xs-12 visible-xs">
-                <h4 id="area-map">Area Map</h4>
-                <div class="map-overlay" onClick="style.pointerEvents='none'"></div>
-                <iframe src="https://mapsengine.google.com/map/embed?mid=zuCLssp4p96c.ke8UttddS_8s"
-                        width="100%" height="400" frameborder="0" style="border:0" allowfullscreen></iframe>
+                <img src="{{ template_uri }}/img/locator-map.png" width="100%">
             </div>
         </div>
         {% endif %}

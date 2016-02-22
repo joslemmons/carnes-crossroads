@@ -135,6 +135,10 @@
     }
 }
 
+.gform_wrapper ul li.gfield {
+    margin-bottom: 0;
+}
+
 .gform_wrapper .hidden_label input.small,
 .gform_wrapper .hidden_label select.small,
 .gform_wrapper .top_label input.small,
@@ -147,8 +151,8 @@
 .gform_wrapper .hidden_label select.large,
 .gform_wrapper .top_label input.large,
 .gform_wrapper .top_label select.large {
-    width: 93% !important;
-    height: 4rem;
+    width: 91% !important;
+    height: 3.5rem;
     text-indent: 15px;
     font-family: $font-sans;
     font-weight: $weight-regular;
@@ -174,7 +178,7 @@
 .events__form-container .gform_wrapper .hidden_label select.large,
 .events__form-container .gform_wrapper .top_label input.large,
 .events__form-container .gform_wrapper .top_label select.large {
-    height: 3.7rem;
+    height: 3.5rem;
 }
 
 .gform_wrapper .gform_body .gform_fields .gfield select {
@@ -199,7 +203,7 @@
     margin-right: 20px;
     background-color: $white;
     border: 1px solid $input-border;
-    padding: 20px;
+    padding: 17px;
     border-radius: 0;
     display: inline-block;
     position: relative;
@@ -221,9 +225,9 @@
 
     &:checked:after {
         content: '\2714';
-        font-size: 1.5rem;
+        font-size: 1.25rem;
         position: absolute;
-        top: 4px;
+        top: 5px;
         left: 10px;
         color: $cc-lt-grey;
 
@@ -239,7 +243,8 @@
     margin-top: 15px !important;
     font-family: $font-sans !important;
     font-weight: $weight-regular !important;
-    font-size: 1rem !important;
+    font-size: 0.9rem !important;
+    color: $cc-med-grey;
 
     @media (max-width: 1150px) {
         font-size: 0.9rem !important;
@@ -253,7 +258,7 @@
 }
 
 .gform_wrapper .gform_footer {
-    margin-top: -85px !important;
+    margin-top: -75px !important;
 
     @media (max-width: $screen-xs-max) {
         margin-top: 0 !important;
@@ -335,7 +340,7 @@
 
     .gfield {
         width: 100%;
-        margin-bottom: 25px;
+        margin-bottom: 20px;
 
         @media (max-width: $screen-xs-max) {
             margin-bottom: 15px;
@@ -346,17 +351,17 @@
     .ginput_container_email input[type=email],
     .ginput_container_phone input[type=tel],
     .ginput_complex span select {
-        height: 3.5rem;
+        height: 3rem;
         text-indent: 15px;
         font-family: $font-sans;
         font-weight: $weight-regular;
-        font-size: 1.1rem;
+        font-size: 1rem;
         text-transform: none;
         color: $cc-med-grey;
         background-color: $white;
 
         @media (max-width: $screen-xs-max) {
-            height: 3rem;
+            height: 2.75rem;
         }
     }
 
@@ -364,7 +369,7 @@
         padding: 15px;
         font-family: $font-sans;
         font-weight: $weight-regular;
-        font-size: 1.1rem;
+        font-size: 1rem;
         text-transform: none;
         color: $cc-med-grey;
         background-color: $white;
@@ -377,11 +382,11 @@
 
     .ginput_complex span label {
         margin-left: 5px;
-        margin-bottom: 40px;
+        margin-bottom: 25px;
         font-family: $font-sans;
         font-weight: $weight-regular;
         text-transform: uppercase;
-        font-size: 0.9rem;
+        font-size: 0.8rem;
         color: $cc-med-grey;
 
         @media (max-width: $screen-xs-max) {
@@ -395,7 +400,7 @@
         font-family: $font-serif;
         font-weight: $weight-regular;
         text-transform: uppercase;
-        font-size: 1.3rem;
+        font-size: 1.15rem;
         color: $cc-green;
 
         @media (max-width: $screen-xs-max) {
@@ -407,7 +412,7 @@
     .ginput_container_phone,
     .ginput_container_email,
     .ginput_container_select {
-        width: 52%;
+        width: 50%;
 
         @media (max-width: $screen-xs-max) {
             width: 100%;
