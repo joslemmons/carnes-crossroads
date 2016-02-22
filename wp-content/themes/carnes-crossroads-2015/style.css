@@ -5883,6 +5883,8 @@ body.has-active-menu {
         .home-finder .home-finder-filters .filter-options a#filter-clearAll:hover {
           border-bottom: #9f9d5c;
           color: black; }
+      .home-finder .home-finder-filters .filter-options #filter-builders {
+        width: 180px; }
       .home-finder .home-finder-filters .filter-options select {
         -webkit-appearance: none;
         -moz-appearance: none;
@@ -5900,7 +5902,7 @@ body.has-active-menu {
         text-align: left;
         border-radius: 0;
         border: none;
-        padding: 12px 15px;
+        padding: 12px 13px;
         margin-bottom: 5px;
         text-transform: uppercase; }
         @media (max-width: 1350px) {
@@ -6063,28 +6065,34 @@ body.has-active-menu {
           letter-spacing: 2px;
           text-transform: uppercase;
           display: inline-block; }
-        .home-finder .home-finder-main .all-listings-col .listings-header .view-on-map .map-icon {
-          display: inline-block;
-          margin-right: 5px;
-          position: relative;
-          top: 2px; }
-        .home-finder .home-finder-main .all-listings-col .listings-header .view-on-map #viewListingsOnMap {
+        .home-finder .home-finder-main .all-listings-col .listings-header .view-on-map {
+          margin-bottom: 12px; }
+          .home-finder .home-finder-main .all-listings-col .listings-header .view-on-map .map-icon {
+            display: inline-block;
+            margin-right: 5px;
+            position: relative;
+            top: 2px; }
+          .home-finder .home-finder-main .all-listings-col .listings-header .view-on-map #viewListingsOnMap {
+            font-family: "proxima-nova", sans-serif, sans-serif;
+            color: #3d3421;
+            font-size: .75em;
+            /* Approximation due to font substitution */
+            font-weight: 400;
+            line-height: 1;
+            /* Approximation due to font substitution */
+            text-align: left;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            display: inline-block;
+            text-align: left;
+            margin-top: 10px; }
+            .home-finder .home-finder-main .all-listings-col .listings-header .view-on-map #viewListingsOnMap:hover {
+              color: black;
+              border-bottom: none; }
+        .home-finder .home-finder-main .all-listings-col .listings-header .results-sort {
+          margin-top: 12px;
           font-family: "proxima-nova", sans-serif, sans-serif;
-          color: #3d3421;
-          font-size: .75em;
-          /* Approximation due to font substitution */
-          font-weight: 400;
-          line-height: 1;
-          /* Approximation due to font substitution */
-          text-align: left;
-          letter-spacing: 2px;
-          text-transform: uppercase;
-          display: inline-block;
-          text-align: left;
-          margin-top: 10px; }
-          .home-finder .home-finder-main .all-listings-col .listings-header .view-on-map #viewListingsOnMap:hover {
-            color: black;
-            border-bottom: none; }
+          font-size: 14px; }
         .home-finder .home-finder-main .all-listings-col .listings-header .listings-type select {
           -webkit-appearance: none;
           -moz-appearance: none;

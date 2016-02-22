@@ -138,6 +138,10 @@
                 }
             }
 
+            #filter-builders {
+                width: 180px;
+            }
+
             select {
                 -webkit-appearance: none;
                 -moz-appearance: none;
@@ -153,7 +157,7 @@
                 text-align: left;
                 border-radius: 0;
                 border: none;
-                padding: 12px 15px;
+                padding: 12px 13px;
                 margin-bottom: 5px;
                 text-transform: uppercase;
 
@@ -363,6 +367,8 @@
                 }
 
                 .view-on-map {
+                    margin-bottom: 12px;
+
                     .map-icon {
                         display: inline-block;
                         margin-right: 5px;
@@ -388,6 +394,12 @@
                             border-bottom: none;
                         }
                     }
+                }
+
+                .results-sort {
+                    margin-top: 12px;
+                    font-family: $font-sans;
+                    font-size: 14px;
                 }
 
 
