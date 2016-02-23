@@ -21,6 +21,7 @@ class Assets
         wp_enqueue_script('slick-js', get_template_directory_uri() . '/bower_components/slick-carousel/slick/slick.min.js', array('jquery'), false, false);
         wp_enqueue_script('cn-load-videos-js', get_template_directory_uri() . '/js/lib/cn.load-videos.js', array('jquery'), false, true);
         wp_enqueue_script('multiple-select-js', get_template_directory_uri() . '/js/lib/multiple-select.js', array('jquery'), false, true);
+        wp_enqueue_script('chosen-js', get_template_directory_uri() . '/js/lib/chosen.jquery.min.js', array('jquery'), false, true);
         wp_enqueue_script('bootstrap-js', get_template_directory_uri() . '/bower_components/bootstrap/dist/js/bootstrap.min.js', array('jquery'), false, true);
         wp_enqueue_script('respond-js', get_template_directory_uri() . '/bower_components/respond-minmax/dest/respond.min.js', array(), false, true);
         wp_enqueue_script('modernizr-js', get_template_directory_uri() . '/bower_components/modernizr/modernizr.js', array(), false, true);

@@ -16,11 +16,11 @@
     .home-finder-filters {
         background: #e4e2d6;
         width: 100%;
-        padding: 30px 40px 25px;
-        overflow: auto;
+        padding: 30px 40px 55px;
+        position: relative;
 
         @media (min-width: 1550px) {
-            padding: 45px 30px 25px;
+            padding: 45px 30px 65px;
         }
 
         @media (max-width: $screen-sm-max) {
