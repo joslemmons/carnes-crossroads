@@ -275,6 +275,10 @@
             height: auto;
         }
 
+        @media (min-height: 1300px) {
+            height: 1200px;
+        }
+
         .all-listings-col {
             background: $beige;
             height: 800px;
@@ -300,6 +304,10 @@
 
             @media (max-width: $screen-sm-max) {
                 height: 849px;
+            }
+
+            @media (min-height: 1300px) {
+                height: 1200px;
             }
 
             .loading {
@@ -557,6 +565,10 @@
 
             @media (max-width: $screen-sm-max) {
                 height: 0;
+            }
+
+            @media (min-height: 1300px) {
+                height: 1200px;
             }
 
             &.move-up {

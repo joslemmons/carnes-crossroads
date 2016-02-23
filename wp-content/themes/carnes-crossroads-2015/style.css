@@ -5994,6 +5994,9 @@ body.has-active-menu {
     @media (max-width: 991px) {
       .home-finder .home-finder-main {
         height: auto; } }
+    @media (min-height: 1300px) {
+      .home-finder .home-finder-main {
+        height: 1200px; } }
     .home-finder .home-finder-main .all-listings-col {
       background: #f4f0e9;
       height: 800px;
@@ -6011,6 +6014,9 @@ body.has-active-menu {
       @media (max-width: 991px) {
         .home-finder .home-finder-main .all-listings-col {
           height: 849px; } }
+      @media (min-height: 1300px) {
+        .home-finder .home-finder-main .all-listings-col {
+          height: 1200px; } }
       .home-finder .home-finder-main .all-listings-col .loading {
         background: url(img/loading.gif) no-repeat 50% 50%;
         background-size: cover;
@@ -6212,6 +6218,9 @@ body.has-active-menu {
       @media (max-width: 991px) {
         .home-finder .home-finder-main .single-listing-col {
           height: 0; } }
+      @media (min-height: 1300px) {
+        .home-finder .home-finder-main .single-listing-col {
+          height: 1200px; } }
       @media (max-width: 991px) {
         .home-finder .home-finder-main .single-listing-col.move-up {
           opacity: 1 !important;
