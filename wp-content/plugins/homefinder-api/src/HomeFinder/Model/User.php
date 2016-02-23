@@ -363,7 +363,7 @@ class User extends \TimberUser
 
         wp_mail(
             $to,
-            '[Carnes Crossroads Real Estate] Account Created on Daniel Island Real Estate',
+            '[Carnes Crossroads Real Estate] Account Created on Carnes Crossroads',
             $html
         );
     }

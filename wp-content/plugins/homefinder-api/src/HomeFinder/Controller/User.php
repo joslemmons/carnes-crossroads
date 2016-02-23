@@ -56,7 +56,7 @@ class User extends Router
 
         wp_mail(
             $to,
-            '[Daniel Island Real Estate] Saved Search Update',
+            '[Carnes Crossroads Real Estate] Saved Search Update',
             $html
         );
     }
