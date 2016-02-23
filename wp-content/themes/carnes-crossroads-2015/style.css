@@ -6507,6 +6507,10 @@ body.has-active-menu {
 #tribe-events-content .tribe-events-page-title {
   text-align: left !important;
   color: #3d3421; }
+#tribe-events-content .tribe-events-event-image {
+  margin-top: 25px; }
+  #tribe-events-content .tribe-events-event-image img {
+    width: 80%; }
 #tribe-events-content .tribe-events-notices {
   background-color: #dedede; }
 #tribe-events-content .tribe-events-calendar {
@@ -6548,7 +6552,9 @@ body.has-active-menu {
   color: #768e1c;
   text-shadow: none; }
 .tribe-events-single .tribe-events-schedule {
-  margin: 0; }
+  padding-bottom: 20px;
+  margin: 0 0 20px 0;
+  border-bottom: 1px solid #828181; }
 .tribe-events-single .tribe-events-schedule h2,
 .tribe-events-single .tribe-events-schedule span {
   font-family: "proxima-nova", sans-serif, sans-serif;
@@ -6558,9 +6564,8 @@ body.has-active-menu {
   color: #828181;
   display: inline-block; }
 .tribe-events-single-event-description {
-  margin: 25px 0;
-  padding: 25px 0 0 0;
-  border-top: 1px solid #828181; }
+  margin: 25px 0 0 0;
+  padding: 25px 0 0 0; }
 .tribe-events-single .tribe-events-cal-links {
   height: 40px;
   margin: 15px 0; }
@@ -6568,9 +6573,13 @@ body.has-active-menu {
   clear: none;
   margin-left: 15px; }
 .tribe-events-single-section {
-  margin: 50px 0;
-  padding: 25px;
+  margin: 0;
+  padding: 20px;
   background-color: #ebebeb; }
+  .tribe-events-single-section.primary {
+    margin-top: 20px; }
+  .tribe-events-single-section.secondary {
+    margin-bottom: 35px; }
 
 span.tribe-address,
 span.tel {

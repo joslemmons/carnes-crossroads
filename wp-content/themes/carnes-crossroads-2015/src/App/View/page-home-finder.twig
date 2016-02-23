@@ -73,6 +73,11 @@
 
         <div class="filter-options">
             <a href="#" id="filter-clearAll">Clear</a>
+            {# <select id="filter-plans">
+                <option value="All Homes">All Homes</option>
+                <option value="Available Homes">Available Homes</option>
+                <option value="Home Plans">Home Plans</option>
+            </select> #}
             <select id="filter-builders">
                 <option value="">All Builders</option>
                 {% for builder in function('\\App\\Model\\Builder::all') %}

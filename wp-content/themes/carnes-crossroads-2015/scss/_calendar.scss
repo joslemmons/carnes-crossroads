@@ -9,6 +9,14 @@
             color: $cc-brown;
         }
 
+        &-event-image {
+            margin-top: 25px;
+
+            img {
+                width: 80%;
+            }
+        }
+
         &-notices {
             background-color: $ltr-grey;
         }
@@ -81,7 +89,9 @@
         text-shadow: none;
     }
     .tribe-events-schedule {
-        margin: 0;
+        padding-bottom: 20px;
+        margin: 0 0 20px 0;
+        border-bottom: 1px solid $cc-med-grey;
     }
 
     .tribe-events-schedule h2,
@@ -95,9 +105,8 @@
     }
 
     &-event-description {
-        margin: 25px 0;
+        margin: 25px 0 0 0;
         padding: 25px 0 0 0;
-        border-top: 1px solid $cc-med-grey;
     }
 
     .tribe-events-cal-links {
@@ -111,9 +120,17 @@
     }
 
     &-section {
-        margin: 50px 0;
-        padding: 25px;
+        margin: 0;
+        padding: 20px;
         background-color: #ebebeb;
+
+        &.primary {
+            margin-top: 20px;
+        }
+
+        &.secondary {
+            margin-bottom: 35px;
+        }
     }
 }
 
