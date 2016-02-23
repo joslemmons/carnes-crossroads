@@ -914,4 +914,9 @@ jQuery(function ($) {
         }
     });
 
+    // Harvest Chosen Select Boxes
+    $("#filter-builders, #filter-price, #filter-bedrooms, #filter-bathrooms, #filter-listings-type").chosen({
+        disable_search: 'true'
+      });
+
 });

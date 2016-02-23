@@ -223,8 +223,12 @@ $navbar-offset: 135px;
         @extend .page-content;
         background: url(./img/bg-floral-top.png), url(./img/pattern-white-texture.jpg);
         background-repeat: no-repeat, repeat;
-        background-size: contain, auto;
+        background-size: cover, auto;
         background-position: top center;
+
+        @media (max-width: $screen-md-max) {
+            background-size: contain, auto;
+        }
 
         p {
             font-family: $font-serif;
