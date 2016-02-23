@@ -174,15 +174,15 @@ class HomeFinder extends Router
             return $property;
         }, 60 * 60 * 3);
 
-        if (false === $property) {
-            self::renderJSON(array(
-                'status' => 404,
-                'rsp' => 'Invalid property id'
-            ), 404);
-        }
+//        if (false === $property) {
+//            self::renderJSON(array(
+//                'status' => 404,
+//                'rsp' => 'Invalid property id'
+//            ), 404);
+//        }
 
         // mark the property as viewed by logged user (if logged in)
-        if (is_user_logged_in()) {
+        if ($property !== false && is_user_logged_in()) {
             $user = User::getCurrentlyLoggedUser();
             $user->markPropertyAsViewed($property);
             Metric::trackPropertyListingView($property);

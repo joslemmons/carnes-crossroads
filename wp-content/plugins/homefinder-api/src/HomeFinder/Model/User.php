@@ -19,6 +19,10 @@ class User extends \TimberUser
 
     private static $_currentUser = null;
 
+    /**
+     * User constructor.
+     * @param bool|int $uid
+     */
     public function __construct($uid)
     {
         parent::__construct($uid);
@@ -363,7 +367,7 @@ class User extends \TimberUser
 
         wp_mail(
             $to,
-            '[Carnes Crossroads Real Estate] Account Created on Carnes Crossroads',
+            '[Carnes Crossroads Real Estate] Account Created on Carnes Crossroads Real Estate',
             $html
         );
     }
