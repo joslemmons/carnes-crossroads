@@ -121,7 +121,11 @@ jQuery(function ($) {
     });
 
     function loadAccountContentInModal() {
-        var $modal = $('#modal-account');
+        var $modal = $('#modal-account'),
+            $loadingScreen = $modal.find('div.account-loading-screen');
+
+        $loadingScreen.show();
+        $modal.find('div.modal-content div.child-page-content').remove();
 
         $.ajax({
             type: "GET",
@@ -135,7 +139,7 @@ jQuery(function ($) {
                 var html = data.rsp;
 
                 // refresh content
-                $modal.find('div.modal-content div.child-page-content').remove();
+                $loadingScreen.hide();
                 $modal.find('div.modal-content div.primary-content').after(html);
 
                 //My Account Slider
