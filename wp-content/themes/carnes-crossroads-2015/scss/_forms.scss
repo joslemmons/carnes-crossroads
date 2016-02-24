@@ -125,8 +125,14 @@
     }
 }
 
-.events__form-container .gfield {
-    width: 40%;
+.events__form-container {
+    .gfield {
+        width: 40%;
+    }
+
+    input#gform_submit_button_2.gform_button.button {
+        margin-top: 15px;
+    }
 }
 
 .gfield_label {

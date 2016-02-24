@@ -294,6 +294,10 @@ $navbar-offset: 135px;
         @extend .block;
         height: 600px;
 
+        @media (max-width: $screen-md-max) {
+            height: 450px;
+        }
+
         @media (max-width: $screen-xs-max) {
             height: 400px;
             margin-bottom: 50px;
@@ -553,6 +557,10 @@ $navbar-offset: 135px;
 
         .gfield {
             width: 45%;
+
+            @media (max-width: $screen-md-max) {
+                width: 42%;
+            }
 
             @media (max-width: $screen-xs-max) {
                 width: 100% !important;

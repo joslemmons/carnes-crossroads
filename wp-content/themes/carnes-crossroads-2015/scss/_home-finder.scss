@@ -3,6 +3,10 @@
     position: relative;
     padding-top: $navbar-offset;
 
+    @media (max-width: $screen-md-max) {
+        padding-top: 125px;
+    }
+
     @media (max-width: $screen-xs-max) {
         padding-top: 90px;
         background-color: $gold;
@@ -18,10 +22,6 @@
         width: 100%;
         padding: 30px 40px 55px;
         position: relative;
-
-        @media (min-width: 1550px) {
-            padding: 45px 30px 65px;
-        }
 
         @media (max-width: $screen-sm-max) {
             padding: 0 20px;
@@ -40,8 +40,16 @@
             display: inline-block;
             float: left;
             position: relative;
-            top: 7px;
+            top: 10px;
             left: 15px;
+            font-family: $oswald;
+            text-transform: uppercase;
+            font-size: 12px;
+            color: $cc-brown;
+
+            @media (max-width: 1300px) {
+                font-size: 11px;
+            }
 
             @media (max-width: $screen-xs-max) {
                 left: 0;
@@ -53,6 +61,10 @@
                 text-transform: uppercase;
                 font-size: 12px;
                 color: $cc-brown;
+
+                @media (max-width: 1300px) {
+                    font-size: 11px;
+                }
             }
 
             a:hover {
@@ -100,6 +112,10 @@
                     margin-top: 20px;
                 }
 
+                @media (max-width: 1300px) {
+                    width: 175px;
+                }
+
                 &:focus {
                     outline: none;
                 }
@@ -132,6 +148,10 @@
                     margin-bottom: 5px;
                 }
 
+                @media (max-width: 1300px) {
+                    font-size: 11px;
+                }
+
                 &:hover {
                     border-bottom: $gold;
                     color: darken($cc-brown,40%);
@@ -140,6 +160,10 @@
 
             #filter-builders {
                 width: 180px;
+
+                @media (max-width: 1024px) {
+                    width: 145px;
+                }
             }
 
             select {
@@ -148,7 +172,7 @@
                 appearance: none;
                 background: $white url('img/icon-caret.png') no-repeat 90% 50%;
                 background-size: 8px;
-                width: 145px;
+                width: 165px;
                 font-family: $font-sans;
                 color:  $cc-brown;
                 font-size: 10px;/* Approximation due to font substitution */
@@ -161,8 +185,12 @@
                 margin-bottom: 5px;
                 text-transform: uppercase;
 
-                @media (max-width: 1350px) {
+                @media (max-width: 1300px) {
                     width: 120px;
+                }
+
+                @media (max-width: 1205px) {
+                    width: 100px;
                 }
 
                 @media (max-width: $screen-sm-max) {
@@ -258,6 +286,10 @@
             text-transform: uppercase;
             font-size: 12px;
             color: $cc-brown;
+
+            @media (max-width: 1300px) {
+                font-size: 11px;
+            }
         }
 
         .more-options {
@@ -435,6 +467,10 @@
                         &:focus {
                             outline: none;
                         }
+                    }
+
+                    div#filter_listings_type_chosen.chosen-container.chosen-container-single.chosen-container-single-nosearch {
+                        width: 100% !important;
                     }
                 }
             }

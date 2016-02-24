@@ -4,6 +4,10 @@
 .contact__wrap {
     margin-top: 130px;
 
+    @media (max-width: $screen-md-max) {
+        margin-top: 65px;
+    }
+
     @media (max-width: $screen-xs-max) {
         margin: 50px 0;
     }
