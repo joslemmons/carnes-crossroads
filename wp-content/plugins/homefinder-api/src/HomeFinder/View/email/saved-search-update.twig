@@ -299,6 +299,26 @@ p.price {
 
       <!-- column -->
       {% for property in properties %}
+        {% if property.isFloorPlan %}
+        <div>
+            <div class="listing-img-col"
+                 style="background:url('{{ property.getFeaturedImage.src }}') no-repeat 50% 50%; background-size: cover;">
+            </div>
+            <div class="listing-details-col">
+                <div class="listing-address">{{ property.title }}</div>
+                <div class="listing-neighborhood">Available Home Plan | {{ property.builder.title }}</div>
+                <div class="listing-details">
+                    {% if property.bedrooms or property.full_bathrooms or property.half_bathrooms %}
+                        <div class="specs">{% if property.bedrooms %}{{ property.bedrooms }} BR /{% endif %}
+                            {% if property.full_bathrooms %}{{ property.full_bathrooms }} Full Bath /{% endif %}{% if property.half_bathrooms %}{{ property.half_bathrooms }}  Half Bath{% endif %}
+                        </div>
+                    {% endif %}
+                    <div class="square-footage">{{ property.square_footage|removeNonNumbers|number_format }} sq ft</div>
+                    <div class="price">${{ property.price|removeNonNumbers|number_format }}</div>
+                </div>
+            </div>
+        </div>
+    {% else %}
       <table class="col-2">
         <tr>
           <td>
@@ -323,6 +343,7 @@ p.price {
           </td>
         </tr>
       </table>
+      {% endif %}
       {% endfor %}
       <!-- /column -->
 
