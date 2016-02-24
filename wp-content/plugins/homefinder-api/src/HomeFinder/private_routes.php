@@ -3,7 +3,7 @@
 use HomeFinder\Model\User;
 
 Routes::map('/send-test-update-email', function() {
-    $user = get_user_by('email', 'joslemmons@gmail.com');
+    $user = get_user_by('email', 'admin@joslemmons.com');
     $user = new User($user->ID);
     $users = array(
         $user
@@ -15,7 +15,7 @@ Routes::map('/send-test-update-email', function() {
 });
 
 Routes::map('/send-test-welcome-email', function () {
-    $user = get_user_by('email', 'joslemmons@gmail.com');
+    $user = get_user_by('email', 'admin@joslemmons.com');
     $user = new User($user->ID);
     $user->sendWelcomEmail();
 

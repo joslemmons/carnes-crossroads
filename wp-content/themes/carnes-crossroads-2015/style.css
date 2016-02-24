@@ -5021,9 +5021,8 @@ body.has-active-menu {
       font-size: 1.5em;
       display: block; }
     #account-saved-listings .saved-listings-slider .slick-prev, #account-saved-listings .saved-listings-slider .slick-next, #saved-searches .saved-listings-slider .slick-prev, #saved-searches .saved-listings-slider .slick-next, #account-register .saved-listings-slider .slick-prev, #account-register .saved-listings-slider .slick-next, #notification-options .saved-listings-slider .slick-prev, #notification-options .saved-listings-slider .slick-next {
-      border: 1px solid #695e49;
       background-color: #fff;
-      width: 36px;
+      width: 30px;
       height: 30px;
       z-index: 8;
       top: -40px; }
@@ -5032,10 +5031,12 @@ body.has-active-menu {
         font-family: "baskerville-urw", serif; }
     #account-saved-listings .saved-listings-slider .slick-prev, #saved-searches .saved-listings-slider .slick-prev, #account-register .saved-listings-slider .slick-prev, #notification-options .saved-listings-slider .slick-prev {
       right: 50px;
-      left: auto; }
+      left: auto;
+      background: url(./img/icon-prev-next.png) no-repeat center left/cover; }
     #account-saved-listings .saved-listings-slider .slick-next, #saved-searches .saved-listings-slider .slick-next, #account-register .saved-listings-slider .slick-next, #notification-options .saved-listings-slider .slick-next {
       right: 10px;
-      left: auto; }
+      left: auto;
+      background: url(./img/icon-prev-next.png) no-repeat center right/cover; }
     #account-saved-listings .saved-listings-slider .slick-list, #saved-searches .saved-listings-slider .slick-list, #account-register .saved-listings-slider .slick-list, #notification-options .saved-listings-slider .slick-list {
       width: 500%; }
     #account-saved-listings .saved-listings-slider .slide, #saved-searches .saved-listings-slider .slide, #account-register .saved-listings-slider .slide, #notification-options .saved-listings-slider .slide {
