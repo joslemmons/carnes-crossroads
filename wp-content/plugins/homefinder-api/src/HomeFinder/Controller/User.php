@@ -79,6 +79,7 @@ class User extends Router
                 }
 
                 $result = HomeFinder::getProperties($filter, 48);
+
                 $properties = $result->items;
                 shuffle($properties);
                 $properties = array_slice($properties, 0, 12);

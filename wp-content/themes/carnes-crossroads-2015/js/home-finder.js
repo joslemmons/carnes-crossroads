@@ -756,16 +756,16 @@ jQuery(function ($) {
         }
 
         var filters = {
-            propertyTypes: getFilterPropertyTypes(),
-            neighborhoods: getFilterNeighborhoods(),
+            //propertyTypes: getFilterPropertyTypes(),
+            //neighborhoods: getFilterNeighborhoods(),
             prices: getFilterPrice(),
             bedrooms: getFilterBedrooms(),
             bathrooms: getFilterBathrooms(),
-            shouldSearchMLS: getShouldSearchMLS(),
-            lastUpdate: getLastUpdate(),
-            squareFootage: getFilterSquareFootage(),
-            homeFeatures: getFilterHomeFeatures(),
-            views: getFilterViews(),
+            //shouldSearchMLS: getShouldSearchMLS(),
+            //lastUpdate: getLastUpdate(),
+            //squareFootage: getFilterSquareFootage(),
+            //homeFeatures: getFilterHomeFeatures(),
+            //views: getFilterViews(),
             includePlans: getShouldIncludePlans(),
             builders: getBuilders()
         };

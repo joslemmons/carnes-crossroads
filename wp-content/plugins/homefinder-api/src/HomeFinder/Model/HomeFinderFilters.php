@@ -988,7 +988,8 @@ class HomeFinderFilters
             false === $this->getListingAgents() &&
             false === $this->getViews() &&
             false === $this->getHomeFeatures() &&
-            false === $this->getMinLastUpdate()
+            false === $this->getMinLastUpdate() &&
+            false === $this->getBuilders()
         );
     }
 
