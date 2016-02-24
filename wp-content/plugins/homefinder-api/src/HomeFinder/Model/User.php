@@ -265,7 +265,21 @@ class User extends \TimberUser
 
     public function unSaveSearch(HomeFinderFilters $filters)
     {
-        delete_user_meta($this->ID, self::SAVED_SEARCHES_KEY, $filters->getRawFilters());
+        $savedSearches = $this->getSavedSearchFilters();
+        $rawSavedSearches = $this->getRawSavedSearches();
+
+        $a = serialize($filters->getRawFilters());
+        $count = 0;
+        foreach ($savedSearches as $search) {
+            $b = serialize($search->getRawFilters());
+
+            if ($a === $b) {
+                $rawSearch = $rawSavedSearches[$count];
+                delete_user_meta($this->ID, self::SAVED_SEARCHES_KEY, $rawSearch);
+            }
+
+            $count++;
+        }
     }
 
     public function hasSavedSearch(HomeFinderFilters $filters)

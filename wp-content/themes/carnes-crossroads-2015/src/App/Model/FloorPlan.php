@@ -35,8 +35,8 @@ class FloorPlan
     public function getFeaturedImage()
     {
         $featured_image = $this->featured_images;
-        if (is_array($featured_image)) {
-            $featured_image = array_shift($this->featured_images);
+        if (is_array($featured_image) && count($featured_image) > 0) {
+            $featured_image = $this->featured_images[0];
         }
 
         return $featured_image;

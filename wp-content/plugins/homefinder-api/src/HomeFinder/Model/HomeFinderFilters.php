@@ -204,18 +204,18 @@ class HomeFinderFilters
     public function getRawFilters()
     {
         $filters = array(
-            'propertyTypes' => $this->_rawPropertyTypes,
-            'neighborhoods' => $this->_rawNeighborhoods,
+//            'propertyTypes' => $this->_rawPropertyTypes,
+//            'neighborhoods' => $this->_rawNeighborhoods,
             'prices' => $this->_rawPrices,
             'bedrooms' => $this->_rawBedrooms,
             'bathrooms' => $this->_rawBathrooms,
 //            'searchMLS' => $this->_rawSearchMLS,
             'searchAddress' => $this->_rawSearchAddress,
-            'mlsPage' => $this->getMLSPage(),
-            'lastUpdate' => $this->_rawMinLastUpdate,
-            'squareFootage' => $this->_rawSquareFootage,
-            'homeFeatures' => $this->_rawHomeFeatures,
-            'views' => $this->_rawViews,
+//            'mlsPage' => $this->getMLSPage(),
+//            'lastUpdate' => $this->_rawMinLastUpdate,
+//            'squareFootage' => $this->_rawSquareFootage,
+//            'homeFeatures' => $this->_rawHomeFeatures,
+//            'views' => $this->_rawViews,
             'builders' => $this->_rawBuilders,
             'includePlans' => $this->_rawIncludePlans
         );

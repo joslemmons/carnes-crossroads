@@ -1,123 +1,148 @@
 {% extends 'base.twig' %}
 {% block template %}
 
-{% if active_item %}
-{% set activeItem = active_item %}
-{% else %}
-{% set activeItem = result.items[0] %}
-{% endif %}
+    {% if active_item %}
+        {% set activeItem = active_item %}
+    {% else %}
+        {% set activeItem = result.items[0] %}
+    {% endif %}
 
-<div class="home-finder">
-    {# <div class="top-container">
-        <div class="container-fluid">
-            <div class="row">
-                <div class="col-lg-11 col-lg-offset-1">
-                    <div class="logo">
-                        <a href="/">
-                            <img src="{{ theme.link }}/img/carnes_logo.png"/>
-                        </a>
+    <div class="home-finder">
+        {# <div class="top-container">
+            <div class="container-fluid">
+                <div class="row">
+                    <div class="col-lg-11 col-lg-offset-1">
+                        <div class="logo">
+                            <a href="/">
+                                <img src="{{ theme.link }}/img/carnes_logo.png"/>
+                            </a>
+                        </div>
                     </div>
                 </div>
             </div>
-        </div>
-    </div> #}
+        </div> #}
 
-{#     <div class="home-finder-nav">
-        <div class="container-fluid">
-            <div class="row">
-                <div class="col-md-8">
-                    <ul class="home-finder-nav-list">
-                        {% for item in home_finder_menu.get_items %}
-                        <li><a href="{{ item.link }}">{{ item.title }}</a></li>
-                        {% endfor %}
-                    </ul>
-                </div>
-                <div class="col-md-4">
-                    <div class="left-col">
-                        {% if function('is_user_logged_in') %}
-                            <span class="account-links">
-                                <a href="#" class="showAccountPage">Saved Listings {{ current_user.getSavedPropertyIds|length }}</a> / <a
-                                        href="#"
-                                        class="showAccountPage">Saved Searches {{ current_user.getRawSavedSearches|length }}</a></span>
-                        / <span class="account-link"><a href="{{ function('wp_logout_url', function('get_permalink', 35)) }}">Logout</a></span>
-                        {% else %}
-                        <a href="#" class="showAccountPage"><span class="account-links">Sign In / Create Account</span></a>
-                        {% endif %}
+        {#     <div class="home-finder-nav">
+                <div class="container-fluid">
+                    <div class="row">
+                        <div class="col-md-8">
+                            <ul class="home-finder-nav-list">
+                                {% for item in home_finder_menu.get_items %}
+                                <li><a href="{{ item.link }}">{{ item.title }}</a></li>
+                                {% endfor %}
+                            </ul>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="left-col">
+                                {% if function('is_user_logged_in') %}
+                                    <span class="account-links">
+                                        <a href="#" class="showAccountPage">Saved Listings {{ current_user.getSavedPropertyIds|length }}</a> / <a
+                                                href="#"
+                                                class="showAccountPage">Saved Searches {{ current_user.getRawSavedSearches|length }}</a></span>
+                                / <span class="account-link"><a href="{{ function('wp_logout_url', function('get_permalink', 35)) }}">Logout</a></span>
+                                {% else %}
+                                <a href="#" class="showAccountPage"><span class="account-links">Sign In / Create Account</span></a>
+                                {% endif %}
+                            </div>
+                        </div>
                     </div>
                 </div>
+            </div> #}
+
+        <div class="home-finder-filters{% if isSingle %} hide-filters{% endif %}">
+            <div class="home-finder-search">
+                <input type="search" placeholder="Search Address" id="filter-searchAddress"
+                       value="{{ filters.getSearchAddress }}">
             </div>
-        </div>
-    </div> #}
 
-    <div class="home-finder-filters{% if isSingle %} hide-filters{% endif %}">
-        <div class="home-finder-search">
-            <input type="search" placeholder="Search Address" id="filter-searchAddress" value="{{ filters.getSearchAddress }}">
-        </div>
-
-        {# potential new location for account #}
-        <div>
-            {% if function('is_user_logged_in') %}
-            <span class="account-links">
+            {# potential new location for account #}
+            <div>
+                {% if function('is_user_logged_in') %}
+                    <span class="account-links">
                 <a href="#" class="showAccountPage">Saved Listings {{ current_user.getSavedPropertyIds|length }}</a>
                 &nbsp;/&nbsp;
                 <a href="#" class="showAccountPage">Saved Searches {{ current_user.getRawSavedSearches|length }}</a>
                 &nbsp;/&nbsp;
                 <a href="{{ function('wp_logout_url', function('get_permalink', 17)) }}">Logout</a>
             </span>
-            {% else %}
-            <a href="#" class="showAccountPage"><span class="account-links">Sign In / Create Account</span></a>
-            {% endif %}
-        </div>
+                {% else %}
+                    <a href="#" class="showAccountPage"><span class="account-links">Sign In / Create Account</span></a>
+                {% endif %}
+            </div>
 
-        <button type="button" class="visible-sm visible-xs more-button toggle-more">More</button>
+            <button type="button" class="visible-sm visible-xs more-button toggle-more">More</button>
 
-        <div class="filter-options">
-            <a href="#" id="filter-clearAll">Clear</a>
-            {# <select id="filter-plans">
-                <option value="All Homes">All Homes</option>
-                <option value="Available Homes">Available Homes</option>
-                <option value="Home Plans">Home Plans</option>
-            </select> #}
-            <select id="filter-builders">
-                <option value="">All Builders</option>
-                {% for builder in function('\\App\\Model\\Builder::all') %}
-                    <option value="{{ builder.title|slugify }}"
-                            {% if builder.title|slugify == filters.getBuilders|split(',')[0] %}selected="selected"{% endif %}>{{ builder.title }}</option>
-                {% endfor %}
-            </select>
-            <select id="filter-price">
-                <option value="">Any Price</option>
-                <option value="0-2750000" {% if '275000' == filters.getMaxPrice %}selected="selected"{% endif %}>Under $275,000</option>
-                <option value="275000-300000" {% if '275000' == filters.getMinPrice %}selected="selected"{% endif %}>$275,000 - $300,000</option>
-                <option value="300000-350000" {% if '300000' == filters.getMinPrice %}selected="selected"{% endif %}>$300,000 - $350,000</option>
-                <option value="350000-any" {% if '350000' == filters.getMinPrice %}selected="selected"{% endif %}>$350,000 - and up</option>
-            </select>
-            <select id="filter-bedrooms">
-                <option value="">Bedrooms</option>
-                <option value="1" {% if '1' == filters.getBedrooms|split(',')[0] %}selected="selected"{% endif %}>1+ Bedrooms</option>
-                <option value="2" {% if '2' == filters.getBedrooms|split(',')[0] %}selected="selected"{% endif %}>2+ Bedrooms</option>
-                <option value="3" {% if '3' == filters.getBedrooms|split(',')[0] %}selected="selected"{% endif %}>3+ Bedrooms</option>
-                <option value="4" {% if '4' == filters.getBedrooms|split(',')[0] %}selected="selected"{% endif %}>4+ Bedrooms</option>
-            </select>
-            <select id="filter-bathrooms">
-                <option value="">Bathrooms</option>
-                <option value="1" {% if '1' == filters.getBathrooms|split(',')[0] %}selected="selected"{% endif %}>1+ Bathrooms</option>
-                <option value="2" {% if '2' == filters.getBathrooms|split(',')[0] %}selected="selected"{% endif %}>2+ Bathrooms</option>
-                <option value="3" {% if '3' == filters.getBathrooms|split(',')[0] %}selected="selected"{% endif %}>3+ Bathrooms</option>
-                <option value="4" {% if '4' == filters.getBathrooms|split(',')[0] %}selected="selected"{% endif %}>4+ Bathrooms</option>
-            </select>
-            <input type="checkbox" id="filter-includePlans" class="pull-right" value="yes"
-                   {% if filters.shouldIncludePlans %}checked="checked"{% endif %}/>
-            <label for="filter-includePlans">Include Plans</label>
-            {#<button type="button" class="hidden-sm hidden-xs more-button">More</button>#}
-            {#<div class="more-options">#}
+            <div class="filter-options">
+                <a href="#" id="filter-clearAll">Clear</a>
+                {# <select id="filter-plans">
+                    <option value="All Homes">All Homes</option>
+                    <option value="Available Homes">Available Homes</option>
+                    <option value="Home Plans">Home Plans</option>
+                </select> #}
+                <select id="filter-builders">
+                    <option value="">All Builders</option>
+                    {% for builder in function('\\App\\Model\\Builder::all') %}
+                        <option value="{{ builder.title|slugify }}"
+                                {% if builder.title|slugify == filters.getBuilders|split(',')[0] %}selected="selected"{% endif %}>{{ builder.title }}</option>
+                    {% endfor %}
+                </select>
+                <select id="filter-price">
+                    <option value="">Any Price</option>
+                    <option value="0-2750000" {% if '275000' == filters.getMaxPrice %}selected="selected"{% endif %}>
+                        Under $275,000
+                    </option>
+                    <option value="275000-300000"
+                            {% if '275000' == filters.getMinPrice %}selected="selected"{% endif %}>$275,000 - $300,000
+                    </option>
+                    <option value="300000-350000"
+                            {% if '300000' == filters.getMinPrice %}selected="selected"{% endif %}>$300,000 - $350,000
+                    </option>
+                    <option value="350000-any" {% if '350000' == filters.getMinPrice %}selected="selected"{% endif %}>
+                        $350,000 - and up
+                    </option>
+                </select>
+                <select id="filter-bedrooms">
+                    <option value="">Bedrooms</option>
+                    <option value="1" {% if '1' == filters.getBedrooms|split(',')[0] %}selected="selected"{% endif %}>1+
+                        Bedrooms
+                    </option>
+                    <option value="2" {% if '2' == filters.getBedrooms|split(',')[0] %}selected="selected"{% endif %}>2+
+                        Bedrooms
+                    </option>
+                    <option value="3" {% if '3' == filters.getBedrooms|split(',')[0] %}selected="selected"{% endif %}>3+
+                        Bedrooms
+                    </option>
+                    <option value="4" {% if '4' == filters.getBedrooms|split(',')[0] %}selected="selected"{% endif %}>4+
+                        Bedrooms
+                    </option>
+                </select>
+                <select id="filter-bathrooms">
+                    <option value="">Bathrooms</option>
+                    <option value="1" {% if '1' == filters.getBathrooms|split(',')[0] %}selected="selected"{% endif %}>
+                        1+ Bathrooms
+                    </option>
+                    <option value="2" {% if '2' == filters.getBathrooms|split(',')[0] %}selected="selected"{% endif %}>
+                        2+ Bathrooms
+                    </option>
+                    <option value="3" {% if '3' == filters.getBathrooms|split(',')[0] %}selected="selected"{% endif %}>
+                        3+ Bathrooms
+                    </option>
+                    <option value="4" {% if '4' == filters.getBathrooms|split(',')[0] %}selected="selected"{% endif %}>
+                        4+ Bathrooms
+                    </option>
+                </select>
+                <input type="checkbox" id="filter-includePlans" class="pull-right" value="yes"
+                       {% if filters.shouldIncludePlans %}checked="checked"{% endif %}/>
+                <label for="filter-includePlans">Include Plans</label>
+                {#<button type="button" class="hidden-sm hidden-xs more-button">More</button>#}
+                {#<div class="more-options">#}
                 {#<select id="filter-lastUpdate">#}
-                    {#<option value="">Listing Change Date</option>#}
-                    {#<option value="1">Yesterday or less</option>#}
-                    {#<option value="5">5 days ago or less</option>#}
-                    {#<option value="15">15 days ago or less</option>#}
-                    {#<option value="30">30 days ago or less</option>#}
-                    {#<option value="100">100 days ago or less</option>#}
+                {#<option value="">Listing Change Date</option>#}
+                {#<option value="1">Yesterday or less</option>#}
+                {#<option value="5">5 days ago or less</option>#}
+                {#<option value="15">15 days ago or less</option>#}
+                {#<option value="30">30 days ago or less</option>#}
+                {#<option value="100">100 days ago or less</option>#}
                 {#</select>#}
                 {#<select id="filter-communityAmenities">#}
                 {#<option value="">Community Amenities</option>#}
@@ -136,10 +161,10 @@
                 {#<option value="horses-ok">Horses Ok</option>#}
                 {#</select>#}
                 {#<select id="filter-sqft">#}
-                    {#<option value="">Square Footage</option>#}
-                    {#{% for i in range(500, 4500, 500) %}#}
-                        {#<option value="{{ i }}-{{ i + 500 }}">{{ i }} - {{ i + 500 }} sqft</option>#}
-                    {#{% endfor %}#}
+                {#<option value="">Square Footage</option>#}
+                {#{% for i in range(500, 4500, 500) %}#}
+                {#<option value="{{ i }}-{{ i + 500 }}">{{ i }} - {{ i + 500 }} sqft</option>#}
+                {#{% endfor %}#}
                 {#</select>#}
                 {#<select id="filter-acreage">#}
                 {#<option value="">Acreage</option>#}
@@ -151,121 +176,123 @@
                 {#<option value="20+">20+ acres</option>#}
                 {#</select>#}
                 {#<select multiple="multiple" id="filter-homeFeatures">#}
-                    {#<option value="dock">Dock</option>#}
-                    {#<option value="pool">Pool</option>#}
-                    {#<option value="fireplace">Fireplace</option>#}
-                    {#<option value="elevator">Elevator</option>#}
-                    {#<option value="garage">Garage</option>#}
-                    {#<option value="master-downstairs">Master Downstairs</option>#}
+                {#<option value="dock">Dock</option>#}
+                {#<option value="pool">Pool</option>#}
+                {#<option value="fireplace">Fireplace</option>#}
+                {#<option value="elevator">Elevator</option>#}
+                {#<option value="garage">Garage</option>#}
+                {#<option value="master-downstairs">Master Downstairs</option>#}
                 {#</select>#}
                 {#<select multiple="multiple" id="filter-view">#}
-                    {#<option value="beachfront">Beachfront</option>#}
-                    {#<option value="beach-access">Beach Access</option>#}
-                    {#<option value="oceanview">Oceanview</option>#}
-                    {#<option value="riverfront">Riverfront</option>#}
-                    {#<option value="waterfront-deep">Waterfront - Deep</option>#}
-                    {#<option value="tidal-creek">Tidal Creek</option>#}
-                    {#<option value="on-golf-course">On Golf Course</option>#}
-                    {#<option value="marshfront">Marshfront</option>#}
-                    {#<option value="marshview">Marshview</option>#}
-                    {#<option value="lakefront">Lakefront</option>#}
-                    {#<option value="lagoon">Lagoon</option>#}
-                    {#<option value="wooded">Wooded</option>#}
+                {#<option value="beachfront">Beachfront</option>#}
+                {#<option value="beach-access">Beach Access</option>#}
+                {#<option value="oceanview">Oceanview</option>#}
+                {#<option value="riverfront">Riverfront</option>#}
+                {#<option value="waterfront-deep">Waterfront - Deep</option>#}
+                {#<option value="tidal-creek">Tidal Creek</option>#}
+                {#<option value="on-golf-course">On Golf Course</option>#}
+                {#<option value="marshfront">Marshfront</option>#}
+                {#<option value="marshview">Marshview</option>#}
+                {#<option value="lakefront">Lakefront</option>#}
+                {#<option value="lagoon">Lagoon</option>#}
+                {#<option value="wooded">Wooded</option>#}
                 {#</select>#}
-            {#</div>#}
+                {#</div>#}
+            </div>
         </div>
-    </div>
 
-    <div class="home-finder-main">
-        <div class="container-fluid">
-            <div class="row">
-                <div class="col-lg-3 col-md-5 all-listings-col">
-                    <div class="listings-header">
-                        <h2 class="listings-title">{% if listingsTitle %}{{ listingsTitle }}{% else %}Featured Listings{% endif %}</h2>
+        <div class="home-finder-main">
+            <div class="container-fluid">
+                <div class="row">
+                    <div class="col-lg-3 col-md-5 all-listings-col">
+                        <div class="listings-header">
+                            <h2 class="listings-title">{% if listingsTitle %}{{ listingsTitle }}{% else %}Featured Listings{% endif %}</h2>
 
-                        <div class="results-search">
-                            <div class="results-count">
-                                {{ result.total }} Result{% if result.total > 1 %}s{% endif %}
+                            <div class="results-search">
+                                <div class="results-count">
+                                    {{ result.total }} Result{% if result.total > 1 %}s{% endif %}
+                                </div>
+                                <div id="saveSearchSection" {% if isFeaturedListings or isNewOfferings or isRecentlyListed or isSavedListings or isSingle or filters.isEmptySearch %} style="display:none;"{% endif %}>
+                                    |
+                                    <a href="#" id="accountSaveSearch">Save Search</a>
+                                    <a href="#" class="showAccountPage"
+                                       {% if current_user.getRawSavedSearches|length <= 0 %}style="display:none;"{% endif %}>
+                                        ({{ current_user.getRawSavedSearches|length }})
+                                    </a>
+
+                                </div>
+
                             </div>
-                            <div id="saveSearchSection" {% if isFeaturedListings or isNewOfferings or isRecentlyListed or isSavedListings or isSingle or filters.isEmptySearch %} style="display:none;"{% endif %}>
-                                |
-                                <a href="#" id="accountSaveSearch">Save Search</a>
-                                <a href="#" class="showAccountPage"
-                                   {% if current_user.getRawSavedSearches|length <= 0 %}style="display:none;"{% endif %}>
-                                ({{ current_user.getRawSavedSearches|length }})
-                                </a>
 
-                        </div>
-
-                    </div>
-
-                        {% if result.total > 0 %}
-                    <div class="view-on-map">
-                        <div class="map-icon">
-                            <svg width="16" height="16">
-                                <image xlink:href="{{ template_uri }}/img/map.svg"
-                                       src="{{ template_uri }}/img/map.png" width="16" height="16"/>
-                            </svg>
-                        </div>
-                        <a href="#" id="viewListingsOnMap">View Listings on Map</a>
-                    </div>
-                    {% endif %}
-
-
-                    <div class="listings-type">
-                        <select id="filter-listings-type">
-                            <option>Select Filters</option>
-                            <option {% if isFeaturedListings %}selected="selected"{% endif %}
-                                    value="featured-listings">Featured Listings
-                            </option>
-                            <option {% if isAllListings %}selected="selected"{% endif %}
-                                    value="all-listings">All Listings
-                            </option>
-                            {#<option {% if isNewOfferings %}selected="selected"{% endif %} value="new-offerings">New#}
-                                {#Offerings#}
-                            {#</option>#}
-                            <option {% if isRecentlyListed %}selected="selected"{% endif %} value="recently-listed">
-                                Recently Listed
-                            </option>
-                            {% if current_user and current_user.getSavedProperties|length > 0 %}
-                            <option {% if isSavedListings %}selected="selected"{% endif %}
-                                    value="saved-listings">Saved Listings
-                            </option>
+                            {% if result.total > 0 %}
+                                <div class="view-on-map">
+                                    <div class="map-icon">
+                                        <svg width="16" height="16">
+                                            <image xlink:href="{{ template_uri }}/img/map.svg"
+                                                   src="{{ template_uri }}/img/map.png" width="16" height="16"/>
+                                        </svg>
+                                    </div>
+                                    <a href="#" id="viewListingsOnMap">View Listings on Map</a>
+                                </div>
                             {% endif %}
-                        </select>
-                    </div>
 
-                        <div class="results-sort" {% if isNewOfferings or isFilterByAgent %}style="display:none;"{% endif %}>
-                        Sort by Price:
-                        <a href="#" class="sortByPriceHighToLow">High to Low</a> |
-                        <a href="#" class="sortByPriceLowToHigh">Low to High</a>
-                    </div>
 
-                </div>
-                <div class="listings-wrapper">
-                    {% if isNewOfferings %}
-                    {{ include('partials/home-finder/new-offerings-list.twig', { offerings: result.items, nextPageUrl: result.paginator.getNextPageUrl, activeOffering: activeItem, current_user: current_user}, with_context = false) }}
-                    {% else %}
-                    {{ include('partials/home-finder/property-list.twig', { properties: result.items, nextPageUrl: result.paginator.getNextPageUrl, activeProperty: activeItem, current_user: current_user }, with_context = false) }}
-                    {% endif %}
+                            <div class="listings-type">
+                                <select id="filter-listings-type">
+                                    <option>Select Filters</option>
+                                    <option {% if isFeaturedListings %}selected="selected"{% endif %}
+                                            value="featured-listings">Featured Listings
+                                    </option>
+                                    <option {% if isAllListings %}selected="selected"{% endif %}
+                                            value="all-listings">All Listings
+                                    </option>
+                                    {#<option {% if isNewOfferings %}selected="selected"{% endif %} value="new-offerings">New#}
+                                    {#Offerings#}
+                                    {#</option>#}
+                                    <option {% if isRecentlyListed %}selected="selected"{% endif %}
+                                            value="recently-listed">
+                                        Recently Listed
+                                    </option>
+                                    {% if current_user and current_user.getSavedProperties|length > 0 %}
+                                        <option {% if isSavedListings %}selected="selected"{% endif %}
+                                                value="saved-listings">Saved Listings
+                                        </option>
+                                    {% endif %}
+                                </select>
+                            </div>
+
+                            <div class="results-sort"
+                                 {% if isNewOfferings or isFilterByAgent %}style="display:none;"{% endif %}>
+                                Sort by Price:
+                                <a href="#" class="sortByPriceHighToLow">High to Low</a> |
+                                <a href="#" class="sortByPriceLowToHigh">Low to High</a>
+                            </div>
+
+                        </div>
+                        <div class="listings-wrapper">
+                            {% if isNewOfferings %}
+                                {{ include('partials/home-finder/new-offerings-list.twig', { offerings: result.items, nextPageUrl: result.paginator.getNextPageUrl, activeOffering: activeItem, current_user: current_user}, with_context = false) }}
+                            {% else %}
+                                {{ include('partials/home-finder/property-list.twig', { properties: result.items, nextPageUrl: result.paginator.getNextPageUrl, activeProperty: activeItem, current_user: current_user }, with_context = false) }}
+                            {% endif %}
+                        </div>
+                    </div>
+                    <div class="col-lg-9 col-md-7 single-listing-col{% if isSingle %} move-up{% endif %}">
+                        {% if isNewOfferings %}
+                            {{ include('partials/home-finder/new-offering.twig', { offering: activeItem, template_uri: theme.link, current_user: current_user }, with_context = false) }}
+                        {% elseif activeItem.isFloorPlan %}
+                            {{ include('partials/home-finder/floor-plan.twig', { floor_plan: activeItem, template_uri: theme.link, current_user: current_user }, with_context = false) }}
+                        {% else %}
+                            {{ include('partials/home-finder/property.twig', { property: activeItem, template_uri: theme.link, current_user: current_user }, with_context = false) }}
+                        {% endif %}
+                    </div>
                 </div>
             </div>
-            <div class="col-lg-9 col-md-7 single-listing-col{% if isSingle %} move-up{% endif %}">
-                {% if isNewOfferings %}
-                {{ include('partials/home-finder/new-offering.twig', { offering: activeItem, template_uri: theme.link, current_user: current_user }, with_context = false) }}
-                {% elseif isFloorPlans %}
-                    {{ include('partials/home-finder/floor-plan.twig', { floor_plan: activeItem, template_uri: theme.link, current_user: current_user }, with_context = false) }}
-                {% else %}
-                {{ include('partials/home-finder/property.twig', { property: activeItem, template_uri: theme.link, current_user: current_user }, with_context = false) }}
-                {% endif %}
-            </div>
+
         </div>
+
     </div>
 
-</div>
-
-</div>
-
-{% include "partials/home-finder/property-map-modal.twig" %}
+    {% include "partials/home-finder/property-map-modal.twig" %}
 
 {% endblock %}
