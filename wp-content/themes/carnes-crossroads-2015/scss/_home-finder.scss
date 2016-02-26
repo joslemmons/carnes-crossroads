@@ -31,6 +31,7 @@
             padding: 0 20px;
             height: auto;
             min-height: 105px;
+            background: $gold;
             @include transition(2s all);
 
             &.hide-filters {
@@ -112,7 +113,7 @@
                 letter-spacing: 0.5px;
 
                 @media (max-width: $screen-sm-max) {
-                    width: 100%;
+                    width: 100% !important;
                     margin-top: 20px;
                 }
 
@@ -156,6 +157,7 @@
                     top: auto;
                     margin-top: 20px;
                     margin-bottom: 5px;
+                    border-bottom: none;
                 }
 
                 @media (max-width: 1300px) {
@@ -168,8 +170,12 @@
                 }
             }
 
-            #filter-builders {
+            #filter-builders select {
                 width: 175px;
+
+                @media (max-width: $screen-sm-max) {
+                    width: 100%;
+                }
 
                 @media (max-width: 1200px) {
                     width: 140px;
@@ -684,7 +690,7 @@
                     }
 
                     @media (max-width: $screen-xs-max) {
-                        top: 200px;
+                        top: 225px;
                     }
 
                     &:before {
