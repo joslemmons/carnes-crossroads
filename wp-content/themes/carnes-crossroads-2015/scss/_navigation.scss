@@ -438,8 +438,22 @@ body.has-active-menu {
         text-align: center;
         border-bottom: 1px solid rgba($cc-brown, .5);
 
+        @media (max-height: 481px) {
+            width: 60%;
+            margin: 20px auto;
+            padding-bottom: 20px;
+        }
+
         img {
             max-width: 145px;
+
+            @media (max-height: 481px) {
+                max-width: 125px;
+            }
+
+            @media (min-height: 667px) {
+                max-width: 165px;
+            }
         }
     }
 
@@ -456,6 +470,14 @@ body.has-active-menu {
         padding: 0;
         @include transition(0.3s all);
 
+        @media (max-height: 481px) {
+            margin-bottom: 10px;
+        }
+
+        @media (min-height: 667px) {
+            margin-bottom: 15px;
+        }
+
         a {
             color: $white;
             font-size: 0.9rem;
@@ -464,12 +486,20 @@ body.has-active-menu {
             font-weight: $weight-bold;
             text-transform: uppercase;
             text-decoration: none;
+
+            @media (min-height: 667px) {
+                font-size: 1rem;
+            }
         }
     }
 
     .site-search {
         margin: 40px auto 0;
         width: 70%;
+
+        @media (max-height: 481px) {
+            margin-top: 20px;
+        }
 
         input[type="search"] {
             // border: 1px solid $brown;
@@ -483,6 +513,10 @@ body.has-active-menu {
             font-weight: $weight-regular;
             line-height: 1;
             text-align: left;
+
+            @media (max-height: 481px) {
+                padding: 8px 12px 8px 28px;
+            }
 
             &:focus {
                 outline: none;
