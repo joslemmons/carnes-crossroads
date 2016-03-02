@@ -24,18 +24,10 @@
                     </div>
                 {% endfor %}
             </div>
+            <hr style="margin: 110px -15px 0;">
         </div>
     </section>
-    <section class="page-content events__form-container">
-        <div class="container">
-            <div class="row">
-                <div class="col-xs-12">
-                    <h4>{{ page.getContactFormTitle }}</h4>
-                    {{ function('gravity_form', page.getContactFormId, false, false) }}
-                </div>
-            </div>
-        </div>
-    </section>
+
     <section class="page-content--white">
         <div class="container">
             <div class="row">
@@ -212,8 +204,19 @@
         </div>
     </section>
 
+    <section class="page-content events__form-container">
+        <div class="container">
+            <div class="row">
+                <div class="col-xs-12">
+                    <h4>{{ page.getContactFormTitle }}</h4>
+                    {{ function('gravity_form', page.getContactFormId, false, false) }}
+                </div>
+            </div>
+        </div>
+    </section>
+
     {% include "partials/link-widgets.twig" %}
 
-    {% include "partials/contact-foot.twig" %}
+    {# {% include "partials/contact-foot.twig" %} #}
 
 {% endblock %}
