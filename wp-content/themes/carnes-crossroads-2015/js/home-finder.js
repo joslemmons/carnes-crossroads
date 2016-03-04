@@ -614,6 +614,9 @@ jQuery(function ($) {
         $('#filter-neighborhood').multipleSelect('uncheckAll');
         $('#filter-homeFeatures').multipleSelect('uncheckAll');
         $('#filter-view').multipleSelect('uncheckAll');
+        filterPriceSlider.noUiSlider.set([0, 5000000]);
+        filterSqftSlider.noUiSlider.set([0, 5000]);
+
         pauseSearch = false;
     }
 
@@ -915,8 +918,47 @@ jQuery(function ($) {
     });
 
     // Harvest Chosen Select Boxes
-    $("#filter-builders, #filter-price, #filter-bedrooms, #filter-bathrooms, #filter-listings-type").chosen({
+    $("#filter-builders, #filter-bedrooms, #filter-bathrooms, #filter-listings-type").chosen({
         disable_search: 'true'
       });
+
+    // price slider
+
+    $('#showPriceFilter').on('click', function () {
+        $('#priceFilterSection').toggle();
+    });
+
+    var filterPriceSlider = document.getElementById('filter-price');
+
+    noUiSlider.create(filterPriceSlider, {
+        start: [0, 500000],
+        connect: true,
+        step: 25000,
+        range: {
+            'min': 0,
+            'max': 500000
+        },
+        format: wNumb({
+            decimals: 0,
+            thousand: ',',
+            prefix: '$'
+        })
+    });
+
+    filterPriceSlider.noUiSlider.on('set', function () {
+        $('#filter-searchAddress').val('');
+        order = 'default';
+        performSearch();
+    });
+
+    filterPriceSlider.noUiSlider.on('update', function (values, handle) {
+        var prices = [$('#minPriceFilter'), $('#maxPriceFilter')];
+
+        prices[handle].val(values[handle]);
+    });
+
+    $('#minPriceFilter,#maxPriceFilter').on('change', function (event) {
+        filterPriceSlider.noUiSlider.set($(this).val());
+    });
 
 });

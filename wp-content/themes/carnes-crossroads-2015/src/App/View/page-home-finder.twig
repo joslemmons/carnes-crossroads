@@ -8,46 +8,6 @@
     {% endif %}
 
     <div class="home-finder">
-        {# <div class="top-container">
-            <div class="container-fluid">
-                <div class="row">
-                    <div class="col-lg-11 col-lg-offset-1">
-                        <div class="logo">
-                            <a href="/">
-                                <img src="{{ theme.link }}/img/carnes_logo.png"/>
-                            </a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div> #}
-
-        {#     <div class="home-finder-nav">
-                <div class="container-fluid">
-                    <div class="row">
-                        <div class="col-md-8">
-                            <ul class="home-finder-nav-list">
-                                {% for item in home_finder_menu.get_items %}
-                                <li><a href="{{ item.link }}">{{ item.title }}</a></li>
-                                {% endfor %}
-                            </ul>
-                        </div>
-                        <div class="col-md-4">
-                            <div class="left-col">
-                                {% if function('is_user_logged_in') %}
-                                    <span class="account-links">
-                                        <a href="#" class="showAccountPage">Saved Listings {{ current_user.getSavedPropertyIds|length }}</a> / <a
-                                                href="#"
-                                                class="showAccountPage">Saved Searches {{ current_user.getRawSavedSearches|length }}</a></span>
-                                / <span class="account-link"><a href="{{ function('wp_logout_url', function('get_permalink', 35)) }}">Logout</a></span>
-                                {% else %}
-                                <a href="#" class="showAccountPage"><span class="account-links">Sign In / Create Account</span></a>
-                                {% endif %}
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div> #}
 
         <div class="home-finder-filters{% if isSingle %} hide-filters{% endif %}">
             <div class="home-finder-search">
@@ -74,11 +34,6 @@
 
             <div class="filter-options">
                 <a href="#" id="filter-clearAll">Clear</a>
-                {# <select id="filter-plans">
-                    <option value="All Homes">All Homes</option>
-                    <option value="Available Homes">Available Homes</option>
-                    <option value="Home Plans">Home Plans</option>
-                </select> #}
                 <select id="filter-builders">
                     <option value="">All Builders</option>
                     {% for builder in function('\\App\\Model\\Builder::all') %}
@@ -86,21 +41,13 @@
                                 {% if builder.title|slugify == filters.getBuilders|split(',')[0] %}selected="selected"{% endif %}>{{ builder.title }}</option>
                     {% endfor %}
                 </select>
-                <select id="filter-price">
-                    <option value="">Any Price</option>
-                    <option value="0-2750000" {% if '275000' == filters.getMaxPrice %}selected="selected"{% endif %}>
-                        Under $275,000
-                    </option>
-                    <option value="275000-300000"
-                            {% if '275000' == filters.getMinPrice %}selected="selected"{% endif %}>$275,000 - $300,000
-                    </option>
-                    <option value="300000-350000"
-                            {% if '300000' == filters.getMinPrice %}selected="selected"{% endif %}>$300,000 - $350,000
-                    </option>
-                    <option value="350000-any" {% if '350000' == filters.getMinPrice %}selected="selected"{% endif %}>
-                        $350,000 - and up
-                    </option>
-                </select>
+                <div class="slider-container">
+                    <button id="showPriceFilter">Price</button>
+                    <div id="priceFilterSection" class="slider-dropdown" style="display:none">
+                        <input id="minPriceFilter" type="text" value="0"> to <input id="maxPriceFilter" type="text" value="5000000">
+                        <div id="filter-price" class="noUi-extended"></div>
+                    </div>
+                </div>
                 <select id="filter-bedrooms">
                     <option value="">Bedrooms</option>
                     <option value="1" {% if '1' == filters.getBedrooms|split(',')[0] %}selected="selected"{% endif %}>1+
@@ -131,9 +78,10 @@
                         4+ Bathrooms
                     </option>
                 </select>
-                <input type="checkbox" id="filter-includePlans" class="pull-right" value="yes"
+                {# <input type="checkbox" id="filter-includePlans" class="pull-right" value="yes"
                        {% if filters.shouldIncludePlans %}checked="checked"{% endif %}/>
-                <label for="filter-includePlans">Include Plans</label>
+                <label for="filter-includePlans">Include Plans</label> #}
+
                 {#<button type="button" class="hidden-sm hidden-xs more-button">More</button>#}
                 {#<div class="more-options">#}
                 {#<select id="filter-lastUpdate">#}
