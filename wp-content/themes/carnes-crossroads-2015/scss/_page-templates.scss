@@ -174,17 +174,19 @@ $navbar-offset: 135px;
         }
 
         &:before {
-            content: '';
-            position: absolute;
-            top: 0;
-            right: 0;
-            bottom: 75%;
-            left: 0;
-            opacity: 0.5;
-            background: -moz-linear-gradient(top, rgba($black,1) 0%, rgba($black,0) 100%);
-            background: -webkit-linear-gradient(top, rgba($black,1) 0%,rgba($black,0) 100%);
-            background: linear-gradient(to bottom, rgba($black,1) 0%,rgba($black,0) 100%);
-            z-index: 1;
+            @media (max-width: $screen-xs-max) {
+                content: '';
+                position: absolute;
+                top: 0;
+                right: 0;
+                bottom: 75%;
+                left: 0;
+                opacity: 0.5;
+                background: -moz-linear-gradient(top, rgba($black,1) 0%, rgba($black,0) 100%);
+                background: -webkit-linear-gradient(top, rgba($black,1) 0%,rgba($black,0) 100%);
+                background: linear-gradient(to bottom, rgba($black,1) 0%,rgba($black,0) 100%);
+                z-index: 1;
+            }
         }
     }
 
