@@ -37,12 +37,12 @@
 
     input {
         background-color: #ebebeb;
-        background-image: url(./img/icon-search.png);
-        background-repeat: no-repeat;
-        background-position: 93% center;
-        background-size: 1.2rem;
         border: none;
         display: inline-block;
+    }
+
+    .btn-search-sm{
+        margin-top: 28px;
     }
 }
 

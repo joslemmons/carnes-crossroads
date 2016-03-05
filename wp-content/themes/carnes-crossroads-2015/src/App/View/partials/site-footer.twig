@@ -17,10 +17,15 @@
                 <img src="{{ template_uri }}/img/carnes_logo.png">
             </div>
             <div class="col-xs-12 col-md-4 col-lg-3">
-                <div class="input-group footer-search">
-                    <label for="footer-search">Search</label>
-                    <input type="text" class="form-control" id="footer-search">
-                </div>
+                <form action="/" method="get">
+                    <div class="input-group footer-search">
+                        <label for="footer-search">Search</label>
+                        <input type="text" class="form-control" id="footer-search" name="s">
+                        <span class="input-group-btn">
+                            <button class="btn btn-search-sm" type="submit"></button>
+                        </span>
+                    </div>
+                </form>
             </div>
             <div class="col-xs-12 col-md-8 col-lg-7 hidden-xs">
                 <ul class="footer__nav text-right">

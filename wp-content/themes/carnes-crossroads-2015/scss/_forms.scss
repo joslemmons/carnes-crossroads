@@ -100,10 +100,64 @@
     font-size: 1.1rem;
     text-transform: uppercase;
     color: $cc-med-grey;
+
+}
+
+.btn-search {
+    background-color: $white;
     background-image: url(./img/icon-search.png);
     background-repeat: no-repeat;
-    background-position: 97% center;
-    background-size: 1.4rem;
+    background-position: center center;
+    border-top: 1px solid #ccc;
+    border-right: 1px solid #ccc;
+    border-bottom: 1px solid #ccc;
+    border-left: none;
+    @include transition(0.2s all);
+
+    &-lg {
+        @extend .btn-search;
+        height: 4.3rem;
+        width: 75px;
+        background-size: 1.4rem;
+
+        &:hover {
+            background-color: #ebebeb;
+            background-image: url(./img/icon-search.png);
+            background-repeat: no-repeat;
+            background-position: center center;
+        }
+
+        &:active {
+            background-color: $white;
+            background-image: url(./img/icon-search.png);
+            background-repeat: no-repeat;
+            background-position: center center;
+        }
+    }
+
+    &-sm {
+        @extend .btn-search;
+        background-color: #ebebeb;
+        border: none;
+        height: 34px;
+        width: 40px;
+        background-size: 1rem;
+
+        &:hover {
+            background-color: #ebebeb;
+            background-image: url(./img/icon-search.png);
+            background-repeat: no-repeat;
+            background-position: center center;
+        }
+
+        &:active {
+            background-color: #ebebeb;
+            background-image: url(./img/icon-search.png);
+            background-repeat: no-repeat;
+            background-position: center center;
+        }
+    }
+
 }
 
 

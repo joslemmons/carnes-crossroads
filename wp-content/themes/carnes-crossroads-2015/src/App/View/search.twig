@@ -6,7 +6,7 @@
         {% set headerImage = page.parent.thumbnail %}
     {% endif %}
 
-    <section class="hero__page" style="background-image: url('{{ headerImage.src|resize(1500) }}')">
+    <section class="hero__article" style="background-image: url('{{ template_uri }}/img/cc-model-row.jpg')">
         <div class="hero__content-tab-orange">
             <div class="hero__content-inner">
                 <h1>Search</h1>
@@ -16,14 +16,20 @@
     <section class="page-content events__form-container">
         <div class="container">
             <div class="row">
-                <div class="col-md-12">
+                <div class="col-xs-12">
                     <form action="/" method="get">
-                        <input type="text" placeholder="enter keywords" name="s" class="input-search"/>
+                        <div class="input-group">
+                            <input type="text" placeholder="Enter Search Keywords" name="s" class="form-control input-search"/>
+                            <span class="input-group-btn">
+                                <button class="btn btn-search-lg" type="submit"></button>
+                            </span>
+                        </div>
                     </form>
                 </div>
             </div>
         </div>
     </section>
+
     <section class="page-content--white-floral-top">
         <div class="container">
             <div class="row extra-bottom">
