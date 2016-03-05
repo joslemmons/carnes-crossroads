@@ -261,4 +261,12 @@ jQuery(function ($) {
         }
     });
 
+    function initColorboxElements() {
+        $('a.color-box-single').colorbox({
+            maxWidth: '95%'
+        });
+    }
+
+    initColorboxElements();
+
 });
