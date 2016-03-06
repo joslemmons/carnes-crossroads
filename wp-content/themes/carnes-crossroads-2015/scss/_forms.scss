@@ -101,6 +101,12 @@
     text-transform: uppercase;
     color: $cc-med-grey;
 
+    @media (max-width: $screen-xs-max) {
+        height: 3rem;
+        text-indent: 10px;
+        font-size: 0.9rem;
+    }
+
 }
 
 .btn-search {
@@ -119,6 +125,11 @@
         height: 4.3rem;
         width: 75px;
         background-size: 1.4rem;
+
+        @media (max-width: $screen-xs-max) {
+            height: 3rem;
+            width: 55px;
+        }
 
         &:hover {
             background-color: #ebebeb;

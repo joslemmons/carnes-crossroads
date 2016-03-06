@@ -112,4 +112,12 @@
         padding-right: 30px;
         text-decoration: none;
     }
+
+    @media (max-width: $screen-xs-max) {
+        font-size: 0.65rem;
+        letter-spacing: 0.2px;
+        background-size: 0.75rem;
+        padding-right: 18px;
+        background-position: center right;
+    }
 }
