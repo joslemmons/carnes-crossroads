@@ -3524,6 +3524,9 @@ video {
   transform: translateX(-50%) translateY(-50%);
   -webkit-transition: 0.2s all;
   transition: 0.2s all; }
+  @media (max-width: 767px) {
+    .play-btn-container {
+      top: 35%; } }
   .play-btn-container:hover {
     opacity: 0.8; }
   .play-btn-container a {

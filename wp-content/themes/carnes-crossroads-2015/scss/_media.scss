@@ -131,6 +131,10 @@ video {
     @include center(xy);
     @include transition(0.2s all);
 
+    @media (max-width: $screen-xs-max) {
+        top: 35%;
+    }
+
     &:hover {
         opacity: 0.8;
     }
