@@ -34,7 +34,7 @@
                 {% if child_page.getGalleryImages|length > 1 %}
                 <div class="slider-sm__nav pull-right"></div>
                 {% endif %}
-                <div class="slider-sm__wrap slider-sm">
+                <div class="slider-sm">
                     {% for image in child_page.getGalleryImages %}
                     <div class="slider-sm__item" style="background: url('{{ image.src }}') no-repeat center center / cover;">
                         {% if image.caption %}
