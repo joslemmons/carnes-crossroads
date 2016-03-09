@@ -7,7 +7,7 @@
     </div>
     <div class="listing-details-col">
         <div class="listing-address">{{ property.getAddress }}</div>
-        <div class="listing-neighborhood">{{ property.getPropertyType }}{% if property.getPropertyType and property.getNeighborhood %} | {% endif %}{{ property.getNeighborhood }}</div>
+        <div class="listing-neighborhood">{{ property.getPropertyType }}</div>
         <div class="listing-details">
             {% if property.getBedroomCount or property.getFullBathroomCount or property.getHalfBathroomCount %}
                 <div class="specs">{% if property.getBedroomCount %}{{ property.getBedroomCount }} BR /{% endif %}

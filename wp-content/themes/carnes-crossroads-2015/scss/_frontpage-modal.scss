@@ -14,6 +14,7 @@
     -webkit-overflow-scrolling: touch;
     outline: 0;
     color: $black;
+    padding-top: $navbar-offset;
 }
 .modal.fade .modal-dialog {
     -webkit-transform: translate(125%, 0);
@@ -136,7 +137,7 @@
 }
 @media (min-width: 768px) {
     .modal-dialog {
-        width: 90%;
+        width: 75%;
         margin: 0;
         float: right;
         max-width: 1170px;
@@ -204,7 +205,7 @@
 
 .modal-dialog {
     .primary-page .primary-page-header .page-title {
-            padding: 400px 40px 45px;
+            padding: 280px 40px 45px;
             width: 100%;
     }
 

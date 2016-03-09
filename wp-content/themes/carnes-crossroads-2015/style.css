@@ -4718,7 +4718,8 @@ body.has-active-menu {
   z-index: 1070;
   -webkit-overflow-scrolling: touch;
   outline: 0;
-  color: #000; }
+  color: #000;
+  padding-top: 135px; }
 
 .modal.fade .modal-dialog {
   -webkit-transform: translate(125%, 0);
@@ -4834,7 +4835,7 @@ body.has-active-menu {
 
 @media (min-width: 768px) {
   .modal-dialog {
-    width: 90%;
+    width: 75%;
     margin: 0;
     float: right;
     max-width: 1170px; }
@@ -4894,7 +4895,7 @@ body.has-active-menu {
   position: fixed; }
 
 .modal-dialog .primary-page .primary-page-header .page-title {
-  padding: 400px 40px 45px;
+  padding: 280px 40px 45px;
   width: 100%; }
 .modal-dialog .primary-page .primary-page-header .logo-container .logo {
   display: none; }
