@@ -48,12 +48,12 @@
             {#</div>#}
             {#</div>#}
             <div class="share action-link">
-                {% set tweet_share = floor_plan.getFriendlyName~' on @danielisland '~floor_plan.link|url_encode %}
-                {% set email_subject_share = '[Daniel Island Real Estate] '~floor_plan.getAddress|url_encode %}
+                {% set tweet_share = floor_plan.getFriendlyName~' on @carnesxroads '~floor_plan.link|url_encode %}
+                {% set email_subject_share = '[Carnes Crossroads Real Estate] '~floor_plan.getAddress|url_encode %}
                 {% set email_body_share = floor_plan.getFriendlyName~' '~floor_plan.link|url_encode %}
                 {% set facebook_app_id = function('\\App\\Model\\Config::getFacebookAppId') %}
                 {% set domain = floor_plan.link|url_encode %}
-                {% set facebook_share_name = floor_plan.getAddress~' on Daniel Island Real Estate'|url_encode %}
+                {% set facebook_share_name = floor_plan.getAddress~' on Carnes Crossroads Real Estate'|url_encode %}
                 {% set facebook_share_description = floor_plan.getFriendlyName|url_encode %}
                 {% set facebook_share_caption = floor_plan.link|url_encode %}
                 {% set facebook_share_context = floor_plan.link|url_encode %}
@@ -94,7 +94,7 @@
         </div>
 
         <div class="listing-address">
-            {{ floor_plan.getAddress }}
+            {{ floor_plan.title }}
         </div>
         <div class="optional-btns">
             {% if floor_plan.getX3DTourLink %}

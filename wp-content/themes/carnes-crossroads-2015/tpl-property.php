@@ -14,7 +14,7 @@ $id = $params['id'];
 $property = Property::withId($id);
 
 if (false === $property) {
-    wp_redirect(home_url() . '/real-estate/home-finder');
+    wp_redirect(home_url() . '/home-finder');
     exit();
 }
 
@@ -26,10 +26,12 @@ if (is_user_logged_in()) {
 }
 
 // If navigating directly to a property, then we'll show featured properties in the list be default
-$featured_properties_result = HomeFinder::getFeaturedProperties();
-$context['listingsTitle'] = 'Featured Listings';
+$filters = \HomeFinder\Model\HomeFinderFilters::withREQUESTParams();
+$filters->setShouldIncludeHomes(true);
+$featured_properties_result = HomeFinder::getProperties($filters);
+$context['listingsTitle'] = 'Search Listings';
 
-$context['isSingle'] = true;
+$context['isAvailableHomes'] = true;
 $context['result'] = $featured_properties_result;
 $context['active_item'] = $property;
 $context['seo_title'] = $property->getAddress() . ' - Daniel Island';

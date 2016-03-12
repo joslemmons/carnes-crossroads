@@ -27,84 +27,6 @@ jQuery(function ($) {
         });
     }
 
-    function showRecentlyListed() {
-        $('div.listings-wrapper').fadeTo('slow', 0.3);
-        $saveSearchSection.hide();
-        showLoadingListingsIndicator();
-        $.get('/api/home-finder/recently-listed/page/1', {}, function (data) {
-            var html = data.rsp,
-                total = data.total;
-
-            hideLoadingListingsIndicator();
-
-            $('h2.listings-title').text('Recently Listed');
-
-            $('div.results-count').text(pluralize('Result', total, true));
-
-            $('div.listings-wrapper').html(html).fadeTo('slow', 1);
-
-            clearFilters();
-            $('#filter-searchAddress').val('');
-
-            // auto click the first result
-            $('div.listings-wrapper').find('div.listing').first().trigger('click');
-        });
-    }
-
-    function showNewOfferings() {
-        $('div.listings-wrapper').fadeTo('slow', 0.3);
-        $saveSearchSection.hide();
-        showLoadingListingsIndicator();
-        $.get('/api/home-finder/new-offerings/page/1', {}, function (data) {
-            var html = data.rsp,
-                total = data.total;
-
-            hideLoadingListingsIndicator();
-
-            $('h2.listings-title').text('New Offerings');
-
-            $('div.results-count').text(pluralize('Result', total, true));
-
-            $('div.listings-wrapper').html(html).fadeTo('slow', 1);
-
-            clearFilters();
-            $('#filter-searchAddress').val('');
-
-            // auto click the first result
-            $('div.listings-wrapper').find('div.listing').first().trigger('click');
-        });
-    }
-
-    function showFeaturedListings() {
-        $('div.listings-wrapper').fadeTo('slow', 0.3);
-        $saveSearchSection.hide();
-        showLoadingListingsIndicator();
-        $.get('/api/home-finder/featured-properties/page/1', {sort: order}, function (data) {
-            var html = data.rsp,
-                total = data.total;
-
-            hideLoadingListingsIndicator();
-
-            $('h2.listings-title').text('Featured Listings');
-
-            $('div.results-count').text(pluralize('Result', total, true));
-
-            $('div.listings-wrapper').html(html).fadeTo('slow', 1);
-
-            clearFilters();
-            $('#filter-searchAddress').val('');
-
-            // auto click the first result
-            $('div.listings-wrapper').find('div.listing').first().trigger('click');
-        });
-    }
-
-    function showAllListings() {
-        $('div.listings-wrapper').fadeTo('slow', 0.3);
-        clearFilters();
-        performSearch('default', true);
-    }
-
     function showProperty(address, id) {
         $('div.single-listing-col').fadeTo('slow', 0.3);
         $.get('/api/home-finder/properties/' + id, {}, function (data) {
@@ -149,37 +71,17 @@ jQuery(function ($) {
     var Router = Backbone.Router.extend({
         routes: {
             'home-finder/properties/:address/:id/': 'showProperty',
-            'home-finder/featured-listings/': 'showFeaturedListings',
-            'home-finder/new-offerings/': 'showNewOfferings',
-            'home-finder/recently-listed/': 'showRecentlyListed',
-            'home-finder/saved-listings/': 'showSavedListings',
-            'home-finder/all-listings/': 'showAllListings'
+            'home-finder/saved-listings/': 'showSavedListings'
         },
 
         showSavedListings: function () {
             showSavedListings();
         },
 
-        showRecentlyListed: function () {
-            showRecentlyListed();
-
-        },
-
-        showNewOfferings: function () {
-            showNewOfferings();
-        },
-
-        showFeaturedListings: function () {
-            showFeaturedListings();
-        },
-
         showProperty: function (address, id) {
             showProperty(address, id);
-        },
-
-        showAllListings: function () {
-            showAllListings();
         }
+
     });
 
     var router = new Router();
@@ -190,10 +92,6 @@ jQuery(function ($) {
             silent: true
         });
         Backbone.history.started = true;
-
-        if ('home-finder/' === Backbone.history.getFragment()) {
-            router.navigate("home-finder/featured-listings/", {trigger: false, replace: true});
-        }
     }
 
     function showLoadingListingsIndicator() {
@@ -204,16 +102,13 @@ jQuery(function ($) {
         $('div.listings-wrapper div.loading').remove();
     }
 
-    $('#filter-price,#filter-bedrooms,#filter-bathrooms,#filter-lastUpdate,#filter-sqft,#filter-builders').on('change', function () {
+    $('#filter-bedrooms,#filter-bathrooms,#filter-builders').on('change', function () {
         $('#filter-searchAddress').val('');
         order = 'default';
         performSearch();
     });
-    $('#filter-mlsListing').on('click', function () {
-        $('#filter-searchAddress').val('');
-        performSearch();
-    });
-    $('#filter-includePlans').on('click', function () {
+
+    $('div.listings-type select').on('change', function () {
         $('#filter-searchAddress').val('');
         performSearch();
     });
@@ -241,18 +136,12 @@ jQuery(function ($) {
         }
 
         var filters = {
-            //propertyTypes: getFilterPropertyTypes(),
-            //neighborhoods: getFilterNeighborhoods(),
             prices: getFilterPrice(),
             bedrooms: getFilterBedrooms(),
             bathrooms: getFilterBathrooms(),
-            //shouldSearchMLS: getShouldSearchMLS(),
             searchAddress: getSearchAddress(),
-            //lastUpdate: getLastUpdate(),
-            //squareFootage: getFilterSquareFootage(),
-            //homeFeatures: getFilterHomeFeatures(),
-            //views: getFilterViews(),
             includePlans: getShouldIncludePlans(),
+            includeHomes: getShouldIncludeHomes(),
             builders: getBuilders()
         };
 
@@ -271,15 +160,10 @@ jQuery(function ($) {
 
     function isSearchEmpty() {
         return (
-            getFilterPropertyTypes() === '' &&
-            getFilterNeighborhoods() === '' &&
-            getFilterPrice() === '' &&
+            getBuilders() === '' &&
+            getFilterPrice() === '0-500000' &&
             getFilterBedrooms() === '' &&
-            getFilterBathrooms() === '' &&
-            getLastUpdate() === '' &&
-            getFilterSquareFootage() === '' &&
-            getFilterHomeFeatures() === '' &&
-            getFilterViews() === ''
+            getFilterBathrooms() === ''
         );
     }
 
@@ -299,19 +183,13 @@ jQuery(function ($) {
         $.get(
             '/api/home-finder/search',
             {
-                //propertyTypes: filters.propertyTypes,
-                //neighborhoods: filters.neighborhoods,
                 prices: filters.prices,
                 bedrooms: filters.bedrooms,
                 bathrooms: filters.bathrooms,
-                //searchMLS: filters.shouldSearchMLS,
                 searchAddress: filters.searchAddress,
                 sort: sort,
-                //lastUpdate: filters.lastUpdate,
-                //squareFootage: filters.squareFootage,
-                //homeFeatures: filters.homeFeatures,
-                //views: filters.views,
                 includePlans: filters.includePlans,
+                includeHomes: filters.includeHomes,
                 builders: filters.builders
             },
             function (data) {
@@ -322,13 +200,7 @@ jQuery(function ($) {
 
                 hideLoadingListingsIndicator();
 
-                if (isAllListings === false) {
-                    $('h2.listings-title').text('Search Listings');
-                    $('div.listings-type').find('select').find('option').first().prop('selected', 'selected');
-                }
-                else {
-                    $('h2.listings-title').text('All Listings');
-                }
+                $('h2.listings-title').text('Search Listings');
 
                 $('div.results-count').text(pluralize('Result', total, true));
 
@@ -344,46 +216,23 @@ jQuery(function ($) {
     }
 
     function getShouldIncludePlans() {
-        return $('#filter-includePlans').is(':checked');
+        var selection = $('#filter-listings-type').find('option:selected').val();
+
+        return (selection === 'home-plans' || selection === 'available-homes-and-plans');
     }
 
-    function getLastUpdate() {
-        return $('#filter-lastUpdate').val();
-    }
+    function getShouldIncludeHomes() {
+        var selection = $('#filter-listings-type').find('option:selected').val();
 
-    function getFilterSquareFootage() {
-        return $('#filter-sqft').find('option:selected').val();
-    }
-
-    function getFilterHomeFeatures() {
-        return $('#filter-homeFeatures').multipleSelect('getSelects');
-    }
-
-    function getFilterViews() {
-        return $('#filter-view').multipleSelect('getSelects');
+        return (selection === 'available-homes' || selection === 'available-homes-and-plans');
     }
 
     function getSearchAddress() {
         return $('#filter-searchAddress').val();
     }
 
-    function getShouldSearchMLS() {
-        return true;
-    }
-
-    function getFilterPropertyTypes() {
-        return $('#filter-propertyType').multipleSelect('getSelects');
-    }
-
-    function getFilterNeighborhoods() {
-        return $('#filter-neighborhood').multipleSelect('getSelects');
-    }
-
     function getFilterPrice() {
-        var prices,
-            $select = $('#filter-price');
-
-        return $select.find('option:selected').val();
+        return $('#minPriceFilter').val().replace(/\D/g, '') + '-' + $('#maxPriceFilter').val().replace(/\D/g, '');
     }
 
     function getFilterBedrooms() {
@@ -436,65 +285,6 @@ jQuery(function ($) {
                 respondTo: 'window'
             });
         });
-    });
-
-    $('div.all-listings-col').on('click', 'div.listings-wrapper div.offering', function () {
-        var link = $(this).attr('data-offering-link'),
-            id = $(this).attr('data-offering-id');
-
-        $(this).parent().find('div.listing.active').removeClass('active');
-        $(this).addClass('active');
-
-        router.navigate(link, {trigger: false});
-
-        $.get('/api/home-finder/new-offerings/' + id, {}, function (data) {
-            var propertyHTML = data.rsp;
-
-            $('div.single-listing-col').html(propertyHTML);
-
-            $('div.single-listing-col .listing-images').slick({
-                dots: false,
-                infinite: false,
-                speed: 300,
-                slidesToShow: 2,
-                centerMode: false,
-                arrows: true,
-                variableWidth: true,
-                respondTo: 'window'
-            });
-        });
-    });
-
-    $('div.listings-type select').on('change', function () {
-        var choice = $(this).find('option:selected').val();
-        //('home-finder/' === Backbone.history.getFragment())
-        switch (choice) {
-            case 'new-offerings':
-                router.navigate('home-finder/new-offerings/', {trigger: false});
-                $('div.results-sort').hide();
-                showNewOfferings();
-                break;
-            case 'recently-listed':
-                router.navigate('home-finder/recently-listed/', {trigger: false});
-                $('div.results-sort').hide();
-                showRecentlyListed();
-                break;
-            case 'saved-listings':
-                router.navigate('home-finder/saved-listings/', {trigger: false});
-                $('div.results-sort').show();
-                showSavedListings();
-                break;
-            case 'all-listings':
-                router.navigate('home-finder/all-listings/', {trigger: false});
-                $('div.results-sort').show();
-                showAllListings();
-                break;
-            case 'featured-listings':
-            default:
-                router.navigate('home-finder/featured-listings/', {trigger: false});
-                $('div.results-sort').show();
-                showFeaturedListings();
-        }
     });
 
     $('.listing-images').slick({
@@ -580,43 +370,13 @@ jQuery(function ($) {
 
     initColorboxElements();
 
-    $(document).on('click', 'a.filterByPropertyType', function () {
-        var propertyType = $(this).attr('data-property-type');
-
-        order = 'default';
-
-        clearFilters();
-        $('#filter-propertyType').find('option[value="' + propertyType.toLowerCase() + '"]').prop('selected', 'selected');
-        $('#filter-bathrooms').trigger('change');
-
-        return false;
-    });
-
-    $(document).on('click', 'a.filterByNeighborhood', function () {
-        var neighborhood = $(this).attr('data-neighborhood');
-
-        order = 'default';
-
-        clearFilters();
-        $('#filter-neighborhood').find('option:contains(' + neighborhood + ')').prop('selected', 'selected');
-        $('#filter-bathrooms').trigger('change');
-
-        return false;
-    });
-
     function clearFilters() {
         order = 'default';
         pauseSearch = true;
-        $('div.home-finder-filters').find('select option:selected').removeProp('selected');
         $('#filter-searchAddress').val('');
-        $('#filter-includePlans').prop('checked', false);
-        $('#filter-propertyType').multipleSelect('uncheckAll');
-        $('#filter-neighborhood').multipleSelect('uncheckAll');
-        $('#filter-homeFeatures').multipleSelect('uncheckAll');
-        $('#filter-view').multipleSelect('uncheckAll');
-        filterPriceSlider.noUiSlider.set([0, 5000000]);
-        filterSqftSlider.noUiSlider.set([0, 5000]);
-
+        filterPriceSlider.noUiSlider.set([0, 500000]);
+        $("#filter-builders, #filter-bedrooms, #filter-bathrooms").find('option').removeProp('selected');
+        $("#filter-builders, #filter-bedrooms, #filter-bathrooms").trigger('chosen:updated');
         pauseSearch = false;
     }
 
@@ -630,38 +390,12 @@ jQuery(function ($) {
     });
 
     $(document).on('click', 'a.sortByPriceHighToLow', function () {
-        var $listingsType = $('div.listings-type').find('select').find('option:selected');
-
-        if ($listingsType.val() === '' || $listingsType.val() === 'Select Filters' || $listingsType.val() === 'all-listings') {
-            var isAllListings = false;
-            if ($listingsType.val() === 'all-listings') {
-                isAllListings = true;
-            }
-            performSearch('price.desc', isAllListings);
-        }
-        else {
-            order = 'price.desc';
-            $('div.listings-type select').trigger('change');
-        }
-
+        performSearch('price.desc');
         return false;
     });
 
     $(document).on('click', 'a.sortByPriceLowToHigh', function () {
-        var $listingsType = $('div.listings-type').find('select').find('option:selected');
-
-        if ($listingsType.val() === '' || $listingsType.val() === 'Select Filters' || $listingsType.val() === 'all-listings') {
-            var isAllListings = false;
-            if ($listingsType.val() === 'all-listings') {
-                isAllListings = true;
-            }
-            performSearch('price.asc', isAllListings);
-        }
-        else {
-            order = 'price.asc';
-            $('div.listings-type select').trigger('change');
-        }
-
+        performSearch('price.asc');
         return false;
     });
 
@@ -770,6 +504,7 @@ jQuery(function ($) {
             //homeFeatures: getFilterHomeFeatures(),
             //views: getFilterViews(),
             includePlans: getShouldIncludePlans(),
+            includeHomes: getShouldIncludeHomes(),
             builders: getBuilders()
         };
 
@@ -840,87 +575,10 @@ jQuery(function ($) {
         saveShareMetric('email', property_id);
     });
 
-    //Multiple Select
-    $('#filter-propertyType').multipleSelect({
-        placeholder: "Property Type",
-        onClick: function (view) {
-            $('#filter-searchAddress').val('');
-            order = 'default';
-            performSearch();
-        },
-        onCheckAll: function () {
-            $('#filter-searchAddress').val('');
-            order = 'default';
-            performSearch();
-        },
-        onUncheckAll: function () {
-            $('#filter-searchAddress').val('');
-            order = 'default';
-            performSearch();
-        }
-    });
-
-    $('#filter-neighborhood').multipleSelect({
-        placeholder: "Neighborhood",
-        onClick: function (view) {
-            $('#filter-searchAddress').val('');
-            order = 'default';
-            performSearch();
-        },
-        onCheckAll: function () {
-            $('#filter-searchAddress').val('');
-            order = 'default';
-            performSearch();
-        },
-        onUncheckAll: function () {
-            $('#filter-searchAddress').val('');
-            order = 'default';
-            performSearch();
-        }
-    });
-
-    $('#filter-homeFeatures').multipleSelect({
-        placeholder: "Home Features",
-        onClick: function (view) {
-            $('#filter-searchAddress').val('');
-            order = 'default';
-            performSearch();
-        },
-        onCheckAll: function () {
-            $('#filter-searchAddress').val('');
-            order = 'default';
-            performSearch();
-        },
-        onUncheckAll: function () {
-            $('#filter-searchAddress').val('');
-            order = 'default';
-            performSearch();
-        }
-    });
-
-    $('#filter-view').multipleSelect({
-        placeholder: "View",
-        onClick: function (view) {
-            $('#filter-searchAddress').val('');
-            order = 'default';
-            performSearch();
-        },
-        onCheckAll: function () {
-            $('#filter-searchAddress').val('');
-            order = 'default';
-            performSearch();
-        },
-        onUncheckAll: function () {
-            $('#filter-searchAddress').val('');
-            order = 'default';
-            performSearch();
-        }
-    });
-
     // Harvest Chosen Select Boxes
     $("#filter-builders, #filter-bedrooms, #filter-bathrooms, #filter-listings-type").chosen({
         disable_search: 'true'
-      });
+    });
 
     // price slider
 
@@ -933,7 +591,7 @@ jQuery(function ($) {
     noUiSlider.create(filterPriceSlider, {
         start: [0, 500000],
         connect: true,
-        step: 25000,
+        step: 50000,
         range: {
             'min': 0,
             'max': 500000

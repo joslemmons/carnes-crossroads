@@ -1,5 +1,6 @@
 <?php namespace HomeFinder\Model;
 
+use App\Controller\Router;
 use Carbon\Carbon;
 use Cocur\Slugify\Slugify;
 
@@ -21,6 +22,7 @@ class HomeFinderFilters
     private $_searchAddress = '';
     private $_listingAgents = array();
     private $_includePlans = false;
+    private $_includeHomes = false;
     private $_builders = '';
 
     private $_rawMinLastUpdate = '';
@@ -37,6 +39,7 @@ class HomeFinderFilters
     private $_rawListingAgents = array();
     private $_rawIncludePlans = '';
     private $_rawBuilders = '';
+    private $_rawIncludeHomes = '';
 
     private $_propertiesToExclude = array();
 
@@ -95,12 +98,19 @@ class HomeFinderFilters
         $shouldIncludePlans = (isset($data['includePlans'])) ? sanitize_text_field($data['includePlans']) : false;
         if ($shouldIncludePlans === 'true') {
             $shouldIncludePlans = true;
-        }
-        else {
+        } else {
             $shouldIncludePlans = false;
         }
 
+        $shouldIncludeHomes = (isset($data['includeHomes'])) ? sanitize_text_field($data['includeHomes']) : false;
+        if ($shouldIncludeHomes === 'true') {
+            $shouldIncludeHomes = true;
+        } else {
+            $shouldIncludeHomes = false;
+        }
+
         $filters->setShouldIncludePlans($shouldIncludePlans);
+        $filters->setShouldIncludeHomes($shouldIncludeHomes);
 
         $searchAddress = (isset($data['searchAddress'])) ? sanitize_text_field($data['searchAddress']) : '';
         $filters->setSearchAddress($searchAddress);
@@ -120,6 +130,7 @@ class HomeFinderFilters
         $filters->_rawHomeFeatures = self::_getFilterFromArrayByKey($data, 'homeFeatures');
         $filters->_rawViews = self::_getFilterFromArrayByKey($data, 'views');
         $filters->_rawIncludePlans = ($shouldIncludePlans) ? 'true' : 'false';
+        $filters->_rawIncludeHomes = ($shouldIncludeHomes) ? 'true' : 'false';
         $filters->_rawBuilders = self::_getFilterFromArrayByKey($data, 'builders');
 
         // add the various filters passed as GET params to $filters
@@ -217,7 +228,8 @@ class HomeFinderFilters
 //            'homeFeatures' => $this->_rawHomeFeatures,
 //            'views' => $this->_rawViews,
             'builders' => $this->_rawBuilders,
-            'includePlans' => $this->_rawIncludePlans
+            'includePlans' => $this->_rawIncludePlans,
+            'includeHomes' => $this->_rawIncludeHomes
         );
 
         return $filters;
@@ -267,6 +279,16 @@ class HomeFinderFilters
     public function setShouldIncludePlans($should)
     {
         $this->_includePlans = $should;
+    }
+
+    public function shouldIncludeHomes()
+    {
+        return $this->_includeHomes;
+    }
+
+    public function setShouldIncludeHomes($should)
+    {
+        $this->_includeHomes = $should;
     }
 
     public function setSearchAddress($address)
@@ -511,7 +533,7 @@ class HomeFinderFilters
     public function getFiltersAsHashToUseAsId()
     {
         $slug = new Slugify();
-        return $slug->slugify($this->getFriendlyName() . ' ' . $this->_searchMLS . ' ' . $this->_searchAddress . ' ' . $this->_includePlans . ' ' . $this->getBuilders());
+        return $slug->slugify($this->getFriendlyName() . ' ' . $this->_searchMLS . ' ' . $this->_searchAddress . ' ' . $this->_includePlans . ' ' . $this->_includeHomes . ' ' . $this->getBuilders());
     }
 
     public function getAreaFiltersForMLSRequest()
@@ -818,6 +840,7 @@ class HomeFinderFilters
             if (false !== $this->getViews()) {
                 // not set in pbase... use MLS
             }
+
         }
 
         return $filters;
@@ -956,6 +979,13 @@ class HomeFinderFilters
         if (false !== $includePlans && $includePlans !== '') {
             if ($includePlans === 'true') {
                 $friendly_name[] = 'Include Floor Plans';
+            }
+        }
+        
+        $includeHomes = (isset($raw_filters['includeHomes'])) ? $raw_filters['includeHomes'] : false;
+        if (false !== $includeHomes && $includeHomes !== '') {
+            if ($includeHomes === 'true') {
+                $friendly_name[] = 'Include Available Homes';
             }
         }
 

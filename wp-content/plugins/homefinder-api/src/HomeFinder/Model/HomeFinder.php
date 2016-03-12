@@ -26,8 +26,8 @@ class HomeFinder
                 usort($properties, function ($prop_a, $prop_b) use ($order) {
                     /* @var Property $prop_a */
                     /* @var Property $prop_b */
-                    $prop_a_price = (float)$prop_a->getPurchaseListPrice();
-                    $prop_b_price = (float)$prop_b->getPurchaseListPrice();
+                    $prop_a_price = (float)preg_replace('/\D/', '', $prop_a->getPurchaseListPrice());
+                    $prop_b_price = (float)preg_replace('/\D/', '', $prop_b->getPurchaseListPrice());
 
                     if ($prop_a_price === $prop_b_price) {
                         return 0;
@@ -103,8 +103,15 @@ class HomeFinder
         }
 
         $result = \TimberHelper::transient(Config::getKeyPrefix() . 'home_finder_properties_search_transient_' . $per_page . '_' . $page . '_' . $order_by . '_' . $order . '_' . $filters->getFiltersAsHashToUseAsId(), function () use ($filters, $per_page, $page, $order_by, $order) {
-            // search pbase
-            $result = PropertyBase::getWithFilters($filters, $per_page, $page, $order_by, $order);
+
+            $result = new Result();
+            $result->items = array();
+            $result->total = 0;
+
+            if ($filters->shouldIncludeHomes() === true) {
+                // search pbase
+                $result = PropertyBase::getWithFilters($filters, $per_page, $page, $order_by, $order);
+            }
 
             $startSearchingMLS = false;
             if ($order !== null) {
@@ -158,7 +165,7 @@ class HomeFinder
 
             $result->paginator = $paginator;
 
-            $result->items = self::_convertMLSToPropertyBaseProperty($result->items);
+//            $result->items = self::_convertMLSToPropertyBaseProperty($result->items);
 
             if ($order !== null) {
                 $result->items = self::_sortProperties($result->items, $order_by, $order);

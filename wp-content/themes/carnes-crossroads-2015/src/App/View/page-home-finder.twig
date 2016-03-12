@@ -44,7 +44,8 @@
                 <div class="slider-container">
                     <button id="showPriceFilter">Price</button>
                     <div id="priceFilterSection" class="slider-dropdown" style="display:none">
-                        <input id="minPriceFilter" type="text" value="0"> to <input id="maxPriceFilter" type="text" value="5000000">
+                        <input id="minPriceFilter" type="text" value="0"> to <input id="maxPriceFilter" type="text"
+                                                                                    value="5000000">
                         <div id="filter-price" class="noUi-extended"></div>
                     </div>
                 </div>
@@ -154,13 +155,13 @@
                 <div class="row">
                     <div class="col-lg-3 col-md-5 all-listings-col">
                         <div class="listings-header">
-                            <h2 class="listings-title">{% if listingsTitle %}{{ listingsTitle }}{% else %}Featured Listings{% endif %}</h2>
+                            <h2 class="listings-title">{% if listingsTitle %}{{ listingsTitle }}{% else %}Search Listings{% endif %}</h2>
 
                             <div class="results-search">
                                 <div class="results-count">
                                     {{ result.total }} Result{% if result.total > 1 %}s{% endif %}
                                 </div>
-                                <div id="saveSearchSection" {% if isFeaturedListings or isNewOfferings or isRecentlyListed or isSavedListings or isSingle or filters.isEmptySearch %} style="display:none;"{% endif %}>
+                                <div id="saveSearchSection" {% if isAvailableHomes or isHomePlans or isAvailableHomesAndHomePlans or isSavedListings or isSingle or filters.isEmptySearch %} style="display:none;"{% endif %}>
                                     |
                                     <a href="#" id="accountSaveSearch">Save Search</a>
                                     <a href="#" class="showAccountPage"
@@ -188,24 +189,21 @@
                             <div class="listings-type">
                                 <select id="filter-listings-type">
                                     <option>Select Filters</option>
-                                    <option {% if isFeaturedListings %}selected="selected"{% endif %}
-                                            value="featured-listings">Featured Listings
+                                    <option {% if isAvailableHomes %}selected="selected"{% endif %}
+                                            value="available-homes">Available Homes
                                     </option>
-                                    <option {% if isAllListings %}selected="selected"{% endif %}
-                                            value="all-listings">All Listings
+                                    <option {% if isHomePlans %}selected="selected"{% endif %}
+                                            value="home-plans">Show Home Plans
                                     </option>
-                                    {#<option {% if isNewOfferings %}selected="selected"{% endif %} value="new-offerings">New#}
-                                    {#Offerings#}
-                                    {#</option>#}
-                                    <option {% if isRecentlyListed %}selected="selected"{% endif %}
-                                            value="recently-listed">
-                                        Recently Listed
+                                    <option {% if isAvailableHomesAndHomePlans %}selected="selected"{% endif %}
+                                            value="available-homes-and-plans">
+                                        Show Both
                                     </option>
-                                    {% if current_user and current_user.getSavedProperties|length > 0 %}
-                                        <option {% if isSavedListings %}selected="selected"{% endif %}
-                                                value="saved-listings">Saved Listings
-                                        </option>
-                                    {% endif %}
+                                    {#{% if current_user and current_user.getSavedProperties|length > 0 %}#}
+                                        {#<option {% if isSavedListings %}selected="selected"{% endif %}#}
+                                                {#value="saved-listings">Saved Listings#}
+                                        {#</option>#}
+                                    {#{% endif %}#}
                                 </select>
                             </div>
 

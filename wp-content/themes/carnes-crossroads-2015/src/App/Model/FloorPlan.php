@@ -32,6 +32,11 @@ class FloorPlan
         return $this->featured_images;
     }
 
+    public function getPurchaseListPrice()
+    {
+        return $this->price;
+    }
+
     public function getFeaturedImage()
     {
         $featured_image = $this->featured_images;

@@ -13,7 +13,7 @@ Routes::map('/category/all', function () {
 });
 
 // SEO redirects from old site
-redirectThisToThat('/search/', '/home-finder/featured-listings/');
+redirectThisToThat('/search/', '/home-finder/');
 redirectThisToThat('/search/page/:page/?display-imap', '/home-finder/');
 redirectThisToThat('/builder/', '/homes/builders/');
 redirectThisToThat('/town/commercial-opportunities/', '/community/');
