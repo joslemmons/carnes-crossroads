@@ -331,7 +331,7 @@ if (
             'field' => Page::$field_show_button,
             'value' => Page::DO_NOT_SHOW_BUTTON,
             'label' => 'Always show button link to learn more?',
-            'description' => 'If the content is >700 characters, then the learn more button is will be shown no matter the choice here',
+            'description' => 'If the content is >850 characters, then the learn more button is will be shown no matter the choice here',
             'choices' => Page::getButtonChoicesForPiklist()
         ));
 

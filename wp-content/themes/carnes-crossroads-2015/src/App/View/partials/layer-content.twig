@@ -1,5 +1,5 @@
 {% set shouldLinkToNewPage = false %}
-{% if child_page.content|length > 450 and child_page.content|length < 700 %}
+{% if child_page.content|length > 450 and child_page.content|length < 850 %}
     {% set expandLink = '<a class="expand-link">&nbsp;&hellip;&nbsp;Read More</a>' %}
     {% set firstParagraph = child_page.content|truncateToFirstParagraph(expandLink) %}
     {{ firstParagraph }}<span class="more-content" style="display:none;">
