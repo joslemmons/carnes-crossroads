@@ -64,7 +64,7 @@ class Twig
             return $url;
         }
 
-        return 'http://youtube.com/v/' . $id;
+        return 'http://www.youtube.com/embed/' . $id;
     }
 
     public static function slugify($text)
