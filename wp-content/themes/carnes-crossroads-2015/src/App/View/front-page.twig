@@ -10,7 +10,7 @@
         {% if page.getHero.quicklinks %}
             <div class="btn-group">
                 <button type="button" class="btn btn-default dropdown-toggle"
-                        data-toggle="dropdown">{{ page.getHero.quicklinks[0].title }} <span class="caret"></span></button>
+                        data-toggle="dropdown">What's Your Interest?<span class="caret"></span></button>
                 <ul class="dropdown-menu" role="menu">
                     {% for quicklink in page.getHero.quicklinks %}
                         <li><a href="{{ quicklink.link }}">{{ quicklink.title }}</a></li>
