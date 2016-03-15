@@ -231,7 +231,7 @@ class Instagram extends \TimberPost
                     'label' => 'Pending Review'
                 ),
                 'publish' => array(
-                    'label' => 'Approved'
+                    'label' => 'Published'
                 ),
                 'featured' => array(
                     'label' => 'Featured'
