@@ -95,9 +95,9 @@
                    <img src="{{ template_uri }}/img/play-icon_x2.png"/></span></a>
                 </div>
                 {% endif %}
-                <a href="{{ item.button.link }}" class="slider-lg__item-link"></a>
+                <a href="{{ item.button.link|frontPageHorizontalList }}" class="slider-lg__item-link"></a>
                 <div class="block-tab--full-bottom">
-                    <a href="{{ item.button.link }}"><h3>{{ item.title }}</h3></a>
+                    <a href="{{ item.button.link|frontPageHorizontalList }}"><h3>{{ item.title }}</h3></a>
                     <p>{{ item.subtitle|truncate(8) }}</p>
                 </div>
             </div>

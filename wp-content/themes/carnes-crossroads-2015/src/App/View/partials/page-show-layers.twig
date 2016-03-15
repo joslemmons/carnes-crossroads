@@ -18,7 +18,7 @@
                 </div>
             </div>
             <div class="col-xs-12 col-md-4 col-md-offset-1 text-left child-content">
-                <h4>{{ child_page.title }}</h4>
+                <h4 id="{{ child_page.post_name|slugify }}">{{ child_page.title }}</h4>
                 {% include "partials/layer-content.twig" %}
             </div>
         </div>
@@ -27,7 +27,7 @@
 
         <div class="row layer-row hidden-xs">
             <div class="col-xs-12 col-md-4 text-right child-content">
-                <h4>{{ child_page.title }}</h4>
+                <h4 id="{{ child_page.post_name|slugify }}">{{ child_page.title }}</h4>
                 {% include "partials/layer-content.twig" %}
             </div>
             <div class="col-xs-12 col-md-7 col-md-offset-1 expand-column">

@@ -19,12 +19,31 @@ class Twig
         $twig->addFilter('combineLines', new \Twig_Filter_Function(array(get_class(), 'combineLines')));
         $twig->addFilter('youtubeify', new \Twig_Filter_Function(array(get_class(), 'youtubeify')));
         $twig->addFilter('removeNonNumbers', new \Twig_Filter_Function(array(get_class(), 'removeNonNumbers')));
+        $twig->addFilter('frontPageHorizontalList', new \Twig_Filter_Function(array(get_class(), 'frontPageHorizontalList')));
         return $twig;
     }
 
     public static function addExtensions($twig)
     {
         return $twig;
+    }
+
+    public static function frontPageHorizontalList($text)
+    {
+        $parsed_url = parse_url($text);
+
+        if (isset($parsed_url['path']) === false) {
+            return $text;
+        }
+
+        $path = $parsed_url['path'];
+        $path = explode('/', $path);
+
+        if (count($path) !== 4) {
+            return $text;
+        }
+
+        return '/' . $path[1] . '#' . $path[2];
     }
 
     public static function removeNonNumbers($text)
