@@ -967,10 +967,23 @@
     }
 }
 
-.child-content h4:before {
-    content: '';
-    display: block;
-    height: 185px;
-    margin-top: -185px;
-    visibility: hidden;
+.child-content h4 {
+    @media (max-width: $screen-xs-max) {
+        font-size: 1.2rem;
+        letter-spacing: 0;
+        width: 85%;
+    }
+
+    &:before {
+        content: '';
+        display: block;
+        height: 185px;
+        margin-top: -185px;
+        visibility: hidden;
+
+        @media (max-width: $screen-xs-max) {
+            height: 265px;
+            margin-top: -265px;
+        }
+    }
 }
