@@ -966,3 +966,11 @@
         margin-bottom: 75px;
     }
 }
+
+.child-content h4:before {
+    content: '';
+    display: block;
+    height: 185px;
+    margin-top: -185px;
+    visibility: hidden;
+}
