@@ -687,7 +687,7 @@
     &__card {
         padding-left: 0;
         padding-right: 35px;
-        margin-bottom: 95px;
+        margin-bottom: 75px;
 
         &-image {
             position: relative;
@@ -737,6 +737,7 @@
             padding: 0 15px;
             font-size: 0.95rem;
             line-height: 1.2;
+            min-height: 70px;
         }
 
         &-cat {
