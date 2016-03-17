@@ -3653,7 +3653,7 @@ video {
   .dropdown-menu li {
     margin: 10px 0;
     text-align: left;
-    text-indent: 20px;
+    text-indent: 10px;
     font-family: "minion-pro", serif, serif;
     font-size: 1.35rem;
     font-style: italic;
