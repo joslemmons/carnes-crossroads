@@ -24,6 +24,7 @@
         text-align: center;
         position: absolute;
         background-color: rgba(#85785e, 0.8);
+        z-index: 300;
         @include center(xy);
 
         @media (max-width: $screen-xs-max) {
@@ -164,6 +165,7 @@
 
         &--homes {
             @extend .hero__page;
+            overflow: visible;
 
             @media (max-width: $screen-xs-max) {
                 height: 440px;
