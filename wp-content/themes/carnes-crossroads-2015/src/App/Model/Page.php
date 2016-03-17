@@ -150,7 +150,7 @@ class Page extends \TimberPost
                         'get_src' => get_template_directory_uri() . '/img/bg-button-events.jpg'
                     ),
                     'button' => array(
-                        'link' => '/events/'
+                        'link' => '/events-at-carnes-crossroads/'
                     )
                 ));
                 return array_merge($box_one, $box_two, $box_three);
