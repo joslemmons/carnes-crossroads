@@ -123,6 +123,7 @@
     @media (max-width: $screen-xs-max) {
         width: 35px;
         height: 35px;
+        margin-right: 10px;
     }
 }
 
@@ -200,6 +201,11 @@
     z-index: 999;
     @include transition(0.2s all);
 
+    @media (max-width: $screen-xs-max) {
+        width: 26px;
+        height: 26px;
+    }
+
     &:hover {
         opacity: 0.6;
     }
@@ -214,9 +220,17 @@
 .prev-sm, .slick-prev {
     background: url(./img/icon-prev-next.png) no-repeat center left / cover;
     right: 45px;
+
+    @media (max-width: $screen-xs-max) {
+        right: 50px;
+    }
 }
 
 .next-sm, .slick-next  {
     background: url(./img/icon-prev-next.png) no-repeat center right / cover;
     right: 5px;
+
+    @media (max-width: $screen-xs-max) {
+        right: 15px;
+    }
 }
