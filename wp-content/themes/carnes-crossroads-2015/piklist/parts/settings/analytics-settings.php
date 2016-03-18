@@ -36,3 +36,10 @@ piklist('field', array(
     'value' => Analytics::NO,
     'choices' => Analytics::getYesOrNoOptionsForPiklistSelect()
 ));
+
+piklist('field', array(
+    'type' => 'text',
+    'field' => Analytics::$field_gtm_id,
+    'label' => __('Google Tag Manager (GTM) ID', Config::getTextDomain()),
+    'description' => 'GTM-xxxx. Just enter the "xxxx" part.'
+));

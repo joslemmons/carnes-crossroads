@@ -9,142 +9,162 @@
 <html class="no-js ie9"> <![endif]-->
 <!--[if gt IE 9]><!-->
 <html class="no-js"> <!--<![endif]-->
-    <head>
-        <META HTTP-EQUIV="Pragma" CONTENT="no-cache"/>
-        <META HTTP-EQUIV="Expires" CONTENT="-1"/>
-        <meta charset="utf-8"/>
-        <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
-        <title>{{ seo_title }}</title>
-        <meta name="description" content="{{ seo_description }}"/>
-        <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"/>
+<head>
+    <META HTTP-EQUIV="Pragma" CONTENT="no-cache"/>
+    <META HTTP-EQUIV="Expires" CONTENT="-1"/>
+    <meta charset="utf-8"/>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+    <title>{{ seo_title }}</title>
+    <meta name="description" content="{{ seo_description }}"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"/>
 
-        <link rel="apple-touch-icon" sizes="57x57" href="{{ template_uri }}/img/favicons/apple-icon-57x57.png">
-        <link rel="apple-touch-icon" sizes="60x60" href="{{ template_uri }}/img/favicons/apple-icon-60x60.png">
-        <link rel="apple-touch-icon" sizes="72x72" href="{{ template_uri }}/img/favicons/apple-icon-72x72.png">
-        <link rel="apple-touch-icon" sizes="76x76" href="{{ template_uri }}/img/favicons/apple-icon-76x76.png">
-        <link rel="apple-touch-icon" sizes="114x114" href="{{ template_uri }}/img/favicons/apple-icon-114x114.png">
-        <link rel="apple-touch-icon" sizes="120x120" href="{{ template_uri }}/img/favicons/apple-icon-120x120.png">
-        <link rel="apple-touch-icon" sizes="144x144" href="{{ template_uri }}/img/favicons/apple-icon-144x144.png">
-        <link rel="apple-touch-icon" sizes="152x152" href="{{ template_uri }}/img/favicons/apple-icon-152x152.png">
-        <link rel="apple-touch-icon" sizes="180x180" href="{{ template_uri }}/img/favicons/apple-icon-180x180.png">
-        <link rel="icon" type="image/png" sizes="192x192"  href="{{ template_uri }}/img/favicons/android-icon-192x192.png">
-        <link rel="icon" type="image/png" sizes="32x32" href="{{ template_uri }}/img/favicons/favicon-32x32.png">
-        <link rel="icon" type="image/png" sizes="96x96" href="{{ template_uri }}/img/favicons/favicon-96x96.png">
-        <link rel="icon" type="image/png" sizes="16x16" href="{{ template_uri }}/img/favicons/favicon-16x16.png">
-        <link rel="manifest" href="{{ template_uri }}/img/favicons/manifest.json">
-        <meta name="msapplication-TileColor" content="#ffffff">
-        <meta name="msapplication-TileImage" content="/ms-icon-144x144.png">
-        <meta name="theme-color" content="#ffffff">
+    <link rel="apple-touch-icon" sizes="57x57" href="{{ template_uri }}/img/favicons/apple-icon-57x57.png">
+    <link rel="apple-touch-icon" sizes="60x60" href="{{ template_uri }}/img/favicons/apple-icon-60x60.png">
+    <link rel="apple-touch-icon" sizes="72x72" href="{{ template_uri }}/img/favicons/apple-icon-72x72.png">
+    <link rel="apple-touch-icon" sizes="76x76" href="{{ template_uri }}/img/favicons/apple-icon-76x76.png">
+    <link rel="apple-touch-icon" sizes="114x114" href="{{ template_uri }}/img/favicons/apple-icon-114x114.png">
+    <link rel="apple-touch-icon" sizes="120x120" href="{{ template_uri }}/img/favicons/apple-icon-120x120.png">
+    <link rel="apple-touch-icon" sizes="144x144" href="{{ template_uri }}/img/favicons/apple-icon-144x144.png">
+    <link rel="apple-touch-icon" sizes="152x152" href="{{ template_uri }}/img/favicons/apple-icon-152x152.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="{{ template_uri }}/img/favicons/apple-icon-180x180.png">
+    <link rel="icon" type="image/png" sizes="192x192" href="{{ template_uri }}/img/favicons/android-icon-192x192.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="{{ template_uri }}/img/favicons/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="96x96" href="{{ template_uri }}/img/favicons/favicon-96x96.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="{{ template_uri }}/img/favicons/favicon-16x16.png">
+    <link rel="manifest" href="{{ template_uri }}/img/favicons/manifest.json">
+    <meta name="msapplication-TileColor" content="#ffffff">
+    <meta name="msapplication-TileImage" content="/ms-icon-144x144.png">
+    <meta name="theme-color" content="#ffffff">
 
-        {% if typekit_src %}
-            <script src="{{ typekit_src }}"></script>
-            <script>try {
-                    Typekit.load({async: true});
-                } catch (e) {
-                }</script>
-        {% endif %}
+    {% if typekit_src %}
+        <script src="{{ typekit_src }}"></script>
+        <script>try {
+                Typekit.load({async: true});
+            } catch (e) {
+            }</script>
+    {% endif %}
 
-        {{ wp_head() }}
-        <script src="{{ template_uri }}/bower_components/classie/classie.js"></script>
-        <script>
-            function init() {
-                window.addEventListener('scroll', function(e){
-                    var distanceY = window.pageYOffset || document.documentElement.scrollTop,
+    {{ wp_head() }}
+    <script src="{{ template_uri }}/bower_components/classie/classie.js"></script>
+    <script>
+        function init() {
+            window.addEventListener('scroll', function (e) {
+                var distanceY = window.pageYOffset || document.documentElement.scrollTop,
                         shrinkOn = 300,
                         header = document.querySelector("nav");
-                    if (distanceY > shrinkOn) {
-                        classie.add(header,"smaller");
-                    } else {
-                        if (classie.has(header,"smaller")) {
-                            classie.remove(header,"smaller");
-                        }
+                if (distanceY > shrinkOn) {
+                    classie.add(header, "smaller");
+                } else {
+                    if (classie.has(header, "smaller")) {
+                        classie.remove(header, "smaller");
                     }
-                });
-            }
-            window.onload = init();
-        </script>
-    </head>
-    <body>
-        <!--[if lt IE 7]>
-<p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="{{ template_uri }}/img/faviconshttp://browsehappy.com/">upgrade
-your browser</a> to improve your experience.</p>
+                }
+            });
+        }
+        window.onload = init();
+    </script>
+</head>
+<body>
+<!--[if lt IE 7]>
+<p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a
+        href="{{ template_uri }}/img/faviconshttp://browsehappy.com/">upgrade
+    your browser</a> to improve your experience.</p>
 <![endif]-->
 
-        {% include "partials/site-header.twig" %}
-        <div id="o-wrapper" class="o-wrapper">
-            <a href="/">
-                <img src="{{ theme.link }}/img/carnes_logo_wht.svg" alt="Carnes Crossroads">
-            </a>
-        {% block template %}
-        {% endblock %}
-        </div>
+{% if gtm_id %}
+    <noscript>
+        <iframe src="//www.googletagmanager.com/ns.html?id=GTM-{{ gtm_id }}"
+                height="0" width="0" style="display:none;visibility:hidden"></iframe>
+    </noscript>
+    <script>(function (w, d, s, l, i) {
+            w[l] = w[l] || [];
+            w[l].push({
+                'gtm.start': new Date().getTime(), event: 'gtm.js'
+            });
+            var f = d.getElementsByTagName(s)[0],
+                    j = d.createElement(s), dl = l != 'dataLayer' ? '&l=' + l : '';
+            j.async = true;
+            j.src =
+                    '//www.googletagmanager.com/gtm.js?id=' + i + dl;
+            f.parentNode.insertBefore(j, f);
+        })(window, document, 'script', 'dataLayer', 'GTM-{{ gtm_id }}');</script>
+{% endif %}
 
-        {% include "partials/site-footer.twig" %}
+{% include "partials/site-header.twig" %}
+<div id="o-wrapper" class="o-wrapper">
+    <a href="/">
+        <img src="{{ theme.link }}/img/carnes_logo_wht.svg" alt="Carnes Crossroads">
+    </a>
+    {% block template %}
+    {% endblock %}
+</div>
 
-        {% include "partials/account/modal-account.twig" %}
-        {{ wp_footer() }}
+{% include "partials/site-footer.twig" %}
 
-        {% if use_ga %}
-        <script>
-            (function (i, s, o, g, r, a, m) {
-                i['GoogleAnalyticsObject'] = r;
-                i[r] = i[r] || function () {
-                    (i[r].q = i[r].q || []).push(arguments)
-                }, i[r].l = 1 * new Date();
-                a = s.createElement(o),
+{% include "partials/account/modal-account.twig" %}
+{{ wp_footer() }}
+
+{% if use_ga %}
+    <script>
+        (function (i, s, o, g, r, a, m) {
+            i['GoogleAnalyticsObject'] = r;
+            i[r] = i[r] || function () {
+                        (i[r].q = i[r].q || []).push(arguments)
+                    }, i[r].l = 1 * new Date();
+            a = s.createElement(o),
                     m = s.getElementsByTagName(o)[0];
-                a.async = 1;
-                a.src = g;
-                m.parentNode.insertBefore(a, m)
-            })(window, document, 'script', '//www.google-analytics.com/analytics.js', 'ga');
+            a.async = 1;
+            a.src = g;
+            m.parentNode.insertBefore(a, m)
+        })(window, document, 'script', '//www.google-analytics.com/analytics.js', 'ga');
 
-            ga('create', '{{ ga_code }}', 'auto');
-            ga('send', 'pageview');
-        </script>
-        {% endif %}
+        ga('create', '{{ ga_code }}', 'auto');
+        ga('send', 'pageview');
+    </script>
+{% endif %}
 
-        {% if use_crazyegg %}
-        <script>
-            setTimeout(function () {
-                var a = document.createElement("script");
-                var b = document.getElementsByTagName("script")[0];
-                a.src = document.location.protocol + "//script.crazyegg.com/pages/scripts/0018/5125.js?" + Math.floor(new Date().getTime() / 3600000);
-                a.async = true;
-                a.type = "text/javascript";
-                b.parentNode.insertBefore(a, b)
-            }, 1);
-        </script>
-        {% endif %}
+{% if use_crazyegg %}
+    <script>
+        setTimeout(function () {
+            var a = document.createElement("script");
+            var b = document.getElementsByTagName("script")[0];
+            a.src = document.location.protocol + "//script.crazyegg.com/pages/scripts/0018/5125.js?" + Math.floor(new Date().getTime() / 3600000);
+            a.async = true;
+            a.type = "text/javascript";
+            b.parentNode.insertBefore(a, b)
+        }, 1);
+    </script>
+{% endif %}
 
-        {% if facebook_app_id %}
-            <script>
-                window.fbAsyncInit = function () {
-                    FB.init({
-                        appId: '{{ facebook_app_id }}',
-                        xfbml: true,
-                        version: 'v2.5'
-                    });
-                };
+{% if facebook_app_id %}
+    <script>
+        window.fbAsyncInit = function () {
+            FB.init({
+                appId: '{{ facebook_app_id }}',
+                xfbml: true,
+                version: 'v2.5'
+            });
+        };
 
-                (function (d, s, id) {
-                    var js, fjs = d.getElementsByTagName(s)[0];
-                    if (d.getElementById(id)) {
-                        return;
-                    }
-                    js = d.createElement(s);
-                    js.id = id;
-                    js.src = "//connect.facebook.net/en_US/sdk.js";
-                    fjs.parentNode.insertBefore(js, fjs);
-                }(document, 'script', 'facebook-jssdk'));
-            </script>
-        {% endif %}
+        (function (d, s, id) {
+            var js, fjs = d.getElementsByTagName(s)[0];
+            if (d.getElementById(id)) {
+                return;
+            }
+            js = d.createElement(s);
+            js.id = id;
+            js.src = "//connect.facebook.net/en_US/sdk.js";
+            fjs.parentNode.insertBefore(js, fjs);
+        }(document, 'script', 'facebook-jssdk'));
+    </script>
+{% endif %}
 
-        {% if add_this_src %}
-        <script type="text/javascript"
-                src="{{ add_this_src }}"
-                async="async"></script>
-        {% endif %}
+{% if add_this_src %}
+    <script type="text/javascript"
+            src="{{ add_this_src }}"
+            async="async"></script>
+{% endif %}
 
 
-    </body>
+</body>
 </html>

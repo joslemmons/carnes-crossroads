@@ -102,6 +102,7 @@ class TimberContext
         $data['use_crazyegg'] = Analytics::shouldIncludeCrazyEgg();
         $data['add_this_src'] = Config::getAddThisSrc();
         $data['facebook_app_id'] = Config::getFacebookAppId();
+        $data['gtm_id'] = Analytics::getGoogleTagManagerID();
 
         return $data;
     }

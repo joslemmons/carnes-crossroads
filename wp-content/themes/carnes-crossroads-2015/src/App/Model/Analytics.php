@@ -5,6 +5,7 @@ class Analytics
     public static $field_ga_code;
     public static $field_use_ga;
     public static $field_use_crazyegg;
+    public static $field_gtm_id;
 
     private static $_settings;
 
@@ -17,6 +18,7 @@ class Analytics
         self::$field_ga_code = 'ga_code';
         self::$field_use_ga = 'use_ga';
         self::$field_use_crazyegg = 'use_crazyegg';
+        self::$field_gtm_id = 'gtm_id';
 
         add_action('piklist_admin_pages', array(__CLASS__, '_registerSettingsPage'), 10, 1);
     }
@@ -60,6 +62,10 @@ class Analytics
 
     public static function shouldIncludeGoogleAnalytics()
     {
+        if (Helper::isProduction() === false) {
+            return false;
+        }
+
         return (self::_getSettingByKey(self::$field_use_ga) === self::YES);
     }
 
@@ -71,5 +77,10 @@ class Analytics
     public static function shouldIncludeCrazyEgg()
     {
         return (self::_getSettingByKey(self::$field_use_crazyegg) === self::YES);
+    }
+
+    public static function getGoogleTagManagerID()
+    {
+        return self::_getSettingByKey(self::$field_gtm_id);
     }
 }
