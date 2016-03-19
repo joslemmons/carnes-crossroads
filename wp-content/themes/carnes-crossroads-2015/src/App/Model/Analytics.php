@@ -48,7 +48,13 @@ class Analytics
     private static function _getSettingByKey($key)
     {
         $settings = self::_getSettings();
-        return (isset($settings[$key])) ? $settings[$key] : null;
+        $setting = (isset($settings[$key])) ? $settings[$key] : null;
+
+        if ($setting !== null && is_array($setting) && empty($setting) === false) {
+            $setting = $setting[0];
+        }
+
+        return $setting;
     }
 
     private static function _getSettings()
@@ -65,7 +71,7 @@ class Analytics
         if (Helper::isProduction() === false) {
             return false;
         }
-
+        
         return (self::_getSettingByKey(self::$field_use_ga) === self::YES);
     }
 
