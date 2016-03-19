@@ -185,9 +185,14 @@ jQuery(function ($) {
     });
 
     $(document).on('click', '#notification-options form button', function () {
-        var choice = $(this).parent().find('input[type="radio"]:checked').val(),
+        var choice = $(this).parent().parent().find('input[type="radio"]:checked').val(),
             $error = $(this).parent().find('span.error-message'),
-            $success = $(this).parent().find('span.success-message');
+            $success = $(this).parent().find('span.success-message'),
+            $button = $(this),
+            buttonOriginalText = $(this).text();
+
+        $button.text('Updating...');
+        $button.prop('disabled', true);
 
         $.ajax({
             type: "POST",
@@ -199,10 +204,14 @@ jQuery(function ($) {
                 $success.hide();
                 $error.text(data.rsp);
                 $error.show();
+                $button.text(buttonOriginalText);
+                $button.prop('disabled', false);
             },
             success: function (data) {
                 $error.hide();
                 $success.show();
+                $button.text(buttonOriginalText);
+                $button.prop('disabled', false);
             }
         });
 
