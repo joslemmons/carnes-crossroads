@@ -1,94 +1,114 @@
 {% extends 'base.twig' %}
 {% block template %}
 
-<section class="hero__page" style="background-image: url({{ news_page.thumbnail.src|resize(1500) }})">
-    <div class="hero__content-tab-orange">
-        <div class="hero__content-inner">
-            <h1>News &amp; Events</h1>
+    <section class="hero__page" style="background-image: url({{ news_page.thumbnail.src|resize(1500) }})">
+        <div class="hero__content-tab-orange">
+            <div class="hero__content-inner">
+                <h1>News &amp; Events</h1>
+            </div>
         </div>
-    </div>
-</section>
+    </section>
 
-<section class="page-content--white">
-    <div class="container">
-        <div class="row">
-            <div class="col-xs-12 col-md-3 category-list">
-                <a href="/news-events/calendar-of-events" class="btn btn-green">View Event Calendar</a>
-                <h4>Follow Us</h4>
-                <hr>
-                <ul class="category-list__social">
-                    <li class="footer__social-item"><a href="https://www.twitter.com/carnesxroads" target="blank"><img src="{{ template_uri }}/img/icon-social-tw.png"/></a></li>
-                    <li class="footer__social-item"><a href="https://www.facebook.com/CarnesCrossroads" target="blank"><img src="{{ template_uri }}/img/icon-social-fb.png"/></a></li>
-                    <li class="footer__social-item"><a href="https://www.youtube.com/user/CarnesXroads" target="blank"><img src="{{ template_uri }}/img/icon-social-yt.png"/></a></li>
-                    <li class="footer__social-item"><a href="https://www.instagram.com/carnescrossroads/" target="blank"><img src="{{ template_uri }}/img/icon-social-ig.png"/></a></li>
-                    <li class="footer__social-item"><a href="https://www.pinterest.com/carnesxroads/" target="blank"><img src="{{ template_uri }}/img/icon-social-pn.png"/></a></li>
-                    <li class="footer__social-item"><a href="https://plus.google.com/u/0/+Carnescharleston" target="blank"><img src="{{ template_uri }}/img/icon-social-goog.png"/></a></li>
-                </ul>
-                <h4>Categories</h4>
-                <hr>
-                <ul class="category-list__categories">
-                    {% for category in categories %}
-                    <li class="category-list__item{% if category.name == categoryName %} active{% endif %}"><a
-                                    href="{{ category.link }}">{{ category.name }}</a></li>
-                    {% endfor %}
-                    <li class="category-list__item{% if categoryName == false %} active{% endif %}"><a href="/category/all/">View All</a>
-                </ul>
-            </div>
-
-            <div class="col-xs-12 col-md-8 col-md-offset-1 category-items">
-                <h2>{% if categoryName %}{{ categoryName }}{% else %}All Categories{% endif %}</h2>
-
-                {% for post in posts %}
-                <div class="col-xs-6 col-md-4 category-items__card">
-                    <div class="category-items__card-image"
-                    {% if post.thumbnail %}
-                    style="background-image:url({{ post.thumbnail.src }})">
-                    {% else %}
-                    style="background-image:url({{ template_uri }}/img/cc-default-th.jpg)">
-                    {% endif %}
-                        <a href="{{ post.link }}"></a>
-                    </div>
-                    <div class="category-items__card-title">
-                        <a href="{{ post.link }}"><h3>{{ post.title|truncate(5) }}</h3></a>
-                        <p class="category-items__card-date">{{ post.display_date }}</p>
-                    </div>
-
-                    <div class="category-items__card-content">{{ post.content|truncate(20) }}</div>
-                    <p class="category-items__card-cat">{% for term in post.terms('category') %}<a
-                        href="{{ term.link }}">{{ term.name }}</a>{% if loop.last == faslse %},&nbsp;{% endif %}{% endfor %}</p>
-                </div>
-                {% endfor %}
-            </div>
-            <div class="col-xs-12 col-md-8 col-md-offset-4">
-                {% if posts and pagination %}
-                <div class="tool-pagination">
-                    {% if pagination.prev %}
-                    <a href="{{ pagination.prev.link }}"
-                           class="prev {{ pagination.prev.link|length ? '' : 'invisible' }}">&#10094; Prev</a>
-                    {% endif %}
-                    <ul class="pages">
-                        {% for page in pagination.pages %}
-                        <li>
-                            {% if page.link %}
-                            <a href="{{ page.link }}" class="{{ page.class }}">{{ page.title }}</a>
-                            {% else %}
-                            <span class="{{ page.class }}">{{ page.title }}</span>
-                            {% endif %}
-                        </li>
-                        {% endfor %}
+    <section class="page-content--white">
+        <div class="container">
+            <div class="row">
+                <div class="col-xs-12 col-md-3 category-list">
+                    <a href="/news-events/calendar-of-events" class="btn btn-green">View Event Calendar</a>
+                    <h4>Follow Us</h4>
+                    <hr>
+                    <ul class="category-list__social">
+                        <li class="footer__social-item"><a href="https://www.twitter.com/carnesxroads"
+                                                           target="blank"><img
+                                        src="{{ template_uri }}/img/icon-social-tw.png"/></a></li>
+                        <li class="footer__social-item"><a href="https://www.facebook.com/CarnesCrossroads"
+                                                           target="blank"><img
+                                        src="{{ template_uri }}/img/icon-social-fb.png"/></a></li>
+                        <li class="footer__social-item"><a href="https://www.youtube.com/user/CarnesXroads"
+                                                           target="blank"><img
+                                        src="{{ template_uri }}/img/icon-social-yt.png"/></a></li>
+                        <li class="footer__social-item"><a href="https://www.instagram.com/carnescrossroads/"
+                                                           target="blank"><img
+                                        src="{{ template_uri }}/img/icon-social-ig.png"/></a></li>
+                        <li class="footer__social-item"><a href="https://www.pinterest.com/carnesxroads/"
+                                                           target="blank"><img
+                                        src="{{ template_uri }}/img/icon-social-pn.png"/></a></li>
+                        <li class="footer__social-item"><a href="https://plus.google.com/u/0/+Carnescharleston"
+                                                           target="blank"><img
+                                        src="{{ template_uri }}/img/icon-social-goog.png"/></a></li>
                     </ul>
-                    {% if pagination.next %}
-                    <a href="{{ pagination.next.link }}"
-                       class="next {{ pagination.next.link|length ? '' : 'invisible' }}">Next &#10095;</a>
-                    {% endif %}
+                    <h4>Categories</h4>
+                    <hr>
+                    <ul class="category-list__categories">
+                        {% for category in categories %}
+                            <li class="category-list__item{% if category.name == categoryName %} active{% endif %}"><a
+                                        href="{{ category.link }}">{{ category.name }}</a></li>
+                        {% endfor %}
+                        <li class="category-list__item{% if categoryName == false %} active{% endif %}"><a
+                                    href="/category/all/">View All</a>
+                    </ul>
                 </div>
-            {% endif %}
-        </div>
-    </div>
-</section>
 
-{% include "partials/link-widgets.twig" %}
+                <div class="col-xs-12 col-md-8 col-md-offset-1 category-items">
+                    <h2>{% if categoryName %}{{ categoryName }}{% else %}All Categories{% endif %}</h2>
 
-{% include "partials/contact-foot.twig" %}
+                    {% block the_posts %}
+                        {% for post in posts %}
+                            <div class="col-xs-6 col-md-4 category-items__card">
+                                <div class="category-items__card-image"
+                                        {% if post.thumbnail %}
+                                     style="background-image:url({{ post.thumbnail.src }})">
+                                    {% else %}
+                                        style="background-image:url({{ template_uri }}/img/cc-default-th.jpg)">
+                                    {% endif %}
+                                    <a href="{{ post.link }}"></a>
+                                </div>
+                                <div class="category-items__card-title">
+                                    <a href="{{ post.link }}"><h3>{{ post.title|truncate(5) }}</h3></a>
+                                    <p class="category-items__card-date">{{ post.display_date }}</p>
+                                </div>
+
+                                <div class="category-items__card-content">{{ post.content|truncate(20) }}</div>
+                                <p class="category-items__card-cat">{% for term in post.terms('category') %}<a
+                                        href="{{ term.link }}">{{ term.name }}</a>{% if loop.last == faslse %},&nbsp;{% endif %}{% endfor %}
+                                </p>
+                            </div>
+                        {% endfor %}
+                    {% endblock %}
+                </div>
+                <div class="col-xs-12 col-md-8 col-md-offset-4">
+                    {% block pagination %}
+                        {% if posts and pagination %}
+                            <div class="tool-pagination">
+                                {% if pagination.prev %}
+                                    <a href="{{ pagination.prev.link }}"
+                                       class="prev {{ pagination.prev.link|length ? '' : 'invisible' }}">&#10094;
+                                        Prev</a>
+                                {% endif %}
+                                <ul class="pages">
+                                    {% for page in pagination.pages %}
+                                        <li>
+                                            {% if page.link %}
+                                                <a href="{{ page.link }}" class="{{ page.class }}">{{ page.title }}</a>
+                                            {% else %}
+                                                <span class="{{ page.class }}">{{ page.title }}</span>
+                                            {% endif %}
+                                        </li>
+                                    {% endfor %}
+                                </ul>
+                                {% if pagination.next %}
+                                    <a href="{{ pagination.next.link }}"
+                                       class="next {{ pagination.next.link|length ? '' : 'invisible' }}">Next
+                                        &#10095;</a>
+                                {% endif %}
+                            </div>
+                        {% endif %}
+                    {% endblock %}
+                </div>
+            </div>
+    </section>
+
+    {% include "partials/link-widgets.twig" %}
+
+    {% include "partials/contact-foot.twig" %}
 
 {% endblock %}
