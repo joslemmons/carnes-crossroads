@@ -1,6 +1,12 @@
 jQuery(function ($) {
     //$('.dropdown-toggle').dropdown();
 
+    $(document).ready(function(){
+      $(window.location.hash).append('<a name="' + window.location.hash.replace('#','')+ '"></a>');
+      window.location.href=window.location.href;
+    });
+
+
     //vimeo player
         $(document).on('click', '.video-play', function (e) {
             e.preventDefault();
