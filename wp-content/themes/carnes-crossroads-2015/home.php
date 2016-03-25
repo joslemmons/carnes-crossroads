@@ -18,7 +18,10 @@ $context['featured_posts'] = $featured_posts;
 
 $context['tribe_events'] = tribe_get_events(array(
     'posts_per_page' => 12,
-    'start_date' => date('Y-m-01')
+    'start_date' => date('Y-m-01'),
+    'orderby' => 'EventStartDate',
+    'order' => 'asc',
+    'eventDisplay' => 'upcoming'
 ));
 
 // TODO: something is up with instagram
