@@ -79,3 +79,84 @@
         }
     }
 }
+
+.print-sampler {
+    background-image: linear-gradient(to bottom, $beige, $white 30%);
+    background-repeat: no-repeat;
+
+    .logo-header {
+        padding: 35px 0;
+        text-align: center;
+        border-bottom: 10px double $gold;
+
+        img {
+            width: 250px;
+        }
+    }
+
+    h1 {
+        margin: 30px auto 50px;
+        text-transform: uppercase;
+        font-size: 2.5rem;
+        letter-spacing: 0.5px;
+        color: $cc-brown;
+    }
+
+    .listing-item {
+        margin-bottom: 75px;
+
+        .listing-image {
+            height: 200px;
+            width: 95%;
+            background-size: cover;
+            border: 1px solid $gold;
+        }
+
+        h2 {
+            font-family: $minion;
+            color: $gold;
+            text-transform: uppercase;
+            font-size: 1.5rem;
+            line-height: 1;
+        }
+
+        h3 {
+            font-family: $minion;
+            margin: 0;
+            font-size: 1.55rem;
+        }
+
+        p, ul {
+            width: 95%;
+            font-family: $cronos;
+            font-size: 1rem;
+            color: $cc-brown;
+            line-height: 1.2;
+        }
+
+        ul {
+            padding: 0;
+            margin: 0;
+            list-style-type: none;
+        }
+
+        li {
+            margin-bottom: 10px;
+        }
+
+        .listing-price {
+            font-size: 1.4rem;
+        }
+    }
+
+    .sampler-foot {
+        padding: 25px 0;
+        border-top: 4px solid $gold;
+        text-align: center;
+
+        p {
+            font-family: $minion;
+            font-size: 1.4rem;
+        }
+    }
+}

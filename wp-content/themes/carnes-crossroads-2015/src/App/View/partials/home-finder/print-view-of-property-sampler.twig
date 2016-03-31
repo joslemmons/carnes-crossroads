@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]>
+<html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>
+<html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>
+<html class="no-js lt-ie9"> <![endif]-->
+<!--[if IE 9]>
+<html class="no-js ie9"> <![endif]-->
+<!--[if gt IE 9]><!-->
+<html class="no-js print-sheet"> <!--<![endif]-->
+    <head>
+        <META HTTP-EQUIV="Pragma" CONTENT="no-cache"/>
+        <META HTTP-EQUIV="Expires" CONTENT="-1"/>
+        <meta charset="utf-8"/>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+        <title>Print Property</title>
+        <meta name="description" content="{{ seo_description }}"/>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"/>
+        <link rel="apple-touch-icon-precomposed" href="{{ template_uri }}/img/apple-icon.png"/>
+        <link rel="shortcut icon" href="{{ template_uri }}/img/favicon.ico" sizes="32x32"/>
+        <link rel="stylesheet" href="{{ template_uri }}/wp-content/themes/daniel-island-2015/style.css"/>
+
+        <script src="https://use.typekit.net/slu5gfl.js"></script>
+        <script>try{Typekit.load({ async: true });}catch(e){}</script>
+        <!--
+        <script src="https://use.typekit.net/qfv8zsy.js"></script>
+        <script>try{Typekit.load({ async: true });}catch(e){}</script>
+        -->
+
+
+    </head>
+    <body class="print print-sampler">
+
+        <div class="container">
+            <div class="row">
+                <div class="col-xs-12 logo-header">
+                    <img src="{{ template_uri }}/wp-content/themes/daniel-island-2015/img/carnes_logo.png">
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-xs-12 text-center">
+                    <h1>Carnes Crossroads Property Sampler</h1>
+                </div>
+            </div>
+            <div class="row">
+                {% for property in properties %}
+                <div class="col-xs-4 listing-item">
+                    <div class="listing-image" style="background-image: url({{ property.getImages[0]|resize(400,300) }})"></div>
+                    <h2>{{ property.getNeighborhood.title }}</h2>
+                    <h3>{{ property.getAddress }}</h3>
+                    <p>{% set numDecimalPlaces = 0 %}
+                        {% if property.getPropertyType == 'Homesite' %}
+                        {% set numDecimalPlaces = 2 %}
+                        {% endif %}
+                        {% if property.getBedroomCount %}{{ property.getBedroomCount }} BR / {% endif %}{% if property.getFullBathroomCount %}{{ property.getFullBathroomCount }} Full Bath / {% endif %}{% if property.getHalfBathroomCount %}{{ property.getHalfBathroomCount }}  Half Bath / {% endif %}{% if property.getTotalAreaSquareFootage %}{{ property.getTotalAreaSquareFootage|number_format(numDecimalPlaces) }} {{ property.getTotalAreaSquareFootageUnitOfMeasurement }}{% endif %}</p>
+                    <p class="listing-price">${{ property.getPurchaseListPrice|number_format }}</p>
+                    <p>{{ property.getDescription|truncate(50) }}</p>
+                </div>
+                {% endfor %}
+            </div>
+            <div class="sampler-foot">
+                <p>For complete listings, visit <a href="http://www.carnescharleston.com/home-finder/search/?includePlans=true">www.carnescharleston.com</a></p>
+            </div>
+        </div>
+        <script>
+//            window.print();
+        </script>
+
+    </body>
+</html>

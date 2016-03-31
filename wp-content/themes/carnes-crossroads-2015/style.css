@@ -8053,3 +8053,57 @@ span.tel {
   letter-spacing: 0.5px; }
   .listing-details li {
     margin-bottom: 5px; }
+
+.print-sampler {
+  background-image: linear-gradient(to bottom, #f4f0e9, #fff 30%);
+  background-repeat: no-repeat; }
+  .print-sampler .logo-header {
+    padding: 35px 0;
+    text-align: center;
+    border-bottom: 10px double #9f9d5c; }
+    .print-sampler .logo-header img {
+      width: 250px; }
+  .print-sampler h1 {
+    margin: 30px auto 50px;
+    text-transform: uppercase;
+    font-size: 2.5rem;
+    letter-spacing: 0.5px;
+    color: #3d3421; }
+  .print-sampler .listing-item {
+    margin-bottom: 75px; }
+    .print-sampler .listing-item .listing-image {
+      height: 200px;
+      width: 95%;
+      background-size: cover;
+      border: 1px solid #9f9d5c; }
+    .print-sampler .listing-item h2 {
+      font-family: "minion-pro", serif;
+      color: #9f9d5c;
+      text-transform: uppercase;
+      font-size: 1.5rem;
+      line-height: 1; }
+    .print-sampler .listing-item h3 {
+      font-family: "minion-pro", serif;
+      margin: 0;
+      font-size: 1.55rem; }
+    .print-sampler .listing-item p, .print-sampler .listing-item ul {
+      width: 95%;
+      font-family: "cronos-pro", sans-serif;
+      font-size: 1rem;
+      color: #3d3421;
+      line-height: 1.2; }
+    .print-sampler .listing-item ul {
+      padding: 0;
+      margin: 0;
+      list-style-type: none; }
+    .print-sampler .listing-item li {
+      margin-bottom: 10px; }
+    .print-sampler .listing-item .listing-price {
+      font-size: 1.4rem; }
+  .print-sampler .sampler-foot {
+    padding: 25px 0;
+    border-top: 4px solid #9f9d5c;
+    text-align: center; }
+    .print-sampler .sampler-foot p {
+      font-family: "minion-pro", serif;
+      font-size: 1.4rem; }
