@@ -12,6 +12,9 @@ Routes::map('/category/all', function () {
     Routes::load('category.php');
 });
 
+Routes::map('/real-estate/home-finder/saved-listings/print-sampler/:id', array('\HomeFinder\Controller\HomeFinder', 'routePrintSavedPropertiesSampler'));
+
+
 // SEO redirects from old site
 redirectThisToThat('/search/', '/home-finder/');
 redirectThisToThat('/search/page/:page/?display-imap', '/home-finder/');

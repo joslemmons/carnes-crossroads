@@ -4,4 +4,14 @@
             <li><a href="{{ item.link }}">{{ item.title }}</a></li>
         {% endfor %}
     </ul>
+
+    {% if function('current_user_can', 'read') %}
+    <form action="https://do.convertapi.com/Web2Pdf" method="post">
+        <input type="hidden" name="ApiKey" value="780223306" />
+        <input type="hidden" name="CUrl" value="{{ function('home_url') }}/real-estate/home-finder/saved-listings/print-sampler/{{ current_user.id }}" />
+
+        <button type="submit" class="btn btn-link">Print Sampler</button>
+    </form>
+    {% endif %}
+
 </div>

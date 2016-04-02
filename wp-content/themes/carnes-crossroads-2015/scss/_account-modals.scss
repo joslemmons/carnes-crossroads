@@ -276,4 +276,12 @@
             color: $cc-green;
         }
     }
+
+    .btn-link {
+        font-family: $font-sans;
+        font-size: 0.9rem;
+        text-transform: uppercase;
+        color: $cc-green;
+        padding: 0;
+    }
 }

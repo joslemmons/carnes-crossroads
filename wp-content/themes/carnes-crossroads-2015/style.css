@@ -4852,7 +4852,7 @@ body.has-active-menu {
 
 @media (min-width: 768px) {
   .modal-dialog {
-    width: 75%;
+    width: 80%;
     margin: 0;
     float: right;
     max-width: 1170px; }
@@ -5241,6 +5241,12 @@ body.has-active-menu {
       font-size: 0.9rem;
       text-transform: uppercase;
       color: #768e1c; }
+  .sidebar-text .btn-link {
+    font-family: "proxima-nova", sans-serif, sans-serif;
+    font-size: 0.9rem;
+    text-transform: uppercase;
+    color: #768e1c;
+    padding: 0; }
 
 /*!
 Chosen, a Select Box Enhancer for jQuery and Prototype
