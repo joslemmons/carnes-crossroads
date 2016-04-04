@@ -20,13 +20,13 @@
         <link rel="apple-touch-icon-precomposed" href="{{ template_uri }}/img/apple-icon.png"/>
         <link rel="shortcut icon" href="{{ template_uri }}/img/favicon.ico" sizes="32x32"/>
         <link rel="stylesheet" href="{{ template_uri }}/wp-content/themes/carnes-crossroads-2015/style.css"/>
-
+        <!--
         <script src="https://use.typekit.net/slu5gfl.js"></script>
         <script>try{Typekit.load({ async: true });}catch(e){}</script>
-        <!--
+        -->
         <script src="https://use.typekit.net/qfv8zsy.js"></script>
         <script>try{Typekit.load({ async: true });}catch(e){}</script>
-        -->
+
 
 
     </head>
@@ -49,13 +49,14 @@
                     <div class="listing-image" style="background-image: url({{ property.getImages[0]|resize(400,300) }})"></div>
                     <h2>{{ property.getNeighborhood.title }}</h2>
                     <h3>{{ property.getAddress }}</h3>
-                    <p>{% set numDecimalPlaces = 0 %}
+                    <p class="listing-details">{% set numDecimalPlaces = 0 %}
                         {% if property.getPropertyType == 'Homesite' %}
                         {% set numDecimalPlaces = 2 %}
                         {% endif %}
-                        {% if property.getBedroomCount %}{{ property.getBedroomCount }} BR / {% endif %}{% if property.getFullBathroomCount %}{{ property.getFullBathroomCount }} Full Bath / {% endif %}{% if property.getHalfBathroomCount %}{{ property.getHalfBathroomCount }}  Half Bath / {% endif %}{% if property.getTotalAreaSquareFootage %}{{ property.getTotalAreaSquareFootage|number_format(numDecimalPlaces) }} {{ property.getTotalAreaSquareFootageUnitOfMeasurement }}{% endif %}</p>
+                        {% if property.getBedroomCount %}{{ property.getBedroomCount }} BR / {% endif %}{% if property.getFullBathroomCount %}{{ property.getFullBathroomCount }} Full Bath{% endif %}{% if property.getHalfBathroomCount %} / {{ property.getHalfBathroomCount }} Half Bath{% endif %}
+                            <br/>{% if property.getTotalAreaSquareFootage %}{{ property.getTotalAreaSquareFootage|number_format(numDecimalPlaces) }} {{ property.getTotalAreaSquareFootageUnitOfMeasurement }}{% endif %}</p>
                     <p class="listing-price">${{ property.getPurchaseListPrice|number_format }}</p>
-                    <p>{{ property.getDescription|truncate(50) }}</p>
+                    <p>{{ property.getDescription|truncate(40) }}</p>
                 </div>
                 {% endfor %}
             </div>
