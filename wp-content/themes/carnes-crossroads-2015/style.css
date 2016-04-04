@@ -8070,9 +8070,9 @@ span.tel {
     text-align: center;
     border-bottom: 10px double #9f9d5c; }
     .print-sampler .logo-header img {
-      width: 230px; }
+      width: 220px; }
   .print-sampler h1 {
-    margin: 30px auto 50px;
+    margin: 30px auto 40px;
     text-transform: uppercase;
     font-family: "minion-pro", serif;
     font-size: 2.2rem;
@@ -8080,11 +8080,11 @@ span.tel {
     color: #695e49;
     text-shadow: none; }
   .print-sampler .listing-item {
-    margin-bottom: 75px; }
+    margin-bottom: 65px;
+    padding: 0 40px; }
     .print-sampler .listing-item .listing-image {
-      height: 185px;
-      width: 90%;
-      background-size: cover;
+      height: 180px;
+      width: 100%;
       border: 1px solid #768e1c;
       background-repeat: no-repeat;
       background-position: center center;
@@ -8108,7 +8108,6 @@ span.tel {
       font-size: 1.5rem;
       color: #3d3421; }
     .print-sampler .listing-item p, .print-sampler .listing-item ul {
-      width: 90%;
       font-family: "proxima-nova", sans-serif;
       font-size: 0.9rem;
       color: #555555;
