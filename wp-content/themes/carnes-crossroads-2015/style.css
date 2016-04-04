@@ -8063,13 +8063,14 @@ span.tel {
 .print-sampler {
   background-image: url(./img/sampler-gradient.png);
   background-repeat: repeat-x;
-  background-position: top left; }
+  background-position: top left;
+  background-color: #fff; }
   .print-sampler .logo-header {
-    padding: 15px 0 30px;
+    padding: 20px 0 30px;
     text-align: center;
     border-bottom: 10px double #9f9d5c; }
     .print-sampler .logo-header img {
-      width: 250px; }
+      width: 230px; }
   .print-sampler h1 {
     margin: 30px auto 50px;
     text-transform: uppercase;
@@ -8081,10 +8082,10 @@ span.tel {
   .print-sampler .listing-item {
     margin-bottom: 75px; }
     .print-sampler .listing-item .listing-image {
-      height: 200px;
+      height: 185px;
       width: 90%;
       background-size: cover;
-      border: 1px solid #9f9d5c;
+      border: 1px solid #768e1c;
       background-repeat: no-repeat;
       background-position: center center;
       background-size: cover; }
@@ -8092,8 +8093,9 @@ span.tel {
       margin-top: 5px;
       margin-bottom: 15px;
       font-family: "proxima-nova", sans-serif;
-      font-size: 0.8rem;
-      text-transform: uppercase; }
+      font-size: 0.75rem;
+      text-transform: uppercase;
+      color: #695e49; }
     .print-sampler .listing-item h2 {
       font-family: "minion-pro", serif;
       color: #9f9d5c;
@@ -8103,13 +8105,13 @@ span.tel {
     .print-sampler .listing-item h3 {
       font-family: "minion-pro", serif;
       margin: 0;
-      font-size: 1.55rem;
-      color: #000; }
+      font-size: 1.5rem;
+      color: #3d3421; }
     .print-sampler .listing-item p, .print-sampler .listing-item ul {
       width: 90%;
       font-family: "proxima-nova", sans-serif;
       font-size: 0.9rem;
-      color: #3d3421;
+      color: #555555;
       line-height: 1.3; }
     .print-sampler .listing-item ul {
       padding: 0;
@@ -8120,7 +8122,8 @@ span.tel {
     .print-sampler .listing-item .listing-price {
       font-size: 1.3rem;
       font-family: "Oswald", sans-serif;
-      margin-top: 0; }
+      margin-top: 0;
+      color: #3d3421; }
   .print-sampler .sampler-foot {
     padding: 25px 0;
     border-top: 4px solid #9f9d5c;

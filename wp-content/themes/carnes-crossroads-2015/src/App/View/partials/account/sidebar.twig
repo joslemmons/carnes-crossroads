@@ -9,6 +9,12 @@
     <form action="https://do.convertapi.com/Web2Pdf" method="post">
         <input type="hidden" name="ApiKey" value="780223306" />
         <input type="hidden" name="CUrl" value="{{ function('home_url') }}/home-finder/saved-listings/print-sampler/{{ function('get_current_user_id') }}" />
+        <input type="hidden" name="DocumentTitle" value="Carnes Crossroads Property Sampler"></input>
+        <input type="hidden" name="PageSize" value="letter"></input>
+        <input type="hidden" name="MarginTop" value="0in"></input>
+        <input type="hidden" name="MarginRight" value="0in"></input>
+        <input type="hidden" name="MarginBottom" value="0in"></input>
+        <input type="hidden" name="MarginLeft" value="0in"></input>
 
         <button type="submit" class="btn btn-link">Print Sampler</button>
     </form>

@@ -56,7 +56,7 @@
                         {% if property.getBedroomCount %}{{ property.getBedroomCount }} BR / {% endif %}{% if property.getFullBathroomCount %}{{ property.getFullBathroomCount }} Full Bath{% endif %}{% if property.getHalfBathroomCount %} / {{ property.getHalfBathroomCount }} Half Bath{% endif %}
                             <br/>{% if property.getTotalAreaSquareFootage %}{{ property.getTotalAreaSquareFootage|number_format(numDecimalPlaces) }} {{ property.getTotalAreaSquareFootageUnitOfMeasurement }}{% endif %}</p>
                     <p class="listing-price">${{ property.getPurchaseListPrice|number_format }}</p>
-                    <p>{{ property.getDescription|truncate(40) }}</p>
+                    <p>{{ property.getDescription|truncate(30) }}</p>
                 </div>
                 {% endfor %}
             </div>
