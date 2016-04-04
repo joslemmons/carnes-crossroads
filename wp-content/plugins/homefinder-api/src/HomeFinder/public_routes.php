@@ -10,6 +10,7 @@ Routes::map('/api/home-finder/featured-properties/page/:num', array('\HomeFinder
 Routes::map('/api/home-finder/recently-listed/page/:num', array('\HomeFinder\Controller\HomeFinder', 'routeRecentlyListed'));
 Routes::map('/api/home-finder/saved-listings/page/:num', array('\HomeFinder\Controller\HomeFinder', 'routeSavedListings'));
 Routes::map('/home-finder/saved-listings/print/', array('\HomeFinder\Controller\HomeFinder', 'routePrintSavedProperties'));
+Routes::map('/home-finder/saved-listings/print-sampler/:id', array('\HomeFinder\Controller\HomeFinder', 'routePrintSavedPropertiesSampler'));
 Routes::map('/api/home-finder/new-offerings/:id', array('\HomeFinder\Controller\HomeFinder', 'routeNewOffering'));
 Routes::map('/api/home-finder/new-offerings/page/:num', array('\HomeFinder\Controller\HomeFinder', 'routeNewOfferings'));
 Routes::map('/api/home-finder/new-offerings', array('\HomeFinder\Controller\HomeFinder', 'routeNewOfferings'));

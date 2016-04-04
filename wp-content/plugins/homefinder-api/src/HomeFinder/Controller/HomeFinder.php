@@ -316,15 +316,15 @@ class HomeFinder extends Router
         $item = null;
 
         if ($propertyId !== null && $propertyId !== '') {
-        $property = Property::withId($propertyId);
-        $address = $property->getAddress();
+            $property = Property::withId($propertyId);
+            $address = $property->getAddress();
 
-        if (false === $property) {
-            self::renderJSON(array(
-                'status' => 404,
-                'rsp' => 'Invalid Property Id'
-            ), 404);
-        }
+            if (false === $property) {
+                self::renderJSON(array(
+                    'status' => 404,
+                    'rsp' => 'Invalid Property Id'
+                ), 404);
+            }
             $item = $property;
             $twig_file = 'email/request-showing.twig';
         } elseif ($builder_title !== null && $builder_title !== '' && $floor_plan_title !== null && $floor_plan_title !== '') {
@@ -465,5 +465,31 @@ class HomeFinder extends Router
             'status' => 404,
             'rsp' => 'login to print saved properties'
         ));
+    }
+
+    public static function routePrintSavedPropertiesSampler($params = array())
+    {
+        $user_id = isset($params['id']) ? filter_var($params['id'], FILTER_SANITIZE_NUMBER_INT) : null;
+
+        if ($user_id !== null) {
+            $user = new User($user_id);
+        } else {
+            $user = User::getCurrentlyLoggedUser();
+        }
+
+        $user_info = get_userdata($user_id);
+        if ($user && $user_info->has_cap('read')) {
+            $properties = $user->getSavedProperties();
+
+            \Timber::render('partials/home-finder/print-view-of-property-sampler.twig', array(
+                'properties' => $properties
+            ));
+            exit();
+        } else {
+            self::renderJSON(array(
+                'status' => 404,
+                'rsp' => 'login to print saved properties'
+            ));
+        }
     }
 }
