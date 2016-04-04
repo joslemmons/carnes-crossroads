@@ -25,6 +25,10 @@ class Bootstrap
             remove_post_type_support('page', 'custom-fields');
         });
 
+        add_filter('wp_mail_content_type', function () {
+            return 'text/plain';
+        });
+
         add_shortcode('nggallery', '__return_false');
 
         self::_notifyAdminOfMissingPlugins();
