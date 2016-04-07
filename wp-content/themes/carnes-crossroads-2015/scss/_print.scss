@@ -87,33 +87,34 @@
     background-color: $white;
 
     .logo-header {
-        padding: 15px 0 25px;
+        padding: 10px 0 20px;
         text-align: center;
-        border-bottom: 10px double $gold;
+        border-bottom: 8px double $gold;
 
         img {
-            width: 200px;
+            width: 190px;
         }
     }
 
     h1 {
-        margin: 30px auto 30px;
+        margin: 25px auto 25px;
         text-transform: uppercase;
         font-family: $minion;
-        font-size: 2rem;
+        font-size: 1.95rem;
         letter-spacing: 0.5px;
         color: $brown;
         text-shadow: none;
     }
 
     .listing-item {
-        height: 350px;
-        margin-bottom: 5px;
-        padding: 0 35px;
+        height: 320px;
+        margin-bottom: 0;
+        padding: 0 33px;
 
         .listing-image {
-            height: 140px;
-            width: 100%;
+            margin-bottom: 10px;
+            height: 120px;
+            width: 90%;
             border: 1px solid $cc-green;
             background-repeat: no-repeat;
             background-position: center center;
@@ -170,13 +171,13 @@
     }
 
     .sampler-foot {
-        padding: 25px 0;
+        padding: 20px 0;
         border-top: 2px solid $gold;
         text-align: center;
 
         .footer-logo {
-            width: 175px;
-            margin-bottom: 30px;
+            width: 160px;
+            margin-bottom: 25px;
         }
 
         p {
@@ -196,6 +197,7 @@
         .disclaimer {
             font-family: $proxima;
             font-size: 0.7rem;
+            line-height: 1.2;
             margin-top: 20px;
         }
     }
