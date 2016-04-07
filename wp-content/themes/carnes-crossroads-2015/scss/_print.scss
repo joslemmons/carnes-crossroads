@@ -171,18 +171,19 @@
     }
 
     .sampler-foot {
-        padding: 20px 0;
+        padding: 40px 0;
+        margin-bottom: 20px;
         border-top: 2px solid $gold;
-        text-align: center;
+        text-align: right;
 
         .footer-logo {
-            width: 160px;
-            margin-bottom: 25px;
+            float: left;
+            width: 100%;
         }
 
         p {
             font-family: $minion;
-            font-size: 1.05rem;
+            font-size: 0.93rem;
             line-height: 1;
             color: #555555;
 
@@ -198,7 +199,9 @@
             font-family: $proxima;
             font-size: 0.7rem;
             line-height: 1.2;
-            margin-top: 20px;
+            margin: 10px 0;
+            width: 80%;
+            float: right;
         }
     }
 }

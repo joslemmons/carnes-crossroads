@@ -8126,15 +8126,16 @@ span.tel {
       margin-top: 0;
       color: #3d3421; }
   .print-sampler .sampler-foot {
-    padding: 20px 0;
+    padding: 40px 0;
+    margin-bottom: 20px;
     border-top: 2px solid #9f9d5c;
-    text-align: center; }
+    text-align: right; }
     .print-sampler .sampler-foot .footer-logo {
-      width: 160px;
-      margin-bottom: 25px; }
+      float: left;
+      width: 100%; }
     .print-sampler .sampler-foot p {
       font-family: "minion-pro", serif;
-      font-size: 1.05rem;
+      font-size: 0.93rem;
       line-height: 1;
       color: #555555; }
       .print-sampler .sampler-foot p img {
@@ -8146,4 +8147,6 @@ span.tel {
       font-family: "proxima-nova", sans-serif;
       font-size: 0.7rem;
       line-height: 1.2;
-      margin-top: 20px; }
+      margin: 10px 0;
+      width: 80%;
+      float: right; }
