@@ -2,15 +2,19 @@
 // ===================================
 
 .cx-logo {
-    margin: 10px 0 45px;
-    padding-right: 15px;
+    text-align: center;
+
+    img {
+        width: 37px;
+        margin: 3px 0 0 0;
+    }
 }
 
 .print-contact {
     margin: 0 5px;
 
     p {
-        font-family: $font-sans;
+        font-family: $proxima;
         font-size: 0.95rem;
         line-height: 1.7;
     }
@@ -18,7 +22,7 @@
     .title {
         display: block;
         margin-top: 40px;
-        font-family: $font-serif;
+        font-family: $minion;
         font-weight: $weight-bold;
     }
 }
@@ -26,57 +30,93 @@
 .listing {
 
     &-image {
-        margin: 10px 0 15px;
+        margin-top: 12px;
+
+        img {
+            border: 1px solid #999;
+        }
+    }
+
+    &-image-group {
+        margin-top: 12px;
+
+        .col-xs-3 {
+            padding: 0 6px;
+        }
     }
 
     &-address {
-        font-family: $baskerville;
-        font-size: 1.75rem;
-        letter-spacing: 0.5px;
-    }
-
-    &-price {
-        display: inline-block;
-        margin: 5px 10px 8px 0;
-        font-family: $oswald;
-        font-size: 1.35rem;
+        margin: 0;
+        font-family: $minion;
+        font-size: 1.4rem;
         letter-spacing: 0.5px;
     }
 
     &-specs {
+        padding: 18px 0 15px;
         display: inline-block;
-        font-family: $font-sans;
-        font-size: 1.15rem;
+        font-family: $proxima;
+        font-size: 1rem;
         text-transform: uppercase;
         letter-spacing: 0.5px;
+        color: #555;
+        border-bottom: 1px solid $cc-green;
+    }
+
+    &-specs-headline {
+        display: inline-block;
+        margin: 0;
+        font-family: $oswald;
+        font-size: 1.15rem;
+        letter-spacing: 0.5px;
+        color: $black;
     }
 
     &-neighborhood {
-        display: block;
-        margin-bottom: 25px;
-        font-family: $oswald;
-        font-size: 1rem;
+        font-family: $proxima;
+        font-size: 0.7rem;
         text-transform: uppercase;
-
-        .item-padding {
-            display: inline-block;
-            margin: 0 15px;
-
-            &:first-child {
-                margin-left: 0;
-            }
-        }
+        letter-spacing: 0.5px;
+        color: #555;
     }
 
     &-details {
-        margin-bottom: 55px;
-        font-family: $font-sans;
-        font-size: 0.9rem;
-        letter-spacing: 0.5px;
+        margin-top: 20px;
+        font-family: $proxima;
+        font-size: 0.75rem;
+        letter-spacing: 0.25px;
 
         li {
             margin-bottom: 5px;
         }
+    }
+
+    &-footer {
+        margin-top: 15px;
+
+        img {
+            width: 65%;
+        }
+
+        p {
+            margin-top: 20px;
+            font-family: $minion;
+            font-size: 1rem;
+            letter-spacing: 0.5px;
+            line-height: 2;
+            color: #555;
+        }
+    }
+
+    &-disclaimer {
+        margin-top: 10px;
+        font-size: 9px;
+        text-align: center;
+    }
+
+    &-floorplan {
+        height: 1000px;
+        overflow: hidden;
     }
 }
 

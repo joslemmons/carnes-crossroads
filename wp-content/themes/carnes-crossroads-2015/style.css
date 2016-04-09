@@ -8008,57 +8008,83 @@ span.tel {
   width: 100%; }
 
 .cx-logo {
-  margin: 10px 0 45px;
-  padding-right: 15px; }
+  text-align: center; }
+  .cx-logo img {
+    width: 37px;
+    margin: 3px 0 0 0; }
 
 .print-contact {
   margin: 0 5px; }
   .print-contact p {
-    font-family: "proxima-nova", sans-serif, sans-serif;
+    font-family: "proxima-nova", sans-serif;
     font-size: 0.95rem;
     line-height: 1.7; }
   .print-contact .title {
     display: block;
     margin-top: 40px;
-    font-family: "minion-pro", serif, serif;
+    font-family: "minion-pro", serif;
     font-weight: 700; }
 
 .listing-image {
-  margin: 10px 0 15px; }
+  margin-top: 12px; }
+  .listing-image img {
+    border: 1px solid #999; }
+.listing-image-group {
+  margin-top: 12px; }
+  .listing-image-group .col-xs-3 {
+    padding: 0 6px; }
 .listing-address {
-  font-family: "baskerville-urw", serif;
-  font-size: 1.75rem;
-  letter-spacing: 0.5px; }
-.listing-price {
-  display: inline-block;
-  margin: 5px 10px 8px 0;
-  font-family: "Oswald", sans-serif;
-  font-size: 1.35rem;
+  margin: 0;
+  font-family: "minion-pro", serif;
+  font-size: 1.4rem;
   letter-spacing: 0.5px; }
 .listing-specs {
+  padding: 18px 0 15px;
   display: inline-block;
-  font-family: "proxima-nova", sans-serif, sans-serif;
-  font-size: 1.15rem;
-  text-transform: uppercase;
-  letter-spacing: 0.5px; }
-.listing-neighborhood {
-  display: block;
-  margin-bottom: 25px;
-  font-family: "Oswald", sans-serif;
+  font-family: "proxima-nova", sans-serif;
   font-size: 1rem;
-  text-transform: uppercase; }
-  .listing-neighborhood .item-padding {
-    display: inline-block;
-    margin: 0 15px; }
-    .listing-neighborhood .item-padding:first-child {
-      margin-left: 0; }
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  color: #555;
+  border-bottom: 1px solid #768e1c; }
+.listing-specs-headline {
+  display: inline-block;
+  margin: 0;
+  font-family: "Oswald", sans-serif;
+  font-size: 1.15rem;
+  letter-spacing: 0.5px;
+  color: #000; }
+.listing-neighborhood {
+  font-family: "proxima-nova", sans-serif;
+  font-size: 0.7rem;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  color: #555; }
 .listing-details {
-  margin-bottom: 55px;
-  font-family: "proxima-nova", sans-serif, sans-serif;
-  font-size: 0.9rem;
-  letter-spacing: 0.5px; }
+  margin-top: 20px;
+  font-family: "proxima-nova", sans-serif;
+  font-size: 0.75rem;
+  letter-spacing: 0.25px; }
   .listing-details li {
     margin-bottom: 5px; }
+.listing-footer {
+  margin-top: 15px; }
+  .listing-footer img {
+    width: 65%; }
+  .listing-footer p {
+    margin-top: 20px;
+    font-family: "minion-pro", serif;
+    font-size: 1rem;
+    letter-spacing: 0.5px;
+    line-height: 2;
+    color: #555; }
+.listing-disclaimer {
+  margin-top: 10px;
+  font-size: 9px;
+  text-align: center; }
+.listing-floorplan {
+  height: 1000px;
+  overflow: hidden; }
 
 .print-sampler {
   background-image: url(./img/sampler-gradient.png);
