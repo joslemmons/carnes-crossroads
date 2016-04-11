@@ -4,7 +4,8 @@
 .print {
 
     .container {
-        height: 100%;
+        height: 10.5in;
+        width: 8.25in;
         position: relative;
         padding: 100px 0 0 0;
     }
@@ -18,23 +19,6 @@
         }
     }
 
-    .print-contact {
-        margin: 0 5px;
-
-        p {
-            font-family: $proxima;
-            font-size: 0.95rem;
-            line-height: 1.7;
-        }
-
-        .title {
-            display: block;
-            margin-top: 40px;
-            font-family: $minion;
-            font-weight: $weight-bold;
-        }
-    }
-
     .listing {
 
         &-header {
@@ -44,18 +28,19 @@
         }
 
         &-image {
-            margin: 12px auto 0 auto;
+            margin: 5px auto 0 auto;
             text-align: center;
-            width: 70%;
+            width: 80%;
 
             img {
                 border: 1px solid #999;
+                max-width: 100%;
             }
         }
 
         &-image-group {
             margin: 12px auto 0 auto;
-            width: 70%;
+            width: 80%;
 
             .col-xs-3 {
                 padding: 0 6px;
@@ -65,17 +50,17 @@
         &-address {
             margin: 0;
             font-family: $minion;
-            font-size: 1.4rem;
+            font-size: 16pt;
             letter-spacing: 0.5px;
         }
 
         &-specs {
             margin: 0 auto;
-            width: 70%;
+            width: 80%;
             padding: 18px 0 15px;
             display: inline-block;
             font-family: $proxima;
-            font-size: 1rem;
+            font-size: 12pt;
             text-transform: uppercase;
             letter-spacing: 0.5px;
             color: #555;
@@ -86,14 +71,14 @@
             display: inline-block;
             margin: 0;
             font-family: $oswald;
-            font-size: 1.15rem;
+            font-size: 14pt;
             letter-spacing: 0.5px;
             color: $black;
         }
 
         &-neighborhood {
             font-family: $proxima;
-            font-size: 0.7rem;
+            font-size: 8pt;
             text-transform: uppercase;
             letter-spacing: 0.5px;
             color: #555;
@@ -101,9 +86,9 @@
 
         &-details {
             margin: 20px auto 0 auto;
-            width: 70%;
+            width: 80%;
             font-family: $proxima;
-            font-size: 0.75rem;
+            font-size: 8pt;
             letter-spacing: 0.25px;
 
             li {
@@ -114,7 +99,7 @@
         &-footer {
             position: absolute;
             bottom: 0;
-            width: 70%;
+            width: 80%;
             @include center(x);
 
             img {
@@ -124,7 +109,7 @@
             p {
                 margin-top: 20px;
                 font-family: $minion;
-                font-size: 1rem;
+                font-size: 11pt;
                 letter-spacing: 0.5px;
                 line-height: 2;
                 color: #555;
@@ -133,12 +118,12 @@
 
         &-disclaimer {
             margin-top: 10px;
-            font-size: 8px;
+            font-size: 6pt;
             text-align: center;
         }
 
         &-floorplan {
-            width: 70%;
+            width: 80%;
             margin: 0 auto;
             max-height: 80%;
             overflow: hidden;

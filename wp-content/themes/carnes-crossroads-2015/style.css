@@ -8010,7 +8010,8 @@ span.tel {
   width: 100%; }
 
 .print .container {
-  height: 100%;
+  height: 10.5in;
+  width: 8.25in;
   position: relative;
   padding: 100px 0 0 0; }
 .print .cx-logo {
@@ -8018,17 +8019,6 @@ span.tel {
   .print .cx-logo img {
     width: 37px;
     margin: 3px 0 0 0; }
-.print .print-contact {
-  margin: 0 5px; }
-  .print .print-contact p {
-    font-family: "proxima-nova", sans-serif;
-    font-size: 0.95rem;
-    line-height: 1.7; }
-  .print .print-contact .title {
-    display: block;
-    margin-top: 40px;
-    font-family: "minion-pro", serif;
-    font-weight: 700; }
 .print .listing-header {
   position: absolute;
   top: 0;
@@ -8038,28 +8028,29 @@ span.tel {
   -moz-transform: translateX(-50%);
   transform: translateX(-50%); }
 .print .listing-image {
-  margin: 12px auto 0 auto;
+  margin: 5px auto 0 auto;
   text-align: center;
-  width: 70%; }
+  width: 80%; }
   .print .listing-image img {
-    border: 1px solid #999; }
+    border: 1px solid #999;
+    max-width: 100%; }
 .print .listing-image-group {
   margin: 12px auto 0 auto;
-  width: 70%; }
+  width: 80%; }
   .print .listing-image-group .col-xs-3 {
     padding: 0 6px; }
 .print .listing-address {
   margin: 0;
   font-family: "minion-pro", serif;
-  font-size: 1.4rem;
+  font-size: 16pt;
   letter-spacing: 0.5px; }
 .print .listing-specs {
   margin: 0 auto;
-  width: 70%;
+  width: 80%;
   padding: 18px 0 15px;
   display: inline-block;
   font-family: "proxima-nova", sans-serif;
-  font-size: 1rem;
+  font-size: 12pt;
   text-transform: uppercase;
   letter-spacing: 0.5px;
   color: #555;
@@ -8068,27 +8059,27 @@ span.tel {
   display: inline-block;
   margin: 0;
   font-family: "Oswald", sans-serif;
-  font-size: 1.15rem;
+  font-size: 14pt;
   letter-spacing: 0.5px;
   color: #000; }
 .print .listing-neighborhood {
   font-family: "proxima-nova", sans-serif;
-  font-size: 0.7rem;
+  font-size: 8pt;
   text-transform: uppercase;
   letter-spacing: 0.5px;
   color: #555; }
 .print .listing-details {
   margin: 20px auto 0 auto;
-  width: 70%;
+  width: 80%;
   font-family: "proxima-nova", sans-serif;
-  font-size: 0.75rem;
+  font-size: 8pt;
   letter-spacing: 0.25px; }
   .print .listing-details li {
     margin-bottom: 5px; }
 .print .listing-footer {
   position: absolute;
   bottom: 0;
-  width: 70%;
+  width: 80%;
   left: 50%;
   right: auto;
   -webkit-transform: translateX(-50%);
@@ -8099,16 +8090,16 @@ span.tel {
   .print .listing-footer p {
     margin-top: 20px;
     font-family: "minion-pro", serif;
-    font-size: 1rem;
+    font-size: 11pt;
     letter-spacing: 0.5px;
     line-height: 2;
     color: #555; }
 .print .listing-disclaimer {
   margin-top: 10px;
-  font-size: 8px;
+  font-size: 6pt;
   text-align: center; }
 .print .listing-floorplan {
-  width: 70%;
+  width: 80%;
   margin: 0 auto;
   max-height: 80%;
   overflow: hidden; }

@@ -58,7 +58,7 @@
             </div>
             <div class="row">
                 <div class="listing-image">
-                    <img src="{{ property.getImages[0]|resize(800,375) }}">
+                    <img src="{{ property.getImages[0]|resize(800,400) }}">
                 </div>
             </div>
             <div class="row text-center">
@@ -131,8 +131,8 @@
                     <img src="{{ property.getFloorPlanDocumentLink }}" class="img-responsive">
                 </div>
             </div>
-            <div class="row">
-                <div class="listing-footer">
+            <div class="listing-footer">
+                <div class="row">
                     <div class="col-xs-4 text-left">
                         <p>(843) 761-8600</p>
                     </div>
@@ -143,11 +143,7 @@
                         <p>CarnesCharleston.com</p>
                     </div>
                 </div>
-            </div>
-            <div class="row">
-                <div class="col-xs-12 listing-disclaimer">
-                    &copy; Carnes Crossroads Real Estate. Chuck Buck, Broker-in-charge. Information deemed reliable, but not guaranteed. Availability and pricing subject to change.
-                </div>
+                <div class="listing-disclaimer">&copy; Carnes Crossroads Real Estate. Chuck Buck, Broker-in-charge. Information deemed reliable, but not guaranteed. Availability and pricing subject to change.</div>
             </div>
             {% endfor %}
         </div>
