@@ -43,7 +43,7 @@
 
         <div class="container">
             {% for property in properties %}
-            <div class="row">
+            <div class="row listing-header">
                 <div class="col-xs-12 cx-logo">
                     {% if loop.first %}
                     <img src="{{ template_uri }}/wp-content/themes/carnes-crossroads-2015/img/carnes_logo_badge.png">
@@ -57,24 +57,24 @@
                 </div>
             </div>
             <div class="row">
-                <div class="col-xs-8 col-sm-offset-2 listing-image">
-                    <img src="{{ property.getImages[0]|resize(800,400) }}" class="img-responsive">
+                <div class="listing-image">
+                    <img src="{{ property.getImages[0]|resize(800,375) }}">
                 </div>
             </div>
             <div class="row text-center">
-                <div class="col-xs-8 col-sm-offset-2 listing-specs">
+                <div class="listing-specs">
                     <span class="listing-specs-headline">${{ property.getPurchaseListPrice|number_format }}&nbsp;&nbsp;&#8226;&nbsp;&nbsp;{% if property.getTotalAreaSquareFootage %}{{ property.getTotalAreaSquareFootage|number_format(numDecimalPlaces) }} {{ property.getTotalAreaSquareFootageUnitOfMeasurement }}{% endif %}&nbsp;&nbsp;&#8226;&nbsp;&nbsp;{{ property.getBuilder }}</span>
                     <br/>
                     {% if property.getBedroomCount %}{{ property.getBedroomCount }} Bedrooms / {% endif %}{% if property.getFullBathroomCount %}{{ property.getFullBathroomCount }} Full Baths / {% endif %}{% if property.getHalfBathroomCount %}{{ property.getHalfBathroomCount }}  Half Bath{% endif %}
                 </div>
             </div>
             <div class="row">
-                <div class="col-xs-8 col-sm-offset-2 listing-details">
+                <div class="listing-details">
                     {{ property.getDescription }}
                 </div>
             </div>
             <div class="row">
-                <div class="col-xs-8 col-sm-offset-2 listing-image-group">
+                <div class="listing-image-group">
                     <div class="col-xs-3">
                         <img src="{{ property.getImages[1]|resize(300,150) }}" class="img-responsive">
                     </div>
@@ -89,8 +89,8 @@
                     </div>
                 </div>
             </div>
-            <div class="row">
-                <div class="col-xs-8 col-sm-offset-2 listing-footer">
+            <div class="listing-footer">
+                <div class="row">
                     <div class="col-xs-4 text-left">
                         <p>(843) 761-8600</p>
                     </div>
@@ -101,18 +101,19 @@
                         <p>CarnesCharleston.com</p>
                     </div>
                 </div>
+                <div class="listing-disclaimer">&copy; Carnes Crossroads Real Estate. Chuck Buck, Broker-in-charge. Information deemed reliable, but not guaranteed. Availability and pricing subject to change.</div>
             </div>
-            <div class="row">
+            {# <div class="row">
                 <div class="col-xs-12 listing-disclaimer">
                     &copy; Carnes Crossroads Real Estate. Chuck Buck, Broker-in-charge. Information deemed reliable, but not guaranteed. Availability and pricing subject to change.
                 </div>
-            </div>
+            </div> #}
             {% endfor %}
         </div>
 
         <div class="container">
             {% for property in properties %}
-            <div class="row">
+            <div class="row listing-header">
                 <div class="col-xs-12 cx-logo">
                     {% if loop.first %}
                     <img src="{{ template_uri }}/wp-content/themes/carnes-crossroads-2015/img/carnes_logo_badge.png">
@@ -126,12 +127,12 @@
                 </div>
             </div>
             <div class="row">
-                <div class="col-xs-10 col-sm-offset-1 listing-floorplan">
+                <div class="listing-floorplan">
                     <img src="{{ property.getFloorPlanDocumentLink }}" class="img-responsive">
                 </div>
             </div>
             <div class="row">
-                <div class="col-xs-8 col-sm-offset-2 listing-footer">
+                <div class="listing-footer">
                     <div class="col-xs-4 text-left">
                         <p>(843) 761-8600</p>
                     </div>

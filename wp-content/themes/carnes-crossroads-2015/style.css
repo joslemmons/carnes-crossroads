@@ -5110,10 +5110,12 @@ body.has-active-menu {
         text-decoration: none !important;
         color: black;
         border-bottom: 1px solid #9f9d5c; }
-    #account-saved-listings .child-content > a, #account-saved-listings .child-content span > a, #saved-searches .child-content > a, #saved-searches .child-content span > a, #account-register .child-content > a, #account-register .child-content span > a, #notification-options .child-content > a, #notification-options .child-content span > a {
+    #account-saved-listings .child-content > a, #account-saved-listings .child-content > form a, #account-saved-listings .child-content span > a, #account-saved-listings .child-content span > form a, #saved-searches .child-content > a, #saved-searches .child-content > form a, #saved-searches .child-content span > a, #saved-searches .child-content span > form a, #account-register .child-content > a, #account-register .child-content > form a, #account-register .child-content span > a, #account-register .child-content span > form a, #notification-options .child-content > a, #notification-options .child-content > form a, #notification-options .child-content span > a, #notification-options .child-content span > form a {
       font-size: 0.9rem;
       text-transform: uppercase;
       color: #828181; }
+    #account-saved-listings .child-content > form a, #account-saved-listings .child-content span > form a, #saved-searches .child-content > form a, #saved-searches .child-content span > form a, #account-register .child-content > form a, #account-register .child-content span > form a, #notification-options .child-content > form a, #notification-options .child-content span > form a {
+      margin-top: -23px; }
     #account-saved-listings .child-content .remove, #account-saved-listings .child-content span .remove, #saved-searches .child-content .remove, #saved-searches .child-content span .remove, #account-register .child-content .remove, #account-register .child-content span .remove, #notification-options .child-content .remove, #notification-options .child-content span .remove {
       font-family: "proxima-nova", sans-serif !important;
       text-transform: uppercase;
@@ -8007,38 +8009,53 @@ span.tel {
   text-align: center;
   width: 100%; }
 
-.cx-logo {
+.print .container {
+  height: 100%;
+  position: relative;
+  padding: 100px 0 0 0; }
+.print .cx-logo {
   text-align: center; }
-  .cx-logo img {
+  .print .cx-logo img {
     width: 37px;
     margin: 3px 0 0 0; }
-
-.print-contact {
+.print .print-contact {
   margin: 0 5px; }
-  .print-contact p {
+  .print .print-contact p {
     font-family: "proxima-nova", sans-serif;
     font-size: 0.95rem;
     line-height: 1.7; }
-  .print-contact .title {
+  .print .print-contact .title {
     display: block;
     margin-top: 40px;
     font-family: "minion-pro", serif;
     font-weight: 700; }
-
-.listing-image {
-  margin-top: 12px; }
-  .listing-image img {
+.print .listing-header {
+  position: absolute;
+  top: 0;
+  left: 50%;
+  right: auto;
+  -webkit-transform: translateX(-50%);
+  -moz-transform: translateX(-50%);
+  transform: translateX(-50%); }
+.print .listing-image {
+  margin: 12px auto 0 auto;
+  text-align: center;
+  width: 70%; }
+  .print .listing-image img {
     border: 1px solid #999; }
-.listing-image-group {
-  margin-top: 12px; }
-  .listing-image-group .col-xs-3 {
+.print .listing-image-group {
+  margin: 12px auto 0 auto;
+  width: 70%; }
+  .print .listing-image-group .col-xs-3 {
     padding: 0 6px; }
-.listing-address {
+.print .listing-address {
   margin: 0;
   font-family: "minion-pro", serif;
   font-size: 1.4rem;
   letter-spacing: 0.5px; }
-.listing-specs {
+.print .listing-specs {
+  margin: 0 auto;
+  width: 70%;
   padding: 18px 0 15px;
   display: inline-block;
   font-family: "proxima-nova", sans-serif;
@@ -8047,57 +8064,66 @@ span.tel {
   letter-spacing: 0.5px;
   color: #555;
   border-bottom: 1px solid #768e1c; }
-.listing-specs-headline {
+.print .listing-specs-headline {
   display: inline-block;
   margin: 0;
   font-family: "Oswald", sans-serif;
   font-size: 1.15rem;
   letter-spacing: 0.5px;
   color: #000; }
-.listing-neighborhood {
+.print .listing-neighborhood {
   font-family: "proxima-nova", sans-serif;
   font-size: 0.7rem;
   text-transform: uppercase;
   letter-spacing: 0.5px;
   color: #555; }
-.listing-details {
-  margin-top: 20px;
+.print .listing-details {
+  margin: 20px auto 0 auto;
+  width: 70%;
   font-family: "proxima-nova", sans-serif;
   font-size: 0.75rem;
   letter-spacing: 0.25px; }
-  .listing-details li {
+  .print .listing-details li {
     margin-bottom: 5px; }
-.listing-footer {
-  margin-top: 15px; }
-  .listing-footer img {
-    width: 65%; }
-  .listing-footer p {
+.print .listing-footer {
+  position: absolute;
+  bottom: 0;
+  width: 70%;
+  left: 50%;
+  right: auto;
+  -webkit-transform: translateX(-50%);
+  -moz-transform: translateX(-50%);
+  transform: translateX(-50%); }
+  .print .listing-footer img {
+    width: 125px; }
+  .print .listing-footer p {
     margin-top: 20px;
     font-family: "minion-pro", serif;
     font-size: 1rem;
     letter-spacing: 0.5px;
     line-height: 2;
     color: #555; }
-.listing-disclaimer {
+.print .listing-disclaimer {
   margin-top: 10px;
-  font-size: 9px;
+  font-size: 8px;
   text-align: center; }
-.listing-floorplan {
-  height: 1000px;
+.print .listing-floorplan {
+  width: 70%;
+  margin: 0 auto;
+  max-height: 80%;
   overflow: hidden; }
-
-.print-sampler {
+.print .print-sampler {
   background-image: url(./img/sampler-gradient.png);
   background-repeat: repeat-x;
   background-position: top left;
   background-color: #fff; }
-  .print-sampler .logo-header {
+  .print .print-sampler .logo-header {
     padding: 10px 0 20px;
     text-align: center;
     border-bottom: 8px double #9f9d5c; }
-    .print-sampler .logo-header img {
+    .print .print-sampler .logo-header img {
       width: 190px; }
-  .print-sampler h1 {
+  .print .print-sampler h1 {
     margin: 25px auto 25px;
     text-transform: uppercase;
     font-family: "minion-pro", serif;
@@ -8105,11 +8131,11 @@ span.tel {
     letter-spacing: 0.5px;
     color: #695e49;
     text-shadow: none; }
-  .print-sampler .listing-item {
+  .print .print-sampler .listing-item {
     height: 320px;
     margin-bottom: 0;
     padding: 0 33px; }
-    .print-sampler .listing-item .listing-image {
+    .print .print-sampler .listing-item .listing-image {
       margin-bottom: 10px;
       height: 120px;
       width: 90%;
@@ -8117,59 +8143,59 @@ span.tel {
       background-repeat: no-repeat;
       background-position: center center;
       background-size: cover; }
-    .print-sampler .listing-item .listing-details {
+    .print .print-sampler .listing-item .listing-details {
       margin-top: 5px;
       margin-bottom: 5px;
       font-family: "proxima-nova", sans-serif;
       font-size: 0.7rem;
       text-transform: uppercase;
       color: #695e49; }
-    .print-sampler .listing-item h2 {
+    .print .print-sampler .listing-item h2 {
       font-family: "minion-pro", serif;
       color: #9f9d5c;
       text-transform: uppercase;
       font-size: 1.35rem;
       line-height: 1; }
-    .print-sampler .listing-item h3 {
+    .print .print-sampler .listing-item h3 {
       font-family: "minion-pro", serif;
       margin: 0;
       font-size: 1.35rem;
       color: #3d3421; }
-    .print-sampler .listing-item p, .print-sampler .listing-item ul {
+    .print .print-sampler .listing-item p, .print .print-sampler .listing-item ul {
       font-family: "proxima-nova", sans-serif;
       font-size: 0.8rem;
       color: #555555;
       line-height: 1.25; }
-    .print-sampler .listing-item ul {
+    .print .print-sampler .listing-item ul {
       padding: 0;
       margin: 0;
       list-style-type: none; }
-    .print-sampler .listing-item li {
+    .print .print-sampler .listing-item li {
       margin-bottom: 10px; }
-    .print-sampler .listing-item .listing-price {
+    .print .print-sampler .listing-item .listing-price {
       font-size: 1.2rem;
       font-family: "Oswald", sans-serif;
       margin-top: 0;
       color: #3d3421; }
-  .print-sampler .sampler-foot {
+  .print .print-sampler .sampler-foot {
     padding: 40px 0;
     margin-bottom: 20px;
     border-top: 2px solid #9f9d5c;
     text-align: right; }
-    .print-sampler .sampler-foot .footer-logo {
+    .print .print-sampler .sampler-foot .footer-logo {
       float: left;
       width: 100%; }
-    .print-sampler .sampler-foot p {
+    .print .print-sampler .sampler-foot p {
       font-family: "minion-pro", serif;
       font-size: 0.93rem;
       line-height: 1;
       color: #555555; }
-      .print-sampler .sampler-foot p img {
+      .print .print-sampler .sampler-foot p img {
         height: 0.9rem;
         margin-right: 7px;
         margin-top: -2px;
         opacity: 0.5; }
-    .print-sampler .sampler-foot .disclaimer {
+    .print .print-sampler .sampler-foot .disclaimer {
       font-family: "proxima-nova", sans-serif;
       font-size: 0.7rem;
       line-height: 1.2;

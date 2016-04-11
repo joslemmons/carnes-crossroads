@@ -79,10 +79,14 @@
             }
         }
 
-        > a {
+        > a, > form a {
             font-size: 0.9rem;
             text-transform: uppercase;
             color: $cc-med-grey;
+        }
+
+        > form a {
+            margin-top: -23px;
         }
 
         .remove {
