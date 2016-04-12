@@ -6,7 +6,7 @@
     .container {
         height: 900px;
         position: relative;
-        padding: 100px 0 0 0;
+        padding: 100px 100px 0 100px;
         overflow: hidden;
         margin-bottom: 20px;
     }
@@ -41,7 +41,7 @@
 
         &-image-group {
             margin: 12px auto 0 auto;
-            width: 600px;
+            width: 100%;
 
             .col-xs-3 {
                 padding: 0 6px;
@@ -57,7 +57,7 @@
 
         &-specs {
             margin: 0 auto;
-            width: 600px;
+            width: 100%;
             padding: 18px 0 15px;
             display: inline-block;
             font-family: $proxima;
@@ -87,7 +87,7 @@
 
         &-details {
             margin: 20px auto 0 auto;
-            width: 600px;
+            width: 100%;
             font-family: $proxima;
             font-size: 0.75rem;
             letter-spacing: 0.25px;
@@ -100,7 +100,8 @@
         &-footer {
             position: absolute;
             bottom: 0;
-            width: 600px;
+            width: 100%;
+            padding: 0 75px;
             @include center(x);
 
             img {
@@ -124,7 +125,7 @@
         }
 
         &-floorplan {
-            width: 600px;
+            width: 100%;
             margin: 0 auto;
             max-height: 600px;
             overflow: hidden;

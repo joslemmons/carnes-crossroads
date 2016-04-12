@@ -8012,7 +8012,7 @@ span.tel {
 .print .container {
   height: 900px;
   position: relative;
-  padding: 100px 0 0 0;
+  padding: 100px 100px 0 100px;
   overflow: hidden;
   margin-bottom: 20px; }
 .print .cx-logo {
@@ -8037,7 +8037,7 @@ span.tel {
     max-width: 100%; }
 .print .listing-image-group {
   margin: 12px auto 0 auto;
-  width: 600px; }
+  width: 100%; }
   .print .listing-image-group .col-xs-3 {
     padding: 0 6px; }
 .print .listing-address {
@@ -8047,7 +8047,7 @@ span.tel {
   letter-spacing: 0.5px; }
 .print .listing-specs {
   margin: 0 auto;
-  width: 600px;
+  width: 100%;
   padding: 18px 0 15px;
   display: inline-block;
   font-family: "proxima-nova", sans-serif;
@@ -8071,7 +8071,7 @@ span.tel {
   color: #555; }
 .print .listing-details {
   margin: 20px auto 0 auto;
-  width: 600px;
+  width: 100%;
   font-family: "proxima-nova", sans-serif;
   font-size: 0.75rem;
   letter-spacing: 0.25px; }
@@ -8080,7 +8080,8 @@ span.tel {
 .print .listing-footer {
   position: absolute;
   bottom: 0;
-  width: 600px;
+  width: 100%;
+  padding: 0 75px;
   left: 50%;
   right: auto;
   -webkit-transform: translateX(-50%);
@@ -8100,7 +8101,7 @@ span.tel {
   font-size: 6pt;
   text-align: center; }
 .print .listing-floorplan {
-  width: 600px;
+  width: 100%;
   margin: 0 auto;
   max-height: 600px;
   overflow: hidden; }
