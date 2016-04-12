@@ -8051,7 +8051,7 @@ span.tel {
   padding: 18px 0 15px;
   display: inline-block;
   font-family: "proxima-nova", sans-serif;
-  font-size: 1rem;
+  font-size: 1.1rem;
   text-transform: uppercase;
   letter-spacing: 0.5px;
   color: #555;
@@ -8101,7 +8101,6 @@ span.tel {
 .print .listing-floorplan {
   width: 100%;
   margin: 0 auto;
-  max-height: 600px;
   overflow: hidden; }
 .print .print-sampler {
   background-image: url(./img/sampler-gradient.png);
