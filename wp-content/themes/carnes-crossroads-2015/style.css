@@ -8010,9 +8010,11 @@ span.tel {
   width: 100%; }
 
 .print .container {
-  height: 792px;
+  height: 900px;
   position: relative;
-  padding: 100px 0 0 0; }
+  padding: 100px 0 0 0;
+  overflow: hidden;
+  margin-bottom: 20px; }
 .print .cx-logo {
   text-align: center; }
   .print .cx-logo img {
@@ -8029,27 +8031,27 @@ span.tel {
 .print .listing-image {
   margin: 5px auto 0 auto;
   text-align: center;
-  width: 80%; }
+  width: 475px; }
   .print .listing-image img {
     border: 1px solid #999;
     max-width: 100%; }
 .print .listing-image-group {
   margin: 12px auto 0 auto;
-  width: 80%; }
+  width: 600px; }
   .print .listing-image-group .col-xs-3 {
     padding: 0 6px; }
 .print .listing-address {
   margin: 0;
   font-family: "minion-pro", serif;
-  font-size: 16pt;
+  font-size: 1.4rem;
   letter-spacing: 0.5px; }
 .print .listing-specs {
   margin: 0 auto;
-  width: 80%;
+  width: 600px;
   padding: 18px 0 15px;
   display: inline-block;
   font-family: "proxima-nova", sans-serif;
-  font-size: 12pt;
+  font-size: 1rem;
   text-transform: uppercase;
   letter-spacing: 0.5px;
   color: #555;
@@ -8058,27 +8060,27 @@ span.tel {
   display: inline-block;
   margin: 0;
   font-family: "Oswald", sans-serif;
-  font-size: 14pt;
+  font-size: 1.15rem;
   letter-spacing: 0.5px;
   color: #000; }
 .print .listing-neighborhood {
   font-family: "proxima-nova", sans-serif;
-  font-size: 8pt;
+  font-size: 0.7rem;
   text-transform: uppercase;
   letter-spacing: 0.5px;
   color: #555; }
 .print .listing-details {
   margin: 20px auto 0 auto;
-  width: 80%;
+  width: 600px;
   font-family: "proxima-nova", sans-serif;
-  font-size: 8pt;
+  font-size: 0.75rem;
   letter-spacing: 0.25px; }
   .print .listing-details li {
     margin-bottom: 5px; }
 .print .listing-footer {
   position: absolute;
   bottom: 0;
-  width: 80%;
+  width: 600px;
   left: 50%;
   right: auto;
   -webkit-transform: translateX(-50%);
@@ -8089,7 +8091,7 @@ span.tel {
   .print .listing-footer p {
     margin-top: 20px;
     font-family: "minion-pro", serif;
-    font-size: 11pt;
+    font-size: 1rem;
     letter-spacing: 0.5px;
     line-height: 2;
     color: #555; }
@@ -8098,9 +8100,9 @@ span.tel {
   font-size: 6pt;
   text-align: center; }
 .print .listing-floorplan {
-  width: 80%;
+  width: 600px;
   margin: 0 auto;
-  max-height: 80%;
+  max-height: 600px;
   overflow: hidden; }
 .print .print-sampler {
   background-image: url(./img/sampler-gradient.png);
