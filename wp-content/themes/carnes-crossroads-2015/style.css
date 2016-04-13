@@ -8012,13 +8012,13 @@ span.tel {
 .print .container {
   height: 1320px;
   position: relative;
-  padding: 120px 100px 0 100px;
+  padding: 130px 100px 0 100px;
   overflow: hidden;
   margin-bottom: 20px; }
 .print .cx-logo {
   text-align: center; }
   .print .cx-logo img {
-    width: 250px;
+    width: 145px;
     margin: 3px 0 0 0; }
 .print .listing-header {
   position: absolute;
