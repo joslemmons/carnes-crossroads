@@ -1,247 +1,257 @@
 // Print Styles
 // ===================================
 
-.cx-logo {
-    text-align: center;
+.print {
 
-    img {
-        width: 37px;
-        margin: 3px 0 0 0;
-    }
-}
-
-.print-contact {
-    margin: 0 5px;
-
-    p {
-        font-family: $proxima;
-        font-size: 0.95rem;
-        line-height: 1.7;
-    }
-
-    .title {
-        display: block;
-        margin-top: 40px;
-        font-family: $minion;
-        font-weight: $weight-bold;
-    }
-}
-
-.listing {
-
-    &-image {
-        margin-top: 12px;
-
-        img {
-            border: 1px solid #999;
-        }
-    }
-
-    &-image-group {
-        margin-top: 12px;
-
-        .col-xs-3 {
-            padding: 0 6px;
-        }
-    }
-
-    &-address {
-        margin: 0;
-        font-family: $minion;
-        font-size: 1.4rem;
-        letter-spacing: 0.5px;
-    }
-
-    &-specs {
-        padding: 18px 0 15px;
-        display: inline-block;
-        font-family: $proxima;
-        font-size: 1rem;
-        text-transform: uppercase;
-        letter-spacing: 0.5px;
-        color: #555;
-        border-bottom: 1px solid $cc-green;
-    }
-
-    &-specs-headline {
-        display: inline-block;
-        margin: 0;
-        font-family: $oswald;
-        font-size: 1.15rem;
-        letter-spacing: 0.5px;
-        color: $black;
-    }
-
-    &-neighborhood {
-        font-family: $proxima;
-        font-size: 0.7rem;
-        text-transform: uppercase;
-        letter-spacing: 0.5px;
-        color: #555;
-    }
-
-    &-details {
-        margin-top: 20px;
-        font-family: $proxima;
-        font-size: 0.75rem;
-        letter-spacing: 0.25px;
-
-        li {
-            margin-bottom: 5px;
-        }
-    }
-
-    &-footer {
-        margin-top: 15px;
-
-        img {
-            width: 65%;
-        }
-
-        p {
-            margin-top: 20px;
-            font-family: $minion;
-            font-size: 1rem;
-            letter-spacing: 0.5px;
-            line-height: 2;
-            color: #555;
-        }
-    }
-
-    &-disclaimer {
-        margin-top: 10px;
-        font-size: 9px;
-        text-align: center;
-    }
-
-    &-floorplan {
-        height: 1000px;
+    .container {
+        height: 1320px;
+        position: relative;
+        padding: 120px 100px 0 100px;
         overflow: hidden;
+        margin-bottom: 20px;
     }
-}
 
-.print-sampler {
-    background-image: url(./img/sampler-gradient.png);
-    background-repeat: repeat-x;
-    background-position: top left;
-    background-color: $white;
-
-    .logo-header {
-        padding: 10px 0 20px;
+    .cx-logo {
         text-align: center;
-        border-bottom: 8px double $gold;
 
         img {
-            width: 190px;
+            width: 37px;
+            margin: 3px 0 0 0;
         }
     }
 
-    h1 {
-        margin: 25px auto 25px;
-        text-transform: uppercase;
-        font-family: $minion;
-        font-size: 1.95rem;
-        letter-spacing: 0.5px;
-        color: $brown;
-        text-shadow: none;
-    }
+    .listing {
 
-    .listing-item {
-        height: 320px;
-        margin-bottom: 0;
-        padding: 0 33px;
-
-        .listing-image {
-            margin-bottom: 10px;
-            height: 120px;
-            width: 90%;
-            border: 1px solid $cc-green;
-            background-repeat: no-repeat;
-            background-position: center center;
-            background-size: cover;
+        &-header {
+            position: absolute;
+            top: 20px;
+            @include center(x);
         }
 
-        .listing-details {
-            margin-top: 5px;
-            margin-bottom: 5px;
-            font-family: $proxima;
-            font-size: 0.7rem;
-            text-transform: uppercase;
-            color: $brown;
-        }
-
-        h2 {
-            font-family: $minion;
-            color: $gold;
-            text-transform: uppercase;
-            font-size: 1.35rem;
-            line-height: 1;
-        }
-
-        h3 {
-            font-family: $minion;
-            margin: 0;
-            font-size: 1.35rem;
-            color: $cc-brown;
-        }
-
-        p, ul {
-            font-family: $proxima;
-            font-size: 0.8rem;
-            color: #555555;
-            line-height: 1.25;
-        }
-
-        ul {
-            padding: 0;
-            margin: 0;
-            list-style-type: none;
-        }
-
-        li {
-            margin-bottom: 10px;
-        }
-
-        .listing-price {
-            font-size: 1.2rem;
-            font-family: $oswald;
-            margin-top: 0;
-            color: $cc-brown;
-        }
-    }
-
-    .sampler-foot {
-        padding: 40px 0;
-        margin-bottom: 20px;
-        border-top: 2px solid $gold;
-        text-align: right;
-
-        .footer-logo {
-            float: left;
+        &-image {
+            margin: 5px auto 0 auto;
+            text-align: center;
             width: 100%;
-        }
-
-        p {
-            font-family: $minion;
-            font-size: 0.93rem;
-            line-height: 1;
-            color: #555555;
 
             img {
-                height: 0.9rem;
-                margin-right: 7px;
-                margin-top: -2px;
-                opacity: 0.5;
+                border: 1px solid #999;
+                max-width: 100%;
             }
         }
 
-        .disclaimer {
+        &-image-group {
+            margin: 25px auto 0 auto;
+            width: 100%;
+
+            .col-xs-3 {
+                padding: 0 6px;
+            }
+        }
+
+        &-address {
+            margin: 0;
+            font-family: $minion;
+            font-size: 1.4rem;
+            letter-spacing: 0.5px;
+        }
+
+        &-specs {
+            margin: 0 auto;
+            width: 100%;
+            padding: 18px 0 15px;
+            display: inline-block;
+            font-family: $proxima;
+            font-size: 1.1rem;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            color: #555;
+            border-bottom: 1px solid $cc-green;
+        }
+
+        &-specs-headline {
+            display: inline-block;
+            margin: 0;
+            font-family: $oswald;
+            font-size: 1.15rem;
+            letter-spacing: 0.5px;
+            color: $black;
+        }
+
+        &-neighborhood {
             font-family: $proxima;
             font-size: 0.7rem;
-            line-height: 1.2;
-            margin: 10px 0;
-            width: 80%;
-            float: right;
+            text-transform: uppercase;
+            color: #555;
+        }
+
+        &-details {
+            margin: 20px auto 0 auto;
+            width: 100%;
+            font-family: $proxima;
+            font-size: 0.75rem;
+
+            li {
+                margin-bottom: 5px;
+            }
+        }
+
+        &-footer {
+            position: absolute;
+            bottom: 25px;
+            width: 100%;
+            padding: 0 75px;
+            @include center(x);
+
+            img {
+                width: 125px;
+            }
+
+            p {
+                margin-top: 20px;
+                font-family: $minion;
+                font-size: 1rem;
+                letter-spacing: 0.5px;
+                line-height: 2;
+                color: #555;
+            }
+        }
+
+        &-disclaimer {
+            margin-top: 10px;
+            font-size: 6pt;
+            text-align: center;
+        }
+
+        &-floorplan {
+            width: 100%;
+            margin: 0 auto;
+            overflow: hidden;
+        }
+    }
+
+    .print-sampler {
+        background-image: url(./img/sampler-gradient.png);
+        background-repeat: repeat-x;
+        background-position: top left;
+        background-color: $white;
+
+        .logo-header {
+            padding: 10px 0 20px;
+            text-align: center;
+            border-bottom: 8px double $gold;
+
+            img {
+                width: 190px;
+            }
+        }
+
+        h1 {
+            margin: 25px auto 25px;
+            text-transform: uppercase;
+            font-family: $minion;
+            font-size: 1.95rem;
+            letter-spacing: 0.5px;
+            color: $brown;
+            text-shadow: none;
+        }
+
+        .listing-item {
+            height: 320px;
+            margin-bottom: 0;
+            padding: 0 33px;
+
+            .listing-image {
+                margin-bottom: 10px;
+                height: 120px;
+                width: 90%;
+                border: 1px solid $cc-green;
+                background-repeat: no-repeat;
+                background-position: center center;
+                background-size: cover;
+            }
+
+            .listing-details {
+                margin-top: 5px;
+                margin-bottom: 5px;
+                font-family: $proxima;
+                font-size: 0.7rem;
+                text-transform: uppercase;
+                color: $brown;
+            }
+
+            h2 {
+                font-family: $minion;
+                color: $gold;
+                text-transform: uppercase;
+                font-size: 1.35rem;
+                line-height: 1;
+            }
+
+            h3 {
+                font-family: $minion;
+                margin: 0;
+                font-size: 1.35rem;
+                color: $cc-brown;
+            }
+
+            p, ul {
+                font-family: $proxima;
+                font-size: 0.8rem;
+                color: #555555;
+                line-height: 1.25;
+            }
+
+            ul {
+                padding: 0;
+                margin: 0;
+                list-style-type: none;
+            }
+
+            li {
+                margin-bottom: 10px;
+            }
+
+            .listing-price {
+                font-size: 1.2rem;
+                font-family: $oswald;
+                margin-top: 0;
+                color: $cc-brown;
+            }
+        }
+
+        .sampler-foot {
+            padding: 40px 0;
+            margin-bottom: 20px;
+            border-top: 2px solid $gold;
+            text-align: right;
+
+            .footer-logo {
+                float: left;
+                width: 100%;
+            }
+
+            p {
+                font-family: $minion;
+                font-size: 0.93rem;
+                line-height: 1;
+                color: #555555;
+
+                img {
+                    height: 0.9rem;
+                    margin-right: 7px;
+                    margin-top: -2px;
+                    opacity: 0.5;
+                }
+            }
+
+            .disclaimer {
+                font-family: $proxima;
+                font-size: 0.7rem;
+                line-height: 1.2;
+                margin: 10px 0;
+                width: 80%;
+                float: right;
+            }
         }
     }
 }
