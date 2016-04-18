@@ -142,7 +142,7 @@
     &__page {
         position: relative;
         margin-top: $navbar-offset;
-        height: 68%;
+        height: 60%;
         width: 100%;
         overflow: hidden;
         background-position: center center;
@@ -370,7 +370,7 @@
         height: 170px;
         margin-top: 30px;
         padding: 12px;
-        background-size: 110%;
+        background-size: 135%;
         @include transition(0.3s all);
 
         @media (max-width: $screen-xs-max) {
@@ -380,7 +380,7 @@
 
         @media (min-width: $screen-xs-max) {
             &:hover {
-                background-size: 120%;
+                background-size: 145%;
             }
         }
 
@@ -563,6 +563,11 @@
     &__headline-container {
         .btn-green {
             margin-top: 25px;
+            margin-left: 5px;
+        }
+
+        h2 {
+            font-size: 2rem;
         }
     }
 
@@ -687,7 +692,8 @@
     &__card {
         padding-left: 0;
         padding-right: 35px;
-        margin-bottom: 75px;
+        margin-bottom: 65px;
+        height: 500px;
 
         &-image {
             position: relative;
