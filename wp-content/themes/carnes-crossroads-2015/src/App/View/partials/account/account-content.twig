@@ -55,14 +55,14 @@
         <form action="https://do.convertapi.com/Web2Pdf" method="post">
             <input type="hidden" name="ApiKey" value="780223306"/>
             <input type="hidden" name="CUrl"
-                   value="/home-finder/saved-listings/print/"/>
+                   value="/home-finder/saved-listings/print-sampler/{{ current_user.id }}"/>
             <input type="hidden" name="DocumentTitle"
-                   value="Carnes Crossroads {{ property.getAddress }}"></input>
-            <input type="hidden" name="PageSize" value="letter"></input>
-            <input type="hidden" name="MarginTop" value="0in"></input>
-            <input type="hidden" name="MarginRight" value="0in"></input>
-            <input type="hidden" name="MarginBottom" value="0in"></input>
-            <input type="hidden" name="MarginLeft" value="0in"></input>
+                   value="Carnes Crossroads Saved Properties" />
+            <input type="hidden" name="PageSize" value="letter" />
+            <input type="hidden" name="MarginTop" value="0in" />
+            <input type="hidden" name="MarginRight" value="0in" />
+            <input type="hidden" name="MarginBottom" value="0in" />
+            <input type="hidden" name="MarginLeft" value="0in" />
 
             <a href="#" style="float:right;" onclick="jQuery(this).closest('form').submit()">Print Properties</a>
         </form>
