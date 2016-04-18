@@ -8127,13 +8127,13 @@ span.tel {
     color: #695e49;
     text-shadow: none; }
   .print-sampler .listing-item {
-    height: 320px;
+    height: 355px;
     margin-bottom: 0;
     padding: 0 33px; }
     .print-sampler .listing-item .listing-image {
       margin-bottom: 10px;
-      height: 120px;
-      width: 90%;
+      height: 130px;
+      width: 92%;
       border: 1px solid #768e1c;
       background-repeat: no-repeat;
       background-position: center center;
