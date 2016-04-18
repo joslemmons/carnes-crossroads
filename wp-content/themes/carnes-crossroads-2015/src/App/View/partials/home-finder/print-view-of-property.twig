@@ -46,19 +46,16 @@
             <div class="row listing-header">
                 <div class="col-xs-12 cx-logo">
                     {% if loop.first %}
-                    <img src="{{ template_uri }}/wp-content/themes/carnes-crossroads-2015/img/carnes_logo_badge.png">
+                    <img src="{{ template_uri }}/wp-content/themes/carnes-crossroads-2015/img/carnes_logo.png">
                     {% endif %}
                     <div class="listing-address">
                         {{ property.getAddress }}
-                    </div>
-                    <div class="listing-neighborhood">
-                       {{ property.getNeighborhood }}
                     </div>
                 </div>
             </div>
             <div class="row">
                 <div class="listing-image">
-                    <img src="{{ property.getImages[0]|resize(800,500) }}">
+                    <img src="{{ property.getImages[0]|resize(800,485) }}">
                 </div>
             </div>
             <div class="row text-center">
@@ -103,11 +100,6 @@
                 </div>
                 <div class="listing-disclaimer">&copy; Carnes Crossroads Real Estate. Chuck Buck, Broker-in-charge. Information deemed reliable, but not guaranteed. Availability and pricing subject to change.</div>
             </div>
-            {# <div class="row">
-                <div class="col-xs-12 listing-disclaimer">
-                    &copy; Carnes Crossroads Real Estate. Chuck Buck, Broker-in-charge. Information deemed reliable, but not guaranteed. Availability and pricing subject to change.
-                </div>
-            </div> #}
             {% endfor %}
         </div>
 
@@ -116,13 +108,10 @@
             <div class="row listing-header">
                 <div class="col-xs-12 cx-logo">
                     {% if loop.first %}
-                    <img src="{{ template_uri }}/wp-content/themes/carnes-crossroads-2015/img/carnes_logo_badge.png">
+                    <img src="{{ template_uri }}/wp-content/themes/carnes-crossroads-2015/img/carnes_logo.png">
                     {% endif %}
                     <div class="listing-address">
                         {{ property.getAddress }}
-                    </div>
-                    <div class="listing-neighborhood">
-                       {{ property.getNeighborhood }}
                     </div>
                 </div>
             </div>
