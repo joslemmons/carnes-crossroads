@@ -51,11 +51,10 @@
 
         {% if current_user.getSavedProperties(6)|length > 0 %}
         <a href="/home-finder/saved-listings/">View All Saved Properties</a>
-        {# <a href="/home-finder/saved-listings/print/" target="_blank" style="float: right;">Print Properties</a> #}
         <form action="https://do.convertapi.com/Web2Pdf" method="post">
             <input type="hidden" name="ApiKey" value="780223306"/>
             <input type="hidden" name="CUrl"
-                   value="/home-finder/saved-listings/print-sampler/{{ current_user.id }}"/>
+                   value="{{ function('home_url') }}/home-finder/saved-listings/print-sampler/{{ current_user.id }}"/>
             <input type="hidden" name="DocumentTitle"
                    value="Carnes Crossroads Saved Properties" />
             <input type="hidden" name="PageSize" value="letter" />

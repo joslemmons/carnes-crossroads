@@ -477,8 +477,7 @@ class HomeFinder extends Router
             $user = User::getCurrentlyLoggedUser();
         }
 
-        $user_info = get_userdata($user_id);
-        if ($user && $user_info->has_cap('read')) {
+        if ($user) {
             $properties = $user->getSavedProperties();
 
             \Timber::render('partials/home-finder/print-view-of-property-sampler.twig', array(
