@@ -128,130 +128,130 @@
             overflow: hidden;
         }
     }
+}
 
-    .print-sampler {
-        background-image: url(./img/sampler-gradient.png);
-        background-repeat: repeat-x;
-        background-position: top left;
-        background-color: $white;
+.print-sampler {
+    background-image: url(./img/sampler-gradient.png);
+    background-repeat: repeat-x;
+    background-position: top left;
+    background-color: $white;
 
-        .logo-header {
-            padding: 10px 0 20px;
-            text-align: center;
-            border-bottom: 8px double $gold;
+    .logo-header {
+        padding: 10px 0 20px;
+        text-align: center;
+        border-bottom: 8px double $gold;
+
+        img {
+            width: 190px;
+        }
+    }
+
+    h1 {
+        margin: 25px auto 25px;
+        text-transform: uppercase;
+        font-family: $minion;
+        font-size: 1.95rem;
+        letter-spacing: 0.5px;
+        color: $brown;
+        text-shadow: none;
+    }
+
+    .listing-item {
+        height: 320px;
+        margin-bottom: 0;
+        padding: 0 33px;
+
+        .listing-image {
+            margin-bottom: 10px;
+            height: 120px;
+            width: 90%;
+            border: 1px solid $cc-green;
+            background-repeat: no-repeat;
+            background-position: center center;
+            background-size: cover;
+        }
+
+        .listing-details {
+            margin-top: 5px;
+            margin-bottom: 5px;
+            font-family: $proxima;
+            font-size: 0.7rem;
+            text-transform: uppercase;
+            color: $brown;
+        }
+
+        h2 {
+            font-family: $minion;
+            color: $gold;
+            text-transform: uppercase;
+            font-size: 1.35rem;
+            line-height: 1;
+        }
+
+        h3 {
+            font-family: $minion;
+            margin: 0;
+            font-size: 1.35rem;
+            color: $cc-brown;
+        }
+
+        p, ul {
+            font-family: $proxima;
+            font-size: 0.8rem;
+            color: #555555;
+            line-height: 1.25;
+        }
+
+        ul {
+            padding: 0;
+            margin: 0;
+            list-style-type: none;
+        }
+
+        li {
+            margin-bottom: 10px;
+        }
+
+        .listing-price {
+            font-size: 1.2rem;
+            font-family: $oswald;
+            margin-top: 0;
+            color: $cc-brown;
+        }
+    }
+
+    .sampler-foot {
+        padding: 40px 0;
+        margin-bottom: 20px;
+        border-top: 2px solid $gold;
+        text-align: right;
+
+        .footer-logo {
+            float: left;
+            width: 100%;
+        }
+
+        p {
+            font-family: $minion;
+            font-size: 0.93rem;
+            line-height: 1;
+            color: #555555;
 
             img {
-                width: 190px;
+                height: 0.9rem;
+                margin-right: 7px;
+                margin-top: -2px;
+                opacity: 0.5;
             }
         }
 
-        h1 {
-            margin: 25px auto 25px;
-            text-transform: uppercase;
-            font-family: $minion;
-            font-size: 1.95rem;
-            letter-spacing: 0.5px;
-            color: $brown;
-            text-shadow: none;
-        }
-
-        .listing-item {
-            height: 320px;
-            margin-bottom: 0;
-            padding: 0 33px;
-
-            .listing-image {
-                margin-bottom: 10px;
-                height: 120px;
-                width: 90%;
-                border: 1px solid $cc-green;
-                background-repeat: no-repeat;
-                background-position: center center;
-                background-size: cover;
-            }
-
-            .listing-details {
-                margin-top: 5px;
-                margin-bottom: 5px;
-                font-family: $proxima;
-                font-size: 0.7rem;
-                text-transform: uppercase;
-                color: $brown;
-            }
-
-            h2 {
-                font-family: $minion;
-                color: $gold;
-                text-transform: uppercase;
-                font-size: 1.35rem;
-                line-height: 1;
-            }
-
-            h3 {
-                font-family: $minion;
-                margin: 0;
-                font-size: 1.35rem;
-                color: $cc-brown;
-            }
-
-            p, ul {
-                font-family: $proxima;
-                font-size: 0.8rem;
-                color: #555555;
-                line-height: 1.25;
-            }
-
-            ul {
-                padding: 0;
-                margin: 0;
-                list-style-type: none;
-            }
-
-            li {
-                margin-bottom: 10px;
-            }
-
-            .listing-price {
-                font-size: 1.2rem;
-                font-family: $oswald;
-                margin-top: 0;
-                color: $cc-brown;
-            }
-        }
-
-        .sampler-foot {
-            padding: 40px 0;
-            margin-bottom: 20px;
-            border-top: 2px solid $gold;
-            text-align: right;
-
-            .footer-logo {
-                float: left;
-                width: 100%;
-            }
-
-            p {
-                font-family: $minion;
-                font-size: 0.93rem;
-                line-height: 1;
-                color: #555555;
-
-                img {
-                    height: 0.9rem;
-                    margin-right: 7px;
-                    margin-top: -2px;
-                    opacity: 0.5;
-                }
-            }
-
-            .disclaimer {
-                font-family: $proxima;
-                font-size: 0.7rem;
-                line-height: 1.2;
-                margin: 10px 0;
-                width: 80%;
-                float: right;
-            }
+        .disclaimer {
+            font-family: $proxima;
+            font-size: 0.7rem;
+            line-height: 1.2;
+            margin: 10px 0;
+            width: 80%;
+            float: right;
         }
     }
 }
