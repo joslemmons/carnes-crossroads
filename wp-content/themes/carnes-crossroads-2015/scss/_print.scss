@@ -157,8 +157,9 @@
     }
 
     .listing-item {
-        height: 368px;
-        margin-bottom: 0;
+        height: 340px;
+        margin-top: 25px;
+        margin-bottom: 5px;
         padding: 0 33px;
 
         .listing-image {
@@ -221,7 +222,7 @@
     }
 
     .sampler-foot {
-        padding: 40px 0;
+        padding: 40px 30px;
         margin-bottom: 20px;
         border-top: 2px solid $gold;
         text-align: right;
@@ -250,7 +251,7 @@
             font-size: 0.7rem;
             line-height: 1.2;
             margin: 10px 0;
-            width: 80%;
+            width: 90%;
             float: right;
         }
     }

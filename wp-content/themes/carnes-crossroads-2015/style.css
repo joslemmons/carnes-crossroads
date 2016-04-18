@@ -8127,8 +8127,9 @@ span.tel {
     color: #695e49;
     text-shadow: none; }
   .print-sampler .listing-item {
-    height: 368px;
-    margin-bottom: 0;
+    height: 340px;
+    margin-top: 25px;
+    margin-bottom: 5px;
     padding: 0 33px; }
     .print-sampler .listing-item .listing-image {
       margin-bottom: 10px;
@@ -8173,7 +8174,7 @@ span.tel {
       margin-top: 0;
       color: #3d3421; }
   .print-sampler .sampler-foot {
-    padding: 40px 0;
+    padding: 40px 30px;
     margin-bottom: 20px;
     border-top: 2px solid #9f9d5c;
     text-align: right; }
@@ -8195,5 +8196,5 @@ span.tel {
       font-size: 0.7rem;
       line-height: 1.2;
       margin: 10px 0;
-      width: 80%;
+      width: 90%;
       float: right; }
