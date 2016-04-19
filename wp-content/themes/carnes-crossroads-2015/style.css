@@ -8016,7 +8016,7 @@ span.tel {
 .print .container {
   height: 1320px;
   position: relative;
-  padding: 130px 100px 0 100px;
+  padding: 155px 100px 0 100px;
   overflow: hidden;
   margin-bottom: 20px; }
 .print .cx-logo {
@@ -8075,6 +8075,8 @@ span.tel {
 .print .listing-details {
   margin: 20px auto 0 auto;
   width: 100%;
+  height: 290px;
+  overflow: hidden;
   font-family: "proxima-nova", sans-serif;
   font-size: 0.75rem; }
   .print .listing-details li {
@@ -8117,7 +8119,7 @@ span.tel {
     text-align: center;
     border-bottom: 8px double #9f9d5c; }
     .print-sampler .logo-header img {
-      width: 180px; }
+      width: 185px; }
   .print-sampler h1 {
     margin: 25px auto 25px;
     text-transform: uppercase;
@@ -8127,9 +8129,9 @@ span.tel {
     color: #695e49;
     text-shadow: none; }
   .print-sampler .listing-item {
-    height: 330px;
+    height: 340px;
     margin-top: 25px;
-    margin-bottom: 0;
+    margin-bottom: 5px;
     padding: 0 33px; }
     .print-sampler .listing-item .listing-image {
       margin-bottom: 10px;

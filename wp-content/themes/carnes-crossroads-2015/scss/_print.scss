@@ -6,7 +6,7 @@
     .container {
         height: 1320px;
         position: relative;
-        padding: 130px 100px 0 100px;
+        padding: 155px 100px 0 100px;
         overflow: hidden;
         margin-bottom: 20px;
     }
@@ -87,6 +87,8 @@
         &-details {
             margin: 20px auto 0 auto;
             width: 100%;
+            height: 290px;
+            overflow: hidden;
             font-family: $proxima;
             font-size: 0.75rem;
 
@@ -142,7 +144,7 @@
         border-bottom: 8px double $gold;
 
         img {
-            width: 180px;
+            width: 185px;
         }
     }
 
@@ -157,9 +159,9 @@
     }
 
     .listing-item {
-        height: 330px;
+        height: 340px;
         margin-top: 25px;
-        margin-bottom: 0;
+        margin-bottom: 5px;
         padding: 0 33px;
 
         .listing-image {
