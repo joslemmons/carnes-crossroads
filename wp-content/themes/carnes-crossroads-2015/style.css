@@ -8022,7 +8022,7 @@ span.tel {
 .print .cx-logo {
   text-align: center; }
   .print .cx-logo img {
-    width: 135px;
+    width: 125px;
     margin: 3px 0 10px 0; }
 .print .listing-header {
   position: absolute;
@@ -8090,7 +8090,7 @@ span.tel {
   -moz-transform: translateX(-50%);
   transform: translateX(-50%); }
   .print .listing-footer img {
-    width: 125px; }
+    width: 115px; }
   .print .listing-footer p {
     margin-top: 20px;
     font-family: "minion-pro", serif;
@@ -8117,7 +8117,7 @@ span.tel {
     text-align: center;
     border-bottom: 8px double #9f9d5c; }
     .print-sampler .logo-header img {
-      width: 190px; }
+      width: 180px; }
   .print-sampler h1 {
     margin: 25px auto 25px;
     text-transform: uppercase;
@@ -8127,9 +8127,9 @@ span.tel {
     color: #695e49;
     text-shadow: none; }
   .print-sampler .listing-item {
-    height: 340px;
+    height: 330px;
     margin-top: 25px;
-    margin-bottom: 5px;
+    margin-bottom: 0;
     padding: 0 33px; }
     .print-sampler .listing-item .listing-image {
       margin-bottom: 10px;
@@ -8180,7 +8180,8 @@ span.tel {
     text-align: right; }
     .print-sampler .sampler-foot .footer-logo {
       float: left;
-      width: 100%; }
+      width: 100%;
+      margin-top: -15px; }
     .print-sampler .sampler-foot p {
       font-family: "minion-pro", serif;
       font-size: 0.93rem;
