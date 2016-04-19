@@ -100,11 +100,10 @@
                 </div>
                 <div class="listing-disclaimer">&copy; Carnes Crossroads Real Estate. Chuck Buck, Broker-in-charge. Information deemed reliable, but not guaranteed. Availability and pricing subject to change.</div>
             </div>
-            {% endfor %}
         </div>
 
+    {% if property.getFloorPlanDocumentLink %}
         <div class="container">
-            {% for property in properties %}
             <div class="row listing-header">
                 <div class="col-xs-12 cx-logo">
                     {% if loop.first %}
@@ -134,8 +133,9 @@
                 </div>
                 <div class="listing-disclaimer">&copy; Carnes Crossroads Real Estate. Chuck Buck, Broker-in-charge. Information deemed reliable, but not guaranteed. Availability and pricing subject to change.</div>
             </div>
-            {% endfor %}
         </div>
+        {% endif %}
+        {% endfor %}
 
     <script>
     window.print();
