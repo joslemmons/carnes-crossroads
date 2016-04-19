@@ -8033,7 +8033,7 @@ span.tel {
   -moz-transform: translateX(-50%);
   transform: translateX(-50%); }
 .print .listing-image {
-  margin: 5px auto 0 auto;
+  margin: 8px auto 0 auto;
   text-align: center;
   width: 100%; }
   .print .listing-image img {
@@ -8075,7 +8075,7 @@ span.tel {
 .print .listing-details {
   margin: 20px auto 0 auto;
   width: 100%;
-  height: 290px;
+  height: 285px;
   overflow: hidden;
   font-family: "proxima-nova", sans-serif;
   font-size: 0.75rem; }
@@ -8092,7 +8092,7 @@ span.tel {
   -moz-transform: translateX(-50%);
   transform: translateX(-50%); }
   .print .listing-footer img {
-    width: 115px; }
+    width: 105px; }
   .print .listing-footer p {
     margin-top: 20px;
     font-family: "minion-pro", serif;
@@ -8129,7 +8129,7 @@ span.tel {
     color: #695e49;
     text-shadow: none; }
   .print-sampler .listing-item {
-    height: 340px;
+    height: 330px;
     margin-top: 25px;
     margin-bottom: 5px;
     padding: 0 33px; }
