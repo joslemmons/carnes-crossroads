@@ -8035,12 +8035,16 @@ span.tel {
 .print .listing-image {
   margin: 8px auto 0 auto;
   text-align: center;
-  width: 100%; }
+  width: 100%;
+  height: 360px;
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position: center center; }
   .print .listing-image img {
     border: 1px solid #999;
     max-width: 100%; }
 .print .listing-image-group {
-  margin: 25px auto 0 auto;
+  margin: 20px auto 0 auto;
   width: 100%; }
   .print .listing-image-group .col-xs-3 {
     padding: 0 6px; }
@@ -8057,7 +8061,6 @@ span.tel {
   font-family: "proxima-nova", sans-serif;
   font-size: 1.1rem;
   text-transform: uppercase;
-  letter-spacing: 0.5px;
   color: #555;
   border-bottom: 1px solid #768e1c; }
 .print .listing-specs-headline {
@@ -8065,7 +8068,6 @@ span.tel {
   margin: 0;
   font-family: "Oswald", sans-serif;
   font-size: 1.15rem;
-  letter-spacing: 0.5px;
   color: #000; }
 .print .listing-neighborhood {
   font-family: "proxima-nova", sans-serif;
@@ -8075,10 +8077,9 @@ span.tel {
 .print .listing-details {
   margin: 20px auto 0 auto;
   width: 100%;
-  height: 285px;
   overflow: hidden;
   font-family: "proxima-nova", sans-serif;
-  font-size: 0.75rem; }
+  font-size: 0.7rem; }
   .print .listing-details li {
     margin-bottom: 5px; }
 .print .listing-footer {

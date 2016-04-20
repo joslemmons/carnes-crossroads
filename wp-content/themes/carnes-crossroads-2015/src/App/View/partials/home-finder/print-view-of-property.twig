@@ -54,9 +54,7 @@
                 </div>
             </div>
             <div class="row">
-                <div class="listing-image">
-                    <img src="{{ property.getImages[0]|resize(700,350) }}">
-                </div>
+                <div class="listing-image" style="background-image:url({{ property.getImages[0] }});"></div>
             </div>
             <div class="row text-center">
                 <div class="listing-specs">
@@ -70,6 +68,7 @@
                     {{ property.getDescription }}
                 </div>
             </div>
+            {% if property.getImages|length > 1 %}
             <div class="row">
                 <div class="listing-image-group">
                     <div class="col-xs-3">
@@ -86,6 +85,7 @@
                     </div>
                 </div>
             </div>
+            {% endif %}
             <div class="listing-footer">
                 <div class="row">
                     <div class="col-xs-4 text-left">
@@ -138,7 +138,7 @@
         {% endfor %}
 
     <script>
-    window.print();
+    // window.print();
     </script>
 
     </body>
