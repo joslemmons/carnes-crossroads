@@ -122,7 +122,8 @@ class PropertyBase
             'PDF_Floorplan_URL__c',
             'Listing_Agent__c',
             'pb__SalesAgentId__c',
-            'MLS_Page__c'
+            'MLS_Page__c',
+            'prop_short_desc__c'
         ));
     }
 

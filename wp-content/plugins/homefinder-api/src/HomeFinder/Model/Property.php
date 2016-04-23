@@ -41,6 +41,7 @@ class Property
     public $mls_number;
     public $assets;
     public $description;
+    public $short_description;
     public $last_modified_date;
     public $X3D_tour_link;
     public $address_street;
@@ -82,6 +83,7 @@ class Property
         $instance->community_id = $pb_base_listing->pb__CommunityId__c;
         $instance->mls_number = (empty($pb_base_listing->pb__MLSNumber__c)) ? '' : $pb_base_listing->pb__MLSNumber__c;
         $instance->description = $pb_base_listing->HTML_Description__c;
+        $instance->short_description = (empty($pb_base_listing->prop_short_desc__c)) ? '' : $pb_base_listing->prop_short_desc__c; 
         $instance->assets = $pb_base_listing->asset;
         $instance->last_modified_date = $pb_base_listing->LastModifiedDate;
         $instance->X3D_tour_link = $pb_base_listing->X3D_Tours__c;
@@ -157,6 +159,7 @@ class Property
         $instance->community_id = '';
         $instance->mls_number = $mls_listing->z_textsearch_mls_num;
         $instance->description = $mls_listing->public_remarks;
+        $instance->short_description = $mls_listing->public_remarks;
         $instance->assets = explode(',', $mls_listing->photo_filenames);
         $instance->last_modified_date = $mls_listing->date_updated;
         $instance->X3D_tour_link = $mls_listing->un_branded_virtual_tour;
@@ -385,6 +388,14 @@ class Property
     public function getUnitView()
     {
         return $this->unit_view;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getShortDescription()
+    {
+        return $this->short_description;
     }
 
     public function getDescription()
