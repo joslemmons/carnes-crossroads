@@ -8016,13 +8016,13 @@ span.tel {
 .print .container {
   height: 1320px;
   position: relative;
-  padding: 130px 100px 0 100px;
+  padding: 155px 100px 0 100px;
   overflow: hidden;
   margin-bottom: 20px; }
 .print .cx-logo {
   text-align: center; }
   .print .cx-logo img {
-    width: 135px;
+    width: 125px;
     margin: 3px 0 10px 0; }
 .print .listing-header {
   position: absolute;
@@ -8033,14 +8033,18 @@ span.tel {
   -moz-transform: translateX(-50%);
   transform: translateX(-50%); }
 .print .listing-image {
-  margin: 5px auto 0 auto;
+  margin: 8px auto 0 auto;
   text-align: center;
-  width: 100%; }
+  width: 100%;
+  height: 360px;
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position: center center; }
   .print .listing-image img {
     border: 1px solid #999;
     max-width: 100%; }
 .print .listing-image-group {
-  margin: 25px auto 0 auto;
+  margin: 20px auto 0 auto;
   width: 100%; }
   .print .listing-image-group .col-xs-3 {
     padding: 0 6px; }
@@ -8057,7 +8061,6 @@ span.tel {
   font-family: "proxima-nova", sans-serif;
   font-size: 1.1rem;
   text-transform: uppercase;
-  letter-spacing: 0.5px;
   color: #555;
   border-bottom: 1px solid #768e1c; }
 .print .listing-specs-headline {
@@ -8065,7 +8068,6 @@ span.tel {
   margin: 0;
   font-family: "Oswald", sans-serif;
   font-size: 1.15rem;
-  letter-spacing: 0.5px;
   color: #000; }
 .print .listing-neighborhood {
   font-family: "proxima-nova", sans-serif;
@@ -8075,8 +8077,9 @@ span.tel {
 .print .listing-details {
   margin: 20px auto 0 auto;
   width: 100%;
+  overflow: hidden;
   font-family: "proxima-nova", sans-serif;
-  font-size: 0.75rem; }
+  font-size: 0.7rem; }
   .print .listing-details li {
     margin-bottom: 5px; }
 .print .listing-footer {
@@ -8090,7 +8093,7 @@ span.tel {
   -moz-transform: translateX(-50%);
   transform: translateX(-50%); }
   .print .listing-footer img {
-    width: 125px; }
+    width: 105px; }
   .print .listing-footer p {
     margin-top: 20px;
     font-family: "minion-pro", serif;
@@ -8106,18 +8109,19 @@ span.tel {
   width: 100%;
   margin: 0 auto;
   overflow: hidden; }
-.print .print-sampler {
+
+.print-sampler {
   background-image: url(./img/sampler-gradient.png);
   background-repeat: repeat-x;
   background-position: top left;
   background-color: #fff; }
-  .print .print-sampler .logo-header {
+  .print-sampler .logo-header {
     padding: 10px 0 20px;
     text-align: center;
     border-bottom: 8px double #9f9d5c; }
-    .print .print-sampler .logo-header img {
-      width: 190px; }
-  .print .print-sampler h1 {
+    .print-sampler .logo-header img {
+      width: 185px; }
+  .print-sampler h1 {
     margin: 25px auto 25px;
     text-transform: uppercase;
     font-family: "minion-pro", serif;
@@ -8125,74 +8129,76 @@ span.tel {
     letter-spacing: 0.5px;
     color: #695e49;
     text-shadow: none; }
-  .print .print-sampler .listing-item {
-    height: 320px;
-    margin-bottom: 0;
+  .print-sampler .listing-item {
+    height: 330px;
+    margin-top: 25px;
+    margin-bottom: 5px;
     padding: 0 33px; }
-    .print .print-sampler .listing-item .listing-image {
+    .print-sampler .listing-item .listing-image {
       margin-bottom: 10px;
-      height: 120px;
-      width: 90%;
+      height: 130px;
+      width: 92%;
       border: 1px solid #768e1c;
       background-repeat: no-repeat;
       background-position: center center;
       background-size: cover; }
-    .print .print-sampler .listing-item .listing-details {
+    .print-sampler .listing-item .listing-details {
       margin-top: 5px;
       margin-bottom: 5px;
       font-family: "proxima-nova", sans-serif;
       font-size: 0.7rem;
       text-transform: uppercase;
       color: #695e49; }
-    .print .print-sampler .listing-item h2 {
+    .print-sampler .listing-item h2 {
       font-family: "minion-pro", serif;
       color: #9f9d5c;
       text-transform: uppercase;
       font-size: 1.35rem;
       line-height: 1; }
-    .print .print-sampler .listing-item h3 {
+    .print-sampler .listing-item h3 {
       font-family: "minion-pro", serif;
       margin: 0;
       font-size: 1.35rem;
       color: #3d3421; }
-    .print .print-sampler .listing-item p, .print .print-sampler .listing-item ul {
+    .print-sampler .listing-item p, .print-sampler .listing-item ul {
       font-family: "proxima-nova", sans-serif;
       font-size: 0.8rem;
       color: #555555;
       line-height: 1.25; }
-    .print .print-sampler .listing-item ul {
+    .print-sampler .listing-item ul {
       padding: 0;
       margin: 0;
       list-style-type: none; }
-    .print .print-sampler .listing-item li {
+    .print-sampler .listing-item li {
       margin-bottom: 10px; }
-    .print .print-sampler .listing-item .listing-price {
+    .print-sampler .listing-item .listing-price {
       font-size: 1.2rem;
       font-family: "Oswald", sans-serif;
       margin-top: 0;
       color: #3d3421; }
-  .print .print-sampler .sampler-foot {
-    padding: 40px 0;
+  .print-sampler .sampler-foot {
+    padding: 40px 30px;
     margin-bottom: 20px;
     border-top: 2px solid #9f9d5c;
     text-align: right; }
-    .print .print-sampler .sampler-foot .footer-logo {
+    .print-sampler .sampler-foot .footer-logo {
       float: left;
-      width: 100%; }
-    .print .print-sampler .sampler-foot p {
+      width: 100%;
+      margin-top: -15px; }
+    .print-sampler .sampler-foot p {
       font-family: "minion-pro", serif;
       font-size: 0.93rem;
       line-height: 1;
       color: #555555; }
-      .print .print-sampler .sampler-foot p img {
+      .print-sampler .sampler-foot p img {
         height: 0.9rem;
         margin-right: 7px;
         margin-top: -2px;
         opacity: 0.5; }
-    .print .print-sampler .sampler-foot .disclaimer {
+    .print-sampler .sampler-foot .disclaimer {
       font-family: "proxima-nova", sans-serif;
       font-size: 0.7rem;
       line-height: 1.2;
       margin: 10px 0;
-      width: 80%;
+      width: 90%;
       float: right; }

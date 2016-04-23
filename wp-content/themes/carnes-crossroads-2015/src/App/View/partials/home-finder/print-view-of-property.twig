@@ -46,7 +46,7 @@
             <div class="row listing-header">
                 <div class="col-xs-12 cx-logo">
                     {% if loop.first %}
-                    <img src="{{ template_uri }}/wp-content/themes/carnes-crossroads-2015/img/carnes_logo.png">
+                    <img src="{{ template_uri }}/wp-content/themes/carnes-crossroads-2015/img/carnes_logo_realestate.png">
                     {% endif %}
                     <div class="listing-address">
                         {{ property.getAddress }}
@@ -54,9 +54,7 @@
                 </div>
             </div>
             <div class="row">
-                <div class="listing-image">
-                    <img src="{{ property.getImages[0]|resize(800,485) }}">
-                </div>
+                <div class="listing-image" style="background-image:url({{ property.getImages[0] }});"></div>
             </div>
             <div class="row text-center">
                 <div class="listing-specs">
@@ -70,29 +68,31 @@
                     {{ property.getDescription }}
                 </div>
             </div>
+            {% if property.getImages|length > 1 %}
             <div class="row">
                 <div class="listing-image-group">
                     <div class="col-xs-3">
-                        <img src="{{ property.getImages[1]|resize(300,200) }}" class="img-responsive">
+                        <img src="{{ property.getImages[1]|resize(200,100) }}" class="img-responsive">
                     </div>
                     <div class="col-xs-3">
-                        <img src="{{ property.getImages[2]|resize(300,200) }}" class="img-responsive">
+                        <img src="{{ property.getImages[2]|resize(200,100) }}" class="img-responsive">
                     </div>
                     <div class="col-xs-3">
-                        <img src="{{ property.getImages[3]|resize(300,200) }}" class="img-responsive">
+                        <img src="{{ property.getImages[3]|resize(200,100) }}" class="img-responsive">
                     </div>
                     <div class="col-xs-3">
-                        <img src="{{ property.getImages[4]|resize(300,200) }}" class="img-responsive">
+                        <img src="{{ property.getImages[4]|resize(200,100) }}" class="img-responsive">
                     </div>
                 </div>
             </div>
+            {% endif %}
             <div class="listing-footer">
                 <div class="row">
                     <div class="col-xs-4 text-left">
                         <p>(843) 761-8600</p>
                     </div>
                     <div class="col-xs-4 text-center">
-                        <img src="{{ template_uri }}/wp-content/themes/carnes-crossroads-2015/img/carnes_logo.png">
+                        <img src="{{ template_uri }}/wp-content/themes/carnes-crossroads-2015/img/carnes_logo_realestate.png">
                     </div>
                     <div class="col-xs-4 text-right">
                         <p>CarnesCharleston.com</p>
@@ -100,15 +100,14 @@
                 </div>
                 <div class="listing-disclaimer">&copy; Carnes Crossroads Real Estate. Chuck Buck, Broker-in-charge. Information deemed reliable, but not guaranteed. Availability and pricing subject to change.</div>
             </div>
-            {% endfor %}
         </div>
 
+    {% if property.getFloorPlanDocumentLink %}
         <div class="container">
-            {% for property in properties %}
             <div class="row listing-header">
                 <div class="col-xs-12 cx-logo">
                     {% if loop.first %}
-                    <img src="{{ template_uri }}/wp-content/themes/carnes-crossroads-2015/img/carnes_logo.png">
+                    <img src="{{ template_uri }}/wp-content/themes/carnes-crossroads-2015/img/carnes_logo_realestate.png">
                     {% endif %}
                     <div class="listing-address">
                         {{ property.getAddress }}
@@ -126,7 +125,7 @@
                         <p>(843) 761-8600</p>
                     </div>
                     <div class="col-xs-4 text-center">
-                        <img src="{{ template_uri }}/wp-content/themes/carnes-crossroads-2015/img/carnes_logo.png">
+                        <img src="{{ template_uri }}/wp-content/themes/carnes-crossroads-2015/img/carnes_logo_realestate.png">
                     </div>
                     <div class="col-xs-4 text-right">
                         <p>CarnesCharleston.com</p>
@@ -134,8 +133,9 @@
                 </div>
                 <div class="listing-disclaimer">&copy; Carnes Crossroads Real Estate. Chuck Buck, Broker-in-charge. Information deemed reliable, but not guaranteed. Availability and pricing subject to change.</div>
             </div>
-            {% endfor %}
         </div>
+        {% endif %}
+        {% endfor %}
 
     <script>
     window.print();

@@ -20,16 +20,17 @@
         <link rel="apple-touch-icon-precomposed" href="{{ template_uri }}/img/apple-icon.png"/>
         <link rel="shortcut icon" href="{{ template_uri }}/img/favicon.ico" sizes="32x32"/>
         <link rel="stylesheet" href="{{ template_uri }}/wp-content/themes/carnes-crossroads-2015/style.css"/>
+
         <script src="https://use.typekit.net/slu5gfl.js"></script>
         <script>try{Typekit.load({ async: true });}catch(e){}</script>
     </head>
 
-    <body class="print print-sampler">
+    <body class="print-sampler">
 
         <div class="container">
             <div class="row">
                 <div class="col-xs-12 logo-header">
-                    <img src="{{ template_uri }}/wp-content/themes/carnes-crossroads-2015/img/carnes_logo.png">
+                    <img src="{{ template_uri }}/wp-content/themes/carnes-crossroads-2015/img/carnes_logo_realestate.png">
                 </div>
             </div>
             <div class="row">
@@ -40,7 +41,7 @@
             <div class="row">
                 {% for property in properties %}
                 <div class="col-xs-4 listing-item">
-                    <div class="listing-image" style="background-image: url({{ property.getImages[0]|resize(400,300) }})"></div>
+                    <div class="listing-image" style="background-image: url({{ property.getImages[0]|resize(300,200) }})"></div>
                     <h2>{{ property.getNeighborhood.title }}</h2>
                     <h3>{{ property.getAddress }}</h3>
                     <p class="listing-details">{% set numDecimalPlaces = 0 %}
@@ -57,7 +58,7 @@
             <div class="row">
                 <div class="sampler-foot">
                     <div class="col-xs-2">
-                        <img class="footer-logo" src="{{ template_uri }}/wp-content/themes/carnes-crossroads-2015/img/carnes_logo.png">
+                        <img class="footer-logo" src="{{ template_uri }}/wp-content/themes/carnes-crossroads-2015/img/carnes_logo_realestate.png">
                     </div>
                     <div class="col-xs-10">
                         <p>Carnes Crossroads Real Estate&nbsp;&nbsp;|&nbsp;&nbsp;513 Wodin Place, Summerville, SC 29483&nbsp;&nbsp;|&nbsp;&nbsp;(843) 761-8600</p>
