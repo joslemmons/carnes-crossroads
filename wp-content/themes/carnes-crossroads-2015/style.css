@@ -8122,6 +8122,8 @@ span.tel {
     height: 1320px;
     position: relative;
     overflow: hidden; }
+  .print-sampler .builders-container {
+    padding-top: 20px; }
   .print-sampler .logo-header {
     padding: 10px 0 20px;
     text-align: center;
