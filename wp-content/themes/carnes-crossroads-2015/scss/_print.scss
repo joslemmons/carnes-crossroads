@@ -139,7 +139,7 @@
     background-position: top left;
     background-color: $white;
 
-    .builders-container {
+    .container, .builders-container {
         height: 1320px;
         position: relative;
         overflow: hidden;
@@ -319,7 +319,7 @@
     }
 
     .sampler-builder-photo {
-        height: 190px;
+        height: 185px;
         margin: 0 auto 10px;
         background-repeat: no-repeat;
         background-size: cover;
