@@ -289,3 +289,21 @@
         padding: 0;
     }
 }
+
+#imap {
+    height: 100% !important;
+    width: 100% !important;
+    position: absolute !important;
+    top: 0 !important;
+    bottom: 0 !important;
+
+    .listing-address {
+        font-size: 1.75rem;
+        margin-top: 15px;
+        color: $cc-green;
+    }
+
+    .listing-neighborhood {
+        margin-top: 10px;
+    }
+}

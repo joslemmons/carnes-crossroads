@@ -14,10 +14,10 @@
     -webkit-overflow-scrolling: touch;
     outline: 0;
     color: $black;
-    padding-top: $navbar-offset;
+    padding-top: $navbar-offset - 10px;
 
-    @media (max-width: $screen-lg-max) {
-        padding-top: 115px;
+    @media (min-width: $screen-lg-max) {
+        padding-top: 140px;
     }
 }
 .modal.fade .modal-dialog {
