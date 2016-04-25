@@ -166,7 +166,7 @@
     }
 
     .listing-item {
-        height: 330px;
+        height: 325px;
         margin-top: 20px;
         margin-bottom: 10px;
         padding: 0 33px;
@@ -232,7 +232,7 @@
 
     .sampler-foot {
         padding: 40px 30px;
-        margin-bottom: 20px;
+        margin-bottom: 0;
         border-top: 2px solid $gold;
         text-align: right;
 
@@ -282,10 +282,13 @@
         }
 
         .sampler-model-row {
-            margin: 30px auto 20px;
+            margin: 20px auto;
             height: 265px;
             width: 100%;
-            background: url(./img/cc-model-row.jpg) no-repeat center center/cover;
+            background-image: url(./img/sampler-model-row.jpg);
+            background-repeat: no-repeat;
+            background-position: center center;
+            background-size: cover;
             border: 1px solid $cc-green;
         }
     }
