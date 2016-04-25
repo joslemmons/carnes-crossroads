@@ -15,6 +15,10 @@
     outline: 0;
     color: $black;
     padding-top: $navbar-offset;
+
+    @media (max-width: $screen-lg-max) {
+        padding-top: 115px;
+    }
 }
 .modal.fade .modal-dialog {
     -webkit-transform: translate(125%, 0);

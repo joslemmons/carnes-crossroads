@@ -4737,6 +4737,9 @@ body.has-active-menu {
   outline: 0;
   color: #000;
   padding-top: 135px; }
+  @media (max-width: 1684px) {
+    .modal {
+      padding-top: 115px; } }
 
 .modal.fade .modal-dialog {
   -webkit-transform: translate(125%, 0);
@@ -8115,6 +8118,10 @@ span.tel {
   background-repeat: repeat-x;
   background-position: top left;
   background-color: #fff; }
+  .print-sampler .builders-container {
+    height: 1320px;
+    position: relative;
+    overflow: hidden; }
   .print-sampler .logo-header {
     padding: 10px 0 20px;
     text-align: center;
@@ -8202,3 +8209,39 @@ span.tel {
       margin: 10px 0;
       width: 90%;
       float: right; }
+  .print-sampler .sampler-model-intro {
+    padding: 0 25px; }
+    .print-sampler .sampler-model-intro h1 {
+      font-size: 1.75rem;
+      margin-bottom: 10px;
+      color: #768e1c; }
+    .print-sampler .sampler-model-intro p {
+      font-family: "proxima-nova", sans-serif;
+      font-size: 0.8rem;
+      line-height: 1.2; }
+    .print-sampler .sampler-model-intro .sampler-model-row {
+      margin: 30px auto 20px;
+      height: 265px;
+      width: 100%;
+      background: url(./img/cc-model-row.jpg) no-repeat center center/cover; }
+  .print-sampler .sampler-builder-row {
+    margin: 30px auto; }
+    .print-sampler .sampler-builder-row h2 {
+      font-family: "minion-pro", serif;
+      font-size: 1.25rem;
+      color: #768e1c; }
+    .print-sampler .sampler-builder-row p {
+      font-family: "proxima-nova", sans-serif;
+      font-size: 0.8rem;
+      line-height: 1.2; }
+    .print-sampler .sampler-builder-row img {
+      width: 75%;
+      margin: 20px auto 0; }
+    .print-sampler .sampler-builder-row .col-xs-4 {
+      padding: 0 25px; }
+  .print-sampler .sampler-builder-photo {
+    height: 190px;
+    margin: 0 auto 10px;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center center; }

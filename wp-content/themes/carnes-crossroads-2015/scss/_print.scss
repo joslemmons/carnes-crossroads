@@ -139,6 +139,12 @@
     background-position: top left;
     background-color: $white;
 
+    .builders-container {
+        height: 1320px;
+        position: relative;
+        overflow: hidden;
+    }
+
     .logo-header {
         padding: 10px 0 20px;
         text-align: center;
@@ -258,5 +264,61 @@
             width: 90%;
             float: right;
         }
+    }
+
+    .sampler-model-intro {
+        padding: 0 25px;
+
+        h1 {
+            font-size: 1.75rem;
+            margin-bottom: 10px;
+            color: $cc-green;
+        }
+
+        p {
+            font-family: $proxima;
+            font-size: 0.8rem;
+            line-height: 1.2;
+        }
+
+        .sampler-model-row {
+            margin: 30px auto 20px;
+            height: 265px;
+            width: 100%;
+            background: url(./img/cc-model-row.jpg) no-repeat center center/cover;
+        }
+    }
+
+    .sampler-builder-row {
+        margin: 30px auto;
+
+        h2 {
+            font-family: $minion;
+            font-size: 1.25rem;
+            color: $cc-green;
+        }
+
+        p {
+            font-family: $proxima;
+            font-size: 0.8rem;
+            line-height: 1.2;
+        }
+
+        img {
+            width: 75%;
+            margin: 20px auto 0;
+        }
+
+        .col-xs-4 {
+            padding: 0 25px;
+        }
+    }
+
+    .sampler-builder-photo {
+        height: 190px;
+        margin: 0 auto 10px;
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-position: center center;
     }
 }
