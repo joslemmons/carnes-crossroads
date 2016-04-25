@@ -51,7 +51,11 @@
                         {% if property.getBedroomCount %}{{ property.getBedroomCount }} BR / {% endif %}{% if property.getFullBathroomCount %}{{ property.getFullBathroomCount }} Full Bath{% endif %}{% if property.getHalfBathroomCount %} / {{ property.getHalfBathroomCount }} Half Bath{% endif %}
                             <br/>{% if property.getTotalAreaSquareFootage %}{{ property.getTotalAreaSquareFootage|number_format(numDecimalPlaces) }} {{ property.getTotalAreaSquareFootageUnitOfMeasurement }}{% endif %}</p>
                     <p class="listing-price">${{ property.getPurchaseListPrice|number_format }}</p>
+                    {% if property.getShortDescription %}
                     <p>{{ property.getShortDescription }}</p>
+                    {% else %}
+                    <p>{{ property.getDescription|truncate(20) }}</p>
+                    {% endif %}
                 </div>
                 {% endfor %}
             </div>
@@ -68,17 +72,17 @@
             </div>
             <div class="row sampler-builder-row">
                 <div class="col-xs-4 text-center">
-                    <div class="sampler-builder-photo" style="background-image: url({{ template_uri }}/wp-content/themes/carnes-crossroads-2015/img/cc-featured-weiland.jpg)"></div>
+                    <div class="sampler-builder-photo" style="background-image: url({{ template_uri }}/wp-content/themes/carnes-crossroads-2015/img/sampler-weekley.jpg)"></div>
                     <h2>David Weekley Homes</h2>
                     <p>David Weekely offers classic homes with a timeless appeal. Plans range from 2-5 beedrooms and 1,700-2,5000+ square feet.</p>
                 </div>
                 <div class="col-xs-4 text-center">
-                    <div class="sampler-builder-photo" style="background-image: url({{ template_uri }}/wp-content/themes/carnes-crossroads-2015/img/cc-featured-weiland.jpg)"></div>
+                    <div class="sampler-builder-photo" style="background-image: url({{ template_uri }}/wp-content/themes/carnes-crossroads-2015/img/sampler-sabal.jpg)"></div>
                     <h2>Sabal Homes</h2>
                     <p>Sabal Homes offers a variety of unique customizations based on homebuyers needs. Plans range from 3-5 bedrooms and 1,600-3,100+ square feet.</p>
                 </div>
                 <div class="col-xs-4 text-center">
-                    <div class="sampler-builder-photo" style="background-image: url({{ template_uri }}/wp-content/themes/carnes-crossroads-2015/img/cc-featured-weiland.jpg)"></div>
+                    <div class="sampler-builder-photo" style="background-image: url({{ template_uri }}/wp-content/themes/carnes-crossroads-2015/img/sampler-eastwood.jpg)"></div>
                     <h2>Eastwood Homes</h2>
                     <p>Eastwood Homes takes pride in offering attractive exteriors and interiors at an unprecedented value. Plans range from 3-4 bedrooms and 1,900-2,600+ square feet.</p>
                 </div>

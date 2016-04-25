@@ -8044,7 +8044,7 @@ span.tel {
   background-size: contain;
   background-position: center center; }
   .print .listing-image img {
-    border: 1px solid #999;
+    border: 1px solid #adadad;
     max-width: 100%; }
 .print .listing-image-group {
   margin: 20px auto 0 auto;
@@ -8138,14 +8138,14 @@ span.tel {
     text-shadow: none; }
   .print-sampler .listing-item {
     height: 330px;
-    margin-top: 25px;
-    margin-bottom: 5px;
+    margin-top: 20px;
+    margin-bottom: 10px;
     padding: 0 33px; }
     .print-sampler .listing-item .listing-image {
       margin-bottom: 10px;
       height: 130px;
       width: 92%;
-      border: 1px solid #768e1c;
+      border: 1px solid #adadad;
       background-repeat: no-repeat;
       background-position: center center;
       background-size: cover; }
@@ -8223,7 +8223,8 @@ span.tel {
       margin: 30px auto 20px;
       height: 265px;
       width: 100%;
-      background: url(./img/cc-model-row.jpg) no-repeat center center/cover; }
+      background: url(./img/cc-model-row.jpg) no-repeat center center/cover;
+      border: 1px solid #768e1c; }
   .print-sampler .sampler-builder-row {
     margin: 30px auto; }
     .print-sampler .sampler-builder-row h2 {
@@ -8244,4 +8245,5 @@ span.tel {
     margin: 0 auto 10px;
     background-repeat: no-repeat;
     background-size: cover;
-    background-position: center center; }
+    background-position: center center;
+    border: 1px solid #adadad; }
