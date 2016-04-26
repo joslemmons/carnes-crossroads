@@ -13,6 +13,9 @@ Routes::map('/category/all', function () {
 });
 
 Routes::map('/home-finder/saved-listings/print-sampler/:id', array('\HomeFinder\Controller\HomeFinder', 'routePrintSavedPropertiesSampler'));
+Routes::map('/category/all/page/:paged', function($params) {
+    Routes::load('category.php', $params);
+});
 
 
 // SEO redirects from old site

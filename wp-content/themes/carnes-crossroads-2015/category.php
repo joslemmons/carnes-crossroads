@@ -2,7 +2,15 @@
 
 global $cat;
 
-use App\Model\NewsAndEventsPage;
+global $paged;
+if (!isset($paged) || !$paged){
+    $paged = 1;
+}
+
+global $params;
+if (!isset($params['paged']) || !$params['paged']) {
+    $paged = $params['paged'];
+}
 
 $context = Timber::get_context();
 
@@ -11,7 +19,9 @@ if (true === isset($cat) && $cat !== '') {
 } else {
     // all
     $queryArgs = array(
-        'post_type' => 'post'
+        'post_type' => 'post',
+        'post_status' => 'publish',
+        'paged' => $paged
     );
     query_posts($queryArgs);
     $posts = Timber::get_posts($queryArgs);
