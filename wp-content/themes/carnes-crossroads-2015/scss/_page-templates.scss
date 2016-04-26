@@ -57,7 +57,7 @@
         }
 
         h1 {
-            font-size: 3rem;
+            font-size: 2.8rem;
             letter-spacing: 1.5px;
 
             @media (max-width: $screen-xs-max) {
@@ -83,7 +83,7 @@
     }
 
     &__content-inner {
-        padding: 40px 80px;
+        padding: 32px 65px;
         border-top: 1px solid darken($cc-med-grey, 20);
         border-left: 1px solid darken($cc-med-grey, 20);
         border-right: 1px solid darken($cc-med-grey, 20);
@@ -453,11 +453,11 @@
     position: absolute;
     padding: 20px 25px 10px;
     min-width: 330px;
-    min-height: 120px;
+    min-height: 110px;
     background: $white;
 
     @media (min-width: 1675px) {
-        min-height: 160px;
+        min-height: 155px;
     }
 
     @media (max-width: 1200px) {
@@ -469,6 +469,10 @@
         min-width: 100%;
         min-height: 100px;
         padding: 15px;
+    }
+
+    h3 {
+        font-size: 1.3rem;
     }
 
     a, a h3 {
@@ -485,7 +489,7 @@
         font-family: $font-sans;
         font-weight: $weight-regular;
         font-size: 0.75em;
-        line-height: 1.4;
+        line-height: 1.2;
         letter-spacing: 0.5px;
         text-transform: uppercase;
         color: $cc-med-grey;
@@ -560,6 +564,11 @@
 }
 
 .events {
+    &__featured-post {
+        margin-bottom: 20px;
+        float: left;
+    }
+
     &__headline-container {
         .btn-green {
             margin-top: 25px;
@@ -568,6 +577,8 @@
 
         h2 {
             font-size: 2rem;
+            line-height: 1.1;
+            margin-bottom: 5px;
         }
     }
 

@@ -34,6 +34,10 @@ a:focus, a:hover {
 
 .extra-top {
     margin-top: 100px;
+
+    @media (max-width: $screen-xs-max) {
+        margin-top: 60px;
+    }
 }
 
 .extra-bottom {
