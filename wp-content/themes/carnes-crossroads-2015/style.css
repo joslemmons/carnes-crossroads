@@ -4034,7 +4034,8 @@ video {
     font-weight: 400;
     text-transform: uppercase;
     font-size: 1.15rem;
-    color: #768e1c; }
+    color: #768e1c;
+    visibility: visible; }
     @media (max-width: 767px) {
       #gform_wrapper_3 .gfield_label {
         font-size: 1rem;
@@ -4055,7 +4056,7 @@ video {
   #gform_wrapper_3 .ginput_container_textarea textarea {
     border: 1px solid #ccc; }
   #gform_wrapper_3 .gform_footer.top_label {
-    margin-top: -100px !important; }
+    margin-top: -80px !important; }
     @media (max-width: 767px) {
       #gform_wrapper_3 .gform_footer.top_label {
         margin-top: 0 !important; } }

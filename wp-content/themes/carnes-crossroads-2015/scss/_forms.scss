@@ -507,6 +507,7 @@
         text-transform: uppercase;
         font-size: 1.15rem;
         color: $cc-green;
+        visibility: visible;
 
         @media (max-width: $screen-xs-max) {
             font-size: 1rem;
@@ -534,7 +535,7 @@
     }
 
     .gform_footer.top_label {
-        margin-top: -100px !important;
+        margin-top: -80px !important;
 
         @media (max-width: $screen-xs-max) {
             margin-top: 0 !important;
