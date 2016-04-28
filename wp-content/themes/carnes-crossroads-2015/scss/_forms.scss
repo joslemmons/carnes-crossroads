@@ -201,8 +201,11 @@
 }
 
 .gfield_label {
+    visibility: hidden;
+    height: 0;
+
     @media (max-width: $screen-xs-max) {
-        display: none;
+        display: none !important;
     }
 }
 
@@ -376,18 +379,18 @@
     -webkit-appearance: none;
     -moz-appearance: none;
     appearance: none;
-    padding: 10px 28px;
+    padding: 7px 25px;
     position: relative;
     font-family: $font-serif;
     font-weight: $weight-regular;
-    font-size: 1.1rem !important;
+    font-size: 1rem !important;
     text-transform: uppercase;
     letter-spacing: 2px;
     color: $white;
     background-color: $cc-green;
     border: 1px solid darken($cc-green, 10);
     outline: 5px solid $cc-green;
-    left: 76.5%;
+    left: 77%;
 
     &:hover {
         color: $white;
@@ -504,6 +507,7 @@
         text-transform: uppercase;
         font-size: 1.15rem;
         color: $cc-green;
+        visibility: visible;
 
         @media (max-width: $screen-xs-max) {
             font-size: 1rem;
@@ -531,7 +535,7 @@
     }
 
     .gform_footer.top_label {
-        margin-top: -100px !important;
+        margin-top: -80px !important;
 
         @media (max-width: $screen-xs-max) {
             margin-top: 0 !important;

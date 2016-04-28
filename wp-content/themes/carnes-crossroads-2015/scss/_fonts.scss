@@ -55,7 +55,7 @@ h1, h2, h3, h4, h5, h6 {
 h1 {
     font-family: $font-serif;
     font-weight: $weight-regular;
-    font-size: 5.9rem;
+    font-size: 5.7rem;
     line-height: 1;
     text-transform: none;
     color: $white;
@@ -82,13 +82,13 @@ h2 {
 h3 {
     font-family: $font-serif;
     font-weight: $weight-regular;
-    font-size: 1.5rem;
+    font-size: 1.4rem;
     line-height: 1;
     text-transform: none;
     color: $cc-brown;
 
     @media (min-width: $screen-xlg) {
-        font-size: 1.85rem;
+        font-size: 1.7rem;
     }
 }
 
