@@ -1,3 +1,15 @@
+{# <h3 style="font-family: Palatino Linotype, Palatino, Georgia, serif;font-size: 22px;line-height: 1.6em;margin: 0;padding: 0;font-weight: 400;color: #768e1c;">{{ total }} new result{% if total > 1 %}s{% endif %}</h3>
+<p style="font-family: Helvetica, Arial, sans-serif;font-size: 15px;line-height: 1.6em;margin: 0;padding: 0;font-weight: normal;margin-bottom: 10px;"><a href="{{ filter.link }}" style="font-family: Helvetica, Arial, sans-serif;font-size: 100%;line-height: 1.6em;margin: 0;padding: 0;color: #348eda;">{{ filter.getFriendlyName }}</a></p>
+<ul style="font-family: Helvetica, Arial, sans-serif;font-size: 15px;line-height: 1.6em;margin: 0 0 40px 20px;padding: 0;font-weight: normal;">
+    {% for property in properties %}
+        <li style="font-family: Helvetica, Arial, sans-serif;font-size: 100%;line-height: 1.6em;margin: 0 0 10px 0;padding: 0;list-style-position: inside;">{{ property.getAddress }}</li>
+    {% endfor %}
+</ul>
+
+<p style="font-family: Helvetica, Arial, sans-serif;font-size: 15px;line-height: 1.6em;margin: 0;padding: 0;font-weight: normal;margin-bottom: 10px;">
+    <a href="{{ filter.link }}" style="font-family: Helvetica, Arial, sans-serif;font-size: 100%;line-height: 1.6em;margin: 0;padding: 0;color: #348eda;">View Updates on Daniel Island website</a>
+</p> #}
+
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" style="font-family: Helvetica, Arial, sans-serif;font-size: 100%;line-height: 1.6em;margin: 0;padding: 0;">
 <head style="font-family: Helvetica, Arial, sans-serif;font-size: 100%;line-height: 1.6em;margin: 0;padding: 0;">
@@ -202,10 +214,6 @@ table.footer-wrap a {
   color: #999999;
 }
 
-table.footer-wrap {
-  text-align: center !important;
-}
-
 
 /* -------------------------------------
     TYPOGRAPHY
@@ -361,6 +369,7 @@ p.price {
 
 
 
+
 <body bgcolor="#f4f0e9" style="margin: 0;padding: 0;font-family: Helvetica, Arial, sans-serif;font-size: 100%;line-height: 1.6em;-webkit-font-smoothing: antialiased;height: 100%;-webkit-text-size-adjust: none;max-width: 600px;width: 100% !important;">
   <!-- main table -->
   <table width="100%" border="0" cellspacing="0" cellpadding="0" style="font-family: Helvetica, Arial, sans-serif;font-size: 100%;line-height: 1.6em;margin: 0;padding: 0;">
@@ -370,14 +379,13 @@ p.price {
         <table class="logo-wrap" style="font-family: Helvetica, Arial, sans-serif;font-size: 100%;line-height: 1.6em;margin: 0;padding: 10px;width: 100%;text-align: center;">
           <tr style="font-family: Helvetica, Arial, sans-serif;font-size: 100%;line-height: 1.6em;margin: 0;padding: 0;">
             <td class="container" style="font-family: Helvetica, Arial, sans-serif;font-size: 100%;line-height: 1.6em;margin: 0 auto !important;padding: 0;border: none;clear: both !important;display: block !important;max-width: 600px !important;">
-              <img src="http://jos-macbook.local:5757/wp-content/themes/carnes-crossroads-2015/img/carnes_logo.png" style="font-family: Helvetica, Arial, sans-serif;font-size: 100%;line-height: 1.6em;margin: 0;padding: 0;max-width: 600px;width: 225px;">
+              <img src="{{ template_uri }}/img/carnes_logo.png" style="font-family: Helvetica, Arial, sans-serif;font-size: 100%;line-height: 1.6em;margin: 0;padding: 0;max-width: 600px;width: 225px;">
             </td>
           </tr>
         </table>
         <table class="body-wrap" bgcolor="#f4f0e9" style="font-family: Helvetica, Arial, sans-serif;font-size: 100%;line-height: 1.6em;margin: 0;padding: 20px;width: 100%;">
           <tr style="font-family: Helvetica, Arial, sans-serif;font-size: 100%;line-height: 1.6em;margin: 0;padding: 0;">
             <td class="container" bgcolor="#FFFFFF" style="font-family: Helvetica, Arial, sans-serif;font-size: 100%;line-height: 1.6em;margin: 0 auto !important;padding: 20px;border: 1px solid #dedede;clear: both !important;display: block !important;max-width: 600px !important;">
-
               <!-- headline -->
               <table class="content" style="font-family: Helvetica, Arial, sans-serif;font-size: 100%;line-height: 1.6em;margin: 0 auto;padding: 0;display: block;max-width: 600px;">
                 <tr style="font-family: Helvetica, Arial, sans-serif;font-size: 100%;line-height: 1.6em;margin: 0;padding: 0;">
@@ -390,26 +398,37 @@ p.price {
               </table>
               <!-- /headline -->
 
-
               <!-- column -->
-              <table class="col-2" style="font-family: Helvetica, Arial, sans-serif;font-size: 100%;line-height: 1.6em;margin: 0;padding: 10px;width: 45%;margin-bottom: 45px;display: inline-block;text-align: center;">
+              {% for property in properties %}
+              {% if property.isFloorPlan %}
+              <table class="col-2" cellpadding="0" cellspacing="0" border="0" style="font-family: Helvetica, Arial, sans-serif;font-size: 100%;line-height: 1.6em;margin: 0;padding: 10px;width: 45%;margin-bottom: 45px;display: inline-block;text-align: center;">
                 <tr style="font-family: Helvetica, Arial, sans-serif;font-size: 100%;line-height: 1.6em;margin: 0;padding: 0;">
                   <td style="font-family: Helvetica, Arial, sans-serif;font-size: 100%;line-height: 1.6em;margin: 0;padding: 0;">
+                    <!-- property image -->
                     <table class="property-image" style="font-family: Helvetica, Arial, sans-serif;font-size: 100%;line-height: 1.6em;margin: 0;padding: 0;display: block;margin-bottom: 15px;height: 200px;width: 100%;overflow: hidden;text-align: center;">
-                      <tr style="font-family: Helvetica, Arial, sans-serif;font-size: 100%;line-height: 1.6em;margin: 0;padding: 0;">
-                        <td style="font-family: Helvetica, Arial, sans-serif;font-size: 100%;line-height: 1.6em;margin: 0;padding: 0;">
-                          <img src="https://s3.amazonaws.com/propertybase-clients/00D80000000dbjMEAQ/564a1c7025bf6/Rendering%20-%20Belington%20B.jpeg" style="font-family: Helvetica, Arial, sans-serif;font-size: 100%;line-height: 1.6em;margin: 0 auto;padding: 0;max-width: 100%;width: 100%;">
-                        </td>
-                      </tr>
+                        <tr style="font-family: Helvetica, Arial, sans-serif;font-size: 100%;line-height: 1.6em;margin: 0;padding: 0;">
+                            <td style="font-family: Helvetica, Arial, sans-serif;font-size: 100%;line-height: 1.6em;margin: 0;padding: 0;">
+                                <img src="{{ property.getFeaturedImageSrc }}" style="font-family: Helvetica, Arial, sans-serif;font-size: 100%;line-height: 1.6em;margin: 0 auto;padding: 0;max-width: 100%;width: 100%;">
+                            </td>
+                        </tr>
                     </table>
-                    <h3 style="font-family: Palatino Linotype, Palatino, Georgia, serif;font-size: 22px;line-height: 1.6em;margin: 0;padding: 0;font-weight: 400;color: #768e1c;">725 Quintan Street</h3>
-                    <p class="details" style="font-family: Helvetica, Arial, sans-serif;font-size: 12px;line-height: 1.6em;margin: 0;padding: 0;font-weight: normal;margin-bottom: 10px;color: #58585a;text-transform: uppercase;">3 BR / 2 FULL BATH / 2,220 SQ FT</p>
-                    <p class="price" style="font-family: Helvetica, Arial, sans-serif;font-size: 20px;line-height: 1.6em;margin: 0;padding: 0;font-weight: normal;margin-bottom: 10px;">$341,826</p>
+                    <!-- /property image -->
+                    <h3 style="font-family: Palatino Linotype, Palatino, Georgia, serif;font-size: 22px;line-height: 1.6em;margin: 0;padding: 0;font-weight: 400;color: #768e1c;">{{ property.title }}</h3>
+                    <p class="details" style="font-family: Helvetica, Arial, sans-serif;font-size: 12px;line-height: 1.6em;margin: 0;padding: 0;font-weight: normal;margin-bottom: 10px;color: #58585a;text-transform: uppercase;">{{ property.builder.title }}</p>
+                    {% if property.bedrooms or property.full_bathrooms or property.half_bathrooms %}
+                    <p class="details" style="font-family: Helvetica, Arial, sans-serif;font-size: 12px;line-height: 1.6em;margin: 0;padding: 0;font-weight: normal;margin-bottom: 10px;color: #58585a;text-transform: uppercase;">{% if property.bedrooms %}{{ property.bedrooms }} BR /{% endif %}
+                      {% if property.full_bathrooms %}{{ property.full_bathrooms }} Full Bath{% endif %}
+                      {% if property.half_bathrooms %} / {{ property.half_bathrooms }} Half Bath{% endif %}
+                      <br style="font-family: Helvetica, Arial, sans-serif;font-size: 100%;line-height: 1.6em;margin: 0;padding: 0;">
+                      {{ property.square_footage|removeNonNumbers|number_format }} sq ft
+                    </p>
+                    {% endif %}
+                    <p class="price" style="font-family: Helvetica, Arial, sans-serif;font-size: 20px;line-height: 1.6em;margin: 0;padding: 0;font-weight: normal;margin-bottom: 10px;">${{ property.price|removeNonNumbers|number_format }}</p>
                     <!-- button -->
                     <table class="site-btn" cellpadding="0" cellspacing="0" border="0" style="font-family: Helvetica, Arial, sans-serif;font-size: 100%;line-height: 1.6em;margin: 20px auto;padding: 0;width: auto !important;">
                       <tr style="font-family: Helvetica, Arial, sans-serif;font-size: 100%;line-height: 1.6em;margin: 0;padding: 0;">
                         <td style="font-family: Palatino Linotype, Palatino, Georgia, serif;font-size: 13px;line-height: 1.6em;margin: 0;padding: 0;background-color: #ffffff;letter-spacing: 0.5px;text-align: center;vertical-align: top;">
-                          <a href="http://jos-macbook.local:5757/home-finder/properties/725-quintan-street/pb_a0AC000000ZNlA6MAL/" style="font-family: Palatino Linotype, Palatino, Georgia, serif;font-size: 100%;line-height: 2;margin: 0;padding: 8px 50px;color: #3d3421;text-transform: uppercase;background-color: #ffffff;border: 1px solid #3d3421;display: inline-block;cursor: pointer;font-weight: bold;text-decoration: none;">View Listing</a>
+                          <a href="{{ property.link }}" style="font-family: Palatino Linotype, Palatino, Georgia, serif;font-size: 100%;line-height: 2;margin: 0;padding: 8px 50px;color: #3d3421;text-transform: uppercase;background-color: #ffffff;border: 1px solid #3d3421;display: inline-block;cursor: pointer;font-weight: bold;text-decoration: none;">View Listing</a>
                         </td>
                       </tr>
                     </table>
@@ -417,66 +436,41 @@ p.price {
                   </td>
                 </tr>
               </table>
-              <!-- /column -->
 
+              {% else %}
 
+              <table class="col-2" cellpadding="0" cellspacing="0" border="0" style="font-family: Helvetica, Arial, sans-serif;font-size: 100%;line-height: 1.6em;margin: 0;padding: 10px;width: 45%;margin-bottom: 45px;display: inline-block;text-align: center;">
+              <tr style="font-family: Helvetica, Arial, sans-serif;font-size: 100%;line-height: 1.6em;margin: 0;padding: 0;">
+                <td style="font-family: Helvetica, Arial, sans-serif;font-size: 100%;line-height: 1.6em;margin: 0;padding: 0;">
+                  <img src="{{ property.getFeaturedImageSrc }}" style="font-family: Helvetica, Arial, sans-serif;font-size: 100%;line-height: 1.6em;margin: 0 auto;padding: 0;max-width: 100%;width: auto;">
+                  <h3 style="font-family: Palatino Linotype, Palatino, Georgia, serif;font-size: 22px;line-height: 1.6em;margin: 0;padding: 0;font-weight: 400;color: #768e1c;">{{ property.getAddress }}</h3>
+                  {% if property.getBedroomCount or property.getFullBathroomCount or property.getHalfBathroomCount %}
+                  <p class="details" style="font-family: Helvetica, Arial, sans-serif;font-size: 12px;line-height: 1.6em;margin: 0;padding: 0;font-weight: normal;margin-bottom: 10px;color: #58585a;text-transform: uppercase;">{% if property.getBedroomCount %}{{ property.getBedroomCount }} BR /{% endif %}
+                      {% if property.getFullBathroomCount %}{{ property.getFullBathroomCount }} Full Bath{% endif %}
+                      {% if property.getHalfBathroomCount %} / {{ property.getHalfBathroomCount }} Half Bath{% endif %}
+                      <br style="font-family: Helvetica, Arial, sans-serif;font-size: 100%;line-height: 1.6em;margin: 0;padding: 0;">
+                      {{ property.getTotalAreaSquareFootage|number_format(numDecimalPlaces) }} {{ property.getTotalAreaSquareFootageUnitOfMeasurement }}
+                  </p>
+                  {% endif %}
+                  <p class="price" style="font-family: Helvetica, Arial, sans-serif;font-size: 20px;line-height: 1.6em;margin: 0;padding: 0;font-weight: normal;margin-bottom: 10px;">${{ property.getPurchaseListPrice|number_format }}</p>
 
-             <!-- column -->
-              <table class="col-2" style="font-family: Helvetica, Arial, sans-serif;font-size: 100%;line-height: 1.6em;margin: 0;padding: 10px;width: 45%;margin-bottom: 45px;display: inline-block;text-align: center;">
-                <tr style="font-family: Helvetica, Arial, sans-serif;font-size: 100%;line-height: 1.6em;margin: 0;padding: 0;">
-                  <td style="font-family: Helvetica, Arial, sans-serif;font-size: 100%;line-height: 1.6em;margin: 0;padding: 0;">
-                    <table class="property-image" style="font-family: Helvetica, Arial, sans-serif;font-size: 100%;line-height: 1.6em;margin: 0;padding: 0;display: block;margin-bottom: 15px;height: 200px;width: 100%;overflow: hidden;text-align: center;">
-                      <tr style="font-family: Helvetica, Arial, sans-serif;font-size: 100%;line-height: 1.6em;margin: 0;padding: 0;">
-                        <td style="font-family: Helvetica, Arial, sans-serif;font-size: 100%;line-height: 1.6em;margin: 0;padding: 0;">
-                          <img src="https://s3.amazonaws.com/propertybase-clients/00D80000000dbjMEAQ/564a1c7025bf6/Rendering%20-%20Belington%20B.jpeg" style="font-family: Helvetica, Arial, sans-serif;font-size: 100%;line-height: 1.6em;margin: 0 auto;padding: 0;max-width: 100%;width: 100%;">
-                        </td>
-                      </tr>
-                    </table>
-                    <h3 style="font-family: Palatino Linotype, Palatino, Georgia, serif;font-size: 22px;line-height: 1.6em;margin: 0;padding: 0;font-weight: 400;color: #768e1c;">725 Quintan Street</h3>
-                    <p class="details" style="font-family: Helvetica, Arial, sans-serif;font-size: 12px;line-height: 1.6em;margin: 0;padding: 0;font-weight: normal;margin-bottom: 10px;color: #58585a;text-transform: uppercase;">3 BR / 2 FULL BATH / 2,220 SQ FT</p>
-                    <p class="price" style="font-family: Helvetica, Arial, sans-serif;font-size: 20px;line-height: 1.6em;margin: 0;padding: 0;font-weight: normal;margin-bottom: 10px;">$341,826</p>
-                    <!-- button -->
-                    <table class="site-btn" cellpadding="0" cellspacing="0" border="0" style="font-family: Helvetica, Arial, sans-serif;font-size: 100%;line-height: 1.6em;margin: 20px auto;padding: 0;width: auto !important;">
-                      <tr style="font-family: Helvetica, Arial, sans-serif;font-size: 100%;line-height: 1.6em;margin: 0;padding: 0;">
-                        <td style="font-family: Palatino Linotype, Palatino, Georgia, serif;font-size: 13px;line-height: 1.6em;margin: 0;padding: 0;background-color: #ffffff;letter-spacing: 0.5px;text-align: center;vertical-align: top;">
-                          <a href="http://jos-macbook.local:5757/home-finder/properties/725-quintan-street/pb_a0AC000000ZNlA6MAL/" style="font-family: Palatino Linotype, Palatino, Georgia, serif;font-size: 100%;line-height: 2;margin: 0;padding: 8px 50px;color: #3d3421;text-transform: uppercase;background-color: #ffffff;border: 1px solid #3d3421;display: inline-block;cursor: pointer;font-weight: bold;text-decoration: none;">View Listing</a>
-                        </td>
-                      </tr>
-                    </table>
-                    <!-- /button -->
-                  </td>
-                </tr>
+                  <!-- button -->
+                  <table class="site-btn" cellpadding="0" cellspacing="0" border="0" style="font-family: Helvetica, Arial, sans-serif;font-size: 100%;line-height: 1.6em;margin: 20px auto;padding: 0;width: auto !important;">
+                    <tr style="font-family: Helvetica, Arial, sans-serif;font-size: 100%;line-height: 1.6em;margin: 0;padding: 0;">
+                      <td style="font-family: Palatino Linotype, Palatino, Georgia, serif;font-size: 13px;line-height: 1.6em;margin: 0;padding: 0;background-color: #ffffff;letter-spacing: 0.5px;text-align: center;vertical-align: top;">
+                        <a href="{{ property.link }}" style="font-family: Palatino Linotype, Palatino, Georgia, serif;font-size: 100%;line-height: 2;margin: 0;padding: 8px 50px;color: #3d3421;text-transform: uppercase;background-color: #ffffff;border: 1px solid #3d3421;display: inline-block;cursor: pointer;font-weight: bold;text-decoration: none;">View Listing</a>
+                      </td>
+                    </tr>
+                  </table>
+                  <!-- /button -->
+                </td>
+              </tr>
               </table>
-              <!-- /column -->
-              <!-- column -->
-              <table class="col-2" style="font-family: Helvetica, Arial, sans-serif;font-size: 100%;line-height: 1.6em;margin: 0;padding: 10px;width: 45%;margin-bottom: 45px;display: inline-block;text-align: center;">
-                <tr style="font-family: Helvetica, Arial, sans-serif;font-size: 100%;line-height: 1.6em;margin: 0;padding: 0;">
-                  <td style="font-family: Helvetica, Arial, sans-serif;font-size: 100%;line-height: 1.6em;margin: 0;padding: 0;">
-                    <table class="property-image" style="font-family: Helvetica, Arial, sans-serif;font-size: 100%;line-height: 1.6em;margin: 0;padding: 0;display: block;margin-bottom: 15px;height: 200px;width: 100%;overflow: hidden;text-align: center;">
-                      <tr style="font-family: Helvetica, Arial, sans-serif;font-size: 100%;line-height: 1.6em;margin: 0;padding: 0;">
-                        <td style="font-family: Helvetica, Arial, sans-serif;font-size: 100%;line-height: 1.6em;margin: 0;padding: 0;">
-                          <img src="https://s3.amazonaws.com/propertybase-clients/00D80000000dbjMEAQ/564a1c7025bf6/Rendering%20-%20Belington%20B.jpeg" style="font-family: Helvetica, Arial, sans-serif;font-size: 100%;line-height: 1.6em;margin: 0 auto;padding: 0;max-width: 100%;width: 100%;">
-                        </td>
-                      </tr>
-                    </table>
-                    <h3 style="font-family: Palatino Linotype, Palatino, Georgia, serif;font-size: 22px;line-height: 1.6em;margin: 0;padding: 0;font-weight: 400;color: #768e1c;">725 Quintan Street</h3>
-                    <p class="details" style="font-family: Helvetica, Arial, sans-serif;font-size: 12px;line-height: 1.6em;margin: 0;padding: 0;font-weight: normal;margin-bottom: 10px;color: #58585a;text-transform: uppercase;">3 BR / 2 FULL BATH / 2,220 SQ FT</p>
-                    <p class="price" style="font-family: Helvetica, Arial, sans-serif;font-size: 20px;line-height: 1.6em;margin: 0;padding: 0;font-weight: normal;margin-bottom: 10px;">$341,826</p>
-                    <!-- button -->
-                    <table class="site-btn" cellpadding="0" cellspacing="0" border="0" style="font-family: Helvetica, Arial, sans-serif;font-size: 100%;line-height: 1.6em;margin: 20px auto;padding: 0;width: auto !important;">
-                      <tr style="font-family: Helvetica, Arial, sans-serif;font-size: 100%;line-height: 1.6em;margin: 0;padding: 0;">
-                        <td style="font-family: Palatino Linotype, Palatino, Georgia, serif;font-size: 13px;line-height: 1.6em;margin: 0;padding: 0;background-color: #ffffff;letter-spacing: 0.5px;text-align: center;vertical-align: top;">
-                          <a href="http://jos-macbook.local:5757/home-finder/properties/725-quintan-street/pb_a0AC000000ZNlA6MAL/" style="font-family: Palatino Linotype, Palatino, Georgia, serif;font-size: 100%;line-height: 2;margin: 0;padding: 8px 50px;color: #3d3421;text-transform: uppercase;background-color: #ffffff;border: 1px solid #3d3421;display: inline-block;cursor: pointer;font-weight: bold;text-decoration: none;">View Listing</a>
-                        </td>
-                      </tr>
-                    </table>
-                    <!-- /button -->
-                  </td>
-                </tr>
-              </table>
+
+              {% endif %}
+              {% endfor %}
               <!-- /column -->
 
-              <!-- /content -->
               <table class="footer-cta" style="font-family: Helvetica, Arial, sans-serif;font-size: 100%;line-height: 1.6em;margin: 0;padding: 0 25px;text-align: center;">
                 <tr style="font-family: Helvetica, Arial, sans-serif;font-size: 100%;line-height: 1.6em;margin: 0;padding: 0;">
                   <td style="font-family: Helvetica, Arial, sans-serif;font-size: 100%;line-height: 1.6em;margin: 0;padding: 0;">
@@ -499,7 +493,7 @@ p.price {
         <!-- /body -->
 
         <!-- footer -->
-        <table class="footer-wrap" style="font-family: Helvetica, Arial, sans-serif;font-size: 100%;line-height: 1.6em;margin: 0;padding: 0;width: 100%;clear: both !important;text-align: center !important;">
+        <table class="footer-wrap" style="font-family: Helvetica, Arial, sans-serif;font-size: 100%;line-height: 1.6em;margin: 0;padding: 0;width: 100%;clear: both !important;">
           <tr style="font-family: Helvetica, Arial, sans-serif;font-size: 100%;line-height: 1.6em;margin: 0;padding: 0;">
             <td class="container" style="font-family: Helvetica, Arial, sans-serif;font-size: 100%;line-height: 1.6em;margin: 0 auto !important;padding: 0;clear: both !important;display: block !important;max-width: 600px !important;">
               <p style="font-family: Helvetica, Arial, sans-serif;font-size: 12px;line-height: 1.6em;margin: 0;padding: 0;font-weight: normal;margin-bottom: 10px;color: #666666;">&copy; 2016 All Rights Reserved - <a href="http://wwww.carnescharleston.com" style="font-family: Helvetica, Arial, sans-serif;font-size: 100%;line-height: 1.6em;margin: 0;padding: 0;color: #999999;">Carnes Crossroads</a></p>
