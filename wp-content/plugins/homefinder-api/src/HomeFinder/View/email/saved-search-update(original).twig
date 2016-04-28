@@ -10,13 +10,14 @@
     <a href="{{ filter.link }}">View Updates on Daniel Island website</a>
 </p> #}
 
-<!doctype html>
-<html>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
 <head>
-<meta name="viewport" content="width=device-width">
-<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <title>Saved Search Update</title>
-<style>
+</head>
+
+<style type="text/css">
 /* -------------------------------------
     GLOBAL
 ------------------------------------- */
@@ -38,6 +39,7 @@ body {
   height: 100%;
   -webkit-text-size-adjust: none;
   width: 100% !important;
+  max-width: 600px;
 }
 
 hr {
@@ -96,6 +98,37 @@ a {
   border: 1px solid #768e1c;
 }
 
+.cta-btn {
+  margin: 20px auto;
+  width: auto !important;
+}
+.cta-btn td {
+  background-color: #768e1c;
+  font-family: Palatino Linotype, Palatino, Georgia, serif;
+  font-size: 13px;
+  letter-spacing: 0.5px;
+  text-align: center;
+  vertical-align: top;
+}
+.cta-btn td a {
+  padding: 8px 50px;
+  font-family: Palatino Linotype, Palatino, Georgia, serif;
+  text-transform: uppercase;
+  background-color: #768e1c;
+  border: 1px solid #3d3421;
+  display: inline-block;
+  color: #ffffff;
+  cursor: pointer;
+  font-weight: bold;
+  line-height: 2;
+  text-decoration: none;
+}
+
+.cta-btn td a:hover {
+  color: #ffffff;
+  border: 1px solid #768e1c;
+}
+
 
 /* -------------------------------------
     BODY
@@ -129,14 +162,14 @@ table.logo-wrap .container {
   padding: 10px;
   display: inline-block;
   text-align: center;
-  vertical-align: top;
 }
 
-.col-2 tr td {
-    vertical-align: top;
+.col-2 img {
+  max-width: 100%;
+  margin: 0 auto;
 }
 
-.property-image {
+table.property-image {
     display: block;
     margin-bottom: 15px;
     height: 200px;
@@ -145,7 +178,7 @@ table.logo-wrap .container {
     text-align: center;
 }
 
-.property-image img {
+table.property-image img {
     margin: 0 auto;
     width: 100%;
 }
@@ -154,6 +187,18 @@ table.logo-wrap .container {
 /* -------------------------------------
     FOOTER
 ------------------------------------- */
+table.footer-cta {
+  padding: 0 25px;
+  text-align: center;
+}
+
+table.footer-cta p {
+  font-family: Palatino Linotype, Palatino, Georgia, serif;
+  font-size: 16px;
+  font-weight: 400;
+  color: #555;
+}
+
 table.footer-wrap {
   clear: both !important;
   width: 100%;
@@ -178,7 +223,6 @@ h1 {
   font-family: Palatino Linotype, Palatino, Georgia, serif;
   font-size: 38px;
   font-weight: 600;
-  line-height: 1.3;
   text-align: center;
   color: #768e1c;
   margin: 15px auto;
@@ -187,7 +231,7 @@ h1 {
 h2,
 h2 a {
   font-family: Palatino Linotype, Palatino, Georgia, serif;
-  font-size: 24px;
+  font-size: 22px;
   font-weight: 400;
   line-height: 1.4;
   text-align: center;
@@ -206,9 +250,7 @@ h3 {
   font-family: Palatino Linotype, Palatino, Georgia, serif;
   font-size: 22px;
   font-weight: 400;
-  line-height: 1.3;
   color: #768e1c;
-  margin-bottom: 15px;
 }
 
 ul {
@@ -247,12 +289,12 @@ p.details {
 }
 
 p.price {
-  font-size: 22px;
+  font-size: 20px;
 }
 
-/* ---------------------------------------------------
+/* -------------------------------------
     RESPONSIVENESS
------------------------------------------------------- */
+------------------------------------- */
 
 /* Set a max-width, and make it display as block so it will automatically stretch to that width, but will also shrink down on a phone or something */
 .container {
@@ -279,71 +321,109 @@ p.price {
   width: 100%;
 }
 
+@media screen and (max-width: 600px) {
+  table.body-wrap {
+    padding: 12px;
+    margin-top: 0;
+  }
+
+  .container {
+    padding: 15px;
+  }
+
+  table.logo-wrap img {
+    width: 180px;
+  }
+
+  h1 {
+    font-size: 32px;
+    line-height: 1.2;
+  }
+
+  h2, h2 a {
+    font-size: 18px;
+    line-height: 1.3;
+  }
+
+  .col-2 {
+    width: 100%;
+    margin-bottom: 45px;
+    padding: 0;
+    display: block;
+    text-align: center;
+  }
+
+  .col-2 img {
+    max-width: 100%;
+    margin: 0 auto;
+  }
+
+  table.footer-cta {
+    padding: 0 10px;
+  }
+}
+
 </style>
 </head>
 
 
 
 
-<body bgcolor="#f4f0e9">
 
-<!-- body -->
-<table class="logo-wrap">
-  <tr>
-    <td class="container">
-      <img src="{{ template_uri }}/img/carnes_logo.png">
-    </td>
-  </tr>
-</table>
-<table class="body-wrap" bgcolor="#f4f0e9">
-  <tr>
-    <td></td>
-    <td class="container" bgcolor="#FFFFFF">
+<body bgcolor="#f4f0e9" style="margin:0; padding:0;">
+  <!-- main table -->
+  <table width="100%" border="0" cellspacing="0" cellpadding="0">
+    <tr>
+      <td valign="top">
+        <!-- body -->
+        <table class="logo-wrap">
+          <tr>
+            <td class="container">
+              <img src="http://jos-macbook.local:5757/wp-content/themes/carnes-crossroads-2015/img/carnes_logo.png">
+            </td>
+          </tr>
+        </table>
+        <table class="body-wrap" bgcolor="#f4f0e9">
+          <tr>
+            <td class="container" bgcolor="#FFFFFF">
+              <!-- headline -->
+              <table class="content">
+                <tr>
+                  <td>
+                    <h1>Your Saved Searches</h1>
+                    <h2>Thank you for creating an account on <a href="http://www.carnescharleston.com">CarnesCharleston.com</a>. There have been some new results to your saved searches!</h2>
+                    <hr>
+                  </td>
+                </tr>
+              </table>
+              <!-- /headline -->
 
-      <!-- content -->
-      <div class="content">
-      <table>
-        <tr>
-          <td>
-            <h1>Your Saved Searches</h1>
-            <h2>Thank you for creating an account at <a href="http://www.carnescharleston.com">CarnesCharleston.com</a>. There have been some new results to your saved searches!</h2>
-            <hr>
-          </td>
-        </tr>
-      </table>
-      </div>
-      <!-- </div> -->
-
-      <!-- column -->
-      {% for property in properties %}
-        {% if property.isFloorPlan %}
-        <table class="col-2" cellpadding="0" cellspacing="0" border="0">
-            <tr>
-                <td>
+              <!-- column -->
+              {% for property in properties %}
+              {% if property.isFloorPlan %}
+              <table class="col-2" cellpadding="0" cellspacing="0" border="0">
+                <tr>
+                  <td>
                     <!-- property image -->
-                    <div class="property-image">
-                        <table>
-                            <tr>
-                                <td>
-                                    <img src="{{ property.getFeaturedImage.src }}">
-                                </td>
-                            </tr>
-                        </table>
-                    </div>
+                    <table class="property-image">
+                        <tr>
+                            <td>
+                                <img src="{{ property.getFeaturedImageSrc }}">
+                            </td>
+                        </tr>
+                    </table>
                     <!-- /property image -->
-
                     <h3>{{ property.title }}</h3>
                     <p class="details">{{ property.builder.title }}</p>
                     {% if property.bedrooms or property.full_bathrooms or property.half_bathrooms %}
                     <p class="details">{% if property.bedrooms %}{{ property.bedrooms }} BR /{% endif %}
-                        {% if property.full_bathrooms %}{{ property.full_bathrooms }} Full Bath{% endif %}
-                        {% if property.half_bathrooms %} / {{ property.half_bathrooms }} Half Bath{% endif %}
-                        <br/>
-                        {{ property.square_footage|removeNonNumbers|number_format }} sq ft
+                      {% if property.full_bathrooms %}{{ property.full_bathrooms }} Full Bath{% endif %}
+                      {% if property.half_bathrooms %} / {{ property.half_bathrooms }} Half Bath{% endif %}
+                      <br/>
+                      {{ property.square_footage|removeNonNumbers|number_format }} sq ft
                     </p>
                     {% endif %}
                     <p class="price">${{ property.price|removeNonNumbers|number_format }}</p>
-
                     <!-- button -->
                     <table class="site-btn" cellpadding="0" cellspacing="0" border="0">
                       <tr>
@@ -353,87 +433,78 @@ p.price {
                       </tr>
                     </table>
                     <!-- /button -->
-                </td>
-            </tr>
-        </table>
+                  </td>
+                </tr>
+              </table>
 
-        {% else %}
+              {% else %}
 
-        <table class="col-2" cellpadding="0" cellspacing="0" border="0">
-        <tr>
-          <td>
-            <!-- property image -->
-            <div class="property-image">
-                <table>
-                    <tr>
-                        <td>
-                            <img src="{{ property.getFeaturedImageSrc }}">
-                        </td>
-                    </tr>
-                </table>
-            </div>
-            <!-- /property image -->
-
-            <h3>{{ property.getAddress }}</h3>
-            <p class="details">{{ property.getNeighborhood }}</p>
-                {% if property.getBedroomCount or property.getFullBathroomCount or property.getHalfBathroomCount %}
-                <p class="details">{% if property.getBedroomCount %}{{ property.getBedroomCount }} BR /{% endif %}
-                    {% if property.getFullBathroomCount %}{{ property.getFullBathroomCount }} Full Bath{% endif %}
-                    {% if property.getHalfBathroomCount %} / {{ property.getHalfBathroomCount }} Half Bath{% endif %}
-                    <br/>
-                    {{ property.getTotalAreaSquareFootage|number_format(numDecimalPlaces) }} {{ property.getTotalAreaSquareFootageUnitOfMeasurement }}
-                </p>
-            {% endif %}
-            <p class="price">${{ property.getPurchaseListPrice|number_format }}</p>
-
-            <!-- button -->
-            <table class="site-btn" cellpadding="0" cellspacing="0" border="0">
+              <table class="col-2" cellpadding="0" cellspacing="0" border="0">
               <tr>
                 <td>
-                  <a href="{{ property.link }}">View Listing</a>
+                  <img src="{{ property.getFeaturedImageSrc }}">
+                  <h3>{{ property.getAddress }}</h3>
+                  {% if property.getBedroomCount or property.getFullBathroomCount or property.getHalfBathroomCount %}
+                  <p class="details">{% if property.getBedroomCount %}{{ property.getBedroomCount }} BR /{% endif %}
+                      {% if property.getFullBathroomCount %}{{ property.getFullBathroomCount }} Full Bath{% endif %}
+                      {% if property.getHalfBathroomCount %} / {{ property.getHalfBathroomCount }} Half Bath{% endif %}
+                      <br/>
+                      {{ property.getTotalAreaSquareFootage|number_format(numDecimalPlaces) }} {{ property.getTotalAreaSquareFootageUnitOfMeasurement }}
+                  </p>
+                  {% endif %}
+                  <p class="price">${{ property.getPurchaseListPrice|number_format }}</p>
+
+                  <!-- button -->
+                  <table class="site-btn" cellpadding="0" cellspacing="0" border="0">
+                    <tr>
+                      <td>
+                        <a href="{{ property.link }}">View Listing</a>
+                      </td>
+                    </tr>
+                  </table>
+                  <!-- /button -->
                 </td>
               </tr>
-            </table>
-            <!-- /button -->
-          </td>
-        </tr>
+              </table>
+
+              {% endif %}
+              {% endfor %}
+              <!-- /column -->
+
+              <table class="footer-cta">
+                <tr>
+                  <td>
+                     <p>If you would like additional help in your real estate search or more information about one of these properties or more, we would be happy to help!</p>
+                     <!-- button -->
+                    <table class="cta-btn" cellpadding="0" cellspacing="0" border="0">
+                      <tr>
+                        <td>
+                          <a href="http://www.carnescharleston.com/contact">Contact Us Now</a>
+                        </td>
+                      </tr>
+                    </table>
+                    <!-- /button -->
+                  </td>
+                </tr>
+              </table>
+            </td>
+          </tr>
         </table>
+        <!-- /body -->
 
-      {% endif %}
-      {% endfor %}
-      <!-- /column -->
-
-      <!-- /content -->
-
-    </td>
-    <td></td>
-  </tr>
-</table>
-<!-- /body -->
-
-<!-- footer -->
-<table class="footer-wrap">
-  <tr>
-    <td></td>
-    <td class="container">
-
-      <!-- content -->
-      <div class="content">
-        <table>
+        <!-- footer -->
+        <table class="footer-wrap">
           <tr>
-            <td align="center">
+            <td class="container">
               <p>&copy; 2016 All Rights Reserved - <a href="http://wwww.carnescharleston.com">Carnes Crossroads</a></p>
             </td>
           </tr>
         </table>
-      </div>
-      <!-- /content -->
+        <!-- /footer -->
 
-    </td>
-    <td></td>
-  </tr>
-</table>
-<!-- /footer -->
-
+      </td>
+    </tr>
+  </table>
+  <!-- /main table -->
 </body>
 </html>
