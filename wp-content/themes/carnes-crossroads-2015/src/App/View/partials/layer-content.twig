@@ -6,11 +6,13 @@
     <p>{{ child_page.content|slice(firstParagraph|length - expandLink|length) }}</p></span>
 {% elseif child_page.content|length >= 700 %}
     {% set shouldLinkToNewPage = true %}
-    {% set firstParagraph = child_page.content|truncate(60) %}
-    {{ firstParagraph }}
+    {# {% set firstParagraph = child_page.content|truncate(60) %} #}
+    {% set firstParagraph = child_page.get_preview(60, false, ‘’) %}
+    <p>{{ firstParagraph }}</p>
 {% else %}
     <p>
         {{ child_page.content }}
+        {# {{ child_page.get_preview }} #}
     </p>
 {% endif %}
 {% if child_page.isRealEstateAgent %}
