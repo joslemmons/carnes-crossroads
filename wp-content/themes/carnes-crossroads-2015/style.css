@@ -3309,6 +3309,26 @@ a:focus, a:hover {
 .lt-ie9 .visible-sm img {
   display: none; }
 
+.icon-play {
+  position: absolute;
+  opacity: 0.75;
+  left: 50%;
+  top: 50%;
+  bottom: auto;
+  right: auto;
+  -webkit-transform: translateX(-50%) translateY(-50%);
+  -moz-transform: translateX(-50%) translateY(-50%);
+  transform: translateX(-50%) translateY(-50%);
+  -webkit-transition: 0.2s all;
+  transition: 0.2s all; }
+  .icon-play:hover {
+    opacity: 1; }
+  .icon-play img {
+    border: none !important; }
+
+.icon-container {
+  position: relative; }
+
 .btn {
   border-radius: 0; }
   .btn:active, .btn.active {
@@ -7934,7 +7954,7 @@ span.tel {
       padding: 10px 15px; }
 .landing-page .footer-content .bg-container {
   position: absolute;
-  width: 100%; }
+  width: 99%; }
 .landing-page .footer-content .left-col-bg {
   background-size: cover;
   min-height: 482px; }
@@ -7948,7 +7968,8 @@ span.tel {
   background-color: #f8f2e9;
   min-height: 482px; }
 .landing-page .footer-content .left-col-text {
-  padding-top: 150px; }
+  padding-top: 130px;
+  padding-left: 50px; }
   @media (max-width: 991px) {
     .landing-page .footer-content .left-col-text {
       background: url(img/bg-hero-location.jpg) no-repeat center center/cover;
@@ -7958,7 +7979,7 @@ span.tel {
       max-width: 100%;
       min-height: 250px; } }
   .landing-page .footer-content .left-col-text img {
-    width: 358px; }
+    width: 300px; }
 .landing-page .footer-content .right-col-text {
   padding: 40px; }
   @media (max-width: 991px) {

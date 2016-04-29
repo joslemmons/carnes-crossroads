@@ -56,8 +56,8 @@ your browser</a> to improve your experience.</p>
                         </div>
                         <div class="row btn-row">
                             <div class="col-md-12">
-                                <a class="lp-btn" href="http://www.carnescharleston.com">Visit Carnes Crossroads</a>
-                                <a class="lp-btn" href="http://www.carnestcharleston.com/contact/">Contact Us</a>
+                                <a class="lp-btn" href="http://www.carnescharleston.com">Visit CarnesCrossroads.com</a>
+                                <a class="lp-btn" href="http:/www.carnescharleston.com/contact/">Contact Us</a>
                             </div>
                         </div>
 
@@ -98,9 +98,24 @@ your browser</a> to improve your experience.</p>
             <div class="row">
                 <div class="col-md-8">
                     <div class="featured-slider">
+                        {% for slide in post.getFeatured.slides %}
+                        {% if slide.video_src %}
+                        <div class="slide">
+                            <div class="icon-container">
+                                <a href="{{ slide.video_src|youtubeify }}" class="video-play">
+                                    <div class="icon-play">
+                                        <img src="{{ template_uri }}/img/play-icon_x2.png" alt="Play Video" class="img-responsive"/>
+                                    </div>
+                                    <img src="{{ slide.image.src|resize(765,466) }}" class="img-responsive"/>
+                                </a>
+                            </div>
+                        </div>
+                        {% else %}
                         <div class="slide">
                             <img src="{{ post.getFeatured.image.src }}" class="img-responsive"/>
                         </div>
+                        {% endif %}
+                        {% endfor %}
                     </div>
                 </div>
                 <div class="col-md-4">
@@ -109,7 +124,7 @@ your browser</a> to improve your experience.</p>
                         <div class="content">
                             {{ post.getFeatured.content }}
                         </div>
-                        {% if post.getFeatured.button %}
+                        {% if post.getFeatured.button and post.getFeatured.button.title %}
                             <a class="site-btn"
                                href="{{ post.getFeatured.button.link }}">{{ post.getFeatured.button.title }}</a>
                         {% endif %}
@@ -180,7 +195,7 @@ your browser</a> to improve your experience.</p>
             <div class="row">
                 <div class="left-col-text col-md-6">
                     <div class="footer-content">
-                        <img src="{{ template_uri }}/img/carnes_logo_wht.svg" alt="Carnes Crossroads Real Estate"/>
+                        <img src="{{ template_uri }}/img/carnes_logo_realestate_wht.png" alt="Carnes Crossroads Real Estate"/>
                     </div>
                 </div>
                 <div class="right-col-text col-md-6">
@@ -191,6 +206,16 @@ your browser</a> to improve your experience.</p>
                             {{ function('gravity_form', post.getFooter.gravity_form_id, false, false) }}
                         </div>
                     </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="page-disclaimer">
+        <div class="container">
+            <div class="row">
+                <div class="col-xs-12">
+                    <p>Equal Housing Opportunity. Maps and renderings are representative and may vary from actual construction. Prices and availability subject to change. Chuck Buck – Broker in Charge. &copy; 2016 Carnes Crossroads Real Estate.</p>
                 </div>
             </div>
         </div>

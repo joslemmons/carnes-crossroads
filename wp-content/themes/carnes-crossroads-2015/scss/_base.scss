@@ -82,3 +82,22 @@ a:focus, a:hover {
         display: none;
     }
 }
+
+.icon-play {
+    position: absolute;
+    opacity: 0.75;
+    @include center(xy);
+    @include transition(0.2s all);
+
+    &:hover {
+        opacity: 1;
+    }
+
+    img {
+        border: none !important;
+    }
+}
+
+.icon-container {
+    position: relative;
+}
