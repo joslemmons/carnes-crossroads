@@ -442,7 +442,17 @@ p.price {
               <table class="col-2" cellpadding="0" cellspacing="0" border="0">
               <tr>
                 <td>
-                  <img src="{{ property.getFeaturedImageSrc }}">
+                  <!-- property image -->
+                    <div class="property-image">
+                        <table>
+                            <tr>
+                                <td>
+                                    <img src="{{ property.getFeaturedImageSrc }}">
+                                </td>
+                            </tr>
+                        </table>
+                    </div>
+                    <!-- /property image -->
                   <h3>{{ property.getAddress }}</h3>
                   {% if property.getBedroomCount or property.getFullBathroomCount or property.getHalfBathroomCount %}
                   <p class="details">{% if property.getBedroomCount %}{{ property.getBedroomCount }} BR /{% endif %}
