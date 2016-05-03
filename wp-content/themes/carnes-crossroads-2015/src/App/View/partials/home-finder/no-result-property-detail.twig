@@ -1,0 +1,26 @@
+<div class="visible-sm visible-xs back-to-listings">
+    <span>
+        <div class="back-icon">
+            <svg width="16" height="16">
+                <image xlink:href="{{ template_uri }}/img/backspace.svg"
+                       src="{{ template_uri }}/img/backspace.png" width="16" height="16"/>
+            </svg>
+        </div>
+        Back to All Listings
+    </span>
+</div>
+
+<div class="single-listing-content">
+
+    <div class="listing-address">
+        Sorry&hellip;
+    </div>
+
+    <div class="listing-details">
+        <p>there are currently no properties available that match your search.</p>
+    </div>
+
+    {% if offering.getCallToActionButton and offering.getCallToActionButton.title %}
+        <a class="site-btn" href="{{ offering.getCallToActionButton.link }}">{{ offering.getCallToActionButton.title }}</a>
+    {% endif %}
+</div>
