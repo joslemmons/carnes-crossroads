@@ -101,3 +101,7 @@ a:focus, a:hover {
 .icon-container {
     position: relative;
 }
+
+.scrolloff {
+    pointer-events: none;
+}
