@@ -150,7 +150,7 @@ class PropertyBase
         }
 
         if ($order === null) {
-            $order = 'desc';
+            $order = 'asc';
         }
 
         $default_url_params = array_merge(
@@ -209,7 +209,7 @@ class PropertyBase
         }
 
         if ($order === null) {
-            $order = 'desc';
+            $order = 'asc';
         }
 
         $default_url_params = array_merge(PropertyBase::$_default_request_url_params, array(
