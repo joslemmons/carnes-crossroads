@@ -337,6 +337,7 @@ class HomeFinder extends Router
             }
 
             $floor_plan = $builder->getFloorPlanByName($floor_plan_title);
+            $address = $floor_plan_title;
 
             if (!$floor_plan) {
                 self::renderJSON(array(
@@ -358,30 +359,20 @@ class HomeFinder extends Router
             $to_email = 'carneshomefinder@carnesrealestate.com';
         }
 
-        try {
-            $mandrill = new \Mandrill('hpjxvPoVhO64Xh-ZGN3gGw');
-            $mandrill->messages->send(array(
-                'html' => \Timber::compile($twig_file,
+        wp_mail(
+            $to_email,
+            "[Request Showing] $name - $address",
+            \Timber::compile($twig_file,
                     array(
                         'item' => $item,
                         'name' => $name,
                         'email' => $email,
                         'message' => $message
                     )),
-                'subject' => "[Request Showing] $name - $address",
-                'from_email' => "$email",
-                'from_name' => "$name",
-                'to' => array(
-                    array(
-                        'email' => $to_email
-                    )
-                )
-            ));
-        } catch (\Mandrill_Error $ex) {
-            // Log
-            $error_messages[] = 'Internal Error occurred. Failed to send email. Please try again.';
-        }
-
+            array(
+                'From: ' . $name . ' <' . $email . '>'
+            )
+        );
 
         if (true === $shouldCreateAccount) {
             $user = User::createOrLoginAndAuthenticateUser($email);
