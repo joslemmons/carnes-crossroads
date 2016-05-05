@@ -2,6 +2,24 @@ jQuery(function ($) {
 
     var $saveSearchSection = $('#saveSearchSection'),
         order = 'default';
+    
+    function updateListingDetailAreaToBeFirstResult() {
+        if ($('div.listings-wrapper').find('div.listing').length > 0) {
+            var $property = $('div.listings-wrapper').find('div.listing').first();
+
+            if ($property.hasClass('offering')) {
+                $property.trigger('click');
+            }
+            else {
+                var propertyId = $property.attr('data-property-id');
+                showProperty('_', propertyId);
+            }
+
+        }
+        else {
+            showProperty('_', '_');
+        }
+    }
 
     function showSavedListings() {
         $('div.listings-wrapper').fadeTo('slow', 0.3);
@@ -113,18 +131,47 @@ jQuery(function ($) {
         performSearch();
     });
 
-    var throttleSearch = _.throttle(function () {
-        if ($(this).val().length > 2) {
-            // clear out filters
-            clearFilters();
+    var typingTimer;
+    var doneTypingInterval = 2000;
+    var $input = $('#filter-searchAddress');
+
+    $input.on('keyup', function (e) {
+        clearTimeout(typingTimer);
+        if (event.keyCode == '13') {
+            doneTyping(true);
+        }
+        else {
+            typingTimer = setTimeout(doneTyping, doneTypingInterval);
+        }
+
+    });
+
+    $input.on('keydown', function () {
+        clearTimeout(typingTimer);
+        typingTimer = setTimeout(doneTyping, doneTypingInterval);
+    });
+
+    var pauseSearch = false;
+
+    function doneTyping(ignoreLengthTest) {
+        var shouldTestLength = true;
+        if (typeof ignoreLengthTest !== 'undefined') {
+            shouldTestLength = false;
+        }
+
+        if (shouldTestLength === false || $input.val().length > 2) {
+            $input.prop('readonly', true);
+            order = 'default';
+            pauseSearch = true;
+            $('div.home-finder-filters').find('select option:selected').removeProp('selected');
+            $('#filter-builders').trigger("chosen:updated");
+            $('#filter-bedrooms').trigger("chosen:updated");
+            $('#filter-bathrooms').trigger("chosen:updated");
+            pauseSearch = false;
 
             performSearch();
         }
-    }, 2000);
-
-    $('#filter-searchAddress').on('keyup', throttleSearch);
-
-    var pauseSearch = false;
+    }
 
     function performSearch(sort, isAllListings) {
         if (pauseSearch === true) {
@@ -176,23 +223,27 @@ jQuery(function ($) {
             isAllListings = false;
         }
 
+        var filtersForQuery = {
+            prices: filters.prices,
+            bedrooms: filters.bedrooms,
+            bathrooms: filters.bathrooms,
+            searchAddress: filters.searchAddress,
+            sort: sort,
+            includePlans: filters.includePlans,
+            includeHomes: filters.includeHomes,
+            builders: filters.builders
+        };
+
         if (isAllListings === true) {
             $saveSearchSection.hide();
         }
 
-        $.get(
-            '/api/home-finder/search',
-            {
-                prices: filters.prices,
-                bedrooms: filters.bedrooms,
-                bathrooms: filters.bathrooms,
-                searchAddress: filters.searchAddress,
-                sort: sort,
-                includePlans: filters.includePlans,
-                includeHomes: filters.includeHomes,
-                builders: filters.builders
-            },
-            function (data) {
+        router.navigate('home-finder/search-listings/?' + $.param(filtersForQuery), {trigger: false});
+
+        $.ajax({
+            url: '/api/home-finder/search',
+            data: filtersForQuery,
+            success: function (data) {
                 var html = data.rsp,
                     total = data.total;
 
@@ -206,9 +257,18 @@ jQuery(function ($) {
 
                 $('div.listings-wrapper').html(html).fadeTo('slow', 1);
 
+                $input.prop('readonly', false);
                 // auto click the first result
-                $('div.listings-wrapper').find('div.listing').first().trigger('click');
-            });
+                updateListingDetailAreaToBeFirstResult();
+            },
+            error: function (data) {
+                $input.prop('readonly', false);
+                hideLoadingListingsIndicator();
+                $('div.listings-wrapper').html('<div class="end-results">End of Results</div>').fadeTo('slow', 1);
+                showProperty('_', '_');
+            }
+        });
+
     }
 
     function getBuilders() {
