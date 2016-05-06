@@ -79,6 +79,10 @@
                         4+ Bathrooms
                     </option>
                 </select>
+                <select multiple="multiple" id="filter-homeFeatures">
+                    <option value="master_downstairs">Master Downstairs</option>
+                    <option value="single_story">Single Story</option>
+                </select>
                 {# <input type="checkbox" id="filter-includePlans" class="pull-right" value="yes"
                        {% if filters.shouldIncludePlans %}checked="checked"{% endif %}/>
                 <label for="filter-includePlans">Include Plans</label> #}
@@ -200,9 +204,9 @@
                                         Show Both
                                     </option>
                                     {#{% if current_user and current_user.getSavedProperties|length > 0 %}#}
-                                        {#<option {% if isSavedListings %}selected="selected"{% endif %}#}
-                                                {#value="saved-listings">Saved Listings#}
-                                        {#</option>#}
+                                    {#<option {% if isSavedListings %}selected="selected"{% endif %}#}
+                                    {#value="saved-listings">Saved Listings#}
+                                    {#</option>#}
                                     {#{% endif %}#}
                                 </select>
                             </div>

@@ -132,7 +132,7 @@ class HomeFinderFilters
         $filters->_rawIncludePlans = ($shouldIncludePlans) ? 'true' : 'false';
         $filters->_rawIncludeHomes = ($shouldIncludeHomes) ? 'true' : 'false';
         $filters->_rawBuilders = self::_getFilterFromArrayByKey($data, 'builders');
-
+        
         // add the various filters passed as GET params to $filters
         $filters->setPropertyTypes(self::_getFilterFromArrayByKey($data, 'propertyTypes'));
         $filters->setNeighborhoods(self::_getFilterFromArrayByKey($data, 'neighborhoods'));
@@ -834,7 +834,15 @@ class HomeFinderFilters
             }
 
             if (false !== $this->getHomeFeatures()) {
-                // not set in pbase... use MLS
+                $homeFeatures = $this->getHomeFeatures();
+
+                if (stristr($homeFeatures, 'master') !== false) {
+                    $filters['Master_Down__c'] = 'true';
+                }
+
+                if (stristr($homeFeatures, 'single') !== false) {
+                    $filters['max_pb__BuildingFloors__c'] = '1';
+                }
             }
 
             if (false !== $this->getViews()) {
@@ -981,7 +989,7 @@ class HomeFinderFilters
                 $friendly_name[] = 'Include Floor Plans';
             }
         }
-        
+
         $includeHomes = (isset($raw_filters['includeHomes'])) ? $raw_filters['includeHomes'] : false;
         if (false !== $includeHomes && $includeHomes !== '') {
             if ($includeHomes === 'true') {

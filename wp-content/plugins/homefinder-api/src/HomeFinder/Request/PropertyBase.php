@@ -123,7 +123,9 @@ class PropertyBase
             'Listing_Agent__c',
             'pb__SalesAgentId__c',
             'MLS_Page__c',
-            'prop_short_desc__c'
+            'prop_short_desc__c',
+            'Master_Down__c',
+            'pb__BuildingFloors__c'
         ));
     }
 
@@ -138,7 +140,7 @@ class PropertyBase
     public static function getWithFilters(HomeFinderFilters $filters, $per_page = 24, $page = 1, $order_by = 'price', $order = 'desc')
     {
         // use MLS to get by last date... there's no way to filter by last date modified with v0.9 of property base
-        if ($filters->getMinLastUpdate() !== false || $filters->getHomeFeatures() !== false || $filters->getViews() !== false) {
+        if ($filters->getMinLastUpdate() !== false || $filters->getViews() !== false) {
             return Result::withTotalAndPerPageAndCurrentItems(0, $per_page, array());
         }
 

@@ -2,7 +2,7 @@ jQuery(function ($) {
 
     var $saveSearchSection = $('#saveSearchSection'),
         order = 'default';
-    
+
     function updateListingDetailAreaToBeFirstResult() {
         if ($('div.listings-wrapper').find('div.listing').length > 0) {
             var $property = $('div.listings-wrapper').find('div.listing').first();
@@ -127,6 +127,15 @@ jQuery(function ($) {
     });
 
     $('div.listings-type select').on('change', function () {
+        var selection = $(this).find('option:selected').val();
+
+        if (selection === 'home-plans') {
+            $('div.view-on-map').css('visibility', 'hidden');
+        }
+        else {
+            $('div.view-on-map').css('visibility', 'visible');
+        }
+
         $('#filter-searchAddress').val('');
         performSearch();
     });
@@ -167,6 +176,7 @@ jQuery(function ($) {
             $('#filter-builders').trigger("chosen:updated");
             $('#filter-bedrooms').trigger("chosen:updated");
             $('#filter-bathrooms').trigger("chosen:updated");
+            $('#filter-homeFeatures').multipleSelect('uncheckAll');
             pauseSearch = false;
 
             performSearch();
@@ -189,7 +199,8 @@ jQuery(function ($) {
             searchAddress: getSearchAddress(),
             includePlans: getShouldIncludePlans(),
             includeHomes: getShouldIncludeHomes(),
-            builders: getBuilders()
+            builders: getBuilders(),
+            homeFeatures: getFilterHomeFeatures()
         };
 
         $('div.results-sort').show();
@@ -210,7 +221,8 @@ jQuery(function ($) {
             getBuilders() === '' &&
             getFilterPrice() === '0-500000' &&
             getFilterBedrooms() === '' &&
-            getFilterBathrooms() === ''
+            getFilterBathrooms() === '',
+            getFilterHomeFeatures() === '' 
         );
     }
 
@@ -231,7 +243,8 @@ jQuery(function ($) {
             sort: sort,
             includePlans: filters.includePlans,
             includeHomes: filters.includeHomes,
-            builders: filters.builders
+            builders: filters.builders,
+            homeFeatures: filters.homeFeatures
         };
 
         if (isAllListings === true) {
@@ -307,6 +320,10 @@ jQuery(function ($) {
             $select = $('#filter-bathrooms');
 
         return $select.find('option:selected').val();
+    }
+
+    function getFilterHomeFeatures() {
+        return $('#filter-homeFeatures').multipleSelect('getSelects');
     }
 
     $('div.all-listings-col').on('click', 'div.listings-wrapper div.listing:not(.offering,.floor-plan)', function () {
@@ -437,6 +454,7 @@ jQuery(function ($) {
         filterPriceSlider.noUiSlider.set([0, 500000]);
         $("#filter-builders, #filter-bedrooms, #filter-bathrooms").find('option').removeProp('selected');
         $("#filter-builders, #filter-bedrooms, #filter-bathrooms").trigger('chosen:updated');
+        $('#filter-homeFeatures').multipleSelect('uncheckAll');
         pauseSearch = false;
     }
 
@@ -638,6 +656,19 @@ jQuery(function ($) {
     // Harvest Chosen Select Boxes
     $("#filter-builders, #filter-bedrooms, #filter-bathrooms, #filter-listings-type").chosen({
         disable_search: 'true'
+    });
+
+    function simpleClearForMultipleSelect(view) {
+        //$('#filter-searchAddress').val('');
+        order = 'default';
+        performSearch();
+    }
+
+    $('#filter-homeFeatures').multipleSelect({
+        placeholder: "Home Features",
+        onClick: simpleClearForMultipleSelect,
+        onCheckAll: simpleClearForMultipleSelect,
+        onUncheckAll: simpleClearForMultipleSelect
     });
 
     // price slider
