@@ -26,7 +26,8 @@ jQuery(function ($) {
             nextSelector: $(el).parent().find('span.next-lg'),
             prevSelector: $(el).parent().find('span.prev-lg'),
             nextText: '',
-            prevText: ''
+            prevText: '',
+            preloadImages: 'visible'
         });
     });
 
@@ -39,7 +40,8 @@ jQuery(function ($) {
         arrows: true,
         prevArrow: '<span class="prev-sm"></span>',
         nextArrow: '<span class="next-sm"></span>',
-        cssEase: 'linear'
+        cssEase: 'linear',
+        lazyLoad: 'ondemand'
     });
 
      /*** Match Height - Landing Page ***/
