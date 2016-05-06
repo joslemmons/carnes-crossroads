@@ -222,7 +222,7 @@ jQuery(function ($) {
             getFilterPrice() === '0-500000' &&
             getFilterBedrooms() === '' &&
             getFilterBathrooms() === '',
-            getFilterHomeFeatures() === '' 
+            getFilterHomeFeatures() === ''
         );
     }
 
