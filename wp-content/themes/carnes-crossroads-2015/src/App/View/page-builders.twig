@@ -35,10 +35,10 @@
                 </div>
                 <div class="builders-links">
                     {% if builder.shouldShowAvailableHomesButton %}
-                        <a href="/home-finder/search-listings/?builders[]={{ builder.title|slugify }}" class="arrow-link">Available Homes</a>
+                        <a href="/home-finder/search-listings/?prices=0-500000&bedrooms=&bathrooms=&searchAddress=&sort=default&includePlans=false&includeHomes=true&builders={{ builder.title|slugify }}" class="arrow-link">Available Homes</a>
                     {% endif %}
                     {% if builder.shouldShowHomePlansButton %}
-                        <a href="/home-finder/search-listings/?builders[]={{ builder.title|slugify }}&includePlans=true" class="arrow-link">View Home Plans</a>
+                        <a href="/home-finder/search-listings/?prices=0-500000&bedrooms=&bathrooms=&searchAddress=&sort=default&includePlans=true&includeHomes=true&builders={{ builder.title|slugify }}" class="arrow-link">View Home Plans</a>
                     {% endif %}
                 </div>
             </div>
