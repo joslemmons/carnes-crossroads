@@ -193,9 +193,12 @@ class User extends Router
         $filters = HomeFinderFilters::withREQUESTParams();
         $user->saveSearch($filters);
 
+        $saved_searches = $user->getRawSavedSearches();
+
         self::renderJSON(array(
             'status' => 200,
-            'rsp' => 'OK'
+            'rsp' => 'OK',
+            'savedSearchCount' => count($saved_searches)
         ), 200);
     }
 
@@ -324,7 +327,6 @@ class User extends Router
             'rsp' => 'ok'
         ), 200);
     }
-
 
 
 }

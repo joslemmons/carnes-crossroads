@@ -222,7 +222,7 @@ jQuery(function ($) {
             getFilterPrice() === '0-500000' &&
             getFilterBedrooms() === '' &&
             getFilterBathrooms() === '',
-            getFilterHomeFeatures() === '' 
+            getFilterHomeFeatures() === ''
         );
     }
 
@@ -571,28 +571,31 @@ jQuery(function ($) {
         }
 
         var filters = {
-            //propertyTypes: getFilterPropertyTypes(),
-            //neighborhoods: getFilterNeighborhoods(),
-            prices: getFilterPrice(),
-            bedrooms: getFilterBedrooms(),
-            bathrooms: getFilterBathrooms(),
-            //shouldSearchMLS: getShouldSearchMLS(),
-            //lastUpdate: getLastUpdate(),
-            //squareFootage: getFilterSquareFootage(),
-            //homeFeatures: getFilterHomeFeatures(),
-            //views: getFilterViews(),
-            includePlans: getShouldIncludePlans(),
-            includeHomes: getShouldIncludeHomes(),
-            builders: getBuilders()
-        };
-
-        var savedSearchesCount = parseInt($(this).parent().find('a.showAccountPage').text().replace('(', '').replace(')', ''));
-        savedSearchesCount++;
-
-        $(this).parent().find('a.showAccountPage').text('(' + savedSearchesCount + ')');
-        $(this).parent().find('a.showAccountPage').show();
+                //propertyTypes: getFilterPropertyTypes(),
+                //neighborhoods: getFilterNeighborhoods(),
+                prices: getFilterPrice(),
+                bedrooms: getFilterBedrooms(),
+                bathrooms: getFilterBathrooms(),
+                //shouldSearchMLS: getShouldSearchMLS(),
+                //lastUpdate: getLastUpdate(),
+                //squareFootage: getFilterSquareFootage(),
+                // homeFeatures: getFilterHomeFeatures(),
+                //views: getFilterViews(),
+                includePlans: getShouldIncludePlans(),
+                includeHomes: getShouldIncludeHomes(),
+                builders: getBuilders()
+            },
+            $that = $(this);
 
         $.post('/api/home-finder/save-search', filters, function (rsp) {
+            if (typeof rsp.savedSearchCount !== "undefined") {
+                var savedSearchesCount = rsp.savedSearchCount;
+
+                $that.parent().find('a.showAccountPage').text('(' + savedSearchesCount + ')');
+                $that.parent().find('a.showAccountPage').show();
+
+                $('a.savedSearchesCount').text('Saved Searches ' + savedSearchesCount);
+            }
         });
 
         return false;
