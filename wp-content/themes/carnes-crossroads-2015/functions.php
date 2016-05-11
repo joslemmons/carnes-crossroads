@@ -24,4 +24,19 @@ function filter_plugin_updates( $value ) {
 }
 add_filter( 'site_transient_update_plugins', 'filter_plugin_updates' );
 
+
+/* Disable Timber plugin "Deactivate" link -- prevents breakage */
+add_filter( 'plugin_action_links', 'disable_plugin_deactivation', 10, 4 );
+function disable_plugin_deactivation( $actions, $plugin_file, $plugin_data, $context ) {
+    // Remove edit link for all
+    if ( array_key_exists( 'edit', $actions ) )
+        unset( $actions['edit'] );
+    // Remove deactivate link for crucial plugins
+    if ( array_key_exists( 'deactivate', $actions ) && in_array( $plugin_file, array(
+        'timber-library/timber.php'
+    )))
+        unset( $actions['deactivate'] );
+    return $actions;
+}
+
 \App\Model\Bootstrap::init();
