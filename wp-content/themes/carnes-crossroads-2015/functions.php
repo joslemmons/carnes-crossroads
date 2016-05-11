@@ -17,4 +17,11 @@ if (!function_exists('getallheaders')) {
     }
 }
 
+/* Disable Timber plugin update notices -- prevents breakage */
+function filter_plugin_updates( $value ) {
+    unset( $value->response['timber-library/timber.php'] );
+    return $value;
+}
+add_filter( 'site_transient_update_plugins', 'filter_plugin_updates' );
+
 \App\Model\Bootstrap::init();
