@@ -6312,13 +6312,21 @@ Edits by Chernoff Newman
         padding: 10px;
         width: 90%;
         margin-top: 38px; } }
+    @media (min-height: 481px) and (max-height: 737px) {
+      .hero__content-wrap--homes {
+        padding: 10px;
+        margin-top: 65px; } }
     .hero__content-wrap--homes h1 {
-      font-size: 5.5rem;
-      margin-bottom: 75px; }
+      font-size: 5.4rem;
+      margin-bottom: 65px; }
       @media (max-width: 767px) {
         .hero__content-wrap--homes h1 {
           font-size: 2.2rem;
           margin-bottom: 25px; } }
+      @media (min-height: 481px) and (max-height: 737px) {
+        .hero__content-wrap--homes h1 {
+          font-size: 5.1rem;
+          margin-bottom: 45px; } }
   .hero__content-tab, .hero__content-tab-red, .hero__content-tab-green, .hero__content-tab-orange {
     padding: 15px 15px 0 15px;
     text-align: center;
@@ -6407,7 +6415,7 @@ Edits by Chernoff Newman
     @media (min-height: 481px) and (max-height: 737px) {
       .hero__page, .hero__page--homes {
         margin-top: 0;
-        height: 400px; } }
+        height: 600px; } }
     .hero__page--homes {
       overflow: visible; }
       @media (max-width: 767px) {
