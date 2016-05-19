@@ -375,4 +375,42 @@ class Post extends \TimberPost
 
         return $footer_data;
     }
+
+    public function getQuicklinkBoxes()
+    {
+        $box_one = array(array(
+            'title' => 'Community Map',
+            'subtitle' => 'See the Bigger Picture',
+            'image' => array(
+                'get_src' => get_template_directory_uri() . '/img/bg-button-map.jpg'
+            ),
+            'button' => array(
+                'link' => get_template_directory_uri() . '/img/map-master-plan.jpg'
+            )
+        ));
+
+        $box_two = array(array(
+            'title' => 'Plan your Visit',
+            'subtitle' => 'Contact us today',
+            'image' => array(
+                'get_src' => get_template_directory_uri() . '/img/bg-button-visit.jpg'
+            ),
+            'button' => array(
+                'link' => '/contact/'
+            )
+        ));
+
+        $box_three = array(array(
+            'title' => 'Upcoming Events',
+            'subtitle' => 'Concerts, Classes & More',
+            'image' => array(
+                'get_src' => get_template_directory_uri() . '/img/bg-button-events.jpg'
+            ),
+            'button' => array(
+                'link' => '/events-at-carnes-crossroads/'
+            )
+        ));
+        
+        return array_merge($box_one, $box_two, $box_three);
+    }
 }
