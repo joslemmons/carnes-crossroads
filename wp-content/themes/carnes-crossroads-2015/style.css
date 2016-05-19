@@ -8302,44 +8302,44 @@ span.tel {
 .print .cx-logo {
   text-align: center; }
   .print .cx-logo img {
-    width: 125px;
-    margin: 3px 0 10px 0; }
+    width: 100px;
+    margin: 3px 0 5px 0; }
 .print .listing-header {
   position: absolute;
-  top: 20px;
+  top: 15px;
   left: 50%;
   right: auto;
   -webkit-transform: translateX(-50%);
   -moz-transform: translateX(-50%);
   transform: translateX(-50%); }
 .print .listing-image {
-  margin: 8px auto 0 auto;
+  margin: 0 auto;
   text-align: center;
-  width: 100%;
-  height: 360px;
+  width: 90%;
+  height: 390px;
   background-repeat: no-repeat;
-  background-size: contain;
+  background-size: cover;
   background-position: center center; }
   .print .listing-image img {
     border: 1px solid #adadad;
     max-width: 100%; }
 .print .listing-image-group {
-  margin: 20px auto 0 auto;
-  width: 100%; }
+  margin: 15px auto 0 auto;
+  width: 92%; }
   .print .listing-image-group .col-xs-3 {
     padding: 0 6px; }
 .print .listing-address {
   margin: 0;
   font-family: "minion-pro", serif;
-  font-size: 1.4rem;
+  font-size: 1.8rem;
   letter-spacing: 0.5px; }
 .print .listing-specs {
   margin: 0 auto;
-  width: 100%;
-  padding: 18px 0 15px;
+  width: 90%;
+  padding: 18px 0 10px;
   display: inline-block;
   font-family: "proxima-nova", sans-serif;
-  font-size: 1.1rem;
+  font-size: 1.15rem;
   text-transform: uppercase;
   color: #555;
   border-bottom: 1px solid #768e1c; }
@@ -8347,7 +8347,7 @@ span.tel {
   display: inline-block;
   margin: 0;
   font-family: "Oswald", sans-serif;
-  font-size: 1.15rem;
+  font-size: 1.25rem;
   color: #000; }
 .print .listing-neighborhood {
   font-family: "proxima-nova", sans-serif;
@@ -8355,17 +8355,18 @@ span.tel {
   text-transform: uppercase;
   color: #555; }
 .print .listing-details {
-  margin: 20px auto 0 auto;
-  width: 100%;
+  margin: 10px auto 0 auto;
+  width: 90%;
+  max-height: 435px;
   overflow: hidden;
   font-family: "proxima-nova", sans-serif;
-  font-size: 0.7rem; }
+  font-size: 0.8rem; }
   .print .listing-details li {
-    margin-bottom: 5px; }
+    margin-bottom: 3px; }
 .print .listing-footer {
   position: absolute;
   bottom: 25px;
-  width: 100%;
+  width: 90%;
   padding: 0 75px;
   left: 50%;
   right: auto;
@@ -8373,7 +8374,7 @@ span.tel {
   -moz-transform: translateX(-50%);
   transform: translateX(-50%); }
   .print .listing-footer img {
-    width: 105px; }
+    width: 75px; }
   .print .listing-footer p {
     margin-top: 20px;
     font-family: "minion-pro", serif;
