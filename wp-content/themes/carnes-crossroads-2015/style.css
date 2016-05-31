@@ -8316,7 +8316,7 @@ span.tel {
   margin: 0 auto;
   text-align: center;
   width: 90%;
-  height: 390px;
+  height: 470px;
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center center; }
@@ -8357,10 +8357,11 @@ span.tel {
 .print .listing-details {
   margin: 10px auto 0 auto;
   width: 90%;
-  max-height: 435px;
+  max-height: 475px;
   overflow: hidden;
   font-family: "proxima-nova", sans-serif;
-  font-size: 0.8rem; }
+  font-size: 0.9rem;
+  letter-spacing: 0.5px; }
   .print .listing-details li {
     margin-bottom: 3px; }
 .print .listing-footer {
