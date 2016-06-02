@@ -46,11 +46,15 @@
             <div class="row listing-header">
                 <div class="col-xs-12 cx-logo">
                     {% if loop.first %}
-                    <img src="{{ template_uri }}/wp-content/themes/carnes-crossroads-2015/img/carnes_logo_realestate.png">
+                    <img src="{{ template_uri }}/wp-content/themes/carnes-crossroads-2015/img/carnes_logo_badge.png">
                     {% endif %}
                     <div class="listing-address">
                         {{ property.getAddress }}
                     </div>
+                    {# <div class="listing-neighborhood">
+                        {{ dump(property) }}
+                        {{ property.getPhaseName }}
+                    </div> #}
                 </div>
             </div>
             <div class="row">
@@ -68,6 +72,7 @@
                     {{ property.getDescription }}
                 </div>
             </div>
+
             {# {% if property.getImages|length > 1 %}
             <div class="row">
                 <div class="listing-image-group">
@@ -86,6 +91,7 @@
                 </div>
             </div>
             {% endif %} #}
+
             <div class="listing-footer">
                 <div class="row">
                     <div class="col-xs-4 text-left">
