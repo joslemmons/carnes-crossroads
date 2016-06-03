@@ -51,6 +51,8 @@ class Property
     public $listing_office_id;
     public $listing_agent_id;
     public $sales_agent_id;
+    public $phase_name;
+    public $phase_id;
 
     public static function withPropertyBaseListing(PropertyBaseListing $pb_base_listing)
     {
@@ -83,16 +85,26 @@ class Property
         $instance->community_id = $pb_base_listing->pb__CommunityId__c;
         $instance->mls_number = (empty($pb_base_listing->pb__MLSNumber__c)) ? '' : $pb_base_listing->pb__MLSNumber__c;
         $instance->description = $pb_base_listing->HTML_Description__c;
-        $instance->short_description = (empty($pb_base_listing->prop_short_desc__c)) ? '' : $pb_base_listing->prop_short_desc__c; 
+        $instance->short_description = (empty($pb_base_listing->prop_short_desc__c)) ? '' : $pb_base_listing->prop_short_desc__c;
         $instance->assets = $pb_base_listing->asset;
         $instance->last_modified_date = $pb_base_listing->LastModifiedDate;
         $instance->X3D_tour_link = $pb_base_listing->X3D_Tours__c;
         $instance->listing_agent_id = (empty($pb_base_listing->Listing_Agent__c)) ? '' : $pb_base_listing->Listing_Agent__c;
         $instance->sales_agent_id = (empty($pb_base_listing->pb__SalesAgentId__c)) ? '' : $pb_base_listing->pb__SalesAgentId__c;
+        $instance->phase_id = $pb_base_listing->pb__ZoneId__c;
 
         SEO::addProperty($instance);
 
         return $instance;
+    }
+
+    public function getPhaseId()
+    {
+        if ($this->phase_id == 'a0AC000000Iq6krMAB') {
+            return 'St. Thomas Park';
+        }
+
+        return $this->phase_id;
     }
 
     public function getListingAgentId()

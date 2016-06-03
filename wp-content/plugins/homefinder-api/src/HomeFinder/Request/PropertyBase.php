@@ -125,7 +125,8 @@ class PropertyBase
             'MLS_Page__c',
             'prop_short_desc__c',
             'Master_Down__c',
-            'pb__BuildingFloors__c'
+            'pb__BuildingFloors__c',
+            'pb__ZoneId__c',
         ));
     }
 

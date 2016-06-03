@@ -44,6 +44,7 @@ class PropertyBaseListing
     public $Listing_Agent__c;
     public $pb__SalesAgentId__c;
     public $prop_short_desc__c;
+    public $pb__ZoneId__c;
 
     private function _safeGetByKey($key, array $array)
     {
@@ -87,6 +88,7 @@ class PropertyBaseListing
         $this->Listing_Agent__c = self::_safeGetByKey('Listing_Agent__c', $pbase_list_item);
         $this->pb__SalesAgentId__c = self::_safeGetByKey('pb__SalesAgentId__c', $pbase_list_item);
         $this->prop_short_desc__c = self::_safeGetByKey('prop_short_desc__c', $pbase_list_item);
+        $this->pb__ZoneId__c = self::_safeGetByKey('pb__ZoneId__c', $pbase_list_item);
     }
 
 }
