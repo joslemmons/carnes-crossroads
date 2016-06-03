@@ -82,6 +82,29 @@
                 </div>
             </div>
             <div class="print action-link">
+                <form action="https://do.convertapi.com/Web2Pdf" method="post">
+                    <input type="hidden" name="ApiKey" value="780223306"/>
+                    <input type="hidden" name="CUrl"
+                           value="{{ floor_plan.link }}print/"/>
+                    <input type="hidden" name="DocumentTitle"
+                           value="Carnes Crossroads {{ property.getAddress }}"></input>
+                    <input type="hidden" name="PageSize" value="letter"></input>
+                    <input type="hidden" name="MarginTop" value="0in"></input>
+                    <input type="hidden" name="MarginRight" value="0in"></input>
+                    <input type="hidden" name="MarginBottom" value="0in"></input>
+                    <input type="hidden" name="MarginLeft" value="0in"></input>
+
+                    <a href="#" onclick="jQuery(this).closest('form').submit()">Print
+                        <div class="star-icon">
+                            <svg width="16" height="16">
+                                <image xlink:href="{{ template_uri }}/img/printer.svg"
+                                       src="{{ template_uri }}/img/printer.png" width="16" height="16"/>
+                            </svg>
+                        </div>
+                    </a>
+                </form>
+            </div>
+            {# <div class="print action-link">
                 <a target="_blank" href="{{ floor_plan.link }}/print/">Print
                     <div class="star-icon">
                         <svg width="16" height="16">
@@ -90,7 +113,7 @@
                         </svg>
                     </div>
                 </a>
-            </div>
+            </div> #}
         </div>
 
         <div class="listing-address">
