@@ -7,7 +7,7 @@ jQuery(function ($) {
         if ($('div.listings-wrapper').find('div.listing').length > 0) {
             var $property = $('div.listings-wrapper').find('div.listing').first();
 
-            if ($property.hasClass('offering')) {
+            if ($property.hasClass('offering') || $property.hasClass('floor-plan')) {
                 $property.trigger('click');
             }
             else {

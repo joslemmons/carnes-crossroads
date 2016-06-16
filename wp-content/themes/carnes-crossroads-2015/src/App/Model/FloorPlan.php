@@ -15,6 +15,8 @@ class FloorPlan
     public $full_bathrooms;
     public $half_bathrooms;
     public $square_footage;
+    public $is_master_downstairs;
+    public $is_single_story;
     public $brochure_src;
     public $floor_plan_src;
     public $builder;
@@ -104,6 +106,22 @@ class FloorPlan
                 $bathrooms = array_shift($bathrooms);
                 if ((int)$floor_plan->full_bathrooms < (int)$bathrooms) {
                     return false;
+                }
+            }
+
+            if (false !== $filters->getHomeFeatures()) {
+                $homeFeatures = $filters->getHomeFeatures();
+
+                if (stristr($homeFeatures, 'master') !== false) {
+                    if ($floor_plan->is_master_downstairs === false) {
+                        return false;
+                    }
+                }
+
+                if (stristr($homeFeatures, 'single') !== false) {
+                    if ($floor_plan->is_single_story === false) {
+                        return false;
+                    }
                 }
             }
 

@@ -97,6 +97,24 @@ piklist('field', array(
             'columns' => 12
         ),
         array(
+            'type' => 'checkbox',
+            'label' => 'Is Master Downstairs?',
+            'field' => Builder::$field_floor_plan_is_master_downstairs,
+            'columns' => 12,
+            'choices' => array(
+                Builder::YES => 'yes'
+            )
+        ),
+        array(
+            'type' => 'checkbox',
+            'label' => 'Is Single Story?',
+            'field' => Builder::$field_floor_plan_is_single_story,
+            'columns' => 12,
+            'choices' => array(
+                Builder::YES => 'yes'
+            )
+        ),
+        array(
             'type' => 'file',
             'label' => 'Upload Brochure',
             'field' => Builder::$field_floor_plan_brochure_attachment_id

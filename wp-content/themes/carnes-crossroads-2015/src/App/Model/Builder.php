@@ -14,6 +14,8 @@ class Builder extends Page
     public static $field_floor_plan_full_bathrooms;
     public static $field_floor_plan_half_bathrooms;
     public static $field_floor_plan_square_footage;
+    public static $field_floor_plan_is_master_downstairs;
+    public static $field_floor_plan_is_single_story;
     public static $field_floor_plan_brochure_attachment_id;
     public static $field_floor_plan_floor_plan_attachment_id;
 
@@ -39,6 +41,8 @@ class Builder extends Page
         self::$field_floor_plan_full_bathrooms = Config::getKeyPrefix() . 'floor_plan_full_bathrooms';
         self::$field_floor_plan_half_bathrooms = Config::getKeyPrefix() . 'floor_plan_half_bathrooms';
         self::$field_floor_plan_square_footage = Config::getKeyPrefix() . 'floor_plan_square_footage';
+        self::$field_floor_plan_is_master_downstairs = Config::getKeyPrefix() . 'floor_plan_is_master_downstairs';
+        self::$field_floor_plan_is_single_story = Config::getKeyPrefix() . 'floor_plan_is_single_story';
         self::$field_floor_plan_brochure_attachment_id = Config::getKeyPrefix() . 'floor_plan_brochure_attachment_id';
         self::$field_floor_plan_floor_plan_attachment_id = Config::getKeyPrefix() . 'floor_plan_floor_plan_attachment_id';
 
@@ -252,6 +256,8 @@ class Builder extends Page
             $floor_plan->bedrooms = $item[self::$field_floor_plan_bedrooms];
             $floor_plan->full_bathrooms = $item[self::$field_floor_plan_full_bathrooms];
             $floor_plan->half_bathrooms = $item[self::$field_floor_plan_half_bathrooms];
+            $floor_plan->is_master_downstairs = ($item[self::$field_floor_plan_is_master_downstairs][0] === self::YES);
+            $floor_plan->is_single_story = ($item[self::$field_floor_plan_is_single_story][0] === self::YES);
 
             $brochure_attachment_id = $item[self::$field_floor_plan_brochure_attachment_id];
             if (is_array($brochure_attachment_id) === true) {
