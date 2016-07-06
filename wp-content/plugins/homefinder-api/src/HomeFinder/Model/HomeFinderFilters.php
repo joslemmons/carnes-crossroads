@@ -225,7 +225,7 @@ class HomeFinderFilters
 //            'mlsPage' => $this->getMLSPage(),
 //            'lastUpdate' => $this->_rawMinLastUpdate,
 //            'squareFootage' => $this->_rawSquareFootage,
-//            'homeFeatures' => $this->_rawHomeFeatures,
+            'homeFeatures' => $this->_rawHomeFeatures,
 //            'views' => $this->_rawViews,
             'builders' => $this->_rawBuilders,
             'includePlans' => $this->_rawIncludePlans,
