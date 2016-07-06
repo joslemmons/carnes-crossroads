@@ -32,7 +32,7 @@ class Piklist_Form
       ,'add-ons'
     )
   );
-  
+
   /**
    * @var array Registered field templates
    * @access private
@@ -253,7 +253,7 @@ class Piklist_Form
     {
       add_action('admin_enqueue_scripts', 'wp_enqueue_media');
     }
-    
+
     add_filter('is_protected_meta', array('piklist_form', 'is_protected_meta'), 100, 3);
     add_filter('teeny_mce_before_init', array('piklist_form', 'tiny_mce_settings'), 100, 2);
     add_filter('tiny_mce_before_init', array('piklist_form', 'tiny_mce_settings'), 100, 2);
@@ -307,7 +307,7 @@ class Piklist_Form
         add_action('customize_controls_print_footer_scripts', array('piklist_form', 'editor_proxy'));
       }
     }
-    
+
     self::check_nonce();
 
     self::process_form();
@@ -391,7 +391,7 @@ class Piklist_Form
     $submit = '<p class="%1$s submit">
                  [field]
                </p>';
-               
+
     $form_table_field = '<fieldset>
                            <legend class="screen-reader-text"><span>[field_label label_tag="false"]</span></legend>
                            [field]
@@ -399,7 +399,7 @@ class Piklist_Form
                          [field_description_wrapper]
                            <p class="description">[field_description]</p>
                          [/field_description_wrapper]';
-                           
+
     $form_table = '<table class="form-table piklist-form-table">
                      [field_wrapper]
                        <tr class="%1$s">
@@ -417,8 +417,8 @@ class Piklist_Form
                          </td>
                        </tr>
                      [/field_wrapper]
-                   </table>';    
-                   
+                   </table>';
+
     $form_table_inline_description = '<table class="form-table">
                                         [field_wrapper]
                                           <tr class="%1$s">
@@ -450,7 +450,7 @@ class Piklist_Form
                        </div>
                      </div>
                    [/field_wrapper]';
-                                                     
+
     $theme = '[field_wrapper]
                 <div class="%1$s piklist-theme-field-container">
                   <div class="piklist-theme-label">
@@ -464,15 +464,15 @@ class Piklist_Form
                   </div>
                 </div>
               [/field_wrapper]';
-                       
+
     // Helpers and Defaults
-     
+
     $templates['field'] = array(
       'name' => __('Field', 'piklist')
       ,'description' => __('Displays a field.', 'piklist')
       ,'template' => '[field]'
     );
-    
+
     $templates['field_label'] = array(
       'name' => __('Field and Label', 'piklist')
       ,'description' => __('Displays a field then the label.', 'piklist')
@@ -484,7 +484,7 @@ class Piklist_Form
       ,'description' => __('Displays a label then the field.', 'piklist')
       ,'template' => '[field_label][field]'
     );
-    
+
     $templates['field_description'] = array(
       'name' => __('Field and Description', 'piklist')
       ,'description' => __('Displays a field then the description.', 'piklist')
@@ -493,9 +493,9 @@ class Piklist_Form
                         <p class="piklist-theme-field-description">[field_description]</p>
                       [/field_description_wrapper]'
     );
-    
+
     // Core
-    
+
     $templates['default'] = array(
       'name' => __('Default', 'piklist')
       ,'description' => __('General responsive layout with a fixed label column.', 'piklist')
@@ -507,13 +507,13 @@ class Piklist_Form
       ,'description' => __('General layout for submit button in WordPress.', 'piklist')
       ,'template' => $submit
     );
-        
+
     $templates['form_table'] = array(
       'name' => __('Form Table', 'piklist')
       ,'description' => __('Default layout for the WordPress form table.', 'piklist')
       ,'template' => $form_table
     );
-    
+
     $templates['form_table_field'] = array(
       'name' => __('Form Table - Field', 'piklist')
       ,'description' => __('The field component of the WordPress form table layout.', 'piklist')
@@ -525,7 +525,7 @@ class Piklist_Form
       ,'description' => __('The description is just added as appended text.', 'piklist')
       ,'template' => $form_table_inline_description
     );
-    
+
     // Scopes
     $templates['widget'] = array(
       'name' => __('Widget', 'piklist')
@@ -538,37 +538,37 @@ class Piklist_Form
       ,'description' => __('Default layout for Post fields.', 'piklist')
       ,'template' => $responsive
     );
-    
+
     $templates['term_meta'] = array(
       'name' => __('Terms', 'piklist')
       ,'description' => __('Default layout for Term fields.', 'piklist')
       ,'template' => $form_table
     );
-    
+
     $templates['user_meta'] = array(
       'name' => __('User', 'piklist')
       ,'description' => __('Default layout for User fields.', 'piklist')
       ,'template' => $form_table
     );
-    
+
     $templates['option'] = array(
       'name' => __('Option', 'piklist')
       ,'description' => __('Default layout for Option fields.', 'piklist')
       ,'template' => $responsive
     );
-    
+
     $templates['shortcode'] = array(
       'name' => __('Shortcode', 'piklist')
       ,'description' => __('Default layout for Shortcode fields.', 'piklist')
       ,'template' => $responsive
     );
-    
+
     $templates['media_meta'] = array(
       'name' => __('Media', 'piklist')
       ,'description' => __('Default layout for Media fields.', 'piklist')
       ,'template' => $responsive
     );
-    
+
     $templates['theme'] = array(
       'name' => __('Theme', 'piklist')
       ,'description' => __('Default layout for frontend fields.', 'piklist')
@@ -601,29 +601,26 @@ class Piklist_Form
 
     if (piklist_admin::is_widget() && (!$field['scope'] || ($field['scope'] && ($field['scope'] != piklist::$prefix && $field['field'] != 'fields'))))
     {
-      $id = $field['prefix'] 
-            . piklist_widget::widget()->get_field_id(str_replace(':', '_', $field['field'])) 
+      $id = $field['prefix']
+            . piklist_widget::widget()->get_field_id(str_replace(':', '_', $field['field']))
             . (is_numeric($field['index']) ? '_' . $field['index'] : null);
     }
     else
     {
       $field_name = $field['field'];
-      
+
       if (!is_numeric($field['index']) && strstr($field['field'], ':'))
       {
         $parts = explode(':', $field_name);
-        
-        $parts = array_filter($parts, function($item) 
-                 { 
-                   return !is_numeric($item);
-                 });
-        
+
+        $parts = array_filter($parts, array('piklist', 'is_not_numeric'));
+
         $field_name = implode(':', $parts);
       }
-      
-      $id = $field['prefix'] 
-            . ($field['scope'] && $field['scope'] != piklist::$prefix ? $field['scope'] . '_' : null) 
-            . str_replace(':', '_', $field_name) 
+
+      $id = $field['prefix']
+            . ($field['scope'] && $field['scope'] != piklist::$prefix ? $field['scope'] . '_' : null)
+            . str_replace(':', '_', $field_name)
             . (is_numeric($field['index']) ? '_' . $field['index'] : null);
     }
 
@@ -675,7 +672,7 @@ class Piklist_Form
     else
     {
       $name = $prefix
-              . ($field['scope'] ? $field['scope'] . (piklist_admin::is_media() && isset($GLOBALS['piklist_attachment']) ? '_' . $GLOBALS['piklist_attachment']->ID : '') : null) 
+              . ($field['scope'] ? $field['scope'] . (piklist_admin::is_media() && isset($GLOBALS['piklist_attachment']) ? '_' . $GLOBALS['piklist_attachment']->ID : '') : null)
               . ($field['field'] ? ($field['scope'] ? '[' : null) . str_replace(':', '][', $field['field']) . ($field['scope'] ? ']' : null) : null)
               . (($multiple && count($field['choices']) > 1) && $use_index ? '[' . $field['index'] . ']' : null)
               . ($use_object ? '[]' : null);
@@ -710,7 +707,7 @@ class Piklist_Form
     }
 
     $id = null;
-    
+
     switch ($field['scope'])
     {
       case 'comment':
@@ -823,9 +820,9 @@ class Piklist_Form
         }
 
       break;
-      
+
       case 'option':
-        
+
         if (isset($field['options']['type']))
         {
           if ($field['options']['type'] == 'blog')
@@ -844,7 +841,7 @@ class Piklist_Form
             }
           }
         }
-      
+
       break;
     }
 
@@ -870,7 +867,7 @@ class Piklist_Form
   public static function get_field_value($scope, $field, $type, $id = false, $unique = false)
   {
     global $wpdb;
-    
+
     if (piklist_admin::is_widget())
     {
       return isset(piklist_widget::widget()->instance[$field['field']]) ? maybe_unserialize(piklist_widget::widget()->instance[$field['field']]) : $field['value'];
@@ -886,53 +883,53 @@ class Piklist_Form
         case 'post':
         case 'user':
         case 'comment':
-          
+
           switch ($type)
           {
             case 'user':
               $method = 'get_userdata';
             break;
-          
+
             case 'comment':
               $method = 'get_comment';
             break;
-          
+
             default:
               $method = 'get_post';
             break;
           }
-          
+
           $return = array();
           $ids = is_array($id) ? $id : array($id);
 
           foreach ($ids as $id)
           {
             $object = $method($id);
-            
+
             $allowed = true;
-            
+
             if ($type == 'post' && $object->post_status == 'auto-draft')
             {
               $allowed = false;
             }
-            
+
             if ($type == 'user' && $field['field'] == 'user_pass')
             {
               $allowed = false;
             }
-            
+
             if (!is_wp_error($object) && is_object($object) && $allowed)
             {
               array_push($return, $object->$field['field'] ? $object->$field['field'] : $field['value']);
             }
           }
-          
+
           return !empty($return) ? (count($return) == 1 ? current($return) : $return) : $field['value'];
 
         break;
 
         case 'option':
-        
+
           if ($type != $scope)
           {
             $options = get_option($scope);
@@ -945,7 +942,7 @@ class Piklist_Form
             {
               $value = isset($options[$key]) ? $options[$key] : $field['value'];
             }
-          
+
             return $value;
           }
           else
@@ -967,7 +964,7 @@ class Piklist_Form
               elseif ($field['options']['type'] == 'site')
               {
                 $use_cache = isset($field['options']['use_cache']) ? $field['options']['use_cache'] : true;
-              
+
                 return get_site_option($field['field'], $field['value'], $use_cache);
               }
             }
@@ -1033,7 +1030,7 @@ class Piklist_Form
                 $meta_id = 'term_id';
 
               break;
-              
+
               case 'comment_meta':
 
                 $meta_table = $wpdb->commentmeta;
@@ -1041,7 +1038,7 @@ class Piklist_Form
                 $meta_id = 'comment_id';
 
               break;
-              
+
               case 'user_meta':
 
                 $meta_table = $wpdb->usermeta;
@@ -1050,7 +1047,7 @@ class Piklist_Form
 
               break;
             }
-            
+
             $keys = $wpdb->get_results($wpdb->prepare("SELECT {$meta_id_field} FROM $meta_table WHERE meta_key = %s AND $meta_id = %d", $meta_key, $id));
             $unique = count($keys) == 1 ? true : $unique;
           }
@@ -1089,7 +1086,7 @@ class Piklist_Form
               }
             }
           }
-          
+
           return $meta;
 
         break;
@@ -1109,7 +1106,7 @@ class Piklist_Form
       {
         $request_value = $_REQUEST[$scope][$key];
       }
-      
+
       if (isset($request_value))
       {
         if (is_array($request_value))
@@ -1120,7 +1117,7 @@ class Piklist_Form
         {
           $request_value = urldecode($request_value);
         }
-      
+
         return $request_value;
       }
     }
@@ -1155,13 +1152,13 @@ class Piklist_Form
 
     return $editor;
   }
-  
+
   /**
    * get_field_template
    * Get the field teplate.
    *
    * @param string $scope The field scope.
-   *  
+   *
    * @return string The field template.
    *
    * @access public
@@ -1347,7 +1344,7 @@ class Piklist_Form
   public static function ajax()
   {
     $method = isset($_REQUEST['method']) ? esc_attr($_REQUEST['method']) : false;
-    
+
     switch ($method)
     {
       case 'field':
@@ -1364,10 +1361,10 @@ class Piklist_Form
           if ($widget)
           {
             global $wp_widget_factory;
-            
+
             $wp_widget_factory->widgets[piklist::slug($widget)]->setup(piklist::slug($widget));
           }
-          
+
           wp_send_json(array(
             'field' => self::render_field($field, true)
             ,'data' => $field
@@ -1379,7 +1376,7 @@ class Piklist_Form
 
     wp_send_json_error();
   }
-  
+
   /**
    * setup_field
    * Setup the field defaults.
@@ -1427,7 +1424,7 @@ class Piklist_Form
       ,'sanitize' => array()
       ,'request_value' => null
       ,'valid' => true
-          
+
       ,'capability' => null
       ,'role' => null
       ,'logged_in' => false
@@ -1436,7 +1433,7 @@ class Piklist_Form
       ,'query' => array()
       ,'tax_query' => array()
       ,'meta_query' => array()
-                    
+
       ,'prefix' => true
       ,'index' => 0
       ,'index_force' => false
@@ -1451,16 +1448,16 @@ class Piklist_Form
       ,'multiple' => in_array($field['type'], self::$field_list_types['multiple_fields']) || (isset($field['attributes']) && is_array($field['attributes']) && in_array('multiple', $field['attributes']))
       ,'errors' => false
     ));
-    
+
     if (!isset($field['attributes']['class']))
     {
       $field['attributes']['class'] = array();
-    }    
+    }
     elseif (!is_array($field['attributes']['class']))
     {
       $field['attributes']['class'] = explode(' ', $field['attributes']['class']);
     }
-    
+
     return $field;
   }
 
@@ -1522,7 +1519,7 @@ class Piklist_Form
     {
       $field = piklist_relate::relate_field($field);
     }
-    
+
     // Set Template
     if (!$field['template'])
     {
@@ -1537,7 +1534,7 @@ class Piklist_Form
     if ($field['type'] == 'html')
     {
       $field['display'] = true;
-      
+
       if (!$field['field'])
       {
         $field['field'] = piklist::unique_id();
@@ -1546,7 +1543,7 @@ class Piklist_Form
 
     // Manage Classes
     $field['attributes']['class'] = !is_array($field['attributes']['class']) ? explode(' ', $field['attributes']['class']) : $field['attributes']['class'];
-    
+
     if ($field['type'] == 'hidden')
     {
       $field['attributes']['data-piklist-field-addmore-clear'] = false;
@@ -1558,9 +1555,9 @@ class Piklist_Form
       ,'index' => false
       ,'prefix' => $field['prefix']
     )));
-    
+
     array_push($field['attributes']['class'], 'piklist-field-element');
-    
+
     // Set Wrapper clas
     $wrapper_classes = array();
 
@@ -1569,24 +1566,24 @@ class Piklist_Form
     {
       array_push($wrapper_classes, 'piklist-field-type-group piklist-field-column-' . $field['columns']);
     }
-    
+
     if (is_numeric($field['columns']))
     {
       $field['attributes']['data-piklist-field-columns'] = $field['columns'];
     }
-    
+
     if (isset($field['attributes']['columns']) && is_numeric($field['attributes']['columns']))
     {
       array_push($field['attributes']['class'], 'piklist-field-column-' . $field['attributes']['columns']);
       unset($field['attributes']['columns']);
     }
-    
+
     // Add wrapper class
     if (isset($field['attributes']['wrapper_class']))
     {
       array_push($wrapper_classes, $field['attributes']['wrapper_class']);
     }
-    
+
     // Check Statuses - Legacy, these get mapped to conditions post_status_hide, post_status_value
     if (!empty($field['on_post_status']))
     {
@@ -1634,23 +1631,23 @@ class Piklist_Form
 
       unset($field['on_post_status']);
     }
-    
+
     // Get errors
     if (piklist_validate::errors() && !$field['group_field'])
     {
       $field['errors'] = piklist_validate::get_errors($field);
     }
-    
+
     // Highlight errors if needed.
     if ($field['errors'])
     {
       array_push($field['attributes']['class'], 'piklist-error');
     }
-    
+
     // Get field value
-    if (!$field['group_field'] 
-        && $field['value'] !== false 
-        && !in_array($field['type'], array('button', 'submit', 'reset')) 
+    if (!$field['group_field']
+        && $field['value'] !== false
+        && !in_array($field['type'], array('button', 'submit', 'reset'))
         && (!$field['relate'] || ($field['relate'] && !$field['value']))
         && $field['scope'] != piklist::$prefix)
     {
@@ -1663,7 +1660,7 @@ class Piklist_Form
         $field['value'] = self::get_field_value($field['scope'], $field, $field['scope'], $field['object_id'], false);
       }
     }
-    
+
     // Check for nested fields
     if ($field['description'])
     {
@@ -1681,7 +1678,7 @@ class Piklist_Form
     if (!empty($field['conditions']))
     {
       array_push($field['attributes']['class'], 'piklist-field-element-condition');
-    
+
       foreach ($field['conditions'] as &$condition)
       {
         if (is_array($condition))
@@ -1719,11 +1716,11 @@ class Piklist_Form
               ,'index' => false
               ,'prefix' => $field['prefix']
             );
-            
+
             $condition['id'] = self::get_field_id($condition_field);
             $condition['name'] = self::get_field_name($condition_field);
             $condition['reset'] = isset($condition['reset']) ? $condition['reset'] : true;
-            
+
             if (!in_array('piklist-field-condition', $field['attributes']['class']))
             {
               if (!in_array('piklist-field-condition', $wrapper_classes))
@@ -1749,13 +1746,13 @@ class Piklist_Form
       $field['attributes']['data-piklist-field-addmore-actions'] = $field['add_more'];
       $field['attributes']['data-piklist-field-addmore-single'] = $field['add_more'];
     }
-    
+
     // Check if field is an editor and prepare its additional attributes
     if ($field['type'] == 'editor')
     {
       $editor_id = self::get_field_id($field);
       $editor_id = substr($editor_id, 0, -2);
-      
+
       self::$field_editor_attributes[$editor_id] = '';
 
       foreach ($field['attributes'] as $key => $value)
@@ -1789,9 +1786,9 @@ class Piklist_Form
       )
       ,sprintf(self::$templates[$field['template']]['template'], implode(' ', $wrapper_classes))
     );
-    
+
     ksort($field);
-    
+
     /**
      * piklist_pre_render_field
      * Filter the request field before it renders
@@ -1830,7 +1827,7 @@ class Piklist_Form
     $field_to_render = self::template_tag_fetch('field_wrapper', $field['wrapper']);
 
     $rendered_field = do_shortcode($field_to_render);
-    
+
     switch ($field['position'])
     {
       case 'start':
@@ -1883,9 +1880,9 @@ class Piklist_Form
     {
       self::$fields_rendered[$field['scope']][$field_name]['options'] = array_merge(self::$fields_rendered[$field['scope']][$field_name]['options'], self::$field_editor_settings);
     }
-    
+
     self::$field_rendering = null;
-    
+
     // Return the field as requested
     if ($return)
     {
@@ -2003,7 +2000,7 @@ class Piklist_Form
 
       // Generate a unique id for this field configuration
       $fields_id = md5(serialize(self::$fields_rendered));
-      
+
       // Save configuration for later use
       if (false === get_transient(piklist::$prefix . $fields_id))
       {
@@ -2097,7 +2094,7 @@ class Piklist_Form
         if ($nested_field)
         {
           $field['child_field'] = true;
-          
+
           $content = str_replace(
             $matches[0][$i]
             ,self::render_field(
@@ -2307,19 +2304,19 @@ class Piklist_Form
       break;
 
       case 'field_description_wrapper':
-      
+
         $content = isset(self::$field_rendering['description']) && !empty(self::$field_rendering['description']) ? $content : '';
 
       break;
 
       case 'field_description':
-        
+
         $content = self::$field_rendering['display'] ? '' : __(self::$field_rendering['description']);
 
       break;
 
       case 'field':
-      
+
         $content = '';
 
         if (self::$field_rendering['display'])
@@ -2342,7 +2339,7 @@ class Piklist_Form
           {
             $values = array(self::$field_rendering['value']);
           }
-          
+
           if (self::$field_rendering['type'] == 'group')
           {
             $content .= self::template_field_group(self::$field_rendering);
@@ -2350,15 +2347,15 @@ class Piklist_Form
           elseif (is_numeric(self::$field_rendering['index_force']))
           {
             $clone = self::$field_rendering;
-            
+
             $clone['value'] = isset($clone['value'][$clone['index_force']]) ? $clone['value'][$clone['index_force']] : null;
-            
+
             $content .= self::template_field($type, $clone);
           }
           elseif (is_array($values) && count($values) > 1)
           {
             $clone = self::$field_rendering;
-            
+
             for ($index = 0; $index < count($values); $index++)
             {
               $clone['index'] = $index;
@@ -2376,7 +2373,7 @@ class Piklist_Form
               }
 
               $clone['value'] = $values[$clone['index']];
-              
+
               $content .= self::template_field($type, $clone);
             }
           }
@@ -2418,7 +2415,7 @@ class Piklist_Form
 
     $attributes = array(
       'for' => self::get_field_name($field)
-      ,'class' => 'piklist-field-part ' 
+      ,'class' => 'piklist-field-part '
                   . 'piklist' . ($field['child_field'] ? '-child' : '') . '-label '
                   . 'piklist-label-position-' . $field['label_position'] . ' '
                   . ($field['type'] == 'group' ? 'piklist-group-label ' : '')
@@ -2445,7 +2442,7 @@ class Piklist_Form
   {
     return piklist::render('fields/' . $type, $field, true);
   }
-  
+
   /**
    * template_field_group
    * Render a field group.
@@ -2461,17 +2458,17 @@ class Piklist_Form
   public static function template_field_group($field)
   {
     $content = '';
-    
+
     $cardinality = 1;
-    
+
     foreach ($field['fields'] as &$column)
     {
-      // Pass through the proper scope and set the field name appropriately 
+      // Pass through the proper scope and set the field name appropriately
       if (!isset($column['scope']) && $field['scope'])
       {
         $column['scope'] = $field['scope'];
       }
-    
+
       $column = self::setup_field($column);
 
       // Pass through common configuration options
@@ -2491,20 +2488,20 @@ class Piklist_Form
         else
         {
           $column['template'] = 'label_field';
-        }      
+        }
       }
-    
+
       // If there is an error pass it through
       if ($field['errors'])
       {
         array_push($column['attributes']['class'], 'piklist-error');
       }
-  
+
       // Set field if needed
       if ($column['type'] == 'html')
       {
         $column['display'] = true;
-      
+
         if (!isset($column['field']))
         {
           $column['field'] = piklist::unique_id();
@@ -2513,10 +2510,10 @@ class Piklist_Form
 
       // Set the object id
       $column['object_id'] = $field['object_id'] ? $field['object_id'] : self::get_field_object_id($column);
-    
+
       // Handle relate
       $column = piklist_relate::relate_field($column);
-      
+
       if (!$field['field'])
       {
         $column['value'] = self::get_field_value($column['scope'], $column, $column['scope'], $column['object_id']);
@@ -2526,7 +2523,7 @@ class Piklist_Form
     }
 
     unset($column);
-    
+
     if ($field['field'])
     {
       $cardinality = count($field['value']) > 1 && (!is_array($field['value']) || (is_array($field['value']) && !piklist::is_associative($field['value']))) ? count($field['value']) : 1;
@@ -2539,7 +2536,7 @@ class Piklist_Form
       // Setup group details
       $group_id = piklist::unique_id();
       $group_add_more = false;
-      
+
       foreach ($field['fields'] as $column)
       {
         // Set index
@@ -2550,7 +2547,7 @@ class Piklist_Form
 
         // Add specific group index
         $column['attributes']['data-piklist-field-group'] = $group_id;
-        
+
         // Update fields on child element if its a group
         if ($column['type'] == 'group')
         {
@@ -2559,7 +2556,7 @@ class Piklist_Form
             $_field['attributes']['data-piklist-field-sub-group'] = $group_id;
           }
         }
-        
+
         // Check sortable
         if (isset($field['attributes']['data-piklist-field-sortable']))
         {
@@ -2600,13 +2597,13 @@ class Piklist_Form
         if ($field['field'] && !stristr($column['field'], ':'))
         {
           $column['field'] = $field['field'] . ':' . ($group_add_more ? $index . ':' : null) . $column['field'];
-        } 
+        }
 
         // Get values
         if (piklist_validate::errors())
         {
           $column['errors'] = piklist_validate::get_errors($column);
-          
+
           $column['value'] = piklist_validate::get_request_value($column);
 
           // Update cardinality if necessary
@@ -2639,9 +2636,9 @@ class Piklist_Form
         $content .= self::render_field($column, true);
       }
     }
-    
+
     self::$field_rendering = $field_rendering;
-    
+
     return $content;
   }
 
@@ -2667,7 +2664,7 @@ class Piklist_Form
 
     return __($label);
   }
-  
+
   /**
    * register_forms
    * Register forms from the forms part folder.
@@ -2690,10 +2687,10 @@ class Piklist_Form
               ,'capability' => 'Capability'
               ,'logged_in' => 'Logged In'
             );
-    
+
     piklist::process_parts('forms', $data, array('piklist_form', 'register_forms_callback'));
   }
-  
+
   /**
    * register_forms_callback
    * The callback for successfully registered form parts.
@@ -2709,7 +2706,7 @@ class Piklist_Form
     global $pagenow;
 
     extract($arguments);
-    
+
     self::$forms[$id] = $arguments;
   }
 
@@ -2733,21 +2730,21 @@ class Piklist_Form
     {
       $form = str_replace('.php', '', strtolower($form));
     }
-    
+
     if (!isset(self::$forms[$form]))
     {
       $_form = null;
-      
+
       if (!is_null($add_on))
       {
         $_form = piklist::slug($add_on . ' ' . $form);
       }
-    
+
       if (!isset(self::$forms[$_form]))
       {
         $_form = piklist::slug(piklist_add_on::current() . ' ' . $form);
       }
-    
+
       if (!isset(self::$forms[$_form]))
       {
         return false;
@@ -2755,13 +2752,13 @@ class Piklist_Form
 
       $form = $_form;
     }
-    
+
     $form = self::$forms[$form];
-    
+
     if (!$form['data']['logged_in'] || ($form['data']['logged_in'] && is_user_logged_in()))
     {
       $output = piklist::render('fields/form', $form, true);
-      
+
       if ($return)
       {
         return $output;
@@ -2804,7 +2801,7 @@ class Piklist_Form
         {
           $redirect = preg_replace('/#.*/', '', $redirect);
           $url_arguments = array();
-          
+
           foreach (self::$form_submission as $scope => $fields)
           {
             foreach ($fields as $field)
@@ -2815,20 +2812,20 @@ class Piklist_Form
               }
             }
           }
-          
+
           if (!empty($url_arguments))
           {
             $redirect .= (stristr($redirect, '?') ? '&' : '?') . http_build_query($url_arguments);
           }
-          
+
           wp_redirect($redirect);
-          
+
           exit;
         }
       }
     }
   }
-  
+
   /**
    * save
    * Save the form data, excludes widgets and settings api fields.
@@ -2842,19 +2839,19 @@ class Piklist_Form
   public static function save()
   {
     global $wpdb, $wp_post_types, $wp_taxonomies;
-    
+
     $check = piklist_validate::check();
-    
+
     // Get our field data after its been sanitized and validated
     if (!isset($_REQUEST[piklist::$prefix]['fields']) || isset($_REQUEST[piklist::$prefix]['filter']) || !$check['valid'] || $check['type'] != 'POST')
     {
       self::$form_submission = $check['fields_data'];
-      
+
       return false;
     }
-    
+
     $fields_data = $check['fields_data'];
-    
+
     // Handle normal file uploads
     foreach ($fields_data as $scope => &$fields)
     {
@@ -2867,7 +2864,7 @@ class Piklist_Form
           if (!$field['display'] && array_key_exists(piklist::$prefix . $scope, $_FILES) && array_key_exists($field['field'], $_FILES[piklist::$prefix . $scope]['name']))
           {
             $paths = piklist::array_paths($_FILES[piklist::$prefix . $scope]['name'][$field['field']]);
-            
+
             if (!empty($paths))
             {
               if (strstr($paths[0], ':'))
@@ -2885,18 +2882,18 @@ class Piklist_Form
 
                   $field_name = explode(':', $path);
                   $field_name = $field_name[1];
-          
+
                   $options = $field['options'];
                   foreach ($field['fields'] as $_field)
                   {
                     if ($_field['field'] == $field_name)
                     {
                       $options = $_field['options'];
-                      
+
                       break;
                     }
                   }
-                          
+
                   $storage = array();
                   $storage_type = isset($field['options']['save']) && $field['options']['save'] == 'url';
 
@@ -2914,12 +2911,12 @@ class Piklist_Form
                           piklist::$prefix . $scope
                           ,'name'
                         ), array($field['field']));
-                
+
                 $storage = is_array($field['request_value']) ? array_filter($field['request_value']) : $field['request_value'];
                 $storage_type = isset($field['options']['save']) && $field['options']['save'] == 'url';
-                
+
                 $upload = self::save_upload($path, $storage, $storage_type);
-                
+
                 if ($upload)
                 {
                   $field['request_value'] = $upload;
@@ -2930,7 +2927,7 @@ class Piklist_Form
         }
       }
     }
-    
+
     $object_ids = array();
 
     // Save field data
@@ -2939,7 +2936,7 @@ class Piklist_Form
       if (in_array($scope, array('post', 'user', 'comment')))
       {
         $objects = array();
-        foreach ($fields as &$field) 
+        foreach ($fields as &$field)
         {
           $values = is_array($field['request_value']) ? $field['request_value'] : array($field['request_value']);
           foreach ($values as $index => $value)
@@ -2957,12 +2954,12 @@ class Piklist_Form
             {
               $objects[$id] = array();
             }
-          
+
             if (isset($field['object_id'][$index]) || $field['object_id'])
             {
               $objects[$id][$scope == 'comment' ? ($field['relate'] ? 'comment_ID' : 'comment_post_ID') : 'ID'] = $id;
             }
-          
+
             if ($field['request_value'] && !$field['display'])
             {
               $field_name = strrpos($field['field'], ':') > 0 ? substr($field['field'], strrpos($field['field'], ':') + 1) : $field['field'];
@@ -2970,8 +2967,8 @@ class Piklist_Form
             }
           }
         }
-        
-        foreach ($fields as &$field) 
+
+        foreach ($fields as &$field)
         {
           if ($field['relate'])
           {
@@ -2984,7 +2981,7 @@ class Piklist_Form
                 {
                   $field['relate']['remove'] = array();
                 }
-                
+
                 array_push($field['relate']['remove'], $_object_id);
               }
             }
@@ -3002,7 +2999,7 @@ class Piklist_Form
               if ($field['object_id'])
               {
                 $field['object_id'] = is_array($field['object_id']) ? $field['object_id'] : array($field['object_id']);
-                
+
                 array_push($field['object_id'], $result_id);
               }
               else
@@ -3011,22 +3008,22 @@ class Piklist_Form
               }
             }
           }
-          
+
           if (!isset($object_ids[$scope]))
           {
             $object_ids[$scope] = $result_id;
           }
-        }    
+        }
       }
       elseif (in_array($scope, array('post_meta', 'term_meta', 'user_meta', 'comment_meta')))
       {
         $meta_type = substr($scope, 0, strpos($scope, '_'));
         $meta = piklist_meta::get_meta_properties($meta_type);
-        
+
         foreach ($fields as &$field)
         {
           $field['object_id'] = $field['object_id'] ? $field['object_id'] : $object_ids[$meta_type];
-          
+
           if ($field['object_id'] && !$field['display'] && !strstr($field['field'], ':'))
           {
             $save_as = is_string($field['save_as']) ? $field['save_as'] : $field['field'];
@@ -3045,13 +3042,13 @@ class Piklist_Form
                 if (is_array($values))
                 {
                   $meta_ids = array();
-             
+
                   foreach ($values as $value)
                   {
                     if (!empty($current_meta_ids))
                     {
                       $meta_id = array_shift($current_meta_ids);
-                    
+
                       update_metadata_by_mid($meta_type, $meta_id, $value);
                     }
                     else
@@ -3070,7 +3067,7 @@ class Piklist_Form
                     if (!empty($current_group_meta_ids))
                     {
                       $group_meta_id = array_shift($current_group_meta_ids);
-                    
+
                       update_metadata_by_mid($meta_type, $group_meta_id, $meta_ids);
                     }
                     else
@@ -3089,7 +3086,7 @@ class Piklist_Form
                   if (!empty($current_meta_ids))
                   {
                     $meta_id = array_shift($current_meta_ids);
-                    
+
                     update_metadata_by_mid($meta_type, $meta_id, $values);
                   }
                   else
@@ -3098,7 +3095,7 @@ class Piklist_Form
                   }
                 }
               }
-            
+
               if (!empty($current_group_meta_ids))
               {
                 foreach ($current_group_meta_ids as $current_group_meta_id)
@@ -3130,7 +3127,7 @@ class Piklist_Form
                 {
                   $meta_id = array_shift($current_meta_ids);
                 }
-                
+
                 if (isset($meta_id))
                 {
                   update_metadata_by_mid($meta_type, $meta_id, $field['request_value']);
@@ -3141,7 +3138,7 @@ class Piklist_Form
                 add_metadata($meta_type, $field['object_id'], $save_as, $field['request_value']);
               }
             }
-            
+
             if (!empty($current_meta_ids))
             {
               foreach ($current_meta_ids as $current_meta_id)
@@ -3164,20 +3161,20 @@ class Piklist_Form
           {
             $taxonomy = is_string($field['save_as']) ? $field['save_as'] : $field['field'];
             $append[$taxonomy] = isset($field['options']['append']) && is_bool($field['options']['append']) ? $field['options']['append'] : false;
-             
+
             if (!isset($taxonomies[$taxonomy]))
             {
               $taxonomies[$taxonomy] = array();
 
               $field['object_id'] = $field['object_id'] ? $field['object_id'] : $object_ids[$wp_taxonomies[$taxonomy]->object_type[0]];
-              
+
               $ids[$taxonomy] = $field['object_id'];
             }
 
             if ($field['request_value'])
             {
               $request_value = is_array($field['request_value']) ? $field['request_value'] : array($field['request_value']);
-              
+
               foreach ($request_value as $terms)
               {
                 if (!empty($terms))
@@ -3235,28 +3232,28 @@ class Piklist_Form
           if ($field['field'] && !stristr($field['field'], ':'))
           {
             $value = $field['request_value'];
-            
+
             if (is_array($value) && piklist::is_flat($value) && count($value) == 1)
             {
               $value = current($value);
             }
-            
+
             if (!isset($field['options']['type']))
             {
               $auto_load = isset($field['options']['auto_load']) ? $field['options']['auto_load'] : null;
-           
+
               update_option($field['field'], $value, $auto_load);
             }
             elseif ($field['options']['type'] == 'blog' && $field['object_id'])
             {
               $deprecated = isset($field['options']['deprecated']) ? $field['options']['deprecated'] : null;
-           
+
               update_blog_option($field['object_id'], $field['field'], $value, $deprecated);
             }
             elseif ($field['options']['type'] == 'user' && $field['object_id'])
             {
               $global = isset($field['options']['global']) ? $field['options']['global'] : false;
-             
+
               update_user_option($field['object_id'], $field['field'], $value, $global);
             }
             elseif ($field['options']['type'] == 'site')
@@ -3289,9 +3286,9 @@ class Piklist_Form
     }
 
     self::$form_submission = $fields_data;
-    
+
     self::relate();
-    
+
     return true;
   }
 
@@ -3337,7 +3334,7 @@ class Piklist_Form
     {
       $storage = array();
     }
-    
+
     foreach ($codes as $set => $code)
     {
       if (in_array($code, array(UPLOAD_ERR_OK, 0), true))
@@ -3379,7 +3376,7 @@ class Piklist_Form
     global $wpdb;
 
     $object = array();
-    
+
     foreach (self::$scopes[$type] as $allowed)
     {
       if (isset($data[$allowed]) && !empty($data[$allowed]))
@@ -3481,7 +3478,7 @@ class Piklist_Form
   public static function relate()
   {
     $related = array();
-    
+
     foreach (self::$form_submission as $scope => $fields)
     {
       foreach ($fields as $field)
@@ -3492,21 +3489,21 @@ class Piklist_Form
           {
             $related[$field['relate_to']] = array();
           }
-        
+
           $is_meta = in_array($field['scope'], array('post_meta', 'user_meta', 'comment_meta'));
-          
+
           if ($is_meta && $field['value'])
           {
             $field['relate']['remove'] = array_diff($field['value'], is_array($field['request_value']) ? $field['request_value'] : array($field['request_value']));
           }
-          
+
           $relate = array(
             'scope_to' => $field['relate']['scope']
             ,'from' => $is_meta ? $field['request_value'] : $field['object_id']
             ,'scope_from' => $is_meta ? str_replace('_meta', '', $field['scope']) : $field['scope']
             ,'remove' => isset($field['relate']['remove']) ? $field['relate']['remove'] : array()
           );
-        
+
           if (!in_array($relate, $related[$field['relate_to']]))
           {
             array_push($related[$field['relate_to']], $relate);
@@ -3514,15 +3511,15 @@ class Piklist_Form
         }
       }
     }
-    
+
     foreach ($related as $to => $objects)
     {
       foreach ($objects as $object)
       {
         $meta_key = '_' . piklist::$prefix . 'relate_' . $object['scope_to'];
-        
+
         $froms = is_array($object['from']) ? $object['from'] : array($object['from']);
-        
+
         foreach ($froms as $from)
         {
           if (!in_array($from, $object['remove']))
@@ -3535,7 +3532,7 @@ class Piklist_Form
             }
           }
         }
-        
+
         foreach ($object['remove'] as $remove)
         {
           delete_metadata($object['scope_from'], $remove, $meta_key, $to);
@@ -3543,7 +3540,7 @@ class Piklist_Form
       }
     }
   }
-  
+
   /**
    * attributes_to_string
    * Convert an array of html attributes to a string.
@@ -3681,13 +3678,13 @@ class Piklist_Form
       if (is_bool($value))
       {
         $new_settings[$key] = $value ? true : false;
-        
+
         continue;
       }
       elseif (!empty($value) && is_string($value) && (('{' == $value{0} && '}' == $value{strlen($value) - 1}) || ('[' == $value{0} && ']' == $value{strlen($value) - 1}) || preg_match('/^\(?function ?\(/', $value)))
       {
         $new_settings[$key] = $value;
-        
+
         array_push($objects, $key);
 
         continue;
@@ -3695,19 +3692,19 @@ class Piklist_Form
 
       $new_settings[$key] = $value;
     }
-    
+
     foreach ($objects as $object)
     {
       if (isset($new_settings[$object]))
       {
         $decoded = json_decode($new_settings[$object]);
-        
+
         if (empty($decoded))
         {
           $decoded = preg_replace('/(\w+)\s{0,1}:/', '"\1":', str_replace(array("\r\n", "\r", "\n", "\t"), '', str_replace("'", '"', stripslashes($new_settings[$object]))));
           $decoded = json_decode($decoded);
         }
-        
+
         $new_settings[$object] = $decoded;
       }
     }
@@ -3721,7 +3718,7 @@ class Piklist_Form
    *
    * @param array $mceInit The tinymce init object.
    * @param string $editor_id The editor id.
-   * 
+   *
    * @return array The tinymce init object.
    *
    * @access public
@@ -3731,22 +3728,22 @@ class Piklist_Form
   public static function remove_theme_css($mceInit, $editor_id)
   {
     $prefix = piklist::$prefix . 'post_post_content';
-    
+
     if ($editor_id != 'content' && substr($editor_id, 0, strlen($prefix)) !== $prefix)
     {
       $stylesheets = get_editor_stylesheets();
-      
+
       $content_css = explode(',', $mceInit['content_css']);
       $content_css = array_diff($content_css, $stylesheets);
-      
+
       array_push($content_css,  piklist::$add_ons['piklist']['url'] . '/parts/css/tinymce-piklist.css');
-      
+
       $mceInit['content_css'] = implode(',', $content_css);
     }
-    
+
     return $mceInit;
   }
-  
+
   /**
    * render_assets
    * Check if assets need to be rendered for fields.
@@ -3789,7 +3786,7 @@ class Piklist_Form
       ));
     }
   }
-  
+
   /**
    * is_protected_meta
    * Remove fields from the default custom fields meta box
@@ -3807,7 +3804,7 @@ class Piklist_Form
   public static function is_protected_meta($protected, $meta_key, $meta_type)
   {
     $meta_type = $meta_type . '_meta';
-    
+
     return array_key_exists($meta_type, self::$fields_rendered) && array_key_exists($meta_key, self::$fields_rendered[$meta_type]) ? true : $protected;
   }
 }

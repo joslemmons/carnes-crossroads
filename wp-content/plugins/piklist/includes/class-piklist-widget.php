@@ -105,7 +105,7 @@ class Piklist_Widget
     $widget_class = 'piklist_universal_widget';
 
     $addons_paths = piklist::paths();
-    
+
     foreach ($addons_paths as $from => $path)
     {
       if (!piklist::directory_empty($path . '/parts/widgets'))
@@ -158,7 +158,7 @@ class Piklist_Widget
   public static function widget()
   {
     global $wp_widget_factory;
-    
+
     return isset($wp_widget_factory->widgets[self::$current_widget]) ? $wp_widget_factory->widgets[self::$current_widget] : null;
   }
 

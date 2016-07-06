@@ -1,12 +1,12 @@
 
 /* --------------------------------------------------------------------------------
   WordPress Style Updates
---------------------------------------------------------------------------------- */  
-  
+--------------------------------------------------------------------------------- */
+
   .inside ol {
     margin: 0 0 1em 1.5em;
   }
-    
+
   #poststuff h2.nav-tab-wrapper {
     margin-bottom: 0;
   }
@@ -14,11 +14,11 @@
   h2.nav-tab-wrapper.piklist-single-line-tab {
     padding-left: 0;
   }
-  
+
   h1:empty {
     display: none;
   }
-  
+
   .postbox .form-table {}
 
     .postbox .form-table th {
@@ -34,9 +34,9 @@
       max-width: 67%;
       padding: 1% 0 1% 1.5%;
     }
-  
+
   /* Bring the default modal style inline with the media modal style */
-  
+
   #piklist-thickbox-actions {
     position: fixed;
     bottom: 0;
@@ -49,17 +49,17 @@
     border-top: 1px solid #dfdfdf;
     overflow: hidden;
   }
-  
+
     #piklist-thickbox-actions * {
       float: right;
       margin-left: 16px;
     }
-  
+
   #TB_overlay,
   #TB_window {
     z-index: 100200 !important;
   }
-  
+
   #TB_title {
     height: 50px !important;
     -webkit-box-shadow: 0 4px 4px -4px rgba(0, 0, 0, 0.1);
@@ -71,29 +71,29 @@
       font-size: 22px;
       line-height: 50px !important;
     }
-  
+
     .tb-close-icon {
       top: 10px !important;
       right: 10px  !important;
       -webkit-transition: color .1s ease-in-out, background .1s ease-in-out;
       transition: color .1s ease-in-out, background .1s ease-in-out;
     }
-  
+
   .piklist-in-iframe .media-modal {
     top: 0;
     right: 0;
     left: 0;
     bottom: 0;
   }
-     
+
   table.form-table td > .piklist-field-list {
     margin-top: 5px;
   }
-  
+
   .wp-tab-panel > .piklist-field-list {
     margin-top: 1em;
   }
-  
+
   .postbox .notice,
   .widget-content .notice{
     -webkit-box-shadow: inset 0px 0px 1px 1px rgba(0, 0, 0, 0.04);
@@ -105,7 +105,7 @@
     .widget-content .notice ol {
       margin: 1em 0;
     }
-  
+
   .piklist-major-publishing-actions {
     margin: -7px -12px -12px -12px;
   }
@@ -116,24 +116,24 @@
 --------------------------------------------------------------------------------- */
 
   .piklist-workflow {}
-  
+
     .wp-admin.post-php .piklist-workflow,
     .wp-admin.post-new-php .piklist-workflow {
       margin: 0;
     }
-    
+
     .piklist-workflow .wp-filter {
       margin-bottom: 0;
     }
-  
+
     .wrap > .piklist-workflow {
       margin: 0;
     }
-  
+
   .piklist-workflow-position-header {
     padding: 10px 20px 0 2px;
   }
-  
+
   .wp-admin .piklist-addmore-placeholder {
     border-color: transparent;
     opacity: 1;
@@ -143,7 +143,7 @@
     -moz-box-shadow: inset 0px 0px 1px 1px rgba(0, 0, 0, 0.04);
     box-shadow: inset 0px 0px 1px 1px rgba(0, 0, 0, 0.04);
   }
-  
+
   /* Styles for the add-on field (admin) */
 
   .piklist-field-add-on {
@@ -160,23 +160,23 @@
     -moz-border-radius: 3px;
     border-radius: 3px;
   }
-  
+
     .piklist-field-add-on h3 {
       margin-top: 0px;
     }
-  
+
     .piklist-field-add-on .piklist-field-add-on-button {
       position: absolute;
       bottom: 10px;
       left: 10px;
     }
-  
+
     .piklist-field-add-on .piklist-field-add-on-button-settings {
       position: absolute;
       bottom: 10px;
       right: 10px;
     }
-  
+
   /* Additional style to show off extra information in meta box titles */
 
   .stuffbox h3 .piklist-title-right,
@@ -192,7 +192,7 @@
     opacity: 0.50;
     filter: alpha(opacity=50);
   }
-  
+
   /* Clone of admin notice but local placement */
 
   div.piklist-notice {
@@ -235,7 +235,7 @@
     float: none;
   }
 
-    #side-sortables .piklist-field-container { 
+    #side-sortables .piklist-field-container {
       padding: 0;
       margin-bottom: 10px;
       display: block !important;
@@ -244,7 +244,7 @@
     #side-sortables .piklist-field-container select {
       max-width: 100%;
     }
-  
+
     #side-sortables .piklist-label-container {
       display: block;
       position: static;
@@ -254,11 +254,11 @@
       margin: 0;
       border: none;
     }
-    
+
   #side-sortables .form-table {
     width: 100%;
   }
-  
+
     #side-sortables .form-table th,
     #side-sortables .form-table td {
       display: block;
@@ -266,7 +266,7 @@
       width: 250px;
       padding: 1% 1.5% 1% 0;
     }
-    
+
     #side-sortables .form-table td select,
     #side-sortables .form-table td input,
     #side-sortables .form-table td textarea {
@@ -304,28 +304,28 @@
 /* --------------------------------------------------------------------------------
   Piklist Meta Box Helpers
 --------------------------------------------------------------------------------- */
-  
+
   .piklist-meta-box hr {
     color: #dfdfdf;
     background-color: #dfdfdf;
     border: 0 none #dfdfdf;
     height: 1px;
   }
-  
+
   .piklist-meta-box h4 {
     clear: both;
   }
-  
+
   .piklist-meta-box .inside:after {
     content: "";
     display: table;
     clear: both;
-  }  
-  
+  }
+
   .piklist-meta-box-lock {
     display: none;
   }
-  
+
   .piklist-meta-box-none.postbox {
     background: none;
     border: none;
@@ -335,30 +335,30 @@
       background: none;
       border: none;
     }
-    
+
     .piklist-meta-box-no-title.postbox {
       padding-top: 8px;
     }
-    
+
       .piklist-meta-box-no-title.postbox h3 {
         display: none;
       }
-    
+
     .piklist-meta-box-none .inside {
       padding-left: 0;
     }
-    
+
     #poststuff .piklist-meta-box-none.postbox h3,
     #poststuff div.notice h3,
     #poststuff .piklist-meta-box-none .inside {
       padding-left: 0;
       padding-right: 0;
     }
-      
+
       #poststuff div.notice {
         margin-top: 15px;
       }
-    
+
     #poststuff .piklist-meta-box-none.postbox h3 {
       font-size: 1.3em;
     }
@@ -367,7 +367,7 @@
     border-top: 1px solid #eee;
     padding-top: 5px;
   }
-    
+
     /* Meta Messages */
 
     .piklist-meta-message {
@@ -382,16 +382,16 @@
       border-bottom: 1px solid;
       border-color: #dfdfdf;
       line-height: 1.5;
-    }  
+    }
 
       .piklist-meta-message a {
         font-weight: 600;
       }
-      
+
         .widget-content .piklist-field-container {
           padding-right: 0;
         }
-        
+
           .widget-content .piklist-label-container,
           .widget-content .piklist-field {
             line-height: 1.6667;
@@ -400,11 +400,11 @@
           }
 
 
-      
+
 /* --------------------------------------------------------------------------------
   Piklist Shortcode
 --------------------------------------------------------------------------------- */
-       
+
   a .mceIcon.mce_piklist_shortcode {
     text-align: center;
     font: 400 20px/1 dashicons!important;
@@ -491,13 +491,13 @@
 
   .piklist-shortcodes {
   }
-  
+
     .piklist-shortcodes .attachment {
       width: 20%;
       min-width: 149px;
       max-width: 190px;
     }
-    
+
     .piklist-shortcodes .dashicons {
       display: inline-block;
       font-size: 64px;
@@ -523,46 +523,46 @@
     border-bottom: 1px solid #e5e5e5;
     background-color: #fafafa;
   }
-  
+
     #customize-controls .piklist-universal-widget-select-container {
       padding: 4px 30px .3334em 30px;
       margin-left: -30px;
       margin-top: -20px;
     }
-    
+
     #customize-controls .widget-control-save {
       display: block !important;
     }
-  
+
     .piklist-universal-widget-select-container label {
       position: absolute;
       left: -999999px;
     }
-    
+
     .piklist-universal-widget-select-container p {
       margin: 0.3334em 0 0 0;
     }
-    
+
     .piklist-universal-widget-form-container {
       margin-bottom: 15px;
     }
-    
+
       .piklist-universal-widget-form-container div.error,
       .piklist-universal-widget-form-container div.updated {
         background-color: #fafafa;
       }
-      
+
       .piklist-universal-widget-form-container .wp-editor-wrap {
         margin-top: 10px;
       }
-    
+
 
 
 
 /* --------------------------------------------------------------------------------
   Piklist Admin Tooltips
 --------------------------------------------------------------------------------- */
-  
+
   .piklist-tooltip.dashicons {
     vertical-align: text-top;
   }
@@ -630,25 +630,25 @@
     body.admin-color-sunrise .piklist-tooltip:hover:before {
       color: #dd823b;
     }
-    
-    
+
+
 
 /* --------------------------------------------------------------------------------
   Piklist List Tables
 --------------------------------------------------------------------------------- */
-  
+
   .piklist-list-table-export {
     margin-top: 0;
   }
-  
+
   .piklist-list-table-export-columns {
     margin-top: 1em;
   }
-  
+
     .piklist-list-table-export-columns .piklist-field-addmore-wrapper {
       margin-bottom: 0.5em;
     }
-    
+
   #side-sortables .piklist-field-addmore-wrapper {
     min-width: 0;
   }
@@ -657,127 +657,127 @@
 
 /* --------------------------------------------------------------------------------
   Updates to WP-Tab Classes
-  - These should be submitted as patches to the core 
+  - These should be submitted as patches to the core
 --------------------------------------------------------------------------------- */
 
-  ul.wp-tab-bar { 
+  ul.wp-tab-bar {
     padding: 0;
-    margin: 8px 0 3px 0; 
+    margin: 8px 0 3px 0;
     float: none;
     width: auto;
     text-align: left;
   }
-  
+
     div.widget ul.wp-tab-bar {
       margin-top: 15px;
     }
-    
+
       div.widget ul.wp-tab-bar.wp-tab-panel-vertical {
         margin-top: 0;
       }
-       
-      ul.wp-tab-bar.wp-tab-panel-vertical { 
-        margin: 0 -120px 0 5px;
-        float: left; 
-        width: 120px; 
-        text-align: right; 
-      } 
 
-    ul.wp-tab-bar a { 
-      text-decoration: none; 
+      ul.wp-tab-bar.wp-tab-panel-vertical {
+        margin: 0 -120px 0 5px;
+        float: left;
+        width: 120px;
+        text-align: right;
+      }
+
+    ul.wp-tab-bar a {
+      text-decoration: none;
     }
-   
+
     ul.wp-tab-bar li {
       padding: 2px 5px 5px;
       display: inline;
-    } 
-    
+    }
+
       ul.wp-tab-bar li.hidden {
         display: none;
       }
-     
+
       ul.wp-tab-bar.wp-tab-panel-vertical li {
-        padding: 8px; 
-        display: block; 
+        padding: 8px;
+        display: block;
       }
 
-      ul.wp-tab-bar li.wp-tab-active { 
-        border-style: solid solid none solid; 
+      ul.wp-tab-bar li.wp-tab-active {
+        border-style: solid solid none solid;
         border-width: 1px 1px 0px 1px;
-      } 
+      }
 
-      ul.wp-tab-bar.wp-tab-panel-vertical li.wp-tab-active { 
-        border-style: solid none solid solid; 
+      ul.wp-tab-bar.wp-tab-panel-vertical li.wp-tab-active {
+        border-style: solid none solid solid;
         border-width: 1px 0 1px 1px;
         margin-right: -1px
       }
 
-        ul.wp-tab-bar li.wp-tab-active a { 
+        ul.wp-tab-bar li.wp-tab-active a {
           text-decoration: none;
           font-weight: normal;
           outline: none !important;
           -webkit-box-shadow: none !important;
           box-shadow: none !important;
         }
-        
-        ul.wp-tab-bar.wp-tab-panel-vertical li.wp-tab-active a { 
+
+        ul.wp-tab-bar.wp-tab-panel-vertical li.wp-tab-active a {
           font-weight: bold;
-        }      
-     
-  div.wp-tab-panel { 
+        }
+
+  div.wp-tab-panel {
     height: auto;
     min-height: 240px;
     margin-bottom: 15px;
-  } 
+  }
 
     * html div.wp-tab-panel {
       height: 240px;
     }
-    
+
     div.widget div.wp-tab-panel {
       max-height: none;
     }
-    
+
     * html div.widget div.wp-tab-panel {
       margin: 0 0 15px 0;
     }
-    
+
     div.wp-tab-panel.wp-tab-panel-vertical {
-      margin: 15px 0 15px 125px; 
+      margin: 15px 0 15px 125px;
       height: none;
     }
-    
+
     div.wp-tab-panel-resize {
       height: auto;
       min-height: 240px;
     }
-    
+
     div.wp-tab-panel h4 {
       margin-top: 0.25em;
     }
-    
+
     div.wp-tab-panel-fit {
       max-height: none;
     }
-    
-    div.wp-tab-panel-active { 
-      display: block; 
-    } 
-   
-    div.wp-tab-panel-inactive { 
-      display: none; 
-    } 
 
-  .has-right-sidebar ul.wp-tab-bar.wp-tab-panel-vertical li { 
-    display: inline; 
-    line-height: 1.35em; 
-  } 
-   
-  .no-js ul.wp-tab-bar.wp-tab-panel-vertical li.hide-if-no-js { 
-    display: none; 
-  } 
-  
-  
+    div.wp-tab-panel-active {
+      display: block;
+    }
+
+    div.wp-tab-panel-inactive {
+      display: none;
+    }
+
+  .has-right-sidebar ul.wp-tab-bar.wp-tab-panel-vertical li {
+    display: inline;
+    line-height: 1.35em;
+  }
+
+  .no-js ul.wp-tab-bar.wp-tab-panel-vertical li.hide-if-no-js {
+    display: none;
+  }
+
+
 
 /* --------------------------------------------------------------------------------
   Extra Styles for the core plugin pages
@@ -786,11 +786,11 @@
   a.toplevel_page_piklist:hover {
     color: #000;
   }
-  
+
   .about-wrap .feature-section.col .last-feature {
     margin-bottom: -20px;
   }
-  
+
   body.cpt-setting .postbox {
     background: #ffffff;
   }
@@ -800,7 +800,7 @@
 /* --------------------------------------------------------------------------------
   WordPress overrides
 --------------------------------------------------------------------------------- */
-  
+
   #save-action {
     float: left;
     margin-bottom: 7px;
@@ -813,21 +813,21 @@
   .subsubsub li {
     white-space: nowrap !important;
   }
-  
+
   body.wp-admin select {
     height: 1.9em;
   }
-  
+
   /* Alter Sortable Column Behavior */
   .manage-column .sorting-indicator {
     display: block !important;
     visibility: hidden;
   }
-  
+
     .manage-column .sorted .sorting-indicator {
       visibility: visible;
     }
-  
+
     .manage-column a:hover .sorting-indicator {
       visibility: visible;
     }
@@ -838,12 +838,12 @@
     margin: 1em 0 1em 0 !important;
     padding: 0 !important;
   }
-  
+
   #wpbody-content > h2.nav-tab-wrapper,
   #wpbody-content > h3.nav-tab-wrapper {
     margin-right: 20px;
   }
-  
+
   /* Workflow tabs on edit screens */
   #poststuff h2.nav-tab-wrapper,
   #poststuff h3.nav-tab-wrapper {
@@ -851,7 +851,7 @@
     padding-left: 10px;
     padding-top: 5px;
   }
-  
+
     #poststuff > #post-body > #post-body-content > h3,
     #poststuff > #post-body > .postbox-container > h3 {
       padding: 0px;
@@ -862,7 +862,7 @@
   .piklist-workflow-tab-wrapper {
     clear: right;
   }
-  
+
   .nav-tab-wrapper.piklist-workflow-tab-wrapper {
     margin-bottom: 0px;
   }
@@ -875,29 +875,29 @@
   #wpfooter {
     margin-top: -4em;
   }
-  
+
   /* Adjust Layout on Edit Screens if containers are empty */
   #post-body-content:empty {
     margin: 0;
   }
-  
+
   /* Set the background color of the editor just in case its in a metabox */
   .mceIframeContainer {
     background-color: #ffffff;
   }
-  
+
   /* WP Color Picker - Fixes jQuery UI Theme Conflicts */
   .wp-picker-container .ui-slider-vertical {
     width: auto;
     height: auto;
   }
-  
+
     .wp-picker-container .ui-slider-vertical .ui-widget-content,
     .wp-picker-container .ui-slider-vertical {
       background: none !important;
       border: none !important;
     }
-    
+
     .wp-picker-container .ui-state-focus,
     .wp-picker-container .ui-draggable-dragging {
       background: none !important;
@@ -909,12 +909,12 @@
 /* --------------------------------------------------------------------------------
   Piklist Right Now Dashboard Widget
 ---------------------------------------------------------------------------------- */
-   
+
   #dashboard_right_now h4 {
     margin: 0 0 8px 0px
   }
 
-  body.wp-admin #dashboard_right_now li a:before, 
+  body.wp-admin #dashboard_right_now li a:before,
   body.wp-admin #dashboard_right_now li span:before {
     content: "\f139";
   }
@@ -954,23 +954,23 @@
     #side-sortables .piklist-upload-file-preview .attachment {
       min-width: 125px;
     }
-    
+
       #side-sortables .piklist-upload-file-preview .attachment:nth-child(even) {
         margin-right: 0;
       }
   }
-  
+
   @media only screen and (max-width: 782px) {
-    
+
     ul.piklist-field-list li,
     ul.piklist-field-list li {
       min-height: 30px;
     }
-    
+
     .piklist-label, .piklist-child-label {
       font-size: 14px;
     }
-    
+
     #TB_window {
       width: 100% !important;
       height: 100% !important;
@@ -991,11 +991,11 @@
     display: block;
     margin-bottom: 1em;
   }
-    
+
     ul.piklist-tab-bar li {
       padding: 6px;
     }
-    
+
     ul.piklist-tab-bar li.wp-tab-active {
       background: #e5e5e5;
       border: 1px solid #cccccc;
@@ -1024,7 +1024,8 @@
 ---------------------------------------------------------------------------------- */
 
   body.piklist-workflow-active.edit-tags-php h1,
-  body.piklist-workflow-active.user-edit-php #profile-page h1,
+	body.piklist-workflow-active.term-php h1,
+	body.piklist-workflow-active.user-edit-php #profile-page h1,
   body.piklist-workflow-active.profile-php #profile-page h1 {
     display: none;
   }

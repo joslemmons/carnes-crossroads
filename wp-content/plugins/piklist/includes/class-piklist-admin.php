@@ -78,7 +78,7 @@ class Piklist_Admin
     {
       add_action('init', array('piklist_admin', 'init'));
     }
-    
+
     add_action('admin_head', array('piklist_admin', 'admin_head'));
     add_action('wp_head', array('piklist_admin', 'admin_head'));
     add_action('admin_menu', array('piklist_admin', 'register_admin_pages'), -1);
@@ -112,7 +112,7 @@ class Piklist_Admin
     {
       self::check_update('piklist/piklist.php', $data['version']);
     }
-    
+
     self::check_persistant_update();
 
     add_action('in_plugin_update_message-piklist/piklist.php', array('piklist_admin', 'update_available'), null, 2);
@@ -171,7 +171,7 @@ class Piklist_Admin
       ,'media' => 'screen, projection'
       ,'admin' => true
     ));
-    
+
     array_push($assets['styles'], array(
       'handle' => 'piklist-dashicons'
       ,'src' => piklist::$add_ons['piklist']['url'] . '/parts/fonts/dashicons.css'
@@ -521,7 +521,7 @@ class Piklist_Admin
     {
       $classes .= ' post_type-' . $typenow;
     }
-    
+
     return $classes;
   }
 
@@ -680,7 +680,7 @@ class Piklist_Admin
   public static function check_update($file, $version)
   {
     global $pagenow;
-  
+
     if (!is_admin() || !current_user_can('manage_options'))
     {
       return;
@@ -715,7 +715,7 @@ class Piklist_Admin
       }
 
       $current_version = is_array($versions[$plugin]) ? current($versions[$plugin]) : $versions[$plugin];
-      
+
       if (version_compare($version, $current_version, '>'))
       {
         self::get_update($file, $version, $current_version);
@@ -723,7 +723,7 @@ class Piklist_Admin
         array_unshift($versions[$plugin], $version);
       }
     }
-    
+
     if (piklist_admin::$network_wide)
     {
       update_site_option('piklist_active_plugin_versions', $versions);
@@ -733,7 +733,7 @@ class Piklist_Admin
       update_option('piklist_active_plugin_versions', $versions);
     }
   }
-  
+
   /**
    * check_persistant_update
    * Check if a piklist plugin needs to continue with an update
@@ -750,7 +750,7 @@ class Piklist_Admin
     {
       return;
     }
-    
+
     $valid_persistant_updates = array();
     foreach ($persistant_updates as $plugin => $versions)
     {
@@ -759,7 +759,7 @@ class Piklist_Admin
         $valid_persistant_updates[$version] = WP_PLUGIN_DIR . '/' . $plugin . '/parts/updates/' . $version . '.php';
       }
     }
-    
+
     if (!empty($valid_persistant_updates))
     {
       piklist::check_network_propagate(array('piklist_admin', 'run_update'), $valid_persistant_updates);
@@ -824,9 +824,9 @@ class Piklist_Admin
     foreach ($updates as $version => $update)
     {
       include_once $update;
-      
+
       $class = 'Piklist_Update_' . str_replace('.', '_', $version);
-      
+
       $execute = new $class();
     }
   }
@@ -844,7 +844,7 @@ class Piklist_Admin
   public static function is_widget()
   {
     global $pagenow;
-    
+
     return ($pagenow == 'widgets.php'
             || $pagenow == 'customize.php'
             || ($pagenow == 'admin-ajax.php' && (
@@ -854,7 +854,7 @@ class Piklist_Admin
                )
            );
   }
-  
+
   /**
    * is_setting
    * Checks if the current page action is for the Settings API
@@ -868,7 +868,7 @@ class Piklist_Admin
   public static function is_setting()
   {
     global $pagenow;
-    
+
     return isset($_REQUEST['option_page']) && isset($_REQUEST[$_REQUEST['option_page']]);
   }
 
@@ -885,9 +885,9 @@ class Piklist_Admin
   public static function is_post()
   {
     global $pagenow, $post;
-    
+
     $id = $post ? $post->ID : true;
-    
+
     return in_array($pagenow, array('post.php', 'post-new.php')) ? $id : false;
   }
 
@@ -905,11 +905,19 @@ class Piklist_Admin
   {
     global $pagenow, $tag_ID;
 
-    if ($pagenow == 'edit-tags.php')
+    if (in_array($pagenow, array('edit-tags.php', 'term.php')))
     {
       $id = $tag_ID ? $tag_ID : true;
-      
-      return isset($_REQUEST['action']) && $_REQUEST['action'] == 'edit' ? $id : 'new';
+
+			if($pagenow == 'edit-tags.php')
+			{
+				return 'new';
+			}
+			elseif($pagenow == 'term.php')
+			{
+				return 'edit';
+			}
+
     }
 
     return false;
@@ -928,30 +936,30 @@ class Piklist_Admin
   public static function is_user()
   {
     global $pagenow, $user_id;
-    
+
     switch ($pagenow)
     {
       case 'user-edit.php':
-        
+
         $id = $user_id ? $user_id : true;
-        
+
         return $id;
-      
+
       break;
-      
+
       case 'profile.php':
-        
+
         $current_user = wp_get_current_user();
-        
+
         return is_user_logged_in() ? $current_user->ID : true;
-    
+
       break;
-  
+
       case 'user-new.php':
       case 'user.php':
-        
+
         return true;
-      
+
       break;
     }
 
@@ -975,13 +983,13 @@ class Piklist_Admin
     if (in_array($pagenow, array('async-upload.php', 'media.php', 'media-upload.php', 'media-new.php')))
     {
       $id = $post ? $post->ID : true;
-      
+
       return $pagenow == 'media.php' ? $id : 'upload';
     }
 
     return false;
   }
-  
+
   /**
    * is_comment
    * Checks if the current page is a comment page in the admin.
@@ -997,7 +1005,31 @@ class Piklist_Admin
     global $pagenow, $comment;
 
     $id = $comment ? $comment->ID : true;
-    
+
     return $pagenow == 'comment.php' ? $id : false;
   }
+
+/**
+   * responsive_admin
+   * Checks for WP 3.8 or above, which has a responsive admin.
+	 * TODO: deprecate
+   *
+   * @return bool Whether admin is responsive or not.
+   *
+   * @access public
+   * @static
+   * @since 1.0
+   */
+  public static function responsive_admin()
+  {
+    if (version_compare($GLOBALS['wp_version'], '3.8', '>=' ))
+    {
+      return true;
+    }
+    else
+    {
+      return false;
+    }
+  }
+
 }

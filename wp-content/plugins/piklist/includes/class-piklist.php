@@ -157,7 +157,7 @@ class Piklist
     add_action('admin_head', array('piklist', 'process_parts_callback'), 1000);
     add_action('template_redirect', array('piklist', 'process_parts_callback'), 0);
     add_action('piklist_widgets_post_register', array('piklist', 'process_parts_callback'), 1000);
-    
+
     add_filter('piklist_workflow_part_exclude_folders', array('piklist', 'part_exclude_folders'), 10, 3);
   }
 
@@ -174,11 +174,11 @@ class Piklist
     if (isset(self::$add_ons[$addon]['path']))
     {
       $includes = self::get_directory_list(self::$add_ons[$addon]['path'] . '/includes');
-     
+
       foreach ($includes as $include)
       {
         $class_name = str_replace(array('.php', 'class_'), array('', ''), self::slug($include));
-     
+
         if ($include != __FILE__)
         {
           if (!class_exists($class_name))
@@ -416,7 +416,7 @@ class Piklist
         }
       }
     }
-    
+
     if (!isset($_file))
     {
       $_paths = self::paths();
@@ -625,11 +625,11 @@ class Piklist
     }
 
     $extensions = array();
-    
+
     // Move extensions to the end of the list
     uasort(self::$processed_parts[$folder]['parts'], array('piklist', 'sort_by_data_extend'));
     self::$processed_parts[$folder]['parts'] = array_values(self::$processed_parts[$folder]['parts']);
-    
+
     foreach (self::$processed_parts[$folder]['parts'] as $current_index => &$part)
     {
       if (isset(self::$processed_parts[$folder]['parts'][$current_index + 1]))
@@ -647,7 +647,7 @@ class Piklist
                 $data = is_array($extend['data'][$attribute]) && is_array($data) ? array_unique(array_merge($extend['data'][$attribute], $data), SORT_REGULAR) : $extend['data'][$attribute];
               }
             }
-            
+
             array_push($extensions, $index);
 
             foreach ($extend['render'] as $render)
@@ -675,7 +675,7 @@ class Piklist
         }
       }
     }
-    
+
     foreach ($extensions as $index)
     {
       unset(self::$processed_parts[$folder]['parts'][$index]);
@@ -707,7 +707,7 @@ class Piklist
     // Move extensions to the end of the list
     uasort(self::$processed_parts[$folder]['parts'], array('piklist', 'sort_by_data_extend'));
     self::$processed_parts[$folder]['parts'] = array_values(self::$processed_parts[$folder]['parts']);
-    
+
     /**
      * piklist_parts_process
      * Signals that parts are in process.
@@ -718,7 +718,7 @@ class Piklist
      * @since 1.0
      */
     do_action('piklist_parts_process', $folder);
-    
+
     /**
      * piklist_parts_process-FOLDER
      * Signals that parts are in process.
@@ -803,7 +803,7 @@ class Piklist
       }
 
       do_action('piklist_parts_processed', $folder);
-    
+
       do_action("piklist_parts_processed-{$folder}");
 
       unset(self::$processed_parts[$folder]);
@@ -845,7 +845,7 @@ class Piklist
   public static function get_file_data($file, $data)
   {
     $data = get_file_data($file, $data);
-   
+
     array_walk_recursive($data, array('piklist', 'array_values_cast'));
 
     foreach ($data as $parameter => &$value)
@@ -1003,7 +1003,7 @@ class Piklist
         {
           array_push($current, $_REQUEST['page']);
         }
-        
+
         return array_intersect($value, $current);
 
       break;
@@ -1060,7 +1060,7 @@ class Piklist
       break;
     }
   }
-  
+
   /**
    * part_exclude_folders
    * Used to exclude core files from being affected by workflows
@@ -1190,7 +1190,7 @@ class Piklist
     {
       $files = array();
     }
-    
+
     return $files;
   }
 
@@ -1266,14 +1266,14 @@ class Piklist
       {
         $core = $wpdb->blogid;
         $ids = $wpdb->get_col("SELECT blog_id FROM $wpdb->blogs");
-        
+
         foreach ($ids as $id)
         {
           switch_to_blog($id);
 
           call_user_func($callback, $arguments);
         }
-        
+
         switch_to_blog($core);
       }
       else
@@ -1526,27 +1526,27 @@ class Piklist
    * @static
    * @since 1.0
    */
-  public static function array_paths($array, $path = array(), $delimiter = ':') 
+  public static function array_paths($array, $path = array(), $delimiter = ':')
   {
     $map = array();
-   
+
     if (!empty($array))
     {
       foreach ($array as $key => $value)
       {
         $current_path = array_merge($path, array($key));
-      
-        if (is_array($value)) 
+
+        if (is_array($value))
         {
           $map = array_merge($map, self::array_paths($value, $current_path, $delimiter));
-        } 
-        else 
+        }
+        else
         {
           $map[] = join($delimiter, $current_path);
         }
       }
     }
-    
+
     return $map;
   }
 
@@ -1652,7 +1652,7 @@ class Piklist
       $value = strtolower($value) == 'true' ? true : false;
     }
   }
-  
+
   /**
    * array_values_strip_all_tags
    * Remove all tags from an array
@@ -1814,19 +1814,19 @@ class Piklist
       ,'ul'
       ,'video'
     );
-    
-    preg_match_all('~<([^/][^>]*?)>~', $string, $matches, PREG_PATTERN_ORDER); 
-    
+
+    preg_match_all('~<([^/][^>]*?)>~', $string, $matches, PREG_PATTERN_ORDER);
+
     if (isset($matches[1]) && !empty($matches[1]))
     {
       $found = array_intersect($block_level_tags, array_unique($matches[1]));
 
       return !empty($found);
     }
-    
+
     return false;
   }
-  
+
   /**
    * directory_empty
    * Check if a directory is empty.
@@ -2047,6 +2047,24 @@ class Piklist
     return empty($b['data']['extend']);
   }
 
+	/**
+	   * is_not_numeric
+	   * Checks if a value is not numeric
+	   *
+	   * @param mixed $a Value to check.
+	   *
+	   * @return bool Status of comparison.
+	   *
+	   * @access public
+	   * @static
+	   * @since 1.0
+	   */
+	  public static function is_not_numeric($a)
+	  {
+	    return !is_numeric($a);
+	  }
+
+
   /**
    * array_filter_recursive
    * Custom filter to remove empty values from a multidimensional array.
@@ -2076,7 +2094,7 @@ class Piklist
 
     return array_filter($array);
   }
-   
+
   /**
    * array_column
    * Returns an array of values representing a single column from the input array.
@@ -2103,32 +2121,32 @@ class Piklist
     {
       return array_column($array, $column, $index);
     }
-    
+
     $result = array();
 
-    foreach ($array as $item) 
+    foreach ($array as $item)
     {
-      if (!is_array($item)) 
+      if (!is_array($item))
       {
         continue;
-      } 
-      elseif (is_null($index) && array_key_exists($column, $item)) 
+      }
+      elseif (is_null($index) && array_key_exists($column, $item))
       {
         $result[] = $item[$column];
-      } 
-      elseif (array_key_exists($index, $item)) 
+      }
+      elseif (array_key_exists($index, $item))
       {
-        if (is_null($column)) 
+        if (is_null($column))
         {
           $result[$item[$index]] = $item;
-        } 
-        elseif (array_key_exists($column, $item)) 
+        }
+        elseif (array_key_exists($column, $item))
         {
           $result[$item[$index]] = $item[$column];
         }
       }
     }
-      
+
     return $result;
   }
 
@@ -2313,7 +2331,7 @@ class Piklist
 
     return $output;
   }
-  
+
   /**
    * pluck
    * Pluck values out of an object and return a key => value paired object
@@ -2356,7 +2374,7 @@ class Piklist
         array_push($list, $_value ? (is_object($value) && isset($value->$_value) ? $value->$_value : (isset($value[$_value]) ? $value[$_value] : null)) : null);
       }
     }
-    
+
     return $list;
   }
 
@@ -2439,11 +2457,11 @@ function piklist($option, $arguments = array())
         }
 
       break;
-      
+
       case 'form':
-        
+
         return piklist_form::render_form($arguments['form'], isset($arguments['add_on']) ? $arguments['add_on'] : null);
-        
+
       break;
 
       case 'list_table':
@@ -2553,30 +2571,30 @@ function piklist($option, $arguments = array())
         ));
 
       break;
-      
+
       case 'prefix':
-        
+
         return piklist::$prefix;
-      
+
       break;
-      
+
       case 'url':
-        
+
         return isset(piklist::$add_ons[$arguments]) ? piklist::$add_ons[$arguments]['url'] : null;
-      
+
       break;
 
       case 'path':
-        
+
         return isset(piklist::$add_ons[$arguments]) ? piklist::$add_ons[$arguments]['path'] : null;
-      
+
       break;
-      
+
       default:
 
         $return = isset($arguments['return']) ? $arguments['return'] : false;
         $loop = isset($arguments['loop']) ? $arguments['loop'] : null;
-        
+
         unset($arguments['return']);
         unset($arguments['loop']);
 

@@ -19,25 +19,25 @@ class Piklist_Validate
    * @access private
    */
   private static $valid = true;
-  
+
   /**
    * @var bool Whether a form submission was checked.
    * @access private
    */
   private static $checked = false;
-  
+
   /**
    * @var false|array The form submission.
    * @access private
    */
   private static $form_submission = false;
-  
+
   /**
    * @var false|string The form id.
    * @access private
    */
   private static $id = false;
-  
+
   /**
    * @var string The validation parameter.
    * @access private
@@ -55,7 +55,7 @@ class Piklist_Validate
    * @access private
    */
   private static $sanitization_rules = array();
-    
+
   /**
    * _construct
    * Class constructor.
@@ -72,7 +72,7 @@ class Piklist_Validate
     add_action('piklist_notices', array('piklist_validate', 'notices'));
     add_action('wp_ajax_piklist_validate', array('piklist_validate', 'ajax'));
     add_action('wp_ajax_nopriv_piklist_validate', array('piklist_validate', 'ajax'));
-    
+
     add_filter('piklist_assets_localize', array('piklist_validate', 'assets_localize'));
     add_filter('wp_redirect', array('piklist_validate', 'wp_redirect'), 10, 2);
     add_filter('piklist_validation_rules', array('piklist_validate', 'validation_rules'));
@@ -92,7 +92,7 @@ class Piklist_Validate
     /**
      * piklist_validation_rules
      * Add your own validation rules.
-     * 
+     *
      * @since 1.0
      */
     self::$validation_rules = apply_filters('piklist_validation_rules', self::$validation_rules);
@@ -100,14 +100,14 @@ class Piklist_Validate
     /**
      * piklist_sanitization_rules
      * Add your own sanitization rules.
-     * 
+     *
      * @since 1.0
      */
     self::$sanitization_rules = apply_filters('piklist_sanitization_rules', self::$sanitization_rules);
-    
+
     self::get_data();
   }
-  
+
   /**
    * wp_redirect
    * Keeps error persistant across redirects.
@@ -124,12 +124,12 @@ class Piklist_Validate
   public static function wp_redirect($location, $status)
   {
     global $pagenow;
-    
+
     $parameter = piklist::$prefix . '[' . self::$parameter . ']';
-    
+
     if (self::$id && $status == 302)
     {
-      if ($pagenow == 'edit-tags.php')
+      if (in_array($pagenow, array('edit-tags.php', 'term.php')))
       {
         $location = preg_replace('/&?' . $parameter . '=[^&]*/', '', $_SERVER['HTTP_REFERER']);
       }
@@ -138,7 +138,7 @@ class Piklist_Validate
     }
     else
     {
-      if ($pagenow == 'edit-tags.php')
+      if (in_array($pagenow, array('edit-tags.php', 'term.php')))
       {
         foreach (array('action', 'tag_ID', $parameter) as $variable)
         {
@@ -149,7 +149,7 @@ class Piklist_Validate
 
     return $location;
   }
-  
+
   /**
    * admin_head
    * Render admin notices for validation errors.
@@ -165,7 +165,7 @@ class Piklist_Validate
       piklist::render('shared/notice-updated-hide');
     }
   }
-  
+
   /**
    * ajax
    * Provides some ajax methods for validation
@@ -177,7 +177,7 @@ class Piklist_Validate
   public static function ajax()
   {
     $method = isset($_REQUEST['method']) ? esc_attr($_REQUEST['method']) : false;
-    
+
     switch ($method)
     {
       case 'check':
@@ -185,15 +185,15 @@ class Piklist_Validate
         if (isset($_REQUEST['data']))
         {
           parse_str($_REQUEST['data'], $data);
-          
+
           array_walk_recursive($data, array('piklist', 'array_values_strip_all_tags'));
-          
+
           extract($data[piklist::$prefix]);
-          
+
           if ($nonce && $fields && wp_verify_nonce($nonce, 'piklist-' . $fields))
           {
             $check = self::check($data, $fields, true);
-            
+
             if ($check['valid'] === true)
             {
               wp_send_json(array(
@@ -203,9 +203,9 @@ class Piklist_Validate
             else
             {
               $errors = array();
-              
+
               self::$form_submission = $check['fields_data'];
-              
+
               foreach (self::$form_submission as $scope => $fields)
               {
                 foreach ($fields as $field)
@@ -216,10 +216,10 @@ class Piklist_Validate
                   }
                 }
               }
-              
+
               wp_send_json_error(array(
                 'errors' => $errors
-                ,'notice' => self::notices(null, true) 
+                ,'notice' => self::notices(null, true)
               ));
             }
           }
@@ -230,7 +230,7 @@ class Piklist_Validate
 
     wp_send_json_error();
   }
-  
+
   /**
    * notices
    * Render notices for each individual field that has errors.
@@ -248,11 +248,11 @@ class Piklist_Validate
     {
       return;
     }
-    
+
     $submitted_form_id = piklist_form::get('form_id');
 
     $errors = array();
-    
+
     foreach (self::$form_submission as $scope => $fields)
     {
       foreach ($fields as $field)
@@ -266,28 +266,28 @@ class Piklist_Validate
         }
       }
     }
-    
+
     $errors = array_unique($errors);
-    
+
     if (((($submitted_form_id && $form_id == $submitted_form_id) || !$submitted_form_id) && !empty($errors)) || $fetch)
     {
       $rendered_errors = array();
-      
+
       $content = '<ul>';
-      
+
       foreach ($errors as $error)
       {
         $content .= '<li>' . $error . '</li>';
       }
-      
+
       $content .= '</ul>';
-      
+
       $arguments = array(
                      'id' => 'piklist_validation_error'
                      ,'notice_type' => 'error'
                      ,'content' => $content
                    );
-        
+
       if ($fetch)
       {
         return piklist::render('shared/notice', $arguments, true);
@@ -298,7 +298,7 @@ class Piklist_Validate
       }
     }
   }
-  
+
   /**
    * check
    * Run all validation and sanitization checks against the rendered fields.
@@ -316,19 +316,19 @@ class Piklist_Validate
   {
     self::$valid = true;
     self::$checked = false;
-    
+
     if (!$fields_id)
     {
       $fields_id = isset($_REQUEST[piklist::$prefix]['fields']) ? esc_attr($_REQUEST[piklist::$prefix]['fields']) : null;
     }
 
-    if (!$fields_id || !$fields_data = get_transient(piklist::$prefix . $fields_id)) 
+    if (!$fields_id || !$fields_data = get_transient(piklist::$prefix . $fields_id))
     {
       return false;
     }
 
     $clones = array();
-    
+
     foreach ($fields_data as $type => &$fields)
     {
       foreach ($fields as &$field)
@@ -363,11 +363,11 @@ class Piklist_Validate
             $request_data = $_REQUEST;
           }
         }
-        
+
         if ($request_data && $field['field'] && $field['type'] != 'html')
         {
           $field['errors'] = false;
-          
+
           if (!in_array($field['field'], $clones))
           {
             if (isset($request_data[$field['field']]))
@@ -405,11 +405,11 @@ class Piklist_Validate
               }
             }
           }
-          
+
           if ($field['type'] == 'group' && $field['field'] && !strstr($field['field'], ':'))
           {
             $paths = piklist::array_paths($field['request_value']);
-            
+
             foreach ($paths as $path)
             {
               $path = explode(':', $path);
@@ -418,9 +418,9 @@ class Piklist_Validate
                 unset($path[count($path) - 1]);
               }
               $path = implode(':', $path);
-              
+
               $field_name = $field['field'] . ':' . $path;
-              
+
               if (!isset($fields[$path]) && !in_array($field_name, $clones))
               {
                 $original = preg_replace('/\:\d+\:/', ':0:', $field_name);
@@ -430,18 +430,18 @@ class Piklist_Validate
                   unset($original[count($original) - 1]);
                 }
                 $original = implode(':', $original);
-                
+
                 if (isset($fields[$original]))
                 {
                   $clone = $fields[$original];
-                  
+
                   $path = array_reverse(explode(':', $path));
                   for ($i = 0; $i < count($path); $i++)
                   {
                     if (is_numeric($path[$i]))
                     {
                       $clone['index'] = (int) $path[$i];
-                      
+
                       break;
                     }
                   }
@@ -458,13 +458,13 @@ class Piklist_Validate
 
                   $position = array_search($original, array_keys($fields)) + 1;
                   $fields = array_slice($fields, 0, $position, true) + array($field_name => $clone) + array_slice($fields, $position, count($fields) - 1, true);
-                
+
                   array_push($clones, $field_name);
                 }
               }
             }
           }
-          
+
           // Strip Slashes
           $field['request_value'] = stripslashes_deep($field['request_value']);
 
@@ -473,7 +473,7 @@ class Piklist_Validate
           {
             $field = self::required_value($field);
           }
-          
+
           // Sanitization
           foreach ($field['sanitize'] as $sanitize)
           {
@@ -489,7 +489,7 @@ class Piklist_Validate
                 {
                   $path = explode(':', $field['field']);
                   $group = array_shift($path);
-      
+
                   piklist::array_path_set($fields[$group]['request_value'], $path, $field['request_value']);
                 }
               }
@@ -529,9 +529,9 @@ class Piklist_Validate
         }
       }
     }
-    
+
     self::$checked = true;
-        
+
     self::set_data($fields_id, $fields_data);
 
     return array(
@@ -540,7 +540,7 @@ class Piklist_Validate
       ,'fields_data' => $fields_data
     );
   }
-  
+
   /**
    * assets_localize
    * Add data to the local piklist variable
@@ -560,7 +560,7 @@ class Piklist_Validate
 
     return $localize;
   }
-  
+
   /**
    * required_value
    * Check to see if the value is set on a field.
@@ -578,30 +578,30 @@ class Piklist_Validate
     if ($field['type'] == 'file' && isset($_FILES[piklist::$prefix . $field['scope']]['name'][$field['field']]))
     {
       $index = 0;
-      
+
       foreach ($_FILES[piklist::$prefix . $field['scope']]['error'][$field['field']] as $error)
       {
         if ($error != 0)
         {
           $field = self::add_error($field, $index, __('is a required field.', 'piklist'));
         }
-        
+
         $index++;
       }
     }
     elseif (is_array($field['request_value']))
     {
       $index = 0;
-      
+
       foreach ($field['request_value'] as $request_value)
       {
         $required = is_array($request_value) ? array_filter($request_value) : $request_value;
-      
+
         if (empty($required))
         {
           $field = self::add_error($field, $index, __('is a required field.', 'piklist'));
         }
-        
+
         $index++;
       }
     }
@@ -609,10 +609,10 @@ class Piklist_Validate
     {
       $field = self::add_error($field, 0, __('is a required field.', 'piklist'));
     }
-    
+
     return $field;
   }
-  
+
   /**
    * sanitize_value_callback
    * Run sanitize callback rules
@@ -629,15 +629,15 @@ class Piklist_Validate
   private static function sanitize_value_callback($field, $sanitization)
   {
     $options = isset($sanitization['options']) ? $sanitization['options'] : array();
-    
+
     if (is_array($field['request_value']))
     {
       $index = 0;
-      
+
       foreach ($field['request_value'] as $request_value)
       {
         $field['request_value'][$index] = call_user_func_array($sanitization['callback'], array($request_value, $field, $options));
-                
+
         $index++;
       }
     }
@@ -645,10 +645,10 @@ class Piklist_Validate
     {
       $field['request_value'] = call_user_func_array($sanitization['callback'], array($field['request_value'], $field, $options));
     }
- 
+
     return $field;
   }
-  
+
   /**
    * validate_value_callback
    * Run validation callback rules
@@ -670,16 +670,16 @@ class Piklist_Validate
     if (is_array($field['request_value']) && ($field['add_more'] || !piklist::is_flat($field['request_value'])) && $field['type'] != 'group')
     {
       $index = 0;
-      
+
       foreach ($field['request_value'] as $request_value)
       {
         $validation_result = call_user_func_array($validation['callback'], array($index, $request_value, $options, $field, $fields_data));
-        
+
         if ($validation_result !== true)
         {
           $field = self::add_error($field, $index, !empty($validation['message']) ? $validation['message'] : (is_string($validation_result) ? $validation_result : __('is not valid input', 'piklist')));
         }
-        
+
         $index++;
       }
     }
@@ -692,10 +692,10 @@ class Piklist_Validate
         $field = self::add_error($field, 0, !empty($validation['message']) ? $validation['message'] : (is_string($validation_result) ? $validation_result : __('is not valid input', 'piklist')));
       }
     }
-    
+
     return $field;
   }
-  
+
   /**
    * validate_value_rule
    * Run validation rules
@@ -714,14 +714,14 @@ class Piklist_Validate
     if (is_array($field['request_value']))
     {
       $index = 0;
-      
+
       foreach ($field['request_value'] as $request_value)
       {
         if (!empty($request_value) && !preg_match($validation['rule'], $request_value))
         {
           $field = self::add_error($field, $index, $validation['message']);
         }
-        
+
         $index++;
       }
     }
@@ -729,13 +729,13 @@ class Piklist_Validate
     {
       $field = self::add_error($field, 0, $validation['message']);
     }
-    
+
     return $field;
   }
 
   /**
    * add_error
-   * Add errors to a field 
+   * Add errors to a field
    *
    * @param array $field The field object.
    * @param int $index The field index.s
@@ -750,11 +750,11 @@ class Piklist_Validate
   private static function add_error($field, $index, $message)
   {
     self::$valid = false;
-    
+
     $field['valid'] = false;
-    
+
     $name = $field['label'] ? $field['label'] : (isset($field['attributes']['placeholder']) ? $field['attributes']['placeholder'] : __(ucwords($field['type'])));
-    
+
     if (!is_array($field['errors']))
     {
       $field['errors'] = array(
@@ -765,14 +765,14 @@ class Piklist_Validate
     {
       $field['errors'][$index] = array();
     }
-    
+
     $name = $field['label'] ? $field['label'] : (isset($field['attributes']['placeholder']) ? $field['attributes']['placeholder'] : __(ucwords($field['type'])));
-    
+
     array_push($field['errors'][$index], '<strong>' . $name . '</strong>' . "&nbsp;" . $message);
-    
+
     return $field;
   }
-  
+
   /**
    * set_data
    * Save the request version of the fields object as a transient.
@@ -791,11 +791,11 @@ class Piklist_Validate
       self::$id = substr(md5($fields_id), 0, 10);
 
       $set = set_transient(piklist::$prefix . 'validation_' . self::$id, $fields_data);
-      
+
       self::$form_submission = $fields_data;
     }
   }
-  
+
   /**
    * get_data
    * Get the request version of the fields object.
@@ -809,13 +809,13 @@ class Piklist_Validate
     if (isset($_REQUEST[piklist::$prefix]) && isset($_REQUEST[piklist::$prefix][self::$parameter]))
     {
       self::$id = esc_attr($_REQUEST[piklist::$prefix][self::$parameter]);
-      
+
       self::$form_submission = get_transient(piklist::$prefix . 'validation_' . self::$id);
-      
+
       delete_transient(piklist::$prefix . 'validation_' . self::$id);
     }
   }
-  
+
   /**
    * errors
    * Check for errors on a submitted form.
@@ -829,7 +829,7 @@ class Piklist_Validate
   public static function errors()
   {
     return self::$form_submission;
-  } 
+  }
 
   /**
    * get_errors
@@ -846,12 +846,12 @@ class Piklist_Validate
   public static function get_errors($field)
   {
     $errors = false;
-    
+
     if (array_key_exists($field['scope'], self::$form_submission) && array_key_exists($field['field'], self::$form_submission[$field['scope']]))
     {
       $errors = self::$form_submission[$field['scope']][$field['field']]['errors'];
     }
-    
+
     return $errors;
   }
 
@@ -870,7 +870,7 @@ class Piklist_Validate
   public static function get_request_value($field)
   {
     $value = $field['value'];
-    
+
     if (array_key_exists($field['scope'], self::$form_submission) && array_key_exists($field['field'], self::$form_submission[$field['scope']]))
     {
       $value = self::$form_submission[$field['scope']][$field['field']]['request_value'];
@@ -884,7 +884,7 @@ class Piklist_Validate
   /**
    * Included Validation Callbacks
    */
-  
+
   /**
    * validation_rules
    * Array of included validation rules.
@@ -1039,7 +1039,7 @@ class Piklist_Validate
   public static function validate_email_exists($index, $value, $options, $field, $fields)
   {
     global $current_user;
-    
+
     return (email_exists($value) && !is_user_logged_in()) || (email_exists($value) && is_user_logged_in() && $value != $current_user->user_email) ? sprintf(__('cannot be "%s". This email is registered to another user.', 'piklist'), $value) : true;
   }
 
@@ -1179,7 +1179,7 @@ class Piklist_Validate
       ,'max' => INF
       ,'count' => false
     ));
-    
+
     extract($options);
 
     switch ($count)
@@ -1198,7 +1198,7 @@ class Piklist_Validate
         $total = strlen($value);
 
       break;
-      
+
       default:
 
         $grammar = $field['type'] == 'file' || $field['add_more'] ? __('items added', 'piklist') : __('items selected', 'piklist');
@@ -1206,7 +1206,7 @@ class Piklist_Validate
 
       break;
     }
-    
+
     if ($total < $min || $total > $max)
     {
       if ($min == $max)
@@ -1291,11 +1291,11 @@ class Piklist_Validate
       return true;
     }
   }
-  
+
   /**
    * validate_match
    * Check if two fields match
-   * 
+   *
    * @param int $index The field index being checked.
    * @param mixed $value The value of the field.
    * @param array $options The options.
@@ -1313,7 +1313,7 @@ class Piklist_Validate
     if (isset($options['field']))
     {
       $scope = is_array($options['field']) && isset($options['field']['scope']) ? $options['field']['scope'] : $field['scope'];
-    
+
       if (isset($options['field']) && isset($fields[$scope][$options['field']]))
       {
         if (isset($fields[$scope][$options['field']]['request_value'][$index]) && $fields[$scope][$options['field']]['request_value'][$index] === $value)
@@ -1329,7 +1329,7 @@ class Piklist_Validate
 
     return true;
   }
-  
+
   /**
    * Included Sanitization Callbacks
    */
@@ -1408,7 +1408,7 @@ class Piklist_Validate
    * sanitize_email
    * Strips out all characters that are not allowable in an email address.
    * Uses the WordPress function sanitize_email().
-   * 
+   *
    * @param mixed $value The value of the field.
    * @param array $options The options.
    * @param array $field The field object.
@@ -1429,10 +1429,10 @@ class Piklist_Validate
    * Sanitizes a filename
    * -Removes special characters that are illegal in filenames on certain operating systems
    * -Removes special characters requiring special escaping to manipulate at the command line.
-   * -Replaces spaces and consecutive dashes with a single dash. 
+   * -Replaces spaces and consecutive dashes with a single dash.
    * -Trims period, dash and underscore from beginning and end of filename
    * Uses the WordPress function sanitize_file_name()
-   * 
+   *
    * @param mixed $value The value of the field.
    * @param array $options The options.
    * @param array $field The field object.
@@ -1452,7 +1452,7 @@ class Piklist_Validate
    * sanitize_html_class
    * Sanitizes a html classname to ensure it only contains valid characters.
    * Uses the WordPress function sanitize_html_class()
-   * 
+   *
    * @param mixed $value The value of the field.
    * @param array $options The options.
    * @param array $field The field object.
@@ -1473,12 +1473,12 @@ class Piklist_Validate
 
     return sanitize_html_class($value, isset($fallback) ? $fallback : null);
   }
-  
+
   /**
    * sanitize_text_field
    * Sanitize a string from user input.
    * Uses the WordPress function sanitize_text_field()
-   * 
+   *
    * @param mixed $value The value of the field.
    * @param array $options The options.
    * @param array $field The field object.
@@ -1499,7 +1499,7 @@ class Piklist_Validate
    * -HTML and PHP tags are stripped
    * -Accents are removed (accented characters are replaced with non-accented equivalents).
    * Uses the WordPress function sanitize_title();
-   * 
+   *
    * @param mixed $value The value of the field.
    * @param array $options The options.
    * @param array $field The field object.
@@ -1525,7 +1525,7 @@ class Piklist_Validate
    * sanitize_user
    * Sanitize username stripping out unsafe characters.
    * Uses WordPress function sanitize_user()
-   * 
+   *
    * @param mixed $value The value of the field.
    * @param array $options The options.
    * @param array $field The field object.
@@ -1543,19 +1543,19 @@ class Piklist_Validate
     ));
 
     extract($options);
-    
+
     return sanitize_user($value, isset($strict) ? $strict : null);
   }
 
   /**
    * sanitize_wp_kses
-   * Makes sure that only the allowed HTML element names, attribute names and attribute values plus only sane HTML entities will occur in $string. 
+   * Makes sure that only the allowed HTML element names, attribute names and attribute values plus only sane HTML entities will occur in $string.
    * Uses the WordPress function wp_kses()
-   * 
+   *
    * accepts
    * array allowed_html
    * array allowed_protocols
-   * 
+   *
    * @param mixed $value The value of the field.
    * @param array $options The options.
    * @param array $field The field object.
@@ -1573,7 +1573,7 @@ class Piklist_Validate
     ));
 
     extract($options);
-    
+
     return wp_kses($value, isset($allowed_html) ? $allowed_html : null, isset($allowed_protocols) ? $allowed_protocols : null);
   }
 
@@ -1581,7 +1581,7 @@ class Piklist_Validate
    * sanitize_wp_kses_post
    * Sanitize content for allowed HTML tags for post content.
    * Uses the WordPress function wp_kses_post()
-   * 
+   *
    * @param mixed $value The value of the field.
    * @param array $options The options.
    * @param array $field The field object.
@@ -1601,7 +1601,7 @@ class Piklist_Validate
    * sanitize_wp_filter_kses
    * Sanitize content with allowed HTML Kses rules.
    * Uses the WordPress function wp_kses_data()
-   * 
+   *
    * @param mixed $value The value of the field.
    * @param array $options The options.
    * @param array $field The field object.
@@ -1621,7 +1621,7 @@ class Piklist_Validate
    * sanitize_wp_strip_all_tags
    * Properly strip all HTML tags including script and style.
    * Uses the WordPress function wp_strip_all_tags()
-   * 
+   *
    * @param mixed $value The value of the field.
    * @param array $options The options.
    * @param array $field The field object.
@@ -1647,7 +1647,7 @@ class Piklist_Validate
    * sanitize_hex_color
    * Sanitizes a hex color.
    * Returns either '', a 3 or 6 digit hex color (with #), or null.
-   * 
+   *
    * @param mixed $value The value of the field.
    * @param array $options The options.
    * @param array $field The field object.

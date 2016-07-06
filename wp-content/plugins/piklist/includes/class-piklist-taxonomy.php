@@ -19,13 +19,13 @@ class Piklist_Taxonomy
    * @access private
    */
   private static $meta_boxes;
-    
+
   /**
    * @var array Registered taxonomies.
    * @access private
    */
   private static $taxonomies = array();
-  
+
   /**
    * _construct
    * Class constructor.
@@ -48,7 +48,7 @@ class Piklist_Taxonomy
     add_filter('sanitize_user', array('piklist_taxonomy', 'restrict_username'));
     add_filter('piklist_meta_tables_sort', array('piklist_taxonomy', 'piklist_meta_tables_sort'));
   }
-  
+
   /**
    * piklist_meta_tables
    * Adds the termmeta table to the tables used in the meta sorting.
@@ -64,12 +64,12 @@ class Piklist_Taxonomy
   public static function piklist_meta_tables_sort($meta_tables)
   {
     global $wpdb;
-    
+
     $meta_tables['term_id'] = $wpdb->prefix . 'termmeta';
-    
+
     return $meta_tables;
   }
-  
+
   /**
    * init
    * Initializes system.
@@ -83,7 +83,7 @@ class Piklist_Taxonomy
     self::register_tables();
     self::register_meta_boxes();
   }
-  
+
   /**
    * register_tables
    * Register the termmeta table.
@@ -95,17 +95,17 @@ class Piklist_Taxonomy
   public static function register_tables()
   {
     global $wpdb;
-    
+
     $termmeta_table = $wpdb->prefix . 'termmeta';
-    
+
     if ($wpdb->get_var("SHOW TABLES LIKE '{$termmeta_table}'") == $termmeta_table)
     {
       array_push($wpdb->tables, 'termmeta');
-    
+
       $wpdb->termmeta = $wpdb->prefix . 'termmeta';
     }
   }
-  
+
   /**
    * terms_clauses
    * Clause updates for term queries.
@@ -120,25 +120,25 @@ class Piklist_Taxonomy
    * @static
    * @since 1.0
    */
-  public static function terms_clauses($pieces = array(), $taxonomies = array(), $arguments = array()) 
+  public static function terms_clauses($pieces = array(), $taxonomies = array(), $arguments = array())
   {
-    if (!empty($arguments['meta_query'])) 
+    if (!empty($arguments['meta_query']))
     {
       $query = new WP_Meta_Query($arguments['meta_query']);
       $query->parse_query_vars($arguments);
 
-      if (!empty($query->queries)) 
+      if (!empty($query->queries))
       {
         $clauses = $query->get_sql('term', 'tt', 'term_id', $taxonomies);
-        
+
         $pieces['join'] .= $clauses['join'];
         $pieces['where'] .= $clauses['where'];
       }
     }
-    
+
     return $pieces;
   }
-  
+
   /**
    * get_terms_args
    * Allow a meta query for terms
@@ -151,13 +151,13 @@ class Piklist_Taxonomy
    * @static
    * @since 1.0
    */
-  public static function get_terms_args($arguments = array()) 
+  public static function get_terms_args($arguments = array())
   {
     return wp_parse_args($arguments, array(
       'meta_query' => ''
     ));
   }
-  
+
   /**
    * register_meta_boxes
    * Register term sections.
@@ -177,7 +177,7 @@ class Piklist_Taxonomy
               ,'taxonomy' => 'Taxonomy'
               ,'new' => 'New'
             );
-            
+
     piklist::process_parts('terms', $data, array('piklist_taxonomy', 'register_meta_boxes_callback'));
   }
 
@@ -194,7 +194,7 @@ class Piklist_Taxonomy
   public static function register_meta_boxes_callback($arguments)
   {
     extract($arguments);
-    
+
     $taxonomies = empty($data['taxonomy']) ? get_taxonomies() : $data['taxonomy'];
 
     foreach ($taxonomies as $taxonomy)
@@ -207,7 +207,7 @@ class Piklist_Taxonomy
 
         add_action($data['taxonomy'] . '_edit_form_fields', array('piklist_taxonomy', 'meta_box'), 10, 2);
       }
-    
+
       foreach (self::$meta_boxes[$data['taxonomy']] as $key => $meta_box)
       {
         if ($id == $meta_box['id'])
@@ -215,7 +215,7 @@ class Piklist_Taxonomy
           unset(self::$meta_boxes[$data['taxonomy']][$key]);
         }
       }
-      
+
       if (isset($data['order']))
       {
         self::$meta_boxes[$data['taxonomy']][$data['order']] = $arguments;
@@ -253,9 +253,9 @@ class Piklist_Taxonomy
           ,'wrapper' => 'term_meta'
           ,'close' => $close
         ), false);
-        
+
         $close = true;
-        
+
         foreach ($meta_box['render'] as $render)
         {
           piklist::render($render, array(
@@ -266,7 +266,7 @@ class Piklist_Taxonomy
       }
     }
   }
-  
+
   /**
    * activate
    * Creates custom tables.
@@ -293,7 +293,7 @@ class Piklist_Taxonomy
       ,$network_wide
    );
   }
-  
+
   /**
    * registered_taxonomy
    * Add taxonomy support for users.
@@ -306,19 +306,19 @@ class Piklist_Taxonomy
    * @static
    * @since 1.0
    */
-  public static function registered_taxonomy($taxonomy, $object_type, $arguments) 
+  public static function registered_taxonomy($taxonomy, $object_type, $arguments)
   {
     global $wp_taxonomies;
-    
+
     if ($object_type == 'user')
     {
       $arguments  = (object) $arguments;
 
       add_filter("manage_edit-{$taxonomy}_columns",  array('piklist_taxonomy', 'user_taxonomy_column'));
-      
+
       add_action("manage_{$taxonomy}_custom_column",  array('piklist_taxonomy', 'user_taxonomy_column_value'), 10, 3);
 
-      if (empty($arguments->update_count_callback)) 
+      if (empty($arguments->update_count_callback))
       {
         $arguments->update_count_callback  = array('piklist_taxonomy', 'user_update_count');
       }
@@ -327,7 +327,7 @@ class Piklist_Taxonomy
       self::$taxonomies[$taxonomy] = $arguments;
     }
   }
-  
+
   /**
    * user_update_count
    * Show counts for user taxonomies
@@ -339,24 +339,24 @@ class Piklist_Taxonomy
    * @static
    * @since 1.0
    */
-  public static function user_update_count($terms, $taxonomy) 
+  public static function user_update_count($terms, $taxonomy)
   {
     global $wpdb;
-    
-    foreach ($terms as $term) 
+
+    foreach ($terms as $term)
     {
       $count  = $wpdb->get_var($wpdb->prepare("SELECT COUNT(*) FROM $wpdb->term_relationships WHERE term_taxonomy_id = %d", $term));
-      
+
       do_action('edit_term_taxonomy', $term, $taxonomy);
-      
+
       $wpdb->update($wpdb->term_taxonomy, compact('count'), array(
         'term_taxonomy_id' => $term
       ));
-      
+
       do_action('edited_term_taxonomy', $term, $taxonomy);
     }
   }
-  
+
   /**
    * admin_menu
    * Add edit pages for user taxonomies
@@ -365,12 +365,12 @@ class Piklist_Taxonomy
    * @static
    * @since 1.0
    */
-  public static function admin_menu() 
+  public static function admin_menu()
   {
     $taxonomies  = self::$taxonomies;
-  
+
     ksort(self::$taxonomies);
-    
+
     foreach (self::$taxonomies as $slug => $taxonomy)
     {
       add_users_page($taxonomy->labels->menu_name, $taxonomy->labels->menu_name, $taxonomy->cap->manage_terms, 'edit-tags.php?taxonomy=' . $slug);
@@ -389,18 +389,18 @@ class Piklist_Taxonomy
    * @static
    * @since 1.0
    */
-  public static function parent_file($file = '') 
+  public static function parent_file($file = '')
   {
     global $pagenow;
-    
-    if (!empty($_REQUEST['taxonomy']) && isset(self::$taxonomies[$_REQUEST['taxonomy']]) && $pagenow == 'edit-tags.php') 
+
+    if (!empty($_REQUEST['taxonomy']) && isset(self::$taxonomies[$_REQUEST['taxonomy']]) && in_array($pagenow, array('edit-tags.php', 'term.php')))
     {
       return 'users.php';
     }
-    
+
     return $file;
   }
-  
+
   /**
    * user_taxonomy_column
    * Add a 'Users' column header to all user taxonomy edit pages.
@@ -413,15 +413,15 @@ class Piklist_Taxonomy
    * @static
    * @since 1.0
    */
-  public static function user_taxonomy_column($columns) 
+  public static function user_taxonomy_column($columns)
   {
     $columns['users']  = __('Users', 'piklist');
 
     unset($columns['posts']);
-  
+
     return $columns;
   }
-  
+
   /**
    * user_taxonomy_column_value
    * Adds term data to 'Users' column on all user taxonomy edit pages.
@@ -434,20 +434,20 @@ class Piklist_Taxonomy
    * @static
    * @since 1.0
    */
-  public static function user_taxonomy_column_value($display, $column, $term_id) 
+  public static function user_taxonomy_column_value($display, $column, $term_id)
   {
     switch ($column)
     {
       case 'users':
-      
+
         $term  = get_term($term_id, $_REQUEST['taxonomy']);
-        
+
         echo $term->count;
-        
+
       break;
     }
   }
-  
+
   /**
    * restrict_username
    * Don't allow usernames to match taxonomy names.
@@ -460,15 +460,15 @@ class Piklist_Taxonomy
    * @static
    * @since 1.0
    */
-  public static function restrict_username($username) 
+  public static function restrict_username($username)
   {
     if (isset(self::$taxonomies[$username]))
     {
       return '';
     }
-    
+
     return $username;
-  }  
+  }
 
   /**
    * wp_redirect
@@ -486,8 +486,8 @@ class Piklist_Taxonomy
   {
     $url = parse_url($location);
     parse_str($url['query'], $url_defaults);
-    
-    if (stristr($url['path'], 'edit-tags.php') && isset($url_defaults['taxonomy']) && isset($url_defaults['message']))
+
+    if ((stristr($url['path'], 'edit-tags.php') || stristr($url['path'], 'term.php')) && isset($url_defaults['taxonomy']) && isset($url_defaults['message']))
     {
       $location .= '&action=edit&tag_ID=' . (int) $_POST['tag_ID'];
     }
@@ -509,7 +509,7 @@ if (!function_exists('add_term_meta'))
    * @param bool $unique Optional, default is false. Whether the same key should not be added.
    * @return bool False for failure. True for success.
    */
-  function add_term_meta($term_id, $meta_key, $meta_value, $unique = false) 
+  function add_term_meta($term_id, $meta_key, $meta_value, $unique = false)
   {
     return add_metadata('term', $term_id, $meta_key, $meta_value, $unique);
   }
@@ -529,11 +529,11 @@ if (!function_exists('delete_term_meta'))
    * @param mixed $meta_value Optional. Metadata value.
    * @return bool False for failure. True for success.
    */
-  function delete_term_meta($term_id, $meta_key, $meta_value = '') 
+  function delete_term_meta($term_id, $meta_key, $meta_value = '')
   {
     return delete_metadata('term', $term_id, $meta_key, $meta_value);
   }
-}  
+}
 
 if (!function_exists('get_term_meta'))
 {
@@ -545,7 +545,7 @@ if (!function_exists('get_term_meta'))
    * @param bool $single Whether to return a single value.
    * @return mixed Will be an array if $single is false. Will be value of meta data field if $single is true.
    */
-  function get_term_meta($term_id, $key = '', $single = false) 
+  function get_term_meta($term_id, $key = '', $single = false)
   {
     return get_metadata('term', $term_id, $key, $single);
   }
@@ -567,7 +567,7 @@ if (!function_exists('update_term_meta'))
    * @param mixed $prev_value Optional. Previous value to check before removing.
    * @return bool False on failure, true if success.
    */
-  function update_term_meta($term_id, $meta_key, $meta_value, $prev_value = '') 
+  function update_term_meta($term_id, $meta_key, $meta_value, $prev_value = '')
   {
     return update_metadata('term', $term_id, $meta_key, $meta_value, $prev_value);
   }
@@ -581,7 +581,7 @@ if (!function_exists('delete_term_meta_by_key'))
    * @param string $term_meta_key Key to search for when deleting.
    * @return bool Whether the term meta key was deleted from the database
    */
-  function delete_term_meta_by_key($term_meta_key) 
+  function delete_term_meta_by_key($term_meta_key)
   {
     return delete_metadata('term', null, $term_meta_key, '', true);
   }
@@ -598,7 +598,7 @@ if (!function_exists('get_term_custom'))
    * @param int $term_id post ID.
    * @return array
    */
-  function get_term_custom($term_id = 0) 
+  function get_term_custom($term_id = 0)
   {
     $term_id = absint($term_id);
 
@@ -616,7 +616,7 @@ if (!function_exists('get_term_custom_keys'))
    * @param int $term_id term ID
    * @return array|null Either array of the keys, or null if keys could not be retrieved.
    */
-  function get_term_custom_keys($term_id = 0) 
+  function get_term_custom_keys($term_id = 0)
   {
     $custom = get_term_custom($term_id);
 
@@ -624,7 +624,7 @@ if (!function_exists('get_term_custom_keys'))
     {
       return;
     }
-  
+
     if ($keys = array_keys($custom))
     {
       return $keys;
@@ -644,13 +644,13 @@ if (!function_exists('get_term_custom_values'))
    * @param int $term_id post ID
    * @return array Meta field values.
    */
-  function get_term_custom_values($key = '', $term_id = 0) 
+  function get_term_custom_values($key = '', $term_id = 0)
   {
     if (!$key)
     {
       return null;
     }
-  
+
     $custom = get_term_custom($term_id);
 
     return isset($custom[$key]) ? $custom[$key] : null;
