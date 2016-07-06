@@ -256,8 +256,8 @@ class Builder extends Page
             $floor_plan->bedrooms = $item[self::$field_floor_plan_bedrooms];
             $floor_plan->full_bathrooms = $item[self::$field_floor_plan_full_bathrooms];
             $floor_plan->half_bathrooms = $item[self::$field_floor_plan_half_bathrooms];
-            $floor_plan->is_master_downstairs = ($item[self::$field_floor_plan_is_master_downstairs][0] === self::YES);
-            $floor_plan->is_single_story = ($item[self::$field_floor_plan_is_single_story][0] === self::YES);
+            $floor_plan->is_master_downstairs = ($item[self::$field_floor_plan_is_master_downstairs] === self::YES);
+            $floor_plan->is_single_story = ($item[self::$field_floor_plan_is_single_story] === self::YES);
 
             $brochure_attachment_id = $item[self::$field_floor_plan_brochure_attachment_id];
             if (is_array($brochure_attachment_id) === true) {
