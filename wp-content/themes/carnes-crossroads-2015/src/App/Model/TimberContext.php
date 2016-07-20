@@ -88,6 +88,11 @@ class TimberContext
         $data['home_finder_menu'] = new \TimberMenu('Home Finder Menu');
         $data['account_menu'] = new \TimberMenu('Account Menu');
         $data['recent_sales_activity_menu'] = new \TimberMenu('Recent Sales Activity Menu');
+        
+        //POA Site
+        $data['poa_main_menu'] = new \TimberMenu('POA Main Menu');
+        $data['poa_secondary_menu'] = new \TimberMenu('POA Secondary Menu');
+        $data['poa_footer_menu'] = new \TimberMenu('POA Footer Menu');
 
         return $data;
     }

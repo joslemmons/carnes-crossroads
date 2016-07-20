@@ -8602,24 +8602,28 @@ span.tel {
       color: #fff;
       border: none; }
   .poa-site .poa-header {
-    background: #768e1c url("img/di-poa-header.jpg") no-repeat 50% 50%;
-    background-size: cover;
+    background: #768e1c url("img/pattern-green.jpg") repeat 50% 50%;
     position: relative; } }
   @media screen and (max-width: 991px) {
     .poa-site .poa-header .site-logo {
       text-align: center; } }
 @media screen {
     .poa-site .poa-header .site-logo img {
-      max-width: 197px;
+      max-width: 200px;
       padding-top: 20px;
       padding-bottom: 20px; }
     .poa-site .poa-header h1.site-title {
-      margin-top: 37px; } }
+      color: #fff;
+      font-size: 30px;
+      text-align: right;
+      text-transform: uppercase;
+      margin-top: 49px; } }
     @media screen and (max-width: 991px) {
       .poa-site .poa-header h1.site-title {
         text-align: center;
         margin-top: 0px;
-        font-size: 17px; } }
+        font-size: 17px;
+        margin-bottom: 10px; } }
 @media screen {
   .poa-site .poa-menu-icon {
     position: absolute;
@@ -8758,11 +8762,6 @@ span.tel {
     font-family: "baskerville-urw", serif;
     line-height: 1.5;
     font-weight: 400; }
-  .poa-site h1.site-title {
-    color: #695e49;
-    font-size: 30px;
-    text-align: right;
-    text-transform: uppercase; }
   .poa-site h1 {
     color: #695e49;
     font-size: 30px; }

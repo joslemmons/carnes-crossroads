@@ -95,8 +95,7 @@
 
         //Site Header
         .poa-header {
-            background: $cc-green url('img/di-poa-header.jpg') no-repeat 50% 50%;
-            background-size: cover;
+            background: $cc-green url('img/pattern-green.jpg') repeat 50% 50%;
             position: relative;
 
             .site-logo {
@@ -106,20 +105,24 @@
                 }
 
                 img {
-                    max-width: 197px;
+                    max-width: 200px;
                     padding-top: 20px;
                     padding-bottom: 20px;   
                 }
             }
-
+            
             h1.site-title {
-                //font styles in fonts.scss
-                margin-top: 37px;
-
+                color: $white;
+                font-size: 30px; 
+                text-align: right;
+                text-transform: uppercase;
+                margin-top: 49px;
+                
                 @media (max-width: $screen-sm-max) {
                     text-align: center;
                     margin-top: 0px;
                     font-size: 17px;
+                    margin-bottom: 10px;
                 }
             }
         }
