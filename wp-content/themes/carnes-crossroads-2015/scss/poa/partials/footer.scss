@@ -1,0 +1,49 @@
+@media screen{
+    .poa-site {
+        //Streetscape 
+        .streetscape {
+            background: url(img/footer-streetscape.jpg) no-repeat 100% 100%;
+            background-size: 1024px;
+            height: 146px;
+            border-bottom: 6px solid $dk-beige;
+        }
+
+        //Footer 
+        .site-footer {
+            margin-top: 10px;
+            margin-bottom: 20px;
+
+            nav.poa-footer-nav {
+                ul.footer-nav {
+                    margin: 0;
+                    padding: 0;
+
+                    li.nav-item {
+                        display: inline-block;
+                        margin-right: 10px;
+                        font-family: $oswald;
+                        font-size: 12px;
+                        font-weight: 400;
+                        text-align: left;
+                        text-transform: uppercase;
+
+                        a {
+                            color: $brown;
+
+                            &:hover {
+                                color: $gold;
+                            }
+                        }
+                    }
+                }
+            }
+
+            .copyright {
+                font-family: $baskerville;
+                font-size: 14px;
+                margin-top: 5px;
+                color: $brown;
+            }
+        } 
+    }
+}

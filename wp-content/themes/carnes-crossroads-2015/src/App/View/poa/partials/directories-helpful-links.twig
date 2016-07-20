@@ -1,0 +1,14 @@
+<div class="child-page-content" id="helpful-links">
+    <div class="child-title">
+        <h3>Helpful Links</h3>
+    </div>
+    <div class="child-content helpful-links-content">
+		{% for hl in helpful_links %}
+        <button class="accordion">{{ hl.title }}</button>
+        <div class="panel">
+          <p>{{ hl.content }}</p>
+        </div>
+        {% endfor %}
+
+    </div>
+</div>

@@ -1,0 +1,262 @@
+@media screen{
+    .poa-site {
+
+
+        a {
+            @include transition(0.3s all);
+            color: $gold;
+            //    border-bottom: 1px solid rgba(0,0,0,0);
+            //    padding-bottom: 0px;
+        }
+
+        a:focus, a:hover {
+            text-decoration: none !important;
+            color: darken($gold,20%);
+            //    border-bottom: 1px solid darken($gold,20%);
+            //    padding-bottom: 5px;
+        }
+
+        body {
+            overflow-x: hidden; //temp fix
+        }
+
+        .container-fluid {
+            margin-right: auto;
+            margin-left: auto;
+            padding-left: 15px;
+            padding-right: 15px;
+        }
+
+
+        .site-btn {
+            display: inline-block;
+            background: $white;
+            border: 1px solid $brown;
+            font-family: $baskerville;
+            color: $brown;
+            font-size: 12px;
+            font-weight: 400;
+            line-height: 1;
+            text-align: left;
+            padding: 14px 50px;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            @include transition(0.3s all);
+
+            @media (max-width: $screen-sm-max) {
+                width: 100%;
+                display: block;
+                margin-bottom: 8px;
+                text-align: center;
+            }
+
+
+            &:hover {
+                background: $brown;
+                color: $white;
+                cursor: pointer;
+                border: 1px solid $brown;
+            }
+        }
+
+        .back-top {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            background: $cc-green;
+            color: $white;
+            width: 40px;
+            height: 40px;
+            line-height: 42px;
+            text-align: center;
+            display: block;
+            text-decoration: none;
+            opacity: 0;
+            border: none;
+            @include transition(0.3s all);
+
+            &.scroll {
+                opacity: 1;
+            }
+
+            &:hover {
+                cursor: pointer;
+                background: $brown;
+                color: $white;
+                border: none;
+            }
+
+            &:focus {
+                color: $white;
+                border: none;
+            }
+
+        }
+
+        //Site Header
+        .poa-header {
+            background: $cc-green url('img/di-poa-header.jpg') no-repeat 50% 50%;
+            background-size: cover;
+            position: relative;
+
+            .site-logo {
+
+                @media (max-width: $screen-sm-max) {
+                    text-align: center;
+                }
+
+                img {
+                    max-width: 197px;
+                    padding-top: 20px;
+                    padding-bottom: 20px;   
+                }
+            }
+
+            h1.site-title {
+                //font styles in fonts.scss
+                margin-top: 37px;
+
+                @media (max-width: $screen-sm-max) {
+                    text-align: center;
+                    margin-top: 0px;
+                    font-size: 17px;
+                }
+            }
+        }
+        
+        //Mobile Menu Icon
+        .poa-menu-icon {
+            position: absolute;
+            top: 15px;
+            right: 15px;
+        }
+
+        //Main nav
+        .poa-nav {
+            background: $white;
+            padding-top: 10px;
+            padding-bottom: 10px;
+            
+            @media (max-width: $screen-sm-max) {
+                height: 0px;
+                padding: 0;
+                overflow: hidden;
+                @include transition(0.3s all);
+                
+                &.visible {
+                    height: 330px;
+                    padding-top: 10px;
+                    padding-bottom: 10px;
+                }
+            }
+
+            nav.poa {
+                display: inline-block;
+                
+                @media (max-width: $screen-sm-max) {
+                    display: block;
+                }
+
+                ul.nav-list {
+                    font-family: $oswald;
+                    font-size: 12px;
+                    font-weight: 400;
+                    text-align: left;
+                    text-transform: uppercase;
+                    margin: 0;
+                    padding: 0;
+                    
+                    @media (min-width: $screen-lg) {
+                        font-size: 14px;
+                    }
+                    
+                    @media (max-width: $screen-sm-max) {
+                        text-align: center;
+                        font-size: 14px;
+                    }
+
+                    li {
+                        display: inline-block;
+                        list-style-type: none;
+                        margin-right: 10px;
+                        
+                        @media (max-width: $screen-sm-max) {
+                            display: block;
+                            margin-right: 0;
+                            margin-bottom: 10px;
+                        }
+                    }
+
+                    a {
+                        color: $brown;
+
+                        &:hover {
+                            color: $gold;
+                        }
+                        
+                        @media (max-width: $screen-sm-max) {
+                            border-bottom: none;
+                            
+                            &:hover {
+                                border-bottom: none;
+                            }
+                        }
+                    }
+                }
+            }
+
+            .sub-nav {
+                display: inline-block;
+                float: right;
+                font-family: $oswald;
+                font-size: 12px; 
+                font-weight: 400;
+                text-align: left;
+                text-transform: uppercase;
+                
+                @media (min-width: $screen-lg) {
+                    font-size: 14px;
+                }
+                
+                @media (max-width: $screen-sm-max) {
+                    display: block;
+                    float: none;
+                    text-align: center;
+                    font-size: 14px;
+                }
+
+                a {
+                    color: $gold;
+                    display: inline-block;
+                    margin-right: 10px;
+
+                    &:hover {
+                        color: darken($gold,10%);
+                    }
+
+                    @media (max-width: $screen-sm-max) {
+                        display: block;
+                        text-align: center;
+                        border-bottom: none;
+                        margin-right: 0;
+                        margin-bottom: 10px;
+                        
+                        &:hover {
+                            border-bottom: none;
+                        }
+                    }
+                }
+
+                input.search {
+                    border: 1px solid $gold;
+                    color: $gold;
+                    background: $white url(img/search-bar-icon.png) no-repeat 96% 50%;
+                    background-size: 12px;
+                    padding-left: 5px;
+                    padding-right: 20px;
+                }
+            }
+        }
+
+    }
+}

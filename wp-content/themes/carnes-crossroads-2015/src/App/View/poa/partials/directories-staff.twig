@@ -1,0 +1,39 @@
+<div class="child-page-content" id="staff">
+    <div class="child-title">      
+        <h3>Daniel Island Staff</h3>
+    </div>
+
+    <div class="child-content staff-content">
+        <div class="row">
+            {% for staff in staff_members %}
+            <div class="col-lg-4 col-sm-6 staff-member-box-container">
+                <div class="staff-member-box-outer" style="background: url({{ staff.image[0] }}) no-repeat 50% 50%; background-size: cover;">
+                    <div class="staff-member-box"></div>
+                </div>
+                <div class="staff-member-hover-box">
+                    <div class="content-container">
+                        <div class="get-in-touch">
+                            Get in Touch
+                        </div>
+                        <div class="divider"></div>
+                        <div class="staff-phone">
+                            {{ staff.phone }}
+                        </div>
+                        <div class="staff-email">                           
+                            <a href="mailto:{{staff.email}}">Email {{ staff.fname }}</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="staff-member-details">
+                    <div class="staff-name">
+                        {{ staff.fname }} {{ staff.lname }}
+                    </div>
+                    <div class="staff-position">
+                        {{ staff.title }}
+                    </div>
+                </div>
+            </div>
+            {% endfor %}               
+        </div>
+    </div>
+</div>

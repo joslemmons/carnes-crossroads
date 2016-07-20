@@ -1,0 +1,395 @@
+@media screen {
+    .poa-site {
+        //Front Page Styles
+        //--Main Slider
+        .content-slider {
+
+            .featured-slider {
+                margin-bottom: 0;
+            }
+
+            .slick-dots {
+                bottom: 10px;
+
+                li.slick-active button:before, li button:before {
+                    color: $white;
+                    font-size: 16px;
+                }
+            }
+
+            .slide {
+                height: 70vh;
+                position: relative;
+            }
+
+            .slider-caption {
+                background: $white;
+                position: absolute;
+                bottom: 10vh;
+                max-width: 50vw;
+                padding: 20px 40px 40px 100px;
+                
+                @media(max-width: $screen-sm-max) {
+                    padding: 15px;
+                }
+
+                h2.headline {
+                    font-family: $baskerville;
+                    color: $brown;
+                    font-size: 40px; 
+                    font-weight: 400;
+                    text-align: left;
+                    line-height: 1;
+                    
+                    @media (max-width: $screen-sm-max) {
+                        margin: 0;
+                        font-size: 28px;
+                    }
+                }
+
+                p.description {
+                    font-family: $cronos;
+                    color: $brown;
+                    font-size: 18px; 
+                    font-weight: 400;
+                    text-align: left;
+                    
+                    @media(max-width: $screen-sm-max) {
+                        display: none;
+                    }
+                }
+            }
+        }
+
+        //-Events
+        .home-events {
+            background: $beige;
+            padding-top: 40px;
+            padding-bottom: 40px;
+
+            h2.section-title {
+                text-align: right;
+                color: $gold;
+                font-size: 30px;
+                font-weight: 400;
+                margin-right: 100px;
+                text-transform: uppercase;
+                
+                @media (max-width: $screen-sm-max) {
+                    text-align: center;
+                    font-size: 28px;
+                    margin: auto;
+                }
+            }
+
+            .slick-prev, .slick-next {
+                border: 1px solid $brown;
+                background-color: $white;
+                width: 36px;
+                height: 30px;
+                z-index: 8;
+                bottom: auto;
+                top: -30px;
+
+                &:before {
+                    color: $brown;
+                    font-family: $baskerville;
+                }
+            }
+
+            .slick-prev {
+                right: 40px;
+                left: auto;
+            }
+
+            .slick-next {
+                right: 0px;
+                left: auto;
+            }
+            
+            .slick-slide {
+                height: auto;
+            }
+            
+            .view-all-container {
+                background: $white;
+                padding: 20px 35px;
+                text-align: center;
+                font-family: $baskerville;
+                color: $brown;
+                font-size: 17px;
+                font-weight: 400;
+                margin: 30px 0;
+                text-transform: uppercase;
+                @include transition (0.3s all);
+
+                &:hover {
+                    background: $gold;
+                    color: $white;
+                }
+            }
+
+            .upcoming-events-box {
+                background: $white;
+                padding: 32px 28px;
+
+                h2 {
+                    color: $gold;
+                    font-size: 36px; 
+                    font-weight: 400;
+                    text-align: left;
+                    margin-bottom: 25px;
+                }
+
+                .event-details {
+                    margin-bottom: 10px;
+                    display: table;
+
+                    .event-date {
+                        display: table-cell;
+                        font-family: $cronos;
+                        color:  $brown;
+                        font-size: 18px;
+                        font-weight: 400;
+                        text-align: left;
+                        padding-right: 10px;
+                        width: 90px;
+                    }
+
+                    .event-title {
+                        display: table-cell;
+                        font-family: $cronos;
+                        color:  $brown;
+                        font-size: 18px;
+                        font-weight: 600;
+                        text-align: left;
+                        margin-right: 10px;
+                        line-height: 1;
+                    }
+                }
+            }
+
+            .featured-events-slider {
+                margin-bottom: 0;
+            }
+
+            .col-event-box {
+                margin-bottom: 30px; 
+
+                @include last(2){
+                    margin-bottom: 0px;
+                }
+            }
+
+            .event-box {
+                background: $white;
+
+                .event-title-box-outer {
+                    background: $gold;
+                    padding: 14px 14px 0 14px;
+                }
+
+                .event-title-box {
+                    border-top: 4px solid $white;
+                    border-left: 4px solid $white;
+                    border-right: 4px solid $white;
+                    height: 160px;
+                    padding: 20px;
+                    display: table-cell;
+                    vertical-align: bottom;
+                    
+                    @media (max-width: $screen-sm-max) {
+                        width: 100%;
+                        display: block;
+                        text-align: center;
+                    }
+
+                    h2.event-title {
+                        color: $white;
+                        font-size: 32px; 
+                        font-weight: 400;
+                        text-align: left;
+                        line-height: 1;
+                        
+                        @media (max-width: $screen-sm-max) {
+                            text-align: center;
+                        }
+                    }
+                }
+
+                .event-details-box {
+                    padding: 17px 33px;
+                    font-family: $cronos;
+                    color:  $brown;
+                    font-size: 18px;
+                    font-weight: 400;
+                    text-align: left;
+
+                    .event-time {
+                        display: block;
+                    }
+
+                    .site-btn {
+                        //main styles in base.scss
+                        margin-top: 20px;
+                    }
+                }
+            }
+        }
+
+        //-Announcements
+        .home-announcements {
+            background: $beige url(img/map-bg.jpg) no-repeat 50% 50%; 
+            background-size: cover;
+            padding-top: 40px;
+            padding-bottom: 40px;
+
+            h2.section-title {
+                text-align: right;
+                color: $cc-green;
+                font-size: 30px;
+                font-weight: 400;
+                margin-right: 100px;
+                text-transform: uppercase;
+                
+                @media (max-width: $screen-sm-max) {
+                    text-align: center;
+                    font-size: 28px;
+                    margin: auto;
+                }
+            }
+
+            .slick-prev, .slick-next {
+                border: 1px solid $brown;
+                background-color: $white;
+                width: 36px;
+                height: 30px;
+                z-index: 8;
+                bottom: auto;
+                top: -30px;
+
+                &:before {
+                    color: $brown;
+                    font-family: $baskerville;
+                }
+            }
+
+            .slick-prev {
+                right: 40px;
+                left: auto;
+            }
+
+            .slick-next {
+                right: 0px;
+                left: auto;
+            }
+            
+            .slick-slide {
+                height: auto;
+            }
+
+            .col-announcement-box {
+                margin-bottom: 30px; 
+                width: 100%;
+
+                @include last(2){
+                    margin-bottom: 0px;
+                }
+            }
+
+            .announcement-box {
+                background: $white;
+
+                .announcement-title-box-outer {
+                    background: $gold;
+                    padding: 14px 14px 0 14px;
+                }
+
+                .announcement-title-box {
+                    border-top: 4px solid $white;
+                    border-left: 4px solid $white;
+                    border-right: 4px solid $white;
+                    height: 160px;
+                    padding: 20px;
+                    display: table-cell;
+                    vertical-align: bottom;
+
+                    h2.announcement-title {
+                        color: $brown;
+                        font-size: 32px; 
+                        font-weight: 400;
+                        text-align: left;
+                        line-height: 1;
+                    }
+                }
+
+                .announcement-details-box {
+                    padding: 17px 33px;
+                    font-family: $cronos;
+                    color:  $brown;
+                    font-size: 18px;
+                    font-weight: 400;
+                    text-align: left;
+
+                    .site-btn {
+                        //main styles in base.scss
+                        margin-top: 20px;
+                    }
+                }
+            }
+
+            .view-all-container {
+                background: $white;
+                padding: 20px 35px;
+                text-align: center;
+                font-family: $baskerville;
+                color: $brown;
+                font-size: 17px;
+                font-weight: 400;
+                margin: 30px 0;
+                text-transform: uppercase;
+                @include transition (0.3s all);
+
+                &:hover {
+                    background: $cc-green;
+                    color: $white;
+                }
+            }
+        }
+
+        //Bonus Call Out
+        .bonus-callout {
+            padding-top: 30px;
+            padding-bottom: 30px;
+
+
+            .bonus-callout-container {
+                border: 30px solid $dk-beige;
+                background: $white;
+                padding: 20px 40px;
+            }
+
+            h2.callout-headline {
+                color:  $brown;
+                font-size: 36px;
+                font-weight: 400;
+                line-height: 1;
+                text-align: left;
+                margin-bottom: 30px;
+            }
+
+            p.callout-excerpt {
+                font-family: $cronos;
+                color:  $brown;
+                font-size: 18px;
+                font-weight: 400;
+                line-height: 1.5;
+                text-align: left;
+            }
+
+            .btn-container {
+                text-align: right;
+            }
+        }
+    }
+}

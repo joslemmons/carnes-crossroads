@@ -1,0 +1,86 @@
+{% include 'poa/partials/header.twig' %}
+
+<div class="page-header-image" style="background:url( {{ site.theme.link }}/img/placeholder-slider.jpg) no-repeat 50% 50%; background-size: cover;">
+    <div class="page-header-title">
+        <h1>{{ page.title }}</h1>
+    </div>
+</div>
+
+<div class="sidebar-mobile">
+    <div class="sub-nav">
+        <ul>
+            {% for child_page in page.getChildren %}
+            <li {% if child_page.id == activeChildPage.id %}class="active"{% endif %}>
+                <a class="child-page-link"
+                   data-page-url-path="community/{{ page.post_name }}/{{ child_page.post_name }}"
+                   data-page-slug="{{ child_page.post_name }}"
+                   href="{{ child_page.link }}">{{ child_page.title }}
+                </a>
+            </li>
+            {% endfor %}
+        </ul>
+    </div>
+</div>
+<div class="down-menu visible-sm visible-xs">
+    <div class="icon-container">
+        <svg width="15" height="15">
+            <image xlink:href="{{ template_uri }}/img/chevron-down.svg"
+                   src="{{ template_uri }}/img/chevron-down.png" width="15"
+                   height="15"/>
+        </svg>
+    </div>
+</div>
+
+<div class="main-content">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-3">
+                <div class="sub-nav main-sub-nav">
+                    <ul>                        
+                        {% for child_page in page.getChildren %}
+                        <li {% if child_page.id == activeChildPage.id %}class="active"{% endif %}>
+                            <a class="child-page-link"
+                               data-page-url-path="community/{{ page.post_name }}/{{ child_page.post_name }}"
+                               data-page-slug="{{ child_page.post_name }}"
+                               href="{{ child_page.link }}">{{ child_page.title }}
+                            </a>
+                        </li>
+                        {% endfor %}
+                    </ul>
+                </div>
+            </div>
+            <div class="col-md-9 col-right">
+                <div class="primary-content">
+                    {{ page.content }}
+
+                    {% for child_page in page.getChildren %} 
+
+                    {% if ( (child_page.slug != 'helpful-links') and (child_page.slug != 'staff' ) ) %}
+                    <div class="child-page-content" id="{{ child_page.post_name }}">
+                        <div class="child-title">                           
+                            <h3>{{ child_page.title }}</h3>                            
+                        </div>
+
+                        <div class="child-content">
+                            {{ child_page.content }}
+                        </div>
+                    </div>
+                    {% endif %}
+                    {% endfor %}
+
+                    {# ONLY SHOW FOR DIRECTORIES #}
+
+                    {% if page.slug == 'directories' %}
+                    {{ include ('poa/partials/directories-staff.twig', {helpful_links: helpful_links }) }} 
+                    {{ include ('poa/partials/directories-helpful-links.twig', {staff_members: staff_members}) }} 
+                    {% endif %}
+
+                    {# END--ONLY SHOW FOR DIRECTORIES #}
+
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+{% include 'poa/partials/footer.twig' %}

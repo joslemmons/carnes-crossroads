@@ -1,0 +1,54 @@
+{% include 'poa/partials/header.twig' %}
+
+<div class="content-slider events">
+    <div class="featured-slider">
+        {% for slide in sliders %}
+        {#BEGIN SLIDE#}
+        <div class="slide" style="background:url( {{ slide.image[0] }}) no-repeat 50% 50%; background-size: cover;">
+            <div class="slider-caption">
+                {#CUSTOM Slide Headline#}
+                <h2 class="headline">{{ slide.title }}</h2>
+                
+                {#CUSTOM Slide Description#}
+                <p class="description">{{ slide.content }}</p>
+                
+                {#CUSTOM Link URL#}
+                <a class="cta-link" href="{{ slide.link }}">{{ slide.action }}</a>
+            </div>
+        </div>
+        {#END SLIDE#}
+        {% endfor %}
+    </div>
+</div>
+
+<div class="event-categories">
+    <div class="container">
+        <div class="row">
+            {# DANIELLE NOTE: MAY NEED MATCH HEIGHT ON BUTTONS #}
+            {# Example of Active Category Btn - active class on <a> tag #}
+            <div class="col-md-2">
+                <a class="site-btn cat-btn active" href="#">All Events</a>
+            </div>
+            {# Example of Category Btn #}
+            <div class="col-md-2">
+                <a class="site-btn cat-btn" href="#">Category Title</a>
+            </div>
+        </div>
+    </div>
+</div>
+    
+<div class="event-calendar">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                {{ event_calendar }}
+            </div>
+        </div>
+    </div>   
+</div>
+    
+    
+
+
+
+{% include 'poa/partials/footer.twig' %}
