@@ -8830,7 +8830,7 @@ span.tel {
         display: none; } }
 @media screen {
   .poa-site .home-events {
-    background: #f4f0e9;
+    background: url(img/pattern-white-texture.jpg) repeat;
     padding-top: 40px;
     padding-bottom: 40px; }
     .poa-site .home-events h2.section-title {
