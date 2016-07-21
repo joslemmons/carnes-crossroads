@@ -8551,9 +8551,9 @@ span.tel {
   .poa-site .site-btn {
     display: inline-block;
     background: #fff;
-    border: 1px solid #695e49;
+    border: 1px solid #363636;
     font-family: "baskerville-urw", serif;
-    color: #695e49;
+    color: #363636;
     font-size: 12px;
     font-weight: 400;
     line-height: 1;
@@ -8571,10 +8571,10 @@ span.tel {
       text-align: center; } }
 @media screen {
     .poa-site .site-btn:hover {
-      background: #695e49;
+      background: #363636;
       color: #fff;
       cursor: pointer;
-      border: 1px solid #695e49; }
+      border: 1px solid #363636; }
   .poa-site .back-top {
     position: fixed;
     bottom: 20px;
@@ -8678,9 +8678,9 @@ span.tel {
             margin-bottom: 10px; } }
 @media screen {
         .poa-site .poa-nav nav.poa ul.nav-list a {
-          color: #695e49; }
+          color: #363636; }
           .poa-site .poa-nav nav.poa ul.nav-list a:hover {
-            color: #9f9d5c; } }
+            color: #768e1c; } }
         @media screen and (max-width: 991px) {
           .poa-site .poa-nav nav.poa ul.nav-list a {
             border-bottom: none; }
@@ -8758,31 +8758,33 @@ span.tel {
       margin-top: 5px;
       color: #695e49; } }
 @media screen {
-  .poa-site h1, .poa-site h2, .poa-site h3, .poa-site h4, .poa-site h5, .poa-site h6 {
-    font-family: "baskerville-urw", serif;
-    line-height: 1.5;
-    font-weight: 400; }
-  .poa-site h1 {
-    color: #695e49;
-    font-size: 30px; }
-  .poa-site h2 {
-    font-size: 28px; }
-  .poa-site h3 {
-    font-size: 26px; }
-  .poa-site h4 {
-    font-size: 24px; }
-  .poa-site h5 {
-    font-size: 22px; }
-  .poa-site h6 {
-    font-size: 20px; }
-  .poa-site p, .poa-site ol, .poa-site ul {
-    font-size: 16px;
-    line-height: 1.5;
-    margin-bottom: 10px;
-    font-family: "cronos-pro", sans-serif; } }
-  @media screen and (max-width: 991px) {
+  .poa-site {
+    font-family: "proxima-nova", sans-serif; }
+    .poa-site h1, .poa-site h2, .poa-site h3, .poa-site h4, .poa-site h5, .poa-site h6 {
+      font-family: "baskerville-urw", serif;
+      line-height: 1.5;
+      font-weight: 400; }
+    .poa-site h1 {
+      color: #363636;
+      font-size: 30px; }
+    .poa-site h2 {
+      font-size: 28px; }
+    .poa-site h3 {
+      font-size: 26px; }
+    .poa-site h4 {
+      font-size: 24px; }
+    .poa-site h5 {
+      font-size: 22px; }
+    .poa-site h6 {
+      font-size: 20px; }
     .poa-site p, .poa-site ol, .poa-site ul {
-      font-size: 18px; } }
+      font-size: 16px;
+      line-height: 1.5;
+      margin-bottom: 10px;
+      font-family: "proxima-nova", sans-serif; } }
+    @media screen and (max-width: 991px) {
+      .poa-site p, .poa-site ol, .poa-site ul {
+        font-size: 18px; } }
 
 @media screen {
   .poa-site .content-slider .featured-slider {
@@ -8917,7 +8919,7 @@ span.tel {
     .poa-site .home-events .event-box {
       background: #fff; }
       .poa-site .home-events .event-box .event-title-box-outer {
-        background: #9f9d5c;
+        background: #768e1c;
         padding: 14px 14px 0 14px; }
       .poa-site .home-events .event-box .event-title-box {
         border-top: 4px solid #fff;
@@ -9078,7 +9080,8 @@ span.tel {
 @media screen {
       .poa-site .page-header-image .page-header-title h1 {
         padding: 0;
-        margin: 0; } }
+        margin: 0;
+        text-shadow: none; } }
       @media screen and (max-width: 991px) {
         .poa-site .page-header-image .page-header-title h1 {
           font-size: 28px; } }
@@ -9172,7 +9175,7 @@ span.tel {
 @media screen {
       .poa-site .main-content .sub-nav .sidebar-title {
         font-family: "proxima-nova", sans-serif;
-        color: #695e49;
+        color: #363636;
         font-size: 13px;
         line-height: 1.5;
         font-weight: bold;
@@ -9202,14 +9205,14 @@ span.tel {
             text-align: center; } }
 @media screen {
           .poa-site .main-content .sub-nav ul li a {
-            color: #695e49;
+            color: #363636;
             border-bottom: 1px solid rgba(255, 255, 255, 0); }
             .poa-site .main-content .sub-nav ul li a:hover {
               color: black;
-              border-bottom: 1px solid #9f9d5c; } }
+              border-bottom: 1px solid #768e1c; } }
             @media screen and (max-width: 991px) {
               .poa-site .main-content .sub-nav ul li a:hover {
-                color: #695e49;
+                color: #363636;
                 border-bottom: 1px solid rgba(255, 255, 255, 0); } }
 @media screen {
           .poa-site .main-content .sub-nav ul li.active {
@@ -9252,7 +9255,7 @@ span.tel {
         font-family: "baskerville-urw", serif;
         font-family: "baskerville-urw", serif;
         text-transform: capitalize;
-        color: #695e49;
+        color: #fff;
         font-size: 1.5em;
         /* Approximation due to font substitution */
         font-weight: 400;
@@ -9263,8 +9266,8 @@ span.tel {
     .poa-site .main-content .child-page-content {
       padding-bottom: 60px; }
       .poa-site .main-content .child-page-content .child-content {
-        font-family: "cronos-pro", sans-serif;
-        color: #695e49;
+        font-family: "proxima-nova", sans-serif;
+        color: #363636;
         text-align: left;
         font-size: 1.125em;
         line-height: 1.5;

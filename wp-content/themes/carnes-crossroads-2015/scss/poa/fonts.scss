@@ -3,6 +3,7 @@
 
 
     .poa-site {
+        font-family: $proxima;
 
     //Styles for Page Content
 
@@ -13,7 +14,7 @@
     }
     
     h1 {
-        color: $brown;
+        color: $dkr-grey;
         font-size: 30px; 
     }
 
@@ -41,7 +42,7 @@
         font-size: 16px;
         line-height: 1.5;
         margin-bottom: 10px;
-        font-family: $cronos;
+        font-family: $proxima;
 
         @media (max-width: $screen-sm-max) {
             font-size: 18px;

@@ -21,6 +21,7 @@
                 h1 {
                     padding: 0;
                     margin: 0;
+                    text-shadow: none;
                     
                     @media (max-width: $screen-sm-max) {
                         font-size: 28px;
@@ -150,7 +151,7 @@
 
                 .sidebar-title {
                     font-family: $proxima;
-                    color: $brown;
+                    color: $dkr-grey;
                     font-size: 13px;
                     line-height: 1.5;
                     font-weight: bold;
@@ -182,15 +183,15 @@
                         }
 
                         a {
-                            color: $brown;
+                            color: $dkr-grey;
                             border-bottom: 1px solid rgba(255,255,255,0);
 
                             &:hover {
-                                color: darken($brown, 40%);
-                                border-bottom: 1px solid $gold;
+                                color: darken($dkr-grey, 40%);
+                                border-bottom: 1px solid $cc-green;
 
                                 @media (max-width: $screen-sm-max) {
-                                    color: $brown;
+                                    color: $dkr-grey;
                                     border-bottom: 1px solid rgba(255,255,255,0);
                                 }
                             }
@@ -253,7 +254,7 @@
                     font-family: $baskerville;
                     font-family: $baskerville;
                     text-transform: capitalize;
-                    color: $brown;
+                    color: $white;
                     font-size: 1.5em; /* Approximation due to font substitution */
                     font-weight: 400;
                     line-height: 1.5; /* Approximation due to font substitution */
@@ -266,8 +267,8 @@
                 padding-bottom: 60px;
 
                 .child-content {
-                    font-family: $cronos;
-                    color: $brown;
+                    font-family: $proxima;
+                    color: $dkr-grey;
                     text-align: left;
                     font-size: 1.125em;
                     line-height: 1.5;

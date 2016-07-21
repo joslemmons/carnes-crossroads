@@ -76,9 +76,9 @@
                                         <a href="{{ function('tribe_get_event_link',ev.ID) }}">
                                             {# IF FEATURED IMAGE, USE FOR BG URL - DANIELLE WILL SET ELSE#}
                                             {% if ev.event_image_url %}                                       
-                                            <div class="event-title-box-outer" style="background: url({{ ev.event_image_url }}) no-repeat 50% 50%; background-size: cover; background-color: #9f9d5c; background-blend-mode: multiply;">
+                                            <div class="event-title-box-outer" style="background: url({{ ev.event_image_url }}) no-repeat 50% 50%; background-size: cover; background-color: #87a01e; background-blend-mode: multiply;">
                                                 {% else %}
-                                                <div class="event-title-box-outer" style="background: url({{ site.theme.link }}/img/placeholder-slider.jpg) no-repeat 50% 50%; background-size: cover; background-color: #9f9d5c; background-blend-mode: multiply;">
+                                                <div class="event-title-box-outer">
                                                     {% endif %}
                                                     <div class="event-title-box title-height">
                                                         {# INSERT EVENT TITLE #}
