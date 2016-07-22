@@ -10,7 +10,7 @@ wp_enqueue_script('poa-js', get_template_directory_uri() . '/js/poa.js', array('
 
 $context = Timber::get_context();
 
-$events_page = get_page_by_path('community/events-activities');
+$events_page = get_page_by_path('residents/events-activities');
 
 $page = Timber::get_post($events_page->ID);
 
