@@ -5,7 +5,7 @@ require_once get_template_directory().'/src/App/simple_html_dom.php';
 class EventCalendar
 {
   	
-  	public $events_url = '/events';
+  	public $events_url = '/calendar-of-events';
   	public $plugin_path = '/wp-content/plugins/the-events-calendar';
   	public $calendar_html = '';
   	
@@ -29,8 +29,7 @@ class EventCalendar
     public function fetchCalendarHtml() {
 	    	  
 	    $html = file_get_html(get_site_url().$this->events_url);
-	     
-	    $this->calendar_html = $html->find('div[id=tribe-events-pg-template]',0);
+	    $this->calendar_html = $html->find('div[id=tribe-events]',0);
 	 
     }
     
@@ -47,7 +46,7 @@ class EventCalendar
 		    if (!$data) {
 			    $data = $mnav->{"data-day"};
 		    }		    
-		    $newhref = get_site_url().'/community/events-activities/'.$data;
+		    $newhref = get_site_url().'/residents/events-activities/'.$data;
 		    $mnav->href = $newhref;		    
 	    }
 	    
@@ -55,7 +54,7 @@ class EventCalendar
 	    	    	    
 	    foreach ($html->find('div.tribe-events-viewmore a') as $dnav) {
 		    $href = $dnav->href;		    
-		    $newhref = str_replace('/events', '/community/events-activities', $href);
+		    $newhref = str_replace('/calendar-of-events', '/residents/events-activities', $href);
 		    $dnav->href = $newhref;	
 	    }
 	    
