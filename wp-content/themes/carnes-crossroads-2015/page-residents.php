@@ -74,12 +74,12 @@ $context = Timber::get_context();
 
 $events = tribe_get_events( array(
     'posts_per_page' => 10,
-    'eventDisplay' => 'upcoming'
+    'eventDisplay' => 'list'
 ) );
 
 $featured = tribe_get_events( array(
     'posts_per_page' => 10,
-    'eventDisplay' => 'upcoming',
+    'eventDisplay' => 'list',
     'tag' => 'featured',
 ) );
 

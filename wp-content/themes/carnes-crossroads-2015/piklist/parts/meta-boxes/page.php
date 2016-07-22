@@ -14,7 +14,173 @@ use App\Model\Page;
 
 $post = Timber::get_post($post->ID);
 
-if (
+$uri = get_page_uri($post->ID);
+
+$poa_slider_pages = array('residents','residents/island-announcements','residents/events-activities');
+
+if ( in_array($uri, $poa_slider_pages) ) {
+	
+		// specifically for POA home page only
+        if ($uri == 'residents') {
+                piklist('field', array(
+                  'type' => 'group',
+                  'field' => 'page_callout',
+                  'columns' => 12,
+                  'label' => 'Bottom Callout',
+                  'fields' => array(
+                    array(
+                      'type' => 'text',
+                      'label' => 'Title',
+                      'field' => 'title',
+                      'columns' => 12
+                    ),
+                    array(
+                      'type' => 'editor',
+                      'label' => 'Content',
+                      'field' => 'content',
+                      'columns' => 12
+                    ),
+                    array(
+                      'type' => 'text',
+                      'label' => 'Action Link',
+                      'field' => 'link',
+                      'columns' => 12
+                    ),
+                    array(
+                      'type' => 'text',
+                      'label' => 'Action Text',
+                      'field' => 'action',
+                      'columns' => 12
+                    ),
+                  )
+                ));
+        }
+
+        piklist('field', array(
+          'type' => 'group',
+          'field' => 'page_sliders',
+          'columns' => 12,
+          'label' => 'Sliders',
+          'add_more' => true,
+          'fields' => array(
+            array(
+              'type' => 'text',
+              'label' => 'Title',
+              'field' => 'title',
+              'columns' => 12
+            ),
+            array(
+              'type' => 'editor',
+              'label' => 'Content',
+              'field' => 'content',
+              'columns' => 12
+            ),
+            array(
+              'type' => 'text',
+              'label' => 'Action Link',
+              'field' => 'link',
+              'columns' => 12
+            ),
+            array(
+              'type' => 'text',
+              'label' => 'Action Text',
+              'field' => 'action',
+              'columns' => 12
+            ),
+            array(
+                    'type' => 'file',
+                    'field' => 'image',
+                    'label' => 'Image',
+                    'save' => 'url',
+                    'options' => array(
+                      'modal_title' => 'Select slider image from Sliders folder'
+                      ,'button' => 'Select Image',
+                      'save' => 'url'
+                    )
+
+            )
+          )
+        ));
+        
+} elseif ( $uri == 'residents/directories/helpful-links' ) {
+
+        piklist('field', array(
+          'type' => 'group',
+          'field' => 'page_links',
+          'columns' => 12,
+          'label' => 'Link Information',
+          'add_more' => true,
+          'fields' => array(
+            array(
+              'type' => 'text',
+              'label' => 'Title',
+              'field' => 'title',
+              'columns' => 12
+            ),
+            array(
+              'type' => 'editor',
+              'label' => 'Content',
+              'field' => 'content',
+              'columns' => 12
+            ),
+          )
+        ));	
+        
+} elseif ( $uri == 'residents/directories/staff' ) {
+
+        piklist('field', array(
+          'type' => 'group',
+          'field' => 'staff_members',
+          'columns' => 12,
+          'label' => 'Staff Members',
+          'add_more' => true,
+          'fields' => array(
+                array(
+              'type' => 'text',
+              'label' => 'First Name',
+              'field' => 'fname',
+              'columns' => 12
+            ),
+            array(
+              'type' => 'text',
+              'label' => 'Last Name',
+              'field' => 'lname',
+              'columns' => 12
+            ),
+            array(
+              'type' => 'text',
+              'label' => 'Email',
+              'field' => 'email',
+              'columns' => 12
+            ),
+            array(
+              'type' => 'text',
+              'label' => 'Phone Number',
+              'field' => 'phone',
+              'columns' => 12
+            ),
+            array(
+              'type' => 'text',
+              'label' => 'Position Title',
+              'field' => 'title',
+              'columns' => 12
+            ),
+            array(
+                    'type' => 'file',
+                    'field' => 'image',
+                    'label' => 'Image',
+                    'save' => 'url',
+                    'options' => array(
+                      'modal_title' => 'Select image'
+                      ,'button' => 'Select Image',
+                      'save' => 'url'
+                    )
+
+            )
+          )
+        )); 
+
+} elseif (
     $post && $post->id !== FrontPage::PAGE_ID &&
     $post->id !== FAQPage::PAGE_ID &&
     $post->id !== AccountPage::PAGE_ID
@@ -399,8 +565,8 @@ if (
 //        ));
     }
 
-}
-else {
+       
+} else {
     echo "<p>Intentionally left blank</p>";
 }
 
