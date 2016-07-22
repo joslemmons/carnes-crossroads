@@ -37,3 +37,7 @@ Routes::map('/property/:address/pbase/:property_base_id/', function ($params) {
 
     wp_redirect(home_url() . '/home-finder/properties/' . $address . '/pb_' . $propertyBaseId . '/');
 });
+
+Timber::add_route('residents/events-activities/:qdate', function( $params ) {
+        Timber::load_template('page-events-activities.php',null,200,$params);
+});
