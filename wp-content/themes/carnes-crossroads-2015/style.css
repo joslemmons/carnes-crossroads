@@ -8884,32 +8884,37 @@ span.tel {
       background: #fff;
       padding: 32px 28px; }
       .poa-site .home-events .upcoming-events-box h2 {
-        color: #9f9d5c;
-        font-size: 36px;
+        color: #919194;
+        font-size: 24px;
         font-weight: 400;
         text-align: left;
-        margin-bottom: 25px; }
+        margin-bottom: 25px;
+        text-transform: uppercase;
+        font-family: "proxima-nova", sans-serif;
+        letter-spacing: 2; }
       .poa-site .home-events .upcoming-events-box .event-details {
         margin-bottom: 10px;
         display: table; }
         .poa-site .home-events .upcoming-events-box .event-details .event-date {
           display: table-cell;
-          font-family: "cronos-pro", sans-serif;
-          color: #695e49;
-          font-size: 18px;
+          font-family: "proxima-nova", sans-serif;
+          color: #363636;
+          font-size: 16px;
           font-weight: 400;
           text-align: left;
           padding-right: 10px;
           width: 90px; }
         .poa-site .home-events .upcoming-events-box .event-details .event-title {
           display: table-cell;
-          font-family: "cronos-pro", sans-serif;
-          color: #695e49;
-          font-size: 18px;
+          font-family: "proxima-nova", sans-serif;
+          color: #363636;
+          font-size: 16px;
           font-weight: 600;
           text-align: left;
           margin-right: 10px;
           line-height: 1; }
+          .poa-site .home-events .upcoming-events-box .event-details .event-title a {
+            color: #363636; }
     .poa-site .home-events .featured-events-slider {
       margin-bottom: 0; }
     .poa-site .home-events .col-event-box {
@@ -8957,8 +8962,7 @@ span.tel {
         .poa-site .home-events .event-box .event-details-box .site-btn {
           margin-top: 20px; }
   .poa-site .home-announcements {
-    background: #f4f0e9 url(img/map-bg.jpg) no-repeat 50% 50%;
-    background-size: cover;
+    background: #f8f2e9;
     padding-top: 40px;
     padding-bottom: 40px; }
     .poa-site .home-announcements h2.section-title {
@@ -9001,7 +9005,7 @@ span.tel {
     .poa-site .home-announcements .announcement-box {
       background: #fff; }
       .poa-site .home-announcements .announcement-box .announcement-title-box-outer {
-        background: #9f9d5c;
+        background: #d6a83f;
         padding: 14px 14px 0 14px; }
       .poa-site .home-announcements .announcement-box .announcement-title-box {
         border-top: 4px solid #fff;
@@ -9012,7 +9016,7 @@ span.tel {
         display: table-cell;
         vertical-align: bottom; }
         .poa-site .home-announcements .announcement-box .announcement-title-box h2.announcement-title {
-          color: #695e49;
+          color: #363636;
           font-size: 32px;
           font-weight: 400;
           text-align: left;

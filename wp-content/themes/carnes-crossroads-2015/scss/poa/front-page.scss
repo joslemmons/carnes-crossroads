@@ -134,11 +134,14 @@
                 padding: 32px 28px;
 
                 h2 {
-                    color: $gold;
-                    font-size: 36px; 
+                    color: $cc-lt-grey;
+                    font-size: 24px; 
                     font-weight: 400;
                     text-align: left;
                     margin-bottom: 25px;
+                    text-transform: uppercase;
+                    font-family: $proxima;
+                    letter-spacing: 2;
                 }
 
                 .event-details {
@@ -147,9 +150,9 @@
 
                     .event-date {
                         display: table-cell;
-                        font-family: $cronos;
-                        color:  $brown;
-                        font-size: 18px;
+                        font-family: $proxima;
+                        color:  $dkr-grey;
+                        font-size: 16px;
                         font-weight: 400;
                         text-align: left;
                         padding-right: 10px;
@@ -158,13 +161,17 @@
 
                     .event-title {
                         display: table-cell;
-                        font-family: $cronos;
-                        color:  $brown;
-                        font-size: 18px;
+                        font-family: $proxima;
+                        color:  $dkr-grey;
+                        font-size: 16px;
                         font-weight: 600;
                         text-align: left;
                         margin-right: 10px;
                         line-height: 1;
+                        
+                        a {
+                            color: $dkr-grey;
+                        }
                     }
                 }
             }
@@ -239,8 +246,7 @@
 
         //-Announcements
         .home-announcements {
-            background: $beige url(img/map-bg.jpg) no-repeat 50% 50%; 
-            background-size: cover;
+            background: $cc-tan;
             padding-top: 40px;
             padding-bottom: 40px;
 
@@ -301,7 +307,7 @@
                 background: $white;
 
                 .announcement-title-box-outer {
-                    background: $gold;
+                    background: $cc-orange;
                     padding: 14px 14px 0 14px;
                 }
 
@@ -315,7 +321,7 @@
                     vertical-align: bottom;
 
                     h2.announcement-title {
-                        color: $brown;
+                        color: $dkr-grey;
                         font-size: 32px; 
                         font-weight: 400;
                         text-align: left;

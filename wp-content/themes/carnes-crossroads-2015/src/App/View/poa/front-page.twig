@@ -139,9 +139,9 @@
 
                                     {# IF FEATURED IMAGE, USE FOR BG URL - DANIELLE WILL SET ELSE#}
                                     {% if ann.thumbnail %}
-                                    <div class="announcement-title-box-outer" style="background: linear-gradient( rgba(204, 233, 230, 0.8), rgba(204, 233, 230, 0.8) ), url({{ ann.thumbnail.src }}); background-size: cover;">
+                                    <div class="announcement-title-box-outer" style="background: linear-gradient( rgba(227, 179, 66, 0.8), rgba(227, 179, 66, 0.8) ), url({{ ann.thumbnail.src }}); background-size: cover;">
                                         {% else %}
-                                        <div class="announcement-title-box-outer" style="background: linear-gradient( rgba(204, 233, 230, 0.8), rgba(204, 233, 230, 0.8) ), url({{ site.theme.link }}/img/placeholder-slider.jpg); background-size: cover;">
+                                        <div class="announcement-title-box-outer">
                                             {% endif %}
                                             <div class="announcement-title-box title-height">
 
