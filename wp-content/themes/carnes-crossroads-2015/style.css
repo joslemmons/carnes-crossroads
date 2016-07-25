@@ -8778,13 +8778,13 @@ span.tel {
     .poa-site h6 {
       font-size: 20px; }
     .poa-site p, .poa-site ol, .poa-site ul {
-      font-size: 16px;
+      font-size: 18px;
       line-height: 1.5;
       margin-bottom: 10px;
       font-family: "proxima-nova", sans-serif; } }
     @media screen and (max-width: 991px) {
       .poa-site p, .poa-site ol, .poa-site ul {
-        font-size: 18px; } }
+        font-size: 20px; } }
 
 @media screen {
   .poa-site .content-slider .featured-slider {

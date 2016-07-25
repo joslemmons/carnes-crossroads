@@ -52,26 +52,23 @@
                 </div>
             </div>
             <div class="col-md-9 col-right">
-                <div class="primary-content">
-                    <div class="child-page-content" id="{{ child_page.post_name }}">
-                        <div class="child-title">
-                            <h3>{{ post.title }}</h3>
-                        </div>
-
-                        <div class="child-content">
-                            <div class="announcement-img">
-                                
-                            	{% if post.thumbnail %}
-                                <img src="{{ post.thumbnail.src|resize(165,165) }}" />
-                                {% else %}
-                                <img src="{{ site.theme.link }}/img/placeholder-poa-news-img.jpg" />
-                                {% endif %}
-                            	                                
-                            </div>
-                            {{ post.content }}
-                        </div>
+                <div class="child-page-content" id="{{ child_page.post_name }}">
+                    <div class="child-title">
+                        <h3>{{ post.title }}</h3>
                     </div>
-                    
+
+                    <div class="child-content">
+                        <div class="announcement-img">
+
+                            {% if post.thumbnail %}
+                            <img src="{{ post.thumbnail.src|resize(165,165) }}" />
+                            {% else %}
+                            <img src="{{ site.theme.link }}/img/placeholder-poa-news-img.jpg" />
+                            {% endif %}
+
+                        </div>
+                        {{ post.content }}
+                    </div>
                 </div>
             </div>
         </div>

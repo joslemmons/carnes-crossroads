@@ -52,32 +52,31 @@
             <div class="col-md-9 col-right">
                 <div class="primary-content">
                     {{ page.content }}
-
-                    {% for child_page in page.getChildren %} 
-
-                    {% if ( (child_page.slug != 'helpful-links') and (child_page.slug != 'staff' ) ) %}
-                    <div class="child-page-content" id="{{ child_page.post_name }}">
-                        <div class="child-title">                           
-                            <h3>{{ child_page.title }}</h3>                            
-                        </div>
-
-                        <div class="child-content">
-                            {{ child_page.content }}
-                        </div>
-                    </div>
-                    {% endif %}
-                    {% endfor %}
-
-                    {# ONLY SHOW FOR DIRECTORIES #}
-
-                    {% if page.slug == 'directories' %}
-                    {{ include ('poa/partials/directories-staff.twig', {helpful_links: helpful_links }) }} 
-                    {{ include ('poa/partials/directories-helpful-links.twig', {staff_members: staff_members}) }} 
-                    {% endif %}
-
-                    {# END--ONLY SHOW FOR DIRECTORIES #}
-
                 </div>
+
+                {% for child_page in page.getChildren %} 
+
+                {% if ( (child_page.slug != 'helpful-links') and (child_page.slug != 'staff' ) ) %}
+                <div class="child-page-content" id="{{ child_page.post_name }}">
+                    <div class="child-title">                           
+                        <h3>{{ child_page.title }}</h3>                            
+                    </div>
+
+                    <div class="child-content">
+                        {{ child_page.content }}
+                    </div>
+                </div>
+                {% endif %}
+                {% endfor %}
+
+                {# ONLY SHOW FOR DIRECTORIES #}
+
+                {% if page.slug == 'directories' %}
+                {{ include ('poa/partials/directories-staff.twig', {helpful_links: helpful_links }) }} 
+                {{ include ('poa/partials/directories-helpful-links.twig', {staff_members: staff_members}) }} 
+                {% endif %}
+
+                {# END--ONLY SHOW FOR DIRECTORIES #}
             </div>
         </div>
     </div>

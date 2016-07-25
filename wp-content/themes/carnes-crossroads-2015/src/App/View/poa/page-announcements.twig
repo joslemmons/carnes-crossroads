@@ -9,10 +9,10 @@
             <div class="slider-caption">
                 {#CUSTOM Slide Headline#}
                 <h2 class="headline">{{ slide.title }}</h2>
-                
+
                 {#CUSTOM Slide Description#}
                 <p class="description">{{ slide.content }}</p>
-                
+
                 {#CUSTOM Link URL#}
                 <a class="cta-link" href="{{ slide.link }}">{{ slide.action }}</a>
             </div>
@@ -58,31 +58,31 @@
             </div>
             <div class="col-md-9 col-right">
                 <div class="primary-content">
-
-					{% for ann in announcements %}
-                    {# START Announcement Item #}
-                    <div class="child-page-content" id="{{ child_page.post_name }}">
-                        <div class="child-title">
-                            <a href="{{ ann.link }}"><h3>{{ ann.title }}</h3></a>
-                        </div>
-
-                        <div class="child-content">
-                            <div class="announcement-img">
-
-                            	{% if ann.thumbnail %}
-                                <img src="{{ ann.thumbnail.src|resize(165,165) }}" />
-                                {% else %}
-                                <img src="{{ site.theme.link }}/img/placeholder-poa-news-img.jpg" />
-                                {% endif %}
-                            	                                
-                            </div>
-                            {{ ann.content|excerpt(50) }}
-                        </div>
-                    </div>
-                    {# END Announcement Item #}
-                    {% endfor %}
-
+                    {{ page.content }}
                 </div>
+
+                {% for ann in announcements %}
+                {# START Announcement Item #}
+                <div class="child-page-content" id="{{ child_page.post_name }}">
+                    <div class="child-title">
+                        <a href="{{ ann.link }}"><h3>{{ ann.title }}</h3></a>
+                    </div>
+
+                    <div class="child-content">
+                        <div class="announcement-img">
+
+                            {% if ann.thumbnail %}
+                            <img src="{{ ann.thumbnail.src|resize(165,165) }}" />
+                            {% else %}
+                            <img src="{{ site.theme.link }}/img/placeholder-poa-news-img.jpg" />
+                            {% endif %}
+
+                        </div>
+                        {{ ann.content|excerpt(50) }}
+                    </div>
+                </div>
+                {# END Announcement Item #}
+                {% endfor %}
             </div>
         </div>
     </div>
