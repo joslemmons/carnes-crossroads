@@ -8778,13 +8778,13 @@ span.tel {
     .poa-site h6 {
       font-size: 20px; }
     .poa-site p, .poa-site ol, .poa-site ul {
-      font-size: 18px;
+      font-size: 16px;
       line-height: 1.5;
       margin-bottom: 10px;
       font-family: "proxima-nova", sans-serif; } }
     @media screen and (max-width: 991px) {
       .poa-site p, .poa-site ol, .poa-site ul {
-        font-size: 20px; } }
+        font-size: 18px; } }
 
 @media screen {
   .poa-site .content-slider .featured-slider {
@@ -8933,7 +8933,8 @@ span.tel {
         height: 160px;
         padding: 20px;
         display: table-cell;
-        vertical-align: bottom; } }
+        vertical-align: bottom;
+        min-width: 320px; } }
       @media screen and (max-width: 991px) {
         .poa-site .home-events .event-box .event-title-box {
           width: 100%;

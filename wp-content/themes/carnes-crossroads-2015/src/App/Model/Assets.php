@@ -13,6 +13,8 @@ class Assets
         wp_enqueue_style('style-css', get_template_directory_uri() . '/style.css');
         wp_enqueue_style('jquery-colorbox-css', get_template_directory_uri() . '/js/lib/colorbox/colorbox.css');
         wp_enqueue_style('bxslider-css', get_template_directory_uri() . '/bower_components/bxslider-4/dist/jquery.bxslider.css');
+        wp_enqueue_style('slick-css', get_template_directory_uri() . '/bower_components/slick-carousel/slick/slick.css', array(), false, false);
+        wp_enqueue_style('slick-theme-css', get_template_directory_uri() . '/bower_components/slick-carousel/slick/slick-theme.css', array('slick-css'), false, false);
     }
 
     public static function enqueue_scripts()
