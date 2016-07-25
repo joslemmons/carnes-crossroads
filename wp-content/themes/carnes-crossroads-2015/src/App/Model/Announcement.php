@@ -31,7 +31,7 @@ class Announcement extends \TimberPost
             'title' => 'Title',
             'public' => true,
             'rewrite' => array(
-                'slug' => 'residents/island-announcements'
+                'slug' => 'residents/announcements'
             ),
             'supports' => array(
                 'title',
