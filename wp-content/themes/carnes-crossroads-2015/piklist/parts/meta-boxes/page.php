@@ -102,7 +102,7 @@ if ( in_array($uri, $poa_slider_pages) ) {
           )
         ));
         
-} elseif ( $uri == 'residents/directories/helpful-links' ) {
+} elseif ( $uri == 'residents/directories/helpful-links-contacts' ) {
 
         piklist('field', array(
           'type' => 'group',
@@ -126,7 +126,7 @@ if ( in_array($uri, $poa_slider_pages) ) {
           )
         ));	
         
-} elseif ( $uri == 'residents/directories/staff' ) {
+} elseif ( $uri == 'residents/directories/pr' ) {
 
         piklist('field', array(
           'type' => 'group',
