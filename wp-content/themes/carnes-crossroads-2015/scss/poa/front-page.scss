@@ -204,6 +204,7 @@
                     padding: 20px;
                     display: table-cell;
                     vertical-align: bottom;
+                    min-width: 320px;
                     
                     @media (max-width: $screen-sm-max) {
                         width: 100%;
