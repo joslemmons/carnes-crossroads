@@ -12,7 +12,7 @@
             {% for child_page in page.getChildren %}
             <li {% if child_page.id == activeChildPage.id %}class="active"{% endif %}>
                 <a class="child-page-link"
-                   data-page-url-path="community/{{ page.post_name }}/{{ child_page.post_name }}"
+                   data-page-url-path="residents/{{ page.post_name }}/{{ child_page.post_name }}"
                    data-page-slug="{{ child_page.post_name }}"
                    href="{{ child_page.link }}">{{ child_page.title }}
                 </a>
@@ -52,31 +52,47 @@
             <div class="col-md-9 col-right">
                 <div class="primary-content">
                     {{ page.content }}
+                    
+                    {% if page.slug == 'directories' %}
+                    	
+                    	{% for child_page in page.getChildren %}
+                    	
+                    	{% if (child_page.slug == 'helpful-links-contacts') %}
+                    		{{ include ('poa/partials/directories-helpful-links.twig', {helpful_links: helpful_links }) }} 
+                    	{% elseif (child_page.slug == 'pr' ) %}
+                    		{{ include ('poa/partials/directories-staff.twig', {staff_members: staff_members}) }}  
+                    	{% else %}
+	                    	<div class="child-page-content" id="{{ child_page.post_name }}">
+		                        <div class="child-title">                           
+		                            <h3>{{ child_page.title }}</h3>                            
+		                        </div>
+		
+		                        <div class="child-content">
+		                            {{ child_page.content }}
+		                        </div>
+		                    </div>
+                    	{% endif %}
+                    
+						{% endfor %}
+						
+                    {% else %}
+                    
+                    	{% for child_page in page.getChildren %} 
+	                    <div class="child-page-content" id="{{ child_page.post_name }}">
+	                        <div class="child-title">                           
+	                            <h3>{{ child_page.title }}</h3>                            
+	                        </div>
+	
+	                        <div class="child-content">
+	                            {{ child_page.content }}
+	                        </div>
+	                    </div>
+                    	{% endfor %}
+                    
+                    {% endif %}
+                    
                 </div>
 
-                {% for child_page in page.getChildren %} 
-
-                {% if ( (child_page.slug != 'helpful-links') and (child_page.slug != 'staff' ) ) %}
-                <div class="child-page-content" id="{{ child_page.post_name }}">
-                    <div class="child-title">                           
-                        <h3>{{ child_page.title }}</h3>                            
-                    </div>
-
-                    <div class="child-content">
-                        {{ child_page.content }}
-                    </div>
-                </div>
-                {% endif %}
-                {% endfor %}
-
-                {# ONLY SHOW FOR DIRECTORIES #}
-
-                {% if page.slug == 'directories' %}
-                {{ include ('poa/partials/directories-staff.twig', {helpful_links: helpful_links }) }} 
-                {{ include ('poa/partials/directories-helpful-links.twig', {staff_members: staff_members}) }} 
-                {% endif %}
-
-                {# END--ONLY SHOW FOR DIRECTORIES #}
             </div>
         </div>
     </div>
