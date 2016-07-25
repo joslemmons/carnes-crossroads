@@ -9291,7 +9291,16 @@ span.tel {
       padding: 14px 14px 0 14px;
       height: 220px;
       z-index: 1;
-      position: relative; }
+      position: relative;
+      background-position: 50% 0% !important;
+      background-size: cover !important; } }
+    @media screen and (max-width: 767px) {
+      .poa-site .staff-member-box-outer {
+        height: 450px; } }
+    @media screen and (max-width: 500px) {
+      .poa-site .staff-member-box-outer {
+        height: 350px; } }
+@media screen {
     .poa-site .staff-member-box {
       border-top: 4px solid #fff;
       border-left: 4px solid #fff;

@@ -17,6 +17,16 @@
             height: 220px;
             z-index: 1;
             position: relative;
+            background-position: 50% 0% !important;
+            background-size: cover !important;
+            
+            @media (max-width: $screen-xs-max) {
+                height: 450px;
+            }
+            
+            @media (max-width: 500px) {
+                height: 350px;
+            }
         }
 
         .staff-member-box {
