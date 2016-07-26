@@ -42,7 +42,15 @@ jQuery(function ($) {
         //Sliders - Home Announcements
     $('.announcement-slider').slick({
         dots: false,
-        slidesToShow: 3
+        slidesToShow: 3,
+        responsive: [
+            {
+              breakpoint: 991,
+              settings: {
+                slidesToShow: 1
+              }
+            }
+          ]
     });
     
     //Match Height - Home Page

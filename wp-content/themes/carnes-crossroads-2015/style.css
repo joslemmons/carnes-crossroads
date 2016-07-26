@@ -8934,7 +8934,10 @@ span.tel {
         padding: 20px;
         display: table-cell;
         vertical-align: bottom;
-        min-width: 320px; } }
+        min-width: 266px; } }
+      @media screen and (min-width: 1200px) {
+        .poa-site .home-events .event-box .event-title-box {
+          width: 331px; } }
       @media screen and (max-width: 991px) {
         .poa-site .home-events .event-box .event-title-box {
           width: 100%;
@@ -9015,13 +9018,26 @@ span.tel {
         height: 160px;
         padding: 20px;
         display: table-cell;
-        vertical-align: bottom; }
+        vertical-align: bottom;
+        min-width: 265px; } }
+      @media screen and (min-width: 1200px) {
+        .poa-site .home-announcements .announcement-box .announcement-title-box {
+          min-width: 317px; } }
+      @media screen and (max-width: 991px) {
+        .poa-site .home-announcements .announcement-box .announcement-title-box {
+          min-width: 100%;
+          display: block; } }
+@media screen {
         .poa-site .home-announcements .announcement-box .announcement-title-box h2.announcement-title {
           color: #363636;
           font-size: 32px;
           font-weight: 400;
           text-align: left;
-          line-height: 1; }
+          line-height: 1; } }
+        @media screen and (max-width: 991px) {
+          .poa-site .home-announcements .announcement-box .announcement-title-box h2.announcement-title {
+            text-align: center; } }
+@media screen {
       .poa-site .home-announcements .announcement-box .announcement-details-box {
         padding: 17px 33px;
         font-family: "cronos-pro", sans-serif;

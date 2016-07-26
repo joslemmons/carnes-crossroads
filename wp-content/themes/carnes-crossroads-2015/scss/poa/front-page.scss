@@ -204,7 +204,11 @@
                     padding: 20px;
                     display: table-cell;
                     vertical-align: bottom;
-                    min-width: 320px;
+                    min-width: 266px;
+                    
+                    @media (min-width: $screen-lg) {
+                        width: 331px;
+                    }
                     
                     @media (max-width: $screen-sm-max) {
                         width: 100%;
@@ -320,6 +324,16 @@
                     padding: 20px;
                     display: table-cell;
                     vertical-align: bottom;
+                    min-width: 265px;
+                    
+                    @media (min-width: $screen-lg) {
+                        min-width: 317px;
+                    }
+                    
+                    @media (max-width: $screen-sm-max) {
+                        min-width: 100%;
+                        display: block;
+                    }
 
                     h2.announcement-title {
                         color: $dkr-grey;
@@ -327,6 +341,10 @@
                         font-weight: 400;
                         text-align: left;
                         line-height: 1;
+                        
+                        @media (max-width: $screen-sm-max) {
+                            text-align: center;
+                        }
                     }
                 }
 
