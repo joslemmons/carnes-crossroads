@@ -77,8 +77,11 @@ $events = tribe_get_events( array(
     'eventDisplay' => 'list'
 ) );
 
+$events_per_slide = 4;
+$events_upper_limit = 12;
+
 $featured = tribe_get_events( array(
-    'posts_per_page' => 10,
+    'posts_per_page' => $events_upper_limit,
     'eventDisplay' => 'list',
     'tag' => 'featured',
 ) );
@@ -87,7 +90,9 @@ if (count($featured) < 1) {
 	$featured = array($events[0]);
 }
 
-for ($i = 0 ; $i < count($featured) ; $i++) {
+$events_count = count($featured);
+
+for ($i = 0 ; $i < $events_count ; $i++) {
 	$id = $featured[$i]->ID;
 	if (has_post_thumbnail( $id ) ) {
 		$image = wp_get_attachment_image_src( get_post_thumbnail_id( $id ), 'single-post-thumbnail' );
@@ -98,16 +103,33 @@ for ($i = 0 ; $i < count($featured) ; $i++) {
 	$featured[$i]->event_image_url = $event_image_url;  
 }
 
+$featured_slides = array();
+$events_num_slides = ceil($events_count/$events_per_slide);
+
+for ($i = 0 ; $i < $events_num_slides ; $i++) {
+	
+	$this_slide = array();
+	
+	$start_index = intval($i*$events_per_slide);
+	$end_index = min($start_index+$events_per_slide,$events_count);
+	
+	for ($j = $start_index ; $j < $end_index ; $j++) {
+		$this_slide[] = $featured[$j];	
+	}
+	
+	$featured_slides[] = $this_slide;
+}
+
 $post_meta = get_post_meta($post->ID);
 
 $sliders = unserialize($post_meta['page_sliders'][0]);
-$announcements = Announcement::get(true,10);
+$announcements = Announcement::get(true,9);
 $callout = unserialize($post_meta['page_callout'][0]);
 
 $context['announcements'] = $announcements;
 $context['sliders'] = $sliders;
 $context['callout'] = $callout;
 $context['events'] = $events;
-$context['featured'] = $featured;
+$context['featured_slides'] = $featured_slides;
 
 Timber::render('poa/front-page.twig', $context);
