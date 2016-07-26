@@ -193,10 +193,10 @@
             }
 
             .col-event-box {
-                margin-bottom: 30px; 
+                margin-bottom: 0px; 
 
-                @include last(2){
-                    margin-bottom: 0px;
+                @include first(2){
+                    margin-bottom: 30px;
                 }
             }
 
@@ -320,9 +320,6 @@
                 margin-bottom: 30px; 
                 width: 100%;
 
-                @include last(2){
-                    margin-bottom: 0px;
-                }
             }
 
             .announcement-box {
