@@ -9445,7 +9445,7 @@ span.tel {
     margin-bottom: 10px; } }
 @media screen {
   .event-categories {
-    background: #f4f0e9;
+    background: #fffaf3;
     padding-top: 35px;
     padding-bottom: 20px; }
 
@@ -9455,5 +9455,5 @@ span.tel {
     text-align: center;
     margin-bottom: 15px; }
     .site-btn.cat-btn.active {
-      background: #9f9d5c;
+      background: #e26f57;
       color: #fff; } }
