@@ -12,7 +12,7 @@
         }
 
         .staff-member-box-outer {
-            background: $gold;
+            background: $cc-green;
             padding: 14px 14px 0 14px;
             height: 220px;
             z-index: 1;
@@ -34,10 +34,18 @@
             border-left: 4px solid $white;
             border-right: 4px solid $white;
             height: 206px;
+            
+            @media (max-width: $screen-xs-max) {
+                height: 450px;
+            }
+            
+            @media (max-width: 500px) {
+                height: 350px;
+            }
         }
 
         .staff-member-hover-box {
-            background-color: rgba(105, 94, 74, 0.85);
+            background-color: rgba(54, 54, 54, 0.85);
             height: 220px;
             position: relative;
             z-index: 2;
@@ -65,7 +73,7 @@
                 vertical-align: middle;
 
                 .get-in-touch {
-                    font-family: $baskerville;
+                    font-family: $minion;
                     color: $cc-green;
                     font-size: 18px; 
                     font-weight: 600;
@@ -83,14 +91,14 @@
                 }
 
                 .staff-phone {
-                    font-family: $baskerville;
+                    font-family: $minion;
                     color: $white;
                     font-size: 22px; 
                     font-weight: 400;
                 }
 
                 .staff-email a {
-                    font-family: $baskerville;
+                    font-family: $minion;
                     color: $white;
                     font-size: 22px; 
                     font-weight: 400;
@@ -105,7 +113,7 @@
         }
 
         .staff-member-details {
-            background: $beige;
+            background: $peachy;
             padding: 16px 30px;
             margin-bottom: 30px;
 
@@ -115,8 +123,8 @@
             }
 
             .staff-name {
-                font-family: $baskerville;
-                color: $brown;
+                font-family: $minion;
+                color: $dkr-grey;
                 font-size: 20px; 
                 font-weight: 400;
                 margin-bottom: 6px;
@@ -124,8 +132,8 @@
             }
 
             .staff-position {
-                font-family: $cronos;
-                color: $gold;
+                font-family: $proxima;
+                color: $cc-green;
                 font-size: 16px;
                 font-weight: 400;
                 line-height: 1;
@@ -146,7 +154,7 @@
             border: none;
             outline: none;
             font-size: 25px;
-            font-family: $baskerville;
+            font-family: $minion;
             text-transform: uppercase;
             line-height: 1.6;
             text-align: left;
