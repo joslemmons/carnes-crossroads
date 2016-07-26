@@ -34,12 +34,13 @@
                 }
 
                 h2.headline {
-                    font-family: $baskerville;
-                    color: $brown;
+                    font-family: $minion;
+                    color: $dkr-grey;
                     font-size: 40px; 
                     font-weight: 400;
                     text-align: left;
                     line-height: 1;
+                    margin-bottom: 20px;
                     
                     @media (max-width: $screen-sm-max) {
                         margin: 0;
@@ -48,14 +49,22 @@
                 }
 
                 p.description {
-                    font-family: $cronos;
-                    color: $brown;
+                    font-family: $proxima;
+                    color: $dk-grey;
                     font-size: 18px; 
                     font-weight: 400;
                     text-align: left;
                     
                     @media(max-width: $screen-sm-max) {
                         display: none;
+                    }
+                }
+                
+                a.cta-link {
+                    color: $grey;
+                    
+                    &:hover {
+                        color: darken($grey,20%);
                     }
                 }
             }
@@ -74,6 +83,7 @@
                 font-weight: 400;
                 margin-right: 100px;
                 text-transform: uppercase;
+                margin-bottom: 20px;
                 
                 @media (max-width: $screen-sm-max) {
                     text-align: center;
@@ -83,17 +93,19 @@
             }
 
             .slick-prev, .slick-next {
-                border: 1px solid $brown;
+                border: 2px solid $cc-green;
                 background-color: $white;
                 width: 36px;
-                height: 30px;
+                height: 36px;
                 z-index: 8;
                 bottom: auto;
-                top: -30px;
+                top: -44px;
+                border-radius: 50%;
 
                 &:before {
-                    color: $brown;
-                    font-family: $baskerville;
+                    color: $cc-green;
+                    font-family: $minion;
+                    font-weight: bold;
                 }
             }
 
@@ -264,6 +276,7 @@
                 font-weight: 400;
                 margin-right: 100px;
                 text-transform: uppercase;
+                margin-bottom: 20px;
                 
                 @media (max-width: $screen-sm-max) {
                     text-align: center;
@@ -273,17 +286,19 @@
             }
 
             .slick-prev, .slick-next {
-                border: 1px solid $brown;
+                border: 2px solid $cc-orange;
                 background-color: $white;
                 width: 36px;
-                height: 30px;
+                height: 36px;
                 z-index: 8;
                 bottom: auto;
-                top: -30px;
+                top: -44px;
+                border-radius: 50%;
 
                 &:before {
-                    color: $brown;
-                    font-family: $baskerville;
+                    color: $cc-orange;
+                    font-family: $minion;
+                    font-weight: bold;
                 }
             }
 
@@ -388,7 +403,7 @@
         //Bonus Call Out
         .bonus-callout {
             padding-top: 30px;
-            padding-bottom: 30px;
+            padding-bottom: 60px;
             background: url(img/poa-floral-bg.jpg) no-repeat 100% 50%;
             background-size: 650px;
             
