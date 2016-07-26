@@ -64,6 +64,7 @@
                     <div class="featured-events-slider">
 
                         {#BEGIN SLIDE - BATCH BY 4#}
+                        {% for featured in featured_slides %}
                         <div class="slide">
                             <div class="row event-box-row">
 
@@ -109,6 +110,7 @@
                                 </div>
                             </div>
                             {#END SLIDE - BATCH BY 4#}
+                            {% endfor %}
 
                         </div>
                     </div>
