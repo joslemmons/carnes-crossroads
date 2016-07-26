@@ -101,8 +101,8 @@ jQuery(function ($) {
             return (el.length > 0);
         });
 
-        if (pathArray.length >= 2) {
-            var target = $('#' + pathArray[1]);
+        if (pathArray.length >= 3) {
+            var target = $('#' + pathArray[2]);
             if (target.length) {
                 $('html,body').animate({
                     scrollTop: target.offset().top - 200
