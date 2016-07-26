@@ -69,7 +69,7 @@
 
             h2.section-title {
                 text-align: right;
-                color: $gold;
+                color: $cc-green;
                 font-size: 30px;
                 font-weight: 400;
                 margin-right: 100px;
@@ -115,8 +115,8 @@
                 background: $white;
                 padding: 20px 35px;
                 text-align: center;
-                font-family: $baskerville;
-                color: $brown;
+                font-family: $proxima;
+                color: $dkr-grey;
                 font-size: 17px;
                 font-weight: 400;
                 margin: 30px 0;
@@ -124,7 +124,7 @@
                 @include transition (0.3s all);
 
                 &:hover {
-                    background: $gold;
+                    background: $cc-green;
                     color: $white;
                 }
             }
@@ -152,7 +152,7 @@
                         display: table-cell;
                         font-family: $proxima;
                         color:  $dkr-grey;
-                        font-size: 16px;
+                        font-size: 14px;
                         font-weight: 400;
                         text-align: left;
                         padding-right: 10px;
@@ -161,7 +161,7 @@
 
                     .event-title {
                         display: table-cell;
-                        font-family: $proxima;
+                        font-family: $minion;
                         color:  $dkr-grey;
                         font-size: 16px;
                         font-weight: 600;
@@ -231,11 +231,13 @@
 
                 .event-details-box {
                     padding: 17px 33px;
-                    font-family: $cronos;
-                    color:  $brown;
-                    font-size: 18px;
+                    font-family: $proxima;
+                    color:  $dkr-grey;
+                    font-size: 16px;
                     font-weight: 400;
                     text-align: left;
+                    text-transform: uppercase;
+
 
                     .event-time {
                         display: block;
@@ -251,13 +253,13 @@
 
         //-Announcements
         .home-announcements {
-            background: $cc-tan;
+            background: $peachy;
             padding-top: 40px;
             padding-bottom: 40px;
 
             h2.section-title {
                 text-align: right;
-                color: $cc-green;
+                color: $cc-orange;
                 font-size: 30px;
                 font-weight: 400;
                 margin-right: 100px;
@@ -350,11 +352,12 @@
 
                 .announcement-details-box {
                     padding: 17px 33px;
-                    font-family: $cronos;
-                    color:  $brown;
-                    font-size: 18px;
+                    font-family: $proxima;
+                    color:  $dkr-grey;
+                    font-size: 16px;
                     font-weight: 400;
                     text-align: left;
+                    text-transform: uppercase;
 
                     .site-btn {
                         //main styles in base.scss
@@ -367,8 +370,8 @@
                 background: $white;
                 padding: 20px 35px;
                 text-align: center;
-                font-family: $baskerville;
-                color: $brown;
+                font-family: $proxima;
+                color: $dkr-grey;
                 font-size: 17px;
                 font-weight: 400;
                 margin: 30px 0;
@@ -376,7 +379,7 @@
                 @include transition (0.3s all);
 
                 &:hover {
-                    background: $cc-green;
+                    background: $cc-orange;
                     color: $white;
                 }
             }
@@ -386,16 +389,22 @@
         .bonus-callout {
             padding-top: 30px;
             padding-bottom: 30px;
-
+            background: url(img/poa-floral-bg.jpg) no-repeat 100% 50%;
+            background-size: 650px;
+            
+            .callout-outline {
+                background: $peachy;
+                padding: 15px;
+            }
 
             .bonus-callout-container {
-                border: 30px solid $dk-beige;
-                background: $white;
+                border: 2px solid $white;
+                background: $peachy;
                 padding: 20px 40px;
             }
 
             h2.callout-headline {
-                color:  $brown;
+                color:  $dkr-grey;
                 font-size: 36px;
                 font-weight: 400;
                 line-height: 1;
@@ -404,8 +413,8 @@
             }
 
             p.callout-excerpt {
-                font-family: $cronos;
-                color:  $brown;
+                font-family: $minion;
+                color:  $dkr-grey;
                 font-size: 18px;
                 font-weight: 400;
                 line-height: 1.5;

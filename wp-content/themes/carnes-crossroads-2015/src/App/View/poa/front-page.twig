@@ -190,26 +190,28 @@
             <div class="container">
                 <div class="row">
                     <div class="col-md-12">
-                        <div class="bonus-callout-container">
-                            {# INSERT CUSTOM HEADLINE #}
-                            <h2 class="callout-headline">
-                                {{ callout.title }}
-                            </h2>
+                        <div class="callout-outline">
+                            <div class="bonus-callout-container">
+                                {# INSERT CUSTOM HEADLINE #}
+                                <h2 class="callout-headline">
+                                    {{ callout.title }}
+                                </h2>
 
-                            {# INSERT CUSTOM TEXT AREA #}
-                            <p class="callout-excerpt">
-                                {{ callout.content }}
-                            </p>
+                                {# INSERT CUSTOM TEXT AREA #}
+                                <p class="callout-excerpt">
+                                    {{ callout.content }}
+                                </p>
 
-                            {% if callout.link %}
-                            <div class="btn-container">
+                                {% if callout.link %}
+                                <div class="btn-container">
 
-                                {# INSERT CUSTOM URL #}
-                                <a class="site-btn" href="{{ callout.link }}">
-                                    {% if callout.action %}{{ callout.action }}{% else %}Learn More{% endif %}
-                                </a>
+                                    {# INSERT CUSTOM URL #}
+                                    <a class="site-btn" href="{{ callout.link }}">
+                                        {% if callout.action %}{{ callout.action }}{% else %}Learn More{% endif %}
+                                    </a>
+                                </div>
+                                {% endif %}
                             </div>
-                            {% endif %}
                         </div>
                     </div>
                 </div>

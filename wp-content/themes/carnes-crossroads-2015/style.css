@@ -8552,7 +8552,7 @@ span.tel {
     display: inline-block;
     background: #fff;
     border: 1px solid #363636;
-    font-family: "baskerville-urw", serif;
+    font-family: "proxima-nova", sans-serif;
     color: #363636;
     font-size: 12px;
     font-weight: 400;
@@ -8729,14 +8729,11 @@ span.tel {
         padding-left: 5px;
         padding-right: 20px; } }
 @media screen {
-  .poa-site .streetscape {
-    background: url(img/footer-streetscape.jpg) no-repeat 100% 100%;
-    background-size: 1024px;
-    height: 146px;
-    border-bottom: 6px solid #e4e2d6; }
   .poa-site .site-footer {
-    margin-top: 10px;
-    margin-bottom: 20px; }
+    padding-top: 20px;
+    padding-bottom: 20px;
+    background: #e26f57;
+    color: #fff; }
     .poa-site .site-footer nav.poa-footer-nav ul.footer-nav {
       margin: 0;
       padding: 0; }
@@ -8749,14 +8746,14 @@ span.tel {
         text-align: left;
         text-transform: uppercase; }
         .poa-site .site-footer nav.poa-footer-nav ul.footer-nav li.nav-item a {
-          color: #695e49; }
+          color: #fff; }
           .poa-site .site-footer nav.poa-footer-nav ul.footer-nav li.nav-item a:hover {
-            color: #9f9d5c; }
+            color: #fff; }
     .poa-site .site-footer .copyright {
       font-family: "baskerville-urw", serif;
       font-size: 14px;
       margin-top: 5px;
-      color: #695e49; } }
+      color: #fff; } }
 @media screen {
   .poa-site {
     font-family: "proxima-nova", sans-serif; }
@@ -8835,7 +8832,7 @@ span.tel {
     padding-bottom: 40px; }
     .poa-site .home-events h2.section-title {
       text-align: right;
-      color: #9f9d5c;
+      color: #768e1c;
       font-size: 30px;
       font-weight: 400;
       margin-right: 100px;
@@ -8869,8 +8866,8 @@ span.tel {
       background: #fff;
       padding: 20px 35px;
       text-align: center;
-      font-family: "baskerville-urw", serif;
-      color: #695e49;
+      font-family: "proxima-nova", sans-serif;
+      color: #363636;
       font-size: 17px;
       font-weight: 400;
       margin: 30px 0;
@@ -8878,7 +8875,7 @@ span.tel {
       -webkit-transition: 0.3s all;
       transition: 0.3s all; }
       .poa-site .home-events .view-all-container:hover {
-        background: #9f9d5c;
+        background: #768e1c;
         color: #fff; }
     .poa-site .home-events .upcoming-events-box {
       background: #fff;
@@ -8899,14 +8896,14 @@ span.tel {
           display: table-cell;
           font-family: "proxima-nova", sans-serif;
           color: #363636;
-          font-size: 16px;
+          font-size: 14px;
           font-weight: 400;
           text-align: left;
           padding-right: 10px;
           width: 90px; }
         .poa-site .home-events .upcoming-events-box .event-details .event-title {
           display: table-cell;
-          font-family: "proxima-nova", sans-serif;
+          font-family: "minion-pro", serif;
           color: #363636;
           font-size: 16px;
           font-weight: 600;
@@ -8956,22 +8953,23 @@ span.tel {
 @media screen {
       .poa-site .home-events .event-box .event-details-box {
         padding: 17px 33px;
-        font-family: "cronos-pro", sans-serif;
-        color: #695e49;
-        font-size: 18px;
+        font-family: "proxima-nova", sans-serif;
+        color: #363636;
+        font-size: 16px;
         font-weight: 400;
-        text-align: left; }
+        text-align: left;
+        text-transform: uppercase; }
         .poa-site .home-events .event-box .event-details-box .event-time {
           display: block; }
         .poa-site .home-events .event-box .event-details-box .site-btn {
           margin-top: 20px; }
   .poa-site .home-announcements {
-    background: #f8f2e9;
+    background: #fffaf3;
     padding-top: 40px;
     padding-bottom: 40px; }
     .poa-site .home-announcements h2.section-title {
       text-align: right;
-      color: #768e1c;
+      color: #d6a83f;
       font-size: 30px;
       font-weight: 400;
       margin-right: 100px;
@@ -9040,19 +9038,20 @@ span.tel {
 @media screen {
       .poa-site .home-announcements .announcement-box .announcement-details-box {
         padding: 17px 33px;
-        font-family: "cronos-pro", sans-serif;
-        color: #695e49;
-        font-size: 18px;
+        font-family: "proxima-nova", sans-serif;
+        color: #363636;
+        font-size: 16px;
         font-weight: 400;
-        text-align: left; }
+        text-align: left;
+        text-transform: uppercase; }
         .poa-site .home-announcements .announcement-box .announcement-details-box .site-btn {
           margin-top: 20px; }
     .poa-site .home-announcements .view-all-container {
       background: #fff;
       padding: 20px 35px;
       text-align: center;
-      font-family: "baskerville-urw", serif;
-      color: #695e49;
+      font-family: "proxima-nova", sans-serif;
+      color: #363636;
       font-size: 17px;
       font-weight: 400;
       margin: 30px 0;
@@ -9060,25 +9059,30 @@ span.tel {
       -webkit-transition: 0.3s all;
       transition: 0.3s all; }
       .poa-site .home-announcements .view-all-container:hover {
-        background: #768e1c;
+        background: #d6a83f;
         color: #fff; }
   .poa-site .bonus-callout {
     padding-top: 30px;
-    padding-bottom: 30px; }
+    padding-bottom: 30px;
+    background: url(img/poa-floral-bg.jpg) no-repeat 100% 50%;
+    background-size: 650px; }
+    .poa-site .bonus-callout .callout-outline {
+      background: #fffaf3;
+      padding: 15px; }
     .poa-site .bonus-callout .bonus-callout-container {
-      border: 30px solid #e4e2d6;
-      background: #fff;
+      border: 2px solid #fff;
+      background: #fffaf3;
       padding: 20px 40px; }
     .poa-site .bonus-callout h2.callout-headline {
-      color: #695e49;
+      color: #363636;
       font-size: 36px;
       font-weight: 400;
       line-height: 1;
       text-align: left;
       margin-bottom: 30px; }
     .poa-site .bonus-callout p.callout-excerpt {
-      font-family: "cronos-pro", sans-serif;
-      color: #695e49;
+      font-family: "minion-pro", serif;
+      color: #363636;
       font-size: 18px;
       font-weight: 400;
       line-height: 1.5;
