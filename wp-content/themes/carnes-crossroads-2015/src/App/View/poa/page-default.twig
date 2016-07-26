@@ -59,7 +59,7 @@
                     	
                     	{% if (child_page.slug == 'helpful-links-contacts') %}
                     		{{ include ('poa/partials/directories-helpful-links.twig', {helpful_links: helpful_links }) }} 
-                    	{% elseif (child_page.slug == 'pr' ) %}
+                    	{% elseif (child_page.slug == 'poa-staff' ) %}
                     		{{ include ('poa/partials/directories-staff.twig', {staff_members: staff_members}) }}  
                     	{% else %}
 	                    	<div class="child-page-content" id="{{ child_page.post_name }}">
