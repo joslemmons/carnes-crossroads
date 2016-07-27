@@ -65,15 +65,11 @@ jQuery(function ($) {
             .find('.event-box')   // Only children of this row
             .matchHeight({byRow: false}); // Row detection gets confused so disable it
     });
-    $('.featured-events-slider').each(function(i, elem) {
-        $(elem)
-            .find('.title-height')   // Only children of this row
-            .matchHeight({byRow: false}); // Row detection gets confused so disable it
-    });
+
     //--Announcements
-    $('.home-annoucements').each(function(i, elem) {
+    $('.announcement-slider').each(function(i, elem) {
         $(elem)
-            .find('.annoucement-box')   // Only children of this row
+            .find('.announcement-box')   // Only children of this row
             .matchHeight({byRow: false}); // Row detection gets confused so disable it
     });
     

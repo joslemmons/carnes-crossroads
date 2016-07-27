@@ -8939,15 +8939,19 @@ span.tel {
         padding: 20px;
         display: table-cell;
         vertical-align: bottom;
-        min-width: 266px; } }
+        min-width: 266px;
+        height: 200px; } }
       @media screen and (min-width: 1200px) {
         .poa-site .home-events .event-box .event-title-box {
-          width: 331px; } }
+          width: 331px;
+          height: 180px; } }
       @media screen and (max-width: 991px) {
         .poa-site .home-events .event-box .event-title-box {
           width: 100%;
           display: block;
-          text-align: center; } }
+          text-align: center;
+          height: auto;
+          padding: 40px 20px; } }
 @media screen {
         .poa-site .home-events .event-box .event-title-box h2.event-title {
           color: #fff;
@@ -9026,13 +9030,18 @@ span.tel {
         padding: 20px;
         display: table-cell;
         vertical-align: bottom;
-        min-width: 265px; } }
+        min-width: 265px;
+        height: 200px; } }
       @media screen and (min-width: 1200px) {
         .poa-site .home-announcements .announcement-box .announcement-title-box {
-          min-width: 317px; } }
+          width: 317px;
+          height: 180px; } }
       @media screen and (max-width: 991px) {
         .poa-site .home-announcements .announcement-box .announcement-title-box {
-          min-width: 100%;
+          width: 100%;
+          display: block;
+          text-align: center;
+          height: auto;
           display: block; } }
 @media screen {
         .poa-site .home-announcements .announcement-box .announcement-title-box h2.announcement-title {
@@ -9164,7 +9173,7 @@ span.tel {
       margin: 0;
       padding: 0; }
       .poa-site .sidebar-mobile .sub-nav ul li {
-        font-family: "baskerville-urw", serif;
+        font-family: "minion-pro", serif;
         color: #695e49;
         font-size: 16px;
         /* Approximation due to font substitution */
@@ -9184,7 +9193,7 @@ span.tel {
           border-bottom: 1px solid rgba(255, 255, 255, 0); }
           .poa-site .sidebar-mobile .sub-nav ul li a:hover {
             color: black;
-            border-bottom: 1px solid #9f9d5c; } }
+            border-bottom: 1px solid #768e1c; } }
           @media screen and (max-width: 991px) {
             .poa-site .sidebar-mobile .sub-nav ul li a:hover {
               color: #fff;
@@ -9193,7 +9202,7 @@ span.tel {
         .poa-site .sidebar-mobile .sub-nav ul li.active {
           font-weight: bold; }
           .poa-site .sidebar-mobile .sub-nav ul li.active a {
-            color: #9f9d5c; }
+            color: #768e1c; }
   .poa-site .main-content {
     margin-bottom: 138px;
     position: relative; } }
@@ -9223,7 +9232,7 @@ span.tel {
           display: none; } }
 @media screen {
         .poa-site .main-content .sub-nav ul li {
-          font-family: "baskerville-urw", serif;
+          font-family: "minion-pro", serif;
           color: #695e49;
           font-size: 16px;
           /* Approximation due to font substitution */
@@ -9252,7 +9261,7 @@ span.tel {
           .poa-site .main-content .sub-nav ul li.active {
             font-weight: bold; }
             .poa-site .main-content .sub-nav ul li.active a {
-              color: #9f9d5c; }
+              color: #768e1c; }
     .poa-site .main-content .col-right {
       padding-left: 40px; } }
     @media screen and (max-width: 991px) {
@@ -9260,11 +9269,11 @@ span.tel {
         padding-left: 15px; } }
 @media screen {
       .poa-site .main-content .col-right a {
-        border-bottom: 1px solid #9f9d5c; }
+        border-bottom: 1px solid #768e1c; }
     .poa-site .main-content .primary-content {
       margin-top: 85px;
-      font-family: "cronos-pro", sans-serif;
-      color: #695e49;
+      font-family: "proxima-nova", sans-serif;
+      color: #363636;
       font-size: 1.125em;
       font-weight: 400;
       line-height: 1.5;
@@ -9275,7 +9284,7 @@ span.tel {
         margin-bottom: 45px; } }
 @media screen {
       .poa-site .main-content .primary-content a {
-        border-bottom: 1px solid #9f9d5c; }
+        border-bottom: 1px solid #768e1c; }
     .poa-site .main-content .child-title {
       background: #768e1c url(img/title-arrow.png) no-repeat 0 50%;
       background-size: 20px;
@@ -9286,8 +9295,7 @@ span.tel {
         margin-top: 20px; } }
 @media screen {
       .poa-site .main-content .child-title h3 {
-        font-family: "baskerville-urw", serif;
-        font-family: "baskerville-urw", serif;
+        font-family: "minion-pro", serif;
         text-transform: capitalize;
         color: #fff;
         font-size: 1.5em;
@@ -9317,7 +9325,7 @@ span.tel {
       .poa-site .staff-member-box-container:hover .staff-member-hover-box {
         opacity: 1; }
     .poa-site .staff-member-box-outer {
-      background: #9f9d5c;
+      background: #768e1c;
       padding: 14px 14px 0 14px;
       height: 220px;
       z-index: 1;
@@ -9335,9 +9343,16 @@ span.tel {
       border-top: 4px solid #fff;
       border-left: 4px solid #fff;
       border-right: 4px solid #fff;
-      height: 206px; }
+      height: 206px; } }
+    @media screen and (max-width: 767px) {
+      .poa-site .staff-member-box {
+        height: 450px; } }
+    @media screen and (max-width: 500px) {
+      .poa-site .staff-member-box {
+        height: 350px; } }
+@media screen {
     .poa-site .staff-member-hover-box {
-      background-color: rgba(105, 94, 74, 0.85);
+      background-color: rgba(54, 54, 54, 0.85);
       height: 220px;
       position: relative;
       z-index: 2;
@@ -9362,7 +9377,7 @@ span.tel {
         display: table-cell;
         vertical-align: middle; }
         .poa-site .staff-member-hover-box .content-container .get-in-touch {
-          font-family: "baskerville-urw", serif;
+          font-family: "minion-pro", serif;
           color: #768e1c;
           font-size: 18px;
           font-weight: 600;
@@ -9375,12 +9390,12 @@ span.tel {
           background: #768e1c;
           margin: 18px auto; }
         .poa-site .staff-member-hover-box .content-container .staff-phone {
-          font-family: "baskerville-urw", serif;
+          font-family: "minion-pro", serif;
           color: #fff;
           font-size: 22px;
           font-weight: 400; }
         .poa-site .staff-member-hover-box .content-container .staff-email a {
-          font-family: "baskerville-urw", serif;
+          font-family: "minion-pro", serif;
           color: #fff;
           font-size: 22px;
           font-weight: 400;
@@ -9389,7 +9404,7 @@ span.tel {
             border-bottom: 1px solid #768e1c;
             color: #768e1c; }
     .poa-site .staff-member-details {
-      background: #f4f0e9;
+      background: #fffaf3;
       padding: 16px 30px;
       margin-bottom: 30px; } }
     @media screen and (max-width: 991px) {
@@ -9398,15 +9413,15 @@ span.tel {
         padding: 20px; } }
 @media screen {
       .poa-site .staff-member-details .staff-name {
-        font-family: "baskerville-urw", serif;
-        color: #695e49;
+        font-family: "minion-pro", serif;
+        color: #363636;
         font-size: 20px;
         font-weight: 400;
         margin-bottom: 6px;
         line-height: 1; }
       .poa-site .staff-member-details .staff-position {
-        font-family: "cronos-pro", sans-serif;
-        color: #9f9d5c;
+        font-family: "proxima-nova", sans-serif;
+        color: #768e1c;
         font-size: 16px;
         font-weight: 400;
         line-height: 1; }
@@ -9421,7 +9436,7 @@ span.tel {
       border: none;
       outline: none;
       font-size: 25px;
-      font-family: "baskerville-urw", serif;
+      font-family: "minion-pro", serif;
       text-transform: uppercase;
       line-height: 1.6;
       text-align: left;

@@ -217,15 +217,19 @@
                     display: table-cell;
                     vertical-align: bottom;
                     min-width: 266px;
+                    height: 200px;
                     
                     @media (min-width: $screen-lg) {
                         width: 331px;
+                        height: 180px;
                     }
                     
                     @media (max-width: $screen-sm-max) {
                         width: 100%;
                         display: block;
                         text-align: center;
+                        height: auto;
+                        padding: 40px 20px;
                     }
 
                     h2.event-title {
@@ -339,13 +343,18 @@
                     display: table-cell;
                     vertical-align: bottom;
                     min-width: 265px;
+                    height: 200px;
                     
                     @media (min-width: $screen-lg) {
-                        min-width: 317px;
+                        width: 317px;
+                        height: 180px;
                     }
                     
                     @media (max-width: $screen-sm-max) {
-                        min-width: 100%;
+                        width: 100%;
+                        display: block;
+                        text-align: center;
+                        height: auto;
                         display: block;
                     }
 

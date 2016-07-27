@@ -83,7 +83,7 @@
                                                     {% endif %}
                                                     <div class="event-title-box title-height">
                                                         {# INSERT EVENT TITLE #}
-                                                        <h2 class="event-title">{{ ev.post_title }}</h2>
+                                                        <h2 class="event-title">{{ ev.post_title|excerpt(5) }}</h2>
                                                     </div>
                                                 </div>
 
@@ -148,7 +148,7 @@
                                             <div class="announcement-title-box title-height">
 
                                                 {# INSERT ANNOUNCEMENT TITLE #}
-                                                <h2 class="announcement-title">{{ ann.post_title }}</h2>
+                                                <h2 class="announcement-title">{{ ann.post_title|excerpt(5) }}</h2>
                                             </div>
                                         </div>
                                         </a>
