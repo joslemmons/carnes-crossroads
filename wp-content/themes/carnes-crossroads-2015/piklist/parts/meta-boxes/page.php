@@ -16,7 +16,7 @@ $post = Timber::get_post($post->ID);
 
 $uri = get_page_uri($post->ID);
 
-$poa_slider_pages = array('residents','residents/island-announcements','residents/events-activities');
+$poa_slider_pages = array('residents','residents/announcements','residents/events-activities');
 
 if ( in_array($uri, $poa_slider_pages) ) {
 	
