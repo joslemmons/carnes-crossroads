@@ -28,7 +28,7 @@
                 bottom: 10vh;
                 max-width: 50vw;
                 padding: 20px 40px 40px 100px;
-                
+
                 @media(max-width: $screen-sm-max) {
                     padding: 15px;
                 }
@@ -41,7 +41,7 @@
                     text-align: left;
                     line-height: 1;
                     margin-bottom: 20px;
-                    
+
                     @media (max-width: $screen-sm-max) {
                         margin: 0;
                         font-size: 28px;
@@ -54,15 +54,15 @@
                     font-size: 18px; 
                     font-weight: 400;
                     text-align: left;
-                    
+
                     @media(max-width: $screen-sm-max) {
                         display: none;
                     }
                 }
-                
+
                 a.cta-link {
                     color: $grey;
-                    
+
                     &:hover {
                         color: darken($grey,20%);
                     }
@@ -84,7 +84,7 @@
                 margin-right: 100px;
                 text-transform: uppercase;
                 margin-bottom: 20px;
-                
+
                 @media (max-width: $screen-sm-max) {
                     text-align: center;
                     font-size: 28px;
@@ -118,14 +118,14 @@
                 right: 0px;
                 left: auto;
             }
-            
+
             .slick-slide {
                 height: auto;
             }
-            
+
             .view-all-container {
                 background: $white;
-                padding: 20px 35px;
+                padding: 10px 15px;
                 text-align: center;
                 font-family: $proxima;
                 color: $dkr-grey;
@@ -180,11 +180,27 @@
                         text-align: left;
                         margin-right: 10px;
                         line-height: 1;
-                        
+
                         a {
                             color: $dkr-grey;
                         }
                     }
+                }
+
+                .full-calendar {
+                    border-top: 3px solid $lt-grey;
+                    margin-top: 20px;
+                    padding-top: 20px;
+
+                    a {
+                        font-family: $proxima;
+                        color:  $dkr-grey;
+                        font-size: 16px;
+                        font-weight: 400;
+                        text-align: left;
+                        text-transform: uppercase;
+                    }
+
                 }
             }
 
@@ -218,12 +234,12 @@
                     vertical-align: bottom;
                     min-width: 266px;
                     height: 200px;
-                    
+
                     @media (min-width: $screen-lg) {
                         width: 331px;
                         height: 180px;
                     }
-                    
+
                     @media (max-width: $screen-sm-max) {
                         width: 100%;
                         display: block;
@@ -238,7 +254,7 @@
                         font-weight: 400;
                         text-align: left;
                         line-height: 1;
-                        
+
                         @media (max-width: $screen-sm-max) {
                             text-align: center;
                         }
@@ -281,7 +297,7 @@
                 margin-right: 100px;
                 text-transform: uppercase;
                 margin-bottom: 20px;
-                
+
                 @media (max-width: $screen-sm-max) {
                     text-align: center;
                     font-size: 28px;
@@ -315,15 +331,14 @@
                 right: 0px;
                 left: auto;
             }
-            
+
             .slick-slide {
                 height: auto;
             }
 
             .col-announcement-box {
-                margin-bottom: 30px; 
+                margin-bottom: 10px; 
                 width: 100%;
-
             }
 
             .announcement-box {
@@ -344,12 +359,12 @@
                     vertical-align: bottom;
                     min-width: 265px;
                     height: 200px;
-                    
+
                     @media (min-width: $screen-lg) {
                         width: 317px;
                         height: 180px;
                     }
-                    
+
                     @media (max-width: $screen-sm-max) {
                         width: 100%;
                         display: block;
@@ -364,7 +379,7 @@
                         font-weight: 400;
                         text-align: left;
                         line-height: 1;
-                        
+
                         @media (max-width: $screen-sm-max) {
                             text-align: center;
                         }
@@ -389,13 +404,13 @@
 
             .view-all-container {
                 background: $white;
-                padding: 20px 35px;
+                padding: 10px 15px;
                 text-align: center;
                 font-family: $proxima;
                 color: $dkr-grey;
                 font-size: 17px;
                 font-weight: 400;
-                margin: 30px 0;
+                margin: 0px 0;
                 text-transform: uppercase;
                 @include transition (0.3s all);
 
@@ -412,7 +427,7 @@
             padding-bottom: 60px;
             background: url(img/poa-floral-bg.jpg) no-repeat 100% 50%;
             background-size: 650px;
-            
+
             .callout-outline {
                 background: $peachy;
                 padding: 15px;
@@ -421,7 +436,7 @@
             .bonus-callout-container {
                 border: 2px solid $white;
                 background: $peachy;
-                padding: 20px 40px;
+                padding: 2px 20px 20px;
             }
 
             h2.callout-headline {

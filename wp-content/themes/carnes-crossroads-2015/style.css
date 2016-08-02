@@ -8872,7 +8872,7 @@ span.tel {
       height: auto; }
     .poa-site .home-events .view-all-container {
       background: #fff;
-      padding: 20px 35px;
+      padding: 10px 15px;
       text-align: center;
       font-family: "proxima-nova", sans-serif;
       color: #363636;
@@ -8920,6 +8920,17 @@ span.tel {
           line-height: 1; }
           .poa-site .home-events .upcoming-events-box .event-details .event-title a {
             color: #363636; }
+      .poa-site .home-events .upcoming-events-box .full-calendar {
+        border-top: 3px solid #b3b3b3;
+        margin-top: 20px;
+        padding-top: 20px; }
+        .poa-site .home-events .upcoming-events-box .full-calendar a {
+          font-family: "proxima-nova", sans-serif;
+          color: #363636;
+          font-size: 16px;
+          font-weight: 400;
+          text-align: left;
+          text-transform: uppercase; }
     .poa-site .home-events .featured-events-slider {
       margin-bottom: 0; }
     .poa-site .home-events .col-event-box {
@@ -9015,7 +9026,7 @@ span.tel {
     .poa-site .home-announcements .slick-slide {
       height: auto; }
     .poa-site .home-announcements .col-announcement-box {
-      margin-bottom: 30px;
+      margin-bottom: 10px;
       width: 100%; }
     .poa-site .home-announcements .announcement-box {
       background: #fff; }
@@ -9066,13 +9077,13 @@ span.tel {
           margin-top: 20px; }
     .poa-site .home-announcements .view-all-container {
       background: #fff;
-      padding: 20px 35px;
+      padding: 10px 15px;
       text-align: center;
       font-family: "proxima-nova", sans-serif;
       color: #363636;
       font-size: 17px;
       font-weight: 400;
-      margin: 30px 0;
+      margin: 0px 0;
       text-transform: uppercase;
       -webkit-transition: 0.3s all;
       transition: 0.3s all; }
@@ -9090,7 +9101,7 @@ span.tel {
     .poa-site .bonus-callout .bonus-callout-container {
       border: 2px solid #fff;
       background: #fffaf3;
-      padding: 20px 40px; }
+      padding: 2px 20px 20px; }
     .poa-site .bonus-callout h2.callout-headline {
       color: #363636;
       font-size: 36px;
