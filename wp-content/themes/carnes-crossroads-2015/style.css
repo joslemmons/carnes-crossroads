@@ -9482,4 +9482,103 @@ span.tel {
     margin-bottom: 15px; }
     .site-btn.cat-btn.active {
       background: #e26f57;
-      color: #fff; } }
+      color: #fff; }
+
+  .photo-gallery-feed {
+    background: #fffaf3;
+    padding-top: 40px;
+    padding-bottom: 40px;
+    margin-top: 40px; }
+    .photo-gallery-feed h2.section-title {
+      text-align: right;
+      color: #d6a83f;
+      font-size: 30px;
+      font-weight: 400;
+      margin-right: 100px;
+      text-transform: uppercase; } }
+    @media screen and (max-width: 991px) {
+      .photo-gallery-feed h2.section-title {
+        text-align: center;
+        font-size: 28px;
+        margin: auto; } }
+@media screen {
+    .photo-gallery-feed .slick-prev, .photo-gallery-feed .slick-next {
+      border: 2px solid #d6a83f;
+      background-color: #fff;
+      width: 36px;
+      height: 36px;
+      z-index: 8;
+      bottom: auto;
+      top: -44px;
+      border-radius: 50%; }
+      .photo-gallery-feed .slick-prev:before, .photo-gallery-feed .slick-next:before {
+        color: #d6a83f;
+        font-family: "minion-pro", serif;
+        font-weight: bold; }
+    .photo-gallery-feed .slick-prev {
+      right: 40px;
+      left: auto; }
+    .photo-gallery-feed .slick-next {
+      right: 0px;
+      left: auto; }
+    .photo-gallery-feed .slick-slide {
+      height: auto; }
+    .photo-gallery-feed .col-gallery-box {
+      margin-bottom: 10px;
+      width: 100%; }
+    .photo-gallery-feed .gallery-box {
+      background: #fff; }
+      .photo-gallery-feed .gallery-box .gallery-box-outer {
+        background: #768e1c;
+        padding: 14px 14px 0 14px; }
+      .photo-gallery-feed .gallery-box .gallery-inner-box {
+        border-top: 4px solid #fff;
+        border-left: 4px solid #fff;
+        border-right: 4px solid #fff;
+        padding: 20px;
+        display: table-cell;
+        vertical-align: bottom;
+        min-width: 265px;
+        height: 250px; } }
+      @media screen and (min-width: 1200px) {
+        .photo-gallery-feed .gallery-box .gallery-inner-box {
+          width: 330px;
+          height: 230px; } }
+      @media screen and (max-width: 991px) {
+        .photo-gallery-feed .gallery-box .gallery-inner-box {
+          width: 100%;
+          display: block;
+          text-align: center; } }
+@media screen {
+        .photo-gallery-feed .gallery-box .gallery-inner-box h2.gallery-title {
+          color: #363636;
+          font-size: 20px;
+          font-weight: 400;
+          text-align: left;
+          line-height: 1; } }
+        @media screen and (max-width: 991px) {
+          .photo-gallery-feed .gallery-box .gallery-inner-box h2.gallery-title {
+            text-align: center; } }
+@media screen {
+      .photo-gallery-feed .gallery-box .gallery-details-box {
+        padding: 17px 33px;
+        font-family: "proxima-nova", sans-serif;
+        color: #363636;
+        font-size: 16px;
+        font-weight: 400;
+        text-align: left;
+        text-transform: uppercase; }
+        .photo-gallery-feed .gallery-box .gallery-details-box .gallery-date {
+          color: #8a8b8d;
+          margin-bottom: 60px; } }
+        @media screen and (max-width: 991px) {
+          .photo-gallery-feed .gallery-box .gallery-details-box .gallery-date {
+            margin-bottom: 40px; } }
+@media screen {
+        .photo-gallery-feed .gallery-box .gallery-details-box .site-btn {
+          margin-top: 20px;
+          position: absolute;
+          bottom: 20px; } }
+        @media screen and (max-width: 991px) {
+          .photo-gallery-feed .gallery-box .gallery-details-box .site-btn {
+            position: relative; } }
