@@ -32,7 +32,7 @@
         
         //Styles for Mobile Section Menu
             .down-menu {
-                background: $blue;
+                background: darken($cc-red,10%);
                 text-align: center;
                 padding: 0;
                 height: 30px;
@@ -40,7 +40,7 @@
                 .icon-container {
                     position: relative;
                     top: 13px;
-                    background: $blue;
+                    background: darken($cc-red,10%);
                     border-radius: 50%;
                     width: 50px;
                     height: 30px;
@@ -63,13 +63,7 @@
                     text-align: center;
                     padding-bottom: 20px;
                     display: none;
-                    background: darken($blue,10%);
-                }
-
-                .sticky-wrapper {
-                    @media (max-width: $screen-sm-max) {
-                        height: auto !important;
-                    }
+                    background: $cc-red;
                 }
 
                 .sub-nav {
@@ -78,21 +72,12 @@
                         padding-top: 30px;
                     }
 
-                    &.stuck {
-                        @media (max-width: $screen-sm-max) {
-                            position: relative;
-                            top: auto;
-                            width: 100%;
-                        }
-                    }
-
                     ul {
                         margin: 0;
                         padding: 0;
 
                         li {
                             font-family: $minion;
-                            color: #695e49;
                             font-size: 16px; /* Approximation due to font substitution */
                             font-weight: 400;
                             line-height: 1.5; /* Approximation due to font substitution */
@@ -124,7 +109,7 @@
                                 font-weight: bold;
 
                                 a {
-                                    color: $cc-green;
+                                    color: $dkr-grey;
                                 }
                             }
                         }
@@ -144,9 +129,20 @@
             //Sidebar Sub Nav
             .sub-nav {
                 padding-top: 85px;
+                position: relative;
 
                 @media (max-width: $screen-sm-max) {
                     padding-top: 40px;
+                }
+                
+                &.fixed {
+                    position: fixed;
+                    top: -10px; 
+                    width: 212px;
+                    
+                    @media (min-width: $screen-lg) {
+                        width: 262px;
+                    }
                 }
 
                 .sidebar-title {

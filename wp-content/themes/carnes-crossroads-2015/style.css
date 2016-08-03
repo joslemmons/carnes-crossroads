@@ -9165,14 +9165,14 @@ span.tel {
           font-size: 28px; } }
 @media screen {
   .poa-site .down-menu {
-    background: #536377;
+    background: #da4a2c;
     text-align: center;
     padding: 0;
     height: 30px; }
     .poa-site .down-menu .icon-container {
       position: relative;
       top: 13px;
-      background: #536377;
+      background: #da4a2c;
       border-radius: 50%;
       width: 50px;
       height: 30px;
@@ -9191,25 +9191,16 @@ span.tel {
       text-align: center;
       padding-bottom: 20px;
       display: none;
-      background: #3e4a59; } }
-  @media screen and (max-width: 991px) {
-    .poa-site .sidebar-mobile .sticky-wrapper {
-      height: auto !important; } }
+      background: #e26f57; } }
   @media screen and (max-width: 991px) {
     .poa-site .sidebar-mobile .sub-nav {
       padding-top: 30px; } }
-  @media screen and (max-width: 991px) {
-    .poa-site .sidebar-mobile .sub-nav.stuck {
-      position: relative;
-      top: auto;
-      width: 100%; } }
 @media screen {
     .poa-site .sidebar-mobile .sub-nav ul {
       margin: 0;
       padding: 0; }
       .poa-site .sidebar-mobile .sub-nav ul li {
         font-family: "minion-pro", serif;
-        color: #695e49;
         font-size: 16px;
         /* Approximation due to font substitution */
         font-weight: 400;
@@ -9237,7 +9228,7 @@ span.tel {
         .poa-site .sidebar-mobile .sub-nav ul li.active {
           font-weight: bold; }
           .poa-site .sidebar-mobile .sub-nav ul li.active a {
-            color: #768e1c; }
+            color: #363636; }
   .poa-site .main-content {
     margin-bottom: 138px;
     position: relative; } }
@@ -9246,10 +9237,19 @@ span.tel {
       margin-bottom: 0px; } }
 @media screen {
     .poa-site .main-content .sub-nav {
-      padding-top: 85px; } }
+      padding-top: 85px;
+      position: relative; } }
     @media screen and (max-width: 991px) {
       .poa-site .main-content .sub-nav {
         padding-top: 40px; } }
+@media screen {
+      .poa-site .main-content .sub-nav.fixed {
+        position: fixed;
+        top: -10px;
+        width: 212px; } }
+      @media screen and (min-width: 1200px) {
+        .poa-site .main-content .sub-nav.fixed {
+          width: 262px; } }
 @media screen {
       .poa-site .main-content .sub-nav .sidebar-title {
         font-family: "proxima-nova", sans-serif;

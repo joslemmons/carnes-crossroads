@@ -30,6 +30,17 @@ jQuery(function ($) {
         return false;
     });
     
+    //Side Nav Interior Pages
+    $(window).scroll(function () {
+        var scroll = $(window).scrollTop();
+
+        if (scroll >= 510) {
+            $('.sub-nav').addClass('fixed');
+        } else {
+            $('.sub-nav').removeClass('fixed');
+        }
+    });
+    
         //Sliders - Home Main
     $('.featured-slider').slick({
         dots: true,
