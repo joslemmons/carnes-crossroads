@@ -8984,8 +8984,20 @@ span.tel {
         text-transform: uppercase; }
         .poa-site .home-events .event-box .event-details-box .event-time {
           display: block; }
+        .poa-site .home-events .event-box .event-details-box .event-description {
+          margin-bottom: 60px; } }
+        @media screen and (max-width: 991px) {
+          .poa-site .home-events .event-box .event-details-box .event-description {
+            margin-bottom: 40px; } }
+@media screen {
         .poa-site .home-events .event-box .event-details-box .site-btn {
-          margin-top: 20px; }
+          margin-top: 20px;
+          position: absolute;
+          bottom: 20px; } }
+        @media screen and (max-width: 991px) {
+          .poa-site .home-events .event-box .event-details-box .site-btn {
+            position: relative; } }
+@media screen {
   .poa-site .home-announcements {
     background: #fffaf3;
     padding-top: 40px;
@@ -9073,8 +9085,20 @@ span.tel {
         font-weight: 400;
         text-align: left;
         text-transform: uppercase; }
+        .poa-site .home-announcements .announcement-box .announcement-details-box .announcement-description {
+          margin-bottom: 60px; } }
+        @media screen and (max-width: 991px) {
+          .poa-site .home-announcements .announcement-box .announcement-details-box .announcement-description {
+            margin-bottom: 40px; } }
+@media screen {
         .poa-site .home-announcements .announcement-box .announcement-details-box .site-btn {
-          margin-top: 20px; }
+          margin-top: 20px;
+          position: absolute;
+          bottom: 20px; } }
+        @media screen and (max-width: 991px) {
+          .poa-site .home-announcements .announcement-box .announcement-details-box .site-btn {
+            position: relative; } }
+@media screen {
     .poa-site .home-announcements .view-all-container {
       background: #fff;
       padding: 10px 15px;
