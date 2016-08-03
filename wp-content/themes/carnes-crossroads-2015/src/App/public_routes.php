@@ -41,3 +41,27 @@ Routes::map('/property/:address/pbase/:property_base_id/', function ($params) {
 Timber::add_route('residents/events-activities/:qdate', function( $params ) {
         Timber::load_template('page-events-activities.php',null,200,$params);
 });
+
+Timber::add_route('residents/events-activities/category/:qslug', function( $params ) {
+        Timber::load_template('page-events-activities.php',null,200,$params);
+});
+
+Timber::add_route('residents/events-activities/event/:eslug/:qdate', function( $params ) {
+        Timber::load_template('page-events-activities.php',null,200,$params);
+});
+
+Timber::add_route('residents/events-activities/event/:eslug', function( $params ) {
+        Timber::load_template('page-events-activities.php',null,200,$params);
+});
+
+Timber::add_route('residents/events-activities/category/:qslug/:qdate', function( $params ) {
+        Timber::load_template('page-events-activities.php',null,200,$params);
+});
+
+Timber::add_route('residents/galleries/:qslug', function( $params ) {
+        Timber::load_template('page-residents-gallery.php',null,200,$params);
+});
+
+Timber::add_route('galleries/:qslug', function( $params ) {
+        Timber::load_template('page-community-gallery.php',null,200,$params);
+});

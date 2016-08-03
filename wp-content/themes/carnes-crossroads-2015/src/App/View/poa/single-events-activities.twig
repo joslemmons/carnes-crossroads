@@ -1,0 +1,34 @@
+{% include 'poa/partials/header.twig' %}
+
+<div class="content-slider events">
+    <div class="featured-slider">
+        {% for slide in sliders %}
+        {#BEGIN SLIDE#}
+        <div class="slide" style="background:url( {{ slide.image[0] }}) no-repeat 50% 50%; background-size: cover;">
+            <div class="slider-caption">
+                {#CUSTOM Slide Headline#}
+                <h2 class="headline">{{ slide.title }}</h2>
+                
+                {#CUSTOM Slide Description#}
+                <p class="description">{{ slide.content }}</p>
+                
+                {#CUSTOM Link URL#}
+                <a class="cta-link" href="{{ slide.link }}">{{ slide.action }}</a>
+            </div>
+        </div>
+        {#END SLIDE#}
+        {% endfor %}
+    </div>
+</div>
+    
+<div class="event-calendar">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                {{ event_calendar }}
+            </div>
+        </div>
+    </div>   
+</div>
+    
+{% include 'poa/partials/footer.twig' %}

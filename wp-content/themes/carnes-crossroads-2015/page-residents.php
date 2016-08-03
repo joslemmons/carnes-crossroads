@@ -77,6 +77,12 @@ $events = tribe_get_events( array(
     'eventDisplay' => 'list'
 ) );
 
+for ($i = 0 ; $i < count($events) ; $i++) {
+    $id = $events[$i]->ID;
+    $link = str_replace('/event/', '/residents/events-activities/event/', tribe_get_event_link($id));
+    $events[$i]->event_link = $link;
+}
+
 $events_per_slide = 4;
 $events_upper_limit = 12;
 
@@ -94,13 +100,16 @@ $events_count = count($featured);
 
 for ($i = 0 ; $i < $events_count ; $i++) {
 	$id = $featured[$i]->ID;
-	if (has_post_thumbnail( $id ) ) {
-		$image = wp_get_attachment_image_src( get_post_thumbnail_id( $id ), 'single-post-thumbnail' );
-		$event_image_url = $image[0];
-	} else {
-		$event_image_url = false;
-	}
-	$featured[$i]->event_image_url = $event_image_url;  
+    $link = str_replace('/event/', '/residents/events-activities/event/', tribe_get_event_link($id));
+
+    $post_meta = get_post_meta($id);
+    if (isset($post_meta['poa_image'])) {
+                $event_image_url = $post_meta['poa_image'][0];
+    } else {
+                $event_image_url = false;
+    }
+    $featured[$i]->event_link = $link;
+    $featured[$i]->event_image_url = $event_image_url;  
 }
 
 $featured_slides = array();

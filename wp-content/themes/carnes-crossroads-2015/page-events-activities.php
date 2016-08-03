@@ -18,12 +18,36 @@ $context['sliders'] = $page->page_sliders;
 
 $date = '';
 if (isset($params['qdate'])) {
-	$date = $params['qdate'];
+        $date = $params['qdate'];
 };
 
-$evcal = new EventCalendar($date);
+$category = '';
+if (isset($params['qslug'])) {
+        $category = $params['qslug'];
+};
+
+$eslug = '';
+if (isset($params['eslug'])) {
+        $eslug = $params['eslug'];
+};
+
+$evcal = new EventCalendar($date,$category,$eslug);
 $evcal->enqueue_assets();
 
 $context['event_calendar'] = $evcal->getCalendar();
 
-Timber::render('poa/page-events-activities.twig', $context);
+if (empty($eslug)) {
+        $context['event_cats'] = $evcal->getEventCategories();
+
+        $args = array(
+                'post_type' => 'gallery',
+                'posts_per_page' => 12,
+                'post_status' => array('publish'),
+        );
+
+        $context['galleries'] =  Timber::get_posts($args);
+
+        Timber::render('poa/page-events-activities.twig', $context);
+} else {
+        Timber::render('poa/single-events-activities.twig', $context);
+}

@@ -8,10 +8,24 @@ class EventCalendar
   	public $events_url = '/calendar-of-events';
   	public $plugin_path = '/wp-content/plugins/the-events-calendar';
   	public $calendar_html = '';
+  	public $date = '';
+  	public $category = '';
+  	public $eslug = '';
   	
-  	function __construct($date = '') {
-		if (!empty($date)) {
+  	function __construct($date = '',$category = '',$eslug = '') {
+	  	if (!empty($date) && !empty($category)) {
+		  	$this->events_url .= '/category/'.$category.'/'.$date;
+		  	$this->category = $category;
+		  	$this->date = $date;
+	  	} elseif (!empty($date)) {
 		    $this->events_url .= '/'.$date;
+		  	$this->date = $date;
+	    } elseif (!empty($category)) {
+		    $this->events_url .= '/category/'.$category;
+		    $this->category = $category;
+	    } elseif (!empty($eslug)) {
+		    $this->events_url = '/event/'.$eslug;
+		    $this->eslug = $eslug;
 	    }
   	}
   	
@@ -28,15 +42,34 @@ class EventCalendar
     
     public function fetchCalendarHtml() {
 	    	  
-	    $html = file_get_html(get_site_url().$this->events_url);
-	    $this->calendar_html = $html->find('div[id=tribe-events]',0);
-	 
+	    if ($html = file_get_html(get_site_url().$this->events_url)) {
+		     $this->calendar_html = $html->find('div[id=tribe-events]',0);
+	 	}
+    }
+    
+    public function cleanEventHtml () {
+	    
+	    $this->calendar_html = str_replace('/calendar-of-events/', '/residents/events-activities/', $this->calendar_html);
+	    $this->calendar_html = str_replace('/event/', '/residents/events-activities/event/', $this->calendar_html);
+	    
+	    if (!$html = str_get_html($this->calendar_html)) {
+		    return false;
+	    }
+	  
+	    $this->calendar_html = $html;
     }
     
     public function cleanCalendarHtml () {
 	    
-	    $html = str_get_html($this->calendar_html);
-	    $html->find('a.news-link',0)->outertext = '';  // get rid of 'back to news' link
+	    if (!empty($this->eslug)) {
+		    $this->cleanEventHtml ();
+		    return;
+	    }
+	    
+	    if (!$html = str_get_html($this->calendar_html)) {
+		    return false;
+	    }
+	    
 	    $html->find('form[id=tribe-bar-form]',0)->outertext = ''; // get rid of month/day js filter
 	    
 	    // fix month links
@@ -45,8 +78,12 @@ class EventCalendar
 		    $data = $mnav->{"data-month"};
 		    if (!$data) {
 			    $data = $mnav->{"data-day"};
-		    }		    
-		    $newhref = get_site_url().'/residents/events-activities/'.$data;
+		    }	
+		    $catpart = '';	  
+		    if (!empty($this->category)) {
+			    $catpart = 'category/'.$this->category.'/';
+		    }  
+		    $newhref = get_site_url().'/residents/events-activities/'.$catpart.$data;
 		    $mnav->href = $newhref;		    
 	    }
 	    
@@ -58,8 +95,20 @@ class EventCalendar
 		    $dnav->href = $newhref;	
 	    }
 	    
+	    // fix event links
+	    
+	    foreach ($html->find('a.url') as $eurl) {
+		    $href = $eurl->href;		    
+		    $newhref = str_replace('/event/', '/residents/events-activities/event/', $href);
+		    $eurl->href = $newhref;	
+	    }
+	    
 	    $this->calendar_html = $html;
 	    
+    }
+    
+    public function getEventCategories () {
+	    return get_categories(array('taxonomy'=>'tribe_events_cat'));
     }
     
     public function getCalendar () {

@@ -27,12 +27,14 @@
             {# DANIELLE NOTE: MAY NEED MATCH HEIGHT ON BUTTONS #}
             {# Example of Active Category Btn - active class on <a> tag #}
             <div class="col-md-2">
-                <a class="site-btn cat-btn active" href="#">All Events</a>
+                <a class="site-btn cat-btn active" href="/residents/events-activities/">All Events</a>
             </div>
-            {# Example of Category Btn #}
+
+            {% for cat in event_cats %}
             <div class="col-md-2">
-                <a class="site-btn cat-btn" href="#">Category Title</a>
+                <a class="site-btn cat-btn" href="/residents/events-activities/category/{{ cat.slug }}/">{{ cat.name }}</a>
             </div>
+            {% endfor %}
         </div>
     </div>
 </div>
@@ -47,8 +49,57 @@
     </div>   
 </div>
     
-    
+<div class="photo-gallery-feed">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <h2 class="section-title">
+                    Photo Galleries
+                </h2>
+            </div>
+        </div>
+        <div class="row">
+            <div class="gallery-slider">
+                {% for gallery in galleries %}
+                <div class="slide">
+                    <div class="col-md-3 col-gallery-box">
+                        <div class="gallery-box">
+                            {# INSERT GALLERY URL #}
+                            <a href="/residents/galleries/{{ gallery.slug }}">
 
+                                {% if gallery.thumbnail %}
+                                <div class="gallery-box-outer" style="background: url({{gallery.thumbnail.src}}) no-repeat 50% 50%; background-size: cover;">
+                                {% else %}
+                                <div class="gallery-box-outer" style="background: #cce9e6;">
+                                {% endif %}
+                                    <div class="gallery-inner-box">
 
+                                    </div>
+                                </div>
+                            </a>
+                            <div class="gallery-details-box">
+                                {# INSERT Gallery TITLE #}
+                                <h2 class="gallery-title">
+                                    {{ gallery.title|excerpt(4) }}
+                                </h2>
+
+                                {# INSERT GALLERY DATE #}
+                                <div class="gallery-date">
+                                    {{ gallery.post_date|date('F Y')}}
+                                </div>
+
+                                {# INSERT GALLERY URL #}
+                                <a class="site-btn" href="/residents/galleries/{{ gallery.slug }}">
+                                    View Photos
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                {% endfor %}
+            </div>
+        </div>
+    </div>
+</div>    
 
 {% include 'poa/partials/footer.twig' %}
