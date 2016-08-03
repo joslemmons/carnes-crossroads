@@ -53,12 +53,12 @@
                         <div class="event-date">{{ function('getDisplayDates',ev.EventStartDate,ev.EventEndDate,'M',false)|upper }}</div>
 
                         {#INSERT EVENT TITLE#}
-                        <div class="event-title"><a href="{{ function('tribe_get_event_link',ev.ID) }}">{{ ev.post_title }}</a></div>
+                        <div class="event-title"><a href="{{ ev.event_link }}">{{ ev.post_title }}</a></div>
                     </div>
                     {#END EVENT ITEM#}
                     {% endfor %}
                     <div class="full-calendar">
-                        <a href="/community/events-activities/">View Full Calendar</a>
+                        <a href="/residents/events-activities/">View Full Calendar</a>
                     </div>
                 </div>
             </div>
@@ -102,7 +102,7 @@
                                                 </div>
 
                                                 {# INSERT EVENT URL #}
-                                                <a class="site-btn" href="{{ function('tribe_get_event_link',ev.ID) }}">
+                                                <a class="site-btn" href="{{ ev.event_link }}">
                                                     Get Details
                                                 </a>
                                             </div>
