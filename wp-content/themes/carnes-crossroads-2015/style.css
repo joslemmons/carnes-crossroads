@@ -9348,7 +9348,21 @@ span.tel {
         text-align: left;
         font-size: 1.125em;
         line-height: 1.5;
-        overflow: auto; } }
+        overflow: auto; }
+        .poa-site .main-content .child-page-content .child-content a.expand-link {
+          text-transform: uppercase; }
+          .poa-site .main-content .child-page-content .child-content a.expand-link:hover {
+            cursor: pointer; }
+          .poa-site .main-content .child-page-content .child-content a.expand-link.expanded {
+            display: none; }
+        .poa-site .main-content .child-page-content .child-content .more-content {
+          display: none;
+          opacity: 0;
+          -webkit-transition: 0.5s all;
+          transition: 0.5s all; }
+          .poa-site .main-content .child-page-content .child-content .more-content.expanded {
+            opacity: 1;
+            display: block; } }
 @media screen {
   .poa-site {
     /* Style the buttons that are used to open and close the accordion panel */

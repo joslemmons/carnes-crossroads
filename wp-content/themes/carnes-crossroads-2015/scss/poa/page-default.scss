@@ -272,6 +272,29 @@
                     a {
 
                     }
+                    
+                    a.expand-link {
+                        text-transform: uppercase;
+
+                        &:hover {
+                            cursor: pointer;
+                        }
+
+                        &.expanded {
+                            display: none;
+                        }
+                    }
+
+                    .more-content {
+                        display: none;
+                        opacity: 0;
+                        @include transition(0.5s all);
+
+                        &.expanded {
+                            opacity: 1;
+                            display: block;
+                        }
+                    }
                 }
             }
         }
