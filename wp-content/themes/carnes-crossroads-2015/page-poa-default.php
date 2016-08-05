@@ -7,7 +7,9 @@
 use App\Model\Config;
 
 wp_enqueue_script('waypoints-js', get_template_directory_uri() . '/js/lib/jquery.waypoints.min.js', array('jquery'), false, false);
-
+wp_enqueue_script('bootstrap-js', get_template_directory_uri() . '/bower_components/bootstrap/dist/js/bootstrap.min.js', array('jquery'), false, true);
+wp_enqueue_script('respond-js', get_template_directory_uri() . '/bower_components/respond-minmax/dest/respond.min.js', array(), false, true);
+wp_enqueue_script('modernizr-js', get_template_directory_uri() . '/bower_components/modernizr/modernizr.js', array(), false, true);
 wp_enqueue_script('match-height-js', get_template_directory_uri() . '/js/lib/jquery.matchHeight-min.js', array('jquery'), false, false);
 wp_enqueue_script('poa-js', get_template_directory_uri() . '/js/poa.js', array('jquery', 'backbone', 'underscore', 'slick-js', 'match-height-js'), Config::getAppVersion(), true);
 
