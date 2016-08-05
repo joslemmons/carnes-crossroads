@@ -8917,7 +8917,7 @@ span.tel {
           font-weight: 600;
           text-align: left;
           margin-right: 10px;
-          line-height: 1; }
+          line-height: 1.25; }
           .poa-site .home-events .upcoming-events-box .event-details .event-title a {
             color: #363636; }
       .poa-site .home-events .upcoming-events-box .full-calendar {
@@ -9521,6 +9521,9 @@ span.tel {
     .site-btn.cat-btn.active {
       background: #e26f57;
       color: #fff; }
+
+  div#tribe-events {
+    margin-top: 85px; }
 
   .photo-gallery-feed {
     background: #fffaf3;
