@@ -77,7 +77,9 @@ your browser</a> to improve your experience.</p>
                             {% for item in poa_secondary_menu.get_items %}
                                     <a class="sub-nav-item" href="{{ item.link }}">{{ item.title }}</a>
                             {% endfor %}
-                            <input type="search" placeholder="search" class="search">
+                            <form action="/" method="get">
+                                <input type="search" placeholder="search" name="s" class="search"/>
+                            </form>
                         </div>
                     </div>
                 </div>
