@@ -59,7 +59,7 @@ class Announcement extends \TimberPost
     }
 
 	
-	public static function get($featured = false, $posts_per_page = -1) {
+	public static function get($featured = false, $posts_per_page = -1,$date = '') {
 	
 		$args = array(
             'post_type' => self::$_postType,
@@ -92,11 +92,34 @@ class Announcement extends \TimberPost
         if ($featured) {
 	        $args['tag'] = 'featured';
         }
+        
+        if (!empty($date)) {
+	        list($year,$month) = explode('-', $date);	        
+	        $args['year'] = $year;
+	        $args['monthnum'] = intval($month);
+        }
         	        
 	    $posts = \Timber::get_posts($args, get_class());
 
         return $posts;
 
+    }
+    
+    public static function getArchiveNav () {
+	    
+	    $announcements = self::get(); // get all unexpired
+	    
+	    $links = array();
+	    
+	    foreach ($announcements as $ann) {
+		    $dtime = strtotime($ann->post_date);
+		    $stub = date("Y-m",$dtime);
+		    $key = date("F Y",$dtime);
+			$links[$key] = $stub;    
+	    }
+	    
+	    return $links;
+	    
     }
     
 }
