@@ -65,3 +65,7 @@ Timber::add_route('residents/galleries/:qslug', function( $params ) {
 Timber::add_route('galleries/:qslug', function( $params ) {
         Timber::load_template('page-community-gallery.php',null,200,$params);
 });
+
+Timber::add_route('residents/announcements/archive/:qdate', function( $params ) {
+        Timber::load_template('page-announcements.php',null,200,$params);
+});
