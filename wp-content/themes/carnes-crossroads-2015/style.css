@@ -3167,9 +3167,18 @@ td.visible-print {
     display: none !important; } }
 html, body {
   color: #000;
-  font-size: 1rem;
+  font-size: 16px;
   font-family: "proxima-nova", sans-serif, sans-serif;
   line-height: 1.5; }
+  @media (max-width: 1684px) {
+    html, body {
+      font-size: 15px; } }
+  @media (max-width: 1199px) {
+    html, body {
+      font-size: 14px; } }
+  @media (max-width: 991px) {
+    html, body {
+      font-size: 12px; } }
 
 h1, h2, h3, h4, h5, h6 {
   font-family: "proxima-nova", sans-serif, sans-serif;
@@ -3188,7 +3197,7 @@ h1 {
   text-shadow: 0 0 10px rgba(85, 93, 89, 0.5); }
   @media (max-width: 767px) {
     h1 {
-      font-size: 2.7rem; } }
+      font-size: 3.5rem; } }
 
 h2 {
   font-family: "minion-pro", serif, serif;
@@ -4432,7 +4441,7 @@ body.has-active-menu {
         margin-bottom: 15px; } }
     .mob-nav .c-menu__item a {
       color: #fff;
-      font-size: 0.9rem;
+      font-size: 1.1rem;
       letter-spacing: 1.5px;
       font-family: "minion-pro", serif, serif;
       font-weight: 700;
@@ -4440,7 +4449,7 @@ body.has-active-menu {
       text-decoration: none; }
       @media (min-height: 667px) {
         .mob-nav .c-menu__item a {
-          font-size: 1rem; } }
+          font-size: 1.2rem; } }
   .mob-nav .site-search {
     margin: 40px auto 0;
     width: 70%; }
@@ -4494,7 +4503,10 @@ body.has-active-menu {
     border: none;
     display: inline-block; }
   .footer-search .btn-search-sm {
-    margin-top: 28px; }
+    margin-top: 27px; }
+    @media (max-width: 991px) {
+      .footer-search .btn-search-sm {
+        margin-top: 23px; } }
 
 .footer__social {
   margin: 0;
@@ -4568,6 +4580,9 @@ body.has-active-menu {
 
 .slider-container {
   overflow: visible; }
+  .slider-container h3 {
+    font-size: 1.6rem;
+    padding-left: 0; }
 
 .bx-viewport {
   height: auto !important;
@@ -4583,38 +4598,41 @@ body.has-active-menu {
 .slider-lg__controls {
   display: inline-block;
   float: right;
-  text-align: right; }
-  @media (max-width: 767px) {
+  text-align: right;
+  top: -5px; }
+  @media (max-width: 991px) {
     .slider-lg__controls {
       float: left;
       text-align: left;
       margin-top: 10px;
-      margin-bottom: -5px; } }
+      margin-bottom: -5px;
+      padding-left: 0;
+      top: 0; } }
 .slider-lg h3 {
   font-size: 1.52rem;
   margin-bottom: 15px; }
-.slider-lg__item, .slider-lg__item-youtube {
+.slider-lg__item, .slider-lg__item-youtube, .slider-lg__item-insta {
   position: relative;
   padding: 0 30px;
   margin-right: 30px;
-  height: 400px;
+  height: 320px;
   display: inline-block;
   background-color: #cbc3b6;
-  background-size: cover;
-  background-position: center -100px;
+  background-size: 105%;
+  background-position: center top;
   background-repeat: no-repeat;
   overflow: hidden; }
-  @media (max-width: 767px) {
-    .slider-lg__item, .slider-lg__item-youtube {
-      height: 350px; } }
-  .slider-lg__item .social-quote, .slider-lg__item-youtube .social-quote {
+  @media (max-width: 991px) {
+    .slider-lg__item, .slider-lg__item-youtube, .slider-lg__item-insta {
+      height: 290px; } }
+  .slider-lg__item .social-quote, .slider-lg__item-youtube .social-quote, .slider-lg__item-insta .social-quote {
     position: absolute;
     top: 20%;
     display: block;
     font-family: "minion-pro", serif, serif;
     font-size: 1.3rem;
     color: #fff; }
-    .slider-lg__item .social-quote span, .slider-lg__item-youtube .social-quote span {
+    .slider-lg__item .social-quote span, .slider-lg__item-youtube .social-quote span, .slider-lg__item-insta .social-quote span {
       font-style: normal;
       color: #3d3421; }
 .slider-lg__item-link {
@@ -4624,7 +4642,9 @@ body.has-active-menu {
   left: 0;
   right: 0; }
 .slider-lg__item-youtube {
-  background-position: center -85px; }
+  background-position: center -15px; }
+.slider-lg__item-insta {
+  background-position: center -50px; }
 .slider-lg .social-quote {
   width: 85%;
   margin-left: auto;
@@ -4638,8 +4658,8 @@ body.has-active-menu {
 .prev-lg,
 .next-lg {
   display: inline-block;
-  width: 40px;
-  height: 40px;
+  width: 36px;
+  height: 36px;
   cursor: pointer;
   opacity: .6;
   content: none;
@@ -6315,18 +6335,18 @@ Edits by Chernoff Newman
     @media (min-height: 481px) and (max-height: 737px) {
       .hero__content-wrap--homes {
         padding: 10px;
-        margin-top: 65px; } }
+        margin-top: 45px; } }
     .hero__content-wrap--homes h1 {
       font-size: 5.4rem;
       margin-bottom: 65px; }
-      @media (max-width: 767px) {
+      @media (max-width: 991px) {
         .hero__content-wrap--homes h1 {
-          font-size: 2.2rem;
+          font-size: 2.5rem;
           margin-bottom: 25px; } }
       @media (min-height: 481px) and (max-height: 737px) {
         .hero__content-wrap--homes h1 {
-          font-size: 5.1rem;
-          margin-bottom: 45px; } }
+          font-size: 2.7rem;
+          margin-bottom: 25px; } }
   .hero__content-tab, .hero__content-tab-red, .hero__content-tab-green, .hero__content-tab-orange {
     padding: 15px 15px 0 15px;
     text-align: center;
@@ -6415,7 +6435,7 @@ Edits by Chernoff Newman
     @media (min-height: 481px) and (max-height: 737px) {
       .hero__page, .hero__page--homes {
         margin-top: 0;
-        height: 600px; } }
+        height: 330px; } }
     .hero__page--homes {
       overflow: visible; }
       @media (max-width: 767px) {
@@ -6698,7 +6718,7 @@ Edits by Chernoff Newman
     bottom: 0; }
 
 .events__featured-post {
-  margin-bottom: 20px;
+  margin-bottom: 60px;
   float: left; }
 .events__headline-container .btn-green, .events__headline-container .btn-green-small {
   margin-top: 25px;
@@ -6708,7 +6728,7 @@ Edits by Chernoff Newman
   line-height: 1.1;
   margin-bottom: 5px; }
 .events__headline-image {
-  height: 350px;
+  height: 235px;
   width: 30%;
   margin-right: 3%;
   background-size: cover;
@@ -6771,7 +6791,7 @@ Edits by Chernoff Newman
       margin: 0 0 5px 0;
       font-family: "proxima-nova", sans-serif, sans-serif;
       text-transform: uppercase;
-      font-size: 0.75rem;
+      font-size: 0.85rem;
       letter-spacing: 0.5px;
       color: #828181; }
     .category-list__item a:hover {

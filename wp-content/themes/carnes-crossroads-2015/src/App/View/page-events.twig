@@ -20,7 +20,7 @@
                         </div>
                         <div class="col-xs-12 col-md-8">
                             <h2>{{ post.title }}</h2>
-                            {{ post.content|truncate(65) }}
+                            <p>{{ post.content|striptags|truncate(65) }}</p>
                             <a href="{{ post.link }}" class="btn btn-green">Read More</a>
                         </div>
                     </div>
@@ -152,7 +152,7 @@
                                     </div>
 
                                 {% elseif social_post.social_post_type == 'instagram' %}
-                                    <div class="slider-lg__item"
+                                    <div class="slider-lg__item-insta"
                                          style="background-image: url({{ social_post.social_post_image_src }});">
                                         <a href="{{ social_post.social_post_link }}" class="slider-lg__item-link"
                                            target="blank"></a>

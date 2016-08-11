@@ -39,9 +39,21 @@ $weight-black        : 800;
 
 html, body {
     color: $black;
-    font-size: 1rem;
+    font-size: 16px;
     font-family: $font-sans;
     line-height: 1.5;
+
+    @media (max-width: $screen-lg-max) {
+        font-size: 15px;
+    }
+
+    @media (max-width: $screen-md-max) {
+        font-size: 14px;
+    }
+
+    @media (max-width: $screen-sm-max) {
+        font-size: 12px;
+    }
 }
 
 h1, h2, h3, h4, h5, h6 {
@@ -62,7 +74,7 @@ h1 {
     text-shadow: 0 0 10px rgba(#555d59, .5);
 
     @media (max-width: $screen-xs-max) {
-        font-size: 2.7rem;
+        font-size: 3.5rem;
     }
 }
 

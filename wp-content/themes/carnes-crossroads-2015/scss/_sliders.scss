@@ -5,6 +5,11 @@
 
 .slider-container {
     overflow: visible;
+
+    h3 {
+        font-size: 1.6rem;
+        padding-left: 0;
+    }
 }
 
 .bx-viewport {
@@ -27,12 +32,15 @@
         display: inline-block;
         float: right;
         text-align: right;
+        top: -5px;
 
-        @media (max-width: $screen-xs-max) {
+        @media (max-width: $screen-sm-max) {
             float: left;
             text-align: left;
             margin-top: 10px;
             margin-bottom: -5px;
+            padding-left: 0;
+            top: 0;
         }
     }
 
@@ -45,16 +53,16 @@
         position: relative;
         padding: 0 30px;
         margin-right: 30px;
-        height: 400px;
+        height: 320px;
         display: inline-block;
         background-color: #cbc3b6;
-        background-size: cover;
-        background-position: center -100px;
+        background-size: 105%;
+        background-position: center top;
         background-repeat: no-repeat;
         overflow: hidden;
 
-        @media (max-width: $screen-xs-max) {
-            height: 350px;
+        @media (max-width: $screen-sm-max) {
+            height: 290px;
         }
 
         .social-quote {
@@ -82,7 +90,12 @@
 
     &__item-youtube {
         @extend .slider-lg__item;
-        background-position: center -85px;
+        background-position: center -15px;
+    }
+
+    &__item-insta {
+        @extend .slider-lg__item;
+        background-position: center -50px;
     }
 
     .social-quote {
@@ -102,8 +115,8 @@
 .prev-lg,
 .next-lg {
     display: inline-block;
-    width: 40px;
-    height: 40px;
+    width: 36px;
+    height: 36px;
     cursor: pointer;
     opacity: .6;
     content: none;
