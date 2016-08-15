@@ -249,6 +249,11 @@
                         }
                     }
                 }
+                
+                form {
+                    display: inline-block;
+                    margin-bottom: 0;
+                }
 
                 input.search {
                     border: 1px solid $gold;
@@ -257,6 +262,7 @@
                     background-size: 12px;
                     padding-left: 5px;
                     padding-right: 20px;
+                    display: inline-block;
                 }
             }
         }
