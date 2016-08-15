@@ -1,0 +1,1208 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: Gallery Manager\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2016-03-05 13:42+0100\n"
+"PO-Revision-Date: \n"
+"Last-Translator: Dennis Hoppe <Mail@DennisHoppe.de>\n"
+"Language-Team: Dennis Hoppe <Mail@DennisHoppe.de>\n"
+"Language: de_DE\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Poedit-Basepath: .\n"
+"X-Poedit-KeywordsList: t;t:2c,1\n"
+"X-Generator: Poedit 1.5.4\n"
+"X-Poedit-SearchPath-0: ..\n"
+
+#: ../classes/gallery-post-type.php:77
+msgid "Galleries"
+msgstr "Galerien"
+
+#: ../classes/gallery-post-type.php:78
+msgid "Gallery"
+msgstr "Galerie"
+
+#: ../classes/gallery-post-type.php:79
+msgid "Add Gallery"
+msgstr "Galerie hinzufügen"
+
+#: ../classes/gallery-post-type.php:80
+msgid "New Gallery"
+msgstr "Neue Galerie"
+
+#: ../classes/gallery-post-type.php:81
+msgid "Edit Gallery"
+msgstr "Galerie bearbeiten"
+
+#: ../classes/gallery-post-type.php:82
+msgid "View Gallery"
+msgstr "Galerie ansehen"
+
+#: ../classes/gallery-post-type.php:83
+msgid "Search Galleries"
+msgstr "Galerien suchen"
+
+#: ../classes/gallery-post-type.php:84
+msgid "No Galleries found"
+msgstr "Keine Galerien gefunden"
+
+#: ../classes/gallery-post-type.php:85
+msgid "No Galleries found in Trash"
+msgstr "Keine Galerien im Papierkorb gefunden"
+
+#: ../classes/gallery-post-type.php:95 ../classes/gallery-taxonomies.php:39
+#: ../classes/gallery-taxonomies.php:75 ../classes/gallery-taxonomies.php:111
+#: ../classes/gallery-taxonomies.php:147 ../classes/gallery-taxonomies.php:183
+#: ../classes/gallery-taxonomies.php:219 ../classes/gallery-taxonomies.php:255
+msgctxt "URL slug"
+msgid "galleries"
+msgstr "galerien"
+
+#: ../classes/gallery-post-type.php:126
+#, php-format
+msgid "Gallery updated. (<a href=\"%s\">View gallery</a>)"
+msgstr "Galerie aktualisiert. (<a href=\"%s\">Galerie ansehen</a>)"
+
+#: ../classes/gallery-post-type.php:129
+msgid "Gallery updated."
+msgstr "Galerie aktualisiert."
+
+#: ../classes/gallery-post-type.php:130
+#, php-format
+msgid "Gallery restored to revision from %s"
+msgstr "Galerie auf den Stand von %s zurückgesetzt"
+
+#: ../classes/gallery-post-type.php:131
+#, php-format
+msgid "Gallery published. (<a href=\"%s\">View gallery</a>)"
+msgstr "Galerie veröffentlicht. (<a href=\"%s\">Galerie ansehen</a>)"
+
+#: ../classes/gallery-post-type.php:132
+msgid "Gallery saved."
+msgstr "Galerie gespeichert."
+
+#: ../classes/gallery-post-type.php:133
+msgid "Gallery submitted."
+msgstr "Galerie eingereicht."
+
+#: ../classes/gallery-post-type.php:134
+#, php-format
+msgid "Gallery scheduled. (<a target=\"_blank\" href=\"%s\">View gallery</a>)"
+msgstr ""
+"Galerie angelegt. (<a target=\"_blank\" href=\"%s\">Galerie ansehen</a>)"
+
+#: ../classes/gallery-post-type.php:135
+#, php-format
+msgid ""
+"Gallery draft updated. (<a target=\"_blank\" href=\"%s\">Preview gallery</a>)"
+msgstr ""
+"Entwurf gespeichert. (<a target=\"_blank\" href=\"%s\">Galerievorschau</a>)"
+
+#: ../classes/gallery-post-type.php:147
+msgid "Images"
+msgstr "Bilder"
+
+#: ../classes/gallery-post-type.php:153
+msgid "Owner"
+msgstr "Eigentümer"
+
+#: ../classes/gallery-post-type.php:156
+msgid "Gallery Shortcode"
+msgstr "Galerie-Shortcode"
+
+#: ../classes/gallery-post-type.php:159
+msgid "Gallery Hash"
+msgstr "Galerie-Hash"
+
+#: ../classes/gallery-post-type.php:195
+msgid "Shortcode"
+msgstr "Shortcode"
+
+#: ../classes/lightbox.php:32
+msgid "Previous image"
+msgstr "Vorheriges Bild"
+
+#: ../classes/lightbox.php:33
+msgid "Next image"
+msgstr "Nächstes Bild"
+
+#: ../classes/gallery-taxonomies.php:14
+msgid "Gallery Categories"
+msgstr "Galeriekategorien"
+
+#: ../classes/gallery-taxonomies.php:16
+msgid "Categories"
+msgstr "Kategorien"
+
+#: ../classes/gallery-taxonomies.php:17
+msgid "Category"
+msgstr "Kategorie"
+
+#: ../classes/gallery-taxonomies.php:18
+msgid "All Categories"
+msgstr "Alle Kategorien"
+
+#: ../classes/gallery-taxonomies.php:19
+msgid "Edit Category"
+msgstr "Kategorie bearbeiten"
+
+#: ../classes/gallery-taxonomies.php:20
+msgid "View Category"
+msgstr "Kategorie ansehen"
+
+#: ../classes/gallery-taxonomies.php:21
+msgid "Update Category"
+msgstr "Kategorie aktualisieren"
+
+#: ../classes/gallery-taxonomies.php:22
+msgid "Add New Category"
+msgstr "Neue Kategorie hinzufügen"
+
+#: ../classes/gallery-taxonomies.php:23
+msgid "New Category"
+msgstr "Neue Kategorie"
+
+#: ../classes/gallery-taxonomies.php:24
+msgid "Parent Category"
+msgstr "Übergeordnete Kategorie"
+
+#: ../classes/gallery-taxonomies.php:25
+msgid "Parent Category:"
+msgstr "Übergeordnete Kategorie:"
+
+#: ../classes/gallery-taxonomies.php:26
+msgid "Search Categories"
+msgstr "Kategorien durchsuchen"
+
+#: ../classes/gallery-taxonomies.php:27
+msgid "Popular Categories"
+msgstr "Häufig verwendete Kategorien"
+
+#: ../classes/gallery-taxonomies.php:28
+msgid "Separate Categories with commas"
+msgstr "Kategorien durch Komma getrennt"
+
+#: ../classes/gallery-taxonomies.php:29
+msgid "Add or remove Categories"
+msgstr "Kategorien hinzufügen oder entfernen"
+
+#: ../classes/gallery-taxonomies.php:30
+msgid "Choose from the most used Categories"
+msgstr "Wähle aus den am meisten verwendeten Kategorien"
+
+#: ../classes/gallery-taxonomies.php:31
+msgid "No Categories found."
+msgstr "Keine Galerien gefunden."
+
+#: ../classes/gallery-taxonomies.php:39
+#, php-format
+msgctxt "URL slug"
+msgid "%s/category"
+msgstr "%s/kategorie"
+
+#: ../classes/gallery-taxonomies.php:50
+msgid "Gallery Tags"
+msgstr "Schlagworte der Galerie "
+
+#: ../classes/gallery-taxonomies.php:52
+msgid "Tags"
+msgstr "Schlagworte"
+
+#: ../classes/gallery-taxonomies.php:53
+msgid "Tag"
+msgstr "Schlagwort"
+
+#: ../classes/gallery-taxonomies.php:54
+msgid "All Tags"
+msgstr "Alle Schlagworte"
+
+#: ../classes/gallery-taxonomies.php:55
+msgid "Edit Tag"
+msgstr "Schlagwort bearbeiten"
+
+#: ../classes/gallery-taxonomies.php:56
+msgid "View Tag"
+msgstr "Schlagwort ansehen"
+
+#: ../classes/gallery-taxonomies.php:57
+msgid "Update Tag"
+msgstr "Schlagwort aktualisieren"
+
+#: ../classes/gallery-taxonomies.php:58
+msgid "Add New Tag"
+msgstr "Neues Schlagwort hinzufügen"
+
+#: ../classes/gallery-taxonomies.php:59
+msgid "New Tag"
+msgstr "Neues Schlagwort"
+
+#: ../classes/gallery-taxonomies.php:60
+msgid "Parent Tag"
+msgstr "Übergeordnetes Schlagwort"
+
+#: ../classes/gallery-taxonomies.php:61
+msgid "Parent Tag:"
+msgstr "Übergeordnetes Schlagwort:"
+
+#: ../classes/gallery-taxonomies.php:62
+msgid "Search Tags"
+msgstr "Schlagworte durchsuchen"
+
+#: ../classes/gallery-taxonomies.php:63
+msgid "Popular Tags"
+msgstr "Häufig verwendete Schlagworte"
+
+#: ../classes/gallery-taxonomies.php:64
+msgid "Separate Tags with commas"
+msgstr "Schlagworte durch Komma getrennt"
+
+#: ../classes/gallery-taxonomies.php:65
+msgid "Add or remove Tags"
+msgstr "Schlagworte hinzufügen oder entfernen"
+
+#: ../classes/gallery-taxonomies.php:66
+msgid "Choose from the most used Tags"
+msgstr "Wähle aus den am meisten verwendeten Schlagworten"
+
+#: ../classes/gallery-taxonomies.php:67
+msgid "No Tags found."
+msgstr "Keine Schlagworte gefunden."
+
+#: ../classes/gallery-taxonomies.php:75
+#, php-format
+msgctxt "URL slug"
+msgid "%s/tag"
+msgstr "%s/schlagwort"
+
+#: ../classes/gallery-taxonomies.php:86
+msgid "Gallery Events"
+msgstr "Ereignisse"
+
+#: ../classes/gallery-taxonomies.php:88
+msgid "Events"
+msgstr "Ereignisse"
+
+#: ../classes/gallery-taxonomies.php:89
+msgid "Event"
+msgstr "Ereignis"
+
+#: ../classes/gallery-taxonomies.php:90
+msgid "All Events"
+msgstr "Alle Ereignisse"
+
+#: ../classes/gallery-taxonomies.php:91
+msgid "Edit Event"
+msgstr "Ereignis bearbeiten"
+
+#: ../classes/gallery-taxonomies.php:92
+msgid "View Event"
+msgstr "Ereignis anschauen"
+
+#: ../classes/gallery-taxonomies.php:93
+msgid "Update Event"
+msgstr "Ereignis aktualisieren"
+
+#: ../classes/gallery-taxonomies.php:94
+msgid "Add New Event"
+msgstr "Neues Ereignis hinzufügen"
+
+#: ../classes/gallery-taxonomies.php:95
+msgid "New Event"
+msgstr "Neues Ereignis"
+
+#: ../classes/gallery-taxonomies.php:96
+msgid "Parent Event"
+msgstr "Übergeordnetes Ereignis"
+
+#: ../classes/gallery-taxonomies.php:97
+msgid "Parent Event:"
+msgstr "Übergeordnetes Ereignis:"
+
+#: ../classes/gallery-taxonomies.php:98
+msgid "Search Events"
+msgstr "Ereignisse durchsuchen"
+
+#: ../classes/gallery-taxonomies.php:99
+msgid "Popular Events"
+msgstr "Häufig verwendete Ereignisse"
+
+#: ../classes/gallery-taxonomies.php:100
+msgid "Separate Events with commas"
+msgstr "Ereignisse durch Komma getrennt"
+
+#: ../classes/gallery-taxonomies.php:101
+msgid "Add or remove Events"
+msgstr "Ereignisse hinzufügen oder entfernen"
+
+#: ../classes/gallery-taxonomies.php:102
+msgid "Choose from the most used Events"
+msgstr "Wähle aus den am meisten verwendeten Ereignissen"
+
+#: ../classes/gallery-taxonomies.php:103
+msgid "No Events found."
+msgstr "Keine Ereignisse gefunden."
+
+#: ../classes/gallery-taxonomies.php:111
+#, php-format
+msgctxt "URL slug"
+msgid "%s/event"
+msgstr "%s/ereigniss"
+
+#: ../classes/gallery-taxonomies.php:122
+msgid "Gallery Places"
+msgstr "Orte"
+
+#: ../classes/gallery-taxonomies.php:124
+msgid "Places"
+msgstr "Orte"
+
+#: ../classes/gallery-taxonomies.php:125
+msgid "Place"
+msgstr "Ort"
+
+#: ../classes/gallery-taxonomies.php:126
+msgid "All Places"
+msgstr "Alle Orte"
+
+#: ../classes/gallery-taxonomies.php:127
+msgid "Edit Place"
+msgstr "Ort bearbeiten"
+
+#: ../classes/gallery-taxonomies.php:128
+msgid "View Place"
+msgstr "Ort ansehen"
+
+#: ../classes/gallery-taxonomies.php:129
+msgid "Update Place"
+msgstr "Orte aktualisieren"
+
+#: ../classes/gallery-taxonomies.php:130
+msgid "Add New Place"
+msgstr "Neue Orte hinzufügen"
+
+#: ../classes/gallery-taxonomies.php:131
+msgid "New Place"
+msgstr "Neuer Ort"
+
+#: ../classes/gallery-taxonomies.php:132
+msgid "Parent Place"
+msgstr "Übergeordneter Ort"
+
+#: ../classes/gallery-taxonomies.php:133
+msgid "Parent Place:"
+msgstr "Übergeordneter Ort:"
+
+#: ../classes/gallery-taxonomies.php:134
+msgid "Search Places"
+msgstr "Orte durchsuchen"
+
+#: ../classes/gallery-taxonomies.php:135
+msgid "Popular Places"
+msgstr "Häufig verwendete Orte"
+
+#: ../classes/gallery-taxonomies.php:136
+msgid "Separate Places with commas"
+msgstr "Orte durch Komma getrennt"
+
+#: ../classes/gallery-taxonomies.php:137
+msgid "Add or remove Places"
+msgstr "Orte hinzufügen oder entfernen"
+
+#: ../classes/gallery-taxonomies.php:138
+msgid "Choose from the most used Places"
+msgstr "Wähle aus den am meisten verwendeten Orten"
+
+#: ../classes/gallery-taxonomies.php:139
+msgid "No Places found."
+msgstr "Keine Orte gefunden."
+
+#: ../classes/gallery-taxonomies.php:147
+#, php-format
+msgctxt "URL slug"
+msgid "%s/place"
+msgstr "%s/ort"
+
+#: ../classes/gallery-taxonomies.php:158
+msgid "Gallery Dates"
+msgstr "Zeiträume"
+
+#: ../classes/gallery-taxonomies.php:160
+msgid "Dates"
+msgstr "Zeiträume"
+
+#: ../classes/gallery-taxonomies.php:161
+msgid "Date"
+msgstr "Zeitraum"
+
+#: ../classes/gallery-taxonomies.php:162
+msgid "All Dates"
+msgstr "Alle Zeiträume"
+
+#: ../classes/gallery-taxonomies.php:163
+msgid "Edit Date"
+msgstr "Zeitraum bearbeiten"
+
+#: ../classes/gallery-taxonomies.php:164
+msgid "View Date"
+msgstr "Zeitraum ansehen"
+
+#: ../classes/gallery-taxonomies.php:165
+msgid "Update Date"
+msgstr "Zeitraum aktualisieren"
+
+#: ../classes/gallery-taxonomies.php:166
+msgid "Add New Date"
+msgstr "Neuen Zeitraum hinzufügen"
+
+#: ../classes/gallery-taxonomies.php:167
+msgid "New Date"
+msgstr "Neuer Zeitraum"
+
+#: ../classes/gallery-taxonomies.php:168
+msgid "Parent Date"
+msgstr "Übergeordneter Zeitraum"
+
+#: ../classes/gallery-taxonomies.php:169
+msgid "Parent Date:"
+msgstr "Übergeordneter Zeitraum:"
+
+#: ../classes/gallery-taxonomies.php:170
+msgid "Search Dates"
+msgstr "Zeiträume suchen"
+
+#: ../classes/gallery-taxonomies.php:171
+msgid "Popular Dates"
+msgstr "Häufig verwendete Zeiträume"
+
+#: ../classes/gallery-taxonomies.php:172
+msgid "Separate Dates with commas"
+msgstr "Zeiträume durch Komma getrennt"
+
+#: ../classes/gallery-taxonomies.php:173
+msgid "Add or remove Dates"
+msgstr "Zeiträume hinzufügen oder entfernen"
+
+#: ../classes/gallery-taxonomies.php:174
+msgid "Choose from the most used Dates"
+msgstr "Wähle aus den am meisten verwendeten Zeiträumen"
+
+#: ../classes/gallery-taxonomies.php:175
+msgid "No Dates found."
+msgstr "Keine Zeiträume gefunden."
+
+#: ../classes/gallery-taxonomies.php:183
+#, php-format
+msgctxt "URL slug"
+msgid "%s/date"
+msgstr "%s/zeitraum"
+
+#: ../classes/gallery-taxonomies.php:194
+msgid "Gallery Persons"
+msgstr "Personen"
+
+#: ../classes/gallery-taxonomies.php:196
+msgid "Persons"
+msgstr "Personen"
+
+#: ../classes/gallery-taxonomies.php:197
+msgid "Person"
+msgstr "Person"
+
+#: ../classes/gallery-taxonomies.php:198
+msgid "All Persons"
+msgstr "Alle Personen"
+
+#: ../classes/gallery-taxonomies.php:199
+msgid "Edit Person"
+msgstr "Person bearbeiten"
+
+#: ../classes/gallery-taxonomies.php:200
+msgid "View Person"
+msgstr "Person ansehen"
+
+#: ../classes/gallery-taxonomies.php:201
+msgid "Update Person"
+msgstr "Person aktualisieren"
+
+#: ../classes/gallery-taxonomies.php:202
+msgid "Add New Person"
+msgstr "Neue Person hinzufügen"
+
+#: ../classes/gallery-taxonomies.php:203
+msgid "New Person"
+msgstr "Neue Person"
+
+#: ../classes/gallery-taxonomies.php:204
+msgid "Parent Person"
+msgstr "Übergeordnete Person"
+
+#: ../classes/gallery-taxonomies.php:205
+msgid "Parent Person:"
+msgstr "Übergeordnete Person:"
+
+#: ../classes/gallery-taxonomies.php:206
+msgid "Search Persons"
+msgstr "Personen suchen"
+
+#: ../classes/gallery-taxonomies.php:207
+msgid "Popular Persons"
+msgstr "Häufig markierte Personen"
+
+#: ../classes/gallery-taxonomies.php:208
+msgid "Separate Persons with commas"
+msgstr "Personen durch Komma getrennt"
+
+#: ../classes/gallery-taxonomies.php:209
+msgid "Add or remove Persons"
+msgstr "Personen hinzufügen oder entfernen"
+
+#: ../classes/gallery-taxonomies.php:210
+msgid "Choose from the most used Persons"
+msgstr "Wähle aus den am meisten markierten Personen"
+
+#: ../classes/gallery-taxonomies.php:211
+msgid "No Persons found."
+msgstr "Keine Personen gefunden."
+
+#: ../classes/gallery-taxonomies.php:219
+#, php-format
+msgctxt "URL slug"
+msgid "%s/person"
+msgstr "%s/person"
+
+#: ../classes/gallery-taxonomies.php:230
+msgid "Gallery Photographers"
+msgstr "Fotografen"
+
+#: ../classes/gallery-taxonomies.php:232
+msgid "Photographers"
+msgstr "Fotografen"
+
+#: ../classes/gallery-taxonomies.php:233
+msgid "Photographer"
+msgstr "Fotograf"
+
+#: ../classes/gallery-taxonomies.php:234
+msgid "All Photographers"
+msgstr "Alle Fotografen"
+
+#: ../classes/gallery-taxonomies.php:235
+msgid "Edit Photographer"
+msgstr "Fotograf bearbeiten"
+
+#: ../classes/gallery-taxonomies.php:236
+msgid "View Photographer"
+msgstr "Fotograf ansehen"
+
+#: ../classes/gallery-taxonomies.php:237
+msgid "Update Photographer"
+msgstr "Fotograf aktualisieren"
+
+#: ../classes/gallery-taxonomies.php:238
+msgid "Add New Photographer"
+msgstr "Neuen Fotograf hinzufügen"
+
+#: ../classes/gallery-taxonomies.php:239
+msgid "New Photographer"
+msgstr "Neuer Fotograf"
+
+#: ../classes/gallery-taxonomies.php:240
+msgid "Parent Photographer"
+msgstr "Übergeordneter Fotograf"
+
+#: ../classes/gallery-taxonomies.php:241
+msgid "Parent Photographer:"
+msgstr "Übergeordneter Fotograf:"
+
+#: ../classes/gallery-taxonomies.php:242
+msgid "Search Photographers"
+msgstr "Fotografen suchen"
+
+#: ../classes/gallery-taxonomies.php:243
+msgid "Popular Photographers"
+msgstr "Häufig markierte Fotografen"
+
+#: ../classes/gallery-taxonomies.php:244
+msgid "Separate Photographers with commas"
+msgstr "Fotografen durch Komma getrennt"
+
+#: ../classes/gallery-taxonomies.php:245
+msgid "Add or remove Photographers"
+msgstr "Fotograf hinzufügen oder entfernen"
+
+#: ../classes/gallery-taxonomies.php:246
+msgid "Choose from the most used Photographers"
+msgstr "Wähle aus den am meisten verwendeten Fotografen"
+
+#: ../classes/gallery-taxonomies.php:247
+msgid "No Photographers found."
+msgstr "Keine Fotografen gefunden."
+
+#: ../classes/gallery-taxonomies.php:255
+#, php-format
+msgctxt "URL slug"
+msgid "%s/photographer"
+msgstr "%s/fotograf"
+
+#: ../classes/gallery-taxonomies.php:298
+msgid "Archive Url"
+msgstr "Archiv Url"
+
+#: ../classes/gallery-taxonomies.php:301
+#, php-format
+msgid "This is the URL to the archive of this %s."
+msgstr "Das ist die URL des %s-Archives."
+
+#: ../classes/gallery-taxonomies.php:305
+msgid "Archive Feed"
+msgstr "Archiv Feed"
+
+#: ../classes/gallery-taxonomies.php:308
+#, php-format
+msgid "This is the URL to the feed of the archive of this %s."
+msgstr "Das ist die URL zum RSS-Feed des %s-Archives."
+
+#: ../classes/scripts.php:24
+msgid ""
+"Do you want to remove this image from the gallery? It will not be deleted "
+"from your media library."
+msgstr ""
+"Möchtest du dieses Bild aus der Galerie entfernen? Es wird trotzdem noch in "
+"der Mediathek bleiben bis du es endgültig löschst."
+
+#: ../classes/options.php:23
+msgid "Gallery Options"
+msgstr "Einstellungen &rsaquo; Galerien"
+
+#: ../classes/options.php:34
+msgid "Gallery Management"
+msgstr "Galerieverwaltung"
+
+#: ../classes/options.php:35 ../options-page/lightbox.php:6
+msgid "Lightbox"
+msgstr "Lightbox"
+
+#: ../classes/options.php:36
+msgid "Gallery Previews"
+msgstr "Galerievorschau"
+
+#: ../classes/options.php:37
+msgid "Permissions"
+msgstr "Benutzerrechte"
+
+#: ../classes/options.php:38
+msgid "Taxonomies"
+msgstr "Klassifizierungen"
+
+#: ../classes/options.php:39
+msgid "Gallery Archive"
+msgstr "Galerie-Archiv"
+
+#: ../classes/options.php:40
+msgid "License"
+msgstr "Lizenz"
+
+#: ../classes/options.php:73
+msgid "Gallery Settings"
+msgstr "Einstellungen &rsaquo; Galerien"
+
+#: ../classes/options.php:87 ../classes/options.php:99
+msgid "Click to toggle"
+msgstr "Zum Aufklappen klicken"
+
+#: ../meta-boxes/show-code.php:3
+msgid ""
+"To embed this gallery in another posts content you can use this "
+"<em>[gallery]</em> shortcode:"
+msgstr ""
+"Um diese Galerie in einen Inhalt einzubinden, verwendest du einfach diesen "
+"<em>[gallery]</em> Shortcode:"
+
+#: ../meta-boxes/show-code.php:5
+msgid "Just copy this code to all places where this gallery should appear."
+msgstr ""
+"Kopiere diesen Code an alle Stellen, an denen diese Galerie erscheinen soll."
+
+#: ../meta-boxes/owner.php:14
+msgid "Changes the owner of this gallery."
+msgstr "Verändert den Eigentümer dieser Galerie."
+
+#: ../meta-boxes/images.php:19
+msgid "Remove image"
+msgstr "Bild entfernen"
+
+#: ../meta-boxes/images.php:24
+msgid "Add images"
+msgstr "Bilder hinzufügen"
+
+#: ../meta-boxes/show-hash.php:3
+msgid ""
+"To start this gallery in a lightbox by clicking a link you can link to this "
+"<em>#hash</em>:"
+msgstr ""
+"Um die Galerie in der Lightbox beim Klick zu öffnen, kannst du einen Link "
+"auf diesen <em>#hash</em> setzen:"
+
+#: ../meta-boxes/show-hash.php:5
+msgid "Just use this hash as link target (href)."
+msgstr "Setze diesen Hash einfach als Linkziel (href-Attribut)."
+
+#: ../options-page/gallery-management.php:5
+msgid "Text Editor"
+msgstr "Texteditor"
+
+#: ../options-page/gallery-management.php:8
+#: ../options-page/gallery-management.php:19
+#: ../options-page/gallery-management.php:30
+#: ../options-page/gallery-management.php:41
+#: ../options-page/gallery-management.php:52
+#: ../options-page/gallery-management.php:63 ../options-page/lightbox.php:9
+#: ../options-page/lightbox.php:20 ../options-page/lightbox.php:31
+#: ../options-page/lightbox.php:42 ../options-page/lightbox.php:53
+#: ../options-page/lightbox.php:64
+msgid "On"
+msgstr "An"
+
+#: ../options-page/gallery-management.php:9
+#: ../options-page/gallery-management.php:20
+#: ../options-page/gallery-management.php:31
+#: ../options-page/gallery-management.php:42
+#: ../options-page/gallery-management.php:53
+#: ../options-page/gallery-management.php:64 ../options-page/lightbox.php:10
+#: ../options-page/lightbox.php:21 ../options-page/lightbox.php:32
+#: ../options-page/lightbox.php:43 ../options-page/lightbox.php:54
+#: ../options-page/lightbox.php:65
+msgid "Off"
+msgstr "Aus"
+
+#: ../options-page/gallery-management.php:11
+msgid "Enables or disables text editor for galleries."
+msgstr "Aktiviert oder deaktiviert den Texteditor für Galerien."
+
+#: ../options-page/gallery-management.php:16
+msgid "Excerpts"
+msgstr "Auszüge"
+
+#: ../options-page/gallery-management.php:22
+msgid "Enables or disables text excerpts for galleries."
+msgstr "Aktiviert oder deaktiviert Textauszüge für Galerien."
+
+#: ../options-page/gallery-management.php:27
+msgid "Revisions"
+msgstr "Revisionen"
+
+#: ../options-page/gallery-management.php:33
+msgid "Enables or disables revisions for galleries."
+msgstr "Aktiviert oder deaktiviert Revisionen für Galerien."
+
+#: ../options-page/gallery-management.php:38
+msgid "Comments"
+msgstr "Kommentare"
+
+#: ../options-page/gallery-management.php:44
+msgid "Enables or disables comments and trackbacks for galleries."
+msgstr "Aktiviert oder deaktiviert Kommentare und Trackbacks für Galerien."
+
+#: ../options-page/gallery-management.php:49
+msgid "Featured Image"
+msgstr "Beitragsbild"
+
+#: ../options-page/gallery-management.php:55
+msgid "Enables or disables the \"Featured Image\" for galleries."
+msgstr "Aktiviert oder deaktiviert die \"Beitragsbild\"-Funktion für Galerien."
+
+#: ../options-page/gallery-management.php:60
+msgid "Custom Fields"
+msgstr "Benutzerdefinierte Felder"
+
+#: ../options-page/gallery-management.php:66
+msgid "Enables or disables the \"Custom Fields\" for galleries."
+msgstr "Aktiviert oder deaktiviert benutzerdefinierte Felder für Galerien."
+
+#: ../options-page/license.php:3
+msgid ""
+"Please enter the license data (username and password) you got within the "
+"purchase of this plugin."
+msgstr ""
+"Bitte gib die Lizenzdaten (Benutzername und Kennwort) ein, die du beim Kauf "
+"des Plugins erhalten hast."
+
+#: ../options-page/license.php:16
+msgid ""
+"When you change your username or password on our website you need to come "
+"back and update it here too."
+msgstr ""
+"Wenn du deinen Benutzernamen oder Kennwort auf unserer Webseite änderst, "
+"musst du diese Daten auch hier aktualisieren."
+
+#: ../options-page/previews.php:4
+msgid "Gallery previews are randomly chosen images from a gallery."
+msgstr "Galerievorschauen bestehen aus zufälligen Bildern einer Galerie."
+
+#: ../options-page/previews.php:5
+msgid ""
+"They will be shown where your theme would display a text excerpt for regular "
+"posts usually."
+msgstr ""
+"Diese werden dort angezeigt, wo dein Theme normalerweise einen Textauszug "
+"für einen regulären Beitrag anzeigen würde."
+
+#: ../options-page/previews.php:29
+msgid "Enable previews for auto generated excerpts."
+msgstr "Galerievorschauen für automatisch generierte Auszüge aktivieren."
+
+#: ../options-page/previews.php:35
+msgid "Number of images"
+msgstr "Anzahl der Bilder"
+
+#: ../options-page/previews.php:49
+msgid "Size"
+msgstr "Größe"
+
+#: ../options-page/previews.php:61
+msgid ""
+"Enable previews for custom excerpts too. (Do not activate this option if "
+"your theme displays the excerpt and the content on the same page.)"
+msgstr ""
+"Vorschau auch für manuell verfasste Textauszüge aktivieren. (Aktiviere diese "
+"Option nicht, wenn dein Theme den Textauszug und den Inhaltstext auf der "
+"selben Seiten anzeigt.)"
+
+#: ../options-page/permissions.php:9
+msgid "Edit and create (own) galleries"
+msgstr "Erstellen und Bearbeiten (eigener) Galerien"
+
+#: ../options-page/permissions.php:10
+msgid "Edit others galleries"
+msgstr "Bearbeiten fremder Galerien"
+
+#: ../options-page/permissions.php:11
+msgid "Edit (own) private galleries"
+msgstr "Bearbeiten (eigener) privater Galerien"
+
+#: ../options-page/permissions.php:12
+msgid "Edit (own) published galleries"
+msgstr "Bearbeiten (eigener) veröffentlichter Galerien"
+
+#: ../options-page/permissions.php:14
+msgid "Delete (own) galleries"
+msgstr "Löschen (eigener) Galerien"
+
+#: ../options-page/permissions.php:15
+msgid "Delete (own) private galleries"
+msgstr "Löschen (eigener) privater Galerien"
+
+#: ../options-page/permissions.php:16
+msgid "Delete (own) published galleries"
+msgstr "Löschen (eigener) veröffentlichter Galerien"
+
+#: ../options-page/permissions.php:17
+msgid "Delete others galleries"
+msgstr "Löschen fremder Galerien"
+
+#: ../options-page/permissions.php:19
+msgid "Publish galleries"
+msgstr "Galerien veröffentlichen"
+
+#: ../options-page/permissions.php:20
+msgid "View (others) private galleries"
+msgstr "Ansehen (fremder) privater Galerien"
+
+#: ../options-page/permissions.php:26
+#, php-format
+msgid "Manage %s"
+msgstr "%s verwalten"
+
+#: ../options-page/archive.php:6
+msgid "Enable the gallery archive."
+msgstr "Galerie-Archiv aktivieren."
+
+#: ../options-page/archive.php:10
+#, php-format
+msgid ""
+"The archive link for your galleries is: <a href=\"%1$s\" target=\"_blank\">"
+"%1$s</a>"
+msgstr ""
+"Der Archiv-Link für deine Galerien lautet: <a href=\"%1$s\" target=\"_blank"
+"\">%1$s</a>"
+
+#: ../options-page/archive.php:14
+#, php-format
+msgid ""
+"The archive feed for your galleries is: <a href=\"%1$s\" target=\"_blank\">"
+"%1$s</a>"
+msgstr ""
+"Der Archiv-Link zum RSS-Feed deiner Galerien lautet: <a href=\"%1$s\" target="
+"\"_blank\">%1$s</a>"
+
+#: ../options-page/lightbox.php:12
+msgid "Turn this off if you do not want to use the included lightbox."
+msgstr ""
+"Schalte die Lightbox aus, wenn dir die mitgelieferte Version nicht zusagt."
+
+#: ../options-page/lightbox.php:17
+msgid "Loop mode"
+msgstr "Schleifenmodus"
+
+#: ../options-page/lightbox.php:23
+msgid ""
+"Enables the user to get from the last image to the first one with the \"Next "
+"&raquo;\" button."
+msgstr ""
+"Ermöglicht es dem Benutzer vom letzten zum ersten Bild durch den \"Weiter "
+"&raquo;\" Button zu gelangen."
+
+#: ../options-page/lightbox.php:28
+msgid "Title &amp; Description"
+msgstr "Titel &amp; Beschreibung"
+
+#: ../options-page/lightbox.php:34
+msgid ""
+"Turn this off if you do not want to display the image title and description "
+"in your lightbox."
+msgstr ""
+"Schalte diese Option ab, wenn du Bildtitel und Beschreibung nicht in der "
+"Lightbox anzeigen möchtest."
+
+#: ../options-page/lightbox.php:39
+msgid "Close button"
+msgstr "Schließen-Knopf"
+
+#: ../options-page/lightbox.php:45
+msgid ""
+"Turn this off if you do not want to display a close button in your lightbox."
+msgstr ""
+"Schalte diese Option ab, wenn du keinen Schließen-Knopf in der Lightbox "
+"anzeigen möchtest."
+
+#: ../options-page/lightbox.php:50
+msgid "Indicator thumbnails"
+msgstr "Navigationsvorschaubilder"
+
+#: ../options-page/lightbox.php:56
+msgid ""
+"Turn this off if you do not want to display small preview thumbnails below "
+"the lightbox image."
+msgstr ""
+"Schalte diese Option ab, wenn du keine Navigationsvorschaubilder in der "
+"Lightbox anzeigen möchtest."
+
+#: ../options-page/lightbox.php:61
+msgid "Slideshow play/pause button"
+msgstr "Slideshow-Start/Stop-Knopf"
+
+#: ../options-page/lightbox.php:67
+msgid ""
+"Turn this off if you do not want to provide a slideshow function in the "
+"lightbox."
+msgstr ""
+"Schalte diese Option ab, wenn du keinen Slideshow-Knopf in der Lightbox "
+"anzeigen möchtest."
+
+#: ../options-page/lightbox.php:72
+msgid "Slideshow speed"
+msgstr "Geschwindigkeit der Slideshow"
+
+#: ../options-page/lightbox.php:75 ../options-page/lightbox.php:92
+msgctxt "Abbr. Milliseconds"
+msgid "ms"
+msgstr "ms"
+
+#: ../options-page/lightbox.php:76
+msgid "The delay between two images in the slideshow."
+msgstr "Die Verzögerung zwischen zwei Bildwechseln in der Slideshow."
+
+#: ../options-page/lightbox.php:81
+msgid "Preload images"
+msgstr "Bilder vorladen"
+
+#: ../options-page/lightbox.php:84
+msgid "The number of images which should be preloaded around the current one."
+msgstr ""
+"Die Anzahl der Bilder, die vor und nach dem  aktuellen Bild im Hintergrund "
+"vorgeladen werden."
+
+#: ../options-page/lightbox.php:89
+msgid "Animation speed"
+msgstr "Animationsgeschwindigkeit"
+
+#: ../options-page/lightbox.php:93
+msgid "The speed of the image change animation."
+msgstr ""
+"Die Geschwindigkeit in der die Bildwechsel-Animation durchgeführt wird."
+
+#: ../options-page/lightbox.php:98
+msgid "Stretch images"
+msgstr "Bilder vergrößern"
+
+#: ../options-page/lightbox.php:101
+msgid "No stretching"
+msgstr "Nicht vergrößern"
+
+#: ../options-page/lightbox.php:102
+msgid "Contain"
+msgstr "Einpassen"
+
+#: ../options-page/lightbox.php:103
+msgid "Cover"
+msgstr "Aufspannen"
+
+#: ../options-page/lightbox.php:105
+msgid ""
+"\"Contain\" means to scale the image to the largest size such that both its "
+"width and its height can fit the screen."
+msgstr ""
+"\"Einpassen\" bedeutet, dass das Bild soweit vergrößert wird, dass die Höhe "
+"und Breite des Bildes nicht größer als der Viewport sind. Vom Bild wird "
+"nichts abgeschnitten."
+
+#: ../options-page/lightbox.php:106
+msgid ""
+"\"Cover\" means to scale the image to be as large as possible so that the "
+"screen is completely covered by the image. Some parts of the image may be "
+"cropped and invisible."
+msgstr ""
+"\"Aufspannen\" bedeutet, dass das Bild soweit vergrößert wird bis es den "
+"gesamten Viewport einnimmt. Überstehende Teile werden dabei abgeschnitten."
+
+#: ../options-page/lightbox.php:111
+msgid "Script position"
+msgstr "Scriptposition"
+
+#: ../options-page/lightbox.php:114
+msgid "Footer of the website"
+msgstr "Fußbereich der Webseite"
+
+#: ../options-page/lightbox.php:115
+msgid "Header of the website"
+msgstr "Kopfbereich der Webseite"
+
+#: ../options-page/lightbox.php:117
+msgid ""
+"Please choose the position of the javascript. \"Footer\" is recommended. Use "
+"\"Header\" if you have trouble to make the lightbox work."
+msgstr ""
+"Bitte wähle die Position des Javascripts aus. Der \"Fußbereich\" wird "
+"empfohlen. Wähle \"Kopfbereich\" aus, wenn die Lightbox nicht richtig "
+"funktionieren sollte."
+
+#: ../options-page/taxonomies.php:3
+msgid ""
+"Please select the taxonomies you want to use to classify your galleries."
+msgstr ""
+"Bitte wähle die Klassifizierungen aus, die du zur Gruppierung deiner "
+"Galerien nutzen möchtest."
+
+#: ../options-page/taxonomies.php:14
+msgid "hierarchical"
+msgstr "hierarchisch"
+
+#: ../widgets/taxonomies.php:11 ../widgets/taxonomies.php:26
+#: ../widgets/taxonomy-cloud.php:26
+msgid "Gallery Taxonomies"
+msgstr "Galerieklassifizierungen"
+
+#: ../widgets/taxonomies.php:12
+msgid ""
+"Displays your gallery taxonomies like categories, tags, events, "
+"photographers, etc."
+msgstr ""
+"Zeigt deine Galerieklassifizierungen wie Kategorien, Schlagworte, "
+"Ereignisse, Fotografen, etc. an."
+
+#: ../widgets/taxonomies.php:51 ../widgets/random-images.php:72
+#: ../widgets/taxonomy-cloud.php:51 ../widgets/galleries.php:46
+msgid "Leave blank to use the widget default title."
+msgstr "Leer lassen, um Standardtitel zu verwenden."
+
+#: ../widgets/taxonomies.php:55 ../widgets/taxonomy-cloud.php:55
+msgid "Taxonomy:"
+msgstr "Klassifizierung:"
+
+#: ../widgets/taxonomies.php:61 ../widgets/taxonomy-cloud.php:61
+msgid "Please choose the taxonomy the widget should display."
+msgstr "Bitte wähle die Klassifizierung aus, die das Widget anzeigen soll."
+
+#: ../widgets/taxonomies.php:65 ../widgets/taxonomy-cloud.php:65
+msgid "Number of terms:"
+msgstr "Anzahl der Elemente:"
+
+#: ../widgets/taxonomies.php:67 ../widgets/taxonomy-cloud.php:67
+msgid "Leave blank to show all."
+msgstr "Leer lassen, um alle anzuzeigen."
+
+#: ../widgets/taxonomies.php:80
+msgid "Show gallery counts."
+msgstr "Galerienanzahl einblenden."
+
+#: ../widgets/taxonomies.php:84 ../widgets/taxonomy-cloud.php:79
+#: ../widgets/galleries.php:55
+msgid "Order by:"
+msgstr "Sortieren nach:"
+
+#: ../widgets/taxonomies.php:87 ../widgets/taxonomy-cloud.php:82
+msgid "Gallery count"
+msgstr "Galerienanzahl"
+
+#: ../widgets/taxonomies.php:89 ../widgets/taxonomy-cloud.php:84
+msgid "Slug"
+msgstr "Slug"
+
+#: ../widgets/taxonomies.php:94 ../widgets/taxonomy-cloud.php:89
+#: ../widgets/galleries.php:66
+msgid "Order:"
+msgstr "Reihenfolge:"
+
+#: ../widgets/random-images.php:11 ../widgets/random-images.php:26
+msgid "Random Images"
+msgstr "Zufällige Bilder"
+
+#: ../widgets/random-images.php:12
+msgid "Displays some random images from your galleries."
+msgstr "Zeigt zufällige Bilder aus deinen Galerien an."
+
+#: ../widgets/random-images.php:76
+msgid "Number of images:"
+msgstr "Anzahl der Bilder:"
+
+#: ../widgets/random-images.php:81
+msgid "Columns:"
+msgstr "Spalten:"
+
+#: ../widgets/random-images.php:90
+msgid "Thumbnail size:"
+msgstr "Vorschaubildgröße:"
+
+#: ../widgets/taxonomy-cloud.php:11
+msgid "Gallery Taxonomy Cloud"
+msgstr "Galerieklassifizierungen (Wolke)"
+
+#: ../widgets/taxonomy-cloud.php:12
+msgid "Displays your gallery taxonomies as tag cloud."
+msgstr "Zeigt deine Galerieklassifizierungen als  \"Wortwolke\" an."
+
+#: ../widgets/galleries.php:12
+msgid "Displays some of your galleries."
+msgstr "Zeigt eine Auswahl deiner Galerien an."
+
+#: ../widgets/galleries.php:50
+msgid "Number of galleries:"
+msgstr "Galerienanzahl:"
+
+#: ../widgets/galleries.php:60
+msgid "Randomly"
+msgstr "Zufällig"
+
+#: ../widgets/galleries.php:61
+msgid "Number of comments"
+msgstr "Anzahl der Kommentare"
+
+#~ msgid "User rights"
+#~ msgstr "Benutzerrechte"
+
+#~ msgid "Number of Images:"
+#~ msgstr "Anzahl der Bilder:"
+
+#~ msgid "Please choose the Taxonomy the widget should display."
+#~ msgstr "Bitte wähle die Klassifizierung aus, die das Widget anzeigen soll."

@@ -1,0 +1,156 @@
+@media screen {
+    //Event Styles
+    .event-categories {
+        background: $peachy;
+        padding-top: 35px;
+        padding-bottom: 20px;
+    }
+    .site-btn.cat-btn {
+        padding: 14px 5px;
+        width: 100%;
+        text-align: center;
+        margin-bottom: 15px;
+
+        &.active {
+            background: $cc-red;
+            color: $white;
+        }
+    }
+    
+    //Event Single
+    div#tribe-events {
+        margin-top: 85px;
+    }
+
+    //Photo Galleries
+    .photo-gallery-feed {
+        background: $peachy; 
+        padding-top: 40px;
+        padding-bottom: 40px;
+        margin-top: 40px;
+
+        h2.section-title {
+            text-align: right;
+            color: $cc-orange;
+            font-size: 30px;
+            font-weight: 400;
+            margin-right: 100px;
+            text-transform: uppercase;
+
+            @media (max-width: $screen-sm-max) {
+                text-align: center;
+                font-size: 28px;
+                margin: auto;
+            }
+        }
+
+        .slick-prev, .slick-next {
+            border: 2px solid $cc-orange;
+            background-color: $white;
+            width: 36px;
+            height: 36px;
+            z-index: 8;
+            bottom: auto;
+            top: -44px;
+            border-radius: 50%;
+
+            &:before {
+                color: $cc-orange;
+                font-family: $minion;
+                font-weight: bold;
+            }
+        }
+
+        .slick-prev {
+            right: 40px;
+            left: auto;
+        }
+
+        .slick-next {
+            right: 0px;
+            left: auto;
+        }
+
+        .slick-slide {
+            height: auto;
+        }
+
+        .col-gallery-box {
+            margin-bottom: 10px; 
+            width: 100%;
+        }
+
+        .gallery-box {
+            background: $white;
+
+            .gallery-box-outer {
+                background: $cc-green;
+                padding: 14px 14px 0 14px;
+            }
+
+            .gallery-inner-box {
+                border-top: 4px solid $white;
+                border-left: 4px solid $white;
+                border-right: 4px solid $white;
+                padding: 20px;
+                display: table-cell;
+                vertical-align: bottom;
+                min-width: 265px;
+                height: 250px;
+
+                @media (min-width: $screen-lg) {
+                    width: 330px;
+                    height: 230px;
+                }
+
+                @media (max-width: $screen-sm-max) {
+                    width: 100%;
+                    display: block;
+                    text-align: center;
+                }
+
+                h2.gallery-title {
+                    color: $dkr-grey;
+                    font-size: 20px; 
+                    font-weight: 400;
+                    text-align: left;
+                    line-height: 1;
+
+                    @media (max-width: $screen-sm-max) {
+                        text-align: center;
+                    }
+                }
+            }
+
+            .gallery-details-box {
+                padding: 17px 33px;
+                font-family: $proxima;
+                color:  $dkr-grey;
+                font-size: 16px;
+                font-weight: 400;
+                text-align: left;
+                text-transform: uppercase;
+
+                .gallery-date {
+                    color: $grey;
+                    margin-bottom: 60px;
+
+                    @media (max-width: $screen-sm-max) {
+                        margin-bottom: 40px;
+                    }
+                }
+
+                .site-btn {
+                    //main styles in base.scss
+                    margin-top: 20px;
+                    position: absolute;
+                    bottom: 20px;
+
+                    @media (max-width: $screen-sm-max) {
+                        position: relative;
+                    }
+                }
+            }
+        }
+    }
+}

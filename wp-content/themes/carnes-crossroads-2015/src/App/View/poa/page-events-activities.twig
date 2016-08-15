@@ -1,0 +1,105 @@
+{% include 'poa/partials/header.twig' %}
+
+<div class="content-slider events">
+    <div class="featured-slider">
+        {% for slide in sliders %}
+        {#BEGIN SLIDE#}
+        <div class="slide" style="background:url( {{ slide.image[0] }}) no-repeat 50% 50%; background-size: cover;">
+            <div class="slider-caption">
+                {#CUSTOM Slide Headline#}
+                <h2 class="headline">{{ slide.title }}</h2>
+                
+                {#CUSTOM Slide Description#}
+                <p class="description">{{ slide.content }}</p>
+                
+                {#CUSTOM Link URL#}
+                <a class="cta-link" href="{{ slide.link }}">{{ slide.action }}</a>
+            </div>
+        </div>
+        {#END SLIDE#}
+        {% endfor %}
+    </div>
+</div>
+
+<div class="event-categories">
+    <div class="container">
+        <div class="row">
+            {# DANIELLE NOTE: MAY NEED MATCH HEIGHT ON BUTTONS #}
+            {# Example of Active Category Btn - active class on <a> tag #}
+            <div class="col-md-3">
+                <a class="site-btn cat-btn active" href="/residents/events-activities/">All Events</a>
+            </div>
+
+            {% for cat in event_cats %}
+            <div class="col-md-3">
+                <a class="site-btn cat-btn" href="/residents/events-activities/category/{{ cat.slug }}/">{{ cat.name }}</a>
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+</div>
+    
+<div class="event-calendar">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                {{ event_calendar }}
+            </div>
+        </div>
+    </div>   
+</div>
+    
+<div class="photo-gallery-feed">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <h2 class="section-title">
+                    Photo Galleries
+                </h2>
+            </div>
+        </div>
+        <div class="row">
+            <div class="gallery-slider">
+                {% for gallery in galleries %}
+                <div class="slide">
+                    <div class="col-md-3 col-gallery-box">
+                        <div class="gallery-box">
+                            {# INSERT GALLERY URL #}
+                            <a href="/residents/galleries/{{ gallery.slug }}">
+
+                                {% if gallery.thumbnail %}
+                                <div class="gallery-box-outer" style="background: url({{gallery.thumbnail.src}}) no-repeat 50% 50%; background-size: cover;">
+                                {% else %}
+                                <div class="gallery-box-outer" style="background: #cce9e6;">
+                                {% endif %}
+                                    <div class="gallery-inner-box">
+
+                                    </div>
+                                </div>
+                            </a>
+                            <div class="gallery-details-box">
+                                {# INSERT Gallery TITLE #}
+                                <h2 class="gallery-title">
+                                    {{ gallery.title|excerpt(4) }}
+                                </h2>
+
+                                {# INSERT GALLERY DATE #}
+                                <div class="gallery-date">
+                                    {{ gallery.post_date|date('F Y')}}
+                                </div>
+
+                                {# INSERT GALLERY URL #}
+                                <a class="site-btn" href="/residents/galleries/{{ gallery.slug }}">
+                                    View Photos
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                {% endfor %}
+            </div>
+        </div>
+    </div>
+</div>    
+
+{% include 'poa/partials/footer.twig' %}

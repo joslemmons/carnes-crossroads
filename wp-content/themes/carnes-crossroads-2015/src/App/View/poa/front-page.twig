@@ -1,0 +1,224 @@
+{% include 'poa/partials/header.twig' %}
+
+<div class="content-slider home">
+    <div class="featured-slider">
+        {% for slide in sliders %}
+        {#BEGIN SLIDE#}
+        <div class="slide" style="background:url({{ slide.image[0] }}) no-repeat 50% 50%; background-size: cover;">
+
+            <div class="slider-caption">
+                {#CUSTOM Slide Headline#}
+                <h2 class="headline">{{ slide.title }}</h2>
+
+                {#CUSTOM Slide Description#}
+                <p class="description">{{ slide.content }}</p>
+
+                {#CUSTOM Link URL#}
+                <a class="cta-link" href="{{ slide.link }}">{{ slide.action }}</a>
+            </div>
+        </div>
+        {#END SLIDE#}
+        {% endfor %}
+    </div>
+</div>
+
+<div class="home-events">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <h2 class="section-title">
+                    Events &amp; Activities
+                </h2>
+            </div>
+        </div>
+        
+        <div class="row visible-sm visible-xs">
+            <div class="col-md-12">
+                <a class="view-all" href="/residents/events-activities/">
+                    <div class="view-all-container">
+                        View All Upcoming Events
+                    </div>
+                </a>
+            </div>
+        </div>
+        
+        <div class="row">
+            <div class="col-md-4">
+                <div class="upcoming-events-box event-container-height hidden-xs hidden-sm">
+                    <h2>Upcoming Events</h2>
+                    {% for ev in events %}
+                    {#BEGIN EVENT ITEM - SHOW UP TO 10#}
+                    <div class="event-details">
+                        {#INSERT START DATE, MONTH ABBREVIATED#}
+                        <div class="event-date">{{ function('getDisplayDates',ev.EventStartDate,ev.EventEndDate,'M',false)|upper }}</div>
+
+                        {#INSERT EVENT TITLE#}
+                        <div class="event-title"><a href="{{ ev.event_link }}">{{ ev.post_title }}</a></div>
+                    </div>
+                    {#END EVENT ITEM#}
+                    {% endfor %}
+                    <div class="full-calendar">
+                        <a href="/residents/events-activities/">View Full Calendar</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-8">
+                <div class="event-container-height">
+                    <div class="featured-events-slider">
+
+                        {#BEGIN SLIDE - BATCH BY 4#}
+                        {% for featured in featured_slides %}
+                        <div class="slide">
+                            <div class="row event-box-row">
+
+                                {% for ev in featured %}
+                                {# BEGIN EVENT BOX #}
+                                <div class="col-md-6 col-event-box">
+                                    <div class="event-box">
+
+                                        {# INSERT EVENT URL#}
+                                        <a href="{{ function('tribe_get_event_link',ev.ID) }}">
+                                            {# IF FEATURED IMAGE, USE FOR BG URL - DANIELLE WILL SET ELSE#}
+                                            {% if ev.event_image_url %}                                       
+                                            <div class="event-title-box-outer" style="background: url({{ ev.event_image_url }}) no-repeat 50% 50%; background-size: cover; background-color: #87a01e; background-blend-mode: multiply;">
+                                                {% else %}
+                                                <div class="event-title-box-outer">
+                                                    {% endif %}
+                                                    <div class="event-title-box title-height">
+                                                        {# INSERT EVENT TITLE #}
+                                                        <h2 class="event-title">{{ ev.post_title|excerpt(5) }}</h2>
+                                                    </div>
+                                                </div>
+
+                                                </a>
+                                            <div class="event-details-box">
+                                                <div class="event-time">
+                                                    {# INSERT EVENT DATE AND TIME #}
+                                                    {{ function('getDisplayDates',ev.EventStartDate,ev.EventEndDate,'M',false,true) }}
+                                                </div>
+                                                <div class="event-description">
+                                                    {# INSERT EVENT DESCRIPTION #}
+                                                    {{ ev.post_content|excerpt(15) }}
+                                                </div>
+
+                                                {# INSERT EVENT URL #}
+                                                <a class="site-btn" href="{{ ev.event_link }}">
+                                                    Get Details
+                                                </a>
+                                            </div>
+                                            </div>
+                                    </div>
+                                    {# BEGIN EVENT BOX #}
+                                    {% endfor %}
+                                </div>
+                            </div>
+                            {#END SLIDE - BATCH BY 4#}
+                            {% endfor %}
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="home-announcements">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12">
+                    <h2 class="section-title">
+                        Announcements
+                    </h2>
+                </div>
+            </div>
+            <div class="row">
+                <div class="announcement-slider">
+
+                    {% for ann in announcements %}
+                    {# BEGIN ANNOUCEMENT BOX #}
+                    <div class="slide">
+                        <div class="col-md-4 col-announcement-box">
+                            <div class="announcement-box">
+                                {# INSERT ANNOUNCEMENT URL #}
+                                <a href="{{ ann.link }}">
+
+                                    {# IF FEATURED IMAGE, USE FOR BG URL - DANIELLE WILL SET ELSE#}
+                                    {% if ann.thumbnail %}
+                                    <div class="announcement-title-box-outer" style="background: linear-gradient( rgba(227, 179, 66, 0.8), rgba(227, 179, 66, 0.8) ), url({{ ann.thumbnail.src }}); background-size: cover;">
+                                        {% else %}
+                                        <div class="announcement-title-box-outer">
+                                            {% endif %}
+                                            <div class="announcement-title-box title-height">
+
+                                                {# INSERT ANNOUNCEMENT TITLE #}
+                                                <h2 class="announcement-title">{{ ann.post_title|excerpt(5) }}</h2>
+                                            </div>
+                                        </div>
+                                        </a>
+                                    <div class="announcement-details-box">
+
+                                        {# INSERT ANNOUNCEMENT DESCRIPTION #}
+                                        <div class="announcement-description">
+                                            {{ ann.post_content|excerpt(15) }}
+                                        </div>
+
+                                        {# INSERT ANNOUNCEMENT URL #}
+                                        <a class="site-btn" href="{{ ann.link }}">
+                                            Get Details
+                                        </a>
+                                    </div>
+                                    </div>
+                            </div>
+                        </div>
+                        {# END ANNOUCEMENT BOX #}
+                        {% endfor %}
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-12">
+                        <a class="view-all" href="/residents/announcements/">
+                            <div class="view-all-container">
+                                View All Announcements
+                            </div>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        {# THIS ONLY EXISTS IF THERE IS CONTENT ENTERED #}
+
+        {% if callout.title and callout.content %}
+        <div class="bonus-callout">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="callout-outline">
+                            <div class="bonus-callout-container">
+                                {# INSERT CUSTOM HEADLINE #}
+                                <h2 class="callout-headline">
+                                    {{ callout.title }}
+                                </h2>
+
+                                {# INSERT CUSTOM TEXT AREA #}
+                                <p class="callout-excerpt">
+                                    {{ callout.content }}
+                                </p>
+
+                                {% if callout.link %}
+                                <div class="btn-container">
+
+                                    {# INSERT CUSTOM URL #}
+                                    <a class="site-btn" href="{{ callout.link }}">
+                                        {% if callout.action %}{{ callout.action }}{% else %}Learn More{% endif %}
+                                    </a>
+                                </div>
+                                {% endif %}
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        {% endif %}
+        {% include 'poa/partials/footer.twig' %}

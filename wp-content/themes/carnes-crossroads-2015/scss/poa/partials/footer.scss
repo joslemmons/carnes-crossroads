@@ -1,0 +1,45 @@
+@media screen{
+    .poa-site {
+
+
+        //Footer 
+        .site-footer {
+            padding-top: 20px;
+            padding-bottom: 20px;
+            background: $cc-red;
+            color: $white;
+
+            nav.poa-footer-nav {
+                ul.footer-nav {
+                    margin: 0;
+                    padding: 0;
+
+                    li.nav-item {
+                        display: inline-block;
+                        margin-right: 10px;
+                        font-family: $oswald;
+                        font-size: 12px;
+                        font-weight: 400;
+                        text-align: left;
+                        text-transform: uppercase;
+
+                        a {
+                            color: $white;
+
+                            &:hover {
+                                color: $white;
+                            }
+                        }
+                    }
+                }
+            }
+
+            .copyright {
+                font-family: $baskerville;
+                font-size: 14px;
+                margin-top: 5px;
+                color: $white;
+            }
+        } 
+    }
+}

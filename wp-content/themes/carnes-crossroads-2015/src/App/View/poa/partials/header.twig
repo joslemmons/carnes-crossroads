@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]>
+<html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>
+<html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>
+<html class="no-js lt-ie9"> <![endif]-->
+<!--[if IE 9]>
+<html class="no-js ie9"> <![endif]-->
+<!--[if gt IE 9]><!-->
+<html class="no-js poa-site"> <!--<![endif]-->
+    <head>
+        <META HTTP-EQUIV="Pragma" CONTENT="no-cache"/>
+        <META HTTP-EQUIV="Expires" CONTENT="-1"/>
+        <meta charset="utf-8"/>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+        <title>Carnes Crossroads POA</title>
+        <meta name="description" content=""/>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"/>
+        <link rel="apple-touch-icon-precomposed" href="{{ site.theme.link }}/img/apple-icon.png"/>
+        <link rel="shortcut icon" href="{{ site.theme.link }}/img/favicon.ico" sizes="32x32"/>
+
+        {% if typekit_src %}
+        <script src="{{ typekit_src }}"></script>
+        <script>try {
+    Typekit.load({async: true});
+} catch (e) {
+}</script>
+        {% endif %}
+
+        {{ wp_head() }}
+
+    </head>
+    <body>
+        <!--[if lt IE 7]>
+<p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade
+your browser</a> to improve your experience.</p>
+<![endif]-->
+
+        <div class="poa-header">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-4">
+                        <div class="site-logo">
+                            <a href="/residents">
+                                <img src="{{ site.theme.link }}/img/cx-logo.png"/>
+                            </a>
+                        </div>
+                    </div>
+
+                    <div class="col-md-8">
+                        <h1 class="site-title">Property Owners&rsquo; Association</h1>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="poa-menu-icon visible-xs visible-sm">
+                <svg width="28" height="28">
+                    <image xlink:href="{{ site.theme.link }}/img/menu-poa.svg" src="{{ site.theme.link }}/img/menu-poa.png" width="28" height="28" />
+                </svg>
+            </div>
+        </div>
+        
+        
+        <div class="poa-nav">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-12">
+                        <nav class="poa">
+                            <ul class="nav-list">
+                                {% for item in poa_main_menu.get_items %}
+                                    <li class="nav-item"><a href="{{ item.link }}">{{ item.title }}</a></li>
+                                {% endfor %}
+                            </ul>
+                        </nav>
+                        <div class="sub-nav">
+                            {% for item in poa_secondary_menu.get_items %}
+                                    <a class="sub-nav-item" href="{{ item.link }}">{{ item.title }}</a>
+                            {% endfor %}
+                            <form action="/" method="get">
+                                <input type="search" placeholder="search" name="s" class="search"/>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>

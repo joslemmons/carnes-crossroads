@@ -8,7 +8,8 @@ $config_options = array(
 
     // ie. staging.chernoffnewman.com
     'staging_domains' => array(
-        'staging.carnescharleston.chernoffnewman.com'
+        'staging.carnescharleston.chernoffnewman.com',
+        'staging.carnescharleston.com'
     ),
 
     // __('your text', {text_domain})

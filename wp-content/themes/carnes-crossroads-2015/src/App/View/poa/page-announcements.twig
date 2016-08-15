@@ -1,0 +1,95 @@
+{% include 'poa/partials/header.twig' %}
+
+<div class="content-slider home">
+    <div class="featured-slider">
+        {% for slide in sliders %} 
+        {#BEGIN SLIDE#}
+        <div class="slide" style="background:url( {{ slide.image[0] }}) no-repeat 50% 50%; background-size: cover;">
+
+            <div class="slider-caption">
+                {#CUSTOM Slide Headline#}
+                <h2 class="headline">{{ slide.title }}</h2>
+
+                {#CUSTOM Slide Description#}
+                <p class="description">{{ slide.content }}</p>
+
+                {#CUSTOM Link URL#}
+                <a class="cta-link" href="{{ slide.link }}">{{ slide.action }}</a>
+            </div>
+        </div>
+        {#END SLIDE#}
+        {% endfor %}
+    </div>
+</div>
+
+<div class="sidebar-mobile">
+    <div class="sub-nav">
+        {# TODO: Setup once archive setup #}
+        <ul>
+            <li><a href="#">July 2016</a></li>
+            <li><a href="#">June 2016</a></li>
+        </ul>
+    </div>
+</div>
+<div class="down-menu visible-sm visible-xs">
+    <div class="icon-container">
+        <svg width="15" height="15">
+            <image xlink:href="{{ template_uri }}/img/chevron-down.svg"
+                   src="{{ template_uri }}/img/chevron-down.png" width="15"
+                   height="15"/>
+        </svg>
+    </div>
+</div>
+
+<div class="main-content">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-3">
+                <div class="sub-nav main-sub-nav">
+                    <div class="sidebar-title hidden-xs hidden-sm">
+                        Archive
+                    </div>
+                    <ul>
+                        {% for key,val in archive_links %}
+                        <li><a href="/residents/announcements/archive/{{ val }}">{{ key }}</a></li>
+                        {% endfor %}
+                    </ul>
+                </div>
+            </div>
+            <div class="col-md-9 col-right">
+            	{% if date_title %} 
+            	<h2>Archive: {{ date_title }}</h2>
+            	<a href="/residents/announcements">View All Announcements</a>
+            	{% endif %}
+                <div class="primary-content">
+                    {{ page.content }}
+                </div>
+
+                {% for ann in announcements %}
+                {# START Announcement Item #}
+                <div class="child-page-content" id="{{ child_page.post_name }}">
+                    <div class="child-title">
+                        <a href="{{ ann.link }}"><h3>{{ ann.title }}</h3></a>
+                    </div>
+
+                    <div class="child-content">
+                        <div class="announcement-img">
+
+                            {% if ann.thumbnail %}
+                            <img src="{{ ann.thumbnail.src|resize(165,165) }}" />
+                            {% else %}
+                            <img src="{{ site.theme.link }}/img/placeholder-poa-news-img.jpg" />
+                            {% endif %}
+
+                        </div>
+                        {{ ann.content|excerpt(50) }}
+                    </div>
+                </div>
+                {# END Announcement Item #}
+                {% endfor %}
+            </div>
+        </div>
+    </div>
+</div>
+
+{% include 'poa/partials/footer.twig' %}

@@ -41,3 +41,17 @@ Version: 1.0
         "calendar",
         "landing-page",
         "print";
+
+
+// POA Site Styles
+// ===================================
+@import "poa/partials/header",
+        "poa/partials/footer",
+        "poa/fonts",
+        "poa/ie",
+        "poa/front-page",
+        "poa/page-default",
+        "poa/page-directories",
+        "poa/news",
+        "poa/events",
+        "poa/search";

@@ -1,0 +1,182 @@
+@media screen {
+    .poa-site {
+
+        .staff-member-box-container {
+            position: relative;
+
+            &:hover {
+                .staff-member-hover-box {
+                    opacity: 1;
+                }
+            }
+        }
+
+        .staff-member-box-outer {
+            background: $cc-green;
+            padding: 14px 14px 0 14px;
+            height: 220px;
+            z-index: 1;
+            position: relative;
+            background-position: 50% 0% !important;
+            background-size: cover !important;
+            
+            @media (max-width: $screen-xs-max) {
+                height: 450px;
+            }
+            
+            @media (max-width: 500px) {
+                height: 350px;
+            }
+        }
+
+        .staff-member-box {
+            border-top: 4px solid $white;
+            border-left: 4px solid $white;
+            border-right: 4px solid $white;
+            height: 206px;
+            
+            @media (max-width: $screen-xs-max) {
+                height: 450px;
+            }
+            
+            @media (max-width: 500px) {
+                height: 350px;
+            }
+        }
+
+        .staff-member-hover-box {
+            background-color: rgba(54, 54, 54, 0.85);
+            height: 220px;
+            position: relative;
+            z-index: 2;
+            top: -220px;
+            margin-bottom: -220px;
+            color: $white;
+            text-align: center;
+            display: table;
+            width: 100%;
+            opacity: 0;
+            @include transition (0.3s all);
+
+            //opacity 1 set on hover of entire container near top
+
+            @media (max-width: $screen-sm-max) {
+                top: 0;
+                margin-bottom: 0;
+                opacity: 1;
+                height: auto;
+                padding: 20px;
+            }
+
+            .content-container {
+                display: table-cell;
+                vertical-align: middle;
+
+                .get-in-touch {
+                    font-family: $minion;
+                    color: $cc-green;
+                    font-size: 18px; 
+                    font-weight: 600;
+                    text-align: center;
+                    text-transform: uppercase;
+                }
+
+                .divider {
+                    display: block;
+                    width: 93px;
+                    height: 2px;
+                    background: $cc-green;
+                    margin: 18px auto;
+
+                }
+
+                .staff-phone {
+                    font-family: $minion;
+                    color: $white;
+                    font-size: 22px; 
+                    font-weight: 400;
+                }
+
+                .staff-email a {
+                    font-family: $minion;
+                    color: $white;
+                    font-size: 22px; 
+                    font-weight: 400;
+                    border-bottom: 1px solid rgba(255,255,255,0);
+
+                    &:hover {
+                        border-bottom: 1px solid $cc-green;
+                        color: $cc-green;
+                    }
+                }
+            }
+        }
+
+        .staff-member-details {
+            background: $peachy;
+            padding: 16px 30px;
+            margin-bottom: 30px;
+
+            @media (max-width: $screen-sm-max) {
+                text-align: center;
+                padding: 20px;
+            }
+
+            .staff-name {
+                font-family: $minion;
+                color: $dkr-grey;
+                font-size: 20px; 
+                font-weight: 400;
+                margin-bottom: 6px;
+                line-height: 1;
+            }
+
+            .staff-position {
+                font-family: $proxima;
+                color: $cc-green;
+                font-size: 16px;
+                font-weight: 400;
+                line-height: 1;
+            }
+        }
+
+
+        //Helpful Links
+        /* Style the buttons that are used to open and close the accordion panel */
+        button.accordion {
+            background: $white url('img/plus-box.jpg') no-repeat 0% 50%;
+            background-size: 25px;
+            color: $cc-green;
+            cursor: pointer;
+            padding: 18px 18px 18px 40px;
+            width: 100%;
+            text-align: left;
+            border: none;
+            outline: none;
+            font-size: 25px;
+            font-family: $minion;
+            text-transform: uppercase;
+            line-height: 1.6;
+            text-align: left;
+
+            @include transition (0.4s all);
+        }
+
+        /* Add a background color to the button if it is clicked on (add the .active class with JS), and when you move the mouse over it (hover) */
+        button.accordion.active, button.accordion:hover {
+            color: dakren($cc-green,20%);
+        }
+
+        /* Style the accordion panel. Note: hidden by default */
+        div.panel {
+            padding: 0 20px 0 42px;
+            background-color: white;
+            display: none;
+        }
+
+        /* The "show" class is added to the accordion panel when the user clicks on one of the buttons. This will show the panel content */
+        div.panel.show {
+            display: block !important;
+        }
+    }
+}
