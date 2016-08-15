@@ -8721,13 +8721,17 @@ span.tel {
           .poa-site .poa-nav .sub-nav a:hover {
             border-bottom: none; } }
 @media screen {
+      .poa-site .poa-nav .sub-nav form {
+        display: inline-block;
+        margin-bottom: 0; }
       .poa-site .poa-nav .sub-nav input.search {
         border: 1px solid #9f9d5c;
         color: #9f9d5c;
         background: #fff url(img/search-bar-icon.png) no-repeat 96% 50%;
         background-size: 12px;
         padding-left: 5px;
-        padding-right: 20px; } }
+        padding-right: 20px;
+        display: inline-block; } }
 @media screen {
   .poa-site .site-footer {
     padding-top: 20px;
@@ -9125,7 +9129,7 @@ span.tel {
     .poa-site .bonus-callout .bonus-callout-container {
       border: 2px solid #fff;
       background: #fffaf3;
-      padding: 2px 20px 20px; }
+      padding: 20px 20px 20px; }
     .poa-site .bonus-callout h2.callout-headline {
       color: #363636;
       font-size: 36px;
