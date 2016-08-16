@@ -30,14 +30,24 @@ jQuery(function ($) {
         return false;
     });
     
-    //Side Nav Interior Pages
+    //Side Nav Interior Pages with Small Header
     $(window).scroll(function () {
         var scroll = $(window).scrollTop();
 
         if (scroll >= 510) {
-            $('.sub-nav').addClass('fixed');
+            $('.sub-nav.small-header').addClass('fixed');
         } else {
-            $('.sub-nav').removeClass('fixed');
+            $('.sub-nav.small-header').removeClass('fixed');
+        }
+    });
+    //Side Nav Interior Pages with Large Slider Header
+    $(window).scroll(function () {
+        var scroll = $(window).scrollTop();
+
+        if (scroll >= 1014) {
+            $('.sub-nav.large-header').addClass('fixed');
+        } else {
+            $('.sub-nav.large-header').removeClass('fixed');
         }
     });
     
