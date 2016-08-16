@@ -6,7 +6,7 @@
 		{% for hl in helpful_links %}
         <button class="accordion">{{ hl.title }}</button>
         <div class="panel">
-          <p>{{ hl.content }}</p>
+          {{ hl.content | wpautop }}
         </div>
         {% endfor %}
 
