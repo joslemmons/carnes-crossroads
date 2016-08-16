@@ -25,6 +25,7 @@ $category = '';
 if (isset($params['qslug'])) {
         $category = $params['qslug'];
 };
+$context['active_category'] = $category;
 
 $eslug = '';
 if (isset($params['eslug'])) {
