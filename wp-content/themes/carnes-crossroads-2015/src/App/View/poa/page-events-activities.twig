@@ -27,12 +27,12 @@
             {# DANIELLE NOTE: MAY NEED MATCH HEIGHT ON BUTTONS #}
             {# Example of Active Category Btn - active class on <a> tag #}
             <div class="col-md-3">
-                <a class="site-btn cat-btn active" href="/residents/events-activities/">All Events</a>
+                <a class="site-btn cat-btn{% if not active_category %} active{% endif %}" href="/residents/events-activities/">All Events</a>
             </div>
 
             {% for cat in event_cats %}
             <div class="col-md-3">
-                <a class="site-btn cat-btn" href="/residents/events-activities/category/{{ cat.slug }}/">{{ cat.name }}</a>
+                <a class="site-btn cat-btn{% if active_category == cat.slug %} active{% endif %}" href="/residents/events-activities/category/{{ cat.slug }}/">{{ cat.name }}</a>
             </div>
             {% endfor %}
         </div>

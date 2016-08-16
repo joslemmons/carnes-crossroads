@@ -26,8 +26,9 @@
     <div class="sub-nav">
         {# TODO: Setup once archive setup #}
         <ul>
-            <li><a href="#">July 2016</a></li>
-            <li><a href="#">June 2016</a></li>
+            {% for key,val in archive_links %}
+            <li><a href="/residents/announcements/archive/{{ val }}">{{ key }}</a></li>
+            {% endfor %}
         </ul>
     </div>
 </div>
@@ -45,7 +46,7 @@
     <div class="container">
         <div class="row">
             <div class="col-md-3">
-                <div class="sub-nav main-sub-nav">
+                <div class="sub-nav main-sub-nav large-header">
                     <div class="sidebar-title hidden-xs hidden-sm">
                         Archive
                     </div>

@@ -10,8 +10,9 @@
     <div class="sub-nav">
         {# TODO: Setup once archive setup #}
         <ul>
-            <li><a href="#">July 2016</a></li>
-            <li><a href="#">June 2016</a></li>
+            {% for key,val in archive_links %}
+            <li><a href="/residents/announcements/archive/{{ val }}">{{ key }}</a></li>
+            {% endfor %}
         </ul>
     </div>
 </div>
@@ -29,24 +30,13 @@
     <div class="container">
         <div class="row">
             <div class="col-md-3">
-                <div class="sub-nav main-sub-nav">
+                <div class="sub-nav main-sub-nav small-header">
                     <div class="sidebar-title">
                         Archive
                     </div>
                     <ul>
-                        {# ONLY here for styling purposes #}
-                        <li><a href="#">July 2016</a></li>
-                        <li><a href="#">June 2016</a></li>
-
-                        {# Ed - This was copied over from DI Main Site, will need to update #}
-                        {% for child_page in page.getChildren %}
-                        <li {% if child_page.id == activeChildPage.id %}class="active"{% endif %}>
-                            <a class="child-page-link"
-                               data-page-url-path="{{ page.post_name }}/{{ child_page.post_name }}"
-                               data-page-slug="{{ child_page.post_name }}"
-                               href="{{ child_page.link }}">{{ child_page.title }}
-                            </a>
-                        </li>
+                        {% for key,val in archive_links %}
+                        <li><a href="/residents/announcements/archive/{{ val }}">{{ key }}</a></li>
                         {% endfor %}
                     </ul>
                 </div>
