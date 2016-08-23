@@ -28,14 +28,18 @@ if ($page->slug == 'directories') {
 	
 	$page_hl = get_page_by_path( 'residents/directories/helpful-links-contacts' );
 	$hl_meta = get_post_meta($page_hl->ID);
-	$helpful_links = unserialize($hl_meta['page_links'][0]);
-	$context['helpful_links'] = $helpful_links;
+	$context['helpful_links'] = unserialize($hl_meta['page_links'][0]);
 	
 	$page_staff = get_page_by_path( 'residents/directories/poa-staff' );
 	$staff_meta = get_post_meta($page_staff->ID);
-	$staff_members = unserialize($staff_meta['staff_members'][0]);
-	$context['staff_members'] = $staff_members;
+	$context['staff_members'] = unserialize($staff_meta['staff_members'][0]);
 
+} elseif ( strpos($page->slug, 'faq') !== false ) { 
+	
+	$page_faq = get_page_by_path( $_SERVER['REQUEST_URI'] );
+	$faq_meta = get_post_meta($page_faq->ID);
+	$context['faqs'] = unserialize($faq_meta['page_faqs'][0]);
+	
 }
 
 Timber::render('poa/page-default.twig', $context);
