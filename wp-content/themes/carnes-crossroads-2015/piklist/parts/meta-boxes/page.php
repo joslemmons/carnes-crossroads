@@ -180,6 +180,30 @@ if ( in_array($uri, $poa_slider_pages) ) {
           )
         )); 
 
+} elseif ( (strpos($uri,'residents') !== false) && (strpos($uri,'faq') !== false) ) {
+
+        piklist('field', array(
+          'type' => 'group',
+          'field' => 'page_faqs',
+          'columns' => 12,
+          'label' => 'FAQ Questions/Answers',
+          'add_more' => true,
+          'fields' => array(
+            array(
+              'type' => 'text',
+              'label' => 'Question',
+              'field' => 'question',
+              'columns' => 12
+            ),
+            array(
+              'type' => 'editor',
+              'label' => 'Answer',
+              'field' => 'answer',
+              'columns' => 12
+            ),
+          )
+        ));	
+
 } elseif (
     $post && $post->id !== FrontPage::PAGE_ID &&
     $post->id !== FAQPage::PAGE_ID &&
