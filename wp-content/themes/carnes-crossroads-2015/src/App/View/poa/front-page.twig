@@ -77,7 +77,7 @@
                                     <div class="event-box">
 
                                         {# INSERT EVENT URL#}
-                                        <a href="{{ function('tribe_get_event_link',ev.ID) }}">
+                                        <a href="{{ ev.event_link }}">
                                             {# IF FEATURED IMAGE, USE FOR BG URL - DANIELLE WILL SET ELSE#}
                                             {% if ev.event_image_url %}                                       
                                             <div class="event-title-box-outer" style="background: url({{ ev.event_image_url }}) no-repeat 50% 50%; background-size: cover; background-color: #87a01e; background-blend-mode: multiply;">
