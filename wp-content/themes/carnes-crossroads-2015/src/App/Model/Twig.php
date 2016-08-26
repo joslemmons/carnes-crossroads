@@ -19,10 +19,25 @@ class Twig
         $twig->addFilter('combineLines', new \Twig_Filter_Function(array(get_class(), 'combineLines')));
         $twig->addFilter('youtubeify', new \Twig_Filter_Function(array(get_class(), 'youtubeify')));
         $twig->addFilter('removeNonNumbers', new \Twig_Filter_Function(array(get_class(), 'removeNonNumbers')));
+        $twig->addFilter('truncateToReadMoreComment', new \Twig_Filter_Function(array(get_class(), 'truncateToReadMoreComment')));
         $twig->addFilter('frontPageHorizontalList', new \Twig_Filter_Function(array(get_class(), 'frontPageHorizontalList')));
         return $twig;
     }
 
+	public static function truncateToReadMoreComment($text, $readMoreHtml = '')
+    {
+        $strLen = strlen($text);
+        $text_with_excerpt = substr($text, 0, strpos($text, '<!--more-->'));
+
+        if ($text_with_excerpt === '' || $strLen === strlen($text_with_excerpt) + 12) {
+            return $text;
+        }
+
+        $text_with_excerpt .= ($readMoreHtml . '<!--more-->');
+
+        return $text_with_excerpt;
+    }
+    
     public static function addExtensions($twig)
     {
         return $twig;
