@@ -1,5 +1,10 @@
 jQuery(function ($) {
     
+    $('.expand-link').click(function () {
+        $(this).addClass('expanded');
+        $(this).closest('div.child-content').find('div.more-content').show().css('opacity', 1);
+    });
+    
     //Mobile Menu
     $(".poa-menu-icon").click(function(){
         $(".poa-nav").toggleClass("visible");
