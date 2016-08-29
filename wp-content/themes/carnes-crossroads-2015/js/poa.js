@@ -59,7 +59,9 @@ jQuery(function ($) {
         //Sliders - Home Main
     $('.featured-slider').slick({
         dots: true,
-        arrows: false
+        arrows: false,
+        autoplay: true,
+        autoplaySpeed: 8000
     });
         //Sliders - Home Events
      $('.featured-events-slider').slick({
