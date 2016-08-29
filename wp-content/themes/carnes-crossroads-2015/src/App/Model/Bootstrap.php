@@ -45,6 +45,70 @@ class Bootstrap
                 Auth::checkAuthorization();
             }
         }
+        
+        // for restricting access to poa pages
+        global $pagenow, $post_type;
+        
+        if (is_admin() && !current_user_can('administrator') ) {
+	        	       	        
+	        if (!empty($_REQUEST['post']) && ($pagenow == 'post.php')) { // add/edit page
+		        
+		        $path = get_page_uri($_REQUEST['post']);
+					
+				if ( strpos($path, 'residents') === 0) { // poa page
+					if (!current_user_can('edit_poa')) {
+						wp_die(__('You do not have sufficient permissions to edit this page.'));
+					}
+				} else { // other page
+					if (current_user_can('edit_poa')) { // non-poa
+						wp_die(__('You do not have sufficient permissions to edit this page.'));
+					}
+				}
+
+	        } elseif ( ($pagenow == 'edit.php') && ($_REQUEST['post_type'] == 'page')) { // listings
+		        
+		        add_filter( 'page_row_actions', function ( $actions , $post)
+				{
+					$path = get_page_uri($post->ID);
+					
+					if ( strpos($path, 'residents') === 0) { // poa page
+						if (!current_user_can('edit_poa')) {
+						    unset( $actions['inline hide-if-no-js']);
+						    unset( $actions['edit'] );
+						    unset( $actions['trash'] );
+						}
+					} else { // other page
+						if (current_user_can('edit_poa')) { // non-poa
+						    unset( $actions['inline hide-if-no-js']);
+						    unset( $actions['edit'] );
+						    unset( $actions['trash'] );
+						}
+					}
+				        
+				    return $actions;
+				    
+				}, 10, 1 );	
+					
+				add_filter( 'get_edit_post_link', function ( $url, $post_id) {
+					
+					$path = get_page_uri($post_id);
+					
+					if ( strpos($path, 'residents') === 0) { // poa page
+						if (!current_user_can('edit_poa')) {
+						    $url = get_site_url(). '/'. $path . '/';
+						}
+					} else { // other page
+						if (current_user_can('edit_poa')) { // non-poa
+						    $url = get_site_url(). '/'. $path . '/';
+						}
+					}
+				
+				    return $url;
+				});
+					
+	        }
+	        
+        }
     }
 
     private static function _notifyAdminOfMissingPlugins()
