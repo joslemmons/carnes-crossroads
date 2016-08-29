@@ -433,10 +433,11 @@
                 padding: 10px 15px;
                 text-align: center;
                 font-family: $proxima;
-                color: $dkr-grey;
+                color: $cc-orange;
                 font-size: 17px;
                 font-weight: 400;
                 margin: 0px 0;
+                border: 1px solid $cc-orange;
                 text-transform: uppercase;
                 @include transition (0.3s all);
 

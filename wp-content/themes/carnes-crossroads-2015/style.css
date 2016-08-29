@@ -9004,8 +9004,7 @@ span.tel {
         color: #363636;
         font-size: 16px;
         font-weight: 400;
-        text-align: left;
-        text-transform: uppercase; }
+        text-align: left; }
         .poa-site .home-events .event-box .event-details-box .event-time {
           display: block; }
         .poa-site .home-events .event-box .event-details-box .event-description {
@@ -9107,8 +9106,7 @@ span.tel {
         color: #363636;
         font-size: 16px;
         font-weight: 400;
-        text-align: left;
-        text-transform: uppercase; }
+        text-align: left; }
         .poa-site .home-announcements .announcement-box .announcement-details-box .announcement-description {
           margin-bottom: 60px; } }
         @media screen and (max-width: 991px) {
@@ -9128,10 +9126,11 @@ span.tel {
       padding: 10px 15px;
       text-align: center;
       font-family: "proxima-nova", sans-serif;
-      color: #363636;
+      color: #d6a83f;
       font-size: 17px;
       font-weight: 400;
       margin: 0px 0;
+      border: 1px solid #d6a83f;
       text-transform: uppercase;
       -webkit-transition: 0.3s all;
       transition: 0.3s all; }
