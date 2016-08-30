@@ -6,25 +6,6 @@
     </div>
 </div>
 
-<div class="sidebar-mobile">
-    <div class="sub-nav">
-        {# TODO: Setup once archive setup #}
-        <ul>
-            {% for key,val in archive_links %}
-            <li><a href="/residents/announcements/archive/{{ val }}">{{ key }}</a></li>
-            {% endfor %}
-        </ul>
-    </div>
-</div>
-<div class="down-menu visible-sm visible-xs">
-    <div class="icon-container">
-        <svg width="15" height="15">
-            <image xlink:href="{{ template_uri }}/img/chevron-down.svg"
-                   src="{{ template_uri }}/img/chevron-down.png" width="15"
-                   height="15"/>
-        </svg>
-    </div>
-</div>
 
 <div class="main-content">
     <div class="container">
@@ -32,13 +13,8 @@
             <div class="col-md-3">
                 <div class="sub-nav main-sub-nav small-header">
                     <div class="sidebar-title">
-                        Archive
+                        <a href="/residents/announcements/">&laquo; Back to Announcements</a>
                     </div>
-                    <ul>
-                        {% for key,val in archive_links %}
-                        <li><a href="/residents/announcements/archive/{{ val }}">{{ key }}</a></li>
-                        {% endfor %}
-                    </ul>
                 </div>
             </div>
             <div class="col-md-9 col-right">
