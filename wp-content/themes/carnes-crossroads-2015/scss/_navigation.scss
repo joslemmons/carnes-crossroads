@@ -79,6 +79,10 @@
         text-align: right;
         background: url(./img/grad-green.png) no-repeat right top / cover;
         @include transition(1s all);
+        
+        @media (max-width: 1150px) {
+            padding: 0 10px;
+        }
     }
 
     &__primary-item {
@@ -132,7 +136,7 @@
 
     .main-nav__logo {
         margin-top: 7px;
-        width: 140px;
+        width: 110px;
     }
 
     .main-nav__primary-item {
