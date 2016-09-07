@@ -46,7 +46,7 @@ class Announcement extends \TimberPost
                 'comments',
                 'commentstatus'
             ),
-            'taxonomies' => array('post_tag')
+            'taxonomies' => array('post_tag','category')
         );
 
         return $post_types;
