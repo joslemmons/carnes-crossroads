@@ -15,7 +15,7 @@ class Bootstrap
         Analytics::init();
         VisualEditor::init();
         ContactFooter::init();
-        Rss:init();
+        Rss::init();
 
         date_default_timezone_set('America/New_York');
 
