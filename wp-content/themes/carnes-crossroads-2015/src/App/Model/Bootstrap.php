@@ -52,7 +52,7 @@ class Bootstrap
         
         if (is_admin() && !current_user_can('administrator') ) {
 	        	       	        
-	        if (!empty($_REQUEST['post']) && ($pagenow == 'post.php')) { // add/edit page
+	        if (!empty($_REQUEST['post']) && ($pagenow == 'post.php') && ($post_type == 'page')) { // add/edit page
 		        
 		        $path = get_page_uri($_REQUEST['post']);
 					
