@@ -61,7 +61,7 @@ class Bootstrap
 						wp_die(__('You do not have sufficient permissions to edit this page.'));
 					}
 				} else { // other page
-					if (current_user_can('edit_poa')) { // non-poa
+					if (!current_user_can('edit_poa')) { // non-poa
 						wp_die(__('You do not have sufficient permissions to edit this page.'));
 					}
 				}
