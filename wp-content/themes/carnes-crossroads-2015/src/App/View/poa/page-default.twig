@@ -1,6 +1,12 @@
 {% include 'poa/partials/header.twig' %}
 
+
+{% if page.thumbnail %}
+<div class="page-header-image" style="background:url( {{page.thumbnail.src}} ) no-repeat 50% 50%; background-size: cover;">
+{% else %}
 <div class="page-header-image" style="background:url( {{ site.theme.link }}/img/placeholder-slider.jpg) no-repeat 50% 50%; background-size: cover;">
+{% endif %}
+
     <div class="page-header-title">
         <h1>{{ page.title }}</h1>
     </div>
