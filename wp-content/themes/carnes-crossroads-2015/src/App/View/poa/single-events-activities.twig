@@ -1,23 +1,13 @@
 {% include 'poa/partials/header.twig' %}
 
-<div class="content-slider events">
-    <div class="featured-slider">
-        {% for slide in sliders %}
-        {#BEGIN SLIDE#}
-        <div class="slide" style="background:url( {{ slide.image[0] }}) no-repeat 50% 50%; background-size: cover;">
-            <div class="slider-caption">
-                {#CUSTOM Slide Headline#}
-                <h2 class="headline">{{ slide.title }}</h2>
-                
-                {#CUSTOM Slide Description#}
-                <p class="description">{{ slide.content }}</p>
-                
-                {#CUSTOM Link URL#}
-                <a class="cta-link" href="{{ slide.link }}">{{ slide.action }}</a>
-            </div>
-        </div>
-        {#END SLIDE#}
-        {% endfor %}
+{% if page.thumbnail %}
+<div class="page-header-image" style="background:url( {{page.thumbnail.src}} ) no-repeat 50% 50%; background-size: cover;">
+{% else %}
+<div class="page-header-image" style="background:url( {{ site.theme.link }}/img/placeholder-slider.jpg) no-repeat 50% 50%; background-size: cover;">
+{% endif %}
+
+    <div class="page-header-title">
+        <h1>Events &amp; Activities</h1>
     </div>
 </div>
     
