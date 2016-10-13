@@ -18,7 +18,7 @@ class EventCalendar
 		  	$this->category = $category;
 		  	$this->date = $date;
         } elseif (!empty($date) && !empty($eslug)) {
-            $this->events_url .= '/event/$eslug/'.$date;
+            $this->events_url .= '/event/'.$eslug.'/'.$date;
             $this->date = $date;
             $this->eslug = $eslug;
 	  	} elseif (!empty($date)) {
