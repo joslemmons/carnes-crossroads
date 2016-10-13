@@ -192,10 +192,10 @@
                         &.home-icon {
 
                             img {
-                                width: 24px;
+                                width: 18px;
                                 height: auto;
                                 position: relative;
-                                top: -2px;
+                                top: -3px;
                                 @include transition(0.3s all);
 
                                 &:hover {

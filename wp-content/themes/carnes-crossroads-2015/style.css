@@ -8701,10 +8701,10 @@ span.tel {
             margin-bottom: 10px; } }
 @media screen {
           .poa-site .poa-nav nav.poa ul.nav-list li.home-icon img {
-            width: 24px;
+            width: 18px;
             height: auto;
             position: relative;
-            top: -2px;
+            top: -3px;
             -webkit-transition: 0.3s all;
             transition: 0.3s all; } }
           @media screen and (min-width: 991px) {
