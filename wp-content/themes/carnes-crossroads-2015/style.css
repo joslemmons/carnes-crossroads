@@ -9551,6 +9551,9 @@ span.tel {
   div#tribe-events {
     margin-top: 85px; }
 
+  .tribe-events-back {
+    margin-top: 40px; }
+
   .photo-gallery-feed {
     background: #fffaf3;
     padding-top: 40px;
