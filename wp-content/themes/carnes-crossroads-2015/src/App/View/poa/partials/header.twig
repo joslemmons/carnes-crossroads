@@ -42,7 +42,7 @@ your browser</a> to improve your experience.</p>
                 <div class="row">
                     <div class="col-md-4">
                         <div class="site-logo">
-                            <a href="/residents">
+                            <a href="/">
                                 <img src="{{ site.theme.link }}/img/cx-logo.png"/>
                             </a>
                         </div>
@@ -68,6 +68,11 @@ your browser</a> to improve your experience.</p>
                     <div class="col-md-12">
                         <nav class="poa">
                             <ul class="nav-list">
+                                <li class="home-icon">
+                                    <a href="/">
+                                        <img src="{{ site.theme.link }}/img/home-icon.png" alt="Home"/>
+                                    </a>
+                                </li>
                                 {% for item in poa_main_menu.get_items %}
                                     <li class="nav-item"><a href="{{ item.link }}">{{ item.title }}</a></li>
                                 {% endfor %}

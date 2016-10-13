@@ -188,6 +188,23 @@
                             margin-right: 0;
                             margin-bottom: 10px;
                         }
+                        
+                        &.home-icon {
+
+                            img {
+                                width: 24px;
+                                height: auto;
+                                position: relative;
+                                top: -2px;
+                                @include transition(0.3s all);
+
+                                &:hover {
+                                    @media (min-width: $screen-sm-max) {
+                                        @include transform (scale(1.2));
+                                    }
+                                }
+                            }
+                        }
                     }
 
                     a {

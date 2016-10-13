@@ -8700,6 +8700,19 @@ span.tel {
             margin-right: 0;
             margin-bottom: 10px; } }
 @media screen {
+          .poa-site .poa-nav nav.poa ul.nav-list li.home-icon img {
+            width: 24px;
+            height: auto;
+            position: relative;
+            top: -2px;
+            -webkit-transition: 0.3s all;
+            transition: 0.3s all; } }
+          @media screen and (min-width: 991px) {
+            .poa-site .poa-nav nav.poa ul.nav-list li.home-icon img:hover {
+              -webkit-transform: scale(1.2);
+              -moz-transform: scale(1.2);
+              transform: scale(1.2); } }
+@media screen {
         .poa-site .poa-nav nav.poa ul.nav-list a {
           color: #363636; }
           .poa-site .poa-nav nav.poa ul.nav-list a:hover {
