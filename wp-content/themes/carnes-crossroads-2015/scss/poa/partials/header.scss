@@ -115,6 +115,11 @@
                 border-bottom: none;
                 text-transform: uppercase;
                 
+                @media (max-width: $screen-sm-max) {
+                    right: auto;
+                    left: 15px;
+                }
+                
                 &:hover {
                     background: darken($cc-green,10%);
                     border-bottom: none;
