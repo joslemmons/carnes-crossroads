@@ -8626,7 +8626,25 @@ span.tel {
       border: none; }
   .poa-site .poa-header {
     background: #768e1c url("img/pattern-green.jpg") repeat 50% 50%;
-    position: relative; } }
+    position: relative; }
+    .poa-site .poa-header .container {
+      position: relative; }
+    .poa-site .poa-header .back-to-main {
+      position: absolute;
+      top: 0;
+      right: 0;
+      background: #88a320;
+      font-size: 10px;
+      padding: 4px 6px;
+      color: #363636;
+      font-family: "Oswald", sans-serif;
+      z-index: 999999;
+      border-bottom: none;
+      text-transform: uppercase; }
+      .poa-site .poa-header .back-to-main:hover {
+        background: #536314;
+        border-bottom: none;
+        color: #fff; } }
   @media screen and (max-width: 991px) {
     .poa-site .poa-header .site-logo {
       text-align: center; } }

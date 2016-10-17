@@ -97,6 +97,30 @@
         .poa-header {
             background: $cc-green url('img/pattern-green.jpg') repeat 50% 50%;
             position: relative;
+            
+            .container {
+                position: relative;
+            }
+            
+            .back-to-main {
+                position: absolute;
+                top: 0;
+                right: 0;
+                background: lighten($cc-green,5%);
+                font-size: 10px;
+                padding: 4px 6px;
+                color: $dkr-grey;
+                font-family: $oswald;
+                z-index: 999999;
+                border-bottom: none;
+                text-transform: uppercase;
+                
+                &:hover {
+                    background: darken($cc-green,10%);
+                    border-bottom: none;
+                    color: $white;
+                }
+            }
 
             .site-logo {
 
