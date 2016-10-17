@@ -39,6 +39,9 @@ your browser</a> to improve your experience.</p>
 
         <div class="poa-header">
             <div class="container">
+                <a class="back-to-main" href="/">
+                    Visit CarnesCharleston.com
+                </a>
                 <div class="row">
                     <div class="col-md-4">
                         <div class="site-logo">
@@ -49,7 +52,9 @@ your browser</a> to improve your experience.</p>
                     </div>
 
                     <div class="col-md-8">
-                        <h1 class="site-title">Property Owners&rsquo; Association</h1>
+                        <a href="/residents">
+                            <h1 class="site-title">Property Owners&rsquo; Association</h1>
+                        </a>
                     </div>
                 </div>
             </div>
@@ -68,6 +73,15 @@ your browser</a> to improve your experience.</p>
                     <div class="col-md-12">
                         <nav class="poa">
                             <ul class="nav-list">
+                                {#
+<!--
+                                <li class="home-icon"> 
+                                    <a href="/residents">
+                                        <img src="{{ site.theme.link }}/img/home-icon.png" alt="Home"/>
+                                    </a>
+                                </li>
+-->
+                                #}
                                 {% for item in poa_main_menu.get_items %}
                                     <li class="nav-item"><a href="{{ item.link }}">{{ item.title }}</a></li>
                                 {% endfor %}
