@@ -8637,7 +8637,9 @@ span.tel {
       font-size: 10px;
       padding: 4px 6px;
       color: #363636;
-      font-family: "Oswald", sans-serif;
+      font-family: "proxima-nova", sans-serif;
+      font-weight: bold;
+      letter-spacing: 1px;
       z-index: 999999;
       border-bottom: none;
       text-transform: uppercase; } }
