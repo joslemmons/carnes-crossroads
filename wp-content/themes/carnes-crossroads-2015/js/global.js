@@ -1,4 +1,14 @@
 jQuery(function ($) {
+
+    $( document ).ready(function() {
+        outdatedBrowser({
+            bgColor: '#f25648',
+            color: '#ffffff',
+            lowerThan: 'IE8',
+            languagePath: '/js/lib/outdatedbrowser/lang/en.html'
+        })
+    })
+
     //$('.dropdown-toggle').dropdown();
 
     // $(document).ready(function(){

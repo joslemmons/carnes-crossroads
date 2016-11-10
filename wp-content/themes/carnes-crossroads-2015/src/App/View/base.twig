@@ -35,8 +35,6 @@
     <meta name="msapplication-TileColor" content="#ffffff">
     <meta name="msapplication-TileImage" content="/ms-icon-144x144.png">
     <meta name="theme-color" content="#ffffff">
-    <link rel="stylesheet" href="{{ template_uri }}js/lib/outdatedbrowser/outdatedbrowser.min.css">
-
 
     {% if typekit_src %}
         <script src="{{ typekit_src }}"></script>
@@ -107,35 +105,6 @@
 
 {% include "partials/account/modal-account.twig" %}
 {{ wp_footer() }}
-
-{# Oudated Browser #}
-<script src="{{ template_uri }}js/lib/outdatedbrowser/outdatedbrowser.min.js"></script>
-<script>
-//event listener: DOM ready
-function addLoadEvent(func) {
-    var oldonload = window.onload;
-    if (typeof window.onload != 'function') {
-        window.onload = func;
-    } else {
-        window.onload = function() {
-            if (oldonload) {
-                oldonload();
-            }
-            func();
-        }
-    }
-}
-//call plugin function after DOM ready
-addLoadEvent(function(){
-    outdatedBrowser({
-        bgColor: '#f25648',
-        color: '#ffffff',
-        lowerThan: 'IE8',
-        languagePath: '/js/lib/outdatedbrowser/lang/en.html'
-    })
-});
-</script>
-
 
 {% if use_ga %}
     <script>
