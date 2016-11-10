@@ -1,6 +1,6 @@
 <nav class="main-nav hidden-xs">
     <div class="main-nav__inner-wrap">
-        <div class="main-nav__logo"><a href="/"><img src="{{ template_uri }}/img/carnes_logo_wht.svg" alt="Carnes Crossroads"></a></div>
+        <div class="main-nav__logo"><a href="/"><img src="{{ template_uri }}/img/carnes_logo_wht.svg" alt="Carnes Crossroads" class="img-responsive"></a></div>
         <ul class="main-nav__sub">
             {% for item in header_menu.get_items %}
                 <li class="main-nav__sub-item"><a href="{{ item.link }}">{{ item.title }}</a></li>
