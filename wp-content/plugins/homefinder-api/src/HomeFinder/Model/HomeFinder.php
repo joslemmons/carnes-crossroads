@@ -174,6 +174,10 @@ class HomeFinder
             return $result;
         }, self::DEFAULT_CACHE_TIME);
 
+        if(empty($result->items)) {
+            delete_transient(apply_filters('timber/transient/slug', Config::getKeyPrefix() . 'home_finder_newly_listed_transient_' . $per_page . '_' . $page));
+        }
+
         return $result;
     }
 
@@ -211,6 +215,10 @@ class HomeFinder
             $items = $properties->items;
             shuffle($items);
             $properties->items = $items;
+        }
+
+        if(empty($properties->items)) {
+            delete_transient(apply_filters('timber/transient/slug', Config::getKeyPrefix() . 'home_finder_newly_listed_transient_' . $per_page . '_' . $page));
         }
 
         return $properties;
@@ -259,6 +267,10 @@ class HomeFinder
             return $properties_result;
         }, self::DEFAULT_CACHE_TIME);
 
+        if(empty($properties->items)) {
+            delete_transient(apply_filters('timber/transient/slug', Config::getKeyPrefix() . 'home_finder_newly_listed_transient_' . $per_page . '_' . $page));
+        }
+
         return $properties;
     }
 
@@ -284,6 +296,10 @@ class HomeFinder
 
             return $properties_result;
         }, self::DEFAULT_CACHE_TIME);
+
+        if(empty($properties->items)) {
+            delete_transient(apply_filters('timber/transient/slug', Config::getKeyPrefix() . 'home_finder_newly_listed_transient_' . $per_page . '_' . $page));
+        }
 
         return $properties;
     }
