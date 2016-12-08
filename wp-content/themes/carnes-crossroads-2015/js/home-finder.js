@@ -120,7 +120,7 @@ jQuery(function ($) {
         $('div.listings-wrapper div.loading').remove();
     }
 
-    $('#filter-bedrooms,#filter-bathrooms,#filter-builders').on('change', function () {
+    $('#filter-bedrooms,#filter-bathrooms,#filter-builders,#filter-sqft').on('change', function () {
         $('#filter-searchAddress').val('');
         order = 'default';
         performSearch();
@@ -200,7 +200,8 @@ jQuery(function ($) {
             includePlans: getShouldIncludePlans(),
             includeHomes: getShouldIncludeHomes(),
             builders: getBuilders(),
-            homeFeatures: getFilterHomeFeatures()
+            homeFeatures: getFilterHomeFeatures(),
+            squareFootage: getFilterSquareFootage()
         };
 
         $('div.results-sort').show();
@@ -222,7 +223,8 @@ jQuery(function ($) {
             getFilterPrice() === '0-500000' &&
             getFilterBedrooms() === '' &&
             getFilterBathrooms() === '',
-            getFilterHomeFeatures() === ''
+            getFilterHomeFeatures() === '' &&
+            getFilterSquareFootage() === ''
         );
     }
 
@@ -244,7 +246,8 @@ jQuery(function ($) {
             includePlans: filters.includePlans,
             includeHomes: filters.includeHomes,
             builders: filters.builders,
-            homeFeatures: filters.homeFeatures
+            homeFeatures: filters.homeFeatures,
+            squareFootage: filters.squareFootage
         };
 
         if (isAllListings === true) {
@@ -320,6 +323,10 @@ jQuery(function ($) {
             $select = $('#filter-bathrooms');
 
         return $select.find('option:selected').val();
+    }
+
+    function getFilterSquareFootage() {
+        return $('#filter-sqft').val();
     }
 
     function getFilterHomeFeatures() {
@@ -452,8 +459,8 @@ jQuery(function ($) {
         pauseSearch = true;
         $('#filter-searchAddress').val('');
         filterPriceSlider.noUiSlider.set([0, 500000]);
-        $("#filter-builders, #filter-bedrooms, #filter-bathrooms").find('option').removeProp('selected');
-        $("#filter-builders, #filter-bedrooms, #filter-bathrooms").trigger('chosen:updated');
+        $("#filter-builders, #filter-bedrooms, #filter-bathrooms, #filter-sqft").find('option').removeProp('selected');
+        $("#filter-builders, #filter-bedrooms, #filter-bathrooms, #filter-sqft").trigger('chosen:updated');
         $('#filter-homeFeatures').multipleSelect('uncheckAll');
         pauseSearch = false;
     }
@@ -578,8 +585,8 @@ jQuery(function ($) {
                 bathrooms: getFilterBathrooms(),
                 //shouldSearchMLS: getShouldSearchMLS(),
                 //lastUpdate: getLastUpdate(),
-                //squareFootage: getFilterSquareFootage(),
-                // homeFeatures: getFilterHomeFeatures(),
+                squareFootage: getFilterSquareFootage(),
+                homeFeatures: getFilterHomeFeatures(),
                 //views: getFilterViews(),
                 includePlans: getShouldIncludePlans(),
                 includeHomes: getShouldIncludeHomes(),
@@ -657,7 +664,7 @@ jQuery(function ($) {
     });
 
     // Harvest Chosen Select Boxes
-    $("#filter-builders, #filter-bedrooms, #filter-bathrooms, #filter-listings-type").chosen({
+    $("#filter-builders, #filter-bedrooms, #filter-bathrooms, #filter-listings-type, #filter-sqft, #filter-listings-type-copy").chosen({
         disable_search: 'true'
     });
 
@@ -676,41 +683,72 @@ jQuery(function ($) {
 
     // price slider
 
-    $('#showPriceFilter').on('click', function () {
-        $('#priceFilterSection').toggle();
-    });
+    $('#showPriceFilter').on('click', function (e) {
+    $('#priceFilterSection').show();
 
-    var filterPriceSlider = document.getElementById('filter-price');
+    e.stopPropagation();
+  });
 
-    noUiSlider.create(filterPriceSlider, {
-        start: [0, 500000],
-        connect: true,
-        step: 50000,
-        range: {
-            'min': 0,
-            'max': 500000
-        },
-        format: wNumb({
-            decimals: 0,
-            thousand: ',',
-            prefix: '$'
-        })
-    });
+  $('#priceFilterSection').on('clickoutside', function () {
+    $(this).hide();
+  });
 
-    filterPriceSlider.noUiSlider.on('set', function () {
+  var filterPriceSlider = document.getElementById('filter-price');
+
+  noUiSlider.create(filterPriceSlider, {
+    start: [0, 500000],
+    connect: true,
+    step: 50000,
+    range: {
+      'min': 0,
+      'max': 500000
+    },
+    format: wNumb({
+      decimals: 0,
+      thousand: ',',
+      prefix: '$'
+    })
+  });
+
+  filterPriceSlider.noUiSlider.on('set', function () {
+    $('#filter-searchAddress').val('');
+    order = 'default';
+    performSearch();
+  });
+
+  filterPriceSlider.noUiSlider.on('update', function (values, handle) {
+    var prices = [$('#minPriceFilter'), $('#maxPriceFilter')];
+
+    prices[handle].val(values[handle]);
+  });
+
+  $('#minPriceFilter').on('change', function (event) {
+    filterPriceSlider.noUiSlider.set([$(this).val(), $('#maxPriceFilter').val()]);
+  });
+
+  $('#maxPriceFilter').on('change', function (event) {
+    filterPriceSlider.noUiSlider.set([$('#minPriceFilter').val(), $(this).val()]);
+  });
+
+  // make the filter listings in the sidebar and top filters copy each other
+  $('#filter-listings-type').on('change', function() {
+      $('#filter-listings-type-copy').find('option[value="' + $(this).find('option:selected').val() + '"]').prop('selected', true);
+      $('#filter-listings-type-copy').trigger("chosen:updated");
+  });
+  $('#filter-listings-type-copy').on('change', function() {
+      $('#filter-listings-type').find('option[value="' + $(this).find('option:selected').val() + '"]').prop('selected', true);
+      $('#filter-listings-type').trigger("chosen:updated");
+      var selection = $(this).find('option:selected').val();
+
+        if (selection === 'home-plans') {
+            $('div.view-on-map').css('visibility', 'hidden');
+        }
+        else {
+            $('div.view-on-map').css('visibility', 'visible');
+        }
+
         $('#filter-searchAddress').val('');
-        order = 'default';
         performSearch();
-    });
-
-    filterPriceSlider.noUiSlider.on('update', function (values, handle) {
-        var prices = [$('#minPriceFilter'), $('#maxPriceFilter')];
-
-        prices[handle].val(values[handle]);
-    });
-
-    $('#minPriceFilter,#maxPriceFilter').on('change', function (event) {
-        filterPriceSlider.noUiSlider.set($(this).val());
-    });
+  });
 
 });
