@@ -1,6 +1,8 @@
 // Print Styles
 // ===================================
 
+// Use this route for viewing: "/home-finder/saved-listings/print-sampler/1"
+
 .print {
 
     .container {
@@ -137,9 +139,6 @@
 }
 
 .print-sampler {
-    background-image: url(./img/sampler-gradient.png);
-    background-repeat: repeat-x;
-    background-position: top left;
     background-color: $white;
 
     .container, .builders-container {
@@ -150,15 +149,16 @@
 
     .builders-container {
         padding-top: 20px;
+        background-color: $brown;
     }
 
     .logo-header {
-        padding: 10px 0 20px;
         text-align: center;
-        border-bottom: 8px double $gold;
+        padding-top: 20px;
+        margin-bottom: 20px;
 
         img {
-            width: 185px;
+            width: 100%;
         }
     }
 
@@ -173,15 +173,15 @@
     }
 
     .listing-item {
-        height: 325px;
-        margin-top: 20px;
+        height: 295px;
         margin-bottom: 10px;
-        padding: 0 33px;
+        padding: 0 15px;
+        position: relative;
 
         .listing-image {
             margin-bottom: 10px;
-            height: 130px;
-            width: 78%;
+            height: 170px;
+            width: 100%;
             border: 1px solid #adadad;
             background-repeat: no-repeat;
             background-position: center center;
@@ -190,9 +190,9 @@
 
         .listing-details {
             margin-top: 5px;
-            margin-bottom: 5px;
+            margin-bottom: 8px;
             font-family: $proxima;
-            font-size: 0.7rem;
+            font-size: 0.85rem;
             text-transform: uppercase;
             color: $brown;
         }
@@ -209,14 +209,14 @@
             font-family: $minion;
             margin: 0;
             font-size: 1.35rem;
-            color: $cc-brown;
+            color: $cc-green;
         }
 
         p, ul {
             font-family: $proxima;
-            font-size: 0.8rem;
+            font-size: 0.86rem;
             color: #555555;
-            line-height: 1.25;
+            line-height: 1.2;
         }
 
         ul {
@@ -230,17 +230,19 @@
         }
 
         .listing-price {
-            font-size: 1.2rem;
+            font-size: 1.1rem;
             font-family: $oswald;
             margin-top: 0;
-            color: $cc-brown;
+            color: $cc-green;
+            position: absolute;
+            top: 184px;
+            right: 15px;
         }
     }
 
     .sampler-foot {
-        padding: 40px 30px;
-        margin-bottom: 0;
-        border-top: 2px solid $gold;
+        padding: 0 15px;
+        margin: 25px 0 0 0;
         text-align: right;
 
         .footer-logo {
@@ -249,17 +251,21 @@
             margin-top: -15px;
         }
 
+        .col-xs-10 {
+            margin-top: 10px;
+        }
+
         p {
-            font-family: $minion;
-            font-size: 0.93rem;
-            line-height: 1;
+            font-family: $proxima;
+            font-size: 1.1rem;
+            line-height: 1.1;
+            letter-spacing: 0.5px;
             color: #555555;
 
             img {
-                height: 0.9rem;
-                margin-right: 7px;
+                height: 18px;
+                margin-left: 6px;
                 margin-top: -2px;
-                opacity: 0.5;
             }
         }
 
@@ -267,9 +273,18 @@
             font-family: $proxima;
             font-size: 0.7rem;
             line-height: 1.2;
+            letter-spacing: 0.25px;
             margin: 10px 0;
-            width: 90%;
+            width: 70%;
             float: right;
+        }
+
+        .disclaimer-logo {
+            position: relative;
+            float: right;
+            height: 23px;
+            top: 10px;
+            margin-left: 5px;
         }
     }
 

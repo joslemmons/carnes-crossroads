@@ -8412,22 +8412,20 @@ span.tel {
   overflow: hidden; }
 
 .print-sampler {
-  background-image: url(./img/sampler-gradient.png);
-  background-repeat: repeat-x;
-  background-position: top left;
   background-color: #fff; }
   .print-sampler .container, .print-sampler .builders-container {
     height: 1320px;
     position: relative;
     overflow: hidden; }
   .print-sampler .builders-container {
-    padding-top: 20px; }
+    padding-top: 20px;
+    background-color: #695e49; }
   .print-sampler .logo-header {
-    padding: 10px 0 20px;
     text-align: center;
-    border-bottom: 8px double #9f9d5c; }
+    padding-top: 20px;
+    margin-bottom: 20px; }
     .print-sampler .logo-header img {
-      width: 185px; }
+      width: 100%; }
   .print-sampler h1 {
     margin: 25px auto 25px;
     text-transform: uppercase;
@@ -8437,23 +8435,23 @@ span.tel {
     color: #695e49;
     text-shadow: none; }
   .print-sampler .listing-item {
-    height: 325px;
-    margin-top: 20px;
+    height: 295px;
     margin-bottom: 10px;
-    padding: 0 33px; }
+    padding: 0 15px;
+    position: relative; }
     .print-sampler .listing-item .listing-image {
       margin-bottom: 10px;
-      height: 130px;
-      width: 78%;
+      height: 170px;
+      width: 100%;
       border: 1px solid #adadad;
       background-repeat: no-repeat;
       background-position: center center;
       background-size: cover; }
     .print-sampler .listing-item .listing-details {
       margin-top: 5px;
-      margin-bottom: 5px;
+      margin-bottom: 8px;
       font-family: "proxima-nova", sans-serif;
-      font-size: 0.7rem;
+      font-size: 0.85rem;
       text-transform: uppercase;
       color: #695e49; }
     .print-sampler .listing-item h2 {
@@ -8466,12 +8464,12 @@ span.tel {
       font-family: "minion-pro", serif;
       margin: 0;
       font-size: 1.35rem;
-      color: #3d3421; }
+      color: #768e1c; }
     .print-sampler .listing-item p, .print-sampler .listing-item ul {
       font-family: "proxima-nova", sans-serif;
-      font-size: 0.8rem;
+      font-size: 0.86rem;
       color: #555555;
-      line-height: 1.25; }
+      line-height: 1.2; }
     .print-sampler .listing-item ul {
       padding: 0;
       margin: 0;
@@ -8479,36 +8477,47 @@ span.tel {
     .print-sampler .listing-item li {
       margin-bottom: 10px; }
     .print-sampler .listing-item .listing-price {
-      font-size: 1.2rem;
+      font-size: 1.1rem;
       font-family: "Oswald", sans-serif;
       margin-top: 0;
-      color: #3d3421; }
+      color: #768e1c;
+      position: absolute;
+      top: 184px;
+      right: 15px; }
   .print-sampler .sampler-foot {
-    padding: 40px 30px;
-    margin-bottom: 0;
-    border-top: 2px solid #9f9d5c;
+    padding: 0 15px;
+    margin: 25px 0 0 0;
     text-align: right; }
     .print-sampler .sampler-foot .footer-logo {
       float: left;
       width: 100%;
       margin-top: -15px; }
+    .print-sampler .sampler-foot .col-xs-10 {
+      margin-top: 10px; }
     .print-sampler .sampler-foot p {
-      font-family: "minion-pro", serif;
-      font-size: 0.93rem;
-      line-height: 1;
+      font-family: "proxima-nova", sans-serif;
+      font-size: 1.1rem;
+      line-height: 1.1;
+      letter-spacing: 0.5px;
       color: #555555; }
       .print-sampler .sampler-foot p img {
-        height: 0.9rem;
-        margin-right: 7px;
-        margin-top: -2px;
-        opacity: 0.5; }
+        height: 18px;
+        margin-left: 6px;
+        margin-top: -2px; }
     .print-sampler .sampler-foot .disclaimer {
       font-family: "proxima-nova", sans-serif;
       font-size: 0.7rem;
       line-height: 1.2;
+      letter-spacing: 0.25px;
       margin: 10px 0;
-      width: 90%;
+      width: 70%;
       float: right; }
+    .print-sampler .sampler-foot .disclaimer-logo {
+      position: relative;
+      float: right;
+      height: 23px;
+      top: 10px;
+      margin-left: 5px; }
   .print-sampler .sampler-model-intro {
     padding: 0 25px; }
     .print-sampler .sampler-model-intro h1 {
