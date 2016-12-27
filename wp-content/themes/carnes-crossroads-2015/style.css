@@ -8408,8 +8408,12 @@ span.tel {
 
 .print .listing-floorplan {
   width: 100%;
-  margin: 0 auto;
-  overflow: hidden; }
+  margin: -40px auto 0 auto;
+  overflow: hidden;
+  height: 1100px; }
+  .print .listing-floorplan img {
+    margin: 0 auto;
+    max-height: 100%; }
 
 .print-sampler {
   background-color: #fff; }

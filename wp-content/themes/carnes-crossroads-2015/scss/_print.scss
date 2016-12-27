@@ -132,8 +132,14 @@
 
         &-floorplan {
             width: 100%;
-            margin: 0 auto;
+            margin: -40px auto 0 auto;
             overflow: hidden;
+            height: 1100px;
+
+            img {
+                margin: 0 auto;
+                max-height: 100%;
+            }
         }
     }
 }
