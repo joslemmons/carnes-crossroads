@@ -404,6 +404,7 @@ jQuery(function ($) {
 
     $('.more-button').click(function () {
         $('.more-options').toggle('slow');
+        $('.home-finder-filters').toggleClass('more');
     });
 
     //Mobile Only
@@ -664,8 +665,13 @@ jQuery(function ($) {
     });
 
     // Harvest Chosen Select Boxes
-    $("#filter-builders, #filter-bedrooms, #filter-bathrooms, #filter-listings-type, #filter-sqft, #filter-listings-type-copy").chosen({
+    $("#filter-builders, #filter-bedrooms, #filter-listings-type, #filter-listings-type-copy").chosen({
         disable_search: 'true'
+    });
+
+    $("#filter-sq-ft, #filter-bathrooms").chosen({
+        disable_search: 'true',
+        width: '165px'
     });
 
     function simpleClearForMultipleSelect(view) {

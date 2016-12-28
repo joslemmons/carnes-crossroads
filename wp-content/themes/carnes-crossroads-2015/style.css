@@ -3171,6 +3171,14 @@ a:focus, a:hover {
 *:focus {
   outline: 0; }
 
+@media (min-width: 1400px) {
+  .container {
+    max-width: 1350px; } }
+
+@media (min-width: 1800px) {
+  .container {
+    max-width: 1650px; } }
+
 .ie-only {
   display: none; }
 
@@ -4717,6 +4725,9 @@ body.has-active-menu {
   @media (max-width: 991px) {
     .modal {
       padding-top: 0; } }
+
+#modal-account {
+  padding-top: 0; }
 
 .modal.fade .modal-dialog {
   -webkit-transform: translate(125%, 0);
@@ -7007,8 +7018,18 @@ Edits by Chernoff Newman
   .home-finder .home-finder-filters {
     background: #e4e2d6;
     width: 100%;
-    padding: 30px 40px 55px;
+    height: 80px;
+    padding: 25px 40px 55px;
     position: relative; }
+    .home-finder .home-finder-filters .ms-drop {
+      width: auto; }
+    .home-finder .home-finder-filters.more {
+      height: 115px;
+      -webkit-transition: 0.3s all;
+      transition: 0.3s all; }
+      @media (min-width: 1685px) {
+        .home-finder .home-finder-filters.more {
+          height: 130px; } }
     @media (max-width: 1199px) {
       .home-finder .home-finder-filters {
         padding: 30px 20px 55px; } }
@@ -7024,6 +7045,9 @@ Edits by Chernoff Newman
           padding: 0 20px;
           height: 0;
           min-height: 0; } }
+    @media (min-width: 1685px) {
+      .home-finder .home-finder-filters {
+        padding: 40px 20px 55px; } }
     .home-finder .home-finder-filters .account-links {
       display: inline-block;
       float: left;
@@ -7099,7 +7123,6 @@ Edits by Chernoff Newman
       float: right; }
       @media (max-width: 991px) {
         .home-finder .home-finder-filters .filter-options {
-          float: none;
           display: none;
           margin-bottom: 20px; } }
       .home-finder .home-finder-filters .filter-options a#filter-clearAll {
@@ -7135,13 +7158,13 @@ Edits by Chernoff Newman
         @media (max-width: 1024px) {
           .home-finder .home-finder-filters .filter-options #filter-builders select {
             width: 120px; } }
-      .home-finder .home-finder-filters .filter-options select {
+      .home-finder .home-finder-filters .filter-options select, .home-finder .home-finder-filters .filter-options .more-options select {
         -webkit-appearance: none;
         -moz-appearance: none;
         appearance: none;
         background: #fff url("img/icon-caret.png") no-repeat 90% 50%;
         background-size: 8px;
-        width: 165px;
+        width: 155px;
         font-family: "proxima-nova", sans-serif, sans-serif;
         color: #3d3421;
         font-size: 10px;
@@ -7156,17 +7179,17 @@ Edits by Chernoff Newman
         margin-bottom: 5px;
         text-transform: uppercase; }
         @media (max-width: 1400px) {
-          .home-finder .home-finder-filters .filter-options select {
+          .home-finder .home-finder-filters .filter-options select, .home-finder .home-finder-filters .filter-options .more-options select {
             width: 130px; } }
         @media (max-width: 1200px) {
-          .home-finder .home-finder-filters .filter-options select {
+          .home-finder .home-finder-filters .filter-options select, .home-finder .home-finder-filters .filter-options .more-options select {
             width: 100px; } }
         @media (max-width: 991px) {
-          .home-finder .home-finder-filters .filter-options select {
+          .home-finder .home-finder-filters .filter-options select, .home-finder .home-finder-filters .filter-options .more-options select {
             width: 100%;
             background: #fff url("img/icon-caret.png") no-repeat 95% 50%;
             background-size: 8px; } }
-        .home-finder .home-finder-filters .filter-options select:focus {
+        .home-finder .home-finder-filters .filter-options select:focus, .home-finder .home-finder-filters .filter-options .more-options select:focus {
           outline: none; }
     .home-finder .home-finder-filters .slider-container {
       position: relative;
@@ -7203,7 +7226,7 @@ Edits by Chernoff Newman
         margin: 0 0 5px 0;
         text-transform: uppercase;
         display: inline-block;
-        width: 130px;
+        width: 80px;
         -webkit-transition: 0.3s all;
         transition: 0.3s all; }
         @media (max-width: 991px) {
@@ -7242,7 +7265,7 @@ Edits by Chernoff Newman
           font-size: 16px;
           padding: 3px;
           text-indent: 3px; }
-        .home-finder .home-finder-filters .slider-container .slider-dropdown #filter-price, .home-finder .home-finder-filters .slider-container .slider-dropdown #filter-sqft {
+        .home-finder .home-finder-filters .slider-container .slider-dropdown #filter-price {
           width: 88%;
           margin: 15px auto; }
       .home-finder .home-finder-filters .slider-container #priceFilterSection {
@@ -7251,9 +7274,9 @@ Edits by Chernoff Newman
       -webkit-appearance: none;
       -moz-appearance: none;
       appearance: none;
-      background: #fff url("img/plus.png") no-repeat 90% 50%;
+      background: #fff url("img/plus.png") no-repeat 85% 50%;
       background-size: 8px;
-      width: 165px;
+      width: 70px;
       font-family: "proxima-nova", sans-serif, sans-serif;
       color: #3d3421;
       font-size: 10px;
@@ -7264,7 +7287,7 @@ Edits by Chernoff Newman
       text-align: left;
       border-radius: 0;
       border: none;
-      padding: 12px 15px;
+      padding: 12px 20px 12px 10px;
       margin-bottom: 5px;
       text-transform: uppercase;
       display: inline-block;
@@ -7275,7 +7298,7 @@ Edits by Chernoff Newman
       @media (max-width: 991px) {
         .home-finder .home-finder-filters button.more-button {
           width: 100%;
-          background: #fff url("img/plus.png") no-repeat 95% 50%;
+          background: #fff url("img/plus.png") no-repeat 86% 50%;
           background-size: 8px;
           display: block;
           float: none;
@@ -7283,7 +7306,7 @@ Edits by Chernoff Newman
       .home-finder .home-finder-filters button.more-button:focus {
         outline: none; }
       .home-finder .home-finder-filters button.more-button:hover {
-        background: #fcf9ee url("img/plus.png") no-repeat 95% 50%;
+        background: #fcf9ee url("img/plus.png") no-repeat 90% 50%;
         background-size: 8px;
         color: #3d3421; }
     .home-finder .home-finder-filters input[type="checkbox"] {
@@ -7297,7 +7320,29 @@ Edits by Chernoff Newman
       border-radius: 2px;
       margin: -3px 9px 0 0; }
     .home-finder .home-finder-filters .more-options {
-      display: none; }
+      display: none;
+      text-align: right;
+      margin-top: 5px; }
+      @media (max-width: 991px) {
+        .home-finder .home-finder-filters .more-options {
+          text-align: left;
+          margin-top: 0; } }
+      .home-finder .home-finder-filters .more-options .less-options {
+        text-align: center;
+        font-family: "Oswald", sans-serif;
+        text-transform: uppercase;
+        font-size: 12px;
+        margin-left: 10px;
+        color: #695e49; }
+        .home-finder .home-finder-filters .more-options .less-options.visible-sm, .home-finder .home-finder-filters .more-options .less-options.visible-xs {
+          display: none !important; }
+          @media (max-width: 991px) {
+            .home-finder .home-finder-filters .more-options .less-options.visible-sm, .home-finder .home-finder-filters .more-options .less-options.visible-xs {
+              display: inline-block !important; } }
+        .home-finder .home-finder-filters .more-options .less-options:hover {
+          border-bottom: none;
+          color: black;
+          cursor: pointer; }
   .home-finder .home-finder-main {
     width: 100%;
     height: 800px;

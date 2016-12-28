@@ -57,8 +57,7 @@
                 <div class="slider-container">
                     <button id="showPriceFilter">Price</button>
                     <div id="priceFilterSection" class="slider-dropdown" style="display:none">
-                        <input id="minPriceFilter" type="text" value="0"> to <input id="maxPriceFilter" type="text"
-                                                                                    value="5000000">
+                        <input id="minPriceFilter" type="text" value="0"> to <input id="maxPriceFilter" type="text" value="5000000">
                         <div id="filter-price" class="noUi-extended"></div>
                     </div>
                 </div>
@@ -77,40 +76,45 @@
                         Bedrooms
                     </option>
                 </select>
-                <select id="filter-bathrooms">
-                    <option value="">Bathrooms</option>
-                    <option value="1" {% if '1' == filters.getBathrooms|split(',')[0] %}selected="selected"{% endif %}>
-                        1+ Bathrooms
-                    </option>
-                    <option value="2" {% if '2' == filters.getBathrooms|split(',')[0] %}selected="selected"{% endif %}>
-                        2+ Bathrooms
-                    </option>
-                    <option value="3" {% if '3' == filters.getBathrooms|split(',')[0] %}selected="selected"{% endif %}>
-                        3+ Bathrooms
-                    </option>
-                    <option value="4" {% if '4' == filters.getBathrooms|split(',')[0] %}selected="selected"{% endif %}>
-                        4+ Bathrooms
-                    </option>
-                </select>
-                <select multiple="multiple" id="filter-homeFeatures">
-                    <option value="master_downstairs">Master Downstairs</option>
-                    <option value="single_story">Single Story</option>
-                </select>
-                <select id="filter-sqft">
-                    <option value="">Square Footage</option>
-                    <option value="0-2499">
-                        Less than 2,500
-                    </option>
-                    <option value="2500-3000">
-                        2,500 to 3,000
-                    </option>
-                    <option value="3001-3500">
-                        3,001 to 3,500
-                    </option>
-                    <option value="3501-">
-                        More than 3,500
-                    </option>
-                </select>
+
+                <button type="button" class="hidden-sm hidden-xs more-button">More</button>
+                <div class="more-options" id="more-options">
+                    <select id="filter-bathrooms" class="chosen-select">
+                        <option value="">Bathrooms</option>
+                        <option value="1" {% if '1' == filters.getBathrooms|split(',')[0] %}selected="selected"{% endif %}>
+                            1+ Bathrooms
+                        </option>
+                        <option value="2" {% if '2' == filters.getBathrooms|split(',')[0] %}selected="selected"{% endif %}>
+                            2+ Bathrooms
+                        </option>
+                        <option value="3" {% if '3' == filters.getBathrooms|split(',')[0] %}selected="selected"{% endif %}>
+                            3+ Bathrooms
+                        </option>
+                        <option value="4" {% if '4' == filters.getBathrooms|split(',')[0] %}selected="selected"{% endif %}>
+                            4+ Bathrooms
+                        </option>
+                    </select>
+                    <select id="filter-sq-ft" class="chosen-select">
+                        <option value="">Square Footage</option>
+                        <option value="0-2499">
+                            Less than 2,500
+                        </option>
+                        <option value="2500-3000">
+                            2,500 to 3,000
+                        </option>
+                        <option value="3001-3500">
+                            3,001 to 3,500
+                        </option>
+                        <option value="3501-">
+                            More than 3,500
+                        </option>
+                    </select>
+                    <select multiple="multiple" id="filter-homeFeatures">
+                        <option value="master_downstairs">Master Downstairs</option>
+                        <option value="single_story">Single Story</option>
+                    </select>
+
+                </div>
                 {# <input type="checkbox" id="filter-includePlans" class="pull-right" value="yes"
                        {% if filters.shouldIncludePlans %}checked="checked"{% endif %}/>
                 <label for="filter-includePlans">Include Plans</label> #}

@@ -20,8 +20,22 @@
     .home-finder-filters {
         background: #e4e2d6;
         width: 100%;
-        padding: 30px 40px 55px;
+        height: 80px;
+        padding: 25px 40px 55px;
         position: relative;
+
+        .ms-drop {
+            width: auto;
+        }
+
+        &.more {
+            height: 115px;
+            @include transition(.3s all);
+
+            @media (min-width: 1685px) {
+                height: 130px;
+            }
+        }
 
         @media (max-width: $screen-md-max) {
             padding: 30px 20px 55px;
@@ -39,6 +53,10 @@
                 height: 0;
                 min-height: 0;
             }
+        }
+
+        @media (min-width: 1685px) {
+            padding: 40px 20px 55px;
         }
 
         .account-links {
@@ -137,7 +155,7 @@
             float: right;
 
             @media (max-width: $screen-sm-max) {
-                float: none;
+                // float: none;
                 display: none;
                 margin-bottom: 20px;
             }
@@ -186,13 +204,13 @@
                 }
             }
 
-            select {
+            select, .more-options select {
                 -webkit-appearance: none;
                 -moz-appearance: none;
                 appearance: none;
                 background: $white url('img/icon-caret.png') no-repeat 90% 50%;
                 background-size: 8px;
-                width: 165px;
+                width: 155px;
                 font-family: $font-sans;
                 color:  $cc-brown;
                 font-size: 10px;/* Approximation due to font substitution */
@@ -261,7 +279,7 @@
                 margin: 0 0 5px 0;
                 text-transform: uppercase;
                 display: inline-block;
-                width: 130px;
+                width: 80px;
                 @include transition(0.3s all);
 
                 @media (max-width: $screen-sm-max) {
@@ -308,7 +326,7 @@
                     text-indent: 3px;
                 }
 
-                #filter-price, #filter-sqft {
+                #filter-price {
                     width: 88%;
                     margin: 15px auto;
                 }
@@ -323,9 +341,9 @@
             -webkit-appearance: none;
             -moz-appearance: none;
             appearance: none;
-            background: $white url('img/plus.png') no-repeat 90% 50%;
+            background: $white url('img/plus.png') no-repeat 85% 50%;
             background-size: 8px;
-            width: 165px;
+            width: 70px;
             font-family: $font-sans;
             color:  $cc-brown;
             font-size: 10px;/* Approximation due to font substitution */
@@ -334,7 +352,7 @@
             text-align: left;
             border-radius: 0;
             border: none;
-            padding: 12px 15px;
+            padding: 12px 20px 12px 10px;
             margin-bottom: 5px;
             text-transform: uppercase;
             display: inline-block;
@@ -344,7 +362,7 @@
 
             @media (max-width: $screen-sm-max) {
                 width: 100%;
-                background: $white url('img/plus.png') no-repeat 95% 50%;
+                background: $white url('img/plus.png') no-repeat 86% 50%;
                 background-size: 8px;
                 display: block;
                 float: none;
@@ -356,7 +374,7 @@
             }
 
             &:hover {
-                background: #fcf9ee url('img/plus.png') no-repeat 95% 50%;
+                background: #fcf9ee url('img/plus.png') no-repeat 90% 50%;
                 background-size: 8px;
                 color: $cc-brown;
             }
@@ -376,6 +394,37 @@
 
         .more-options {
             display: none;
+            text-align: right;
+            margin-top: 5px;
+
+            @media (max-width: $screen-sm-max) {
+                text-align: left;
+                margin-top: 0;
+            }
+
+            .less-options {
+                text-align: center;
+                font-family: $oswald;
+                text-transform: uppercase;
+                font-size: 12px;
+                margin-left: 10px;
+                color: $brown;
+
+                &.visible-sm, &.visible-xs {
+                    display: none !important;
+
+                    @media (max-width: $screen-sm-max) {
+                        display: inline-block !important;
+                    }
+                }
+
+                &:hover {
+                    border-bottom: none;
+                    color: darken($brown,40%);
+                    cursor: pointer;
+                }
+            }
+
         }
     }
 
