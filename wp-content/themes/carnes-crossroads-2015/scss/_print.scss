@@ -151,6 +151,7 @@
         height: 1320px;
         position: relative;
         overflow: hidden;
+        padding: 35px 45px;
     }
 
     .builders-container {
@@ -160,7 +161,7 @@
 
     .logo-header {
         text-align: center;
-        padding-top: 20px;
+        // padding-top: 20px;
         margin-bottom: 20px;
 
         img {

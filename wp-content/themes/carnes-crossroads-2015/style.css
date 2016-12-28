@@ -8420,13 +8420,13 @@ span.tel {
   .print-sampler .container, .print-sampler .builders-container {
     height: 1320px;
     position: relative;
-    overflow: hidden; }
+    overflow: hidden;
+    padding: 35px 45px; }
   .print-sampler .builders-container {
     padding-top: 20px;
     background-color: #695e49; }
   .print-sampler .logo-header {
     text-align: center;
-    padding-top: 20px;
     margin-bottom: 20px; }
     .print-sampler .logo-header img {
       width: 100%; }
