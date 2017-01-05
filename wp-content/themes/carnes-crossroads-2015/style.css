@@ -3133,7 +3133,7 @@ h6 {
   font-size: 1.25em; }
 
 p, ol, ul {
-  font-size: 1rem;
+  font-size: 1.15rem;
   line-height: 1.5;
   font-family: "minion-pro", serif, serif; }
   @media (max-width: 991px) {
@@ -6847,6 +6847,9 @@ Edits by Chernoff Newman
 
 .category-items__article p {
   margin-bottom: 20px; }
+
+.category-items__article ul li {
+  color: #000; }
 
 .map-overlay {
   background: transparent;
