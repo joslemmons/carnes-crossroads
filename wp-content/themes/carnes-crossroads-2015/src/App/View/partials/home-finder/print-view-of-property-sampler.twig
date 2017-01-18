@@ -30,27 +30,19 @@
         <div class="container">
             <div class="row">
                 <div class="col-xs-12 logo-header">
-                    <img src="{{ template_uri }}/wp-content/themes/carnes-crossroads-2015/img/carnes_logo_realestate.png">
+                    <img src="{{ template_uri }}/wp-content/themes/carnes-crossroads-2015/img/sampler_header.png">
                 </div>
             </div>
             <div class="row">
-                <div class="col-xs-12 text-center">
-                    <h1>Carnes Crossroads Property Sampler</h1>
-                </div>
-            </div>
-            <div class="row">
-                {% for property in properties %}
+                {% for property in properties|slice(1, 9) %}
                 <div class="col-xs-4 listing-item">
                     <div class="listing-image" style="background-image: url({{ property.getImages[0]|resize(300,200) }})"></div>
-                    <h2>{{ property.getNeighborhood.title }}</h2>
-                    <h3>{{ property.getAddress }}</h3>
+                    <h3>{{ property.getAddress }}</h3><p class="listing-price">${{ property.getPurchaseListPrice|number_format }}</p>
                     <p class="listing-details">{% set numDecimalPlaces = 0 %}
                         {% if property.getPropertyType == 'Homesite' %}
                         {% set numDecimalPlaces = 2 %}
                         {% endif %}
-                        {% if property.getBedroomCount %}{{ property.getBedroomCount }} BR / {% endif %}{% if property.getFullBathroomCount %}{{ property.getFullBathroomCount }} Full Bath{% endif %}{% if property.getHalfBathroomCount %} / {{ property.getHalfBathroomCount }} Half Bath{% endif %}
-                            <br/>{% if property.getTotalAreaSquareFootage %}{{ property.getTotalAreaSquareFootage|number_format(numDecimalPlaces) }} {{ property.getTotalAreaSquareFootageUnitOfMeasurement }}{% endif %}</p>
-                    <p class="listing-price">${{ property.getPurchaseListPrice|number_format }}</p>
+                        {% if property.getTotalAreaSquareFootage %}{{ property.getTotalAreaSquareFootage|number_format(numDecimalPlaces) }} {{ property.getTotalAreaSquareFootageUnitOfMeasurement }} / {% endif %}{% if property.getBedroomCount %}{{ property.getBedroomCount }} BR / {% endif %}{% if property.getFullBathroomCount %}{{ property.getFullBathroomCount }} Full Bath{% endif %}{% if property.getHalfBathroomCount %} / {{ property.getHalfBathroomCount }} Half Bath{% endif %}</p>
                     {% if property.getShortDescription %}
                     <p>{{ property.getShortDescription }}</p>
                     {% else %}
@@ -59,60 +51,22 @@
                 </div>
                 {% endfor %}
             </div>
-        </div>
-        <div class="container builders-container">
-            <div class="row sampler-model-intro">
-                <div class="sampler-model-row"></div>
-                <div class="col-xs-12">
-                    <h1>Visit Our Model Row!</h1>
-                    <p>Showcasing beautiful homes built by <em>John Wieland Homes, David Weekley Homes, Sabal Homes, Eastwood Homes</em> and <em>Ashton Woods Homes</em>, the Carnes Crossroads Model Row is a wonderful place to learn about all of our builders in one, central location.</p>
-                    <p>Located just minutes from the conveniences of Summerville and Goose Creek, Carnes Crossroads will offer the lifestyle of a small town, with charming neighborhoods, beautiful parks, lakes, and close proximity to stores, shops, restaurants, offices, schools, and church.</p>
-                    <p>Across from the historic Green Barn, our Information Center is your first stop for learning more about Carnes Crossroads. We are open 7 days a week, with or without an appointment. Stop by to tour our move-in ready homes or go to CarnesCrossroads.com/home-finder or call (843)761-8600.</p>
-                </div>
-            </div>
-            <div class="row sampler-builder-row">
-                <div class="col-xs-4 text-center">
-                    <div class="sampler-builder-photo" style="background-image: url({{ template_uri }}/wp-content/themes/carnes-crossroads-2015/img/sampler-weekley.jpg)"></div>
-                    <h2>David Weekley Homes</h2>
-                    <p>David Weekely offers classic homes with a timeless appeal. Plans range from 2-5 bedrooms and 1,700-2,500+ square feet.</p>
-                </div>
-                <div class="col-xs-4 text-center">
-                    <div class="sampler-builder-photo" style="background-image: url({{ template_uri }}/wp-content/themes/carnes-crossroads-2015/img/sampler-sabal.jpg)"></div>
-                    <h2>Sabal Homes</h2>
-                    <p>Sabal Homes offers a variety of unique customizations based on homebuyers needs. Plans range from 3-5 bedrooms and 1,600-3,100+ square feet.</p>
-                </div>
-                <div class="col-xs-4 text-center">
-                    <div class="sampler-builder-photo" style="background-image: url({{ template_uri }}/wp-content/themes/carnes-crossroads-2015/img/sampler-eastwood.jpg)"></div>
-                    <h2>Eastwood Homes</h2>
-                    <p>Eastwood Homes takes pride in offering attractive exteriors and interiors at an unprecedented value. Plans range from 3-4 bedrooms and 1,900-2,700+ square feet.</p>
-                </div>
-            </div>
-            <div class="row sampler-builder-row">
-                <div class="col-xs-4 text-center">
-                    <div class="sampler-builder-photo" style="background-image: url({{ template_uri }}/wp-content/themes/carnes-crossroads-2015/img/sampler-ashton.jpg)"></div>
-                    <h2>Ashton Woods Homes</h2>
-                    <p>Ashton Woods features homes that are inspired by forward-thinking design concepts. Plans range from 3-6 bedrooms and 1,900-3,000+ square feet.</p>
-                </div>
-                <div class="col-xs-4">
-                    <img src="{{ template_uri }}/wp-content/themes/carnes-crossroads-2015/img/carnes_logo_realestate.png" class="img-responsive">
-                </div>
-                <div class="col-xs-4 text-center">
-                    <div class="sampler-builder-photo" style="background-image: url({{ template_uri }}/wp-content/themes/carnes-crossroads-2015/img/sampler-wieland.jpg)"></div>
-                    <h2>John Wieland Homes</h2>
-                    <p>John Wieland Homes sets new standards in meeting the evolving needs of today’s new homebuyer. Plans range from 3-4 bedrooms and 2,150-2,275 square feet.</p>
-                </div>
-            </div>
             <div class="row">
                 <div class="sampler-foot">
                     <div class="col-xs-2">
                         <img class="footer-logo" src="{{ template_uri }}/wp-content/themes/carnes-crossroads-2015/img/carnes_logo_realestate.png">
                     </div>
                     <div class="col-xs-10">
-                        <p>Carnes Crossroads Real Estate&nbsp;&nbsp;|&nbsp;&nbsp;513 Wodin Place, Summerville, SC 29486&nbsp;&nbsp;|&nbsp;&nbsp;(843) 761-8600</p>
-                        <p><img src="{{ template_uri }}/wp-content/themes/carnes-crossroads-2015/img/icon-social-tw.png">&#64;CarnesCrossroads&nbsp;&nbsp;
-                        <img src="{{ template_uri }}/wp-content/themes/carnes-crossroads-2015/img/icon-social-fb.png">facebook.com/CarnesCrossroads
-                        &nbsp;&nbsp;|&nbsp;&nbsp;For complete listings, visit <a href="http://www.carnescharleston.com/home-finder/search/?includePlans=true">www.carnescharleston.com</a></p>
-                        <p class="disclaimer">Obtain the Property Report required by Federal Law and read before signing anything. No Federal Agency has judged the merits or value, if any, of this property. Availability and pricing are subject to change. Chuck Buck, Broker in charge.</p>
+                        <p>513 Wodin Place&nbsp;&nbsp;/&nbsp;&nbsp;Summerville, SC 29486&nbsp;&nbsp;/&nbsp;&nbsp;843.761.8600</p>
+                        <p>
+                            <a href="http://www.carnescharleston.com/home-finder/search/?includePlans=true">CarnesCharleston.com</a>
+                            <img src="{{ template_uri }}/wp-content/themes/carnes-crossroads-2015/img/icon-sampler-fb.png">
+                            <img src="{{ template_uri }}/wp-content/themes/carnes-crossroads-2015/img/icon-sampler-ig.png">
+                            <img src="{{ template_uri }}/wp-content/themes/carnes-crossroads-2015/img/icon-sampler-tw.png">
+                            <img src="{{ template_uri }}/wp-content/themes/carnes-crossroads-2015/img/icon-sampler-yt.png">
+                        </p>
+                        <img class="disclaimer-logo" src="{{ template_uri }}/wp-content/themes/carnes-crossroads-2015/img/icon-sampler-eho.png">
+                        <p class="disclaimer">Chuck Buck, Broker in charge. Obtain the Property Report required by Federal Law and read before signing anything.<br>No Federal Agency has judged the merits or value, if any, of this property. Availability and pricing are subject to change.</p>
                     </div>
                 </div>
             </div>

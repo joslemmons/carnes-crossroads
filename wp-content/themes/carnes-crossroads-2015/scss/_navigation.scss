@@ -19,10 +19,11 @@
 
     &__logo {
         position: absolute;
-        width: 15%;
+        height: 90px;
+        width: 180px;
         margin-top: 6px;
         margin-left: 5%;
-        max-width: 200px;
+        overflow: hidden;
         float: left;
         @include transition(0.3s all);
     }
@@ -79,7 +80,7 @@
         text-align: right;
         background: url(./img/grad-green.png) no-repeat right top / cover;
         @include transition(1s all);
-        
+
         @media (max-width: 1150px) {
             padding: 0 10px;
         }
@@ -136,7 +137,8 @@
 
     .main-nav__logo {
         margin-top: 7px;
-        width: 110px;
+        width: 130px;
+        height: 65px;
     }
 
     .main-nav__primary-item {

@@ -55,7 +55,7 @@ function getDisplayDates ($start_date,$end_date,$month_format = 'F',$show_year =
 			$year = '';
 		}
 		if ($show_times && !$all_day) {
-			$display_time = ' @ '.date("g:00 a",strtotime($start_date)) . ' - ' . date("g:00 a",strtotime($end_date));
+			$display_time = ' @ '.date("g:i a",strtotime($start_date)) . ' - ' . date("g:i a",strtotime($end_date));
 			$day_format = 'jS';
 		} else {
 			$display_time = '';

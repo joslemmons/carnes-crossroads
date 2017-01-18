@@ -125,6 +125,19 @@ class FloorPlan
                 }
             }
 
+            $floor_plan_sqft = preg_replace("/[^0-9]/", "", $floor_plan->square_footage);
+            if ($filters->getMinSquareFootage() !== false) {
+                if ((int)$floor_plan_sqft < $filters->getMinSquareFootage()) {
+                    return false;
+                }
+            }
+
+            if ($filters->getMaxSquareFootage() !== false) {
+                if ((int)$floor_plan_sqft > $filters->getMaxSquareFootage()) {
+                    return false;
+                }
+            }
+
             return true;
 
         });

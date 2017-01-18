@@ -10,6 +10,35 @@
 <!--[if gt IE 9]><!-->
 <html class="no-js"> <!--<![endif]-->
 <head>
+    {# Oudated Browser #}
+    <script src="{{ template_uri }}/js/lib/outdatedbrowser/outdatedbrowser.min.js"></script>
+    <link rel="stylesheet" href="{{ template_uri }}/js/lib/outdatedbrowser/outdatedbrowser.min.css">
+    <script>
+    //event listener: DOM ready
+    function addLoadEvent(func) {
+        var oldonload = window.onload;
+        if (typeof window.onload != 'function') {
+            window.onload = func;
+        } else {
+            window.onload = function() {
+                if (oldonload) {
+                    oldonload();
+                }
+                func();
+            }
+        }
+    }
+    //call plugin function after DOM ready
+    addLoadEvent(function(){
+        outdatedBrowser({
+            bgColor: '#f25648',
+            color: '#ffffff',
+            lowerThan: 'IE10',
+            languagePath: '/wp-content/themes/carnes-crossroads-2015/js/lib/outdatedbrowser/lang/en.html'
+        })
+    });
+    </script>
+
     <META HTTP-EQUIV="Pragma" CONTENT="no-cache"/>
     <META HTTP-EQUIV="Expires" CONTENT="-1"/>
     <meta charset="utf-8"/>
@@ -71,6 +100,8 @@
     your browser</a> to improve your experience.</p>
 <![endif]-->
 
+<div id="outdated"></div>
+
 {% if gtm_id %}
     <noscript>
         <iframe src="//www.googletagmanager.com/ns.html?id=GTM-{{ gtm_id }}"
@@ -103,6 +134,7 @@
 
 {% include "partials/account/modal-account.twig" %}
 {{ wp_footer() }}
+
 
 {% if use_ga %}
     <script>

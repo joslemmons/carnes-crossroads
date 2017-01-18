@@ -23,6 +23,16 @@ a:focus, a:hover {
     outline: 0;
 }
 
+.container {
+    @media (min-width: 1400px) {
+        max-width: 1350px;
+    }
+
+    @media (min-width: 1800px) {
+        max-width: 1650px;
+    }
+}
+
 .ie-only {
     display: none;
 }
