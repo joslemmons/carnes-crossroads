@@ -2,7 +2,7 @@
 
 use HomeFinder\Model\User;
 
-class HomeFinderPage
+class PropertyView
 {
     const PAGE_ID = 17;
 
@@ -16,15 +16,13 @@ class HomeFinderPage
         wp_enqueue_script('google-map-js', 'https://maps.google.com/maps/api/js', array(), false, true);
         wp_enqueue_script('multiple-select-js', get_template_directory_uri() . '/js/lib/multiple-select.js', array('jquery'), false, true);
         wp_enqueue_script('wnumb-js', get_template_directory_uri() . '/js/lib/wnumb/wNumb.js', array(), false, true);
-        wp_enqueue_script('nouislider-js', get_template_directory_uri() . '/js/lib/nouislider/nouislider.min.js', array('wnumb-js'), false, true);
-        wp_enqueue_style('nouislider-css', get_template_directory_uri() . '/js/lib/nouislider/nouislider.min.css');
-        wp_enqueue_script('jquery-outside-events-js', get_template_directory_uri() . '/js/lib/jquery.ba-outside-events.min.js', array('jquery'), false, true);
-        wp_enqueue_script('home-finder-js', get_template_directory_uri() . '/js/home-finder.js', array('jquery', 'slick-js', 'backbone', 'nouislider-js', 'jquery-outside-events-js'), Config::getAppVersion(), true);
-        wp_localize_script('home-finder-js', 'DI', array(
+        wp_enqueue_script('match-height-js', get_template_directory_uri() . '/js/lib/jquery.matchHeight-min.js', array('jquery'), false, false);
+        wp_enqueue_script('property-view-js', get_template_directory_uri() . '/js/property-view.js', array('jquery', 'slick-js', 'backbone', 'match-height-js'), Config::getAppVersion(), true);
+        wp_localize_script('property-view-js', 'DI', array(
             'templateUri' => get_template_directory_uri(),
             'isLoggedIn' => ($current_user !== false) ? 'true' : 'false'
         ));
-        
+
         //enqueue mapbox resources
         wp_enqueue_script('mapbox-js', 'https://api.mapbox.com/mapbox.js/v3.0.0/mapbox.js', array(), false, true);
         wp_enqueue_style('mapbox-css', 'https://api.mapbox.com/mapbox.js/v3.0.0/mapbox.css');
