@@ -1,13 +1,13 @@
 {% set activePropertyId = activeProperty.getId %}
 {% for property in properties %}
-<div class="col-md-4 col-sm-6">
+<div class="col-lg-3 col-md-4 col-sm-6">
     <div class="grid-save">
             <div class="save action-link">
                 <div class="saved"
                      {% if current_user.hasSavedProperty(property) == false %}style="display:none;"{% endif %}>
                     <a href="#" data-property-id="{{ property.id }}">
                         <div class="heart-icon">
-                            <img src="/wp-content/themes/daniel-island-2015/img/favorite-icon-on.png" width="41" height="37"/>
+                            <img src="/wp-content/themes/carnes-crossroads-2015/img/favorite-icon-on.png" width="41" height="37"/>
                         </div>
                     </a>
                 </div>
@@ -16,7 +16,7 @@
                     <a href="#" data-property-id="{{ property.id }}">
                         <div class="heart-icon">
                             <div class="heart-icon">
-                            <img src="/wp-content/themes/daniel-island-2015/img/favorite-icon-off.png" width="41" height="37"/>
+                            <img src="/wp-content/themes/carnes-crossroads-2015/img/favorite-icon-off.png" width="41" height="37"/>
                         </div>
                         </div>
                     </a>
@@ -50,11 +50,6 @@
                 {% endif %}
                 <div class="sq-ft">{{ property.getTotalAreaSquareFootage|number_format(numDecimalPlaces) }} {{ property.getTotalAreaSquareFootageUnitOfMeasurement }}</div>
                 <div class="price">${{ property.getPurchaseListPrice|number_format }}</div>
-                {% if property.isFromMLS %}
-                <div class="broker-reciprocity"></div>
-                {% else %}
-                <div class="dire-logo"></div>
-                {% endif %}
             </div>
             <div class="grid-btn">
                 <a class="site-btn" href="/real-estate/home-finder/properties/{{ property.getAddress|slugify }}/{{ property.getId }}">View Listing</a>
