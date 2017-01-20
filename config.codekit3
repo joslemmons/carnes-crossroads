@@ -7,7 +7,7 @@
 		"uuidString": "A6C306AB-EF30-4C48-BA37-FAD8A12D1374"
 		}
 	],
-"creatorBuild": "25479",
+"creatorBuild": "25504",
 "files": {
 	"\/.gitignore": {
 		"ft": 8192,
@@ -46244,6 +46244,22 @@
 		"oF": 0,
 		"opt": 0
 		},
+	"\/wp-content\/themes\/carnes-crossroads-2015\/img\/favorite-icon-off.png": {
+		"ft": 32768,
+		"iS": 2881,
+		"oA": 0,
+		"oAP": "\/wp-content\/themes\/carnes-crossroads-2015\/img\/favorite-icon-off.png",
+		"oF": 0,
+		"opt": 0
+		},
+	"\/wp-content\/themes\/carnes-crossroads-2015\/img\/favorite-icon-on.png": {
+		"ft": 32768,
+		"iS": 2802,
+		"oA": 0,
+		"oAP": "\/wp-content\/themes\/carnes-crossroads-2015\/img\/favorite-icon-on.png",
+		"oF": 0,
+		"opt": 0
+		},
 	"\/wp-content\/themes\/carnes-crossroads-2015\/img\/film.png": {
 		"ft": 32768,
 		"iS": 202,
@@ -48989,6 +49005,15 @@
 		"sC": 1,
 		"tS": 0
 		},
+	"\/wp-content\/themes\/carnes-crossroads-2015\/js\/imap-main.js": {
+		"ft": 64,
+		"mi": 1,
+		"oA": 0,
+		"oAP": "\/wp-content\/themes\/carnes-crossroads-2015\/js\/min\/imap-main-min.js",
+		"oF": 0,
+		"sC": 1,
+		"tS": 0
+		},
 	"\/wp-content\/themes\/carnes-crossroads-2015\/js\/imap.js": {
 		"ft": 64,
 		"mi": 1,
@@ -49553,6 +49578,15 @@
 		"sC": 1,
 		"tS": 0
 		},
+	"\/wp-content\/themes\/carnes-crossroads-2015\/js\/property-view.js": {
+		"ft": 64,
+		"mi": 1,
+		"oA": 0,
+		"oAP": "\/wp-content\/themes\/carnes-crossroads-2015\/js\/min\/property-view-min.js",
+		"oF": 0,
+		"sC": 1,
+		"tS": 0
+		},
 	"\/wp-content\/themes\/carnes-crossroads-2015\/page-account.php": {
 		"ft": 8192,
 		"oA": 0,
@@ -49589,6 +49623,12 @@
 		"oAP": "\/wp-content\/themes\/carnes-crossroads-2015\/page-faq.php",
 		"oF": 0
 		},
+	"\/wp-content\/themes\/carnes-crossroads-2015\/page-featured-listings.php": {
+		"ft": 8192,
+		"oA": 2,
+		"oAP": "\/wp-content\/themes\/carnes-crossroads-2015\/page-featured-listings.php",
+		"oF": 0
+		},
 	"\/wp-content\/themes\/carnes-crossroads-2015\/page-home-finder.php": {
 		"ft": 8192,
 		"oA": 0,
@@ -49611,6 +49651,12 @@
 		"ft": 8192,
 		"oA": 0,
 		"oAP": "\/wp-content\/themes\/carnes-crossroads-2015\/page-privacy.php",
+		"oF": 0
+		},
+	"\/wp-content\/themes\/carnes-crossroads-2015\/page-property-view.php": {
+		"ft": 8192,
+		"oA": 2,
+		"oAP": "\/wp-content\/themes\/carnes-crossroads-2015\/page-property-view.php",
 		"oF": 0
 		},
 	"\/wp-content\/themes\/carnes-crossroads-2015\/page-recently-listed.php": {
@@ -49781,262 +49827,322 @@
 		"oAP": "\/wp-content\/themes\/carnes-crossroads-2015\/piklist\/parts\/settings\/social-options.php",
 		"oF": 0
 		},
-	"\/wp-content\/themes\/carnes-crossroads-2015\/scss\/.sass-cache\/462f90d0fa8f31bf5a9a78eb2d83b1218d3620ec\/_button-groups.scssc": {
+	"\/wp-content\/themes\/carnes-crossroads-2015\/scss\/.sass-cache\/1ed62073e0491df067b495284a591e8e7a85f1d7\/_account-modals.scssc": {
 		"ft": 8192,
 		"oA": 1,
-		"oAP": "\/wp-content\/themes\/carnes-crossroads-2015\/scss\/.sass-cache\/462f90d0fa8f31bf5a9a78eb2d83b1218d3620ec\/_button-groups.scssc",
+		"oAP": "\/wp-content\/themes\/carnes-crossroads-2015\/scss\/.sass-cache\/1ed62073e0491df067b495284a591e8e7a85f1d7\/_account-modals.scssc",
 		"oF": 0
 		},
-	"\/wp-content\/themes\/carnes-crossroads-2015\/scss\/.sass-cache\/462f90d0fa8f31bf5a9a78eb2d83b1218d3620ec\/_buttons.scssc": {
+	"\/wp-content\/themes\/carnes-crossroads-2015\/scss\/.sass-cache\/1ed62073e0491df067b495284a591e8e7a85f1d7\/_base.scssc": {
 		"ft": 8192,
 		"oA": 1,
-		"oAP": "\/wp-content\/themes\/carnes-crossroads-2015\/scss\/.sass-cache\/462f90d0fa8f31bf5a9a78eb2d83b1218d3620ec\/_buttons.scssc",
+		"oAP": "\/wp-content\/themes\/carnes-crossroads-2015\/scss\/.sass-cache\/1ed62073e0491df067b495284a591e8e7a85f1d7\/_base.scssc",
 		"oF": 0
 		},
-	"\/wp-content\/themes\/carnes-crossroads-2015\/scss\/.sass-cache\/462f90d0fa8f31bf5a9a78eb2d83b1218d3620ec\/_code.scssc": {
+	"\/wp-content\/themes\/carnes-crossroads-2015\/scss\/.sass-cache\/1ed62073e0491df067b495284a591e8e7a85f1d7\/_buttons.scssc": {
 		"ft": 8192,
 		"oA": 1,
-		"oAP": "\/wp-content\/themes\/carnes-crossroads-2015\/scss\/.sass-cache\/462f90d0fa8f31bf5a9a78eb2d83b1218d3620ec\/_code.scssc",
+		"oAP": "\/wp-content\/themes\/carnes-crossroads-2015\/scss\/.sass-cache\/1ed62073e0491df067b495284a591e8e7a85f1d7\/_buttons.scssc",
 		"oF": 0
 		},
-	"\/wp-content\/themes\/carnes-crossroads-2015\/scss\/.sass-cache\/462f90d0fa8f31bf5a9a78eb2d83b1218d3620ec\/_component-animations.scssc": {
+	"\/wp-content\/themes\/carnes-crossroads-2015\/scss\/.sass-cache\/1ed62073e0491df067b495284a591e8e7a85f1d7\/_calendar.scssc": {
 		"ft": 8192,
 		"oA": 1,
-		"oAP": "\/wp-content\/themes\/carnes-crossroads-2015\/scss\/.sass-cache\/462f90d0fa8f31bf5a9a78eb2d83b1218d3620ec\/_component-animations.scssc",
+		"oAP": "\/wp-content\/themes\/carnes-crossroads-2015\/scss\/.sass-cache\/1ed62073e0491df067b495284a591e8e7a85f1d7\/_calendar.scssc",
 		"oF": 0
 		},
-	"\/wp-content\/themes\/carnes-crossroads-2015\/scss\/.sass-cache\/462f90d0fa8f31bf5a9a78eb2d83b1218d3620ec\/_dropdowns.scssc": {
+	"\/wp-content\/themes\/carnes-crossroads-2015\/scss\/.sass-cache\/1ed62073e0491df067b495284a591e8e7a85f1d7\/_chosen.scssc": {
 		"ft": 8192,
 		"oA": 1,
-		"oAP": "\/wp-content\/themes\/carnes-crossroads-2015\/scss\/.sass-cache\/462f90d0fa8f31bf5a9a78eb2d83b1218d3620ec\/_dropdowns.scssc",
+		"oAP": "\/wp-content\/themes\/carnes-crossroads-2015\/scss\/.sass-cache\/1ed62073e0491df067b495284a591e8e7a85f1d7\/_chosen.scssc",
 		"oF": 0
 		},
-	"\/wp-content\/themes\/carnes-crossroads-2015\/scss\/.sass-cache\/462f90d0fa8f31bf5a9a78eb2d83b1218d3620ec\/_forms.scssc": {
+	"\/wp-content\/themes\/carnes-crossroads-2015\/scss\/.sass-cache\/1ed62073e0491df067b495284a591e8e7a85f1d7\/_cn-mixins.scssc": {
 		"ft": 8192,
 		"oA": 1,
-		"oAP": "\/wp-content\/themes\/carnes-crossroads-2015\/scss\/.sass-cache\/462f90d0fa8f31bf5a9a78eb2d83b1218d3620ec\/_forms.scssc",
+		"oAP": "\/wp-content\/themes\/carnes-crossroads-2015\/scss\/.sass-cache\/1ed62073e0491df067b495284a591e8e7a85f1d7\/_cn-mixins.scssc",
 		"oF": 0
 		},
-	"\/wp-content\/themes\/carnes-crossroads-2015\/scss\/.sass-cache\/462f90d0fa8f31bf5a9a78eb2d83b1218d3620ec\/_grid.scssc": {
+	"\/wp-content\/themes\/carnes-crossroads-2015\/scss\/.sass-cache\/1ed62073e0491df067b495284a591e8e7a85f1d7\/_fonts.scssc": {
 		"ft": 8192,
 		"oA": 1,
-		"oAP": "\/wp-content\/themes\/carnes-crossroads-2015\/scss\/.sass-cache\/462f90d0fa8f31bf5a9a78eb2d83b1218d3620ec\/_grid.scssc",
+		"oAP": "\/wp-content\/themes\/carnes-crossroads-2015\/scss\/.sass-cache\/1ed62073e0491df067b495284a591e8e7a85f1d7\/_fonts.scssc",
 		"oF": 0
 		},
-	"\/wp-content\/themes\/carnes-crossroads-2015\/scss\/.sass-cache\/462f90d0fa8f31bf5a9a78eb2d83b1218d3620ec\/_input-groups.scssc": {
+	"\/wp-content\/themes\/carnes-crossroads-2015\/scss\/.sass-cache\/1ed62073e0491df067b495284a591e8e7a85f1d7\/_footer.scssc": {
 		"ft": 8192,
 		"oA": 1,
-		"oAP": "\/wp-content\/themes\/carnes-crossroads-2015\/scss\/.sass-cache\/462f90d0fa8f31bf5a9a78eb2d83b1218d3620ec\/_input-groups.scssc",
+		"oAP": "\/wp-content\/themes\/carnes-crossroads-2015\/scss\/.sass-cache\/1ed62073e0491df067b495284a591e8e7a85f1d7\/_footer.scssc",
 		"oF": 0
 		},
-	"\/wp-content\/themes\/carnes-crossroads-2015\/scss\/.sass-cache\/462f90d0fa8f31bf5a9a78eb2d83b1218d3620ec\/_mixins.scssc": {
+	"\/wp-content\/themes\/carnes-crossroads-2015\/scss\/.sass-cache\/1ed62073e0491df067b495284a591e8e7a85f1d7\/_forms.scssc": {
 		"ft": 8192,
 		"oA": 1,
-		"oAP": "\/wp-content\/themes\/carnes-crossroads-2015\/scss\/.sass-cache\/462f90d0fa8f31bf5a9a78eb2d83b1218d3620ec\/_mixins.scssc",
+		"oAP": "\/wp-content\/themes\/carnes-crossroads-2015\/scss\/.sass-cache\/1ed62073e0491df067b495284a591e8e7a85f1d7\/_forms.scssc",
 		"oF": 0
 		},
-	"\/wp-content\/themes\/carnes-crossroads-2015\/scss\/.sass-cache\/462f90d0fa8f31bf5a9a78eb2d83b1218d3620ec\/_navbar.scssc": {
+	"\/wp-content\/themes\/carnes-crossroads-2015\/scss\/.sass-cache\/1ed62073e0491df067b495284a591e8e7a85f1d7\/_front-page.scssc": {
 		"ft": 8192,
 		"oA": 1,
-		"oAP": "\/wp-content\/themes\/carnes-crossroads-2015\/scss\/.sass-cache\/462f90d0fa8f31bf5a9a78eb2d83b1218d3620ec\/_navbar.scssc",
+		"oAP": "\/wp-content\/themes\/carnes-crossroads-2015\/scss\/.sass-cache\/1ed62073e0491df067b495284a591e8e7a85f1d7\/_front-page.scssc",
 		"oF": 0
 		},
-	"\/wp-content\/themes\/carnes-crossroads-2015\/scss\/.sass-cache\/462f90d0fa8f31bf5a9a78eb2d83b1218d3620ec\/_navs.scssc": {
+	"\/wp-content\/themes\/carnes-crossroads-2015\/scss\/.sass-cache\/1ed62073e0491df067b495284a591e8e7a85f1d7\/_frontpage-modal.scssc": {
 		"ft": 8192,
 		"oA": 1,
-		"oAP": "\/wp-content\/themes\/carnes-crossroads-2015\/scss\/.sass-cache\/462f90d0fa8f31bf5a9a78eb2d83b1218d3620ec\/_navs.scssc",
+		"oAP": "\/wp-content\/themes\/carnes-crossroads-2015\/scss\/.sass-cache\/1ed62073e0491df067b495284a591e8e7a85f1d7\/_frontpage-modal.scssc",
 		"oF": 0
 		},
-	"\/wp-content\/themes\/carnes-crossroads-2015\/scss\/.sass-cache\/462f90d0fa8f31bf5a9a78eb2d83b1218d3620ec\/_normalize.scssc": {
+	"\/wp-content\/themes\/carnes-crossroads-2015\/scss\/.sass-cache\/1ed62073e0491df067b495284a591e8e7a85f1d7\/_home-finder.scssc": {
 		"ft": 8192,
 		"oA": 1,
-		"oAP": "\/wp-content\/themes\/carnes-crossroads-2015\/scss\/.sass-cache\/462f90d0fa8f31bf5a9a78eb2d83b1218d3620ec\/_normalize.scssc",
+		"oAP": "\/wp-content\/themes\/carnes-crossroads-2015\/scss\/.sass-cache\/1ed62073e0491df067b495284a591e8e7a85f1d7\/_home-finder.scssc",
 		"oF": 0
 		},
-	"\/wp-content\/themes\/carnes-crossroads-2015\/scss\/.sass-cache\/462f90d0fa8f31bf5a9a78eb2d83b1218d3620ec\/_print.scssc": {
+	"\/wp-content\/themes\/carnes-crossroads-2015\/scss\/.sass-cache\/1ed62073e0491df067b495284a591e8e7a85f1d7\/_homefinder-modals.scssc": {
 		"ft": 8192,
 		"oA": 1,
-		"oAP": "\/wp-content\/themes\/carnes-crossroads-2015\/scss\/.sass-cache\/462f90d0fa8f31bf5a9a78eb2d83b1218d3620ec\/_print.scssc",
+		"oAP": "\/wp-content\/themes\/carnes-crossroads-2015\/scss\/.sass-cache\/1ed62073e0491df067b495284a591e8e7a85f1d7\/_homefinder-modals.scssc",
 		"oF": 0
 		},
-	"\/wp-content\/themes\/carnes-crossroads-2015\/scss\/.sass-cache\/462f90d0fa8f31bf5a9a78eb2d83b1218d3620ec\/_responsive-utilities.scssc": {
+	"\/wp-content\/themes\/carnes-crossroads-2015\/scss\/.sass-cache\/1ed62073e0491df067b495284a591e8e7a85f1d7\/_landing-page.scssc": {
 		"ft": 8192,
 		"oA": 1,
-		"oAP": "\/wp-content\/themes\/carnes-crossroads-2015\/scss\/.sass-cache\/462f90d0fa8f31bf5a9a78eb2d83b1218d3620ec\/_responsive-utilities.scssc",
+		"oAP": "\/wp-content\/themes\/carnes-crossroads-2015\/scss\/.sass-cache\/1ed62073e0491df067b495284a591e8e7a85f1d7\/_landing-page.scssc",
 		"oF": 0
 		},
-	"\/wp-content\/themes\/carnes-crossroads-2015\/scss\/.sass-cache\/462f90d0fa8f31bf5a9a78eb2d83b1218d3620ec\/_scaffolding.scssc": {
+	"\/wp-content\/themes\/carnes-crossroads-2015\/scss\/.sass-cache\/1ed62073e0491df067b495284a591e8e7a85f1d7\/_media.scssc": {
 		"ft": 8192,
 		"oA": 1,
-		"oAP": "\/wp-content\/themes\/carnes-crossroads-2015\/scss\/.sass-cache\/462f90d0fa8f31bf5a9a78eb2d83b1218d3620ec\/_scaffolding.scssc",
+		"oAP": "\/wp-content\/themes\/carnes-crossroads-2015\/scss\/.sass-cache\/1ed62073e0491df067b495284a591e8e7a85f1d7\/_media.scssc",
 		"oF": 0
 		},
-	"\/wp-content\/themes\/carnes-crossroads-2015\/scss\/.sass-cache\/462f90d0fa8f31bf5a9a78eb2d83b1218d3620ec\/_tables.scssc": {
+	"\/wp-content\/themes\/carnes-crossroads-2015\/scss\/.sass-cache\/1ed62073e0491df067b495284a591e8e7a85f1d7\/_multiple-select.scssc": {
 		"ft": 8192,
 		"oA": 1,
-		"oAP": "\/wp-content\/themes\/carnes-crossroads-2015\/scss\/.sass-cache\/462f90d0fa8f31bf5a9a78eb2d83b1218d3620ec\/_tables.scssc",
+		"oAP": "\/wp-content\/themes\/carnes-crossroads-2015\/scss\/.sass-cache\/1ed62073e0491df067b495284a591e8e7a85f1d7\/_multiple-select.scssc",
 		"oF": 0
 		},
-	"\/wp-content\/themes\/carnes-crossroads-2015\/scss\/.sass-cache\/462f90d0fa8f31bf5a9a78eb2d83b1218d3620ec\/_type.scssc": {
+	"\/wp-content\/themes\/carnes-crossroads-2015\/scss\/.sass-cache\/1ed62073e0491df067b495284a591e8e7a85f1d7\/_navigation.scssc": {
 		"ft": 8192,
 		"oA": 1,
-		"oAP": "\/wp-content\/themes\/carnes-crossroads-2015\/scss\/.sass-cache\/462f90d0fa8f31bf5a9a78eb2d83b1218d3620ec\/_type.scssc",
+		"oAP": "\/wp-content\/themes\/carnes-crossroads-2015\/scss\/.sass-cache\/1ed62073e0491df067b495284a591e8e7a85f1d7\/_navigation.scssc",
 		"oF": 0
 		},
-	"\/wp-content\/themes\/carnes-crossroads-2015\/scss\/.sass-cache\/462f90d0fa8f31bf5a9a78eb2d83b1218d3620ec\/_utilities.scssc": {
+	"\/wp-content\/themes\/carnes-crossroads-2015\/scss\/.sass-cache\/1ed62073e0491df067b495284a591e8e7a85f1d7\/_nouislider.scssc": {
 		"ft": 8192,
 		"oA": 1,
-		"oAP": "\/wp-content\/themes\/carnes-crossroads-2015\/scss\/.sass-cache\/462f90d0fa8f31bf5a9a78eb2d83b1218d3620ec\/_utilities.scssc",
+		"oAP": "\/wp-content\/themes\/carnes-crossroads-2015\/scss\/.sass-cache\/1ed62073e0491df067b495284a591e8e7a85f1d7\/_nouislider.scssc",
 		"oF": 0
 		},
-	"\/wp-content\/themes\/carnes-crossroads-2015\/scss\/.sass-cache\/462f90d0fa8f31bf5a9a78eb2d83b1218d3620ec\/_variables.scssc": {
+	"\/wp-content\/themes\/carnes-crossroads-2015\/scss\/.sass-cache\/1ed62073e0491df067b495284a591e8e7a85f1d7\/_page-templates.scssc": {
 		"ft": 8192,
 		"oA": 1,
-		"oAP": "\/wp-content\/themes\/carnes-crossroads-2015\/scss\/.sass-cache\/462f90d0fa8f31bf5a9a78eb2d83b1218d3620ec\/_variables.scssc",
+		"oAP": "\/wp-content\/themes\/carnes-crossroads-2015\/scss\/.sass-cache\/1ed62073e0491df067b495284a591e8e7a85f1d7\/_page-templates.scssc",
 		"oF": 0
 		},
-	"\/wp-content\/themes\/carnes-crossroads-2015\/scss\/.sass-cache\/79b3d1c3475603aa9094f63093d11f1c23c33add\/bootstrap.scssc": {
+	"\/wp-content\/themes\/carnes-crossroads-2015\/scss\/.sass-cache\/1ed62073e0491df067b495284a591e8e7a85f1d7\/_print.scssc": {
+		"ft": 8192,
+		"oA": 1,
+		"oAP": "\/wp-content\/themes\/carnes-crossroads-2015\/scss\/.sass-cache\/1ed62073e0491df067b495284a591e8e7a85f1d7\/_print.scssc",
+		"oF": 0
+		},
+	"\/wp-content\/themes\/carnes-crossroads-2015\/scss\/.sass-cache\/1ed62073e0491df067b495284a591e8e7a85f1d7\/_sliders.scssc": {
+		"ft": 8192,
+		"oA": 1,
+		"oAP": "\/wp-content\/themes\/carnes-crossroads-2015\/scss\/.sass-cache\/1ed62073e0491df067b495284a591e8e7a85f1d7\/_sliders.scssc",
+		"oF": 0
+		},
+	"\/wp-content\/themes\/carnes-crossroads-2015\/scss\/.sass-cache\/1ed62073e0491df067b495284a591e8e7a85f1d7\/_variables.scssc": {
+		"ft": 8192,
+		"oA": 1,
+		"oAP": "\/wp-content\/themes\/carnes-crossroads-2015\/scss\/.sass-cache\/1ed62073e0491df067b495284a591e8e7a85f1d7\/_variables.scssc",
+		"oF": 0
+		},
+	"\/wp-content\/themes\/carnes-crossroads-2015\/scss\/.sass-cache\/1ed62073e0491df067b495284a591e8e7a85f1d7\/style.scssc": {
 		"ft": 8192,
 		"oA": 2,
-		"oAP": "\/wp-content\/themes\/carnes-crossroads-2015\/scss\/.sass-cache\/79b3d1c3475603aa9094f63093d11f1c23c33add\/bootstrap.scssc",
+		"oAP": "\/wp-content\/themes\/carnes-crossroads-2015\/scss\/.sass-cache\/1ed62073e0491df067b495284a591e8e7a85f1d7\/style.scssc",
 		"oF": 0
 		},
-	"\/wp-content\/themes\/carnes-crossroads-2015\/scss\/.sass-cache\/b9c55a4ddf535f74fb4b4b9b29ab0a3b1cc3fee5\/_account-modals.scssc": {
-		"ft": 8192,
-		"oA": 1,
-		"oAP": "\/wp-content\/themes\/carnes-crossroads-2015\/scss\/.sass-cache\/b9c55a4ddf535f74fb4b4b9b29ab0a3b1cc3fee5\/_account-modals.scssc",
-		"oF": 0
-		},
-	"\/wp-content\/themes\/carnes-crossroads-2015\/scss\/.sass-cache\/b9c55a4ddf535f74fb4b4b9b29ab0a3b1cc3fee5\/_base.scssc": {
-		"ft": 8192,
-		"oA": 1,
-		"oAP": "\/wp-content\/themes\/carnes-crossroads-2015\/scss\/.sass-cache\/b9c55a4ddf535f74fb4b4b9b29ab0a3b1cc3fee5\/_base.scssc",
-		"oF": 0
-		},
-	"\/wp-content\/themes\/carnes-crossroads-2015\/scss\/.sass-cache\/b9c55a4ddf535f74fb4b4b9b29ab0a3b1cc3fee5\/_buttons.scssc": {
-		"ft": 8192,
-		"oA": 1,
-		"oAP": "\/wp-content\/themes\/carnes-crossroads-2015\/scss\/.sass-cache\/b9c55a4ddf535f74fb4b4b9b29ab0a3b1cc3fee5\/_buttons.scssc",
-		"oF": 0
-		},
-	"\/wp-content\/themes\/carnes-crossroads-2015\/scss\/.sass-cache\/b9c55a4ddf535f74fb4b4b9b29ab0a3b1cc3fee5\/_calendar.scssc": {
-		"ft": 8192,
-		"oA": 1,
-		"oAP": "\/wp-content\/themes\/carnes-crossroads-2015\/scss\/.sass-cache\/b9c55a4ddf535f74fb4b4b9b29ab0a3b1cc3fee5\/_calendar.scssc",
-		"oF": 0
-		},
-	"\/wp-content\/themes\/carnes-crossroads-2015\/scss\/.sass-cache\/b9c55a4ddf535f74fb4b4b9b29ab0a3b1cc3fee5\/_chosen.scssc": {
-		"ft": 8192,
-		"oA": 1,
-		"oAP": "\/wp-content\/themes\/carnes-crossroads-2015\/scss\/.sass-cache\/b9c55a4ddf535f74fb4b4b9b29ab0a3b1cc3fee5\/_chosen.scssc",
-		"oF": 0
-		},
-	"\/wp-content\/themes\/carnes-crossroads-2015\/scss\/.sass-cache\/b9c55a4ddf535f74fb4b4b9b29ab0a3b1cc3fee5\/_cn-mixins.scssc": {
-		"ft": 8192,
-		"oA": 1,
-		"oAP": "\/wp-content\/themes\/carnes-crossroads-2015\/scss\/.sass-cache\/b9c55a4ddf535f74fb4b4b9b29ab0a3b1cc3fee5\/_cn-mixins.scssc",
-		"oF": 0
-		},
-	"\/wp-content\/themes\/carnes-crossroads-2015\/scss\/.sass-cache\/b9c55a4ddf535f74fb4b4b9b29ab0a3b1cc3fee5\/_fonts.scssc": {
-		"ft": 8192,
-		"oA": 1,
-		"oAP": "\/wp-content\/themes\/carnes-crossroads-2015\/scss\/.sass-cache\/b9c55a4ddf535f74fb4b4b9b29ab0a3b1cc3fee5\/_fonts.scssc",
-		"oF": 0
-		},
-	"\/wp-content\/themes\/carnes-crossroads-2015\/scss\/.sass-cache\/b9c55a4ddf535f74fb4b4b9b29ab0a3b1cc3fee5\/_footer.scssc": {
-		"ft": 8192,
-		"oA": 1,
-		"oAP": "\/wp-content\/themes\/carnes-crossroads-2015\/scss\/.sass-cache\/b9c55a4ddf535f74fb4b4b9b29ab0a3b1cc3fee5\/_footer.scssc",
-		"oF": 0
-		},
-	"\/wp-content\/themes\/carnes-crossroads-2015\/scss\/.sass-cache\/b9c55a4ddf535f74fb4b4b9b29ab0a3b1cc3fee5\/_forms.scssc": {
-		"ft": 8192,
-		"oA": 1,
-		"oAP": "\/wp-content\/themes\/carnes-crossroads-2015\/scss\/.sass-cache\/b9c55a4ddf535f74fb4b4b9b29ab0a3b1cc3fee5\/_forms.scssc",
-		"oF": 0
-		},
-	"\/wp-content\/themes\/carnes-crossroads-2015\/scss\/.sass-cache\/b9c55a4ddf535f74fb4b4b9b29ab0a3b1cc3fee5\/_front-page.scssc": {
-		"ft": 8192,
-		"oA": 1,
-		"oAP": "\/wp-content\/themes\/carnes-crossroads-2015\/scss\/.sass-cache\/b9c55a4ddf535f74fb4b4b9b29ab0a3b1cc3fee5\/_front-page.scssc",
-		"oF": 0
-		},
-	"\/wp-content\/themes\/carnes-crossroads-2015\/scss\/.sass-cache\/b9c55a4ddf535f74fb4b4b9b29ab0a3b1cc3fee5\/_frontpage-modal.scssc": {
-		"ft": 8192,
-		"oA": 1,
-		"oAP": "\/wp-content\/themes\/carnes-crossroads-2015\/scss\/.sass-cache\/b9c55a4ddf535f74fb4b4b9b29ab0a3b1cc3fee5\/_frontpage-modal.scssc",
-		"oF": 0
-		},
-	"\/wp-content\/themes\/carnes-crossroads-2015\/scss\/.sass-cache\/b9c55a4ddf535f74fb4b4b9b29ab0a3b1cc3fee5\/_home-finder.scssc": {
-		"ft": 8192,
-		"oA": 1,
-		"oAP": "\/wp-content\/themes\/carnes-crossroads-2015\/scss\/.sass-cache\/b9c55a4ddf535f74fb4b4b9b29ab0a3b1cc3fee5\/_home-finder.scssc",
-		"oF": 0
-		},
-	"\/wp-content\/themes\/carnes-crossroads-2015\/scss\/.sass-cache\/b9c55a4ddf535f74fb4b4b9b29ab0a3b1cc3fee5\/_homefinder-modals.scssc": {
-		"ft": 8192,
-		"oA": 1,
-		"oAP": "\/wp-content\/themes\/carnes-crossroads-2015\/scss\/.sass-cache\/b9c55a4ddf535f74fb4b4b9b29ab0a3b1cc3fee5\/_homefinder-modals.scssc",
-		"oF": 0
-		},
-	"\/wp-content\/themes\/carnes-crossroads-2015\/scss\/.sass-cache\/b9c55a4ddf535f74fb4b4b9b29ab0a3b1cc3fee5\/_landing-page.scssc": {
-		"ft": 8192,
-		"oA": 1,
-		"oAP": "\/wp-content\/themes\/carnes-crossroads-2015\/scss\/.sass-cache\/b9c55a4ddf535f74fb4b4b9b29ab0a3b1cc3fee5\/_landing-page.scssc",
-		"oF": 0
-		},
-	"\/wp-content\/themes\/carnes-crossroads-2015\/scss\/.sass-cache\/b9c55a4ddf535f74fb4b4b9b29ab0a3b1cc3fee5\/_media.scssc": {
-		"ft": 8192,
-		"oA": 1,
-		"oAP": "\/wp-content\/themes\/carnes-crossroads-2015\/scss\/.sass-cache\/b9c55a4ddf535f74fb4b4b9b29ab0a3b1cc3fee5\/_media.scssc",
-		"oF": 0
-		},
-	"\/wp-content\/themes\/carnes-crossroads-2015\/scss\/.sass-cache\/b9c55a4ddf535f74fb4b4b9b29ab0a3b1cc3fee5\/_multiple-select.scssc": {
-		"ft": 8192,
-		"oA": 1,
-		"oAP": "\/wp-content\/themes\/carnes-crossroads-2015\/scss\/.sass-cache\/b9c55a4ddf535f74fb4b4b9b29ab0a3b1cc3fee5\/_multiple-select.scssc",
-		"oF": 0
-		},
-	"\/wp-content\/themes\/carnes-crossroads-2015\/scss\/.sass-cache\/b9c55a4ddf535f74fb4b4b9b29ab0a3b1cc3fee5\/_navigation.scssc": {
-		"ft": 8192,
-		"oA": 1,
-		"oAP": "\/wp-content\/themes\/carnes-crossroads-2015\/scss\/.sass-cache\/b9c55a4ddf535f74fb4b4b9b29ab0a3b1cc3fee5\/_navigation.scssc",
-		"oF": 0
-		},
-	"\/wp-content\/themes\/carnes-crossroads-2015\/scss\/.sass-cache\/b9c55a4ddf535f74fb4b4b9b29ab0a3b1cc3fee5\/_nouislider.scssc": {
-		"ft": 8192,
-		"oA": 1,
-		"oAP": "\/wp-content\/themes\/carnes-crossroads-2015\/scss\/.sass-cache\/b9c55a4ddf535f74fb4b4b9b29ab0a3b1cc3fee5\/_nouislider.scssc",
-		"oF": 0
-		},
-	"\/wp-content\/themes\/carnes-crossroads-2015\/scss\/.sass-cache\/b9c55a4ddf535f74fb4b4b9b29ab0a3b1cc3fee5\/_page-templates.scssc": {
-		"ft": 8192,
-		"oA": 1,
-		"oAP": "\/wp-content\/themes\/carnes-crossroads-2015\/scss\/.sass-cache\/b9c55a4ddf535f74fb4b4b9b29ab0a3b1cc3fee5\/_page-templates.scssc",
-		"oF": 0
-		},
-	"\/wp-content\/themes\/carnes-crossroads-2015\/scss\/.sass-cache\/b9c55a4ddf535f74fb4b4b9b29ab0a3b1cc3fee5\/_print.scssc": {
-		"ft": 8192,
-		"oA": 1,
-		"oAP": "\/wp-content\/themes\/carnes-crossroads-2015\/scss\/.sass-cache\/b9c55a4ddf535f74fb4b4b9b29ab0a3b1cc3fee5\/_print.scssc",
-		"oF": 0
-		},
-	"\/wp-content\/themes\/carnes-crossroads-2015\/scss\/.sass-cache\/b9c55a4ddf535f74fb4b4b9b29ab0a3b1cc3fee5\/_sliders.scssc": {
-		"ft": 8192,
-		"oA": 1,
-		"oAP": "\/wp-content\/themes\/carnes-crossroads-2015\/scss\/.sass-cache\/b9c55a4ddf535f74fb4b4b9b29ab0a3b1cc3fee5\/_sliders.scssc",
-		"oF": 0
-		},
-	"\/wp-content\/themes\/carnes-crossroads-2015\/scss\/.sass-cache\/b9c55a4ddf535f74fb4b4b9b29ab0a3b1cc3fee5\/_variables.scssc": {
-		"ft": 8192,
-		"oA": 1,
-		"oAP": "\/wp-content\/themes\/carnes-crossroads-2015\/scss\/.sass-cache\/b9c55a4ddf535f74fb4b4b9b29ab0a3b1cc3fee5\/_variables.scssc",
-		"oF": 0
-		},
-	"\/wp-content\/themes\/carnes-crossroads-2015\/scss\/.sass-cache\/b9c55a4ddf535f74fb4b4b9b29ab0a3b1cc3fee5\/style.scssc": {
+	"\/wp-content\/themes\/carnes-crossroads-2015\/scss\/.sass-cache\/3b2b12975e2692d7ab32a81c7b52264f59e40216\/bootstrap.scssc": {
 		"ft": 8192,
 		"oA": 2,
-		"oAP": "\/wp-content\/themes\/carnes-crossroads-2015\/scss\/.sass-cache\/b9c55a4ddf535f74fb4b4b9b29ab0a3b1cc3fee5\/style.scssc",
+		"oAP": "\/wp-content\/themes\/carnes-crossroads-2015\/scss\/.sass-cache\/3b2b12975e2692d7ab32a81c7b52264f59e40216\/bootstrap.scssc",
+		"oF": 0
+		},
+	"\/wp-content\/themes\/carnes-crossroads-2015\/scss\/.sass-cache\/942feed9a39097fa08b037871835b00fa485cbc2\/_button-groups.scssc": {
+		"ft": 8192,
+		"oA": 1,
+		"oAP": "\/wp-content\/themes\/carnes-crossroads-2015\/scss\/.sass-cache\/942feed9a39097fa08b037871835b00fa485cbc2\/_button-groups.scssc",
+		"oF": 0
+		},
+	"\/wp-content\/themes\/carnes-crossroads-2015\/scss\/.sass-cache\/942feed9a39097fa08b037871835b00fa485cbc2\/_buttons.scssc": {
+		"ft": 8192,
+		"oA": 1,
+		"oAP": "\/wp-content\/themes\/carnes-crossroads-2015\/scss\/.sass-cache\/942feed9a39097fa08b037871835b00fa485cbc2\/_buttons.scssc",
+		"oF": 0
+		},
+	"\/wp-content\/themes\/carnes-crossroads-2015\/scss\/.sass-cache\/942feed9a39097fa08b037871835b00fa485cbc2\/_code.scssc": {
+		"ft": 8192,
+		"oA": 1,
+		"oAP": "\/wp-content\/themes\/carnes-crossroads-2015\/scss\/.sass-cache\/942feed9a39097fa08b037871835b00fa485cbc2\/_code.scssc",
+		"oF": 0
+		},
+	"\/wp-content\/themes\/carnes-crossroads-2015\/scss\/.sass-cache\/942feed9a39097fa08b037871835b00fa485cbc2\/_component-animations.scssc": {
+		"ft": 8192,
+		"oA": 1,
+		"oAP": "\/wp-content\/themes\/carnes-crossroads-2015\/scss\/.sass-cache\/942feed9a39097fa08b037871835b00fa485cbc2\/_component-animations.scssc",
+		"oF": 0
+		},
+	"\/wp-content\/themes\/carnes-crossroads-2015\/scss\/.sass-cache\/942feed9a39097fa08b037871835b00fa485cbc2\/_dropdowns.scssc": {
+		"ft": 8192,
+		"oA": 1,
+		"oAP": "\/wp-content\/themes\/carnes-crossroads-2015\/scss\/.sass-cache\/942feed9a39097fa08b037871835b00fa485cbc2\/_dropdowns.scssc",
+		"oF": 0
+		},
+	"\/wp-content\/themes\/carnes-crossroads-2015\/scss\/.sass-cache\/942feed9a39097fa08b037871835b00fa485cbc2\/_forms.scssc": {
+		"ft": 8192,
+		"oA": 1,
+		"oAP": "\/wp-content\/themes\/carnes-crossroads-2015\/scss\/.sass-cache\/942feed9a39097fa08b037871835b00fa485cbc2\/_forms.scssc",
+		"oF": 0
+		},
+	"\/wp-content\/themes\/carnes-crossroads-2015\/scss\/.sass-cache\/942feed9a39097fa08b037871835b00fa485cbc2\/_grid.scssc": {
+		"ft": 8192,
+		"oA": 1,
+		"oAP": "\/wp-content\/themes\/carnes-crossroads-2015\/scss\/.sass-cache\/942feed9a39097fa08b037871835b00fa485cbc2\/_grid.scssc",
+		"oF": 0
+		},
+	"\/wp-content\/themes\/carnes-crossroads-2015\/scss\/.sass-cache\/942feed9a39097fa08b037871835b00fa485cbc2\/_input-groups.scssc": {
+		"ft": 8192,
+		"oA": 1,
+		"oAP": "\/wp-content\/themes\/carnes-crossroads-2015\/scss\/.sass-cache\/942feed9a39097fa08b037871835b00fa485cbc2\/_input-groups.scssc",
+		"oF": 0
+		},
+	"\/wp-content\/themes\/carnes-crossroads-2015\/scss\/.sass-cache\/942feed9a39097fa08b037871835b00fa485cbc2\/_mixins.scssc": {
+		"ft": 8192,
+		"oA": 1,
+		"oAP": "\/wp-content\/themes\/carnes-crossroads-2015\/scss\/.sass-cache\/942feed9a39097fa08b037871835b00fa485cbc2\/_mixins.scssc",
+		"oF": 0
+		},
+	"\/wp-content\/themes\/carnes-crossroads-2015\/scss\/.sass-cache\/942feed9a39097fa08b037871835b00fa485cbc2\/_navbar.scssc": {
+		"ft": 8192,
+		"oA": 1,
+		"oAP": "\/wp-content\/themes\/carnes-crossroads-2015\/scss\/.sass-cache\/942feed9a39097fa08b037871835b00fa485cbc2\/_navbar.scssc",
+		"oF": 0
+		},
+	"\/wp-content\/themes\/carnes-crossroads-2015\/scss\/.sass-cache\/942feed9a39097fa08b037871835b00fa485cbc2\/_navs.scssc": {
+		"ft": 8192,
+		"oA": 1,
+		"oAP": "\/wp-content\/themes\/carnes-crossroads-2015\/scss\/.sass-cache\/942feed9a39097fa08b037871835b00fa485cbc2\/_navs.scssc",
+		"oF": 0
+		},
+	"\/wp-content\/themes\/carnes-crossroads-2015\/scss\/.sass-cache\/942feed9a39097fa08b037871835b00fa485cbc2\/_normalize.scssc": {
+		"ft": 8192,
+		"oA": 1,
+		"oAP": "\/wp-content\/themes\/carnes-crossroads-2015\/scss\/.sass-cache\/942feed9a39097fa08b037871835b00fa485cbc2\/_normalize.scssc",
+		"oF": 0
+		},
+	"\/wp-content\/themes\/carnes-crossroads-2015\/scss\/.sass-cache\/942feed9a39097fa08b037871835b00fa485cbc2\/_print.scssc": {
+		"ft": 8192,
+		"oA": 1,
+		"oAP": "\/wp-content\/themes\/carnes-crossroads-2015\/scss\/.sass-cache\/942feed9a39097fa08b037871835b00fa485cbc2\/_print.scssc",
+		"oF": 0
+		},
+	"\/wp-content\/themes\/carnes-crossroads-2015\/scss\/.sass-cache\/942feed9a39097fa08b037871835b00fa485cbc2\/_responsive-utilities.scssc": {
+		"ft": 8192,
+		"oA": 1,
+		"oAP": "\/wp-content\/themes\/carnes-crossroads-2015\/scss\/.sass-cache\/942feed9a39097fa08b037871835b00fa485cbc2\/_responsive-utilities.scssc",
+		"oF": 0
+		},
+	"\/wp-content\/themes\/carnes-crossroads-2015\/scss\/.sass-cache\/942feed9a39097fa08b037871835b00fa485cbc2\/_scaffolding.scssc": {
+		"ft": 8192,
+		"oA": 1,
+		"oAP": "\/wp-content\/themes\/carnes-crossroads-2015\/scss\/.sass-cache\/942feed9a39097fa08b037871835b00fa485cbc2\/_scaffolding.scssc",
+		"oF": 0
+		},
+	"\/wp-content\/themes\/carnes-crossroads-2015\/scss\/.sass-cache\/942feed9a39097fa08b037871835b00fa485cbc2\/_tables.scssc": {
+		"ft": 8192,
+		"oA": 1,
+		"oAP": "\/wp-content\/themes\/carnes-crossroads-2015\/scss\/.sass-cache\/942feed9a39097fa08b037871835b00fa485cbc2\/_tables.scssc",
+		"oF": 0
+		},
+	"\/wp-content\/themes\/carnes-crossroads-2015\/scss\/.sass-cache\/942feed9a39097fa08b037871835b00fa485cbc2\/_type.scssc": {
+		"ft": 8192,
+		"oA": 1,
+		"oAP": "\/wp-content\/themes\/carnes-crossroads-2015\/scss\/.sass-cache\/942feed9a39097fa08b037871835b00fa485cbc2\/_type.scssc",
+		"oF": 0
+		},
+	"\/wp-content\/themes\/carnes-crossroads-2015\/scss\/.sass-cache\/942feed9a39097fa08b037871835b00fa485cbc2\/_utilities.scssc": {
+		"ft": 8192,
+		"oA": 1,
+		"oAP": "\/wp-content\/themes\/carnes-crossroads-2015\/scss\/.sass-cache\/942feed9a39097fa08b037871835b00fa485cbc2\/_utilities.scssc",
+		"oF": 0
+		},
+	"\/wp-content\/themes\/carnes-crossroads-2015\/scss\/.sass-cache\/942feed9a39097fa08b037871835b00fa485cbc2\/_variables.scssc": {
+		"ft": 8192,
+		"oA": 1,
+		"oAP": "\/wp-content\/themes\/carnes-crossroads-2015\/scss\/.sass-cache\/942feed9a39097fa08b037871835b00fa485cbc2\/_variables.scssc",
+		"oF": 0
+		},
+	"\/wp-content\/themes\/carnes-crossroads-2015\/scss\/.sass-cache\/d0d5a727d3c32ac8108e2d040fbfd365cb0ff3ad\/footer.scssc": {
+		"ft": 8192,
+		"oA": 2,
+		"oAP": "\/wp-content\/themes\/carnes-crossroads-2015\/scss\/.sass-cache\/d0d5a727d3c32ac8108e2d040fbfd365cb0ff3ad\/footer.scssc",
+		"oF": 0
+		},
+	"\/wp-content\/themes\/carnes-crossroads-2015\/scss\/.sass-cache\/d0d5a727d3c32ac8108e2d040fbfd365cb0ff3ad\/header.scssc": {
+		"ft": 8192,
+		"oA": 2,
+		"oAP": "\/wp-content\/themes\/carnes-crossroads-2015\/scss\/.sass-cache\/d0d5a727d3c32ac8108e2d040fbfd365cb0ff3ad\/header.scssc",
+		"oF": 0
+		},
+	"\/wp-content\/themes\/carnes-crossroads-2015\/scss\/.sass-cache\/e6cb10b35114e4d0b09f56f56dd09b8f6175990e\/events.scssc": {
+		"ft": 8192,
+		"oA": 2,
+		"oAP": "\/wp-content\/themes\/carnes-crossroads-2015\/scss\/.sass-cache\/e6cb10b35114e4d0b09f56f56dd09b8f6175990e\/events.scssc",
+		"oF": 0
+		},
+	"\/wp-content\/themes\/carnes-crossroads-2015\/scss\/.sass-cache\/e6cb10b35114e4d0b09f56f56dd09b8f6175990e\/fonts.scssc": {
+		"ft": 8192,
+		"oA": 2,
+		"oAP": "\/wp-content\/themes\/carnes-crossroads-2015\/scss\/.sass-cache\/e6cb10b35114e4d0b09f56f56dd09b8f6175990e\/fonts.scssc",
+		"oF": 0
+		},
+	"\/wp-content\/themes\/carnes-crossroads-2015\/scss\/.sass-cache\/e6cb10b35114e4d0b09f56f56dd09b8f6175990e\/front-page.scssc": {
+		"ft": 8192,
+		"oA": 2,
+		"oAP": "\/wp-content\/themes\/carnes-crossroads-2015\/scss\/.sass-cache\/e6cb10b35114e4d0b09f56f56dd09b8f6175990e\/front-page.scssc",
+		"oF": 0
+		},
+	"\/wp-content\/themes\/carnes-crossroads-2015\/scss\/.sass-cache\/e6cb10b35114e4d0b09f56f56dd09b8f6175990e\/ie.scssc": {
+		"ft": 8192,
+		"oA": 2,
+		"oAP": "\/wp-content\/themes\/carnes-crossroads-2015\/scss\/.sass-cache\/e6cb10b35114e4d0b09f56f56dd09b8f6175990e\/ie.scssc",
+		"oF": 0
+		},
+	"\/wp-content\/themes\/carnes-crossroads-2015\/scss\/.sass-cache\/e6cb10b35114e4d0b09f56f56dd09b8f6175990e\/news.scssc": {
+		"ft": 8192,
+		"oA": 2,
+		"oAP": "\/wp-content\/themes\/carnes-crossroads-2015\/scss\/.sass-cache\/e6cb10b35114e4d0b09f56f56dd09b8f6175990e\/news.scssc",
+		"oF": 0
+		},
+	"\/wp-content\/themes\/carnes-crossroads-2015\/scss\/.sass-cache\/e6cb10b35114e4d0b09f56f56dd09b8f6175990e\/page-default.scssc": {
+		"ft": 8192,
+		"oA": 2,
+		"oAP": "\/wp-content\/themes\/carnes-crossroads-2015\/scss\/.sass-cache\/e6cb10b35114e4d0b09f56f56dd09b8f6175990e\/page-default.scssc",
+		"oF": 0
+		},
+	"\/wp-content\/themes\/carnes-crossroads-2015\/scss\/.sass-cache\/e6cb10b35114e4d0b09f56f56dd09b8f6175990e\/page-directories.scssc": {
+		"ft": 8192,
+		"oA": 2,
+		"oAP": "\/wp-content\/themes\/carnes-crossroads-2015\/scss\/.sass-cache\/e6cb10b35114e4d0b09f56f56dd09b8f6175990e\/page-directories.scssc",
+		"oF": 0
+		},
+	"\/wp-content\/themes\/carnes-crossroads-2015\/scss\/.sass-cache\/e6cb10b35114e4d0b09f56f56dd09b8f6175990e\/search.scssc": {
+		"ft": 8192,
+		"oA": 2,
+		"oAP": "\/wp-content\/themes\/carnes-crossroads-2015\/scss\/.sass-cache\/e6cb10b35114e4d0b09f56f56dd09b8f6175990e\/search.scssc",
 		"oF": 0
 		},
 	"\/wp-content\/themes\/carnes-crossroads-2015\/scss\/_account-modals.scss": {
@@ -50182,6 +50288,19 @@
 		"oS": 0,
 		"uL": 1
 		},
+	"\/wp-content\/themes\/carnes-crossroads-2015\/scss\/_home-finder-v2.scss": {
+		"aP": 0,
+		"bl": 0,
+		"dP": 10,
+		"dS": 0,
+		"ft": 4,
+		"ma": 0,
+		"oA": 1,
+		"oAP": "\/wp-content\/themes\/carnes-crossroads-2015\/_home-finder-v2.css",
+		"oF": 0,
+		"oS": 0,
+		"uL": 1
+		},
 	"\/wp-content\/themes\/carnes-crossroads-2015\/scss\/_home-finder.scss": {
 		"aP": 0,
 		"bl": 0,
@@ -50208,6 +50327,19 @@
 		"oS": 0,
 		"uL": 1
 		},
+	"\/wp-content\/themes\/carnes-crossroads-2015\/scss\/_ie.scss": {
+		"aP": 0,
+		"bl": 0,
+		"dP": 10,
+		"dS": 0,
+		"ft": 4,
+		"ma": 0,
+		"oA": 1,
+		"oAP": "\/wp-content\/themes\/carnes-crossroads-2015\/_ie.css",
+		"oF": 0,
+		"oS": 0,
+		"uL": 1
+		},
 	"\/wp-content\/themes\/carnes-crossroads-2015\/scss\/_landing-page.scss": {
 		"aP": 0,
 		"bl": 0,
@@ -50217,6 +50349,19 @@
 		"ma": 0,
 		"oA": 1,
 		"oAP": "\/wp-content\/themes\/carnes-crossroads-2015\/_landing-page.css",
+		"oF": 0,
+		"oS": 0,
+		"uL": 1
+		},
+	"\/wp-content\/themes\/carnes-crossroads-2015\/scss\/_map-legend.scss": {
+		"aP": 0,
+		"bl": 0,
+		"dP": 10,
+		"dS": 0,
+		"ft": 4,
+		"ma": 0,
+		"oA": 1,
+		"oAP": "\/wp-content\/themes\/carnes-crossroads-2015\/_map-legend.css",
 		"oF": 0,
 		"oS": 0,
 		"uL": 1
@@ -50295,6 +50440,19 @@
 		"ma": 0,
 		"oA": 1,
 		"oAP": "\/wp-content\/themes\/carnes-crossroads-2015\/_print.css",
+		"oF": 0,
+		"oS": 0,
+		"uL": 1
+		},
+	"\/wp-content\/themes\/carnes-crossroads-2015\/scss\/_property-view.scss": {
+		"aP": 0,
+		"bl": 0,
+		"dP": 10,
+		"dS": 0,
+		"ft": 4,
+		"ma": 0,
+		"oA": 1,
+		"oAP": "\/wp-content\/themes\/carnes-crossroads-2015\/_property-view.css",
 		"oF": 0,
 		"oS": 0,
 		"uL": 1
@@ -50842,6 +51000,24 @@
 		"oS": 0,
 		"uL": 1
 		},
+	"\/wp-content\/themes\/carnes-crossroads-2015\/scss\/poa\/.sass-cache\/c391cf8670d51d584f54c72e7359dad227d15e14\/fonts.scssc": {
+		"ft": 8192,
+		"oA": 2,
+		"oAP": "\/wp-content\/themes\/carnes-crossroads-2015\/scss\/poa\/.sass-cache\/c391cf8670d51d584f54c72e7359dad227d15e14\/fonts.scssc",
+		"oF": 0
+		},
+	"\/wp-content\/themes\/carnes-crossroads-2015\/scss\/poa\/.sass-cache\/c391cf8670d51d584f54c72e7359dad227d15e14\/style.scssc": {
+		"ft": 8192,
+		"oA": 2,
+		"oAP": "\/wp-content\/themes\/carnes-crossroads-2015\/scss\/poa\/.sass-cache\/c391cf8670d51d584f54c72e7359dad227d15e14\/style.scssc",
+		"oF": 0
+		},
+	"\/wp-content\/themes\/carnes-crossroads-2015\/scss\/poa\/.sass-cache\/c391cf8670d51d584f54c72e7359dad227d15e14\/variables.scssc": {
+		"ft": 8192,
+		"oA": 2,
+		"oAP": "\/wp-content\/themes\/carnes-crossroads-2015\/scss\/poa\/.sass-cache\/c391cf8670d51d584f54c72e7359dad227d15e14\/variables.scssc",
+		"oF": 0
+		},
 	"\/wp-content\/themes\/carnes-crossroads-2015\/scss\/poa\/events.scss": {
 		"aP": 0,
 		"bl": 0,
@@ -51166,6 +51342,18 @@
 		"oAP": "\/wp-content\/themes\/carnes-crossroads-2015\/src\/App\/Model\/HomesPage.php",
 		"oF": 0
 		},
+	"\/wp-content\/themes\/carnes-crossroads-2015\/src\/App\/Model\/iMap.php": {
+		"ft": 8192,
+		"oA": 2,
+		"oAP": "\/wp-content\/themes\/carnes-crossroads-2015\/src\/App\/Model\/iMap.php",
+		"oF": 0
+		},
+	"\/wp-content\/themes\/carnes-crossroads-2015\/src\/App\/Model\/iMapListing.php": {
+		"ft": 8192,
+		"oA": 2,
+		"oAP": "\/wp-content\/themes\/carnes-crossroads-2015\/src\/App\/Model\/iMapListing.php",
+		"oF": 0
+		},
 	"\/wp-content\/themes\/carnes-crossroads-2015\/src\/App\/Model\/Instagram.php": {
 		"ft": 8192,
 		"oA": 0,
@@ -51206,6 +51394,12 @@
 		"ft": 8192,
 		"oA": 0,
 		"oAP": "\/wp-content\/themes\/carnes-crossroads-2015\/src\/App\/Model\/Post.php",
+		"oF": 0
+		},
+	"\/wp-content\/themes\/carnes-crossroads-2015\/src\/App\/Model\/PropertyView.php": {
+		"ft": 8192,
+		"oA": 2,
+		"oAP": "\/wp-content\/themes\/carnes-crossroads-2015\/src\/App\/Model\/PropertyView.php",
 		"oF": 0
 		},
 	"\/wp-content\/themes\/carnes-crossroads-2015\/src\/App\/Model\/RealEstateAgent.php": {
@@ -51366,8 +51560,14 @@
 		},
 	"\/wp-content\/themes\/carnes-crossroads-2015\/src\/App\/View\/page-home-finder.twig": {
 		"ft": 8192,
-		"oA": 0,
+		"oA": 2,
 		"oAP": "\/wp-content\/themes\/carnes-crossroads-2015\/src\/App\/View\/page-home-finder.twig",
+		"oF": 0
+		},
+	"\/wp-content\/themes\/carnes-crossroads-2015\/src\/App\/View\/page-home-finder_v1.twig": {
+		"ft": 8192,
+		"oA": 0,
+		"oAP": "\/wp-content\/themes\/carnes-crossroads-2015\/src\/App\/View\/page-home-finder_v1.twig",
 		"oF": 0
 		},
 	"\/wp-content\/themes\/carnes-crossroads-2015\/src\/App\/View\/page-homes.twig": {
@@ -51380,6 +51580,12 @@
 		"ft": 8192,
 		"oA": 0,
 		"oAP": "\/wp-content\/themes\/carnes-crossroads-2015\/src\/App\/View\/page-privacy.twig",
+		"oF": 0
+		},
+	"\/wp-content\/themes\/carnes-crossroads-2015\/src\/App\/View\/page-property-view.twig": {
+		"ft": 8192,
+		"oA": 2,
+		"oAP": "\/wp-content\/themes\/carnes-crossroads-2015\/src\/App\/View\/page-property-view.twig",
 		"oF": 0
 		},
 	"\/wp-content\/themes\/carnes-crossroads-2015\/src\/App\/View\/page-terms-of-use.twig": {
@@ -51436,6 +51642,24 @@
 		"oAP": "\/wp-content\/themes\/carnes-crossroads-2015\/src\/App\/View\/partials\/home-finder\/floor-plan.twig",
 		"oF": 0
 		},
+	"\/wp-content\/themes\/carnes-crossroads-2015\/src\/App\/View\/partials\/home-finder\/homefinder-filters.twig": {
+		"ft": 8192,
+		"oA": 2,
+		"oAP": "\/wp-content\/themes\/carnes-crossroads-2015\/src\/App\/View\/partials\/home-finder\/homefinder-filters.twig",
+		"oF": 0
+		},
+	"\/wp-content\/themes\/carnes-crossroads-2015\/src\/App\/View\/partials\/home-finder\/map-legend-homes.twig": {
+		"ft": 8192,
+		"oA": 2,
+		"oAP": "\/wp-content\/themes\/carnes-crossroads-2015\/src\/App\/View\/partials\/home-finder\/map-legend-homes.twig",
+		"oF": 0
+		},
+	"\/wp-content\/themes\/carnes-crossroads-2015\/src\/App\/View\/partials\/home-finder\/map-legend-imap.twig": {
+		"ft": 8192,
+		"oA": 2,
+		"oAP": "\/wp-content\/themes\/carnes-crossroads-2015\/src\/App\/View\/partials\/home-finder\/map-legend-imap.twig",
+		"oF": 0
+		},
 	"\/wp-content\/themes\/carnes-crossroads-2015\/src\/App\/View\/partials\/home-finder\/map-tool-tip.twig": {
 		"ft": 8192,
 		"oA": 0,
@@ -51472,6 +51696,18 @@
 		"oAP": "\/wp-content\/themes\/carnes-crossroads-2015\/src\/App\/View\/partials\/home-finder\/print-view-of-property.twig",
 		"oF": 0
 		},
+	"\/wp-content\/themes\/carnes-crossroads-2015\/src\/App\/View\/partials\/home-finder\/property-list-grid.twig": {
+		"ft": 8192,
+		"oA": 2,
+		"oAP": "\/wp-content\/themes\/carnes-crossroads-2015\/src\/App\/View\/partials\/home-finder\/property-list-grid.twig",
+		"oF": 0
+		},
+	"\/wp-content\/themes\/carnes-crossroads-2015\/src\/App\/View\/partials\/home-finder\/property-list-map.twig": {
+		"ft": 8192,
+		"oA": 2,
+		"oAP": "\/wp-content\/themes\/carnes-crossroads-2015\/src\/App\/View\/partials\/home-finder\/property-list-map.twig",
+		"oF": 0
+		},
 	"\/wp-content\/themes\/carnes-crossroads-2015\/src\/App\/View\/partials\/home-finder\/property-list.twig": {
 		"ft": 8192,
 		"oA": 0,
@@ -51488,6 +51724,18 @@
 		"ft": 8192,
 		"oA": 0,
 		"oAP": "\/wp-content\/themes\/carnes-crossroads-2015\/src\/App\/View\/partials\/home-finder\/property.twig",
+		"oF": 0
+		},
+	"\/wp-content\/themes\/carnes-crossroads-2015\/src\/App\/View\/partials\/home-finder\/results-grid-view.twig": {
+		"ft": 8192,
+		"oA": 2,
+		"oAP": "\/wp-content\/themes\/carnes-crossroads-2015\/src\/App\/View\/partials\/home-finder\/results-grid-view.twig",
+		"oF": 0
+		},
+	"\/wp-content\/themes\/carnes-crossroads-2015\/src\/App\/View\/partials\/home-finder\/results-map-view.twig": {
+		"ft": 8192,
+		"oA": 2,
+		"oAP": "\/wp-content\/themes\/carnes-crossroads-2015\/src\/App\/View\/partials\/home-finder\/results-map-view.twig",
 		"oF": 0
 		},
 	"\/wp-content\/themes\/carnes-crossroads-2015\/src\/App\/View\/partials\/layer-content.twig": {
@@ -55241,14 +55489,6 @@
 		"oF": 0,
 		"opt": 0
 		},
-	"\/wp-content\/uploads\/2015\/07\/fireworks-335x317-c-default.jpg": {
-		"ft": 16384,
-		"iS": 20049,
-		"oA": 0,
-		"oAP": "\/wp-content\/uploads\/2015\/07\/fireworks-335x317-c-default.jpg",
-		"oF": 0,
-		"opt": 0
-		},
 	"\/wp-content\/uploads\/2015\/07\/fireworks.jpg": {
 		"ft": 16384,
 		"iS": 42001,
@@ -55646,14 +55886,6 @@
 		"iS": 19743,
 		"oA": 0,
 		"oAP": "\/wp-content\/uploads\/2015\/11\/Carnes-Crossroads-Wieland-Model01-300x200.jpg",
-		"oF": 0,
-		"opt": 0
-		},
-	"\/wp-content\/uploads\/2015\/11\/Carnes-Crossroads-Wieland-Model01-335x317-c-default.jpg": {
-		"ft": 16384,
-		"iS": 20936,
-		"oA": 0,
-		"oAP": "\/wp-content\/uploads\/2015\/11\/Carnes-Crossroads-Wieland-Model01-335x317-c-default.jpg",
 		"oF": 0,
 		"opt": 0
 		},
@@ -56193,14 +56425,6 @@
 		"oF": 0,
 		"opt": 0
 		},
-	"\/wp-content\/uploads\/2015\/11\/contact-updated2-1500x0-c-default.jpg": {
-		"ft": 16384,
-		"iS": 270909,
-		"oA": 0,
-		"oAP": "\/wp-content\/uploads\/2015\/11\/contact-updated2-1500x0-c-default.jpg",
-		"oF": 0,
-		"opt": 0
-		},
 	"\/wp-content\/uploads\/2015\/11\/contact-updated2-150x150.jpg": {
 		"ft": 16384,
 		"iS": 11249,
@@ -56446,14 +56670,6 @@
 		"iS": 307365,
 		"oA": 0,
 		"oAP": "\/wp-content\/uploads\/2015\/11\/location-updated2-1024x682.jpg",
-		"oF": 0,
-		"opt": 0
-		},
-	"\/wp-content\/uploads\/2015\/11\/location-updated2-1500x0-c-default.jpg": {
-		"ft": 16384,
-		"iS": 400653,
-		"oA": 0,
-		"oAP": "\/wp-content\/uploads\/2015\/11\/location-updated2-1500x0-c-default.jpg",
 		"oF": 0,
 		"opt": 0
 		},
@@ -56825,14 +57041,6 @@
 		"oF": 0,
 		"opt": 0
 		},
-	"\/wp-content\/uploads\/2015\/11\/Sweetgrass-Pediatrics-Carnes-Crossroads-Opening-335x317-c-default.jpg": {
-		"ft": 16384,
-		"iS": 28131,
-		"oA": 0,
-		"oAP": "\/wp-content\/uploads\/2015\/11\/Sweetgrass-Pediatrics-Carnes-Crossroads-Opening-335x317-c-default.jpg",
-		"oF": 0,
-		"opt": 0
-		},
 	"\/wp-content\/uploads\/2015\/11\/Sweetgrass-Pediatrics-Carnes-Crossroads-Opening-768x513.jpg": {
 		"ft": 16384,
 		"iS": 107829,
@@ -56862,14 +57070,6 @@
 		"iS": 22423,
 		"oA": 0,
 		"oAP": "\/wp-content\/uploads\/2015\/11\/The-Blake-Carnes-Crossroads-300x181.jpeg",
-		"oF": 0,
-		"opt": 0
-		},
-	"\/wp-content\/uploads\/2015\/11\/The-Blake-Carnes-Crossroads-335x317-c-default.jpeg": {
-		"ft": 16384,
-		"iS": 24571,
-		"oA": 0,
-		"oAP": "\/wp-content\/uploads\/2015\/11\/The-Blake-Carnes-Crossroads-335x317-c-default.jpeg",
 		"oF": 0,
 		"opt": 0
 		},
@@ -57098,14 +57298,6 @@
 		"iS": 29649,
 		"oA": 0,
 		"oAP": "\/wp-content\/uploads\/2015\/12\/Carnes-Crossroads-Holiday-Market8-300x200.jpg",
-		"oF": 0,
-		"opt": 0
-		},
-	"\/wp-content\/uploads\/2015\/12\/Carnes-Crossroads-Holiday-Market8-335x317-c-default.jpg": {
-		"ft": 16384,
-		"iS": 34863,
-		"oA": 0,
-		"oAP": "\/wp-content\/uploads\/2015\/12\/Carnes-Crossroads-Holiday-Market8-335x317-c-default.jpg",
 		"oF": 0,
 		"opt": 0
 		},
@@ -58639,6 +58831,44 @@
 		"oAP": "\/wp-content\/uploads\/2016\/01\/11-2016-Randall-Home-Plan-flyer-X1A.pdf",
 		"oF": 0
 		},
+	"\/wp-content\/uploads\/2016\/01\/12-2016-Randall-FP-Only-116x150.jpg": {
+		"ft": 16384,
+		"iS": 3975,
+		"oA": 0,
+		"oAP": "\/wp-content\/uploads\/2016\/01\/12-2016-Randall-FP-Only-116x150.jpg",
+		"oF": 0,
+		"opt": 0
+		},
+	"\/wp-content\/uploads\/2016\/01\/12-2016-Randall-FP-Only-232x300.jpg": {
+		"ft": 16384,
+		"iS": 10930,
+		"oA": 0,
+		"oAP": "\/wp-content\/uploads\/2016\/01\/12-2016-Randall-FP-Only-232x300.jpg",
+		"oF": 0,
+		"opt": 0
+		},
+	"\/wp-content\/uploads\/2016\/01\/12-2016-Randall-FP-Only-791x1024.jpg": {
+		"ft": 16384,
+		"iS": 71927,
+		"oA": 0,
+		"oAP": "\/wp-content\/uploads\/2016\/01\/12-2016-Randall-FP-Only-791x1024.jpg",
+		"oF": 0,
+		"opt": 0
+		},
+	"\/wp-content\/uploads\/2016\/01\/12-2016-Randall-FP-Only.jpg": {
+		"ft": 16384,
+		"iS": 204758,
+		"oA": 0,
+		"oAP": "\/wp-content\/uploads\/2016\/01\/12-2016-Randall-FP-Only.jpg",
+		"oF": 0,
+		"opt": 0
+		},
+	"\/wp-content\/uploads\/2016\/01\/12-2016-Randall-FP-Only.pdf": {
+		"ft": 8192,
+		"oA": 2,
+		"oAP": "\/wp-content\/uploads\/2016\/01\/12-2016-Randall-FP-Only.pdf",
+		"oF": 0
+		},
 	"\/wp-content\/uploads\/2016\/01\/12-2016-Randall-Home-Plan-flyer-X1A-116x150.jpg": {
 		"ft": 16384,
 		"iS": 10622,
@@ -58646,6 +58876,82 @@
 		"oAP": "\/wp-content\/uploads\/2016\/01\/12-2016-Randall-Home-Plan-flyer-X1A-116x150.jpg",
 		"oF": 0,
 		"opt": 0
+		},
+	"\/wp-content\/uploads\/2016\/01\/12-2016-Randall-Home-Plan-flyer-X1A-2-1-116x150.jpg": {
+		"ft": 16384,
+		"iS": 4914,
+		"oA": 0,
+		"oAP": "\/wp-content\/uploads\/2016\/01\/12-2016-Randall-Home-Plan-flyer-X1A-2-1-116x150.jpg",
+		"oF": 0,
+		"opt": 0
+		},
+	"\/wp-content\/uploads\/2016\/01\/12-2016-Randall-Home-Plan-flyer-X1A-2-1-232x300.jpg": {
+		"ft": 16384,
+		"iS": 14780,
+		"oA": 0,
+		"oAP": "\/wp-content\/uploads\/2016\/01\/12-2016-Randall-Home-Plan-flyer-X1A-2-1-232x300.jpg",
+		"oF": 0,
+		"opt": 0
+		},
+	"\/wp-content\/uploads\/2016\/01\/12-2016-Randall-Home-Plan-flyer-X1A-2-1-791x1024.jpg": {
+		"ft": 16384,
+		"iS": 123500,
+		"oA": 0,
+		"oAP": "\/wp-content\/uploads\/2016\/01\/12-2016-Randall-Home-Plan-flyer-X1A-2-1-791x1024.jpg",
+		"oF": 0,
+		"opt": 0
+		},
+	"\/wp-content\/uploads\/2016\/01\/12-2016-Randall-Home-Plan-flyer-X1A-2-1.jpg": {
+		"ft": 16384,
+		"iS": 651035,
+		"oA": 0,
+		"oAP": "\/wp-content\/uploads\/2016\/01\/12-2016-Randall-Home-Plan-flyer-X1A-2-1.jpg",
+		"oF": 0,
+		"opt": 0
+		},
+	"\/wp-content\/uploads\/2016\/01\/12-2016-Randall-Home-Plan-flyer-X1A-2-1.pdf": {
+		"ft": 8192,
+		"oA": 2,
+		"oAP": "\/wp-content\/uploads\/2016\/01\/12-2016-Randall-Home-Plan-flyer-X1A-2-1.pdf",
+		"oF": 0
+		},
+	"\/wp-content\/uploads\/2016\/01\/12-2016-Randall-Home-Plan-flyer-X1A-2-116x150.jpg": {
+		"ft": 16384,
+		"iS": 4914,
+		"oA": 0,
+		"oAP": "\/wp-content\/uploads\/2016\/01\/12-2016-Randall-Home-Plan-flyer-X1A-2-116x150.jpg",
+		"oF": 0,
+		"opt": 0
+		},
+	"\/wp-content\/uploads\/2016\/01\/12-2016-Randall-Home-Plan-flyer-X1A-2-232x300.jpg": {
+		"ft": 16384,
+		"iS": 14780,
+		"oA": 0,
+		"oAP": "\/wp-content\/uploads\/2016\/01\/12-2016-Randall-Home-Plan-flyer-X1A-2-232x300.jpg",
+		"oF": 0,
+		"opt": 0
+		},
+	"\/wp-content\/uploads\/2016\/01\/12-2016-Randall-Home-Plan-flyer-X1A-2-791x1024.jpg": {
+		"ft": 16384,
+		"iS": 123500,
+		"oA": 0,
+		"oAP": "\/wp-content\/uploads\/2016\/01\/12-2016-Randall-Home-Plan-flyer-X1A-2-791x1024.jpg",
+		"oF": 0,
+		"opt": 0
+		},
+	"\/wp-content\/uploads\/2016\/01\/12-2016-Randall-Home-Plan-flyer-X1A-2.jpg": {
+		"ft": 16384,
+		"iS": 651035,
+		"oA": 0,
+		"oAP": "\/wp-content\/uploads\/2016\/01\/12-2016-Randall-Home-Plan-flyer-X1A-2.jpg",
+		"oF": 0,
+		"opt": 0
+		},
+	"\/wp-content\/uploads\/2016\/01\/12-2016-Randall-Home-Plan-flyer-X1A-2.pdf": {
+		"ft": 8192,
+		"oA": 2,
+		"oAP": "\/wp-content\/uploads\/2016\/01\/12-2016-Randall-Home-Plan-flyer-X1A-2.pdf",
+		"oF": 0
 		},
 	"\/wp-content\/uploads\/2016\/01\/12-2016-Randall-Home-Plan-flyer-X1A-232x300.jpg": {
 		"ft": 16384,
@@ -58713,6 +59019,158 @@
 		"ft": 8192,
 		"oA": 2,
 		"oAP": "\/wp-content\/uploads\/2016\/01\/12-2016-Randall-Home-Plan-flyer-X1A.pdf",
+		"oF": 0
+		},
+	"\/wp-content\/uploads\/2016\/01\/12-2016-Riverside-FP-Only-116x150.jpg": {
+		"ft": 16384,
+		"iS": 4238,
+		"oA": 0,
+		"oAP": "\/wp-content\/uploads\/2016\/01\/12-2016-Riverside-FP-Only-116x150.jpg",
+		"oF": 0,
+		"opt": 0
+		},
+	"\/wp-content\/uploads\/2016\/01\/12-2016-Riverside-FP-Only-232x300.jpg": {
+		"ft": 16384,
+		"iS": 11384,
+		"oA": 0,
+		"oAP": "\/wp-content\/uploads\/2016\/01\/12-2016-Riverside-FP-Only-232x300.jpg",
+		"oF": 0,
+		"opt": 0
+		},
+	"\/wp-content\/uploads\/2016\/01\/12-2016-Riverside-FP-Only-791x1024.jpg": {
+		"ft": 16384,
+		"iS": 72842,
+		"oA": 0,
+		"oAP": "\/wp-content\/uploads\/2016\/01\/12-2016-Riverside-FP-Only-791x1024.jpg",
+		"oF": 0,
+		"opt": 0
+		},
+	"\/wp-content\/uploads\/2016\/01\/12-2016-Riverside-FP-Only.jpg": {
+		"ft": 16384,
+		"iS": 195365,
+		"oA": 0,
+		"oAP": "\/wp-content\/uploads\/2016\/01\/12-2016-Riverside-FP-Only.jpg",
+		"oF": 0,
+		"opt": 0
+		},
+	"\/wp-content\/uploads\/2016\/01\/12-2016-Riverside-FP-Only.pdf": {
+		"ft": 8192,
+		"oA": 2,
+		"oAP": "\/wp-content\/uploads\/2016\/01\/12-2016-Riverside-FP-Only.pdf",
+		"oF": 0
+		},
+	"\/wp-content\/uploads\/2016\/01\/12-2016-Riverside-Home-Plan-flyer-X1A-2-116x150.jpg": {
+		"ft": 16384,
+		"iS": 4795,
+		"oA": 0,
+		"oAP": "\/wp-content\/uploads\/2016\/01\/12-2016-Riverside-Home-Plan-flyer-X1A-2-116x150.jpg",
+		"oF": 0,
+		"opt": 0
+		},
+	"\/wp-content\/uploads\/2016\/01\/12-2016-Riverside-Home-Plan-flyer-X1A-2-232x300.jpg": {
+		"ft": 16384,
+		"iS": 14465,
+		"oA": 0,
+		"oAP": "\/wp-content\/uploads\/2016\/01\/12-2016-Riverside-Home-Plan-flyer-X1A-2-232x300.jpg",
+		"oF": 0,
+		"opt": 0
+		},
+	"\/wp-content\/uploads\/2016\/01\/12-2016-Riverside-Home-Plan-flyer-X1A-2-791x1024.jpg": {
+		"ft": 16384,
+		"iS": 115642,
+		"oA": 0,
+		"oAP": "\/wp-content\/uploads\/2016\/01\/12-2016-Riverside-Home-Plan-flyer-X1A-2-791x1024.jpg",
+		"oF": 0,
+		"opt": 0
+		},
+	"\/wp-content\/uploads\/2016\/01\/12-2016-Riverside-Home-Plan-flyer-X1A-2.jpg": {
+		"ft": 16384,
+		"iS": 614771,
+		"oA": 0,
+		"oAP": "\/wp-content\/uploads\/2016\/01\/12-2016-Riverside-Home-Plan-flyer-X1A-2.jpg",
+		"oF": 0,
+		"opt": 0
+		},
+	"\/wp-content\/uploads\/2016\/01\/12-2016-Riverside-Home-Plan-flyer-X1A-2.pdf": {
+		"ft": 8192,
+		"oA": 2,
+		"oAP": "\/wp-content\/uploads\/2016\/01\/12-2016-Riverside-Home-Plan-flyer-X1A-2.pdf",
+		"oF": 0
+		},
+	"\/wp-content\/uploads\/2016\/01\/12-2016-Roanoke-FP-Only-116x150.jpg": {
+		"ft": 16384,
+		"iS": 3983,
+		"oA": 0,
+		"oAP": "\/wp-content\/uploads\/2016\/01\/12-2016-Roanoke-FP-Only-116x150.jpg",
+		"oF": 0,
+		"opt": 0
+		},
+	"\/wp-content\/uploads\/2016\/01\/12-2016-Roanoke-FP-Only-232x300.jpg": {
+		"ft": 16384,
+		"iS": 10684,
+		"oA": 0,
+		"oAP": "\/wp-content\/uploads\/2016\/01\/12-2016-Roanoke-FP-Only-232x300.jpg",
+		"oF": 0,
+		"opt": 0
+		},
+	"\/wp-content\/uploads\/2016\/01\/12-2016-Roanoke-FP-Only-791x1024.jpg": {
+		"ft": 16384,
+		"iS": 67671,
+		"oA": 0,
+		"oAP": "\/wp-content\/uploads\/2016\/01\/12-2016-Roanoke-FP-Only-791x1024.jpg",
+		"oF": 0,
+		"opt": 0
+		},
+	"\/wp-content\/uploads\/2016\/01\/12-2016-Roanoke-FP-Only.jpg": {
+		"ft": 16384,
+		"iS": 183941,
+		"oA": 0,
+		"oAP": "\/wp-content\/uploads\/2016\/01\/12-2016-Roanoke-FP-Only.jpg",
+		"oF": 0,
+		"opt": 0
+		},
+	"\/wp-content\/uploads\/2016\/01\/12-2016-Roanoke-FP-Only.pdf": {
+		"ft": 8192,
+		"oA": 2,
+		"oAP": "\/wp-content\/uploads\/2016\/01\/12-2016-Roanoke-FP-Only.pdf",
+		"oF": 0
+		},
+	"\/wp-content\/uploads\/2016\/01\/12-2016-Roanoke-Home-Plan-flyer-X1A-2-116x150.jpg": {
+		"ft": 16384,
+		"iS": 4662,
+		"oA": 0,
+		"oAP": "\/wp-content\/uploads\/2016\/01\/12-2016-Roanoke-Home-Plan-flyer-X1A-2-116x150.jpg",
+		"oF": 0,
+		"opt": 0
+		},
+	"\/wp-content\/uploads\/2016\/01\/12-2016-Roanoke-Home-Plan-flyer-X1A-2-232x300.jpg": {
+		"ft": 16384,
+		"iS": 13601,
+		"oA": 0,
+		"oAP": "\/wp-content\/uploads\/2016\/01\/12-2016-Roanoke-Home-Plan-flyer-X1A-2-232x300.jpg",
+		"oF": 0,
+		"opt": 0
+		},
+	"\/wp-content\/uploads\/2016\/01\/12-2016-Roanoke-Home-Plan-flyer-X1A-2-791x1024.jpg": {
+		"ft": 16384,
+		"iS": 105923,
+		"oA": 0,
+		"oAP": "\/wp-content\/uploads\/2016\/01\/12-2016-Roanoke-Home-Plan-flyer-X1A-2-791x1024.jpg",
+		"oF": 0,
+		"opt": 0
+		},
+	"\/wp-content\/uploads\/2016\/01\/12-2016-Roanoke-Home-Plan-flyer-X1A-2.jpg": {
+		"ft": 16384,
+		"iS": 548158,
+		"oA": 0,
+		"oAP": "\/wp-content\/uploads\/2016\/01\/12-2016-Roanoke-Home-Plan-flyer-X1A-2.jpg",
+		"oF": 0,
+		"opt": 0
+		},
+	"\/wp-content\/uploads\/2016\/01\/12-2016-Roanoke-Home-Plan-flyer-X1A-2.pdf": {
+		"ft": 8192,
+		"oA": 2,
+		"oAP": "\/wp-content\/uploads\/2016\/01\/12-2016-Roanoke-Home-Plan-flyer-X1A-2.pdf",
 		"oF": 0
 		},
 	"\/wp-content\/uploads\/2016\/01\/14683415-150317-1024x642.jpg": {
@@ -59655,6 +60113,82 @@
 		"oF": 0,
 		"opt": 0
 		},
+	"\/wp-content\/uploads\/2016\/01\/Beaufain-Home-Plan-Flyer-1-17-FPonly-116x150.jpg": {
+		"ft": 16384,
+		"iS": 4704,
+		"oA": 0,
+		"oAP": "\/wp-content\/uploads\/2016\/01\/Beaufain-Home-Plan-Flyer-1-17-FPonly-116x150.jpg",
+		"oF": 0,
+		"opt": 0
+		},
+	"\/wp-content\/uploads\/2016\/01\/Beaufain-Home-Plan-Flyer-1-17-FPonly-232x300.jpg": {
+		"ft": 16384,
+		"iS": 13084,
+		"oA": 0,
+		"oAP": "\/wp-content\/uploads\/2016\/01\/Beaufain-Home-Plan-Flyer-1-17-FPonly-232x300.jpg",
+		"oF": 0,
+		"opt": 0
+		},
+	"\/wp-content\/uploads\/2016\/01\/Beaufain-Home-Plan-Flyer-1-17-FPonly-791x1024.jpg": {
+		"ft": 16384,
+		"iS": 83099,
+		"oA": 0,
+		"oAP": "\/wp-content\/uploads\/2016\/01\/Beaufain-Home-Plan-Flyer-1-17-FPonly-791x1024.jpg",
+		"oF": 0,
+		"opt": 0
+		},
+	"\/wp-content\/uploads\/2016\/01\/Beaufain-Home-Plan-Flyer-1-17-FPonly.jpg": {
+		"ft": 16384,
+		"iS": 379476,
+		"oA": 0,
+		"oAP": "\/wp-content\/uploads\/2016\/01\/Beaufain-Home-Plan-Flyer-1-17-FPonly.jpg",
+		"oF": 0,
+		"opt": 0
+		},
+	"\/wp-content\/uploads\/2016\/01\/Beaufain-Home-Plan-Flyer-1-17-FPonly.pdf": {
+		"ft": 8192,
+		"oA": 2,
+		"oAP": "\/wp-content\/uploads\/2016\/01\/Beaufain-Home-Plan-Flyer-1-17-FPonly.pdf",
+		"oF": 0
+		},
+	"\/wp-content\/uploads\/2016\/01\/Beaufain-Home-Plan-Flyer-1-17-X1A-116x150.jpg": {
+		"ft": 16384,
+		"iS": 4677,
+		"oA": 0,
+		"oAP": "\/wp-content\/uploads\/2016\/01\/Beaufain-Home-Plan-Flyer-1-17-X1A-116x150.jpg",
+		"oF": 0,
+		"opt": 0
+		},
+	"\/wp-content\/uploads\/2016\/01\/Beaufain-Home-Plan-Flyer-1-17-X1A-232x300.jpg": {
+		"ft": 16384,
+		"iS": 14221,
+		"oA": 0,
+		"oAP": "\/wp-content\/uploads\/2016\/01\/Beaufain-Home-Plan-Flyer-1-17-X1A-232x300.jpg",
+		"oF": 0,
+		"opt": 0
+		},
+	"\/wp-content\/uploads\/2016\/01\/Beaufain-Home-Plan-Flyer-1-17-X1A-791x1024.jpg": {
+		"ft": 16384,
+		"iS": 117339,
+		"oA": 0,
+		"oAP": "\/wp-content\/uploads\/2016\/01\/Beaufain-Home-Plan-Flyer-1-17-X1A-791x1024.jpg",
+		"oF": 0,
+		"opt": 0
+		},
+	"\/wp-content\/uploads\/2016\/01\/Beaufain-Home-Plan-Flyer-1-17-X1A.jpg": {
+		"ft": 16384,
+		"iS": 605772,
+		"oA": 0,
+		"oAP": "\/wp-content\/uploads\/2016\/01\/Beaufain-Home-Plan-Flyer-1-17-X1A.jpg",
+		"oF": 0,
+		"opt": 0
+		},
+	"\/wp-content\/uploads\/2016\/01\/Beaufain-Home-Plan-Flyer-1-17-X1A.pdf": {
+		"ft": 8192,
+		"oA": 2,
+		"oAP": "\/wp-content\/uploads\/2016\/01\/Beaufain-Home-Plan-Flyer-1-17-X1A.pdf",
+		"oF": 0
+		},
 	"\/wp-content\/uploads\/2016\/01\/Beaufain-Home-Plan-Flyer-X1A-FP-only.pdf": {
 		"ft": 8192,
 		"oA": 2,
@@ -59867,6 +60401,82 @@
 		"oF": 0,
 		"opt": 0
 		},
+	"\/wp-content\/uploads\/2016\/01\/Camelia-Home-Plan-Flyer-1-17-FPonly-116x150.jpg": {
+		"ft": 16384,
+		"iS": 4740,
+		"oA": 0,
+		"oAP": "\/wp-content\/uploads\/2016\/01\/Camelia-Home-Plan-Flyer-1-17-FPonly-116x150.jpg",
+		"oF": 0,
+		"opt": 0
+		},
+	"\/wp-content\/uploads\/2016\/01\/Camelia-Home-Plan-Flyer-1-17-FPonly-232x300.jpg": {
+		"ft": 16384,
+		"iS": 14029,
+		"oA": 0,
+		"oAP": "\/wp-content\/uploads\/2016\/01\/Camelia-Home-Plan-Flyer-1-17-FPonly-232x300.jpg",
+		"oF": 0,
+		"opt": 0
+		},
+	"\/wp-content\/uploads\/2016\/01\/Camelia-Home-Plan-Flyer-1-17-FPonly-791x1024.jpg": {
+		"ft": 16384,
+		"iS": 91440,
+		"oA": 0,
+		"oAP": "\/wp-content\/uploads\/2016\/01\/Camelia-Home-Plan-Flyer-1-17-FPonly-791x1024.jpg",
+		"oF": 0,
+		"opt": 0
+		},
+	"\/wp-content\/uploads\/2016\/01\/Camelia-Home-Plan-Flyer-1-17-FPonly.jpg": {
+		"ft": 16384,
+		"iS": 449185,
+		"oA": 0,
+		"oAP": "\/wp-content\/uploads\/2016\/01\/Camelia-Home-Plan-Flyer-1-17-FPonly.jpg",
+		"oF": 0,
+		"opt": 0
+		},
+	"\/wp-content\/uploads\/2016\/01\/Camelia-Home-Plan-Flyer-1-17-FPonly.pdf": {
+		"ft": 8192,
+		"oA": 2,
+		"oAP": "\/wp-content\/uploads\/2016\/01\/Camelia-Home-Plan-Flyer-1-17-FPonly.pdf",
+		"oF": 0
+		},
+	"\/wp-content\/uploads\/2016\/01\/Camelia-Home-Plan-Flyer-1-17-X1A-116x150.jpg": {
+		"ft": 16384,
+		"iS": 4840,
+		"oA": 0,
+		"oAP": "\/wp-content\/uploads\/2016\/01\/Camelia-Home-Plan-Flyer-1-17-X1A-116x150.jpg",
+		"oF": 0,
+		"opt": 0
+		},
+	"\/wp-content\/uploads\/2016\/01\/Camelia-Home-Plan-Flyer-1-17-X1A-232x300.jpg": {
+		"ft": 16384,
+		"iS": 14547,
+		"oA": 0,
+		"oAP": "\/wp-content\/uploads\/2016\/01\/Camelia-Home-Plan-Flyer-1-17-X1A-232x300.jpg",
+		"oF": 0,
+		"opt": 0
+		},
+	"\/wp-content\/uploads\/2016\/01\/Camelia-Home-Plan-Flyer-1-17-X1A-791x1024.jpg": {
+		"ft": 16384,
+		"iS": 122606,
+		"oA": 0,
+		"oAP": "\/wp-content\/uploads\/2016\/01\/Camelia-Home-Plan-Flyer-1-17-X1A-791x1024.jpg",
+		"oF": 0,
+		"opt": 0
+		},
+	"\/wp-content\/uploads\/2016\/01\/Camelia-Home-Plan-Flyer-1-17-X1A.jpg": {
+		"ft": 16384,
+		"iS": 626030,
+		"oA": 0,
+		"oAP": "\/wp-content\/uploads\/2016\/01\/Camelia-Home-Plan-Flyer-1-17-X1A.jpg",
+		"oF": 0,
+		"opt": 0
+		},
+	"\/wp-content\/uploads\/2016\/01\/Camelia-Home-Plan-Flyer-1-17-X1A.pdf": {
+		"ft": 8192,
+		"oA": 2,
+		"oAP": "\/wp-content\/uploads\/2016\/01\/Camelia-Home-Plan-Flyer-1-17-X1A.pdf",
+		"oF": 0
+		},
 	"\/wp-content\/uploads\/2016\/01\/Camelia.jpg": {
 		"ft": 16384,
 		"iS": 2006231,
@@ -59888,14 +60498,6 @@
 		"iS": 15269,
 		"oA": 0,
 		"oAP": "\/wp-content\/uploads\/2016\/01\/Carnes-Crossroads-Neighborhood-Market-300x150.jpg",
-		"oF": 0,
-		"opt": 0
-		},
-	"\/wp-content\/uploads\/2016\/01\/Carnes-Crossroads-Neighborhood-Market-335x317-c-default.jpg": {
-		"ft": 16384,
-		"iS": 19541,
-		"oA": 0,
-		"oAP": "\/wp-content\/uploads\/2016\/01\/Carnes-Crossroads-Neighborhood-Market-335x317-c-default.jpg",
 		"oF": 0,
 		"opt": 0
 		},
@@ -59947,10 +60549,162 @@
 		"oF": 0,
 		"opt": 0
 		},
+	"\/wp-content\/uploads\/2016\/01\/Chesapeake-Home-Plan-Flyer-1-17-FPonly-116x150.jpg": {
+		"ft": 16384,
+		"iS": 4962,
+		"oA": 0,
+		"oAP": "\/wp-content\/uploads\/2016\/01\/Chesapeake-Home-Plan-Flyer-1-17-FPonly-116x150.jpg",
+		"oF": 0,
+		"opt": 0
+		},
+	"\/wp-content\/uploads\/2016\/01\/Chesapeake-Home-Plan-Flyer-1-17-FPonly-232x300.jpg": {
+		"ft": 16384,
+		"iS": 14986,
+		"oA": 0,
+		"oAP": "\/wp-content\/uploads\/2016\/01\/Chesapeake-Home-Plan-Flyer-1-17-FPonly-232x300.jpg",
+		"oF": 0,
+		"opt": 0
+		},
+	"\/wp-content\/uploads\/2016\/01\/Chesapeake-Home-Plan-Flyer-1-17-FPonly-791x1024.jpg": {
+		"ft": 16384,
+		"iS": 102876,
+		"oA": 0,
+		"oAP": "\/wp-content\/uploads\/2016\/01\/Chesapeake-Home-Plan-Flyer-1-17-FPonly-791x1024.jpg",
+		"oF": 0,
+		"opt": 0
+		},
+	"\/wp-content\/uploads\/2016\/01\/Chesapeake-Home-Plan-Flyer-1-17-FPonly.jpg": {
+		"ft": 16384,
+		"iS": 291843,
+		"oA": 0,
+		"oAP": "\/wp-content\/uploads\/2016\/01\/Chesapeake-Home-Plan-Flyer-1-17-FPonly.jpg",
+		"oF": 0,
+		"opt": 0
+		},
+	"\/wp-content\/uploads\/2016\/01\/Chesapeake-Home-Plan-Flyer-1-17-FPonly.pdf": {
+		"ft": 8192,
+		"oA": 2,
+		"oAP": "\/wp-content\/uploads\/2016\/01\/Chesapeake-Home-Plan-Flyer-1-17-FPonly.pdf",
+		"oF": 0
+		},
+	"\/wp-content\/uploads\/2016\/01\/Chesapeake-Home-Plan-Flyer-1-17-X1A-116x150.jpg": {
+		"ft": 16384,
+		"iS": 4685,
+		"oA": 0,
+		"oAP": "\/wp-content\/uploads\/2016\/01\/Chesapeake-Home-Plan-Flyer-1-17-X1A-116x150.jpg",
+		"oF": 0,
+		"opt": 0
+		},
+	"\/wp-content\/uploads\/2016\/01\/Chesapeake-Home-Plan-Flyer-1-17-X1A-232x300.jpg": {
+		"ft": 16384,
+		"iS": 13697,
+		"oA": 0,
+		"oAP": "\/wp-content\/uploads\/2016\/01\/Chesapeake-Home-Plan-Flyer-1-17-X1A-232x300.jpg",
+		"oF": 0,
+		"opt": 0
+		},
+	"\/wp-content\/uploads\/2016\/01\/Chesapeake-Home-Plan-Flyer-1-17-X1A-791x1024.jpg": {
+		"ft": 16384,
+		"iS": 115947,
+		"oA": 0,
+		"oAP": "\/wp-content\/uploads\/2016\/01\/Chesapeake-Home-Plan-Flyer-1-17-X1A-791x1024.jpg",
+		"oF": 0,
+		"opt": 0
+		},
+	"\/wp-content\/uploads\/2016\/01\/Chesapeake-Home-Plan-Flyer-1-17-X1A.jpg": {
+		"ft": 16384,
+		"iS": 638586,
+		"oA": 0,
+		"oAP": "\/wp-content\/uploads\/2016\/01\/Chesapeake-Home-Plan-Flyer-1-17-X1A.jpg",
+		"oF": 0,
+		"opt": 0
+		},
+	"\/wp-content\/uploads\/2016\/01\/Chesapeake-Home-Plan-Flyer-1-17-X1A.pdf": {
+		"ft": 8192,
+		"oA": 2,
+		"oAP": "\/wp-content\/uploads\/2016\/01\/Chesapeake-Home-Plan-Flyer-1-17-X1A.pdf",
+		"oF": 0
+		},
 	"\/wp-content\/uploads\/2016\/01\/Chestnut-BW-print-2.pdf": {
 		"ft": 8192,
 		"oA": 2,
 		"oAP": "\/wp-content\/uploads\/2016\/01\/Chestnut-BW-print-2.pdf",
+		"oF": 0
+		},
+	"\/wp-content\/uploads\/2016\/01\/Chestnut-Home-Plan-Flyer-1-17-FPonly-116x150.jpg": {
+		"ft": 16384,
+		"iS": 4205,
+		"oA": 0,
+		"oAP": "\/wp-content\/uploads\/2016\/01\/Chestnut-Home-Plan-Flyer-1-17-FPonly-116x150.jpg",
+		"oF": 0,
+		"opt": 0
+		},
+	"\/wp-content\/uploads\/2016\/01\/Chestnut-Home-Plan-Flyer-1-17-FPonly-232x300.jpg": {
+		"ft": 16384,
+		"iS": 12155,
+		"oA": 0,
+		"oAP": "\/wp-content\/uploads\/2016\/01\/Chestnut-Home-Plan-Flyer-1-17-FPonly-232x300.jpg",
+		"oF": 0,
+		"opt": 0
+		},
+	"\/wp-content\/uploads\/2016\/01\/Chestnut-Home-Plan-Flyer-1-17-FPonly-791x1024.jpg": {
+		"ft": 16384,
+		"iS": 77976,
+		"oA": 0,
+		"oAP": "\/wp-content\/uploads\/2016\/01\/Chestnut-Home-Plan-Flyer-1-17-FPonly-791x1024.jpg",
+		"oF": 0,
+		"opt": 0
+		},
+	"\/wp-content\/uploads\/2016\/01\/Chestnut-Home-Plan-Flyer-1-17-FPonly.jpg": {
+		"ft": 16384,
+		"iS": 218405,
+		"oA": 0,
+		"oAP": "\/wp-content\/uploads\/2016\/01\/Chestnut-Home-Plan-Flyer-1-17-FPonly.jpg",
+		"oF": 0,
+		"opt": 0
+		},
+	"\/wp-content\/uploads\/2016\/01\/Chestnut-Home-Plan-Flyer-1-17-FPonly.pdf": {
+		"ft": 8192,
+		"oA": 2,
+		"oAP": "\/wp-content\/uploads\/2016\/01\/Chestnut-Home-Plan-Flyer-1-17-FPonly.pdf",
+		"oF": 0
+		},
+	"\/wp-content\/uploads\/2016\/01\/Chestnut-Home-Plan-Flyer-1-17-X1A-116x150.jpg": {
+		"ft": 16384,
+		"iS": 4563,
+		"oA": 0,
+		"oAP": "\/wp-content\/uploads\/2016\/01\/Chestnut-Home-Plan-Flyer-1-17-X1A-116x150.jpg",
+		"oF": 0,
+		"opt": 0
+		},
+	"\/wp-content\/uploads\/2016\/01\/Chestnut-Home-Plan-Flyer-1-17-X1A-232x300.jpg": {
+		"ft": 16384,
+		"iS": 13639,
+		"oA": 0,
+		"oAP": "\/wp-content\/uploads\/2016\/01\/Chestnut-Home-Plan-Flyer-1-17-X1A-232x300.jpg",
+		"oF": 0,
+		"opt": 0
+		},
+	"\/wp-content\/uploads\/2016\/01\/Chestnut-Home-Plan-Flyer-1-17-X1A-791x1024.jpg": {
+		"ft": 16384,
+		"iS": 119309,
+		"oA": 0,
+		"oAP": "\/wp-content\/uploads\/2016\/01\/Chestnut-Home-Plan-Flyer-1-17-X1A-791x1024.jpg",
+		"oF": 0,
+		"opt": 0
+		},
+	"\/wp-content\/uploads\/2016\/01\/Chestnut-Home-Plan-Flyer-1-17-X1A.jpg": {
+		"ft": 16384,
+		"iS": 638890,
+		"oA": 0,
+		"oAP": "\/wp-content\/uploads\/2016\/01\/Chestnut-Home-Plan-Flyer-1-17-X1A.jpg",
+		"oF": 0,
+		"opt": 0
+		},
+	"\/wp-content\/uploads\/2016\/01\/Chestnut-Home-Plan-Flyer-1-17-X1A.pdf": {
+		"ft": 8192,
+		"oA": 2,
+		"oAP": "\/wp-content\/uploads\/2016\/01\/Chestnut-Home-Plan-Flyer-1-17-X1A.pdf",
 		"oF": 0
 		},
 	"\/wp-content\/uploads\/2016\/01\/Chestnut-Home-Plan-Flyer-10-4-2016-X1A-2FPOnly-150x150.jpg": {
@@ -60791,6 +61545,82 @@
 		"oF": 0,
 		"opt": 0
 		},
+	"\/wp-content\/uploads\/2016\/01\/Nandina-Home-Plan-Flyer-117-FPonly-116x150.jpg": {
+		"ft": 16384,
+		"iS": 4213,
+		"oA": 0,
+		"oAP": "\/wp-content\/uploads\/2016\/01\/Nandina-Home-Plan-Flyer-117-FPonly-116x150.jpg",
+		"oF": 0,
+		"opt": 0
+		},
+	"\/wp-content\/uploads\/2016\/01\/Nandina-Home-Plan-Flyer-117-FPonly-232x300.jpg": {
+		"ft": 16384,
+		"iS": 11027,
+		"oA": 0,
+		"oAP": "\/wp-content\/uploads\/2016\/01\/Nandina-Home-Plan-Flyer-117-FPonly-232x300.jpg",
+		"oF": 0,
+		"opt": 0
+		},
+	"\/wp-content\/uploads\/2016\/01\/Nandina-Home-Plan-Flyer-117-FPonly-791x1024.jpg": {
+		"ft": 16384,
+		"iS": 70369,
+		"oA": 0,
+		"oAP": "\/wp-content\/uploads\/2016\/01\/Nandina-Home-Plan-Flyer-117-FPonly-791x1024.jpg",
+		"oF": 0,
+		"opt": 0
+		},
+	"\/wp-content\/uploads\/2016\/01\/Nandina-Home-Plan-Flyer-117-FPonly.jpg": {
+		"ft": 16384,
+		"iS": 331054,
+		"oA": 0,
+		"oAP": "\/wp-content\/uploads\/2016\/01\/Nandina-Home-Plan-Flyer-117-FPonly.jpg",
+		"oF": 0,
+		"opt": 0
+		},
+	"\/wp-content\/uploads\/2016\/01\/Nandina-Home-Plan-Flyer-117-FPonly.pdf": {
+		"ft": 8192,
+		"oA": 2,
+		"oAP": "\/wp-content\/uploads\/2016\/01\/Nandina-Home-Plan-Flyer-117-FPonly.pdf",
+		"oF": 0
+		},
+	"\/wp-content\/uploads\/2016\/01\/Nandina-Home-Plan-Flyer-117-X1A-116x150.jpg": {
+		"ft": 16384,
+		"iS": 4667,
+		"oA": 0,
+		"oAP": "\/wp-content\/uploads\/2016\/01\/Nandina-Home-Plan-Flyer-117-X1A-116x150.jpg",
+		"oF": 0,
+		"opt": 0
+		},
+	"\/wp-content\/uploads\/2016\/01\/Nandina-Home-Plan-Flyer-117-X1A-232x300.jpg": {
+		"ft": 16384,
+		"iS": 13714,
+		"oA": 0,
+		"oAP": "\/wp-content\/uploads\/2016\/01\/Nandina-Home-Plan-Flyer-117-X1A-232x300.jpg",
+		"oF": 0,
+		"opt": 0
+		},
+	"\/wp-content\/uploads\/2016\/01\/Nandina-Home-Plan-Flyer-117-X1A-791x1024.jpg": {
+		"ft": 16384,
+		"iS": 111247,
+		"oA": 0,
+		"oAP": "\/wp-content\/uploads\/2016\/01\/Nandina-Home-Plan-Flyer-117-X1A-791x1024.jpg",
+		"oF": 0,
+		"opt": 0
+		},
+	"\/wp-content\/uploads\/2016\/01\/Nandina-Home-Plan-Flyer-117-X1A.jpg": {
+		"ft": 16384,
+		"iS": 557541,
+		"oA": 0,
+		"oAP": "\/wp-content\/uploads\/2016\/01\/Nandina-Home-Plan-Flyer-117-X1A.jpg",
+		"oF": 0,
+		"opt": 0
+		},
+	"\/wp-content\/uploads\/2016\/01\/Nandina-Home-Plan-Flyer-117-X1A.pdf": {
+		"ft": 8192,
+		"oA": 2,
+		"oAP": "\/wp-content\/uploads\/2016\/01\/Nandina-Home-Plan-Flyer-117-X1A.pdf",
+		"oF": 0
+		},
 	"\/wp-content\/uploads\/2016\/01\/Nandina.jpg": {
 		"ft": 16384,
 		"iS": 2400629,
@@ -60798,6 +61628,82 @@
 		"oAP": "\/wp-content\/uploads\/2016\/01\/Nandina.jpg",
 		"oF": 0,
 		"opt": 0
+		},
+	"\/wp-content\/uploads\/2016\/01\/Oleander-Home-Plan-Flyer-1-17-FPonly-116x150.jpg": {
+		"ft": 16384,
+		"iS": 5217,
+		"oA": 0,
+		"oAP": "\/wp-content\/uploads\/2016\/01\/Oleander-Home-Plan-Flyer-1-17-FPonly-116x150.jpg",
+		"oF": 0,
+		"opt": 0
+		},
+	"\/wp-content\/uploads\/2016\/01\/Oleander-Home-Plan-Flyer-1-17-FPonly-232x300.jpg": {
+		"ft": 16384,
+		"iS": 14755,
+		"oA": 0,
+		"oAP": "\/wp-content\/uploads\/2016\/01\/Oleander-Home-Plan-Flyer-1-17-FPonly-232x300.jpg",
+		"oF": 0,
+		"opt": 0
+		},
+	"\/wp-content\/uploads\/2016\/01\/Oleander-Home-Plan-Flyer-1-17-FPonly-791x1024.jpg": {
+		"ft": 16384,
+		"iS": 91358,
+		"oA": 0,
+		"oAP": "\/wp-content\/uploads\/2016\/01\/Oleander-Home-Plan-Flyer-1-17-FPonly-791x1024.jpg",
+		"oF": 0,
+		"opt": 0
+		},
+	"\/wp-content\/uploads\/2016\/01\/Oleander-Home-Plan-Flyer-1-17-FPonly.jpg": {
+		"ft": 16384,
+		"iS": 421450,
+		"oA": 0,
+		"oAP": "\/wp-content\/uploads\/2016\/01\/Oleander-Home-Plan-Flyer-1-17-FPonly.jpg",
+		"oF": 0,
+		"opt": 0
+		},
+	"\/wp-content\/uploads\/2016\/01\/Oleander-Home-Plan-Flyer-1-17-FPonly.pdf": {
+		"ft": 8192,
+		"oA": 2,
+		"oAP": "\/wp-content\/uploads\/2016\/01\/Oleander-Home-Plan-Flyer-1-17-FPonly.pdf",
+		"oF": 0
+		},
+	"\/wp-content\/uploads\/2016\/01\/Oleander-Home-Plan-Flyer-1-17-X1A-116x150.jpg": {
+		"ft": 16384,
+		"iS": 4883,
+		"oA": 0,
+		"oAP": "\/wp-content\/uploads\/2016\/01\/Oleander-Home-Plan-Flyer-1-17-X1A-116x150.jpg",
+		"oF": 0,
+		"opt": 0
+		},
+	"\/wp-content\/uploads\/2016\/01\/Oleander-Home-Plan-Flyer-1-17-X1A-232x300.jpg": {
+		"ft": 16384,
+		"iS": 14255,
+		"oA": 0,
+		"oAP": "\/wp-content\/uploads\/2016\/01\/Oleander-Home-Plan-Flyer-1-17-X1A-232x300.jpg",
+		"oF": 0,
+		"opt": 0
+		},
+	"\/wp-content\/uploads\/2016\/01\/Oleander-Home-Plan-Flyer-1-17-X1A-791x1024.jpg": {
+		"ft": 16384,
+		"iS": 114222,
+		"oA": 0,
+		"oAP": "\/wp-content\/uploads\/2016\/01\/Oleander-Home-Plan-Flyer-1-17-X1A-791x1024.jpg",
+		"oF": 0,
+		"opt": 0
+		},
+	"\/wp-content\/uploads\/2016\/01\/Oleander-Home-Plan-Flyer-1-17-X1A.jpg": {
+		"ft": 16384,
+		"iS": 574345,
+		"oA": 0,
+		"oAP": "\/wp-content\/uploads\/2016\/01\/Oleander-Home-Plan-Flyer-1-17-X1A.jpg",
+		"oF": 0,
+		"opt": 0
+		},
+	"\/wp-content\/uploads\/2016\/01\/Oleander-Home-Plan-Flyer-1-17-X1A.pdf": {
+		"ft": 8192,
+		"oA": 2,
+		"oAP": "\/wp-content\/uploads\/2016\/01\/Oleander-Home-Plan-Flyer-1-17-X1A.pdf",
+		"oF": 0
 		},
 	"\/wp-content\/uploads\/2016\/01\/Oleander-Home-Plan-Flyer-X1A-copy-2-1-500x279-150x150.jpg": {
 		"ft": 16384,
@@ -60859,6 +61765,82 @@
 		"oF": 0,
 		"opt": 0
 		},
+	"\/wp-content\/uploads\/2016\/01\/Palisade-Home-Plan-Flyer-1-17-FPonly-116x150.jpg": {
+		"ft": 16384,
+		"iS": 5495,
+		"oA": 0,
+		"oAP": "\/wp-content\/uploads\/2016\/01\/Palisade-Home-Plan-Flyer-1-17-FPonly-116x150.jpg",
+		"oF": 0,
+		"opt": 0
+		},
+	"\/wp-content\/uploads\/2016\/01\/Palisade-Home-Plan-Flyer-1-17-FPonly-232x300.jpg": {
+		"ft": 16384,
+		"iS": 15959,
+		"oA": 0,
+		"oAP": "\/wp-content\/uploads\/2016\/01\/Palisade-Home-Plan-Flyer-1-17-FPonly-232x300.jpg",
+		"oF": 0,
+		"opt": 0
+		},
+	"\/wp-content\/uploads\/2016\/01\/Palisade-Home-Plan-Flyer-1-17-FPonly-791x1024.jpg": {
+		"ft": 16384,
+		"iS": 101788,
+		"oA": 0,
+		"oAP": "\/wp-content\/uploads\/2016\/01\/Palisade-Home-Plan-Flyer-1-17-FPonly-791x1024.jpg",
+		"oF": 0,
+		"opt": 0
+		},
+	"\/wp-content\/uploads\/2016\/01\/Palisade-Home-Plan-Flyer-1-17-FPonly.jpg": {
+		"ft": 16384,
+		"iS": 494440,
+		"oA": 0,
+		"oAP": "\/wp-content\/uploads\/2016\/01\/Palisade-Home-Plan-Flyer-1-17-FPonly.jpg",
+		"oF": 0,
+		"opt": 0
+		},
+	"\/wp-content\/uploads\/2016\/01\/Palisade-Home-Plan-Flyer-1-17-FPonly.pdf": {
+		"ft": 8192,
+		"oA": 2,
+		"oAP": "\/wp-content\/uploads\/2016\/01\/Palisade-Home-Plan-Flyer-1-17-FPonly.pdf",
+		"oF": 0
+		},
+	"\/wp-content\/uploads\/2016\/01\/Palisade-Home-Plan-Flyer-1-17-X1A-116x150.jpg": {
+		"ft": 16384,
+		"iS": 4811,
+		"oA": 0,
+		"oAP": "\/wp-content\/uploads\/2016\/01\/Palisade-Home-Plan-Flyer-1-17-X1A-116x150.jpg",
+		"oF": 0,
+		"opt": 0
+		},
+	"\/wp-content\/uploads\/2016\/01\/Palisade-Home-Plan-Flyer-1-17-X1A-232x300.jpg": {
+		"ft": 16384,
+		"iS": 14590,
+		"oA": 0,
+		"oAP": "\/wp-content\/uploads\/2016\/01\/Palisade-Home-Plan-Flyer-1-17-X1A-232x300.jpg",
+		"oF": 0,
+		"opt": 0
+		},
+	"\/wp-content\/uploads\/2016\/01\/Palisade-Home-Plan-Flyer-1-17-X1A-791x1024.jpg": {
+		"ft": 16384,
+		"iS": 118774,
+		"oA": 0,
+		"oAP": "\/wp-content\/uploads\/2016\/01\/Palisade-Home-Plan-Flyer-1-17-X1A-791x1024.jpg",
+		"oF": 0,
+		"opt": 0
+		},
+	"\/wp-content\/uploads\/2016\/01\/Palisade-Home-Plan-Flyer-1-17-X1A.jpg": {
+		"ft": 16384,
+		"iS": 626947,
+		"oA": 0,
+		"oAP": "\/wp-content\/uploads\/2016\/01\/Palisade-Home-Plan-Flyer-1-17-X1A.jpg",
+		"oF": 0,
+		"opt": 0
+		},
+	"\/wp-content\/uploads\/2016\/01\/Palisade-Home-Plan-Flyer-1-17-X1A.pdf": {
+		"ft": 8192,
+		"oA": 2,
+		"oAP": "\/wp-content\/uploads\/2016\/01\/Palisade-Home-Plan-Flyer-1-17-X1A.pdf",
+		"oF": 0
+		},
 	"\/wp-content\/uploads\/2016\/01\/Palisade-Home-Plan-Flyer-2014-X1AFP-only.pdf": {
 		"ft": 8192,
 		"oA": 2,
@@ -60895,6 +61877,82 @@
 		"oF": 0,
 		"opt": 0
 		},
+	"\/wp-content\/uploads\/2016\/01\/Radcliffe-Home-Plan-Flyer-1-17-FP-only-116x150.jpg": {
+		"ft": 16384,
+		"iS": 5047,
+		"oA": 0,
+		"oAP": "\/wp-content\/uploads\/2016\/01\/Radcliffe-Home-Plan-Flyer-1-17-FP-only-116x150.jpg",
+		"oF": 0,
+		"opt": 0
+		},
+	"\/wp-content\/uploads\/2016\/01\/Radcliffe-Home-Plan-Flyer-1-17-FP-only-232x300.jpg": {
+		"ft": 16384,
+		"iS": 14968,
+		"oA": 0,
+		"oAP": "\/wp-content\/uploads\/2016\/01\/Radcliffe-Home-Plan-Flyer-1-17-FP-only-232x300.jpg",
+		"oF": 0,
+		"opt": 0
+		},
+	"\/wp-content\/uploads\/2016\/01\/Radcliffe-Home-Plan-Flyer-1-17-FP-only-791x1024.jpg": {
+		"ft": 16384,
+		"iS": 94250,
+		"oA": 0,
+		"oAP": "\/wp-content\/uploads\/2016\/01\/Radcliffe-Home-Plan-Flyer-1-17-FP-only-791x1024.jpg",
+		"oF": 0,
+		"opt": 0
+		},
+	"\/wp-content\/uploads\/2016\/01\/Radcliffe-Home-Plan-Flyer-1-17-FP-only.jpg": {
+		"ft": 16384,
+		"iS": 441462,
+		"oA": 0,
+		"oAP": "\/wp-content\/uploads\/2016\/01\/Radcliffe-Home-Plan-Flyer-1-17-FP-only.jpg",
+		"oF": 0,
+		"opt": 0
+		},
+	"\/wp-content\/uploads\/2016\/01\/Radcliffe-Home-Plan-Flyer-1-17-FP-only.pdf": {
+		"ft": 8192,
+		"oA": 2,
+		"oAP": "\/wp-content\/uploads\/2016\/01\/Radcliffe-Home-Plan-Flyer-1-17-FP-only.pdf",
+		"oF": 0
+		},
+	"\/wp-content\/uploads\/2016\/01\/Radcliffe-Home-Plan-Flyer-1-17-X1A-116x150.jpg": {
+		"ft": 16384,
+		"iS": 4992,
+		"oA": 0,
+		"oAP": "\/wp-content\/uploads\/2016\/01\/Radcliffe-Home-Plan-Flyer-1-17-X1A-116x150.jpg",
+		"oF": 0,
+		"opt": 0
+		},
+	"\/wp-content\/uploads\/2016\/01\/Radcliffe-Home-Plan-Flyer-1-17-X1A-232x300.jpg": {
+		"ft": 16384,
+		"iS": 15090,
+		"oA": 0,
+		"oAP": "\/wp-content\/uploads\/2016\/01\/Radcliffe-Home-Plan-Flyer-1-17-X1A-232x300.jpg",
+		"oF": 0,
+		"opt": 0
+		},
+	"\/wp-content\/uploads\/2016\/01\/Radcliffe-Home-Plan-Flyer-1-17-X1A-791x1024.jpg": {
+		"ft": 16384,
+		"iS": 129281,
+		"oA": 0,
+		"oAP": "\/wp-content\/uploads\/2016\/01\/Radcliffe-Home-Plan-Flyer-1-17-X1A-791x1024.jpg",
+		"oF": 0,
+		"opt": 0
+		},
+	"\/wp-content\/uploads\/2016\/01\/Radcliffe-Home-Plan-Flyer-1-17-X1A.jpg": {
+		"ft": 16384,
+		"iS": 688444,
+		"oA": 0,
+		"oAP": "\/wp-content\/uploads\/2016\/01\/Radcliffe-Home-Plan-Flyer-1-17-X1A.jpg",
+		"oF": 0,
+		"opt": 0
+		},
+	"\/wp-content\/uploads\/2016\/01\/Radcliffe-Home-Plan-Flyer-1-17-X1A.pdf": {
+		"ft": 8192,
+		"oA": 2,
+		"oAP": "\/wp-content\/uploads\/2016\/01\/Radcliffe-Home-Plan-Flyer-1-17-X1A.pdf",
+		"oF": 0
+		},
 	"\/wp-content\/uploads\/2016\/01\/Radcliffe-Home-Plan-Flyer-X1A-FP-only.pdf": {
 		"ft": 8192,
 		"oA": 2,
@@ -60911,6 +61969,82 @@
 		"ft": 8192,
 		"oA": 2,
 		"oAP": "\/wp-content\/uploads\/2016\/01\/Randall-FPOnly.pdf",
+		"oF": 0
+		},
+	"\/wp-content\/uploads\/2016\/01\/Randall-Home-Plan-flyer-1-17-FPonly-116x150.jpg": {
+		"ft": 16384,
+		"iS": 4064,
+		"oA": 0,
+		"oAP": "\/wp-content\/uploads\/2016\/01\/Randall-Home-Plan-flyer-1-17-FPonly-116x150.jpg",
+		"oF": 0,
+		"opt": 0
+		},
+	"\/wp-content\/uploads\/2016\/01\/Randall-Home-Plan-flyer-1-17-FPonly-232x300.jpg": {
+		"ft": 16384,
+		"iS": 11187,
+		"oA": 0,
+		"oAP": "\/wp-content\/uploads\/2016\/01\/Randall-Home-Plan-flyer-1-17-FPonly-232x300.jpg",
+		"oF": 0,
+		"opt": 0
+		},
+	"\/wp-content\/uploads\/2016\/01\/Randall-Home-Plan-flyer-1-17-FPonly-791x1024.jpg": {
+		"ft": 16384,
+		"iS": 73830,
+		"oA": 0,
+		"oAP": "\/wp-content\/uploads\/2016\/01\/Randall-Home-Plan-flyer-1-17-FPonly-791x1024.jpg",
+		"oF": 0,
+		"opt": 0
+		},
+	"\/wp-content\/uploads\/2016\/01\/Randall-Home-Plan-flyer-1-17-FPonly.jpg": {
+		"ft": 16384,
+		"iS": 211834,
+		"oA": 0,
+		"oAP": "\/wp-content\/uploads\/2016\/01\/Randall-Home-Plan-flyer-1-17-FPonly.jpg",
+		"oF": 0,
+		"opt": 0
+		},
+	"\/wp-content\/uploads\/2016\/01\/Randall-Home-Plan-flyer-1-17-FPonly.pdf": {
+		"ft": 8192,
+		"oA": 2,
+		"oAP": "\/wp-content\/uploads\/2016\/01\/Randall-Home-Plan-flyer-1-17-FPonly.pdf",
+		"oF": 0
+		},
+	"\/wp-content\/uploads\/2016\/01\/Randall-Home-Plan-flyer-1-17-X1A-116x150.jpg": {
+		"ft": 16384,
+		"iS": 4914,
+		"oA": 0,
+		"oAP": "\/wp-content\/uploads\/2016\/01\/Randall-Home-Plan-flyer-1-17-X1A-116x150.jpg",
+		"oF": 0,
+		"opt": 0
+		},
+	"\/wp-content\/uploads\/2016\/01\/Randall-Home-Plan-flyer-1-17-X1A-232x300.jpg": {
+		"ft": 16384,
+		"iS": 14780,
+		"oA": 0,
+		"oAP": "\/wp-content\/uploads\/2016\/01\/Randall-Home-Plan-flyer-1-17-X1A-232x300.jpg",
+		"oF": 0,
+		"opt": 0
+		},
+	"\/wp-content\/uploads\/2016\/01\/Randall-Home-Plan-flyer-1-17-X1A-791x1024.jpg": {
+		"ft": 16384,
+		"iS": 123500,
+		"oA": 0,
+		"oAP": "\/wp-content\/uploads\/2016\/01\/Randall-Home-Plan-flyer-1-17-X1A-791x1024.jpg",
+		"oF": 0,
+		"opt": 0
+		},
+	"\/wp-content\/uploads\/2016\/01\/Randall-Home-Plan-flyer-1-17-X1A.jpg": {
+		"ft": 16384,
+		"iS": 651035,
+		"oA": 0,
+		"oAP": "\/wp-content\/uploads\/2016\/01\/Randall-Home-Plan-flyer-1-17-X1A.jpg",
+		"oF": 0,
+		"opt": 0
+		},
+	"\/wp-content\/uploads\/2016\/01\/Randall-Home-Plan-flyer-1-17-X1A.pdf": {
+		"ft": 8192,
+		"oA": 2,
+		"oAP": "\/wp-content\/uploads\/2016\/01\/Randall-Home-Plan-flyer-1-17-X1A.pdf",
 		"oF": 0
 		},
 	"\/wp-content\/uploads\/2016\/01\/Randall-Home-Plan-flyer-12-21-X1A-FPOnly.pdf": {
@@ -60955,6 +62089,82 @@
 		"oAP": "\/wp-content\/uploads\/2016\/01\/Riverside-Home-Plan-2-FP-only.pdf",
 		"oF": 0
 		},
+	"\/wp-content\/uploads\/2016\/01\/Riverside-Home-Plan-flyer-1-17-FPonly-116x150.jpg": {
+		"ft": 16384,
+		"iS": 4783,
+		"oA": 0,
+		"oAP": "\/wp-content\/uploads\/2016\/01\/Riverside-Home-Plan-flyer-1-17-FPonly-116x150.jpg",
+		"oF": 0,
+		"opt": 0
+		},
+	"\/wp-content\/uploads\/2016\/01\/Riverside-Home-Plan-flyer-1-17-FPonly-232x300.jpg": {
+		"ft": 16384,
+		"iS": 12998,
+		"oA": 0,
+		"oAP": "\/wp-content\/uploads\/2016\/01\/Riverside-Home-Plan-flyer-1-17-FPonly-232x300.jpg",
+		"oF": 0,
+		"opt": 0
+		},
+	"\/wp-content\/uploads\/2016\/01\/Riverside-Home-Plan-flyer-1-17-FPonly-791x1024.jpg": {
+		"ft": 16384,
+		"iS": 84809,
+		"oA": 0,
+		"oAP": "\/wp-content\/uploads\/2016\/01\/Riverside-Home-Plan-flyer-1-17-FPonly-791x1024.jpg",
+		"oF": 0,
+		"opt": 0
+		},
+	"\/wp-content\/uploads\/2016\/01\/Riverside-Home-Plan-flyer-1-17-FPonly.jpg": {
+		"ft": 16384,
+		"iS": 216604,
+		"oA": 0,
+		"oAP": "\/wp-content\/uploads\/2016\/01\/Riverside-Home-Plan-flyer-1-17-FPonly.jpg",
+		"oF": 0,
+		"opt": 0
+		},
+	"\/wp-content\/uploads\/2016\/01\/Riverside-Home-Plan-flyer-1-17-FPonly.pdf": {
+		"ft": 8192,
+		"oA": 2,
+		"oAP": "\/wp-content\/uploads\/2016\/01\/Riverside-Home-Plan-flyer-1-17-FPonly.pdf",
+		"oF": 0
+		},
+	"\/wp-content\/uploads\/2016\/01\/Riverside-Home-Plan-flyer-1-17-X1A-116x150.jpg": {
+		"ft": 16384,
+		"iS": 4795,
+		"oA": 0,
+		"oAP": "\/wp-content\/uploads\/2016\/01\/Riverside-Home-Plan-flyer-1-17-X1A-116x150.jpg",
+		"oF": 0,
+		"opt": 0
+		},
+	"\/wp-content\/uploads\/2016\/01\/Riverside-Home-Plan-flyer-1-17-X1A-232x300.jpg": {
+		"ft": 16384,
+		"iS": 14465,
+		"oA": 0,
+		"oAP": "\/wp-content\/uploads\/2016\/01\/Riverside-Home-Plan-flyer-1-17-X1A-232x300.jpg",
+		"oF": 0,
+		"opt": 0
+		},
+	"\/wp-content\/uploads\/2016\/01\/Riverside-Home-Plan-flyer-1-17-X1A-791x1024.jpg": {
+		"ft": 16384,
+		"iS": 115642,
+		"oA": 0,
+		"oAP": "\/wp-content\/uploads\/2016\/01\/Riverside-Home-Plan-flyer-1-17-X1A-791x1024.jpg",
+		"oF": 0,
+		"opt": 0
+		},
+	"\/wp-content\/uploads\/2016\/01\/Riverside-Home-Plan-flyer-1-17-X1A.jpg": {
+		"ft": 16384,
+		"iS": 614771,
+		"oA": 0,
+		"oAP": "\/wp-content\/uploads\/2016\/01\/Riverside-Home-Plan-flyer-1-17-X1A.jpg",
+		"oF": 0,
+		"opt": 0
+		},
+	"\/wp-content\/uploads\/2016\/01\/Riverside-Home-Plan-flyer-1-17-X1A.pdf": {
+		"ft": 8192,
+		"oA": 2,
+		"oAP": "\/wp-content\/uploads\/2016\/01\/Riverside-Home-Plan-flyer-1-17-X1A.pdf",
+		"oF": 0
+		},
 	"\/wp-content\/uploads\/2016\/01\/Riverside-Home-Plan.pdf": {
 		"ft": 8192,
 		"oA": 2,
@@ -60981,6 +62191,82 @@
 		"ft": 8192,
 		"oA": 2,
 		"oAP": "\/wp-content\/uploads\/2016\/01\/Roanoke-Home-Plan-2-FPonly.pdf",
+		"oF": 0
+		},
+	"\/wp-content\/uploads\/2016\/01\/Roanoke-Home-Plan-flyer-1-17-FPonly-116x150.jpg": {
+		"ft": 16384,
+		"iS": 4071,
+		"oA": 0,
+		"oAP": "\/wp-content\/uploads\/2016\/01\/Roanoke-Home-Plan-flyer-1-17-FPonly-116x150.jpg",
+		"oF": 0,
+		"opt": 0
+		},
+	"\/wp-content\/uploads\/2016\/01\/Roanoke-Home-Plan-flyer-1-17-FPonly-232x300.jpg": {
+		"ft": 16384,
+		"iS": 10945,
+		"oA": 0,
+		"oAP": "\/wp-content\/uploads\/2016\/01\/Roanoke-Home-Plan-flyer-1-17-FPonly-232x300.jpg",
+		"oF": 0,
+		"opt": 0
+		},
+	"\/wp-content\/uploads\/2016\/01\/Roanoke-Home-Plan-flyer-1-17-FPonly-791x1024.jpg": {
+		"ft": 16384,
+		"iS": 69568,
+		"oA": 0,
+		"oAP": "\/wp-content\/uploads\/2016\/01\/Roanoke-Home-Plan-flyer-1-17-FPonly-791x1024.jpg",
+		"oF": 0,
+		"opt": 0
+		},
+	"\/wp-content\/uploads\/2016\/01\/Roanoke-Home-Plan-flyer-1-17-FPonly.jpg": {
+		"ft": 16384,
+		"iS": 191563,
+		"oA": 0,
+		"oAP": "\/wp-content\/uploads\/2016\/01\/Roanoke-Home-Plan-flyer-1-17-FPonly.jpg",
+		"oF": 0,
+		"opt": 0
+		},
+	"\/wp-content\/uploads\/2016\/01\/Roanoke-Home-Plan-flyer-1-17-FPonly.pdf": {
+		"ft": 8192,
+		"oA": 2,
+		"oAP": "\/wp-content\/uploads\/2016\/01\/Roanoke-Home-Plan-flyer-1-17-FPonly.pdf",
+		"oF": 0
+		},
+	"\/wp-content\/uploads\/2016\/01\/Roanoke-Home-Plan-flyer-1-17-X1A-116x150.jpg": {
+		"ft": 16384,
+		"iS": 4662,
+		"oA": 0,
+		"oAP": "\/wp-content\/uploads\/2016\/01\/Roanoke-Home-Plan-flyer-1-17-X1A-116x150.jpg",
+		"oF": 0,
+		"opt": 0
+		},
+	"\/wp-content\/uploads\/2016\/01\/Roanoke-Home-Plan-flyer-1-17-X1A-232x300.jpg": {
+		"ft": 16384,
+		"iS": 13601,
+		"oA": 0,
+		"oAP": "\/wp-content\/uploads\/2016\/01\/Roanoke-Home-Plan-flyer-1-17-X1A-232x300.jpg",
+		"oF": 0,
+		"opt": 0
+		},
+	"\/wp-content\/uploads\/2016\/01\/Roanoke-Home-Plan-flyer-1-17-X1A-791x1024.jpg": {
+		"ft": 16384,
+		"iS": 105923,
+		"oA": 0,
+		"oAP": "\/wp-content\/uploads\/2016\/01\/Roanoke-Home-Plan-flyer-1-17-X1A-791x1024.jpg",
+		"oF": 0,
+		"opt": 0
+		},
+	"\/wp-content\/uploads\/2016\/01\/Roanoke-Home-Plan-flyer-1-17-X1A.jpg": {
+		"ft": 16384,
+		"iS": 548158,
+		"oA": 0,
+		"oAP": "\/wp-content\/uploads\/2016\/01\/Roanoke-Home-Plan-flyer-1-17-X1A.jpg",
+		"oF": 0,
+		"opt": 0
+		},
+	"\/wp-content\/uploads\/2016\/01\/Roanoke-Home-Plan-flyer-1-17-X1A.pdf": {
+		"ft": 8192,
+		"oA": 2,
+		"oAP": "\/wp-content\/uploads\/2016\/01\/Roanoke-Home-Plan-flyer-1-17-X1A.pdf",
 		"oF": 0
 		},
 	"\/wp-content\/uploads\/2016\/01\/Roanoke-Home-Plan-flyer-X1A_fp-only.pdf": {
@@ -61179,6 +62465,82 @@
 		"oAP": "\/wp-content\/uploads\/2016\/01\/Scarlet-BW-print.pdf",
 		"oF": 0
 		},
+	"\/wp-content\/uploads\/2016\/01\/Scarlet-Home-Plan-Flyer-1-17-FPonly-116x150.jpg": {
+		"ft": 16384,
+		"iS": 4301,
+		"oA": 0,
+		"oAP": "\/wp-content\/uploads\/2016\/01\/Scarlet-Home-Plan-Flyer-1-17-FPonly-116x150.jpg",
+		"oF": 0,
+		"opt": 0
+		},
+	"\/wp-content\/uploads\/2016\/01\/Scarlet-Home-Plan-Flyer-1-17-FPonly-232x300.jpg": {
+		"ft": 16384,
+		"iS": 12298,
+		"oA": 0,
+		"oAP": "\/wp-content\/uploads\/2016\/01\/Scarlet-Home-Plan-Flyer-1-17-FPonly-232x300.jpg",
+		"oF": 0,
+		"opt": 0
+		},
+	"\/wp-content\/uploads\/2016\/01\/Scarlet-Home-Plan-Flyer-1-17-FPonly-791x1024.jpg": {
+		"ft": 16384,
+		"iS": 82079,
+		"oA": 0,
+		"oAP": "\/wp-content\/uploads\/2016\/01\/Scarlet-Home-Plan-Flyer-1-17-FPonly-791x1024.jpg",
+		"oF": 0,
+		"opt": 0
+		},
+	"\/wp-content\/uploads\/2016\/01\/Scarlet-Home-Plan-Flyer-1-17-FPonly.jpg": {
+		"ft": 16384,
+		"iS": 237840,
+		"oA": 0,
+		"oAP": "\/wp-content\/uploads\/2016\/01\/Scarlet-Home-Plan-Flyer-1-17-FPonly.jpg",
+		"oF": 0,
+		"opt": 0
+		},
+	"\/wp-content\/uploads\/2016\/01\/Scarlet-Home-Plan-Flyer-1-17-FPonly.pdf": {
+		"ft": 8192,
+		"oA": 2,
+		"oAP": "\/wp-content\/uploads\/2016\/01\/Scarlet-Home-Plan-Flyer-1-17-FPonly.pdf",
+		"oF": 0
+		},
+	"\/wp-content\/uploads\/2016\/01\/Scarlet-Home-Plan-Flyer-1-17-X1A-116x150.jpg": {
+		"ft": 16384,
+		"iS": 4673,
+		"oA": 0,
+		"oAP": "\/wp-content\/uploads\/2016\/01\/Scarlet-Home-Plan-Flyer-1-17-X1A-116x150.jpg",
+		"oF": 0,
+		"opt": 0
+		},
+	"\/wp-content\/uploads\/2016\/01\/Scarlet-Home-Plan-Flyer-1-17-X1A-232x300.jpg": {
+		"ft": 16384,
+		"iS": 13800,
+		"oA": 0,
+		"oAP": "\/wp-content\/uploads\/2016\/01\/Scarlet-Home-Plan-Flyer-1-17-X1A-232x300.jpg",
+		"oF": 0,
+		"opt": 0
+		},
+	"\/wp-content\/uploads\/2016\/01\/Scarlet-Home-Plan-Flyer-1-17-X1A-791x1024.jpg": {
+		"ft": 16384,
+		"iS": 121473,
+		"oA": 0,
+		"oAP": "\/wp-content\/uploads\/2016\/01\/Scarlet-Home-Plan-Flyer-1-17-X1A-791x1024.jpg",
+		"oF": 0,
+		"opt": 0
+		},
+	"\/wp-content\/uploads\/2016\/01\/Scarlet-Home-Plan-Flyer-1-17-X1A.jpg": {
+		"ft": 16384,
+		"iS": 657349,
+		"oA": 0,
+		"oAP": "\/wp-content\/uploads\/2016\/01\/Scarlet-Home-Plan-Flyer-1-17-X1A.jpg",
+		"oF": 0,
+		"opt": 0
+		},
+	"\/wp-content\/uploads\/2016\/01\/Scarlet-Home-Plan-Flyer-1-17-X1A.pdf": {
+		"ft": 8192,
+		"oA": 2,
+		"oAP": "\/wp-content\/uploads\/2016\/01\/Scarlet-Home-Plan-Flyer-1-17-X1A.pdf",
+		"oF": 0
+		},
 	"\/wp-content\/uploads\/2016\/01\/Scarlet-Home-Plan-Flyer-fp-only.pdf": {
 		"ft": 8192,
 		"oA": 2,
@@ -61335,6 +62697,82 @@
 		"oAP": "\/wp-content\/uploads\/2016\/01\/Shumard-BW-print.pdf",
 		"oF": 0
 		},
+	"\/wp-content\/uploads\/2016\/01\/Shumard-Home-Plan-Flyer-1-17-FPonly-116x150.jpg": {
+		"ft": 16384,
+		"iS": 4659,
+		"oA": 0,
+		"oAP": "\/wp-content\/uploads\/2016\/01\/Shumard-Home-Plan-Flyer-1-17-FPonly-116x150.jpg",
+		"oF": 0,
+		"opt": 0
+		},
+	"\/wp-content\/uploads\/2016\/01\/Shumard-Home-Plan-Flyer-1-17-FPonly-232x300.jpg": {
+		"ft": 16384,
+		"iS": 13803,
+		"oA": 0,
+		"oAP": "\/wp-content\/uploads\/2016\/01\/Shumard-Home-Plan-Flyer-1-17-FPonly-232x300.jpg",
+		"oF": 0,
+		"opt": 0
+		},
+	"\/wp-content\/uploads\/2016\/01\/Shumard-Home-Plan-Flyer-1-17-FPonly-791x1024.jpg": {
+		"ft": 16384,
+		"iS": 90446,
+		"oA": 0,
+		"oAP": "\/wp-content\/uploads\/2016\/01\/Shumard-Home-Plan-Flyer-1-17-FPonly-791x1024.jpg",
+		"oF": 0,
+		"opt": 0
+		},
+	"\/wp-content\/uploads\/2016\/01\/Shumard-Home-Plan-Flyer-1-17-FPonly.jpg": {
+		"ft": 16384,
+		"iS": 428091,
+		"oA": 0,
+		"oAP": "\/wp-content\/uploads\/2016\/01\/Shumard-Home-Plan-Flyer-1-17-FPonly.jpg",
+		"oF": 0,
+		"opt": 0
+		},
+	"\/wp-content\/uploads\/2016\/01\/Shumard-Home-Plan-Flyer-1-17-FPonly.pdf": {
+		"ft": 8192,
+		"oA": 2,
+		"oAP": "\/wp-content\/uploads\/2016\/01\/Shumard-Home-Plan-Flyer-1-17-FPonly.pdf",
+		"oF": 0
+		},
+	"\/wp-content\/uploads\/2016\/01\/Shumard-Home-Plan-Flyer-1-17-X1A-116x150.jpg": {
+		"ft": 16384,
+		"iS": 4544,
+		"oA": 0,
+		"oAP": "\/wp-content\/uploads\/2016\/01\/Shumard-Home-Plan-Flyer-1-17-X1A-116x150.jpg",
+		"oF": 0,
+		"opt": 0
+		},
+	"\/wp-content\/uploads\/2016\/01\/Shumard-Home-Plan-Flyer-1-17-X1A-232x300.jpg": {
+		"ft": 16384,
+		"iS": 13638,
+		"oA": 0,
+		"oAP": "\/wp-content\/uploads\/2016\/01\/Shumard-Home-Plan-Flyer-1-17-X1A-232x300.jpg",
+		"oF": 0,
+		"opt": 0
+		},
+	"\/wp-content\/uploads\/2016\/01\/Shumard-Home-Plan-Flyer-1-17-X1A-791x1024.jpg": {
+		"ft": 16384,
+		"iS": 118172,
+		"oA": 0,
+		"oAP": "\/wp-content\/uploads\/2016\/01\/Shumard-Home-Plan-Flyer-1-17-X1A-791x1024.jpg",
+		"oF": 0,
+		"opt": 0
+		},
+	"\/wp-content\/uploads\/2016\/01\/Shumard-Home-Plan-Flyer-1-17-X1A.jpg": {
+		"ft": 16384,
+		"iS": 624859,
+		"oA": 0,
+		"oAP": "\/wp-content\/uploads\/2016\/01\/Shumard-Home-Plan-Flyer-1-17-X1A.jpg",
+		"oF": 0,
+		"opt": 0
+		},
+	"\/wp-content\/uploads\/2016\/01\/Shumard-Home-Plan-Flyer-1-17-X1A.pdf": {
+		"ft": 8192,
+		"oA": 2,
+		"oAP": "\/wp-content\/uploads\/2016\/01\/Shumard-Home-Plan-Flyer-1-17-X1A.pdf",
+		"oF": 0
+		},
 	"\/wp-content\/uploads\/2016\/01\/Shumard-home-Plan-Flyer-fp-only.pdf": {
 		"ft": 8192,
 		"oA": 2,
@@ -61370,6 +62808,82 @@
 		"oAP": "\/wp-content\/uploads\/2016\/01\/Sycamore-Arev-2-500x277.jpg",
 		"oF": 0,
 		"opt": 0
+		},
+	"\/wp-content\/uploads\/2016\/01\/Sycamore-Home-Plan-Flyer-1-17-FPonly-116x150.jpg": {
+		"ft": 16384,
+		"iS": 5255,
+		"oA": 0,
+		"oAP": "\/wp-content\/uploads\/2016\/01\/Sycamore-Home-Plan-Flyer-1-17-FPonly-116x150.jpg",
+		"oF": 0,
+		"opt": 0
+		},
+	"\/wp-content\/uploads\/2016\/01\/Sycamore-Home-Plan-Flyer-1-17-FPonly-232x300.jpg": {
+		"ft": 16384,
+		"iS": 14587,
+		"oA": 0,
+		"oAP": "\/wp-content\/uploads\/2016\/01\/Sycamore-Home-Plan-Flyer-1-17-FPonly-232x300.jpg",
+		"oF": 0,
+		"opt": 0
+		},
+	"\/wp-content\/uploads\/2016\/01\/Sycamore-Home-Plan-Flyer-1-17-FPonly-791x1024.jpg": {
+		"ft": 16384,
+		"iS": 92887,
+		"oA": 0,
+		"oAP": "\/wp-content\/uploads\/2016\/01\/Sycamore-Home-Plan-Flyer-1-17-FPonly-791x1024.jpg",
+		"oF": 0,
+		"opt": 0
+		},
+	"\/wp-content\/uploads\/2016\/01\/Sycamore-Home-Plan-Flyer-1-17-FPonly.jpg": {
+		"ft": 16384,
+		"iS": 429285,
+		"oA": 0,
+		"oAP": "\/wp-content\/uploads\/2016\/01\/Sycamore-Home-Plan-Flyer-1-17-FPonly.jpg",
+		"oF": 0,
+		"opt": 0
+		},
+	"\/wp-content\/uploads\/2016\/01\/Sycamore-Home-Plan-Flyer-1-17-FPonly.pdf": {
+		"ft": 8192,
+		"oA": 2,
+		"oAP": "\/wp-content\/uploads\/2016\/01\/Sycamore-Home-Plan-Flyer-1-17-FPonly.pdf",
+		"oF": 0
+		},
+	"\/wp-content\/uploads\/2016\/01\/Sycamore-Home-Plan-Flyer-1-17-X1A-116x150.jpg": {
+		"ft": 16384,
+		"iS": 4991,
+		"oA": 0,
+		"oAP": "\/wp-content\/uploads\/2016\/01\/Sycamore-Home-Plan-Flyer-1-17-X1A-116x150.jpg",
+		"oF": 0,
+		"opt": 0
+		},
+	"\/wp-content\/uploads\/2016\/01\/Sycamore-Home-Plan-Flyer-1-17-X1A-232x300.jpg": {
+		"ft": 16384,
+		"iS": 14929,
+		"oA": 0,
+		"oAP": "\/wp-content\/uploads\/2016\/01\/Sycamore-Home-Plan-Flyer-1-17-X1A-232x300.jpg",
+		"oF": 0,
+		"opt": 0
+		},
+	"\/wp-content\/uploads\/2016\/01\/Sycamore-Home-Plan-Flyer-1-17-X1A-791x1024.jpg": {
+		"ft": 16384,
+		"iS": 122912,
+		"oA": 0,
+		"oAP": "\/wp-content\/uploads\/2016\/01\/Sycamore-Home-Plan-Flyer-1-17-X1A-791x1024.jpg",
+		"oF": 0,
+		"opt": 0
+		},
+	"\/wp-content\/uploads\/2016\/01\/Sycamore-Home-Plan-Flyer-1-17-X1A.jpg": {
+		"ft": 16384,
+		"iS": 613264,
+		"oA": 0,
+		"oAP": "\/wp-content\/uploads\/2016\/01\/Sycamore-Home-Plan-Flyer-1-17-X1A.jpg",
+		"oF": 0,
+		"opt": 0
+		},
+	"\/wp-content\/uploads\/2016\/01\/Sycamore-Home-Plan-Flyer-1-17-X1A.pdf": {
+		"ft": 8192,
+		"oA": 2,
+		"oAP": "\/wp-content\/uploads\/2016\/01\/Sycamore-Home-Plan-Flyer-1-17-X1A.pdf",
+		"oF": 0
 		},
 	"\/wp-content\/uploads\/2016\/01\/Sycamore-Home-Plan-Flyer-X1A-fp-only.pdf": {
 		"ft": 8192,
@@ -61641,6 +63155,82 @@
 		"ft": 8192,
 		"oA": 2,
 		"oAP": "\/wp-content\/uploads\/2016\/01\/Willow-BW-print.pdf",
+		"oF": 0
+		},
+	"\/wp-content\/uploads\/2016\/01\/Willow-Home-Plan-Flyer-1-17-FPonly-116x150.jpg": {
+		"ft": 16384,
+		"iS": 3920,
+		"oA": 0,
+		"oAP": "\/wp-content\/uploads\/2016\/01\/Willow-Home-Plan-Flyer-1-17-FPonly-116x150.jpg",
+		"oF": 0,
+		"opt": 0
+		},
+	"\/wp-content\/uploads\/2016\/01\/Willow-Home-Plan-Flyer-1-17-FPonly-232x300.jpg": {
+		"ft": 16384,
+		"iS": 11291,
+		"oA": 0,
+		"oAP": "\/wp-content\/uploads\/2016\/01\/Willow-Home-Plan-Flyer-1-17-FPonly-232x300.jpg",
+		"oF": 0,
+		"opt": 0
+		},
+	"\/wp-content\/uploads\/2016\/01\/Willow-Home-Plan-Flyer-1-17-FPonly-791x1024.jpg": {
+		"ft": 16384,
+		"iS": 75334,
+		"oA": 0,
+		"oAP": "\/wp-content\/uploads\/2016\/01\/Willow-Home-Plan-Flyer-1-17-FPonly-791x1024.jpg",
+		"oF": 0,
+		"opt": 0
+		},
+	"\/wp-content\/uploads\/2016\/01\/Willow-Home-Plan-Flyer-1-17-FPonly.jpg": {
+		"ft": 16384,
+		"iS": 342302,
+		"oA": 0,
+		"oAP": "\/wp-content\/uploads\/2016\/01\/Willow-Home-Plan-Flyer-1-17-FPonly.jpg",
+		"oF": 0,
+		"opt": 0
+		},
+	"\/wp-content\/uploads\/2016\/01\/Willow-Home-Plan-Flyer-1-17-FPonly.pdf": {
+		"ft": 8192,
+		"oA": 2,
+		"oAP": "\/wp-content\/uploads\/2016\/01\/Willow-Home-Plan-Flyer-1-17-FPonly.pdf",
+		"oF": 0
+		},
+	"\/wp-content\/uploads\/2016\/01\/Willow-Home-Plan-Flyer-1-17-X1A-116x150.jpg": {
+		"ft": 16384,
+		"iS": 4675,
+		"oA": 0,
+		"oAP": "\/wp-content\/uploads\/2016\/01\/Willow-Home-Plan-Flyer-1-17-X1A-116x150.jpg",
+		"oF": 0,
+		"opt": 0
+		},
+	"\/wp-content\/uploads\/2016\/01\/Willow-Home-Plan-Flyer-1-17-X1A-232x300.jpg": {
+		"ft": 16384,
+		"iS": 14264,
+		"oA": 0,
+		"oAP": "\/wp-content\/uploads\/2016\/01\/Willow-Home-Plan-Flyer-1-17-X1A-232x300.jpg",
+		"oF": 0,
+		"opt": 0
+		},
+	"\/wp-content\/uploads\/2016\/01\/Willow-Home-Plan-Flyer-1-17-X1A-791x1024.jpg": {
+		"ft": 16384,
+		"iS": 126547,
+		"oA": 0,
+		"oAP": "\/wp-content\/uploads\/2016\/01\/Willow-Home-Plan-Flyer-1-17-X1A-791x1024.jpg",
+		"oF": 0,
+		"opt": 0
+		},
+	"\/wp-content\/uploads\/2016\/01\/Willow-Home-Plan-Flyer-1-17-X1A.jpg": {
+		"ft": 16384,
+		"iS": 687612,
+		"oA": 0,
+		"oAP": "\/wp-content\/uploads\/2016\/01\/Willow-Home-Plan-Flyer-1-17-X1A.jpg",
+		"oF": 0,
+		"opt": 0
+		},
+	"\/wp-content\/uploads\/2016\/01\/Willow-Home-Plan-Flyer-1-17-X1A.pdf": {
+		"ft": 8192,
+		"oA": 2,
+		"oAP": "\/wp-content\/uploads\/2016\/01\/Willow-Home-Plan-Flyer-1-17-X1A.pdf",
 		"oF": 0
 		},
 	"\/wp-content\/uploads\/2016\/01\/Willow-Home-Plan-Flyer-fp-only.pdf": {
@@ -61948,14 +63538,6 @@
 		"iS": 23314,
 		"oA": 0,
 		"oAP": "\/wp-content\/uploads\/2016\/02\/AR-160219575.jpgmaxw800q90-300x169.jpeg",
-		"oF": 0,
-		"opt": 0
-		},
-	"\/wp-content\/uploads\/2016\/02\/AR-160219575.jpgmaxw800q90-335x317-c-default.jpeg": {
-		"ft": 16384,
-		"iS": 29889,
-		"oA": 0,
-		"oAP": "\/wp-content\/uploads\/2016\/02\/AR-160219575.jpgmaxw800q90-335x317-c-default.jpeg",
 		"oF": 0,
 		"opt": 0
 		},
@@ -62308,6 +63890,14 @@
 		"iS": 160222,
 		"oA": 0,
 		"oAP": "\/wp-content\/uploads\/2016\/02\/JD_140518_CXStreetParty_47-768x512.jpg",
+		"oF": 0,
+		"opt": 0
+		},
+	"\/wp-content\/uploads\/2016\/02\/JD_140518_CXStreetParty_47-e1456176429120-790x395-c-default.jpg": {
+		"ft": 16384,
+		"iS": 74963,
+		"oA": 0,
+		"oAP": "\/wp-content\/uploads\/2016\/02\/JD_140518_CXStreetParty_47-e1456176429120-790x395-c-default.jpg",
 		"oF": 0,
 		"opt": 0
 		},
@@ -62915,14 +64505,6 @@
 		"oF": 0,
 		"opt": 0
 		},
-	"\/wp-content\/uploads\/2016\/04\/Carnes-Easter-335x317-c-default.jpg": {
-		"ft": 16384,
-		"iS": 36003,
-		"oA": 0,
-		"oAP": "\/wp-content\/uploads\/2016\/04\/Carnes-Easter-335x317-c-default.jpg",
-		"oF": 0,
-		"opt": 0
-		},
 	"\/wp-content\/uploads\/2016\/04\/Carnes-Easter-768x509.jpg": {
 		"ft": 16384,
 		"iS": 165882,
@@ -63099,22 +64681,6 @@
 		"oF": 0,
 		"opt": 0
 		},
-	"\/wp-content\/uploads\/2016\/04\/StreetPartyTrain-335x317-c-default.jpg": {
-		"ft": 16384,
-		"iS": 31237,
-		"oA": 0,
-		"oAP": "\/wp-content\/uploads\/2016\/04\/StreetPartyTrain-335x317-c-default.jpg",
-		"oF": 0,
-		"opt": 0
-		},
-	"\/wp-content\/uploads\/2016\/04\/StreetPartyTrain-790x395-c-default.jpg": {
-		"ft": 16384,
-		"iS": 73952,
-		"oA": 0,
-		"oAP": "\/wp-content\/uploads\/2016\/04\/StreetPartyTrain-790x395-c-default.jpg",
-		"oF": 0,
-		"opt": 0
-		},
 	"\/wp-content\/uploads\/2016\/04\/StreetPartyTrain.jpg": {
 		"ft": 16384,
 		"iS": 301551,
@@ -63171,22 +64737,6 @@
 		"oF": 0,
 		"opt": 0
 		},
-	"\/wp-content\/uploads\/2016\/05\/02480cbb6d22bcf3d5f777b4ad657a86-490x390-c-default.jpeg": {
-		"ft": 16384,
-		"iS": 34523,
-		"oA": 0,
-		"oAP": "\/wp-content\/uploads\/2016\/05\/02480cbb6d22bcf3d5f777b4ad657a86-490x390-c-default.jpeg",
-		"oF": 0,
-		"opt": 0
-		},
-	"\/wp-content\/uploads\/2016\/05\/02480cbb6d22bcf3d5f777b4ad657a86.jpeg": {
-		"ft": 16384,
-		"iS": 65651,
-		"oA": 0,
-		"oAP": "\/wp-content\/uploads\/2016\/05\/02480cbb6d22bcf3d5f777b4ad657a86.jpeg",
-		"oF": 0,
-		"opt": 0
-		},
 	"\/wp-content\/uploads\/2016\/05\/13260194_646507312932_5947238833023780652_n-2-150x150.jpg": {
 		"ft": 16384,
 		"iS": 7625,
@@ -63208,38 +64758,6 @@
 		"iS": 100687,
 		"oA": 0,
 		"oAP": "\/wp-content\/uploads\/2016\/05\/13260194_646507312932_5947238833023780652_n-2.jpg",
-		"oF": 0,
-		"opt": 0
-		},
-	"\/wp-content\/uploads\/2016\/05\/159ec7af02fd84e6b8567d6bd72819ab-200x100-c-default.jpeg": {
-		"ft": 16384,
-		"iS": 3357,
-		"oA": 0,
-		"oAP": "\/wp-content\/uploads\/2016\/05\/159ec7af02fd84e6b8567d6bd72819ab-200x100-c-default.jpeg",
-		"oF": 0,
-		"opt": 0
-		},
-	"\/wp-content\/uploads\/2016\/05\/159ec7af02fd84e6b8567d6bd72819ab-200x115-c-default.jpeg": {
-		"ft": 16384,
-		"iS": 4001,
-		"oA": 0,
-		"oAP": "\/wp-content\/uploads\/2016\/05\/159ec7af02fd84e6b8567d6bd72819ab-200x115-c-default.jpeg",
-		"oF": 0,
-		"opt": 0
-		},
-	"\/wp-content\/uploads\/2016\/05\/159ec7af02fd84e6b8567d6bd72819ab-200x120-c-default.jpeg": {
-		"ft": 16384,
-		"iS": 4064,
-		"oA": 0,
-		"oAP": "\/wp-content\/uploads\/2016\/05\/159ec7af02fd84e6b8567d6bd72819ab-200x120-c-default.jpeg",
-		"oF": 0,
-		"opt": 0
-		},
-	"\/wp-content\/uploads\/2016\/05\/159ec7af02fd84e6b8567d6bd72819ab.jpeg": {
-		"ft": 16384,
-		"iS": 1346930,
-		"oA": 0,
-		"oAP": "\/wp-content\/uploads\/2016\/05\/159ec7af02fd84e6b8567d6bd72819ab.jpeg",
 		"oF": 0,
 		"opt": 0
 		},
@@ -63275,118 +64793,6 @@
 		"oF": 0,
 		"opt": 0
 		},
-	"\/wp-content\/uploads\/2016\/05\/5587f9e8613ab8d4f45199ba158ba91b-490x390-c-default.jpeg": {
-		"ft": 16384,
-		"iS": 51100,
-		"oA": 0,
-		"oAP": "\/wp-content\/uploads\/2016\/05\/5587f9e8613ab8d4f45199ba158ba91b-490x390-c-default.jpeg",
-		"oF": 0,
-		"opt": 0
-		},
-	"\/wp-content\/uploads\/2016\/05\/5587f9e8613ab8d4f45199ba158ba91b.jpeg": {
-		"ft": 16384,
-		"iS": 109377,
-		"oA": 0,
-		"oAP": "\/wp-content\/uploads\/2016\/05\/5587f9e8613ab8d4f45199ba158ba91b.jpeg",
-		"oF": 0,
-		"opt": 0
-		},
-	"\/wp-content\/uploads\/2016\/05\/7b198d5c6b8de9375c8dd241760fe067-490x390-c-default.jpeg": {
-		"ft": 16384,
-		"iS": 45709,
-		"oA": 0,
-		"oAP": "\/wp-content\/uploads\/2016\/05\/7b198d5c6b8de9375c8dd241760fe067-490x390-c-default.jpeg",
-		"oF": 0,
-		"opt": 0
-		},
-	"\/wp-content\/uploads\/2016\/05\/7b198d5c6b8de9375c8dd241760fe067.jpeg": {
-		"ft": 16384,
-		"iS": 95592,
-		"oA": 0,
-		"oAP": "\/wp-content\/uploads\/2016\/05\/7b198d5c6b8de9375c8dd241760fe067.jpeg",
-		"oF": 0,
-		"opt": 0
-		},
-	"\/wp-content\/uploads\/2016\/05\/9d416deb13e0a59f1d0b3e0ccbb8b78c-490x390-c-default.jpeg": {
-		"ft": 16384,
-		"iS": 43965,
-		"oA": 0,
-		"oAP": "\/wp-content\/uploads\/2016\/05\/9d416deb13e0a59f1d0b3e0ccbb8b78c-490x390-c-default.jpeg",
-		"oF": 0,
-		"opt": 0
-		},
-	"\/wp-content\/uploads\/2016\/05\/9d416deb13e0a59f1d0b3e0ccbb8b78c.jpeg": {
-		"ft": 16384,
-		"iS": 86643,
-		"oA": 0,
-		"oAP": "\/wp-content\/uploads\/2016\/05\/9d416deb13e0a59f1d0b3e0ccbb8b78c.jpeg",
-		"oF": 0,
-		"opt": 0
-		},
-	"\/wp-content\/uploads\/2016\/05\/a17278059fda3324c727f553893f47dc-490x390-c-default.jpeg": {
-		"ft": 16384,
-		"iS": 47742,
-		"oA": 0,
-		"oAP": "\/wp-content\/uploads\/2016\/05\/a17278059fda3324c727f553893f47dc-490x390-c-default.jpeg",
-		"oF": 0,
-		"opt": 0
-		},
-	"\/wp-content\/uploads\/2016\/05\/a17278059fda3324c727f553893f47dc.jpeg": {
-		"ft": 16384,
-		"iS": 103641,
-		"oA": 0,
-		"oAP": "\/wp-content\/uploads\/2016\/05\/a17278059fda3324c727f553893f47dc.jpeg",
-		"oF": 0,
-		"opt": 0
-		},
-	"\/wp-content\/uploads\/2016\/05\/abd9fe6dc85f51192f57912705236db1-200x100-c-default.jpeg": {
-		"ft": 16384,
-		"iS": 5481,
-		"oA": 0,
-		"oAP": "\/wp-content\/uploads\/2016\/05\/abd9fe6dc85f51192f57912705236db1-200x100-c-default.jpeg",
-		"oF": 0,
-		"opt": 0
-		},
-	"\/wp-content\/uploads\/2016\/05\/abd9fe6dc85f51192f57912705236db1-200x115-c-default.jpeg": {
-		"ft": 16384,
-		"iS": 6175,
-		"oA": 0,
-		"oAP": "\/wp-content\/uploads\/2016\/05\/abd9fe6dc85f51192f57912705236db1-200x115-c-default.jpeg",
-		"oF": 0,
-		"opt": 0
-		},
-	"\/wp-content\/uploads\/2016\/05\/abd9fe6dc85f51192f57912705236db1-200x120-c-default.jpeg": {
-		"ft": 16384,
-		"iS": 6235,
-		"oA": 0,
-		"oAP": "\/wp-content\/uploads\/2016\/05\/abd9fe6dc85f51192f57912705236db1-200x120-c-default.jpeg",
-		"oF": 0,
-		"opt": 0
-		},
-	"\/wp-content\/uploads\/2016\/05\/abd9fe6dc85f51192f57912705236db1.jpeg": {
-		"ft": 16384,
-		"iS": 3149430,
-		"oA": 0,
-		"oAP": "\/wp-content\/uploads\/2016\/05\/abd9fe6dc85f51192f57912705236db1.jpeg",
-		"oF": 0,
-		"opt": 0
-		},
-	"\/wp-content\/uploads\/2016\/05\/b9effadfb9e117be578969364285a07c-490x390-c-default.jpeg": {
-		"ft": 16384,
-		"iS": 50298,
-		"oA": 0,
-		"oAP": "\/wp-content\/uploads\/2016\/05\/b9effadfb9e117be578969364285a07c-490x390-c-default.jpeg",
-		"oF": 0,
-		"opt": 0
-		},
-	"\/wp-content\/uploads\/2016\/05\/b9effadfb9e117be578969364285a07c.jpeg": {
-		"ft": 16384,
-		"iS": 95821,
-		"oA": 0,
-		"oAP": "\/wp-content\/uploads\/2016\/05\/b9effadfb9e117be578969364285a07c.jpeg",
-		"oF": 0,
-		"opt": 0
-		},
 	"\/wp-content\/uploads\/2016\/05\/Carnes-Crossroads-MPC-150x150.jpg": {
 		"ft": 16384,
 		"iS": 11990,
@@ -63400,14 +64806,6 @@
 		"iS": 27713,
 		"oA": 0,
 		"oAP": "\/wp-content\/uploads\/2016\/05\/Carnes-Crossroads-MPC-300x187.jpg",
-		"oF": 0,
-		"opt": 0
-		},
-	"\/wp-content\/uploads\/2016\/05\/Carnes-Crossroads-MPC-335x317-c-default.jpg": {
-		"ft": 16384,
-		"iS": 37347,
-		"oA": 0,
-		"oAP": "\/wp-content\/uploads\/2016\/05\/Carnes-Crossroads-MPC-335x317-c-default.jpg",
 		"oF": 0,
 		"opt": 0
 		},
@@ -63536,70 +64934,6 @@
 		"iS": 68912,
 		"oA": 0,
 		"oAP": "\/wp-content\/uploads\/2016\/05\/cropped-carnes_logo_badge.png",
-		"oF": 0,
-		"opt": 0
-		},
-	"\/wp-content\/uploads\/2016\/05\/d28050430aa8f6de907b97ebf330bd15-200x100-c-default.jpeg": {
-		"ft": 16384,
-		"iS": 4283,
-		"oA": 0,
-		"oAP": "\/wp-content\/uploads\/2016\/05\/d28050430aa8f6de907b97ebf330bd15-200x100-c-default.jpeg",
-		"oF": 0,
-		"opt": 0
-		},
-	"\/wp-content\/uploads\/2016\/05\/d28050430aa8f6de907b97ebf330bd15-200x115-c-default.jpeg": {
-		"ft": 16384,
-		"iS": 4814,
-		"oA": 0,
-		"oAP": "\/wp-content\/uploads\/2016\/05\/d28050430aa8f6de907b97ebf330bd15-200x115-c-default.jpeg",
-		"oF": 0,
-		"opt": 0
-		},
-	"\/wp-content\/uploads\/2016\/05\/d28050430aa8f6de907b97ebf330bd15-200x120-c-default.jpeg": {
-		"ft": 16384,
-		"iS": 4918,
-		"oA": 0,
-		"oAP": "\/wp-content\/uploads\/2016\/05\/d28050430aa8f6de907b97ebf330bd15-200x120-c-default.jpeg",
-		"oF": 0,
-		"opt": 0
-		},
-	"\/wp-content\/uploads\/2016\/05\/d28050430aa8f6de907b97ebf330bd15.jpeg": {
-		"ft": 16384,
-		"iS": 1701520,
-		"oA": 0,
-		"oAP": "\/wp-content\/uploads\/2016\/05\/d28050430aa8f6de907b97ebf330bd15.jpeg",
-		"oF": 0,
-		"opt": 0
-		},
-	"\/wp-content\/uploads\/2016\/05\/f0e59410fc1437689a4b6924e2cc261b-200x100-c-default.jpeg": {
-		"ft": 16384,
-		"iS": 4681,
-		"oA": 0,
-		"oAP": "\/wp-content\/uploads\/2016\/05\/f0e59410fc1437689a4b6924e2cc261b-200x100-c-default.jpeg",
-		"oF": 0,
-		"opt": 0
-		},
-	"\/wp-content\/uploads\/2016\/05\/f0e59410fc1437689a4b6924e2cc261b-200x115-c-default.jpeg": {
-		"ft": 16384,
-		"iS": 5427,
-		"oA": 0,
-		"oAP": "\/wp-content\/uploads\/2016\/05\/f0e59410fc1437689a4b6924e2cc261b-200x115-c-default.jpeg",
-		"oF": 0,
-		"opt": 0
-		},
-	"\/wp-content\/uploads\/2016\/05\/f0e59410fc1437689a4b6924e2cc261b-200x120-c-default.jpeg": {
-		"ft": 16384,
-		"iS": 5489,
-		"oA": 0,
-		"oAP": "\/wp-content\/uploads\/2016\/05\/f0e59410fc1437689a4b6924e2cc261b-200x120-c-default.jpeg",
-		"oF": 0,
-		"opt": 0
-		},
-	"\/wp-content\/uploads\/2016\/05\/f0e59410fc1437689a4b6924e2cc261b.jpeg": {
-		"ft": 16384,
-		"iS": 1372520,
-		"oA": 0,
-		"oAP": "\/wp-content\/uploads\/2016\/05\/f0e59410fc1437689a4b6924e2cc261b.jpeg",
 		"oF": 0,
 		"opt": 0
 		},
@@ -64163,14 +65497,6 @@
 		"oF": 0,
 		"opt": 0
 		},
-	"\/wp-content\/uploads\/2016\/06\/MUSC-Carnes-Crossroads-Web-335x317-c-default.jpg": {
-		"ft": 16384,
-		"iS": 25633,
-		"oA": 0,
-		"oAP": "\/wp-content\/uploads\/2016\/06\/MUSC-Carnes-Crossroads-Web-335x317-c-default.jpg",
-		"oF": 0,
-		"opt": 0
-		},
 	"\/wp-content\/uploads\/2016\/06\/MUSC-Carnes-Crossroads-Web-768x508.jpg": {
 		"ft": 16384,
 		"iS": 85110,
@@ -64203,14 +65529,6 @@
 		"oF": 0,
 		"opt": 0
 		},
-	"\/wp-content\/uploads\/2016\/06\/St-James-Park-carnes-crossroads-335x317-c-default.jpg": {
-		"ft": 16384,
-		"iS": 40157,
-		"oA": 0,
-		"oAP": "\/wp-content\/uploads\/2016\/06\/St-James-Park-carnes-crossroads-335x317-c-default.jpg",
-		"oF": 0,
-		"opt": 0
-		},
 	"\/wp-content\/uploads\/2016\/06\/St-James-Park-carnes-crossroads-768x523.jpg": {
 		"ft": 16384,
 		"iS": 149349,
@@ -64240,14 +65558,6 @@
 		"iS": 37218,
 		"oA": 0,
 		"oAP": "\/wp-content\/uploads\/2016\/06\/Stelzigs-300x209.jpg",
-		"oF": 0,
-		"opt": 0
-		},
-	"\/wp-content\/uploads\/2016\/06\/Stelzigs-335x317-c-default.jpg": {
-		"ft": 16384,
-		"iS": 29882,
-		"oA": 0,
-		"oAP": "\/wp-content\/uploads\/2016\/06\/Stelzigs-335x317-c-default.jpg",
 		"oF": 0,
 		"opt": 0
 		},
@@ -64348,6 +65658,46 @@
 		"oA": 2,
 		"oAP": "\/wp-content\/uploads\/2016\/07\/April-27-2016-ARB-Agenda.pdf",
 		"oF": 0
+		},
+	"\/wp-content\/uploads\/2016\/07\/Barbara-McLaughlin-1-150x150.jpg": {
+		"ft": 16384,
+		"iS": 7534,
+		"oA": 0,
+		"oAP": "\/wp-content\/uploads\/2016\/07\/Barbara-McLaughlin-1-150x150.jpg",
+		"oF": 0,
+		"opt": 0
+		},
+	"\/wp-content\/uploads\/2016\/07\/Barbara-McLaughlin-1-240x300.jpg": {
+		"ft": 16384,
+		"iS": 17062,
+		"oA": 0,
+		"oAP": "\/wp-content\/uploads\/2016\/07\/Barbara-McLaughlin-1-240x300.jpg",
+		"oF": 0,
+		"opt": 0
+		},
+	"\/wp-content\/uploads\/2016\/07\/Barbara-McLaughlin-1-768x960.jpg": {
+		"ft": 16384,
+		"iS": 99227,
+		"oA": 0,
+		"oAP": "\/wp-content\/uploads\/2016\/07\/Barbara-McLaughlin-1-768x960.jpg",
+		"oF": 0,
+		"opt": 0
+		},
+	"\/wp-content\/uploads\/2016\/07\/Barbara-McLaughlin-1-819x1024.jpg": {
+		"ft": 16384,
+		"iS": 110179,
+		"oA": 0,
+		"oAP": "\/wp-content\/uploads\/2016\/07\/Barbara-McLaughlin-1-819x1024.jpg",
+		"oF": 0,
+		"opt": 0
+		},
+	"\/wp-content\/uploads\/2016\/07\/Barbara-McLaughlin-1.jpg": {
+		"ft": 16384,
+		"iS": 2205659,
+		"oA": 0,
+		"oAP": "\/wp-content\/uploads\/2016\/07\/Barbara-McLaughlin-1.jpg",
+		"oF": 0,
+		"opt": 0
 		},
 	"\/wp-content\/uploads\/2016\/07\/Barn00-1024x720.jpg": {
 		"ft": 16384,
@@ -64693,6 +66043,44 @@
 		"oAP": "\/wp-content\/uploads\/2016\/07\/CCTA-Budget-2016.pdf",
 		"oF": 0
 		},
+	"\/wp-content\/uploads\/2016\/07\/CCX-Agenda-January-11-2017-116x150.jpg": {
+		"ft": 16384,
+		"iS": 2439,
+		"oA": 0,
+		"oAP": "\/wp-content\/uploads\/2016\/07\/CCX-Agenda-January-11-2017-116x150.jpg",
+		"oF": 0,
+		"opt": 0
+		},
+	"\/wp-content\/uploads\/2016\/07\/CCX-Agenda-January-11-2017-232x300.jpg": {
+		"ft": 16384,
+		"iS": 6545,
+		"oA": 0,
+		"oAP": "\/wp-content\/uploads\/2016\/07\/CCX-Agenda-January-11-2017-232x300.jpg",
+		"oF": 0,
+		"opt": 0
+		},
+	"\/wp-content\/uploads\/2016\/07\/CCX-Agenda-January-11-2017-791x1024.jpg": {
+		"ft": 16384,
+		"iS": 43212,
+		"oA": 0,
+		"oAP": "\/wp-content\/uploads\/2016\/07\/CCX-Agenda-January-11-2017-791x1024.jpg",
+		"oF": 0,
+		"opt": 0
+		},
+	"\/wp-content\/uploads\/2016\/07\/CCX-Agenda-January-11-2017.jpg": {
+		"ft": 16384,
+		"iS": 62373,
+		"oA": 0,
+		"oAP": "\/wp-content\/uploads\/2016\/07\/CCX-Agenda-January-11-2017.jpg",
+		"oF": 0,
+		"opt": 0
+		},
+	"\/wp-content\/uploads\/2016\/07\/CCX-Agenda-January-11-2017.pdf": {
+		"ft": 8192,
+		"oA": 2,
+		"oAP": "\/wp-content\/uploads\/2016\/07\/CCX-Agenda-January-11-2017.pdf",
+		"oF": 0
+		},
 	"\/wp-content\/uploads\/2016\/07\/CCX-Builder-Review-Application.pdf": {
 		"ft": 8192,
 		"oA": 2,
@@ -64705,11 +66093,131 @@
 		"oAP": "\/wp-content\/uploads\/2016\/07\/CCX-Landscape-Review.pdf",
 		"oF": 0
 		},
+	"\/wp-content\/uploads\/2016\/07\/Chris-Hamil-2-150x150.jpg": {
+		"ft": 16384,
+		"iS": 7686,
+		"oA": 0,
+		"oAP": "\/wp-content\/uploads\/2016\/07\/Chris-Hamil-2-150x150.jpg",
+		"oF": 0,
+		"opt": 0
+		},
+	"\/wp-content\/uploads\/2016\/07\/Chris-Hamil-2-240x300.jpg": {
+		"ft": 16384,
+		"iS": 18245,
+		"oA": 0,
+		"oAP": "\/wp-content\/uploads\/2016\/07\/Chris-Hamil-2-240x300.jpg",
+		"oF": 0,
+		"opt": 0
+		},
+	"\/wp-content\/uploads\/2016\/07\/Chris-Hamil-2-768x960.jpg": {
+		"ft": 16384,
+		"iS": 121364,
+		"oA": 0,
+		"oAP": "\/wp-content\/uploads\/2016\/07\/Chris-Hamil-2-768x960.jpg",
+		"oF": 0,
+		"opt": 0
+		},
+	"\/wp-content\/uploads\/2016\/07\/Chris-Hamil-2-819x1024.jpg": {
+		"ft": 16384,
+		"iS": 135367,
+		"oA": 0,
+		"oAP": "\/wp-content\/uploads\/2016\/07\/Chris-Hamil-2-819x1024.jpg",
+		"oF": 0,
+		"opt": 0
+		},
+	"\/wp-content\/uploads\/2016\/07\/Chris-Hamil-2.jpg": {
+		"ft": 16384,
+		"iS": 2378571,
+		"oA": 0,
+		"oAP": "\/wp-content\/uploads\/2016\/07\/Chris-Hamil-2.jpg",
+		"oF": 0,
+		"opt": 0
+		},
+	"\/wp-content\/uploads\/2016\/07\/Dani-Hermann-1-150x150.jpg": {
+		"ft": 16384,
+		"iS": 7817,
+		"oA": 0,
+		"oAP": "\/wp-content\/uploads\/2016\/07\/Dani-Hermann-1-150x150.jpg",
+		"oF": 0,
+		"opt": 0
+		},
+	"\/wp-content\/uploads\/2016\/07\/Dani-Hermann-1-240x300.jpg": {
+		"ft": 16384,
+		"iS": 17560,
+		"oA": 0,
+		"oAP": "\/wp-content\/uploads\/2016\/07\/Dani-Hermann-1-240x300.jpg",
+		"oF": 0,
+		"opt": 0
+		},
+	"\/wp-content\/uploads\/2016\/07\/Dani-Hermann-1-768x960.jpg": {
+		"ft": 16384,
+		"iS": 107202,
+		"oA": 0,
+		"oAP": "\/wp-content\/uploads\/2016\/07\/Dani-Hermann-1-768x960.jpg",
+		"oF": 0,
+		"opt": 0
+		},
+	"\/wp-content\/uploads\/2016\/07\/Dani-Hermann-1-819x1024.jpg": {
+		"ft": 16384,
+		"iS": 119508,
+		"oA": 0,
+		"oAP": "\/wp-content\/uploads\/2016\/07\/Dani-Hermann-1-819x1024.jpg",
+		"oF": 0,
+		"opt": 0
+		},
+	"\/wp-content\/uploads\/2016\/07\/Dani-Hermann-1.jpg": {
+		"ft": 16384,
+		"iS": 2066540,
+		"oA": 0,
+		"oAP": "\/wp-content\/uploads\/2016\/07\/Dani-Hermann-1.jpg",
+		"oF": 0,
+		"opt": 0
+		},
 	"\/wp-content\/uploads\/2016\/07\/Declaration-of-Easements-and-Covenant-to-Share-Costs-Carnes-Crossroads.pdf": {
 		"ft": 8192,
 		"oA": 2,
 		"oAP": "\/wp-content\/uploads\/2016\/07\/Declaration-of-Easements-and-Covenant-to-Share-Costs-Carnes-Crossroads.pdf",
 		"oF": 0
+		},
+	"\/wp-content\/uploads\/2016\/07\/Directories-1024x654.jpg": {
+		"ft": 16384,
+		"iS": 167825,
+		"oA": 0,
+		"oAP": "\/wp-content\/uploads\/2016\/07\/Directories-1024x654.jpg",
+		"oF": 0,
+		"opt": 0
+		},
+	"\/wp-content\/uploads\/2016\/07\/Directories-150x150.jpg": {
+		"ft": 16384,
+		"iS": 7896,
+		"oA": 0,
+		"oAP": "\/wp-content\/uploads\/2016\/07\/Directories-150x150.jpg",
+		"oF": 0,
+		"opt": 0
+		},
+	"\/wp-content\/uploads\/2016\/07\/Directories-300x192.jpg": {
+		"ft": 16384,
+		"iS": 18018,
+		"oA": 0,
+		"oAP": "\/wp-content\/uploads\/2016\/07\/Directories-300x192.jpg",
+		"oF": 0,
+		"opt": 0
+		},
+	"\/wp-content\/uploads\/2016\/07\/Directories-768x491.jpg": {
+		"ft": 16384,
+		"iS": 98254,
+		"oA": 0,
+		"oAP": "\/wp-content\/uploads\/2016\/07\/Directories-768x491.jpg",
+		"oF": 0,
+		"opt": 0
+		},
+	"\/wp-content\/uploads\/2016\/07\/Directories.jpg": {
+		"ft": 16384,
+		"iS": 14748272,
+		"oA": 0,
+		"oAP": "\/wp-content\/uploads\/2016\/07\/Directories.jpg",
+		"oF": 0,
+		"opt": 0
 		},
 	"\/wp-content\/uploads\/2016\/07\/February-10-2016-ARB-Agenda.pdf": {
 		"ft": 8192,
@@ -64723,11 +66231,211 @@
 		"oAP": "\/wp-content\/uploads\/2016\/07\/February-24-2016-ARB-Agenda.pdf",
 		"oF": 0
 		},
+	"\/wp-content\/uploads\/2016\/07\/Jane-Baker-2-150x150.jpg": {
+		"ft": 16384,
+		"iS": 8226,
+		"oA": 0,
+		"oAP": "\/wp-content\/uploads\/2016\/07\/Jane-Baker-2-150x150.jpg",
+		"oF": 0,
+		"opt": 0
+		},
+	"\/wp-content\/uploads\/2016\/07\/Jane-Baker-2-240x300.jpg": {
+		"ft": 16384,
+		"iS": 19834,
+		"oA": 0,
+		"oAP": "\/wp-content\/uploads\/2016\/07\/Jane-Baker-2-240x300.jpg",
+		"oF": 0,
+		"opt": 0
+		},
+	"\/wp-content\/uploads\/2016\/07\/Jane-Baker-2-768x960.jpg": {
+		"ft": 16384,
+		"iS": 125416,
+		"oA": 0,
+		"oAP": "\/wp-content\/uploads\/2016\/07\/Jane-Baker-2-768x960.jpg",
+		"oF": 0,
+		"opt": 0
+		},
+	"\/wp-content\/uploads\/2016\/07\/Jane-Baker-2-819x1024.jpg": {
+		"ft": 16384,
+		"iS": 139932,
+		"oA": 0,
+		"oAP": "\/wp-content\/uploads\/2016\/07\/Jane-Baker-2-819x1024.jpg",
+		"oF": 0,
+		"opt": 0
+		},
+	"\/wp-content\/uploads\/2016\/07\/Jane-Baker-2.jpg": {
+		"ft": 16384,
+		"iS": 2478054,
+		"oA": 0,
+		"oAP": "\/wp-content\/uploads\/2016\/07\/Jane-Baker-2.jpg",
+		"oF": 0,
+		"opt": 0
+		},
 	"\/wp-content\/uploads\/2016\/07\/January-13-2016-ARB-Agenda.pdf": {
 		"ft": 8192,
 		"oA": 2,
 		"oAP": "\/wp-content\/uploads\/2016\/07\/January-13-2016-ARB-Agenda.pdf",
 		"oF": 0
+		},
+	"\/wp-content\/uploads\/2016\/07\/Kay-Fabrizio-2-150x150.jpg": {
+		"ft": 16384,
+		"iS": 7832,
+		"oA": 0,
+		"oAP": "\/wp-content\/uploads\/2016\/07\/Kay-Fabrizio-2-150x150.jpg",
+		"oF": 0,
+		"opt": 0
+		},
+	"\/wp-content\/uploads\/2016\/07\/Kay-Fabrizio-2-240x300.jpg": {
+		"ft": 16384,
+		"iS": 18269,
+		"oA": 0,
+		"oAP": "\/wp-content\/uploads\/2016\/07\/Kay-Fabrizio-2-240x300.jpg",
+		"oF": 0,
+		"opt": 0
+		},
+	"\/wp-content\/uploads\/2016\/07\/Kay-Fabrizio-2-768x960.jpg": {
+		"ft": 16384,
+		"iS": 131653,
+		"oA": 0,
+		"oAP": "\/wp-content\/uploads\/2016\/07\/Kay-Fabrizio-2-768x960.jpg",
+		"oF": 0,
+		"opt": 0
+		},
+	"\/wp-content\/uploads\/2016\/07\/Kay-Fabrizio-2-819x1024.jpg": {
+		"ft": 16384,
+		"iS": 147323,
+		"oA": 0,
+		"oAP": "\/wp-content\/uploads\/2016\/07\/Kay-Fabrizio-2-819x1024.jpg",
+		"oF": 0,
+		"opt": 0
+		},
+	"\/wp-content\/uploads\/2016\/07\/Kay-Fabrizio-2.jpg": {
+		"ft": 16384,
+		"iS": 3011839,
+		"oA": 0,
+		"oAP": "\/wp-content\/uploads\/2016\/07\/Kay-Fabrizio-2.jpg",
+		"oF": 0,
+		"opt": 0
+		},
+	"\/wp-content\/uploads\/2016\/07\/Larry-Whetsall-1-150x150.jpg": {
+		"ft": 16384,
+		"iS": 8164,
+		"oA": 0,
+		"oAP": "\/wp-content\/uploads\/2016\/07\/Larry-Whetsall-1-150x150.jpg",
+		"oF": 0,
+		"opt": 0
+		},
+	"\/wp-content\/uploads\/2016\/07\/Larry-Whetsall-1-240x300.jpg": {
+		"ft": 16384,
+		"iS": 18868,
+		"oA": 0,
+		"oAP": "\/wp-content\/uploads\/2016\/07\/Larry-Whetsall-1-240x300.jpg",
+		"oF": 0,
+		"opt": 0
+		},
+	"\/wp-content\/uploads\/2016\/07\/Larry-Whetsall-1-768x960.jpg": {
+		"ft": 16384,
+		"iS": 174179,
+		"oA": 0,
+		"oAP": "\/wp-content\/uploads\/2016\/07\/Larry-Whetsall-1-768x960.jpg",
+		"oF": 0,
+		"opt": 0
+		},
+	"\/wp-content\/uploads\/2016\/07\/Larry-Whetsall-1-819x1024.jpg": {
+		"ft": 16384,
+		"iS": 196124,
+		"oA": 0,
+		"oAP": "\/wp-content\/uploads\/2016\/07\/Larry-Whetsall-1-819x1024.jpg",
+		"oF": 0,
+		"opt": 0
+		},
+	"\/wp-content\/uploads\/2016\/07\/Larry-Whetsall-1.jpg": {
+		"ft": 16384,
+		"iS": 4458027,
+		"oA": 0,
+		"oAP": "\/wp-content\/uploads\/2016\/07\/Larry-Whetsall-1.jpg",
+		"oF": 0,
+		"opt": 0
+		},
+	"\/wp-content\/uploads\/2016\/07\/Lisa-Avant-1-150x150.jpg": {
+		"ft": 16384,
+		"iS": 7900,
+		"oA": 0,
+		"oAP": "\/wp-content\/uploads\/2016\/07\/Lisa-Avant-1-150x150.jpg",
+		"oF": 0,
+		"opt": 0
+		},
+	"\/wp-content\/uploads\/2016\/07\/Lisa-Avant-1-240x300.jpg": {
+		"ft": 16384,
+		"iS": 21126,
+		"oA": 0,
+		"oAP": "\/wp-content\/uploads\/2016\/07\/Lisa-Avant-1-240x300.jpg",
+		"oF": 0,
+		"opt": 0
+		},
+	"\/wp-content\/uploads\/2016\/07\/Lisa-Avant-1-768x960.jpg": {
+		"ft": 16384,
+		"iS": 154299,
+		"oA": 0,
+		"oAP": "\/wp-content\/uploads\/2016\/07\/Lisa-Avant-1-768x960.jpg",
+		"oF": 0,
+		"opt": 0
+		},
+	"\/wp-content\/uploads\/2016\/07\/Lisa-Avant-1-819x1024.jpg": {
+		"ft": 16384,
+		"iS": 169649,
+		"oA": 0,
+		"oAP": "\/wp-content\/uploads\/2016\/07\/Lisa-Avant-1-819x1024.jpg",
+		"oF": 0,
+		"opt": 0
+		},
+	"\/wp-content\/uploads\/2016\/07\/Lisa-Avant-1.jpg": {
+		"ft": 16384,
+		"iS": 2087317,
+		"oA": 0,
+		"oAP": "\/wp-content\/uploads\/2016\/07\/Lisa-Avant-1.jpg",
+		"oF": 0,
+		"opt": 0
+		},
+	"\/wp-content\/uploads\/2016\/07\/Mary-Stuart-Sutton-150x150.jpg": {
+		"ft": 16384,
+		"iS": 6757,
+		"oA": 0,
+		"oAP": "\/wp-content\/uploads\/2016\/07\/Mary-Stuart-Sutton-150x150.jpg",
+		"oF": 0,
+		"opt": 0
+		},
+	"\/wp-content\/uploads\/2016\/07\/Mary-Stuart-Sutton-240x300.jpg": {
+		"ft": 16384,
+		"iS": 15648,
+		"oA": 0,
+		"oAP": "\/wp-content\/uploads\/2016\/07\/Mary-Stuart-Sutton-240x300.jpg",
+		"oF": 0,
+		"opt": 0
+		},
+	"\/wp-content\/uploads\/2016\/07\/Mary-Stuart-Sutton-768x960.jpg": {
+		"ft": 16384,
+		"iS": 107002,
+		"oA": 0,
+		"oAP": "\/wp-content\/uploads\/2016\/07\/Mary-Stuart-Sutton-768x960.jpg",
+		"oF": 0,
+		"opt": 0
+		},
+	"\/wp-content\/uploads\/2016\/07\/Mary-Stuart-Sutton-819x1024.jpg": {
+		"ft": 16384,
+		"iS": 119826,
+		"oA": 0,
+		"oAP": "\/wp-content\/uploads\/2016\/07\/Mary-Stuart-Sutton-819x1024.jpg",
+		"oF": 0,
+		"opt": 0
+		},
+	"\/wp-content\/uploads\/2016\/07\/Mary-Stuart-Sutton.jpg": {
+		"ft": 16384,
+		"iS": 2120044,
+		"oA": 0,
+		"oAP": "\/wp-content\/uploads\/2016\/07\/Mary-Stuart-Sutton.jpg",
+		"oF": 0,
+		"opt": 0
 		},
 	"\/wp-content\/uploads\/2016\/07\/May-11-2016-ARB-Agenda.pdf": {
 		"ft": 8192,
@@ -64757,14 +66465,6 @@
 		"oF": 0,
 		"opt": 0
 		},
-	"\/wp-content\/uploads\/2016\/07\/Roper-335x317-c-default.jpg": {
-		"ft": 16384,
-		"iS": 23333,
-		"oA": 0,
-		"oAP": "\/wp-content\/uploads\/2016\/07\/Roper-335x317-c-default.jpg",
-		"oF": 0,
-		"opt": 0
-		},
 	"\/wp-content\/uploads\/2016\/07\/Roper-768x382.jpg": {
 		"ft": 16384,
 		"iS": 79714,
@@ -64778,6 +66478,46 @@
 		"iS": 230651,
 		"oA": 0,
 		"oAP": "\/wp-content\/uploads\/2016\/07\/Roper.jpg",
+		"oF": 0,
+		"opt": 0
+		},
+	"\/wp-content\/uploads\/2016\/07\/Sara-Cuthbert-1-150x150.jpg": {
+		"ft": 16384,
+		"iS": 7309,
+		"oA": 0,
+		"oAP": "\/wp-content\/uploads\/2016\/07\/Sara-Cuthbert-1-150x150.jpg",
+		"oF": 0,
+		"opt": 0
+		},
+	"\/wp-content\/uploads\/2016\/07\/Sara-Cuthbert-1-240x300.jpg": {
+		"ft": 16384,
+		"iS": 17446,
+		"oA": 0,
+		"oAP": "\/wp-content\/uploads\/2016\/07\/Sara-Cuthbert-1-240x300.jpg",
+		"oF": 0,
+		"opt": 0
+		},
+	"\/wp-content\/uploads\/2016\/07\/Sara-Cuthbert-1-768x960.jpg": {
+		"ft": 16384,
+		"iS": 109531,
+		"oA": 0,
+		"oAP": "\/wp-content\/uploads\/2016\/07\/Sara-Cuthbert-1-768x960.jpg",
+		"oF": 0,
+		"opt": 0
+		},
+	"\/wp-content\/uploads\/2016\/07\/Sara-Cuthbert-1-819x1024.jpg": {
+		"ft": 16384,
+		"iS": 122460,
+		"oA": 0,
+		"oAP": "\/wp-content\/uploads\/2016\/07\/Sara-Cuthbert-1-819x1024.jpg",
+		"oF": 0,
+		"opt": 0
+		},
+	"\/wp-content\/uploads\/2016\/07\/Sara-Cuthbert-1.jpg": {
+		"ft": 16384,
+		"iS": 2177200,
+		"oA": 0,
+		"oAP": "\/wp-content\/uploads\/2016\/07\/Sara-Cuthbert-1.jpg",
 		"oF": 0,
 		"opt": 0
 		},
@@ -64938,14 +66678,6 @@
 		"iS": 25697,
 		"oA": 0,
 		"oAP": "\/wp-content\/uploads\/2016\/08\/Abbotts-Sold-Carnes-Crossroads-300x225.jpg",
-		"oF": 0,
-		"opt": 0
-		},
-	"\/wp-content\/uploads\/2016\/08\/Abbotts-Sold-Carnes-Crossroads-335x317-c-default.jpg": {
-		"ft": 16384,
-		"iS": 34946,
-		"oA": 0,
-		"oAP": "\/wp-content\/uploads\/2016\/08\/Abbotts-Sold-Carnes-Crossroads-335x317-c-default.jpg",
 		"oF": 0,
 		"opt": 0
 		},
@@ -65611,14 +67343,6 @@
 		"oF": 0,
 		"opt": 0
 		},
-	"\/wp-content\/uploads\/2016\/08\/CC-Pool-Fitness-2-335x317-c-default.jpg": {
-		"ft": 16384,
-		"iS": 31476,
-		"oA": 0,
-		"oAP": "\/wp-content\/uploads\/2016\/08\/CC-Pool-Fitness-2-335x317-c-default.jpg",
-		"oF": 0,
-		"opt": 0
-		},
 	"\/wp-content\/uploads\/2016\/08\/CC-Pool-Fitness-2-768x490.jpg": {
 		"ft": 16384,
 		"iS": 134901,
@@ -65843,6 +67567,158 @@
 		"oF": 0,
 		"opt": 0
 		},
+	"\/wp-content\/uploads\/2016\/08\/Elliot-with-Detached-Garage-1-17-FPonly-116x150.jpg": {
+		"ft": 16384,
+		"iS": 4607,
+		"oA": 0,
+		"oAP": "\/wp-content\/uploads\/2016\/08\/Elliot-with-Detached-Garage-1-17-FPonly-116x150.jpg",
+		"oF": 0,
+		"opt": 0
+		},
+	"\/wp-content\/uploads\/2016\/08\/Elliot-with-Detached-Garage-1-17-FPonly-232x300.jpg": {
+		"ft": 16384,
+		"iS": 12085,
+		"oA": 0,
+		"oAP": "\/wp-content\/uploads\/2016\/08\/Elliot-with-Detached-Garage-1-17-FPonly-232x300.jpg",
+		"oF": 0,
+		"opt": 0
+		},
+	"\/wp-content\/uploads\/2016\/08\/Elliot-with-Detached-Garage-1-17-FPonly-791x1024.jpg": {
+		"ft": 16384,
+		"iS": 74758,
+		"oA": 0,
+		"oAP": "\/wp-content\/uploads\/2016\/08\/Elliot-with-Detached-Garage-1-17-FPonly-791x1024.jpg",
+		"oF": 0,
+		"opt": 0
+		},
+	"\/wp-content\/uploads\/2016\/08\/Elliot-with-Detached-Garage-1-17-FPonly.jpg": {
+		"ft": 16384,
+		"iS": 192928,
+		"oA": 0,
+		"oAP": "\/wp-content\/uploads\/2016\/08\/Elliot-with-Detached-Garage-1-17-FPonly.jpg",
+		"oF": 0,
+		"opt": 0
+		},
+	"\/wp-content\/uploads\/2016\/08\/Elliot-with-Detached-Garage-1-17-FPonly.pdf": {
+		"ft": 8192,
+		"oA": 2,
+		"oAP": "\/wp-content\/uploads\/2016\/08\/Elliot-with-Detached-Garage-1-17-FPonly.pdf",
+		"oF": 0
+		},
+	"\/wp-content\/uploads\/2016\/08\/Elliot-with-Detached-Garage-1-17-X1A-116x150.jpg": {
+		"ft": 16384,
+		"iS": 3918,
+		"oA": 0,
+		"oAP": "\/wp-content\/uploads\/2016\/08\/Elliot-with-Detached-Garage-1-17-X1A-116x150.jpg",
+		"oF": 0,
+		"opt": 0
+		},
+	"\/wp-content\/uploads\/2016\/08\/Elliot-with-Detached-Garage-1-17-X1A-232x300.jpg": {
+		"ft": 16384,
+		"iS": 12083,
+		"oA": 0,
+		"oAP": "\/wp-content\/uploads\/2016\/08\/Elliot-with-Detached-Garage-1-17-X1A-232x300.jpg",
+		"oF": 0,
+		"opt": 0
+		},
+	"\/wp-content\/uploads\/2016\/08\/Elliot-with-Detached-Garage-1-17-X1A-791x1024.jpg": {
+		"ft": 16384,
+		"iS": 113620,
+		"oA": 0,
+		"oAP": "\/wp-content\/uploads\/2016\/08\/Elliot-with-Detached-Garage-1-17-X1A-791x1024.jpg",
+		"oF": 0,
+		"opt": 0
+		},
+	"\/wp-content\/uploads\/2016\/08\/Elliot-with-Detached-Garage-1-17-X1A.jpg": {
+		"ft": 16384,
+		"iS": 617048,
+		"oA": 0,
+		"oAP": "\/wp-content\/uploads\/2016\/08\/Elliot-with-Detached-Garage-1-17-X1A.jpg",
+		"oF": 0,
+		"opt": 0
+		},
+	"\/wp-content\/uploads\/2016\/08\/Elliot-with-Detached-Garage-1-17-X1A.pdf": {
+		"ft": 8192,
+		"oA": 2,
+		"oAP": "\/wp-content\/uploads\/2016\/08\/Elliot-with-Detached-Garage-1-17-X1A.pdf",
+		"oF": 0
+		},
+	"\/wp-content\/uploads\/2016\/08\/Elliot-With-Garage-1-17-FPonly-116x150.jpg": {
+		"ft": 16384,
+		"iS": 3688,
+		"oA": 0,
+		"oAP": "\/wp-content\/uploads\/2016\/08\/Elliot-With-Garage-1-17-FPonly-116x150.jpg",
+		"oF": 0,
+		"opt": 0
+		},
+	"\/wp-content\/uploads\/2016\/08\/Elliot-With-Garage-1-17-FPonly-232x300.jpg": {
+		"ft": 16384,
+		"iS": 9839,
+		"oA": 0,
+		"oAP": "\/wp-content\/uploads\/2016\/08\/Elliot-With-Garage-1-17-FPonly-232x300.jpg",
+		"oF": 0,
+		"opt": 0
+		},
+	"\/wp-content\/uploads\/2016\/08\/Elliot-With-Garage-1-17-FPonly-791x1024.jpg": {
+		"ft": 16384,
+		"iS": 63873,
+		"oA": 0,
+		"oAP": "\/wp-content\/uploads\/2016\/08\/Elliot-With-Garage-1-17-FPonly-791x1024.jpg",
+		"oF": 0,
+		"opt": 0
+		},
+	"\/wp-content\/uploads\/2016\/08\/Elliot-With-Garage-1-17-FPonly.jpg": {
+		"ft": 16384,
+		"iS": 286608,
+		"oA": 0,
+		"oAP": "\/wp-content\/uploads\/2016\/08\/Elliot-With-Garage-1-17-FPonly.jpg",
+		"oF": 0,
+		"opt": 0
+		},
+	"\/wp-content\/uploads\/2016\/08\/Elliot-With-Garage-1-17-FPonly.pdf": {
+		"ft": 8192,
+		"oA": 2,
+		"oAP": "\/wp-content\/uploads\/2016\/08\/Elliot-With-Garage-1-17-FPonly.pdf",
+		"oF": 0
+		},
+	"\/wp-content\/uploads\/2016\/08\/Elliot-With-Garage-1-17-X1A-116x150.jpg": {
+		"ft": 16384,
+		"iS": 4558,
+		"oA": 0,
+		"oAP": "\/wp-content\/uploads\/2016\/08\/Elliot-With-Garage-1-17-X1A-116x150.jpg",
+		"oF": 0,
+		"opt": 0
+		},
+	"\/wp-content\/uploads\/2016\/08\/Elliot-With-Garage-1-17-X1A-232x300.jpg": {
+		"ft": 16384,
+		"iS": 14024,
+		"oA": 0,
+		"oAP": "\/wp-content\/uploads\/2016\/08\/Elliot-With-Garage-1-17-X1A-232x300.jpg",
+		"oF": 0,
+		"opt": 0
+		},
+	"\/wp-content\/uploads\/2016\/08\/Elliot-With-Garage-1-17-X1A-791x1024.jpg": {
+		"ft": 16384,
+		"iS": 127518,
+		"oA": 0,
+		"oAP": "\/wp-content\/uploads\/2016\/08\/Elliot-With-Garage-1-17-X1A-791x1024.jpg",
+		"oF": 0,
+		"opt": 0
+		},
+	"\/wp-content\/uploads\/2016\/08\/Elliot-With-Garage-1-17-X1A.jpg": {
+		"ft": 16384,
+		"iS": 718653,
+		"oA": 0,
+		"oAP": "\/wp-content\/uploads\/2016\/08\/Elliot-With-Garage-1-17-X1A.jpg",
+		"oF": 0,
+		"opt": 0
+		},
+	"\/wp-content\/uploads\/2016\/08\/Elliot-With-Garage-1-17-X1A.pdf": {
+		"ft": 8192,
+		"oA": 2,
+		"oAP": "\/wp-content\/uploads\/2016\/08\/Elliot-With-Garage-1-17-X1A.pdf",
+		"oF": 0
+		},
 	"\/wp-content\/uploads\/2016\/08\/Fullers-Carnes-Crossroads-150x150.jpg": {
 		"ft": 16384,
 		"iS": 8345,
@@ -65963,6 +67839,82 @@
 		"oF": 0,
 		"opt": 0
 		},
+	"\/wp-content\/uploads\/2016\/08\/Hassell-with-Detached-Garage-Tub-1-17-FPonly-116x150.jpg": {
+		"ft": 16384,
+		"iS": 4855,
+		"oA": 0,
+		"oAP": "\/wp-content\/uploads\/2016\/08\/Hassell-with-Detached-Garage-Tub-1-17-FPonly-116x150.jpg",
+		"oF": 0,
+		"opt": 0
+		},
+	"\/wp-content\/uploads\/2016\/08\/Hassell-with-Detached-Garage-Tub-1-17-FPonly-232x300.jpg": {
+		"ft": 16384,
+		"iS": 12946,
+		"oA": 0,
+		"oAP": "\/wp-content\/uploads\/2016\/08\/Hassell-with-Detached-Garage-Tub-1-17-FPonly-232x300.jpg",
+		"oF": 0,
+		"opt": 0
+		},
+	"\/wp-content\/uploads\/2016\/08\/Hassell-with-Detached-Garage-Tub-1-17-FPonly-791x1024.jpg": {
+		"ft": 16384,
+		"iS": 80238,
+		"oA": 0,
+		"oAP": "\/wp-content\/uploads\/2016\/08\/Hassell-with-Detached-Garage-Tub-1-17-FPonly-791x1024.jpg",
+		"oF": 0,
+		"opt": 0
+		},
+	"\/wp-content\/uploads\/2016\/08\/Hassell-with-Detached-Garage-Tub-1-17-FPonly.jpg": {
+		"ft": 16384,
+		"iS": 353798,
+		"oA": 0,
+		"oAP": "\/wp-content\/uploads\/2016\/08\/Hassell-with-Detached-Garage-Tub-1-17-FPonly.jpg",
+		"oF": 0,
+		"opt": 0
+		},
+	"\/wp-content\/uploads\/2016\/08\/Hassell-with-Detached-Garage-Tub-1-17-FPonly.pdf": {
+		"ft": 8192,
+		"oA": 2,
+		"oAP": "\/wp-content\/uploads\/2016\/08\/Hassell-with-Detached-Garage-Tub-1-17-FPonly.pdf",
+		"oF": 0
+		},
+	"\/wp-content\/uploads\/2016\/08\/Hassell-with-Detached-Garage-Tub-1-17-X1A-116x150.jpg": {
+		"ft": 16384,
+		"iS": 4587,
+		"oA": 0,
+		"oAP": "\/wp-content\/uploads\/2016\/08\/Hassell-with-Detached-Garage-Tub-1-17-X1A-116x150.jpg",
+		"oF": 0,
+		"opt": 0
+		},
+	"\/wp-content\/uploads\/2016\/08\/Hassell-with-Detached-Garage-Tub-1-17-X1A-232x300.jpg": {
+		"ft": 16384,
+		"iS": 14439,
+		"oA": 0,
+		"oAP": "\/wp-content\/uploads\/2016\/08\/Hassell-with-Detached-Garage-Tub-1-17-X1A-232x300.jpg",
+		"oF": 0,
+		"opt": 0
+		},
+	"\/wp-content\/uploads\/2016\/08\/Hassell-with-Detached-Garage-Tub-1-17-X1A-791x1024.jpg": {
+		"ft": 16384,
+		"iS": 135435,
+		"oA": 0,
+		"oAP": "\/wp-content\/uploads\/2016\/08\/Hassell-with-Detached-Garage-Tub-1-17-X1A-791x1024.jpg",
+		"oF": 0,
+		"opt": 0
+		},
+	"\/wp-content\/uploads\/2016\/08\/Hassell-with-Detached-Garage-Tub-1-17-X1A.jpg": {
+		"ft": 16384,
+		"iS": 794694,
+		"oA": 0,
+		"oAP": "\/wp-content\/uploads\/2016\/08\/Hassell-with-Detached-Garage-Tub-1-17-X1A.jpg",
+		"oF": 0,
+		"opt": 0
+		},
+	"\/wp-content\/uploads\/2016\/08\/Hassell-with-Detached-Garage-Tub-1-17-X1A.pdf": {
+		"ft": 8192,
+		"oA": 2,
+		"oAP": "\/wp-content\/uploads\/2016\/08\/Hassell-with-Detached-Garage-Tub-1-17-X1A.pdf",
+		"oF": 0
+		},
 	"\/wp-content\/uploads\/2016\/08\/IMG_6678-150x150.jpg": {
 		"ft": 16384,
 		"iS": 24416,
@@ -65976,14 +67928,6 @@
 		"iS": 34453,
 		"oA": 0,
 		"oAP": "\/wp-content\/uploads\/2016\/08\/IMG_6678-300x166.jpg",
-		"oF": 0,
-		"opt": 0
-		},
-	"\/wp-content\/uploads\/2016\/08\/IMG_6678-335x317-c-default.jpg": {
-		"ft": 16384,
-		"iS": 31082,
-		"oA": 0,
-		"oAP": "\/wp-content\/uploads\/2016\/08\/IMG_6678-335x317-c-default.jpg",
 		"oF": 0,
 		"opt": 0
 		},
@@ -66283,6 +68227,158 @@
 		"oF": 0,
 		"opt": 0
 		},
+	"\/wp-content\/uploads\/2016\/08\/Legare-with-Detached-Garage-1-17-FPonly-116x150.jpg": {
+		"ft": 16384,
+		"iS": 4875,
+		"oA": 0,
+		"oAP": "\/wp-content\/uploads\/2016\/08\/Legare-with-Detached-Garage-1-17-FPonly-116x150.jpg",
+		"oF": 0,
+		"opt": 0
+		},
+	"\/wp-content\/uploads\/2016\/08\/Legare-with-Detached-Garage-1-17-FPonly-232x300.jpg": {
+		"ft": 16384,
+		"iS": 13585,
+		"oA": 0,
+		"oAP": "\/wp-content\/uploads\/2016\/08\/Legare-with-Detached-Garage-1-17-FPonly-232x300.jpg",
+		"oF": 0,
+		"opt": 0
+		},
+	"\/wp-content\/uploads\/2016\/08\/Legare-with-Detached-Garage-1-17-FPonly-791x1024.jpg": {
+		"ft": 16384,
+		"iS": 87429,
+		"oA": 0,
+		"oAP": "\/wp-content\/uploads\/2016\/08\/Legare-with-Detached-Garage-1-17-FPonly-791x1024.jpg",
+		"oF": 0,
+		"opt": 0
+		},
+	"\/wp-content\/uploads\/2016\/08\/Legare-with-Detached-Garage-1-17-FPonly.jpg": {
+		"ft": 16384,
+		"iS": 202907,
+		"oA": 0,
+		"oAP": "\/wp-content\/uploads\/2016\/08\/Legare-with-Detached-Garage-1-17-FPonly.jpg",
+		"oF": 0,
+		"opt": 0
+		},
+	"\/wp-content\/uploads\/2016\/08\/Legare-with-Detached-Garage-1-17-FPonly.pdf": {
+		"ft": 8192,
+		"oA": 2,
+		"oAP": "\/wp-content\/uploads\/2016\/08\/Legare-with-Detached-Garage-1-17-FPonly.pdf",
+		"oF": 0
+		},
+	"\/wp-content\/uploads\/2016\/08\/Legare-with-Detached-Garage-1-17-X1A-116x150.jpg": {
+		"ft": 16384,
+		"iS": 4432,
+		"oA": 0,
+		"oAP": "\/wp-content\/uploads\/2016\/08\/Legare-with-Detached-Garage-1-17-X1A-116x150.jpg",
+		"oF": 0,
+		"opt": 0
+		},
+	"\/wp-content\/uploads\/2016\/08\/Legare-with-Detached-Garage-1-17-X1A-232x300.jpg": {
+		"ft": 16384,
+		"iS": 13563,
+		"oA": 0,
+		"oAP": "\/wp-content\/uploads\/2016\/08\/Legare-with-Detached-Garage-1-17-X1A-232x300.jpg",
+		"oF": 0,
+		"opt": 0
+		},
+	"\/wp-content\/uploads\/2016\/08\/Legare-with-Detached-Garage-1-17-X1A-791x1024.jpg": {
+		"ft": 16384,
+		"iS": 121697,
+		"oA": 0,
+		"oAP": "\/wp-content\/uploads\/2016\/08\/Legare-with-Detached-Garage-1-17-X1A-791x1024.jpg",
+		"oF": 0,
+		"opt": 0
+		},
+	"\/wp-content\/uploads\/2016\/08\/Legare-with-Detached-Garage-1-17-X1A.jpg": {
+		"ft": 16384,
+		"iS": 708250,
+		"oA": 0,
+		"oAP": "\/wp-content\/uploads\/2016\/08\/Legare-with-Detached-Garage-1-17-X1A.jpg",
+		"oF": 0,
+		"opt": 0
+		},
+	"\/wp-content\/uploads\/2016\/08\/Legare-with-Detached-Garage-1-17-X1A.pdf": {
+		"ft": 8192,
+		"oA": 2,
+		"oAP": "\/wp-content\/uploads\/2016\/08\/Legare-with-Detached-Garage-1-17-X1A.pdf",
+		"oF": 0
+		},
+	"\/wp-content\/uploads\/2016\/08\/Legare-With-Garage-1-17-FP-only-116x150.jpg": {
+		"ft": 16384,
+		"iS": 3907,
+		"oA": 0,
+		"oAP": "\/wp-content\/uploads\/2016\/08\/Legare-With-Garage-1-17-FP-only-116x150.jpg",
+		"oF": 0,
+		"opt": 0
+		},
+	"\/wp-content\/uploads\/2016\/08\/Legare-With-Garage-1-17-FP-only-232x300.jpg": {
+		"ft": 16384,
+		"iS": 10854,
+		"oA": 0,
+		"oAP": "\/wp-content\/uploads\/2016\/08\/Legare-With-Garage-1-17-FP-only-232x300.jpg",
+		"oF": 0,
+		"opt": 0
+		},
+	"\/wp-content\/uploads\/2016\/08\/Legare-With-Garage-1-17-FP-only-791x1024.jpg": {
+		"ft": 16384,
+		"iS": 72261,
+		"oA": 0,
+		"oAP": "\/wp-content\/uploads\/2016\/08\/Legare-With-Garage-1-17-FP-only-791x1024.jpg",
+		"oF": 0,
+		"opt": 0
+		},
+	"\/wp-content\/uploads\/2016\/08\/Legare-With-Garage-1-17-FP-only.jpg": {
+		"ft": 16384,
+		"iS": 183616,
+		"oA": 0,
+		"oAP": "\/wp-content\/uploads\/2016\/08\/Legare-With-Garage-1-17-FP-only.jpg",
+		"oF": 0,
+		"opt": 0
+		},
+	"\/wp-content\/uploads\/2016\/08\/Legare-With-Garage-1-17-FP-only.pdf": {
+		"ft": 8192,
+		"oA": 2,
+		"oAP": "\/wp-content\/uploads\/2016\/08\/Legare-With-Garage-1-17-FP-only.pdf",
+		"oF": 0
+		},
+	"\/wp-content\/uploads\/2016\/08\/Legare-With-Garage-1-17-X1A-116x150.jpg": {
+		"ft": 16384,
+		"iS": 4729,
+		"oA": 0,
+		"oAP": "\/wp-content\/uploads\/2016\/08\/Legare-With-Garage-1-17-X1A-116x150.jpg",
+		"oF": 0,
+		"opt": 0
+		},
+	"\/wp-content\/uploads\/2016\/08\/Legare-With-Garage-1-17-X1A-232x300.jpg": {
+		"ft": 16384,
+		"iS": 14953,
+		"oA": 0,
+		"oAP": "\/wp-content\/uploads\/2016\/08\/Legare-With-Garage-1-17-X1A-232x300.jpg",
+		"oF": 0,
+		"opt": 0
+		},
+	"\/wp-content\/uploads\/2016\/08\/Legare-With-Garage-1-17-X1A-791x1024.jpg": {
+		"ft": 16384,
+		"iS": 134189,
+		"oA": 0,
+		"oAP": "\/wp-content\/uploads\/2016\/08\/Legare-With-Garage-1-17-X1A-791x1024.jpg",
+		"oF": 0,
+		"opt": 0
+		},
+	"\/wp-content\/uploads\/2016\/08\/Legare-With-Garage-1-17-X1A.jpg": {
+		"ft": 16384,
+		"iS": 784229,
+		"oA": 0,
+		"oAP": "\/wp-content\/uploads\/2016\/08\/Legare-With-Garage-1-17-X1A.jpg",
+		"oF": 0,
+		"opt": 0
+		},
+	"\/wp-content\/uploads\/2016\/08\/Legare-With-Garage-1-17-X1A.pdf": {
+		"ft": 8192,
+		"oA": 2,
+		"oAP": "\/wp-content\/uploads\/2016\/08\/Legare-With-Garage-1-17-X1A.pdf",
+		"oF": 0
+		},
 	"\/wp-content\/uploads\/2016\/08\/Lisa-Avant-1-150x150.jpg": {
 		"ft": 16384,
 		"iS": 33622,
@@ -66402,6 +68498,82 @@
 		"oAP": "\/wp-content\/uploads\/2016\/08\/Mary-Stuart-Sutton.jpg",
 		"oF": 0,
 		"opt": 0
+		},
+	"\/wp-content\/uploads\/2016\/08\/Murray-Floor-Plan-Flyer-1-17-FPonly-116x150.jpg": {
+		"ft": 16384,
+		"iS": 4318,
+		"oA": 0,
+		"oAP": "\/wp-content\/uploads\/2016\/08\/Murray-Floor-Plan-Flyer-1-17-FPonly-116x150.jpg",
+		"oF": 0,
+		"opt": 0
+		},
+	"\/wp-content\/uploads\/2016\/08\/Murray-Floor-Plan-Flyer-1-17-FPonly-232x300.jpg": {
+		"ft": 16384,
+		"iS": 12096,
+		"oA": 0,
+		"oAP": "\/wp-content\/uploads\/2016\/08\/Murray-Floor-Plan-Flyer-1-17-FPonly-232x300.jpg",
+		"oF": 0,
+		"opt": 0
+		},
+	"\/wp-content\/uploads\/2016\/08\/Murray-Floor-Plan-Flyer-1-17-FPonly-791x1024.jpg": {
+		"ft": 16384,
+		"iS": 72049,
+		"oA": 0,
+		"oAP": "\/wp-content\/uploads\/2016\/08\/Murray-Floor-Plan-Flyer-1-17-FPonly-791x1024.jpg",
+		"oF": 0,
+		"opt": 0
+		},
+	"\/wp-content\/uploads\/2016\/08\/Murray-Floor-Plan-Flyer-1-17-FPonly.jpg": {
+		"ft": 16384,
+		"iS": 182725,
+		"oA": 0,
+		"oAP": "\/wp-content\/uploads\/2016\/08\/Murray-Floor-Plan-Flyer-1-17-FPonly.jpg",
+		"oF": 0,
+		"opt": 0
+		},
+	"\/wp-content\/uploads\/2016\/08\/Murray-Floor-Plan-Flyer-1-17-FPonly.pdf": {
+		"ft": 8192,
+		"oA": 2,
+		"oAP": "\/wp-content\/uploads\/2016\/08\/Murray-Floor-Plan-Flyer-1-17-FPonly.pdf",
+		"oF": 0
+		},
+	"\/wp-content\/uploads\/2016\/08\/Murray-Floor-Plan-Flyer-1-17-X1A-116x150.jpg": {
+		"ft": 16384,
+		"iS": 3677,
+		"oA": 0,
+		"oAP": "\/wp-content\/uploads\/2016\/08\/Murray-Floor-Plan-Flyer-1-17-X1A-116x150.jpg",
+		"oF": 0,
+		"opt": 0
+		},
+	"\/wp-content\/uploads\/2016\/08\/Murray-Floor-Plan-Flyer-1-17-X1A-232x300.jpg": {
+		"ft": 16384,
+		"iS": 10998,
+		"oA": 0,
+		"oAP": "\/wp-content\/uploads\/2016\/08\/Murray-Floor-Plan-Flyer-1-17-X1A-232x300.jpg",
+		"oF": 0,
+		"opt": 0
+		},
+	"\/wp-content\/uploads\/2016\/08\/Murray-Floor-Plan-Flyer-1-17-X1A-791x1024.jpg": {
+		"ft": 16384,
+		"iS": 95361,
+		"oA": 0,
+		"oAP": "\/wp-content\/uploads\/2016\/08\/Murray-Floor-Plan-Flyer-1-17-X1A-791x1024.jpg",
+		"oF": 0,
+		"opt": 0
+		},
+	"\/wp-content\/uploads\/2016\/08\/Murray-Floor-Plan-Flyer-1-17-X1A.jpg": {
+		"ft": 16384,
+		"iS": 514738,
+		"oA": 0,
+		"oAP": "\/wp-content\/uploads\/2016\/08\/Murray-Floor-Plan-Flyer-1-17-X1A.jpg",
+		"oF": 0,
+		"opt": 0
+		},
+	"\/wp-content\/uploads\/2016\/08\/Murray-Floor-Plan-Flyer-1-17-X1A.pdf": {
+		"ft": 8192,
+		"oA": 2,
+		"oAP": "\/wp-content\/uploads\/2016\/08\/Murray-Floor-Plan-Flyer-1-17-X1A.pdf",
+		"oF": 0
 		},
 	"\/wp-content\/uploads\/2016\/08\/Murray-Floor-Plan-Flyer-X1A-2-2.pdf": {
 		"ft": 8192,
@@ -66597,6 +68769,44 @@
 		"oF": 0,
 		"opt": 0
 		},
+	"\/wp-content\/uploads\/2016\/09\/2017-Ridgebrook-FP-Only-116x150.jpg": {
+		"ft": 16384,
+		"iS": 5154,
+		"oA": 0,
+		"oAP": "\/wp-content\/uploads\/2016\/09\/2017-Ridgebrook-FP-Only-116x150.jpg",
+		"oF": 0,
+		"opt": 0
+		},
+	"\/wp-content\/uploads\/2016\/09\/2017-Ridgebrook-FP-Only-232x300.jpg": {
+		"ft": 16384,
+		"iS": 14584,
+		"oA": 0,
+		"oAP": "\/wp-content\/uploads\/2016\/09\/2017-Ridgebrook-FP-Only-232x300.jpg",
+		"oF": 0,
+		"opt": 0
+		},
+	"\/wp-content\/uploads\/2016\/09\/2017-Ridgebrook-FP-Only-791x1024.jpg": {
+		"ft": 16384,
+		"iS": 91989,
+		"oA": 0,
+		"oAP": "\/wp-content\/uploads\/2016\/09\/2017-Ridgebrook-FP-Only-791x1024.jpg",
+		"oF": 0,
+		"opt": 0
+		},
+	"\/wp-content\/uploads\/2016\/09\/2017-Ridgebrook-FP-Only.jpg": {
+		"ft": 16384,
+		"iS": 276900,
+		"oA": 0,
+		"oAP": "\/wp-content\/uploads\/2016\/09\/2017-Ridgebrook-FP-Only.jpg",
+		"oF": 0,
+		"opt": 0
+		},
+	"\/wp-content\/uploads\/2016\/09\/2017-Ridgebrook-FP-Only.pdf": {
+		"ft": 8192,
+		"oA": 2,
+		"oAP": "\/wp-content\/uploads\/2016\/09\/2017-Ridgebrook-FP-Only.pdf",
+		"oF": 0
+		},
 	"\/wp-content\/uploads\/2016\/09\/2017-Ridgebrook-Home-Plan-Flyer-X1A-1-116x150.jpg": {
 		"ft": 16384,
 		"iS": 10886,
@@ -66634,6 +68844,30 @@
 		"oA": 2,
 		"oAP": "\/wp-content\/uploads\/2016\/09\/2017-Ridgebrook-Home-Plan-Flyer-X1A-1.pdf",
 		"oF": 0
+		},
+	"\/wp-content\/uploads\/2016\/09\/2017-Ridgebrook-Home-Plan-Flyer-X1A-116x150.jpg": {
+		"ft": 16384,
+		"iS": 4993,
+		"oA": 0,
+		"oAP": "\/wp-content\/uploads\/2016\/09\/2017-Ridgebrook-Home-Plan-Flyer-X1A-116x150.jpg",
+		"oF": 0,
+		"opt": 0
+		},
+	"\/wp-content\/uploads\/2016\/09\/2017-Ridgebrook-Home-Plan-Flyer-X1A-232x300.jpg": {
+		"ft": 16384,
+		"iS": 14808,
+		"oA": 0,
+		"oAP": "\/wp-content\/uploads\/2016\/09\/2017-Ridgebrook-Home-Plan-Flyer-X1A-232x300.jpg",
+		"oF": 0,
+		"opt": 0
+		},
+	"\/wp-content\/uploads\/2016\/09\/2017-Ridgebrook-Home-Plan-Flyer-X1A-791x1024.jpg": {
+		"ft": 16384,
+		"iS": 126616,
+		"oA": 0,
+		"oAP": "\/wp-content\/uploads\/2016\/09\/2017-Ridgebrook-Home-Plan-Flyer-X1A-791x1024.jpg",
+		"oF": 0,
+		"opt": 0
 		},
 	"\/wp-content\/uploads\/2016\/09\/2017-Ridgebrook-Home-Plan-Flyer-X1A-FP-ONLY-116x150.jpg": {
 		"ft": 16384,
@@ -66673,6 +68907,96 @@
 		"oAP": "\/wp-content\/uploads\/2016\/09\/2017-Ridgebrook-Home-Plan-Flyer-X1A-FP-ONLY.pdf",
 		"oF": 0
 		},
+	"\/wp-content\/uploads\/2016\/09\/2017-Ridgebrook-Home-Plan-Flyer-X1A.jpg": {
+		"ft": 16384,
+		"iS": 682261,
+		"oA": 0,
+		"oAP": "\/wp-content\/uploads\/2016\/09\/2017-Ridgebrook-Home-Plan-Flyer-X1A.jpg",
+		"oF": 0,
+		"opt": 0
+		},
+	"\/wp-content\/uploads\/2016\/09\/2017-Ridgebrook-Home-Plan-Flyer-X1A.pdf": {
+		"ft": 8192,
+		"oA": 2,
+		"oAP": "\/wp-content\/uploads\/2016\/09\/2017-Ridgebrook-Home-Plan-Flyer-X1A.pdf",
+		"oF": 0
+		},
+	"\/wp-content\/uploads\/2016\/09\/Belington-Front-Entry-Garage-Home-Plan-1-17-FPonly-116x150.jpg": {
+		"ft": 16384,
+		"iS": 4728,
+		"oA": 0,
+		"oAP": "\/wp-content\/uploads\/2016\/09\/Belington-Front-Entry-Garage-Home-Plan-1-17-FPonly-116x150.jpg",
+		"oF": 0,
+		"opt": 0
+		},
+	"\/wp-content\/uploads\/2016\/09\/Belington-Front-Entry-Garage-Home-Plan-1-17-FPonly-232x300.jpg": {
+		"ft": 16384,
+		"iS": 13413,
+		"oA": 0,
+		"oAP": "\/wp-content\/uploads\/2016\/09\/Belington-Front-Entry-Garage-Home-Plan-1-17-FPonly-232x300.jpg",
+		"oF": 0,
+		"opt": 0
+		},
+	"\/wp-content\/uploads\/2016\/09\/Belington-Front-Entry-Garage-Home-Plan-1-17-FPonly-791x1024.jpg": {
+		"ft": 16384,
+		"iS": 87942,
+		"oA": 0,
+		"oAP": "\/wp-content\/uploads\/2016\/09\/Belington-Front-Entry-Garage-Home-Plan-1-17-FPonly-791x1024.jpg",
+		"oF": 0,
+		"opt": 0
+		},
+	"\/wp-content\/uploads\/2016\/09\/Belington-Front-Entry-Garage-Home-Plan-1-17-FPonly.jpg": {
+		"ft": 16384,
+		"iS": 239936,
+		"oA": 0,
+		"oAP": "\/wp-content\/uploads\/2016\/09\/Belington-Front-Entry-Garage-Home-Plan-1-17-FPonly.jpg",
+		"oF": 0,
+		"opt": 0
+		},
+	"\/wp-content\/uploads\/2016\/09\/Belington-Front-Entry-Garage-Home-Plan-1-17-FPonly.pdf": {
+		"ft": 8192,
+		"oA": 2,
+		"oAP": "\/wp-content\/uploads\/2016\/09\/Belington-Front-Entry-Garage-Home-Plan-1-17-FPonly.pdf",
+		"oF": 0
+		},
+	"\/wp-content\/uploads\/2016\/09\/Belington-Front-Entry-Garage-Home-Plan-1-17X1A-116x150.jpg": {
+		"ft": 16384,
+		"iS": 4955,
+		"oA": 0,
+		"oAP": "\/wp-content\/uploads\/2016\/09\/Belington-Front-Entry-Garage-Home-Plan-1-17X1A-116x150.jpg",
+		"oF": 0,
+		"opt": 0
+		},
+	"\/wp-content\/uploads\/2016\/09\/Belington-Front-Entry-Garage-Home-Plan-1-17X1A-232x300.jpg": {
+		"ft": 16384,
+		"iS": 14777,
+		"oA": 0,
+		"oAP": "\/wp-content\/uploads\/2016\/09\/Belington-Front-Entry-Garage-Home-Plan-1-17X1A-232x300.jpg",
+		"oF": 0,
+		"opt": 0
+		},
+	"\/wp-content\/uploads\/2016\/09\/Belington-Front-Entry-Garage-Home-Plan-1-17X1A-791x1024.jpg": {
+		"ft": 16384,
+		"iS": 126177,
+		"oA": 0,
+		"oAP": "\/wp-content\/uploads\/2016\/09\/Belington-Front-Entry-Garage-Home-Plan-1-17X1A-791x1024.jpg",
+		"oF": 0,
+		"opt": 0
+		},
+	"\/wp-content\/uploads\/2016\/09\/Belington-Front-Entry-Garage-Home-Plan-1-17X1A.jpg": {
+		"ft": 16384,
+		"iS": 688134,
+		"oA": 0,
+		"oAP": "\/wp-content\/uploads\/2016\/09\/Belington-Front-Entry-Garage-Home-Plan-1-17X1A.jpg",
+		"oF": 0,
+		"opt": 0
+		},
+	"\/wp-content\/uploads\/2016\/09\/Belington-Front-Entry-Garage-Home-Plan-1-17X1A.pdf": {
+		"ft": 8192,
+		"oA": 2,
+		"oAP": "\/wp-content\/uploads\/2016\/09\/Belington-Front-Entry-Garage-Home-Plan-1-17X1A.pdf",
+		"oF": 0
+		},
 	"\/wp-content\/uploads\/2016\/09\/cc-150x150.jpg": {
 		"ft": 16384,
 		"iS": 8588,
@@ -66704,6 +69028,234 @@
 		"oAP": "\/wp-content\/uploads\/2016\/09\/cc.jpg",
 		"oF": 0,
 		"opt": 0
+		},
+	"\/wp-content\/uploads\/2016\/09\/Clarkston-Home-Plan-Flyer-1-17-FPonly-116x150.jpg": {
+		"ft": 16384,
+		"iS": 4517,
+		"oA": 0,
+		"oAP": "\/wp-content\/uploads\/2016\/09\/Clarkston-Home-Plan-Flyer-1-17-FPonly-116x150.jpg",
+		"oF": 0,
+		"opt": 0
+		},
+	"\/wp-content\/uploads\/2016\/09\/Clarkston-Home-Plan-Flyer-1-17-FPonly-232x300.jpg": {
+		"ft": 16384,
+		"iS": 12946,
+		"oA": 0,
+		"oAP": "\/wp-content\/uploads\/2016\/09\/Clarkston-Home-Plan-Flyer-1-17-FPonly-232x300.jpg",
+		"oF": 0,
+		"opt": 0
+		},
+	"\/wp-content\/uploads\/2016\/09\/Clarkston-Home-Plan-Flyer-1-17-FPonly-791x1024.jpg": {
+		"ft": 16384,
+		"iS": 87801,
+		"oA": 0,
+		"oAP": "\/wp-content\/uploads\/2016\/09\/Clarkston-Home-Plan-Flyer-1-17-FPonly-791x1024.jpg",
+		"oF": 0,
+		"opt": 0
+		},
+	"\/wp-content\/uploads\/2016\/09\/Clarkston-Home-Plan-Flyer-1-17-FPonly.jpg": {
+		"ft": 16384,
+		"iS": 232561,
+		"oA": 0,
+		"oAP": "\/wp-content\/uploads\/2016\/09\/Clarkston-Home-Plan-Flyer-1-17-FPonly.jpg",
+		"oF": 0,
+		"opt": 0
+		},
+	"\/wp-content\/uploads\/2016\/09\/Clarkston-Home-Plan-Flyer-1-17-FPonly.pdf": {
+		"ft": 8192,
+		"oA": 2,
+		"oAP": "\/wp-content\/uploads\/2016\/09\/Clarkston-Home-Plan-Flyer-1-17-FPonly.pdf",
+		"oF": 0
+		},
+	"\/wp-content\/uploads\/2016\/09\/Clarkston-Home-Plan-Flyer-1-17-X1A-116x150.jpg": {
+		"ft": 16384,
+		"iS": 4778,
+		"oA": 0,
+		"oAP": "\/wp-content\/uploads\/2016\/09\/Clarkston-Home-Plan-Flyer-1-17-X1A-116x150.jpg",
+		"oF": 0,
+		"opt": 0
+		},
+	"\/wp-content\/uploads\/2016\/09\/Clarkston-Home-Plan-Flyer-1-17-X1A-232x300.jpg": {
+		"ft": 16384,
+		"iS": 14668,
+		"oA": 0,
+		"oAP": "\/wp-content\/uploads\/2016\/09\/Clarkston-Home-Plan-Flyer-1-17-X1A-232x300.jpg",
+		"oF": 0,
+		"opt": 0
+		},
+	"\/wp-content\/uploads\/2016\/09\/Clarkston-Home-Plan-Flyer-1-17-X1A-791x1024.jpg": {
+		"ft": 16384,
+		"iS": 125587,
+		"oA": 0,
+		"oAP": "\/wp-content\/uploads\/2016\/09\/Clarkston-Home-Plan-Flyer-1-17-X1A-791x1024.jpg",
+		"oF": 0,
+		"opt": 0
+		},
+	"\/wp-content\/uploads\/2016\/09\/Clarkston-Home-Plan-Flyer-1-17-X1A.jpg": {
+		"ft": 16384,
+		"iS": 698567,
+		"oA": 0,
+		"oAP": "\/wp-content\/uploads\/2016\/09\/Clarkston-Home-Plan-Flyer-1-17-X1A.jpg",
+		"oF": 0,
+		"opt": 0
+		},
+	"\/wp-content\/uploads\/2016\/09\/Clarkston-Home-Plan-Flyer-1-17-X1A.pdf": {
+		"ft": 8192,
+		"oA": 2,
+		"oAP": "\/wp-content\/uploads\/2016\/09\/Clarkston-Home-Plan-Flyer-1-17-X1A.pdf",
+		"oF": 0
+		},
+	"\/wp-content\/uploads\/2016\/09\/Dalehaven-Home-Plan-Flyer-1-17-FPonly-116x150.jpg": {
+		"ft": 16384,
+		"iS": 4570,
+		"oA": 0,
+		"oAP": "\/wp-content\/uploads\/2016\/09\/Dalehaven-Home-Plan-Flyer-1-17-FPonly-116x150.jpg",
+		"oF": 0,
+		"opt": 0
+		},
+	"\/wp-content\/uploads\/2016\/09\/Dalehaven-Home-Plan-Flyer-1-17-FPonly-232x300.jpg": {
+		"ft": 16384,
+		"iS": 13315,
+		"oA": 0,
+		"oAP": "\/wp-content\/uploads\/2016\/09\/Dalehaven-Home-Plan-Flyer-1-17-FPonly-232x300.jpg",
+		"oF": 0,
+		"opt": 0
+		},
+	"\/wp-content\/uploads\/2016\/09\/Dalehaven-Home-Plan-Flyer-1-17-FPonly-791x1024.jpg": {
+		"ft": 16384,
+		"iS": 92942,
+		"oA": 0,
+		"oAP": "\/wp-content\/uploads\/2016\/09\/Dalehaven-Home-Plan-Flyer-1-17-FPonly-791x1024.jpg",
+		"oF": 0,
+		"opt": 0
+		},
+	"\/wp-content\/uploads\/2016\/09\/Dalehaven-Home-Plan-Flyer-1-17-FPonly.jpg": {
+		"ft": 16384,
+		"iS": 237510,
+		"oA": 0,
+		"oAP": "\/wp-content\/uploads\/2016\/09\/Dalehaven-Home-Plan-Flyer-1-17-FPonly.jpg",
+		"oF": 0,
+		"opt": 0
+		},
+	"\/wp-content\/uploads\/2016\/09\/Dalehaven-Home-Plan-Flyer-1-17-FPonly.pdf": {
+		"ft": 8192,
+		"oA": 2,
+		"oAP": "\/wp-content\/uploads\/2016\/09\/Dalehaven-Home-Plan-Flyer-1-17-FPonly.pdf",
+		"oF": 0
+		},
+	"\/wp-content\/uploads\/2016\/09\/Dalehaven-Home-Plan-Flyer-1-17-X1A-116x150.jpg": {
+		"ft": 16384,
+		"iS": 4866,
+		"oA": 0,
+		"oAP": "\/wp-content\/uploads\/2016\/09\/Dalehaven-Home-Plan-Flyer-1-17-X1A-116x150.jpg",
+		"oF": 0,
+		"opt": 0
+		},
+	"\/wp-content\/uploads\/2016\/09\/Dalehaven-Home-Plan-Flyer-1-17-X1A-232x300.jpg": {
+		"ft": 16384,
+		"iS": 14048,
+		"oA": 0,
+		"oAP": "\/wp-content\/uploads\/2016\/09\/Dalehaven-Home-Plan-Flyer-1-17-X1A-232x300.jpg",
+		"oF": 0,
+		"opt": 0
+		},
+	"\/wp-content\/uploads\/2016\/09\/Dalehaven-Home-Plan-Flyer-1-17-X1A-791x1024.jpg": {
+		"ft": 16384,
+		"iS": 122598,
+		"oA": 0,
+		"oAP": "\/wp-content\/uploads\/2016\/09\/Dalehaven-Home-Plan-Flyer-1-17-X1A-791x1024.jpg",
+		"oF": 0,
+		"opt": 0
+		},
+	"\/wp-content\/uploads\/2016\/09\/Dalehaven-Home-Plan-Flyer-1-17-X1A.jpg": {
+		"ft": 16384,
+		"iS": 682933,
+		"oA": 0,
+		"oAP": "\/wp-content\/uploads\/2016\/09\/Dalehaven-Home-Plan-Flyer-1-17-X1A.jpg",
+		"oF": 0,
+		"opt": 0
+		},
+	"\/wp-content\/uploads\/2016\/09\/Dalehaven-Home-Plan-Flyer-1-17-X1A.pdf": {
+		"ft": 8192,
+		"oA": 2,
+		"oAP": "\/wp-content\/uploads\/2016\/09\/Dalehaven-Home-Plan-Flyer-1-17-X1A.pdf",
+		"oF": 0
+		},
+	"\/wp-content\/uploads\/2016\/09\/Edgemore-Home-Plan-Flyer-1-17-FPonly-116x150.jpg": {
+		"ft": 16384,
+		"iS": 4485,
+		"oA": 0,
+		"oAP": "\/wp-content\/uploads\/2016\/09\/Edgemore-Home-Plan-Flyer-1-17-FPonly-116x150.jpg",
+		"oF": 0,
+		"opt": 0
+		},
+	"\/wp-content\/uploads\/2016\/09\/Edgemore-Home-Plan-Flyer-1-17-FPonly-232x300.jpg": {
+		"ft": 16384,
+		"iS": 12448,
+		"oA": 0,
+		"oAP": "\/wp-content\/uploads\/2016\/09\/Edgemore-Home-Plan-Flyer-1-17-FPonly-232x300.jpg",
+		"oF": 0,
+		"opt": 0
+		},
+	"\/wp-content\/uploads\/2016\/09\/Edgemore-Home-Plan-Flyer-1-17-FPonly-791x1024.jpg": {
+		"ft": 16384,
+		"iS": 77567,
+		"oA": 0,
+		"oAP": "\/wp-content\/uploads\/2016\/09\/Edgemore-Home-Plan-Flyer-1-17-FPonly-791x1024.jpg",
+		"oF": 0,
+		"opt": 0
+		},
+	"\/wp-content\/uploads\/2016\/09\/Edgemore-Home-Plan-Flyer-1-17-FPonly.jpg": {
+		"ft": 16384,
+		"iS": 206757,
+		"oA": 0,
+		"oAP": "\/wp-content\/uploads\/2016\/09\/Edgemore-Home-Plan-Flyer-1-17-FPonly.jpg",
+		"oF": 0,
+		"opt": 0
+		},
+	"\/wp-content\/uploads\/2016\/09\/Edgemore-Home-Plan-Flyer-1-17-FPonly.pdf": {
+		"ft": 8192,
+		"oA": 2,
+		"oAP": "\/wp-content\/uploads\/2016\/09\/Edgemore-Home-Plan-Flyer-1-17-FPonly.pdf",
+		"oF": 0
+		},
+	"\/wp-content\/uploads\/2016\/09\/Edgemore-Home-Plan-Flyer-1-17-X1A-116x150.jpg": {
+		"ft": 16384,
+		"iS": 4775,
+		"oA": 0,
+		"oAP": "\/wp-content\/uploads\/2016\/09\/Edgemore-Home-Plan-Flyer-1-17-X1A-116x150.jpg",
+		"oF": 0,
+		"opt": 0
+		},
+	"\/wp-content\/uploads\/2016\/09\/Edgemore-Home-Plan-Flyer-1-17-X1A-232x300.jpg": {
+		"ft": 16384,
+		"iS": 13999,
+		"oA": 0,
+		"oAP": "\/wp-content\/uploads\/2016\/09\/Edgemore-Home-Plan-Flyer-1-17-X1A-232x300.jpg",
+		"oF": 0,
+		"opt": 0
+		},
+	"\/wp-content\/uploads\/2016\/09\/Edgemore-Home-Plan-Flyer-1-17-X1A-791x1024.jpg": {
+		"ft": 16384,
+		"iS": 117143,
+		"oA": 0,
+		"oAP": "\/wp-content\/uploads\/2016\/09\/Edgemore-Home-Plan-Flyer-1-17-X1A-791x1024.jpg",
+		"oF": 0,
+		"opt": 0
+		},
+	"\/wp-content\/uploads\/2016\/09\/Edgemore-Home-Plan-Flyer-1-17-X1A.jpg": {
+		"ft": 16384,
+		"iS": 645823,
+		"oA": 0,
+		"oAP": "\/wp-content\/uploads\/2016\/09\/Edgemore-Home-Plan-Flyer-1-17-X1A.jpg",
+		"oF": 0,
+		"opt": 0
+		},
+	"\/wp-content\/uploads\/2016\/09\/Edgemore-Home-Plan-Flyer-1-17-X1A.pdf": {
+		"ft": 8192,
+		"oA": 2,
+		"oAP": "\/wp-content\/uploads\/2016\/09\/Edgemore-Home-Plan-Flyer-1-17-X1A.pdf",
+		"oF": 0
 		},
 	"\/wp-content\/uploads\/2016\/09\/First-Friday-Cookout-150x150.jpg": {
 		"ft": 16384,
@@ -67536,6 +70088,196 @@
 		"oAP": "\/wp-content\/uploads\/2016\/09\/IMG_6746.jpg",
 		"oF": 0,
 		"opt": 0
+		},
+	"\/wp-content\/uploads\/2016\/09\/Lenwood-Front-Entry-Garage-Home-Plan-1-17-X1A-116x150.jpg": {
+		"ft": 16384,
+		"iS": 4973,
+		"oA": 0,
+		"oAP": "\/wp-content\/uploads\/2016\/09\/Lenwood-Front-Entry-Garage-Home-Plan-1-17-X1A-116x150.jpg",
+		"oF": 0,
+		"opt": 0
+		},
+	"\/wp-content\/uploads\/2016\/09\/Lenwood-Front-Entry-Garage-Home-Plan-1-17-X1A-232x300.jpg": {
+		"ft": 16384,
+		"iS": 15213,
+		"oA": 0,
+		"oAP": "\/wp-content\/uploads\/2016\/09\/Lenwood-Front-Entry-Garage-Home-Plan-1-17-X1A-232x300.jpg",
+		"oF": 0,
+		"opt": 0
+		},
+	"\/wp-content\/uploads\/2016\/09\/Lenwood-Front-Entry-Garage-Home-Plan-1-17-X1A-791x1024.jpg": {
+		"ft": 16384,
+		"iS": 129443,
+		"oA": 0,
+		"oAP": "\/wp-content\/uploads\/2016\/09\/Lenwood-Front-Entry-Garage-Home-Plan-1-17-X1A-791x1024.jpg",
+		"oF": 0,
+		"opt": 0
+		},
+	"\/wp-content\/uploads\/2016\/09\/Lenwood-Front-Entry-Garage-Home-Plan-1-17-X1A.jpg": {
+		"ft": 16384,
+		"iS": 697158,
+		"oA": 0,
+		"oAP": "\/wp-content\/uploads\/2016\/09\/Lenwood-Front-Entry-Garage-Home-Plan-1-17-X1A.jpg",
+		"oF": 0,
+		"opt": 0
+		},
+	"\/wp-content\/uploads\/2016\/09\/Lenwood-Front-Entry-Garage-Home-Plan-1-17-X1A.pdf": {
+		"ft": 8192,
+		"oA": 2,
+		"oAP": "\/wp-content\/uploads\/2016\/09\/Lenwood-Front-Entry-Garage-Home-Plan-1-17-X1A.pdf",
+		"oF": 0
+		},
+	"\/wp-content\/uploads\/2016\/09\/Province-Home-Plan-Flyer-1-17-FPonly-116x150.jpg": {
+		"ft": 16384,
+		"iS": 4982,
+		"oA": 0,
+		"oAP": "\/wp-content\/uploads\/2016\/09\/Province-Home-Plan-Flyer-1-17-FPonly-116x150.jpg",
+		"oF": 0,
+		"opt": 0
+		},
+	"\/wp-content\/uploads\/2016\/09\/Province-Home-Plan-Flyer-1-17-FPonly-232x300.jpg": {
+		"ft": 16384,
+		"iS": 14414,
+		"oA": 0,
+		"oAP": "\/wp-content\/uploads\/2016\/09\/Province-Home-Plan-Flyer-1-17-FPonly-232x300.jpg",
+		"oF": 0,
+		"opt": 0
+		},
+	"\/wp-content\/uploads\/2016\/09\/Province-Home-Plan-Flyer-1-17-FPonly-791x1024.jpg": {
+		"ft": 16384,
+		"iS": 94820,
+		"oA": 0,
+		"oAP": "\/wp-content\/uploads\/2016\/09\/Province-Home-Plan-Flyer-1-17-FPonly-791x1024.jpg",
+		"oF": 0,
+		"opt": 0
+		},
+	"\/wp-content\/uploads\/2016\/09\/Province-Home-Plan-Flyer-1-17-FPonly.jpg": {
+		"ft": 16384,
+		"iS": 246810,
+		"oA": 0,
+		"oAP": "\/wp-content\/uploads\/2016\/09\/Province-Home-Plan-Flyer-1-17-FPonly.jpg",
+		"oF": 0,
+		"opt": 0
+		},
+	"\/wp-content\/uploads\/2016\/09\/Province-Home-Plan-Flyer-1-17-FPonly.pdf": {
+		"ft": 8192,
+		"oA": 2,
+		"oAP": "\/wp-content\/uploads\/2016\/09\/Province-Home-Plan-Flyer-1-17-FPonly.pdf",
+		"oF": 0
+		},
+	"\/wp-content\/uploads\/2016\/09\/Province-Home-Plan-Flyer-1-17-X1A-116x150.jpg": {
+		"ft": 16384,
+		"iS": 4890,
+		"oA": 0,
+		"oAP": "\/wp-content\/uploads\/2016\/09\/Province-Home-Plan-Flyer-1-17-X1A-116x150.jpg",
+		"oF": 0,
+		"opt": 0
+		},
+	"\/wp-content\/uploads\/2016\/09\/Province-Home-Plan-Flyer-1-17-X1A-232x300.jpg": {
+		"ft": 16384,
+		"iS": 14695,
+		"oA": 0,
+		"oAP": "\/wp-content\/uploads\/2016\/09\/Province-Home-Plan-Flyer-1-17-X1A-232x300.jpg",
+		"oF": 0,
+		"opt": 0
+		},
+	"\/wp-content\/uploads\/2016\/09\/Province-Home-Plan-Flyer-1-17-X1A-791x1024.jpg": {
+		"ft": 16384,
+		"iS": 122890,
+		"oA": 0,
+		"oAP": "\/wp-content\/uploads\/2016\/09\/Province-Home-Plan-Flyer-1-17-X1A-791x1024.jpg",
+		"oF": 0,
+		"opt": 0
+		},
+	"\/wp-content\/uploads\/2016\/09\/Province-Home-Plan-Flyer-1-17-X1A.jpg": {
+		"ft": 16384,
+		"iS": 670430,
+		"oA": 0,
+		"oAP": "\/wp-content\/uploads\/2016\/09\/Province-Home-Plan-Flyer-1-17-X1A.jpg",
+		"oF": 0,
+		"opt": 0
+		},
+	"\/wp-content\/uploads\/2016\/09\/Province-Home-Plan-Flyer-1-17-X1A.pdf": {
+		"ft": 8192,
+		"oA": 2,
+		"oAP": "\/wp-content\/uploads\/2016\/09\/Province-Home-Plan-Flyer-1-17-X1A.pdf",
+		"oF": 0
+		},
+	"\/wp-content\/uploads\/2016\/09\/Ridgebrook-Home-Plan-Flyer-1-17-FPonly-116x150.jpg": {
+		"ft": 16384,
+		"iS": 5367,
+		"oA": 0,
+		"oAP": "\/wp-content\/uploads\/2016\/09\/Ridgebrook-Home-Plan-Flyer-1-17-FPonly-116x150.jpg",
+		"oF": 0,
+		"opt": 0
+		},
+	"\/wp-content\/uploads\/2016\/09\/Ridgebrook-Home-Plan-Flyer-1-17-FPonly-232x300.jpg": {
+		"ft": 16384,
+		"iS": 14961,
+		"oA": 0,
+		"oAP": "\/wp-content\/uploads\/2016\/09\/Ridgebrook-Home-Plan-Flyer-1-17-FPonly-232x300.jpg",
+		"oF": 0,
+		"opt": 0
+		},
+	"\/wp-content\/uploads\/2016\/09\/Ridgebrook-Home-Plan-Flyer-1-17-FPonly-791x1024.jpg": {
+		"ft": 16384,
+		"iS": 94047,
+		"oA": 0,
+		"oAP": "\/wp-content\/uploads\/2016\/09\/Ridgebrook-Home-Plan-Flyer-1-17-FPonly-791x1024.jpg",
+		"oF": 0,
+		"opt": 0
+		},
+	"\/wp-content\/uploads\/2016\/09\/Ridgebrook-Home-Plan-Flyer-1-17-FPonly.jpg": {
+		"ft": 16384,
+		"iS": 286753,
+		"oA": 0,
+		"oAP": "\/wp-content\/uploads\/2016\/09\/Ridgebrook-Home-Plan-Flyer-1-17-FPonly.jpg",
+		"oF": 0,
+		"opt": 0
+		},
+	"\/wp-content\/uploads\/2016\/09\/Ridgebrook-Home-Plan-Flyer-1-17-FPonly.pdf": {
+		"ft": 8192,
+		"oA": 2,
+		"oAP": "\/wp-content\/uploads\/2016\/09\/Ridgebrook-Home-Plan-Flyer-1-17-FPonly.pdf",
+		"oF": 0
+		},
+	"\/wp-content\/uploads\/2016\/09\/Ridgebrook-Home-Plan-Flyer-1-17-X1A-116x150.jpg": {
+		"ft": 16384,
+		"iS": 4993,
+		"oA": 0,
+		"oAP": "\/wp-content\/uploads\/2016\/09\/Ridgebrook-Home-Plan-Flyer-1-17-X1A-116x150.jpg",
+		"oF": 0,
+		"opt": 0
+		},
+	"\/wp-content\/uploads\/2016\/09\/Ridgebrook-Home-Plan-Flyer-1-17-X1A-232x300.jpg": {
+		"ft": 16384,
+		"iS": 14808,
+		"oA": 0,
+		"oAP": "\/wp-content\/uploads\/2016\/09\/Ridgebrook-Home-Plan-Flyer-1-17-X1A-232x300.jpg",
+		"oF": 0,
+		"opt": 0
+		},
+	"\/wp-content\/uploads\/2016\/09\/Ridgebrook-Home-Plan-Flyer-1-17-X1A-791x1024.jpg": {
+		"ft": 16384,
+		"iS": 126616,
+		"oA": 0,
+		"oAP": "\/wp-content\/uploads\/2016\/09\/Ridgebrook-Home-Plan-Flyer-1-17-X1A-791x1024.jpg",
+		"oF": 0,
+		"opt": 0
+		},
+	"\/wp-content\/uploads\/2016\/09\/Ridgebrook-Home-Plan-Flyer-1-17-X1A.jpg": {
+		"ft": 16384,
+		"iS": 682261,
+		"oA": 0,
+		"oAP": "\/wp-content\/uploads\/2016\/09\/Ridgebrook-Home-Plan-Flyer-1-17-X1A.jpg",
+		"oF": 0,
+		"opt": 0
+		},
+	"\/wp-content\/uploads\/2016\/09\/Ridgebrook-Home-Plan-Flyer-1-17-X1A.pdf": {
+		"ft": 8192,
+		"oA": 2,
+		"oAP": "\/wp-content\/uploads\/2016\/09\/Ridgebrook-Home-Plan-Flyer-1-17-X1A.pdf",
+		"oF": 0
 		},
 	"\/wp-content\/uploads\/2016\/09\/stf2-150x150.jpg": {
 		"ft": 16384,
@@ -68521,310 +71263,6 @@
 		"oF": 0,
 		"opt": 0
 		},
-	"\/wp-content\/uploads\/2016\/12\/01d4b0bb092f00e66a6340d4b3c8248d-300x200-c-default.jpeg": {
-		"ft": 16384,
-		"iS": 17099,
-		"oA": 0,
-		"oAP": "\/wp-content\/uploads\/2016\/12\/01d4b0bb092f00e66a6340d4b3c8248d-300x200-c-default.jpg",
-		"oF": 0,
-		"opt": 0
-		},
-	"\/wp-content\/uploads\/2016\/12\/01d4b0bb092f00e66a6340d4b3c8248d.jpeg": {
-		"ft": 16384,
-		"iS": 1114145,
-		"oA": 0,
-		"oAP": "\/wp-content\/uploads\/2016\/12\/01d4b0bb092f00e66a6340d4b3c8248d.jpg",
-		"oF": 0,
-		"opt": 0
-		},
-	"\/wp-content\/uploads\/2016\/12\/0357dcbc9e14a4f2b61016b28f165fab-490x390-c-default.jpeg": {
-		"ft": 16384,
-		"iS": 43324,
-		"oA": 0,
-		"oAP": "\/wp-content\/uploads\/2016\/12\/0357dcbc9e14a4f2b61016b28f165fab-490x390-c-default.jpg",
-		"oF": 0,
-		"opt": 0
-		},
-	"\/wp-content\/uploads\/2016\/12\/0357dcbc9e14a4f2b61016b28f165fab.jpeg": {
-		"ft": 16384,
-		"iS": 91825,
-		"oA": 0,
-		"oAP": "\/wp-content\/uploads\/2016\/12\/0357dcbc9e14a4f2b61016b28f165fab.jpg",
-		"oF": 0,
-		"opt": 0
-		},
-	"\/wp-content\/uploads\/2016\/12\/0c8df678531df08218866abfd6b045e0-300x200-c-default.jpeg": {
-		"ft": 16384,
-		"iS": 17255,
-		"oA": 0,
-		"oAP": "\/wp-content\/uploads\/2016\/12\/0c8df678531df08218866abfd6b045e0-300x200-c-default.jpg",
-		"oF": 0,
-		"opt": 0
-		},
-	"\/wp-content\/uploads\/2016\/12\/0c8df678531df08218866abfd6b045e0.jpeg": {
-		"ft": 16384,
-		"iS": 822603,
-		"oA": 0,
-		"oAP": "\/wp-content\/uploads\/2016\/12\/0c8df678531df08218866abfd6b045e0.jpg",
-		"oF": 0,
-		"opt": 0
-		},
-	"\/wp-content\/uploads\/2016\/12\/0f30490a4871e4769220d4a48c5d6213-490x390-c-default.jpeg": {
-		"ft": 16384,
-		"iS": 42180,
-		"oA": 0,
-		"oAP": "\/wp-content\/uploads\/2016\/12\/0f30490a4871e4769220d4a48c5d6213-490x390-c-default.jpg",
-		"oF": 0,
-		"opt": 0
-		},
-	"\/wp-content\/uploads\/2016\/12\/0f30490a4871e4769220d4a48c5d6213.jpeg": {
-		"ft": 16384,
-		"iS": 81869,
-		"oA": 0,
-		"oAP": "\/wp-content\/uploads\/2016\/12\/0f30490a4871e4769220d4a48c5d6213.jpg",
-		"oF": 0,
-		"opt": 0
-		},
-	"\/wp-content\/uploads\/2016\/12\/2bfaa72bba7f3ef7aad8d2cc131ef089-300x200-c-default.jpeg": {
-		"ft": 16384,
-		"iS": 16449,
-		"oA": 0,
-		"oAP": "\/wp-content\/uploads\/2016\/12\/2bfaa72bba7f3ef7aad8d2cc131ef089-300x200-c-default.jpg",
-		"oF": 0,
-		"opt": 0
-		},
-	"\/wp-content\/uploads\/2016\/12\/2bfaa72bba7f3ef7aad8d2cc131ef089.jpeg": {
-		"ft": 16384,
-		"iS": 772263,
-		"oA": 0,
-		"oAP": "\/wp-content\/uploads\/2016\/12\/2bfaa72bba7f3ef7aad8d2cc131ef089.jpg",
-		"oF": 0,
-		"opt": 0
-		},
-	"\/wp-content\/uploads\/2016\/12\/33b8f9cc9c03fc8b22b66422562a9f66-490x390-c-default.jpeg": {
-		"ft": 16384,
-		"iS": 35092,
-		"oA": 0,
-		"oAP": "\/wp-content\/uploads\/2016\/12\/33b8f9cc9c03fc8b22b66422562a9f66-490x390-c-default.jpg",
-		"oF": 0,
-		"opt": 0
-		},
-	"\/wp-content\/uploads\/2016\/12\/33b8f9cc9c03fc8b22b66422562a9f66.jpeg": {
-		"ft": 16384,
-		"iS": 67973,
-		"oA": 0,
-		"oAP": "\/wp-content\/uploads\/2016\/12\/33b8f9cc9c03fc8b22b66422562a9f66.jpg",
-		"oF": 0,
-		"opt": 0
-		},
-	"\/wp-content\/uploads\/2016\/12\/3b1e3a6b34b3b2d7e47b65f6aa0f802b-300x200-c-default.jpeg": {
-		"ft": 16384,
-		"iS": 16449,
-		"oA": 0,
-		"oAP": "\/wp-content\/uploads\/2016\/12\/3b1e3a6b34b3b2d7e47b65f6aa0f802b-300x200-c-default.jpg",
-		"oF": 0,
-		"opt": 0
-		},
-	"\/wp-content\/uploads\/2016\/12\/3b1e3a6b34b3b2d7e47b65f6aa0f802b.jpeg": {
-		"ft": 16384,
-		"iS": 772263,
-		"oA": 0,
-		"oAP": "\/wp-content\/uploads\/2016\/12\/3b1e3a6b34b3b2d7e47b65f6aa0f802b.jpg",
-		"oF": 0,
-		"opt": 0
-		},
-	"\/wp-content\/uploads\/2016\/12\/54ce55fbdf06b695452f73ec7a22e81f-300x200-c-default.jpeg": {
-		"ft": 16384,
-		"iS": 17610,
-		"oA": 0,
-		"oAP": "\/wp-content\/uploads\/2016\/12\/54ce55fbdf06b695452f73ec7a22e81f-300x200-c-default.jpg",
-		"oF": 0,
-		"opt": 0
-		},
-	"\/wp-content\/uploads\/2016\/12\/54ce55fbdf06b695452f73ec7a22e81f.jpeg": {
-		"ft": 16384,
-		"iS": 414673,
-		"oA": 0,
-		"oAP": "\/wp-content\/uploads\/2016\/12\/54ce55fbdf06b695452f73ec7a22e81f.jpg",
-		"oF": 0,
-		"opt": 0
-		},
-	"\/wp-content\/uploads\/2016\/12\/5bcfbae8541d6d0841bd76e2ce81c7e0-300x200-c-default.jpeg": {
-		"ft": 16384,
-		"iS": 16476,
-		"oA": 0,
-		"oAP": "\/wp-content\/uploads\/2016\/12\/5bcfbae8541d6d0841bd76e2ce81c7e0-300x200-c-default.jpg",
-		"oF": 0,
-		"opt": 0
-		},
-	"\/wp-content\/uploads\/2016\/12\/5bcfbae8541d6d0841bd76e2ce81c7e0.jpeg": {
-		"ft": 16384,
-		"iS": 1988010,
-		"oA": 0,
-		"oAP": "\/wp-content\/uploads\/2016\/12\/5bcfbae8541d6d0841bd76e2ce81c7e0.jpg",
-		"oF": 0,
-		"opt": 0
-		},
-	"\/wp-content\/uploads\/2016\/12\/5f4d1caa7032e41e1c2330b31137e1c8-300x200-c-default.jpeg": {
-		"ft": 16384,
-		"iS": 16693,
-		"oA": 0,
-		"oAP": "\/wp-content\/uploads\/2016\/12\/5f4d1caa7032e41e1c2330b31137e1c8-300x200-c-default.jpg",
-		"oF": 0,
-		"opt": 0
-		},
-	"\/wp-content\/uploads\/2016\/12\/5f4d1caa7032e41e1c2330b31137e1c8.jpeg": {
-		"ft": 16384,
-		"iS": 1837187,
-		"oA": 0,
-		"oAP": "\/wp-content\/uploads\/2016\/12\/5f4d1caa7032e41e1c2330b31137e1c8.jpg",
-		"oF": 0,
-		"opt": 0
-		},
-	"\/wp-content\/uploads\/2016\/12\/716269d7096cb0e34d791981b56a2b32-490x390-c-default.jpeg": {
-		"ft": 16384,
-		"iS": 41539,
-		"oA": 0,
-		"oAP": "\/wp-content\/uploads\/2016\/12\/716269d7096cb0e34d791981b56a2b32-490x390-c-default.jpg",
-		"oF": 0,
-		"opt": 0
-		},
-	"\/wp-content\/uploads\/2016\/12\/716269d7096cb0e34d791981b56a2b32.jpeg": {
-		"ft": 16384,
-		"iS": 82532,
-		"oA": 0,
-		"oAP": "\/wp-content\/uploads\/2016\/12\/716269d7096cb0e34d791981b56a2b32.jpg",
-		"oF": 0,
-		"opt": 0
-		},
-	"\/wp-content\/uploads\/2016\/12\/9d416deb13e0a59f1d0b3e0ccbb8b78c-490x390-c-default.jpeg": {
-		"ft": 16384,
-		"iS": 43965,
-		"oA": 0,
-		"oAP": "\/wp-content\/uploads\/2016\/12\/9d416deb13e0a59f1d0b3e0ccbb8b78c-490x390-c-default.jpg",
-		"oF": 0,
-		"opt": 0
-		},
-	"\/wp-content\/uploads\/2016\/12\/9d416deb13e0a59f1d0b3e0ccbb8b78c.jpeg": {
-		"ft": 16384,
-		"iS": 86643,
-		"oA": 0,
-		"oAP": "\/wp-content\/uploads\/2016\/12\/9d416deb13e0a59f1d0b3e0ccbb8b78c.jpg",
-		"oF": 0,
-		"opt": 0
-		},
-	"\/wp-content\/uploads\/2016\/12\/b02dcd0bf536fdc5791e8996431e9312-300x200-c-default.jpeg": {
-		"ft": 16384,
-		"iS": 14989,
-		"oA": 0,
-		"oAP": "\/wp-content\/uploads\/2016\/12\/b02dcd0bf536fdc5791e8996431e9312-300x200-c-default.jpg",
-		"oF": 0,
-		"opt": 0
-		},
-	"\/wp-content\/uploads\/2016\/12\/b02dcd0bf536fdc5791e8996431e9312.jpeg": {
-		"ft": 16384,
-		"iS": 1669008,
-		"oA": 0,
-		"oAP": "\/wp-content\/uploads\/2016\/12\/b02dcd0bf536fdc5791e8996431e9312.jpg",
-		"oF": 0,
-		"opt": 0
-		},
-	"\/wp-content\/uploads\/2016\/12\/b3963ea63949f79f3de63c6be7501cd6-300x200-c-default.jpeg": {
-		"ft": 16384,
-		"iS": 16712,
-		"oA": 0,
-		"oAP": "\/wp-content\/uploads\/2016\/12\/b3963ea63949f79f3de63c6be7501cd6-300x200-c-default.jpg",
-		"oF": 0,
-		"opt": 0
-		},
-	"\/wp-content\/uploads\/2016\/12\/b3963ea63949f79f3de63c6be7501cd6.jpeg": {
-		"ft": 16384,
-		"iS": 1242502,
-		"oA": 0,
-		"oAP": "\/wp-content\/uploads\/2016\/12\/b3963ea63949f79f3de63c6be7501cd6.jpg",
-		"oF": 0,
-		"opt": 0
-		},
-	"\/wp-content\/uploads\/2016\/12\/b80bdbe52ac2e8bddfe58d67ea2f16cf-300x200-c-default.jpeg": {
-		"ft": 16384,
-		"iS": 15881,
-		"oA": 0,
-		"oAP": "\/wp-content\/uploads\/2016\/12\/b80bdbe52ac2e8bddfe58d67ea2f16cf-300x200-c-default.jpg",
-		"oF": 0,
-		"opt": 0
-		},
-	"\/wp-content\/uploads\/2016\/12\/b80bdbe52ac2e8bddfe58d67ea2f16cf.jpeg": {
-		"ft": 16384,
-		"iS": 678550,
-		"oA": 0,
-		"oAP": "\/wp-content\/uploads\/2016\/12\/b80bdbe52ac2e8bddfe58d67ea2f16cf.jpg",
-		"oF": 0,
-		"opt": 0
-		},
-	"\/wp-content\/uploads\/2016\/12\/b999eb174f0a25ba3efacddfd9c0796b-300x200-c-default.jpeg": {
-		"ft": 16384,
-		"iS": 13664,
-		"oA": 0,
-		"oAP": "\/wp-content\/uploads\/2016\/12\/b999eb174f0a25ba3efacddfd9c0796b-300x200-c-default.jpg",
-		"oF": 0,
-		"opt": 0
-		},
-	"\/wp-content\/uploads\/2016\/12\/b999eb174f0a25ba3efacddfd9c0796b.jpeg": {
-		"ft": 16384,
-		"iS": 569620,
-		"oA": 0,
-		"oAP": "\/wp-content\/uploads\/2016\/12\/b999eb174f0a25ba3efacddfd9c0796b.jpg",
-		"oF": 0,
-		"opt": 0
-		},
-	"\/wp-content\/uploads\/2016\/12\/b9effadfb9e117be578969364285a07c-490x390-c-default.jpeg": {
-		"ft": 16384,
-		"iS": 50298,
-		"oA": 0,
-		"oAP": "\/wp-content\/uploads\/2016\/12\/b9effadfb9e117be578969364285a07c-490x390-c-default.jpg",
-		"oF": 0,
-		"opt": 0
-		},
-	"\/wp-content\/uploads\/2016\/12\/b9effadfb9e117be578969364285a07c.jpeg": {
-		"ft": 16384,
-		"iS": 95821,
-		"oA": 0,
-		"oAP": "\/wp-content\/uploads\/2016\/12\/b9effadfb9e117be578969364285a07c.jpg",
-		"oF": 0,
-		"opt": 0
-		},
-	"\/wp-content\/uploads\/2016\/12\/bcd768a05bbcf164e4a0b22510e3e35e-300x200-c-default.jpeg": {
-		"ft": 16384,
-		"iS": 14072,
-		"oA": 0,
-		"oAP": "\/wp-content\/uploads\/2016\/12\/bcd768a05bbcf164e4a0b22510e3e35e-300x200-c-default.jpg",
-		"oF": 0,
-		"opt": 0
-		},
-	"\/wp-content\/uploads\/2016\/12\/bcd768a05bbcf164e4a0b22510e3e35e.jpeg": {
-		"ft": 16384,
-		"iS": 1262404,
-		"oA": 0,
-		"oAP": "\/wp-content\/uploads\/2016\/12\/bcd768a05bbcf164e4a0b22510e3e35e.jpg",
-		"oF": 0,
-		"opt": 0
-		},
-	"\/wp-content\/uploads\/2016\/12\/c454e6f2e04e1f991d5f5d1321acee23-300x200-c-default.jpeg": {
-		"ft": 16384,
-		"iS": 13690,
-		"oA": 0,
-		"oAP": "\/wp-content\/uploads\/2016\/12\/c454e6f2e04e1f991d5f5d1321acee23-300x200-c-default.jpg",
-		"oF": 0,
-		"opt": 0
-		},
-	"\/wp-content\/uploads\/2016\/12\/c454e6f2e04e1f991d5f5d1321acee23.jpeg": {
-		"ft": 16384,
-		"iS": 295864,
-		"oA": 0,
-		"oAP": "\/wp-content\/uploads\/2016\/12\/c454e6f2e04e1f991d5f5d1321acee23.jpg",
-		"oF": 0,
-		"opt": 0
-		},
 	"\/wp-content\/uploads\/2016\/12\/Carnes_collageSFW2-150x150.jpg": {
 		"ft": 16384,
 		"iS": 10103,
@@ -68838,14 +71276,6 @@
 		"iS": 23017,
 		"oA": 0,
 		"oAP": "\/wp-content\/uploads\/2016\/12\/Carnes_collageSFW2-300x193.jpg",
-		"oF": 0,
-		"opt": 0
-		},
-	"\/wp-content\/uploads\/2016\/12\/Carnes_collageSFW2-790x395-c-default.jpg": {
-		"ft": 16384,
-		"iS": 82243,
-		"oA": 0,
-		"oAP": "\/wp-content\/uploads\/2016\/12\/Carnes_collageSFW2-790x395-c-default.jpg",
 		"oF": 0,
 		"opt": 0
 		},
@@ -68942,22 +71372,6 @@
 		"iS": 251705,
 		"oA": 0,
 		"oAP": "\/wp-content\/uploads\/2016\/12\/CRW.jpg",
-		"oF": 0,
-		"opt": 0
-		},
-	"\/wp-content\/uploads\/2016\/12\/e090b26ef48656dea5a3cf3ae7dc2f7d-300x200-c-default.jpeg": {
-		"ft": 16384,
-		"iS": 16470,
-		"oA": 0,
-		"oAP": "\/wp-content\/uploads\/2016\/12\/e090b26ef48656dea5a3cf3ae7dc2f7d-300x200-c-default.jpg",
-		"oF": 0,
-		"opt": 0
-		},
-	"\/wp-content\/uploads\/2016\/12\/e090b26ef48656dea5a3cf3ae7dc2f7d.jpeg": {
-		"ft": 16384,
-		"iS": 827203,
-		"oA": 0,
-		"oAP": "\/wp-content\/uploads\/2016\/12\/e090b26ef48656dea5a3cf3ae7dc2f7d.jpg",
 		"oF": 0,
 		"opt": 0
 		},
@@ -69150,6 +71564,158 @@
 		"iS": 144172,
 		"oA": 0,
 		"oAP": "\/wp-content\/uploads\/2016\/12\/Trash-Pick-Up.jpg",
+		"oF": 0,
+		"opt": 0
+		},
+	"\/wp-content\/uploads\/2017\/01\/Borings-150x150.jpg": {
+		"ft": 16384,
+		"iS": 7923,
+		"oA": 0,
+		"oAP": "\/wp-content\/uploads\/2017\/01\/Borings-150x150.jpg",
+		"oF": 0,
+		"opt": 0
+		},
+	"\/wp-content\/uploads\/2017\/01\/Borings-300x200.jpg": {
+		"ft": 16384,
+		"iS": 16831,
+		"oA": 0,
+		"oAP": "\/wp-content\/uploads\/2017\/01\/Borings-300x200.jpg",
+		"oF": 0,
+		"opt": 0
+		},
+	"\/wp-content\/uploads\/2017\/01\/Borings-768x512.jpg": {
+		"ft": 16384,
+		"iS": 72860,
+		"oA": 0,
+		"oAP": "\/wp-content\/uploads\/2017\/01\/Borings-768x512.jpg",
+		"oF": 0,
+		"opt": 0
+		},
+	"\/wp-content\/uploads\/2017\/01\/Borings.jpg": {
+		"ft": 16384,
+		"iS": 504422,
+		"oA": 0,
+		"oAP": "\/wp-content\/uploads\/2017\/01\/Borings.jpg",
+		"oF": 0,
+		"opt": 0
+		},
+	"\/wp-content\/uploads\/2017\/01\/Comunity-Wide-Yard-Sale-event-150x150.jpg": {
+		"ft": 16384,
+		"iS": 7704,
+		"oA": 0,
+		"oAP": "\/wp-content\/uploads\/2017\/01\/Comunity-Wide-Yard-Sale-event-150x150.jpg",
+		"oF": 0,
+		"opt": 0
+		},
+	"\/wp-content\/uploads\/2017\/01\/Comunity-Wide-Yard-Sale-event-300x168.jpg": {
+		"ft": 16384,
+		"iS": 12215,
+		"oA": 0,
+		"oAP": "\/wp-content\/uploads\/2017\/01\/Comunity-Wide-Yard-Sale-event-300x168.jpg",
+		"oF": 0,
+		"opt": 0
+		},
+	"\/wp-content\/uploads\/2017\/01\/Comunity-Wide-Yard-Sale-event-768x431.jpg": {
+		"ft": 16384,
+		"iS": 42418,
+		"oA": 0,
+		"oAP": "\/wp-content\/uploads\/2017\/01\/Comunity-Wide-Yard-Sale-event-768x431.jpg",
+		"oF": 0,
+		"opt": 0
+		},
+	"\/wp-content\/uploads\/2017\/01\/Comunity-Wide-Yard-Sale-event.jpg": {
+		"ft": 16384,
+		"iS": 193187,
+		"oA": 0,
+		"oAP": "\/wp-content\/uploads\/2017\/01\/Comunity-Wide-Yard-Sale-event.jpg",
+		"oF": 0,
+		"opt": 0
+		},
+	"\/wp-content\/uploads\/2017\/01\/FullSizeRender-2-1024x768.jpg": {
+		"ft": 16384,
+		"iS": 127167,
+		"oA": 0,
+		"oAP": "\/wp-content\/uploads\/2017\/01\/FullSizeRender-2-1024x768.jpg",
+		"oF": 0,
+		"opt": 0
+		},
+	"\/wp-content\/uploads\/2017\/01\/FullSizeRender-2-150x150.jpg": {
+		"ft": 16384,
+		"iS": 9257,
+		"oA": 0,
+		"oAP": "\/wp-content\/uploads\/2017\/01\/FullSizeRender-2-150x150.jpg",
+		"oF": 0,
+		"opt": 0
+		},
+	"\/wp-content\/uploads\/2017\/01\/FullSizeRender-2-300x225.jpg": {
+		"ft": 16384,
+		"iS": 20757,
+		"oA": 0,
+		"oAP": "\/wp-content\/uploads\/2017\/01\/FullSizeRender-2-300x225.jpg",
+		"oF": 0,
+		"opt": 0
+		},
+	"\/wp-content\/uploads\/2017\/01\/FullSizeRender-2-768x576.jpg": {
+		"ft": 16384,
+		"iS": 82594,
+		"oA": 0,
+		"oAP": "\/wp-content\/uploads\/2017\/01\/FullSizeRender-2-768x576.jpg",
+		"oF": 0,
+		"opt": 0
+		},
+	"\/wp-content\/uploads\/2017\/01\/FullSizeRender-2.jpg": {
+		"ft": 16384,
+		"iS": 1385033,
+		"oA": 0,
+		"oAP": "\/wp-content\/uploads\/2017\/01\/FullSizeRender-2.jpg",
+		"oF": 0,
+		"opt": 0
+		},
+	"\/wp-content\/uploads\/2017\/01\/Go-Bowling-event-150x150.jpg": {
+		"ft": 16384,
+		"iS": 8326,
+		"oA": 0,
+		"oAP": "\/wp-content\/uploads\/2017\/01\/Go-Bowling-event-150x150.jpg",
+		"oF": 0,
+		"opt": 0
+		},
+	"\/wp-content\/uploads\/2017\/01\/Go-Bowling-event-300x168.jpg": {
+		"ft": 16384,
+		"iS": 13904,
+		"oA": 0,
+		"oAP": "\/wp-content\/uploads\/2017\/01\/Go-Bowling-event-300x168.jpg",
+		"oF": 0,
+		"opt": 0
+		},
+	"\/wp-content\/uploads\/2017\/01\/Go-Bowling-event-768x431.jpg": {
+		"ft": 16384,
+		"iS": 44765,
+		"oA": 0,
+		"oAP": "\/wp-content\/uploads\/2017\/01\/Go-Bowling-event-768x431.jpg",
+		"oF": 0,
+		"opt": 0
+		},
+	"\/wp-content\/uploads\/2017\/01\/Go-Bowling-event.jpg": {
+		"ft": 16384,
+		"iS": 120164,
+		"oA": 0,
+		"oAP": "\/wp-content\/uploads\/2017\/01\/Go-Bowling-event.jpg",
+		"oF": 0,
+		"opt": 0
+		},
+	"\/wp-content\/uploads\/2017\/01\/Photo-Contest-165x165-c-default-150x150.jpg": {
+		"ft": 16384,
+		"iS": 5065,
+		"oA": 0,
+		"oAP": "\/wp-content\/uploads\/2017\/01\/Photo-Contest-165x165-c-default-150x150.jpg",
+		"oF": 0,
+		"opt": 0
+		},
+	"\/wp-content\/uploads\/2017\/01\/Photo-Contest-165x165-c-default.jpg": {
+		"ft": 16384,
+		"iS": 20164,
+		"oA": 0,
+		"oAP": "\/wp-content\/uploads\/2017\/01\/Photo-Contest-165x165-c-default.jpg",
 		"oF": 0,
 		"opt": 0
 		},
@@ -74966,6 +77532,10 @@
 			"active": 0,
 			"optionString": ""
 			},
+		"no-await-in-loop": {
+			"active": 0,
+			"optionString": ""
+			},
 		"no-bitwise": {
 			"active": 0,
 			"optionString": "{'allow': ['~'], 'int32Hint': true}"
@@ -75505,6 +78075,10 @@
 		"prefer-const": {
 			"active": 0,
 			"optionString": "{'destructuring': 'any', 'ignoreReadBeforeAssign': false}"
+			},
+		"prefer-destructuring": {
+			"active": 0,
+			"optionString": "{'array': true, 'object': true}, {'enforceForRenamedProperties': false}"
 			},
 		"prefer-numeric-literals": {
 			"active": 0,
