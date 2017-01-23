@@ -436,7 +436,7 @@ jQuery(function ($) {
 
                 $('div.results-count').text(pluralize('Result', total, true));
 
-                $('div.listings-wrapper').html(html).fadeTo('slow', 1);
+                $('div.home-finder-container').html(html).fadeTo('slow', 1);
 
                 $input.prop('readonly', false);
                 // auto click the first result
@@ -457,13 +457,13 @@ jQuery(function ($) {
     }
 
     function getShouldIncludePlans() {
-        var selection = $('#filter-listings-type').find('option:selected').val();
+        var selection = $('#filter-listings-type-copy').find('option:selected').val();
 
         return (selection === 'home-plans' || selection === 'available-homes-and-plans');
     }
 
     function getShouldIncludeHomes() {
-        var selection = $('#filter-listings-type').find('option:selected').val();
+        var selection = $('#filter-listings-type-copy').find('option:selected').val();
 
         return (selection === 'available-homes' || selection === 'available-homes-and-plans');
     }
@@ -781,18 +781,18 @@ jQuery(function ($) {
     
     /*** Match Height ***/
     //-Grid View
-    $('.row-grid-view').each(function(i, elem) {
-        $(elem)
-            .find('.grid-results-box')   // Only children of this row
-            .matchHeight({byRow: false}); // Row detection gets confused so disable it
-    });
-    
-    //-Map View
-    $('.col-map-listings').each(function(i, elem) {
-        $(elem)
-            .find('.map-results-box')   // Only children of this row
-            .matchHeight({byRow: false}); // Row detection gets confused so disable it
-    });
+    // $('.row-grid-view').each(function(i, elem) {
+    //     $(elem)
+    //         .find('.grid-results-box')   // Only children of this row
+    //         .matchHeight({byRow: false}); // Row detection gets confused so disable it
+    // });
+    //
+    // //-Map View
+    // $('.col-map-listings').each(function(i, elem) {
+    //     $(elem)
+    //         .find('.map-results-box')   // Only children of this row
+    //         .matchHeight({byRow: false}); // Row detection gets confused so disable it
+    // });
 
 
     //Mobile Only
