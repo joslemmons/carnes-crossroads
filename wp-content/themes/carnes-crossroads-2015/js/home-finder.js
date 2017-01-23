@@ -457,13 +457,13 @@ jQuery(function ($) {
     }
 
     function getShouldIncludePlans() {
-        var selection = $('#filter-listings-type').find('option:selected').val();
+        var selection = $('#filter-listings-type-copy').find('option:selected').val();
 
         return (selection === 'home-plans' || selection === 'available-homes-and-plans');
     }
 
     function getShouldIncludeHomes() {
-        var selection = $('#filter-listings-type').find('option:selected').val();
+        var selection = $('#filter-listings-type-copy').find('option:selected').val();
 
         return (selection === 'available-homes' || selection === 'available-homes-and-plans');
     }
