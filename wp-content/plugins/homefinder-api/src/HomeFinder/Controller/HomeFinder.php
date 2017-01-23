@@ -10,6 +10,7 @@ use HomeFinder\Model\Property;
 use HomeFinder\Model\Result;
 use HomeFinder\Model\User;
 
+
 class HomeFinder extends Router
 {
 
@@ -78,6 +79,10 @@ class HomeFinder extends Router
         $page = (isset($params['num']) && false !== filter_var($params['num'], FILTER_VALIDATE_INT)) ? (int)$params['num'] : 1;
         $sort = (isset($_REQUEST['sort'])) ? sanitize_text_field($_REQUEST['sort']) : 'default';
 
+        $view = (isset($_REQUEST['view'])) ? sanitize_text_field($_REQUEST['view']) : 'grid';
+        $render_view = ($view == 'map') ? 'partials/home-finder/results-map-view.twig' : 'partials/home-finder/results-grid-view.twig';
+        $name = (isset($_REQUEST['name'])) ? sanitize_text_field($_REQUEST['name']) : '';
+
         $order = null;
         $order_by = null;
         if ($sort !== 'default') {
@@ -101,9 +106,9 @@ class HomeFinder extends Router
         $result = \HomeFinder\Model\HomeFinder::getProperties($filters, $per_page, $page, $order_by, $order);
         $filters->setMLSPage($result->mlsPage);
 
-        $html = \Timber::compile('partials/home-finder/property-list.twig', array(
-            'properties' => $result->items,
-            'total' => $result->total,
+        $html = \Timber::compile($render_view, array(
+            'name' => $name,
+            'result' => $result,
             'nextPageUrl' => '/api/home-finder/search/page/' . ($page + 1) . '?' . http_build_query(
                     array_merge(
                         $filters->getRawFilters(),
@@ -112,7 +117,9 @@ class HomeFinder extends Router
                         )
                     )
                 ),
-            'current_user' => User::getCurrentlyLoggedUser()
+            'current_user' => User::getCurrentlyLoggedUser(),
+            'page' => $result->paginator->getPage(),
+            'pages' => $result->paginator->count()
         ));
 
         self::renderJSON(array(

@@ -436,7 +436,7 @@ jQuery(function ($) {
 
                 $('div.results-count').text(pluralize('Result', total, true));
 
-                $('div.listings-wrapper').html(html).fadeTo('slow', 1);
+                $('div.home-finder-container').html(html).fadeTo('slow', 1);
 
                 $input.prop('readonly', false);
                 // auto click the first result
