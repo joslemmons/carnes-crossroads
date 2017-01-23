@@ -1,0 +1,16 @@
+//IE Styles Styles
+
+select::-ms-expand {
+    display: none;
+}
+
+.ie9 {
+    .menu-text {
+        display: none;
+    }
+
+    .home-finder-content .row-grid-view .grid-results-box .type-box {
+        width: 100%;
+        left: 0;
+    }
+}

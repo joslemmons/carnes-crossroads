@@ -174,6 +174,10 @@ class HomeFinder
             return $result;
         }, self::DEFAULT_CACHE_TIME);
 
+        if(empty($result->items)) {
+            delete_transient(apply_filters('timber/transient/slug', Config::getKeyPrefix() . 'home_finder_properties_search_transient_' . $per_page . '_' . $page . '_' . $order_by . '_' . $order . '_' . $filters->getFiltersAsHashToUseAsId()));
+        }
+
         return $result;
     }
 
@@ -211,6 +215,10 @@ class HomeFinder
             $items = $properties->items;
             shuffle($items);
             $properties->items = $items;
+        }
+
+        if(empty($properties->items)) {
+            delete_transient(apply_filters('timber/transient/slug', Config::getKeyPrefix() . 'home_finder_featured_properties_transient_' . $per_page . '_' . $page . '_' . $order_by . '_' . $order));
         }
 
         return $properties;
@@ -259,6 +267,10 @@ class HomeFinder
             return $properties_result;
         }, self::DEFAULT_CACHE_TIME);
 
+        if(empty($properties->items)) {
+            delete_transient(apply_filters('timber/transient/slug', Config::getKeyPrefix() . 'home_finder_newly_listed_transient_' . $per_page . '_' . $page));
+        }
+
         return $properties;
     }
 
@@ -284,6 +296,10 @@ class HomeFinder
 
             return $properties_result;
         }, self::DEFAULT_CACHE_TIME);
+
+        if(empty($properties->items)) {
+            delete_transient(apply_filters('timber/transient/slug', Config::getKeyPrefix() . 'home_finder_recently_sold_transient_' . $per_page . '_' . $page));
+        }
 
         return $properties;
     }

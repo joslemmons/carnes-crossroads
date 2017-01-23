@@ -1,0 +1,530 @@
+.property-view-content {
+    background: $white;
+    padding-top: 50px;
+    padding-bottom: 50px;
+
+    @media (max-width: $screen-sm-max) {
+        padding-top: 0;
+    }
+}
+
+
+.property-sidebar {
+
+    .sidebar-box {
+        border: 1px solid #e4e2d6;
+        overflow: hidden;
+        margin-bottom: 22px;
+    }
+
+    .btn-box {
+        margin: auto;
+        text-align: center;
+        padding-top: 40px;
+        padding-bottom: 40px;
+
+        @media (max-width: $screen-sm-max) {
+            padding: 40px;
+        }
+    }
+
+    .property-gallery {
+
+        .gallery-thumbs {
+
+            .col-photos {
+                padding: 0;
+            }
+
+            img {
+                border: 1px solid $white;
+            }
+        }
+    }
+
+    .property-map {
+        padding: 0;
+        text-align: center;
+
+        .single-map {
+            position: relative;
+            width: 100%;
+            height: 250px;
+            background: $white;
+            z-index: 2;
+
+            @media (max-width: $screen-sm-max) {
+//                    height: 60vh;
+            }
+        }
+    }
+}
+
+.single-listing-content {
+    padding: 20px;
+    max-width: 100%;
+
+    @media (min-width: $screen-lg) {
+        padding: 40px 100px 20px;
+        max-width: 900px;
+    }
+
+    @media (max-width: $screen-sm-max) {
+        padding: 20px;
+        max-width: 100%;
+    }
+
+    .listing-actions {
+        font-family: $proxima;
+        color: $brown;
+        font-size: 12px; /* Approximation due to font substitution */
+        font-weight: 400;
+        line-height: 1; /* Approximation due to font substitution */
+        text-align: left;
+        text-transform: uppercase;
+        letter-spacing: 1px;
+
+        .action-link {
+            display: inline-block;
+            margin-right: 15px;
+            position: relative;
+
+            a {
+                color: $brown;
+
+                &:hover {
+                    color: darken($brown,40%);
+                    border-bottom: none;
+                    cursor: pointer;
+                }
+            }
+
+            &.save {
+                font-weight: bold;
+            }
+        }
+
+        .star-icon {
+            display: inline-block;
+            position: relative;
+            top: 2px;
+        }
+
+        .addthis_sharing_toolbox {
+            display: inline-block;
+            position: relative;
+            top: 3px;
+            margin-left: 5px;
+        }
+
+        .share-widget {
+            position: absolute;
+            background: #9f9f9f;
+            top: -70px;
+            left: -50px;
+            color: $white;
+            padding: 20px;
+            text-align: center;
+            width: 180px;
+            z-index: 1;
+            opacity: 0;
+            @include transition(.5s all);
+
+            &.open {
+                opacity: 1;
+                top: -90px;
+            }
+
+            a {
+                color: $white;
+            }
+
+            span.share-text {
+                position: relative;
+                top: -4px;
+                margin-right: 5px;
+            }
+
+
+            .fb-icon {
+                width: 18px;
+                height: 18px;
+                background: url(img/social-facebook-white.png) no-repeat 50% 50%;
+                background-size: cover;
+                display: inline-block;
+                margin-right: 8px;
+                position: relative;
+                top: 0;
+                @include transition(.5s all);
+
+                &:hover {
+                    top: 4px;
+                }
+
+            }
+
+            .twitter-icon {
+                width: 18px;
+                height: 18px;
+                background: url(img/social-twitter-white.png) no-repeat 50% 50%;
+                background-size: cover;
+                display: inline-block;
+                margin-right: 8px;
+                position: relative;
+                top: 0;
+                @include transition(.5s all);
+
+                &:hover {
+                    top: 4px;
+                }
+            }
+
+            .email-icon {
+                width: 18px;
+                height: 18px;
+                background: url(img/email.png) no-repeat 50% 50%;
+                background-size: cover;
+                display: inline-block;
+                position: relative;
+                top: 0;
+                @include transition(.5s all);
+
+                &:hover {
+                    top: 4px;
+                }
+            }
+
+            .arrow {
+                position: absolute;
+                background: url(img/select-arrow.png) no-repeat 50% 50%;
+                background-size: cover;
+                width: 16px;
+                height: 14px;
+                left: 0;
+                right: 0;
+                margin: auto;
+                bottom: -13px;
+            }
+        }
+    }
+
+    .listing-address {
+        font-family: $baskerville;
+        color: $brown;
+        font-size: 36px;
+        font-weight: 400;
+        line-height: 1;
+        text-align: left;
+        margin-top: 25px;
+    }
+
+    .optional-btns {
+        font-family: $proxima;
+        color: $brown;
+        font-size: 12px; /* Approximation due to font substitution */
+        font-weight: 400;
+        line-height: 1; /* Approximation due to font substitution */
+        text-align: left;
+        text-transform: uppercase;
+        letter-spacing: 1px;
+        margin-top: 0px;
+        display: inline-block;
+
+        a.optional-link {
+            color: $brown;
+            display: inline-block;
+            margin-right: 15px;
+            border-bottom: none;
+
+            &:hover {
+                color: darken($brown,40%);
+                border-bottom: none;
+            }
+
+        }
+
+        .icon-block {
+            display: inline-block;
+            position: relative;
+            top: 2px;
+        }
+    }
+
+    .listing-price {
+        display: inline-block;
+        font-family: $oswald;
+        color: $brown;
+        font-size: 24px; /* Approximation due to font substitution */
+        font-weight: 400;
+        line-height: 1; /* Approximation due to font substitution */
+        text-align: left;
+        margin-top: 24px;
+        margin-right: 34px;
+
+        @media (max-width: $screen-sm-max) {
+            display: block;
+            width: 100%;
+            margin-bottom: 20px;
+        }
+    }
+
+    .listing-specs {
+        display: inline-block;
+        font-family: $proxima;
+        color: $brown;
+        font-size: 18px; /* Approximation due to font substitution */
+        font-weight: 400;
+        line-height: 1; /* Approximation due to font substitution */
+        text-align: left;
+        text-transform: uppercase;
+        letter-spacing: 1px;
+    }
+
+    .listing-neighborhood {
+        font-family: $oswald;
+        color: $brown;
+        font-size: 16px; /* Approximation due to font substitution */
+        font-weight: 400;
+        line-height: 1.5; /* Approximation due to font substitution */
+        text-align: left;
+        margin-top: 18px;
+        text-transform: uppercase;
+        letter-spacing: 2px;
+
+        @media (max-width: $screen-sm-max) {
+            font-size: 12px
+        }
+
+        .item-padding {
+            display: inline-block;
+            margin: 0 15px;
+
+            @media (max-width: $screen-sm-max) {
+                margin: 0 5px;
+            }
+
+            &:first-child {
+                margin-left: 0;
+            }
+        }
+
+
+        a {
+            color: $brown;
+        }
+    }
+
+    .action-buttons-container {
+        margin-top: 40px;
+        margin-bottom: 50px;
+
+        .site-btn {
+            //main btn styles in base.scss
+            margin-right: 10px;
+            width: 100%;
+            text-align: center;
+            margin-bottom: 5px;
+
+            @media (min-width: $screen-lg) {
+                width: auto;
+                text-align: left;
+            }
+
+            &#requestShowing {
+                background: $teal;
+                color: $blue;
+                border: none;
+            }
+        }
+    }
+
+    .listing-agent {
+        font-family: $oswald;
+        color: $brown;
+        font-size: 16px; /* Approximation due to font substitution */
+        font-weight: 400;
+        line-height: 1.5; /* Approximation due to font substitution */
+        text-align: left;
+        margin-top: 18px;
+        text-transform: uppercase;
+        letter-spacing: 2px;
+        margin-bottom: 10px;
+        display: inline-block;
+
+        @media (max-width: $screen-sm-max) {
+            font-size: 12px
+        }
+
+        a { color: $gold }
+    }
+
+    .listing-agent__photo {
+        display: inline-block;
+        float: left;
+        position: relative;
+        margin: -12px 15px 0 -13px;
+        height: 100px;
+        width: 100px;
+        border: 1px solid $grey;
+        border-radius: 100%;
+        background-size: cover;
+        background-position: center center;
+        background-repeat: no-repeat;
+
+        a {
+            width: 100%;
+            height: 100%;
+            top: 0;
+            right: 0;
+            bottom: 0;
+            left: 0;
+            position: absolute;
+        }
+
+        a:hover {
+            border: none;
+        }
+
+        &-logo {
+            @extend .listing-agent__photo;
+            background-size: 86%;
+            background-position: center 45%;
+        }
+    }
+
+    .listing-details, .listing-details p, .listing-details ul, .listing-details ol {
+        font-family: $cronos;
+        color: $brown;
+        font-weight: 400;
+    }
+
+    .listing-details ul, .listing-details ol {
+        margin-top: 30px;
+        margin-bottom: 30px;
+        padding-left: 0px;
+
+        li {
+            margin-left: 17px;  //only bc most content is in lists
+        }
+    }
+}
+
+.disclaimer {
+    font-family: $cronos;
+    color: $brown;
+    font-weight: 400;
+    font-size: 12px;
+    line-height: 1;
+}
+
+.broker-reciprocity {
+    position: relative;
+    background: $white url(img/broker-reciprocity.png) no-repeat 0% 0%;
+    background-size: 80px;
+    padding-top: 30px;
+}
+
+.dire-logo {
+    position: relative;
+    background: $white url(img/dire-logo-listings.png) no-repeat 0% 0%;
+    background-size: 100px;
+    padding-top: 60px;
+}
+
+.agent-form {
+    padding-top: 40px;
+    padding-bottom: 40px;
+    color: $brown;
+
+    h4 {
+        margin-bottom: 0;
+
+        @media (max-width: 767px) {
+            line-height: 1.2;
+            margin-top: -3px;
+            margin-bottom: 18px;
+        }
+    }
+
+    p {
+        font-size: 16px;
+    }
+
+    label {
+        font-family: $proxima;
+        text-transform: uppercase;
+        font-size: 12px;
+        color: $brown;
+    }
+
+    .red {
+        color: red;
+    }
+
+    .request-showing {
+        margin-top: 45px;
+    }
+
+    .success-message-right {
+        float: right;
+        width: 65%;
+        margin-top: 17px;
+
+        @media (max-width: 767px) {
+            float: none;
+            width: 100%;
+            text-align: center;
+            display: block;
+        }
+    }
+
+    input, textarea {
+        background: $white;
+        width: 100%;
+        font-family: $proxima;
+        color:  $brown;
+        font-size: 14px;/* Approximation due to font substitution */
+        font-weight: 400;
+        line-height: 1;/* Approximation due to font substitution */
+        text-align: left;
+        border-radius: 0;
+        border: 1px solid $brown;
+        padding: 10px 15px;
+        margin-bottom: 5px;
+        text-transform: uppercase;
+        margin-bottom: 20px;
+
+        &:focus {
+            outline: none;
+        }
+
+        &.error {
+            background: pink;
+            border: 1px solid red;
+        }
+    }
+
+    input[type="checkbox"] {
+        width: auto;
+    }
+
+    .site-btn {
+        margin-top: 20px;
+    }
+
+    .required {
+        margin-top: 20px;
+        font-family: $proxima;
+        text-transform: uppercase;
+        font-size: 12px;
+        color: red;
+    }
+
+    .error-message {
+        display: block;
+        color: red;
+        font-family: $oswald;
+        font-size: 16px;
+        text-transform: uppercase;
+    }
+}

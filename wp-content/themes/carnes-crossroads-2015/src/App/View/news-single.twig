@@ -39,7 +39,7 @@
                      &nbsp;&nbsp;|&nbsp;&nbsp;{% for term in post.terms('category') %}<a
                      href="{{ term.link }}">{{ term.name }}</a>{% if loop.last == faslse %},{% endif %}{% endfor %}
                  </p>
-                 <img src="{{ post.thumbnail.src|resize(790,395) }}">
+                 <img src="{{ post.thumbnail.src }}">
                 <p>{{ post.content }}</p>
 
                  {% for image_row in post.getGallery|batch(4) %}

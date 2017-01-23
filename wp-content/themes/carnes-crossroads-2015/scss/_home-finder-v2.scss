@@ -1,0 +1,521 @@
+//V2 - .my-account-bar
+.my-account-bar {
+    background: $blue;
+    color: $white;
+    font-family: $proxima;
+    font-size: 12px;
+    text-transform: uppercase;
+    padding: 13px 40px;
+    position: relative;
+    text-align: right;
+
+    a {
+        color: $white;
+
+        &:hover {
+            border-bottom: 1px solid $white;
+        }
+    }
+
+    .property-back {
+        text-align: left;
+    }
+
+    .account-links {
+        text-align: right;
+    }
+
+    .your-account {
+        font-weight: bold;
+    }
+}
+
+//V2 - general
+.home-finder-content {
+    position: relative;
+    background: $beige;
+
+    .toggle-btn {
+        position: absolute;
+        right: 5%;
+        top: 27px;
+        z-index: 2;
+
+        span.toggle-view {
+            font-family: $proxima;
+            font-size: 12px; /* Approximation due to font substitution */
+            font-weight: 400;
+            text-transform: uppercase;
+            margin-left: -4px;
+
+            a {
+                color: lighten($brown,50%);
+                border-bottom: none;
+                padding: 15px;
+                background: $white;
+
+                &:hover {
+                    border-bottom: none;
+                    color: $white;
+                    background: $brown;
+                    cursor: pointer;
+                }
+            }
+
+            &.active {
+                font-weight: 700;
+
+                a {
+                    color: $brown;
+                    background: #e4e2d6;
+
+                    &:hover {
+                        color: $brown;
+                        background: #e4e2d6;
+                    }
+                }
+            }
+        }
+    }
+
+    //Grid & Map
+    .pagination {
+        text-align: right;
+        font-family: $oswald;
+        font-size: 14px;
+        margin-bottom: 20px;
+
+        a {
+            padding: 2px 10px;
+            background: $white;
+            border: 1px solid #e4e2d6;
+            margin: 0 5px 5px;
+            display: inline-block;
+
+            &.active {
+                padding: 2px 10px;
+                background: none;;
+                border: none;
+                margin: 0 5px 5px;
+                display: inline-block;
+                color: $blue;
+            }
+        }
+    }
+
+    //Grid View 
+    .home-finder-grid-view {
+        padding-top: 35px;
+        padding-bottom: 35px;
+        padding-left: 4.1%;
+        padding-right: 4.1%;
+    }
+
+    h2.listings-title {
+        font-family: $baskerville;
+        color: $brown;
+        font-size: 32px;
+        font-weight: 400;
+        display: inline-block;
+    }
+
+    #saveSearchSection {
+        display: inline-block;
+
+        #accountSaveSearch {
+            font-family: $oswald;
+            color: $cc-brown;
+            font-size: 0.7rem;
+            font-weight: 400;
+            letter-spacing: 0.5px;
+            text-transform: uppercase;
+            text-decoration: none;
+            background: $cc-dk-tan;
+            padding: 12px 16px;
+            border-bottom: none;
+            position: relative;
+            top: -4px;
+            margin-left: 8px;
+
+            &:hover {
+                border-bottom: none;
+                background: $cc-green;
+                color: $white;
+            }
+        }
+    }
+
+    .results-count, #saveSearchSection {
+        font-family: $proxima;
+        color: $brown;
+        font-size: .75em; /* Approximation due to font substitution */
+        font-weight: 400;
+        line-height: 1; /* Approximation due to font substitution */
+        text-align: left;
+        letter-spacing: 1.5px;
+        text-transform: uppercase;
+    }
+
+    .results-sort {
+        font-family: $proxima;
+        color: $brown;
+        font-size: 10px; 
+        font-weight: 900;
+        line-height: 1; 
+        text-align: left;
+        letter-spacing: 1px;
+        text-transform: uppercase;
+        display: inline-block;
+        text-align: left;
+        margin-top: 20px;
+        margin-bottom: 20px;
+
+        a  {
+            font-family: $proxima;
+            color: $gold;
+            font-weight: 400;
+
+            &:hover {
+                color: darken($brown,40%);
+            }
+        }
+    }
+
+
+    .row-grid-view {
+
+        .grid-save {
+            position: absolute;
+            top: 0;
+            right: 15px;
+            z-index: 1;
+        }
+
+        .grid-results-box {
+            background: $white;
+            border: 1px solid #e4e2d6;
+            text-align: center;
+            margin-bottom: 30px;
+
+            .home-image {
+                height: 240px;
+                position: relative;
+
+                @media (max-width: $screen-sm-max) {
+                    height: 180px;
+                }
+            }
+
+            .type-box {
+                background-color: $cc-dk-tan;
+                padding: 10px 18px;
+                position: absolute;
+                bottom: 0;
+                left: 50%;
+                width: 70%;
+                @include transform (translateX(-50%));
+                font-family: $oswald;
+                color: #526377;
+                font-size: 0.7rem;
+                font-weight: 400;
+                text-transform: uppercase;
+                letter-spacing: 0.75px;
+            }
+
+            .grid-box-content {
+                padding: 25px;
+
+                @media (max-width: $screen-sm-max) {
+                    padding: 10px 25px;
+                }
+            }
+
+            .grid-address {
+                font-family: $baskerville;
+                color: $cc-dk-green;
+                font-size: 1.3rem;
+                font-weight: 400;
+                margin-bottom: 15px;
+
+                @media (max-width: $screen-sm-max) {
+                    margin-bottom: 10px;
+                }
+            }
+
+            .grid-details {
+                font-family: $proxima;
+                color: $cc-med-grey;
+                font-size: 0.87rem; 
+                font-weight: 400;
+                text-transform: uppercase;
+
+                .price {
+                    margin-top: 27px;
+                    margin-bottom: 43px;
+                    font-family: $oswald;
+                    color: $cc-dk-green;
+                    font-size: 1.15rem;
+                    font-weight: 400;
+
+                    @media (max-width: $screen-sm-max) {
+                        margin-top: 10px;
+                        margin-bottom: 10px;
+                    }
+                }
+            }
+
+            .grid-btn {
+                .site-btn {
+                    color: $cc-brown;
+                    background: $white;
+                    border: 1px solid $cc-green;
+                    text-decoration: none;
+
+                    &:hover {
+                        color: $white;
+                        background: $cc-green;
+                        border: 1px solid $cc-green;
+                    }
+                }
+            }
+        }
+    }
+
+    //V2 - Map View
+
+    .col-map {
+        padding: 0;
+        position: relative;
+        height: 900px;
+        overflow: hidden;
+        background: $white;
+        z-index: 2;
+//            width: 100%;
+
+        @include transition(0.3s all);
+
+        &.open {
+            width: 100%;
+            position: absolute;
+            left: 0;
+        }
+
+        @media (max-width: $screen-sm-max) {
+            height: 100%;
+        }
+    }
+
+    .col-map-listings {
+        z-index: 1;
+        height: 900px;
+        overflow: scroll;
+
+        h2.listings-title {
+            display: block;
+        }
+
+        #saveSearchSection {
+            display: block;
+            margin-top: 20px;
+
+            #accountSaveSearch {
+            }
+        }
+    }
+
+    #fullscreen-map {
+        font-family: $proxima;
+        color: $brown;
+        font-size: 12px;
+        font-weight: 400;
+        padding: 16px 40px 16px 20px;
+        position: absolute;
+        top: 20px;
+        right: 20px;
+        z-index: 999;
+        text-transform: uppercase;
+        background: $white url(img/icon-fullscreen.png) no-repeat 90% 50% / 12px;
+
+        &:hover {
+            background: $teal url(img/icon-fullscreen.png) no-repeat 90% 50% / 12px;
+            color: $blue;
+        }
+    }
+
+    #map {
+        position: absolute;
+        width: 200vw; //200 due to fullscreen
+        height: 100vh;
+        background: $white;
+        z-index: 2;
+
+        @media (max-width: $screen-sm-max) {
+            height: 60vh;
+            width: 100vw;
+            position: relative;
+        }
+
+        .leaflet-map-pane {
+            left:-70vw; //for placement on default view
+
+            @media (max-width: $screen-sm-max) {
+                left: 0;
+            }
+        }
+    }
+
+
+    .map-results-box {
+        width: 100%;
+        height: 250px;
+        position: relative;
+        margin-bottom: 30px;
+    }
+
+    .map-save {
+        position: absolute;
+        top: 0;
+        right: 15px;
+        z-index: 1;
+    }
+
+    .broker-reciprocity {
+        position: absolute;
+        background: #fff url(img/broker-reciprocity.png) no-repeat 50% 50%;
+        background-size: 80px;
+        width: 100px;
+        left: 0;
+        top: 0;
+    }
+
+    .dire-logo {           
+        position: absolute;
+        background: #fff url(img/dire-logo-listings.png) no-repeat 50% 50%;
+        background-size: 60px;
+        width: 100px;
+        left: 0;
+        top: 0;
+        height: 30px;
+        padding-top: 0;
+    }
+
+
+    .map-box-content {
+        background-color: rgba(204, 233, 230, 0.89);
+        width: 100%;
+        height: auto;
+        position: absolute;
+        bottom: 0;
+        padding: 10px 8px;
+        color: $blue;
+
+        .map-address {
+            font-family: $baskerville;
+            font-size: 18px;
+            font-weight: 400;
+            margin-bottom: 11px;
+        }
+
+        .map-details {
+            font-family: $proxima;
+            font-size: 12px; 
+            font-weight: 400;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+        }
+
+        .sq-ft, .price {
+            display: inline-block;
+        }
+
+        .type-box {
+            font-family: $oswald;
+            font-size: 10px;
+            font-weight: 400;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            text-align: right;
+        }
+    }
+
+    //Map Popup
+    .leaflet-popup-content {
+        .listing-img-col {
+            width: 100%;
+            height: 150px;
+            position: relative;
+            margin: 0px auto 10px;
+        }
+
+        .listing-address {
+            font-family: $baskerville;
+            color: $brown;
+            font-size: 22px;
+            font-weight: 400;
+            line-height: 1; 
+            text-align: left;
+            margin-top: 20px;
+        }
+
+        .listing-specs {
+            display: inline-block;
+            font-family: $proxima;
+            color: $brown;
+            font-size: 18px; /* Approximation due to font substitution */
+            font-weight: 400;
+            line-height: 1; /* Approximation due to font substitution */
+            text-align: left;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .listing-neighborhood {
+            font-family: $oswald;
+            color: $brown;
+            font-size: 12px; 
+            font-weight: 400;
+            line-height: 1; /* Approximation due to font substitution */
+            text-align: left;
+            margin-top: 15px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+
+            .item-padding {
+                display: inline-block;
+                margin: 0 15px;
+
+                &:first-child {
+                    margin-left: 0;
+                }
+            }
+
+
+            a {
+                color: $brown;
+            }
+        }
+
+        .listing-details {
+            font-family: $proxima;
+            font-size: 13px; /* Approximation due to font substitution */
+            font-weight: 400;
+            line-height: 1.5; /* Approximation due to font substitution */
+            text-align: left;
+            text-transform: uppercase;
+            color: $brown;
+            margin-top: 20px;
+            margin-bottom: 0px;
+
+            a.showProperty {
+                display: block;
+                margin-top: 10px;
+                text-align: center;
+                color: $brown;
+
+                &:hover {
+                    color: $white;
+                }
+            }
+        }
+    }
+}
