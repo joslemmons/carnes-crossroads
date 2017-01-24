@@ -2,9 +2,9 @@
 
 global $params;
 
-use App\Model\HomeFinderPage;
-use HomeFinder\Model\HomeFinder;
+use App\Model\PropertyView;
 use HomeFinder\Model\Metric;
+use HomeFinder\Model\HomeFinder;
 use HomeFinder\Model\Property;
 use HomeFinder\Model\User;
 
@@ -14,7 +14,7 @@ $id = $params['id'];
 $property = Property::withId($id);
 
 if (false === $property) {
-    wp_redirect(home_url() . '/home-finder');
+    wp_redirect(home_url() . '/real-estate/home-finder');
     exit();
 }
 
@@ -26,22 +26,32 @@ if (is_user_logged_in()) {
 }
 
 // If navigating directly to a property, then we'll show featured properties in the list be default
-$filters = \HomeFinder\Model\HomeFinderFilters::withREQUESTParams();
-$filters->setShouldIncludeHomes(true);
-$featured_properties_result = HomeFinder::getProperties($filters);
-$context['listingsTitle'] = 'Search Listings';
+$featured_properties_result = HomeFinder::getFeaturedProperties();
+$context['listingsTitle'] = 'Featured Listings';
 
-$context['isAvailableHomes'] = true;
+$context['isSingle'] = true;
 $context['result'] = $featured_properties_result;
-$context['active_item'] = $property;
+$context['property'] = $property;
 $context['seo_title'] = $property->getAddress() . ' - Daniel Island';
+$context['property_images'] = $property->getImages();
 $description = trim(preg_replace('/\s\s+/', ' ', strip_tags($property->getDescription())));
 if (160 < strlen($description)) {
     $description = substr($description, 0, 157) . '...';
 }
+
+$back_url = $params['http_referer'];
+$need_search = 'real-estate/home-finder/search-listings';
+$need_featured = 'real-estate/home-finder/featured-listings';
+if (is_null($back_url) || ((strpos($back_url,$need_search) === FALSE &&
+        strpos($back_url,$need_featured) === FALSE)))
+{
+    $back_url = '/home-finder';
+}
+$context['back_url'] = $back_url;
+
 $context['seo_description'] = $description;
 
-HomeFinderPage::enqueueAssets();
+PropertyView::enqueueAssets();
 
-Timber::render('page-home-finder.twig', $context);
+Timber::render('page-property-view.twig', $context);
 
