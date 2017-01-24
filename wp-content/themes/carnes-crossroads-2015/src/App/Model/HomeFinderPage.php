@@ -16,6 +16,7 @@ class HomeFinderPage
         wp_enqueue_script('google-map-js', 'https://maps.google.com/maps/api/js', array(), false, true);
         wp_enqueue_script('multiple-select-js', get_template_directory_uri() . '/js/lib/multiple-select.js', array('jquery'), false, true);
         wp_enqueue_script('wnumb-js', get_template_directory_uri() . '/js/lib/wnumb/wNumb.js', array(), false, true);
+        wp_enqueue_script('match-height-js', get_template_directory_uri() . '/js/lib/jquery.matchHeight-min.js', array('jquery'), false, false);
         wp_enqueue_script('nouislider-js', get_template_directory_uri() . '/js/lib/nouislider/nouislider.min.js', array('wnumb-js'), false, true);
         wp_enqueue_style('nouislider-css', get_template_directory_uri() . '/js/lib/nouislider/nouislider.min.css');
         wp_enqueue_script('jquery-outside-events-js', get_template_directory_uri() . '/js/lib/jquery.ba-outside-events.min.js', array('jquery'), false, true);
