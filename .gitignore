@@ -4,3 +4,4 @@ wp-content/uploads
 config.codekit
 config.codekit3
 .idea/
+/local-config.php

@@ -1,28 +1,47 @@
 //V2 - .my-account-bar
 .my-account-bar {
-    background: $blue;
-    color: $white;
-    font-family: $proxima;
+    background: $cc-dk-tan;
+    color: $dk-grey;
+    font-family: $oswald;
     font-size: 12px;
+    letter-spacing: 0.5px;
     text-transform: uppercase;
-    padding: 13px 40px;
+    padding: 25px 5% 18px;
     position: relative;
     text-align: right;
+    
+    @media (max-width: $screen-xs-max) {
+        padding: 13px 10px;
+    }
 
     a {
-        color: $white;
+        color: $cc-brown;
+        text-decoration: none;
 
         &:hover {
-            border-bottom: 1px solid $white;
+            border-bottom: 1px solid $cc-brown;
         }
     }
 
     .property-back {
         text-align: left;
+        
+        @media (max-width: $screen-xs-max) {
+            display: inline-block;
+            float: left;
+        }
+        
+        .col-sm-4 {
+            padding-left: 0;
+        }
     }
 
     .account-links {
         text-align: right;
+        
+        .col-sm-8 {
+            padding-right: 0;
+        }
     }
 
     .your-account {
@@ -518,4 +537,13 @@
             }
         }
     }
+}
+
+.gallery-lightbox-container >.close, 
+.gallery-lightbox-container >.prev, 
+.gallery-lightbox-container >.next, 
+.gallery-lightbox-container >.play-pause {
+    width: 40px;
+    height: 40px;
+    line-height: 40px;
 }
