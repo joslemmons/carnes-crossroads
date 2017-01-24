@@ -17,7 +17,7 @@
         width: 100%;
     }
 
-    &__logo {
+    &__logo a {
         position: absolute;
         height: 90px;
         width: 180px;
@@ -26,6 +26,14 @@
         overflow: hidden;
         float: left;
         @include transition(0.3s all);
+        
+        @media (max-width: 1150px) {
+            width: 160px;
+        }
+        
+        @media (max-width: $screen-sm-max) {
+            width: 130px;
+        }
     }
 
     &__sub {
@@ -82,7 +90,7 @@
         @include transition(1s all);
 
         @media (max-width: 1150px) {
-            padding: 0 10px;
+            padding: 0 5% 0 0;
         }
     }
 

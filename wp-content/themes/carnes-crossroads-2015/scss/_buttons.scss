@@ -78,7 +78,7 @@
     text-transform: uppercase;
     @include transition(0.3s all);
 
-    @media (max-width: $screen-sm-max) {
+    @media (max-width: $screen-xs-max) {
         width: 100%;
         display: block;
         margin-bottom: 8px;

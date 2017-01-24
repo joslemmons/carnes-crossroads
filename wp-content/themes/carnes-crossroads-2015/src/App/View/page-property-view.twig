@@ -15,16 +15,9 @@
                 <div class="col-sm-8">
                     <span class="your-account">Your Account:</span>
                     <span class="account-links">
-                        <a href="#" class="showAccountPage savedListingsCount">Saved
-                            Listings {{ current_user.getSavedPropertyIds|length }}</a> / <a
-                                                                                            href="#"
-                                                                                            class="showAccountPage savedSearchesCount">Saved
-                        Searches {{ current_user.getRawSavedSearches|length }}</a></span>
-                    / <span class="account-link"><a
-                                                    href="{{ function('wp_logout_url', function('get_permalink', 35)) }}">Logout</a></span>
+                        <a href="#" class="showAccountPage savedListingsCount">Saved Listings {{ current_user.getSavedPropertyIds|length }}</a> / <a href="#" class="showAccountPage savedSearchesCount">Saved Searches {{ current_user.getRawSavedSearches|length }}</a></span> / <span class="account-link"><a href="{{ function('wp_logout_url', function('get_permalink', 35)) }}">Logout</a></span>
                     {% else %}
-                    <a href="#" class="showAccountPage"><span
-                                                              class="account-links">Sign In / Create Account</span></a>
+                    <a href="#" class="showAccountPage"><span class="account-links">Sign In / Create Account</span></a>
                     {% endif %}
                 </div>
             </div>
@@ -34,7 +27,7 @@
     <div class="property-view-content">
         <div class="container-fluid">
             <div class="row">
-                <div class="col-lg-offset-1 col-lg-3 col-md-4">
+                <div class="col-md-4">
                     {# NOTE - THIS IS ON THE PAGE TWICE, LOWER DOWN FOR MOBILE #}
                     <div class="property-sidebar hidden-sm hidden-xs">
                         <div class="property-gallery">
@@ -108,7 +101,7 @@
                     </div>
                 </div>
 
-                <div class="col-md-7">
+                <div class="col-md-8">
                     <div class="single-listing-content">
                         <div class="listing-actions">
                             <div class="save action-link">
@@ -118,8 +111,7 @@
                                     <a href="#" data-property-id="{{ property.id }}">Saved
                                         <div class="star-icon">
                                             <svg width="16" height="16">
-                                                <image xlink:href="{{ template_uri }}/img/heart-on.svg"
-                                                       src="{{ template_uri }}/img/heart-on.png" width="16" height="16"/>
+                                                <image xlink:href="{{ template_uri }}/img/heart-on.svg" src="{{ template_uri }}/img/heart-on.png" width="16" height="16"/>
                                             </svg>
                                         </div>
                                     </a>
@@ -129,8 +121,7 @@
                                     <a href="#" data-property-id="{{ property.id }}">Save
                                         <div class="star-icon">
                                             <svg width="16" height="16">
-                                                <image xlink:href="{{ template_uri }}/img/heart-off.svg"
-                                                       src="{{ template_uri }}/img/heart-off.png" width="16" height="16"/>
+                                                <image xlink:href="{{ template_uri }}/img/heart-off.svg" src="{{ template_uri }}/img/heart-off.png" width="16" height="16"/>
                                             </svg>
                                         </div>
                                     </a>
@@ -150,15 +141,13 @@
                                 <a class="open-share-widget">Share
                                     <div class="star-icon">
                                         <svg width="16" height="16">
-                                            <image xlink:href="{{ template_uri }}/img/share.svg"
-                                                   src="{{ template_uri }}/img/share.png" width="16" height="16"/>
+                                            <image xlink:href="{{ template_uri }}/img/share.svg" src="{{ template_uri }}/img/share.png" width="16" height="16"/>
                                         </svg>
                                     </div>
                                 </a>
                                 <div class="share-widget" data-property-id="{{ property.id }}">
                                     <span class="share-text">Share</span>
-                                    <a href="https://www.facebook.com/dialog/feed?app_id={{ facebook_app_id }}&display=popup&name={{ facebook_share_name }}&description={{ facebook_share_description }}&picture={{ facebook_share_image_src }}&caption={{ facebook_share_caption }}&link={{ domain }}&redirect_uri={{ domain }}"
-                                       target="new">
+                                    <a href="https://www.facebook.com/dialog/feed?app_id={{ facebook_app_id }}&display=popup&name={{ facebook_share_name }}&description={{ facebook_share_description }}&picture={{ facebook_share_image_src }}&caption={{ facebook_share_caption }}&link={{ domain }}&redirect_uri={{ domain }}" target="new">
                                         <div class="fb-icon share-icon"></div>
                                     </a>
                                     <a href="http://twitter.com/home?status={{ tweet_share }}" target="new">
@@ -186,8 +175,7 @@
                                     <a href="#" onclick="jQuery(this).closest('form').submit()">Print
                                         <div class="star-icon">
                                             <svg width="16" height="16">
-                                                <image xlink:href="{{ template_uri }}/img/printer.svg"
-                                                       src="{{ template_uri }}/img/printer.png" width="16" height="16"/>
+                                                <image xlink:href="{{ template_uri }}/img/printer.svg" src="{{ template_uri }}/img/printer.png" width="16" height="16"/>
                                             </svg>
                                         </div>
                                     </a>
@@ -210,8 +198,7 @@
                                     View Video
                                     <div class="icon-block">
                                         <svg width="16" height="16">
-                                            <image xlink:href="{{ template_uri }}/img/film.svg"
-                                                   src="{{ template_uri }}/img/film.png" width="16" height="16"/>
+                                            <image xlink:href="{{ template_uri }}/img/film.svg" src="{{ template_uri }}/img/film.png" width="16" height="16"/>
                                         </svg>
                                     </div>
                                 </a>
@@ -368,7 +355,7 @@
                             </div>
                             {% endif %}
                             {% endif %}
-                            <h4>Curious About This Property? Let us help you learn more.</h4>
+                            <h4>Curious about this property?<br>Let us help you learn more.</h4>
                             <p>Fill out the form below to contact {{ agent.title|default('an agent') }} about this
                                 property.</p>
 

@@ -3310,7 +3310,7 @@ a:focus, a:hover {
   text-transform: uppercase;
   -webkit-transition: 0.3s all;
   transition: 0.3s all; }
-  @media (max-width: 991px) {
+  @media (max-width: 767px) {
     .site-btn {
       width: 100%;
       display: block;
@@ -4014,7 +4014,7 @@ video {
   .main-nav__inner-wrap {
     position: relative;
     width: 100%; }
-  .main-nav__logo {
+  .main-nav__logo a {
     position: absolute;
     height: 90px;
     width: 180px;
@@ -4024,6 +4024,12 @@ video {
     float: left;
     -webkit-transition: 0.3s all;
     transition: 0.3s all; }
+    @media (max-width: 1150px) {
+      .main-nav__logo a {
+        width: 160px; } }
+    @media (max-width: 991px) {
+      .main-nav__logo a {
+        width: 130px; } }
   .main-nav__sub {
     margin: 0;
     float: right;
@@ -4068,7 +4074,7 @@ video {
     transition: 1s all; }
     @media (max-width: 1150px) {
       .main-nav__primary {
-        padding: 0 10px; } }
+        padding: 0 5% 0 0; } }
   .main-nav__primary-item {
     margin: 0 0 0 20px;
     height: 100%;
@@ -7127,9 +7133,12 @@ Edits by Chernoff Newman
   background: #f4f0e9;
   position: relative;
   padding-top: 135px; }
-  @media (max-width: 1199px) {
+  @media (max-width: 1150px) {
     .home-finder {
-      padding-top: 125px; } }
+      padding-top: 120px; } }
+  @media (max-width: 991px) {
+    .home-finder {
+      padding-top: 110px; } }
   @media (max-width: 767px) {
     .home-finder {
       padding-top: 90px;
@@ -7169,7 +7178,7 @@ Edits by Chernoff Newman
           min-height: 0; } }
     @media (min-width: 1685px) {
       .home-finder .home-finder-filters {
-        padding: 40px 20px 55px; } }
+        padding: 40px 5% 55px; } }
     .home-finder .home-finder-filters .account-links {
       display: inline-block;
       float: left;
@@ -7995,22 +8004,35 @@ Edits by Chernoff Newman
           line-height: 1; }
 
 .my-account-bar {
-  background: #536377;
-  color: #fff;
-  font-family: "proxima-nova", sans-serif;
+  background: #e4e2d6;
+  color: #58585a;
+  font-family: "Oswald", sans-serif;
   font-size: 12px;
+  letter-spacing: 0.5px;
   text-transform: uppercase;
-  padding: 13px 40px;
+  padding: 25px 5% 18px;
   position: relative;
   text-align: right; }
+  @media (max-width: 767px) {
+    .my-account-bar {
+      padding: 13px 10px; } }
   .my-account-bar a {
-    color: #fff; }
+    color: #3d3421;
+    text-decoration: none; }
     .my-account-bar a:hover {
-      border-bottom: 1px solid #fff; }
+      border-bottom: 1px solid #3d3421; }
   .my-account-bar .property-back {
     text-align: left; }
+    @media (max-width: 767px) {
+      .my-account-bar .property-back {
+        display: inline-block;
+        float: left; } }
+    .my-account-bar .property-back .col-sm-4 {
+      padding-left: 0; }
   .my-account-bar .account-links {
     text-align: right; }
+    .my-account-bar .account-links .col-sm-8 {
+      padding-right: 0; }
   .my-account-bar .your-account {
     font-weight: bold; }
 
@@ -8371,6 +8393,14 @@ Edits by Chernoff Newman
       .home-finder-content .leaflet-popup-content .listing-details a.showProperty:hover {
         color: #fff; }
 
+.gallery-lightbox-container > .close,
+.gallery-lightbox-container > .prev,
+.gallery-lightbox-container > .next,
+.gallery-lightbox-container > .play-pause {
+  width: 40px;
+  height: 40px;
+  line-height: 40px; }
+
 .property-view-content {
   background: #fff;
   padding-top: 50px;
@@ -8378,6 +8408,10 @@ Edits by Chernoff Newman
   @media (max-width: 991px) {
     .property-view-content {
       padding-top: 0; } }
+  .property-view-content .container-fluid > .row {
+    padding: 0 5%; }
+  .property-view-content .row > .col-md-4 {
+    padding-left: 0; }
 
 .property-sidebar .sidebar-box {
   border: 1px solid #e4e2d6;
@@ -8414,7 +8448,7 @@ Edits by Chernoff Newman
   max-width: 100%; }
   @media (min-width: 1200px) {
     .single-listing-content {
-      padding: 40px 100px 20px;
+      padding: 15px 100px 20px;
       max-width: 900px; } }
   @media (max-width: 991px) {
     .single-listing-content {
@@ -8614,17 +8648,20 @@ Edits by Chernoff Newman
     margin-bottom: 50px; }
     .single-listing-content .action-buttons-container .site-btn {
       margin-right: 10px;
-      width: 100%;
       text-align: center;
-      margin-bottom: 5px; }
+      margin-bottom: 5px;
+      color: #3d3421;
+      background: #fff;
+      border: 1px solid #768e1c;
+      text-decoration: none; }
+      .single-listing-content .action-buttons-container .site-btn:hover {
+        color: #fff;
+        background: #768e1c;
+        border: 1px solid #768e1c; }
       @media (min-width: 1200px) {
         .single-listing-content .action-buttons-container .site-btn {
           width: auto;
           text-align: left; } }
-      .single-listing-content .action-buttons-container .site-btn#requestShowing {
-        background: #cce9e6;
-        color: #536377;
-        border: none; }
   .single-listing-content .listing-agent {
     font-family: "Oswald", sans-serif;
     color: #695e49;
@@ -8672,7 +8709,8 @@ Edits by Chernoff Newman
   .single-listing-content .listing-details, .single-listing-content .listing-details p, .single-listing-content .listing-details ul, .single-listing-content .listing-details ol {
     font-family: "cronos-pro", sans-serif;
     color: #695e49;
-    font-weight: 400; }
+    font-weight: 400;
+    font-size: 1.15rem; }
   .single-listing-content .listing-details ul, .single-listing-content .listing-details ol {
     margin-top: 30px;
     margin-bottom: 30px;
@@ -8700,11 +8738,22 @@ Edits by Chernoff Newman
   padding-top: 60px; }
 
 .agent-form {
+  width: 100%;
+  margin-top: 50px;
   padding-top: 40px;
-  padding-bottom: 40px;
+  padding-bottom: 20px;
   color: #695e49; }
+  @media (max-width: 767px) {
+    .agent-form {
+      width: 100%; } }
   .agent-form h4 {
-    margin-bottom: 0; }
+    margin-bottom: 3px;
+    font-family: "baskerville-urw", serif;
+    font-weight: 400;
+    font-size: 1.45rem;
+    text-transform: none;
+    letter-spacing: 0.5px;
+    color: #695e49; }
     @media (max-width: 767px) {
       .agent-form h4 {
         line-height: 1.2;
@@ -8733,7 +8782,7 @@ Edits by Chernoff Newman
         display: block; } }
   .agent-form input, .agent-form textarea {
     background: #fff;
-    width: 100%;
+    width: 80%;
     font-family: "proxima-nova", sans-serif;
     color: #695e49;
     font-size: 14px;
@@ -8743,11 +8792,12 @@ Edits by Chernoff Newman
     /* Approximation due to font substitution */
     text-align: left;
     border-radius: 0;
-    border: 1px solid #695e49;
+    border: 1px solid #b3b3b3 !important;
     padding: 10px 15px;
     margin-bottom: 5px;
     text-transform: uppercase;
-    margin-bottom: 20px; }
+    margin-bottom: 20px;
+    display: block; }
     .agent-form input:focus, .agent-form textarea:focus {
       outline: none; }
     .agent-form input.error, .agent-form textarea.error {
