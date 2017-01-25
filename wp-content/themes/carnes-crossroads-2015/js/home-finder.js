@@ -85,6 +85,24 @@ jQuery(function ($) {
         });
         return false;
     }
+
+    $('#grid-view-toggle').on('click', function () {
+        if(!$(this).hasClass('active')) {
+            $('#map-view-toggle').removeClass('active');
+            $(this).addClass('active');
+            $('.pagination').attr('data-page',1);
+            performSearch();
+        }
+    });
+
+    $('#map-view-toggle').on('click', function () {
+        if(!$(this).hasClass('active')) {
+            $('#grid-view-toggle').removeClass('active');
+            $(this).addClass('active');
+            $('.pagination').attr('data-page',1);
+            performSearch();
+        }
+    });
     
     function slugifyListingType() {
         return $('h2.listings-title')
