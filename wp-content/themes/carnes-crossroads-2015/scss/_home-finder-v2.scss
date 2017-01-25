@@ -243,6 +243,8 @@
 
             .grid-box-content {
                 padding: 25px;
+                height: 250px;
+                position: relative;
 
                 @media (max-width: $screen-sm-max) {
                     padding: 10px 25px;
@@ -255,6 +257,7 @@
                 font-size: 1.3rem;
                 font-weight: 400;
                 margin-bottom: 15px;
+                line-height: 1.05;
 
                 @media (max-width: $screen-sm-max) {
                     margin-bottom: 10px;
@@ -264,13 +267,13 @@
             .grid-details {
                 font-family: $proxima;
                 color: $cc-med-grey;
-                font-size: 0.87rem; 
+                font-size: 0.87rem;
                 font-weight: 400;
                 text-transform: uppercase;
 
                 .price {
-                    margin-top: 27px;
-                    margin-bottom: 43px;
+                    margin-top: 15px;
+                    // margin-bottom: 43px;
                     font-family: $oswald;
                     color: $cc-dk-green;
                     font-size: 1.15rem;
@@ -284,6 +287,11 @@
             }
 
             .grid-btn {
+                position: absolute;
+                bottom: 25px;
+                width: 80%;
+                @include center(x);
+
                 .site-btn {
                     color: $cc-brown;
                     background: $white;

@@ -10,11 +10,11 @@ Number.prototype.formatMoney = function (c, d, t) {
 };
 
 jQuery(function ($) {
-    
+
 
     var $saveSearchSection = $('#saveSearchSection'),
         order = 'default';
-    
+
     function initMap() {
         filters = document.getElementById('legend-items');
         checkboxes = document.getElementsByClassName('squared-checkbox');
@@ -69,7 +69,7 @@ jQuery(function ($) {
         //initially trigger the filter
         change();
     }
-    
+
     function change() {
         var on = [];
         // Find all checkboxes that are checked and build a list of their values
@@ -85,7 +85,7 @@ jQuery(function ($) {
         });
         return false;
     }
-    
+
     function slugifyListingType() {
         return $('h2.listings-title')
             .text()
@@ -135,7 +135,7 @@ jQuery(function ($) {
             $('div.listings-wrapper').find('div.listing').first().trigger('click');
         });
     }
-    
+
     function showRecentlyListed() {
         $('div.listings-wrapper').fadeTo('slow', 0.3);
         $saveSearchSection.hide();
@@ -159,7 +159,7 @@ jQuery(function ($) {
             updateListingDetailAreaToBeFirstResult()
         });
     }
-    
+
     function showFeaturedListings() {
         $('div.listings-wrapper').fadeTo('slow', 0.3);
         $saveSearchSection.hide();
@@ -183,7 +183,7 @@ jQuery(function ($) {
             updateListingDetailAreaToBeFirstResult()
         });
     }
-    
+
     function showAllListings() {
         $('div.listings-wrapper').fadeTo('slow', 0.3);
         clearFilters();
@@ -271,7 +271,7 @@ jQuery(function ($) {
             silent: true
         });
         Backbone.history.started = true;
-        
+
         if ('home-finder/' === Backbone.history.getFragment()) {
             router.navigate("home-finder/featured-listings/", {trigger: false, replace: true});
         }
@@ -778,14 +778,14 @@ jQuery(function ($) {
     $(document).on('click', 'div.listing', function () {
         $('.single-listing-col').animate({scrollTop: "0px"});
     });
-    
+
     /*** Match Height ***/
     //-Grid View
-    $('.row-grid-view').each(function(i, elem) {
-        $(elem)
-            .find('.grid-results-box')   // Only children of this row
-            .matchHeight({byRow: false}); // Row detection gets confused so disable it
-    });
+    // $('.row-grid-view').each(function(i, elem) {
+    //     $(elem)
+    //         .find('.grid-results-box')   // Only children of this row
+    //         .matchHeight({byRow: false}); // Row detection gets confused so disable it
+    // });
 
     //-Map View
     $('.col-map-listings').each(function(i, elem) {
@@ -937,7 +937,7 @@ jQuery(function ($) {
         $('#filter-searchAddress').val('');
         performSearch();
   });
-    
+
     //Fullscreen Map
     $(document).on('click', '#fullscreen-map', function () {
         $('.col-map').toggleClass('open');
