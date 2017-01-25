@@ -1,62 +1,10 @@
 {% set activePropertyId = activeProperty.getId %}
 {% for property in properties %}
-<div class="col-lg-3 col-md-4 col-sm-6">
-    <div class="grid-save">
-            <div class="save action-link">
-                <div class="saved"
-                     {% if current_user.hasSavedProperty(property) == false %}style="display:none;"{% endif %}>
-                    <a href="#" data-property-id="{{ property.id }}">
-                        <div class="heart-icon">
-                            <img src="/wp-content/themes/carnes-crossroads-2015/img/favorite-icon-on.png" width="41" height="37"/>
-                        </div>
-                    </a>
-                </div>
-                <div class="not-saved"
-                     {% if current_user.hasSavedProperty(property) == true %}style="display:none;"{% endif %}>
-                    <a href="#" data-property-id="{{ property.id }}">
-                        <div class="heart-icon">
-                            <div class="heart-icon">
-                            <img src="/wp-content/themes/carnes-crossroads-2015/img/favorite-icon-off.png" width="41" height="37"/>
-                        </div>
-                        </div>
-                    </a>
-                </div>
-            </div>
-        </div>
-    <div class="grid-results-box {% if property.getId == activePropertyId %}active{% endif %} {% if loop.last and nextPageUrl %}infinite-check{% endif %}" data-property-id="{{ property.getId }}"
-         data-property-address="{{ property.getAddress|slugify }}"
-            {% if loop.last and nextPageUrl %}data-infinite-scroll-next-url="{{ nextPageUrl }}"{% endif %}>
-        <a href="/home-finder/properties/{{ property.getAddress|slugify }}/{{ property.getId }}">
-            <div class="home-image" style="background:url('{{ property.getFeaturedImageSrc }}') no-repeat 50% 50%; background-size: cover;">
-                <div class="type-box">{{ property.getPropertyType }}{% if property.getPropertyType and property.getNeighborhood.title %}<br>{% endif %}{{ property.getNeighborhood.title }}</div>
-            </div>
-        </a>
-        <div class="grid-box-content">
-            <div class="grid-address">
-                {{ property.getAddress }}
-            </div>
-            <div class="grid-details">
-
-                {% if property.getBedroomCount or property.getFullBathroomCount or property.getHalfBathroomCount %}
-                    <div class="specs">{% if property.getBedroomCount %}{{ property.getBedroomCount }} BR /{% endif %}
-                        {% if property.getFullBathroomCount %}{{ property.getFullBathroomCount }} Full Bath {% endif %}{% if property.getHalfBathroomCount %}/ {{ property.getHalfBathroomCount }} Half Bath{% endif %}
-                    </div>
-                {% else %}
-                    <br>
-                {% endif %}
-                {% set numDecimalPlaces = 0 %}
-                {% if property.getPropertyType == 'Homesite' %}
-                    {% set numDecimalPlaces = 2 %}
-                {% endif %}
-                <div class="sq-ft">{{ property.getTotalAreaSquareFootage|number_format(numDecimalPlaces) }} {{ property.getTotalAreaSquareFootageUnitOfMeasurement }}</div>
-                <div class="price">${{ property.getPurchaseListPrice|number_format }}</div>
-            </div>
-            <div class="grid-btn">
-                <a class="site-btn" href="/home-finder/properties/{{ property.getAddress|slugify }}/{{ property.getId }}">View Listing</a>
-            </div>
-        </div>
-    </div>
-</div>
+    {% if property.isFloorPlan %}
+        {{ include('partials/home-finder/type/floorplan.twig', { property: property, nextPageUrl: nextPageUrl, activeOffering: activeOffering, current_user: current_user}, with_context = false) }}
+    {% else %}
+        {{ include('partials/home-finder/type/property.twig', { property: property, nextPageUrl: nextPageUrl, activeProperty: activeOffering, current_user: current_user, page: page, pages: pages, name: name }, with_context = false) }}
+    {% endif %}
 {% endfor %}
 
 {# TODO: Sort out implementation of pagination on search results #}
