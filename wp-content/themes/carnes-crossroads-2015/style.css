@@ -4014,10 +4014,10 @@ video {
   .main-nav__inner-wrap {
     position: relative;
     width: 100%; }
-  .main-nav__logo a {
+  .main-nav__logo {
     position: absolute;
-    height: 90px;
-    width: 180px;
+    height: 100px;
+    width: 190px;
     margin-top: 6px;
     margin-left: 5%;
     overflow: hidden;
@@ -4025,10 +4025,10 @@ video {
     -webkit-transition: 0.3s all;
     transition: 0.3s all; }
     @media (max-width: 1150px) {
-      .main-nav__logo a {
+      .main-nav__logo {
         width: 160px; } }
     @media (max-width: 991px) {
-      .main-nav__logo a {
+      .main-nav__logo {
         width: 130px; } }
   .main-nav__sub {
     margin: 0;
