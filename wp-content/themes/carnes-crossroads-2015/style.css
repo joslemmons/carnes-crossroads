@@ -4014,10 +4014,10 @@ video {
   .main-nav__inner-wrap {
     position: relative;
     width: 100%; }
-  .main-nav__logo a {
+  .main-nav__logo {
     position: absolute;
-    height: 90px;
-    width: 180px;
+    height: 100px;
+    width: 190px;
     margin-top: 6px;
     margin-left: 5%;
     overflow: hidden;
@@ -4025,10 +4025,10 @@ video {
     -webkit-transition: 0.3s all;
     transition: 0.3s all; }
     @media (max-width: 1150px) {
-      .main-nav__logo a {
+      .main-nav__logo {
         width: 160px; } }
     @media (max-width: 991px) {
-      .main-nav__logo a {
+      .main-nav__logo {
         width: 130px; } }
   .main-nav__sub {
     margin: 0;
@@ -4114,8 +4114,8 @@ video {
   padding: 10px 0 0 0; }
   .main-nav.smaller .main-nav__logo {
     margin-top: 7px;
-    width: 130px;
-    height: 65px; }
+    width: 145px;
+    height: 75px; }
   .main-nav.smaller .main-nav__primary-item {
     padding: 17px 0; }
     .main-nav.smaller .main-nav__primary-item a {
@@ -8685,11 +8685,9 @@ Edits by Chernoff Newman
     display: inline-block;
     float: left;
     position: relative;
-    margin: -12px 15px 0 -13px;
-    height: 100px;
-    width: 100px;
-    border: 1px solid #8a8b8d;
-    border-radius: 100%;
+    margin: -5px 15px 0 -13px;
+    height: 80px;
+    width: 80px;
     background-size: cover;
     background-position: center center;
     background-repeat: no-repeat; }
@@ -8795,7 +8793,6 @@ Edits by Chernoff Newman
     border: 1px solid #b3b3b3 !important;
     padding: 10px 15px;
     margin-bottom: 5px;
-    text-transform: uppercase;
     margin-bottom: 20px;
     display: block; }
     .agent-form input:focus, .agent-form textarea:focus {
@@ -8803,12 +8800,14 @@ Edits by Chernoff Newman
     .agent-form input.error, .agent-form textarea.error {
       background: pink;
       border: 1px solid red; }
+  .agent-form textarea {
+    height: 120px; }
   .agent-form input[type="checkbox"] {
     width: auto; }
   .agent-form .site-btn {
-    margin-top: 20px; }
+    margin-top: 10px; }
   .agent-form .required {
-    margin-top: 20px;
+    margin-top: 10px;
     font-family: "proxima-nova", sans-serif;
     text-transform: uppercase;
     font-size: 12px;

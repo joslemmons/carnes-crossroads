@@ -235,20 +235,11 @@
 
 
                         <div class="action-buttons-container">
-                            {# {% if property.isFromPropertyBase and property.latitude and property.longitude %} #}
-                            {# Removed in V2 because map is in sidebar #}
-                            {# <a class="site-btn" id="viewOnMap" data-latitude="{{ property.latitude }}"
-                                  data-longitude="{{ property.longitude }}" data-address="{{ property.address_web }}"
-                                  data-link="{{ property.link }}" data-property-type="{{ property.getPropertyType }}"
-                                  data-tool-tip="{% filter escape|combineLines %}{% include 'partials/home-finder/map-tool-tip.twig' with { property: property } only %}{% endfilter %}">View
-                            on Map</a> #}
-                            {# {% endif %} #}
                             <a class="site-btn" id="requestShowing" data-property-id="{{ property.getId }}">Tell Me More</a>
                             {% if property.getFloorPlanDocumentLink %}
                             <a class="site-btn" target="_blank" href="{{ property.getFloorPlanDocumentLink }}">View
                                 Floorplan</a>
                             {% endif %}
-
                         </div>
 
                         {# MOBILE CONTENT #}
@@ -318,54 +309,20 @@
                                      data-tool-tip="{% filter escape|combineLines %}{% include 'partials/home-finder/map-tool-tip.twig' with { property: property } only %}{% endfilter %}">
                                 </div>
                             </div>
-                            
-                            
-                        </div>
 
-                        {% if property.isNotResale %}
-                        <div></div>
-                        {% else %}
-                        {% set agent = property.getRealEstateAgent %}
-                        {% if not agent %}
-                        {% set agent = property.getRandomRealEstateAgent %}
-                        {% endif %}
-                        {% if agent %}
-                        <div class="listing-agent" {% if property.isFromMLS %}style="display:none;"{% endif %}>
-                            Listing Agent: <a href="{{ agent.link }}">{{ agent.title }}</a>
                         </div>
-                        {% endif %}
-                        {% endif %}
-
 
                         <div class="listing-details">
                             {{ property.getDescription }}
                         </div>
 
                         <div class="agent-form">
-                            {% if property.isNotResale %}
-                            <div class="listing-agent__photo-logo" style="background-image: url({{ template_uri }}/img/daniel-island-real-estate-logo_dk.png);"></div>
-                            {% else %}
-                            {% if agent %}
-                            <div class="listing-agent__photo" style="background-image: url({{ agent.thumbnail }});">
-                                <a href="{{ agent.link }}"></a>
-                            </div>
-                            {% else %}
-                            <div class="listing-agent__photo" style="background-image: url({{ agent.thumbnail }});">
-                                <a href="{{ agent.link }}"></a>
-                            </div>
-                            {% endif %}
-                            {% endif %}
+                            <div class="listing-agent__photo-logo" style="background-image: url({{ template_uri }}/img/carnes_logo_badge.png);"></div>
                             <h4>Curious about this property?<br>Let us help you learn more.</h4>
-                            <p>Fill out the form below to contact {{ agent.title|default('an agent') }} about this
-                                property.</p>
-
-                            {#<p>{{ agent.content|truncate(20) }}</p>#}
-
-
+                            <p>Fill out the form below to contact an agent about this property.</p>
                             <form class="request-showing">
                                 <input type="hidden" name="propertyId" value="{{ property.getId }}"/>
                                 <input type="hidden" name="link" value="{{ property.link }}"/>
-                                <input type="hidden" name="agentId" value="{{ agent.id }}"/>
                                 <label>Name</label>
                                 <input type="text" name="name"/>
                                 <label>Email<span class="red">*</span></label>
@@ -385,24 +342,19 @@
                                 <span style="display:none;" class="success-message-right">Your request to view this listing has successfully been submitted.Thank you for your interest.</span>
                                 <div class="required">* Required</div>
                             </form>
-
-
                         </div>
 
                         {% if property.isFromMLS %}
                         <div class="broker-reciprocity">
                             <div class="disclaimer">
-                                The data relating to real estate for sale on this web site comes in part from the Broker Reciprocity
-                                SM Program of the Charleston Trident Multiple Listing Service. All of the information provided by
-                                Charleston Trident Multiple Listing Service is deemed reliable but not
+                                The data relating to real estate for sale on this web site comes in part from the Broker Reciprocity SM Program of the Charleston Trident Multiple Listing Service. All of the information provided by Charleston Trident Multiple Listing Service is deemed reliable but not
                                 guaranteed.{% if property.listing_office_name %} Listing provided by {{ property.listing_office_name }} {% endif %}
                             </div>
                         </div>
                         {% else %}
                         <div class="dire-logo">
                             <div class="disclaimer">
-                                This information is deemed to be accurate but is not guaranteed. Pricing and availability is subject to
-                                change. Use of some recreational amenities subject to membership and/or other requirements.
+                                This information is deemed to be accurate but is not guaranteed. Pricing and availability is subject to change. Use of some recreational amenities subject to membership and/or other requirements.
                             </div>
                         </div>
                         {% endif %}
