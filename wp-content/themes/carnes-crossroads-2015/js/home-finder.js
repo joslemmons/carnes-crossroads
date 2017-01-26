@@ -10,19 +10,22 @@ Number.prototype.formatMoney = function (c, d, t) {
 };
 
 jQuery(function ($) {
-    
+    var map, filters, checkboxes, layer, listings;
+    L.mapbox.accessToken = 'pk.eyJ1IjoiZGlkZXZjbyIsImEiOiJjaXM3cWY3NDEwNDc0Mnpwa2w5YnllMXZkIn0.4pWeAL6-vhtobhpFd2HDuA';
 
     var $saveSearchSection = $('#saveSearchSection'),
         order = 'default';
-    
+
     function initMap() {
         filters = document.getElementById('legend-items');
         checkboxes = document.getElementsByClassName('squared-checkbox');
 
         map = L.mapbox.map('map', 'mapbox.streets', {
-            minZoom: 15,
-            maxZoom: 17
-        });
+            'maxZoom': 19,
+            'minZoom': 15,
+            'scrollWheelZoom' : 'center'
+        })
+            .setView([33.055457, -80.103917], 17);
 
         layer = L.mapbox.featureLayer().addTo(map);
 
@@ -30,10 +33,6 @@ jQuery(function ($) {
             type: 'FeatureCollection',
             features: []
         };
-
-        var southWest = L.latLng(32.83064187300698, -79.93316068560326);
-        var northEast = L.latLng(32.89325262945007, -79.88402077618287);
-        var bounds = L.latLngBounds(southWest, northEast);
 
         for(var i = 0; i < locations.length; i++) {
             geoJson.features.push({
@@ -50,7 +49,6 @@ jQuery(function ($) {
             });
         }
 
-        map.fitBounds(bounds);
         layer.setGeoJSON(geoJson);
 
         var stamenLayer = L.tileLayer(DI.templateUri + "/img/imap/tiles/{z}/{x}/{y}.png").addTo(map);
@@ -69,7 +67,7 @@ jQuery(function ($) {
         //initially trigger the filter
         change();
     }
-    
+
     function change() {
         var on = [];
         // Find all checkboxes that are checked and build a list of their values
@@ -103,7 +101,7 @@ jQuery(function ($) {
             performSearch();
         }
     });
-    
+
     function slugifyListingType() {
         return $('h2.listings-title')
             .text()
@@ -153,7 +151,7 @@ jQuery(function ($) {
             $('div.listings-wrapper').find('div.listing').first().trigger('click');
         });
     }
-    
+
     function showRecentlyListed() {
         $('div.listings-wrapper').fadeTo('slow', 0.3);
         $saveSearchSection.hide();
@@ -177,7 +175,7 @@ jQuery(function ($) {
             updateListingDetailAreaToBeFirstResult()
         });
     }
-    
+
     function showFeaturedListings() {
         $('div.listings-wrapper').fadeTo('slow', 0.3);
         $saveSearchSection.hide();
@@ -201,7 +199,7 @@ jQuery(function ($) {
             updateListingDetailAreaToBeFirstResult()
         });
     }
-    
+
     function showAllListings() {
         $('div.listings-wrapper').fadeTo('slow', 0.3);
         clearFilters();
@@ -289,7 +287,7 @@ jQuery(function ($) {
             silent: true
         });
         Backbone.history.started = true;
-        
+
         if ('home-finder/' === Backbone.history.getFragment()) {
             router.navigate("home-finder/featured-listings/", {trigger: false, replace: true});
         }
@@ -375,6 +373,8 @@ jQuery(function ($) {
             sort = 'default';
         }
 
+        var view = $('#map-view-toggle').hasClass('active') ? 'map' : 'grid';
+
         var filters = {
             prices: getFilterPrice(),
             bedrooms: getFilterBedrooms(),
@@ -384,8 +384,13 @@ jQuery(function ($) {
             includeHomes: getShouldIncludeHomes(),
             builders: getBuilders(),
             homeFeatures: getFilterHomeFeatures(),
-            squareFootage: getFilterSquareFootage()
+            squareFootage: getFilterSquareFootage(),
+            name: $('.home-finder').attr('data-nameType')
         };
+
+        // On Change Filter, reset the pagination.
+        router.navigate('real-estate/home-finder/'+$('.home-finder').attr('data-nameType')+'/?' + $.param(filters), {trigger: false});
+        page = $('.pagination').attr('data-page',1);
 
         $('div.results-sort').show();
         showLoadingListingsIndicator();
@@ -397,7 +402,7 @@ jQuery(function ($) {
             $saveSearchSection.hide();
         }
 
-        getListings(filters, sort, isAllListings);
+        getListings(filters, sort, isAllListings, view);
     }
 
     function isSearchEmpty() {
@@ -411,7 +416,7 @@ jQuery(function ($) {
         );
     }
 
-    function getListings(filters, sort, isAllListings) {
+    function getListings(filters, sort, isAllListings, view) {
         if (typeof sort === 'undefined') {
             sort = 'default';
         }
@@ -430,7 +435,9 @@ jQuery(function ($) {
             includeHomes: filters.includeHomes,
             builders: filters.builders,
             homeFeatures: filters.homeFeatures,
-            squareFootage: filters.squareFootage
+            squareFootage: filters.squareFootage,
+            view: view,
+            name: $('.home-finder').attr('data-nameType')
         };
 
         if (isAllListings === true) {
@@ -438,6 +445,8 @@ jQuery(function ($) {
         }
 
         router.navigate('home-finder/search-listings/?' + $.param(filtersForQuery), {trigger: false});
+
+        page = $('.pagination').data('page');
 
         $.ajax({
             url: '/api/home-finder/search',
@@ -455,6 +464,10 @@ jQuery(function ($) {
                 $('div.results-count').text(pluralize('Result', total, true));
 
                 $('div.home-finder-container').html(html).fadeTo('slow', 1);
+
+                if(view == 'map'){
+                    initMap();
+                }
 
                 $input.prop('readonly', false);
                 // auto click the first result
@@ -796,7 +809,7 @@ jQuery(function ($) {
     $(document).on('click', 'div.listing', function () {
         $('.single-listing-col').animate({scrollTop: "0px"});
     });
-    
+
     /*** Match Height ***/
     //-Grid View
     $('.row-grid-view').each(function(i, elem) {
@@ -955,7 +968,7 @@ jQuery(function ($) {
         $('#filter-searchAddress').val('');
         performSearch();
   });
-    
+
     //Fullscreen Map
     $(document).on('click', '#fullscreen-map', function () {
         $('.col-map').toggleClass('open');
