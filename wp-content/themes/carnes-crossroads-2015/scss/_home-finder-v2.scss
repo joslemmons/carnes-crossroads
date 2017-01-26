@@ -243,6 +243,8 @@
 
             .grid-box-content {
                 padding: 25px;
+                height: 250px;
+                position: relative;
 
                 @media (max-width: $screen-sm-max) {
                     padding: 10px 25px;
@@ -255,6 +257,7 @@
                 font-size: 1.3rem;
                 font-weight: 400;
                 margin-bottom: 15px;
+                line-height: 1.05;
 
                 @media (max-width: $screen-sm-max) {
                     margin-bottom: 10px;
@@ -264,13 +267,13 @@
             .grid-details {
                 font-family: $proxima;
                 color: $cc-med-grey;
-                font-size: 0.87rem; 
+                font-size: 0.87rem;
                 font-weight: 400;
                 text-transform: uppercase;
 
                 .price {
-                    margin-top: 27px;
-                    margin-bottom: 43px;
+                    margin-top: 15px;
+                    // margin-bottom: 43px;
                     font-family: $oswald;
                     color: $cc-dk-green;
                     font-size: 1.15rem;
@@ -284,6 +287,11 @@
             }
 
             .grid-btn {
+                position: absolute;
+                bottom: 25px;
+                width: 80%;
+                @include center(x);
+
                 .site-btn {
                     color: $cc-brown;
                     background: $white;
@@ -383,12 +391,23 @@
         }
     }
 
+    .map-results-link {
+        text-decoration: none;
+
+        &:hover {
+            text-decoration: none;
+        }
+    }
 
     .map-results-box {
         width: 100%;
-        height: 250px;
         position: relative;
         margin-bottom: 30px;
+        @include transition(0.2s all);
+
+        &:hover {
+            @include box-shadow(0 0 8px rgba($brown, 0.3));
+        }
     }
 
     .map-save {
@@ -398,53 +417,44 @@
         z-index: 1;
     }
 
-    .broker-reciprocity {
-        position: absolute;
-        background: #fff url(img/broker-reciprocity.png) no-repeat 50% 50%;
-        background-size: 80px;
-        width: 100px;
-        left: 0;
-        top: 0;
+    .map-box-image {
+        widows: 100%;
+        height: 155px;
+        position: relative;
     }
-
-    .dire-logo {           
-        position: absolute;
-        background: #fff url(img/dire-logo-listings.png) no-repeat 50% 50%;
-        background-size: 60px;
-        width: 100px;
-        left: 0;
-        top: 0;
-        height: 30px;
-        padding-top: 0;
-    }
-
 
     .map-box-content {
-        background-color: rgba(204, 233, 230, 0.89);
+        background-color: $white;
         width: 100%;
         height: auto;
-        position: absolute;
-        bottom: 0;
-        padding: 10px 8px;
-        color: $blue;
+        position: relative;
+        padding: 13px 13px 8px 13px;
+        color: $cc-med-grey;
 
         .map-address {
             font-family: $baskerville;
-            font-size: 18px;
+            font-size: 1.28rem;
             font-weight: 400;
-            margin-bottom: 11px;
+            margin-bottom: 7px;
+            line-height: 1.1;
+            color: $brown;
         }
 
         .map-details {
             font-family: $proxima;
-            font-size: 12px; 
+            font-size: 0.82rem;
             font-weight: 400;
-            letter-spacing: 1px;
+            letter-spacing: 0.35px;
             text-transform: uppercase;
         }
 
         .sq-ft, .price {
             display: inline-block;
+        }
+
+        .price {
+            font-size: 1rem;
+            letter-spacing: 0.5px;
         }
 
         .type-box {

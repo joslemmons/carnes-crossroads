@@ -11117,7 +11117,7 @@
 		},
 	"\/wp-content\/plugins\/homefinder-api\/src\/HomeFinder\/Model\/HomeFinderFilters.php": {
 		"ft": 8192,
-		"oA": 0,
+		"oA": 2,
 		"oAP": "\/wp-content\/plugins\/homefinder-api\/src\/HomeFinder\/Model\/HomeFinderFilters.php",
 		"oF": 0
 		},
@@ -49659,12 +49659,6 @@
 		"oAP": "\/wp-content\/themes\/carnes-crossroads-2015\/page-faq.php",
 		"oF": 0
 		},
-	"\/wp-content\/themes\/carnes-crossroads-2015\/page-featured-listings.php": {
-		"ft": 8192,
-		"oA": 2,
-		"oAP": "\/wp-content\/themes\/carnes-crossroads-2015\/page-featured-listings.php",
-		"oF": 0
-		},
 	"\/wp-content\/themes\/carnes-crossroads-2015\/page-home-finder.php": {
 		"ft": 8192,
 		"oA": 0,
@@ -50260,19 +50254,6 @@
 		"ma": 0,
 		"oA": 1,
 		"oAP": "\/wp-content\/themes\/carnes-crossroads-2015\/_frontpage-modal.css",
-		"oF": 0,
-		"oS": 0,
-		"uL": 1
-		},
-	"\/wp-content\/themes\/carnes-crossroads-2015\/scss\/_home-finder-v2.scss": {
-		"aP": 0,
-		"bl": 0,
-		"dP": 10,
-		"dS": 0,
-		"ft": 4,
-		"ma": 0,
-		"oA": 1,
-		"oAP": "\/wp-content\/themes\/carnes-crossroads-2015\/_home-finder-v2.css",
 		"oF": 0,
 		"oS": 0,
 		"uL": 1
@@ -51694,6 +51675,12 @@
 		"ft": 8192,
 		"oA": 2,
 		"oAP": "\/wp-content\/themes\/carnes-crossroads-2015\/src\/App\/View\/partials\/home-finder\/results-map-view.twig",
+		"oF": 0
+		},
+	"\/wp-content\/themes\/carnes-crossroads-2015\/src\/App\/View\/partials\/home-finder\/type\/property.twig": {
+		"ft": 8192,
+		"oA": 2,
+		"oAP": "\/wp-content\/themes\/carnes-crossroads-2015\/src\/App\/View\/partials\/home-finder\/type\/property.twig",
 		"oF": 0
 		},
 	"\/wp-content\/themes\/carnes-crossroads-2015\/src\/App\/View\/partials\/layer-content.twig": {
