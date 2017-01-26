@@ -19,9 +19,10 @@ jQuery(function ($) {
     function initMap() {
         filters = document.getElementById('legend-items');
         checkboxes = document.getElementsByClassName('squared-checkbox');
+        listings = document.getElementsByClassName('map-results-box');
 
         map = L.mapbox.map('map', 'mapbox.streets', {
-            'maxZoom': 19,
+            'maxZoom': 18,
             'minZoom': 15,
             'scrollWheelZoom' : 'center'
         })
@@ -42,9 +43,10 @@ jQuery(function ($) {
                     "coordinates": [parseFloat(locations[i][2]), parseFloat(locations[i][1])]
                 },
                 "properties": {
-                    "marker-color": (locations[i][6] === 'Home') ? '#b06a6a' : (locations[i][6] === 'Condominium' || locations[i][6] === 'Townhome') ? '#0a8c7c' : '#c9c23d',
+                    "address": locations[i][0],
+                    "marker-color": (locations[i][6] === 'Single Family Home') ? '#b06a6a' : (locations[i][6] === 'Condominium' || locations[i][6] === 'Townhome') ? '#0a8c7c' : '#c9c23d',
                     "pop-up": locations[i][5],
-                    "listing-type": (locations[i][6] === 'Home') ? 'available-homes' : (locations[i][6] === 'Condominium' || locations[i][6] === 'Townhome') ? 'available-townhomes' : 'available-homesites'
+                    "listing-type": (locations[i][6] === 'Single Family Home') ? 'available-homes' : (locations[i][6] === 'Condominium' || locations[i][6] === 'Townhome') ? 'available-townhomes' : 'available-homesites'
                 }
             });
         }
@@ -53,19 +55,30 @@ jQuery(function ($) {
 
         var stamenLayer = L.tileLayer(DI.templateUri + "/img/imap/tiles/{z}/{x}/{y}.png").addTo(map);
 
-        layer.on('click', function(e) {
-            if (!e.layer) return;
-
-            var popup = L.popup()
-                .setLatLng(e.latlng)
-                .setContent(e.layer.feature.properties["pop-up"])
-                .openOn(map)
-        });
-
         //re-filter the markers when the form is changed
         filters.onchange = change;
         //initially trigger the filter
         change();
+
+        map.eachLayer(function(marker) {
+            if(marker.feature) {
+                marker.bindPopup(marker.feature.properties['pop-up'], L.popup({ 'autoPan' : true }));
+            }
+        });
+
+        for(var i = 0; i < listings.length; i++) listings[i].onmouseover = hoverMarkerPopUp;
+    }
+
+    function hoverMarkerPopUp() {
+        var address = $(this).find($('div.map-address')).text().trim();
+
+        map.eachLayer(function(marker) {
+            if (marker['feature']) {
+                if (marker.feature.properties.address === address) {
+                    marker.openPopup();
+                }
+            }
+        });
     }
 
     function change() {
@@ -83,7 +96,7 @@ jQuery(function ($) {
         });
         return false;
     }
-    
+
     $('#grid-view-toggle').on('click', function () {
         if(!$(this).hasClass('active')) {
             $('#map-view-toggle').removeClass('active');
