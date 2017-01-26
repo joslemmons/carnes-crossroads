@@ -27,7 +27,7 @@
                     {% set numDecimalPlaces = 2 %}
                 {% endif %}
                 <div class="sq-ft">{{ property.square_footage }} SQ FT</div>
-                <div class="price">{{ property.getPurchaseListPrice }}</div>
+                <div class="price">${{ property.price|removeNonNumbers|number_format }}</div>
             </div>
             <div class="grid-btn">
                 <a class="site-btn" href="/home-finder/properties/{{ property.getAddress|slugify }}/{{ property.getId }}">View Listing</a>
