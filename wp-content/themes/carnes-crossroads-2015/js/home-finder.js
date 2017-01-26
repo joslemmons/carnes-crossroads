@@ -83,7 +83,7 @@ jQuery(function ($) {
         });
         return false;
     }
-
+    
     $('#grid-view-toggle').on('click', function () {
         if(!$(this).hasClass('active')) {
             $('#map-view-toggle').removeClass('active');
@@ -812,11 +812,11 @@ jQuery(function ($) {
 
     /*** Match Height ***/
     //-Grid View
-    $('.row-grid-view').each(function(i, elem) {
-        $(elem)
-            .find('.grid-results-box')   // Only children of this row
-            .matchHeight({byRow: false}); // Row detection gets confused so disable it
-    });
+    // $('.row-grid-view').each(function(i, elem) {
+    //     $(elem)
+    //         .find('.grid-results-box')   // Only children of this row
+    //         .matchHeight({byRow: false}); // Row detection gets confused so disable it
+    // });
 
     //-Map View
     $('.col-map-listings').each(function(i, elem) {
