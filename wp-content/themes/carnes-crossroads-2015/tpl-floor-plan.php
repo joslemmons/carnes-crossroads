@@ -4,7 +4,6 @@ global $params;
 
 use App\Model\HomeFinderPage;
 use HomeFinder\Model\HomeFinder;
-use HomeFinder\Model\User;
 
 $context = Timber::get_context();
 
@@ -25,11 +24,6 @@ if (!$floor_plan) {
     exit();
 }
 
-// mark the property as viewed by logged user (if logged in)
-//if (is_user_logged_in()) {
-//    $user = User::getCurrentlyLoggedUser();
-//    $user->markPropertyAsViewed($property);
-//}
 
 // If navigating directly to a property, then we'll show featured properties in the list be default
 $filters = \HomeFinder\Model\HomeFinderFilters::withREQUESTParams();
@@ -40,7 +34,7 @@ $context['listingsTitle'] = 'Search Listings';
 $context['isSingle'] = true;
 $context['isHomePlans'] = true;
 $context['result'] = $featured_properties_result;
-$context['active_item'] = $floor_plan;
+$context['floor_plan'] = $floor_plan;
 $context['seo_title'] = $floor_plan->builder->title . ' - ' .  $floor_plan->title . ' - Daniel Island';
 $description = trim(preg_replace('/\s\s+/', ' ', strip_tags($floor_plan->description)));
 if (160 < strlen($description)) {
@@ -50,4 +44,4 @@ $context['seo_description'] = $description;
 
 HomeFinderPage::enqueueAssets();
 
-Timber::render('page-home-finder.twig', $context);
+Timber::render('page-floor-plan-view.twig', $context);

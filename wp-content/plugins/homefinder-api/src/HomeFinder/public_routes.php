@@ -31,6 +31,10 @@ Routes::map('/home-finder/properties/:address/:id/', function ($params) {
     Routes::load('tpl-property.php', $params);
 });
 
+Routes::map('/home-finder/floor-plans/:builder_name/:floor_plan_title/', function ($params) {
+    Routes::load('tpl-floor-plan.php', $params);
+});
+
 Routes::map('/api/home-finder/floor-plans/:builder_name/:floor_plan_title', array('\HomeFinder\Controller\Builder', 'routeGetFloorPlan'));
 Routes::map('/home-finder/floor-plans/:builder_name/:floor_plan_title/', function ($params) {
     Routes::load('tpl-floor-plan.php', $params);
