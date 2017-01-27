@@ -44,6 +44,10 @@
     .btn-search-sm{
         margin-top: 27px;
 
+        @media (max-width: $screen-md-max) {
+            margin-top: 25px;
+        }
+
         @media (max-width: $screen-sm-max) {
             margin-top: 23px;
         }
