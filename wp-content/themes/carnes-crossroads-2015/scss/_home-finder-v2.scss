@@ -312,6 +312,35 @@
 
     .row-map-view {
 
+        .col-lg-6 {
+            @media (min-width: 1900px) {
+                width: percentage((4 / $grid-columns));
+            }
+        }
+
+        // For 3 column padding
+        .col-lg-6:nth-child(3n+1) {
+            @media (min-width: 1900px) {
+                padding-left:  0 !important;
+                padding-right: ($grid-gutter-width / 2.75) !important;
+            }
+        }
+
+        .col-lg-6:nth-child(3n+2) {
+            @media (min-width: 1900px) {
+                padding-left:  ($grid-gutter-width / 2.75) !important;
+                padding-right: ($grid-gutter-width / 2.75) !important;
+            }
+        }
+
+        .col-lg-6:nth-child(3n) {
+            @media (min-width: 1900px) {
+                padding-left:  ($grid-gutter-width / 2.75) !important;
+                padding-right: 0 !important;
+            }
+        }
+
+        // For 2 column padding
         .col-lg-6:nth-child(odd) {
             @media (max-width: $screen-md-max) {
                 padding: 0;
@@ -408,6 +437,19 @@
                 letter-spacing: 0.15px;
             }
         }
+
+        .specs-sqft{
+            @media (min-width: 1900px) {
+                display: block;
+                margin-bottom: 10px;
+            }
+
+            &:before {
+                @media (max-width: 1899px) {
+                    content: "/";
+                }
+            }
+        }
     }
 
     #fullscreen-map {
@@ -490,6 +532,7 @@
         position: relative;
         padding: 13px 13px 8px 13px;
         color: $cc-med-grey;
+        overflow: hidden;
 
         .map-address {
             font-family: $baskerville;
@@ -498,6 +541,11 @@
             margin-bottom: 7px;
             line-height: 1.1;
             color: $brown;
+
+            @media (min-width: 1900px) {
+                font-size: 1.15rem;
+                white-space: nowrap;
+            }
         }
 
         .map-details {

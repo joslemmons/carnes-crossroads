@@ -37,8 +37,8 @@
                     <div class="specs">
                         {% if property.getBedroomCount %}{{ property.getBedroomCount }} BR /{% endif %}
                         {% if property.getFullBathroomCount %}{{ property.getFullBathroomCount }} BA {% endif %}
-                        {% if property.getHalfBathroomCount %}/ {{ property.getHalfBathroomCount }}  Half BA / {% endif %}
-                        {{ property.getTotalAreaSquareFootage|number_format(numDecimalPlaces) }} {{ property.getTotalAreaSquareFootageUnitOfMeasurement }}
+                        {% if property.getHalfBathroomCount %}/ {{ property.getHalfBathroomCount }}  Half BA {% endif %}
+                        <span class="specs-sqft"> {{ property.getTotalAreaSquareFootage|number_format(numDecimalPlaces) }} {{ property.getTotalAreaSquareFootageUnitOfMeasurement }}</span>
                     </div>
                     {% else %}
                     <br>
