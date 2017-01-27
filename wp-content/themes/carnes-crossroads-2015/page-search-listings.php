@@ -40,6 +40,7 @@ Metric::trackSearch($filters);
 /* @var $result Result */
 $result = \HomeFinder\Model\HomeFinder::getProperties($filters, $per_page, $page);
 
+$context['view'] = isset($_REQUEST['view']) ? $_REQUEST['view'] : 'grid';
 $context['filters'] = $filters;
 $context['result'] = $result;
 $context['isSearchListings'] = true;
