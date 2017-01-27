@@ -17,12 +17,13 @@
     .legend-title {
         font-family: $baskerville;
         color: $brown;
-        font-size: 16px; 
+        font-size: 16px;
         font-weight: 400;
-        line-height: 1; 
+        line-height: 1;
         text-align: left;
         text-transform: uppercase;
         padding: 20px 16px;
+        cursor: pointer;
         background: url(img/arrow-close.png) no-repeat 95% 50% / 8px;
 
         &.close {
@@ -31,57 +32,60 @@
     }
 
     form#legend-items {
+        &.close {
+            display: none;
+        }
 
         .squared-checkbox {
             width: 22px;
             height: 22px;
-            margin: 20px 20px;
+            margin: 5px 20px 20px;
             position: relative;
 
             //homefinder items
             &.homes {
-                background: #b06a6a; 
+                background: #b06a6a;
             }
 
             &.homesites {
-                background: #d2c80d; 
+                background: #d2c80d;
             }
 
             &.condos {
-                background: #0a8c7c; 
+                background: #0a8c7c;
             }
 
             //imap items
             &.sports-fitness {
-                background: #56c1b1; 
+                background: #56c1b1;
             }
 
             &.commercial {
-                background: #536377; 
+                background: #536377;
             }
 
             &.schools {
-                background: #695e49; 
+                background: #695e49;
             }
 
             &.churches {
-                background: #bf7616; 
+                background: #bf7616;
             }
 
             &.libraries {
-                background: #553184; 
+                background: #553184;
             }
 
             &.parks-pools {
-                background: #aa0979; 
+                background: #aa0979;
             }
 
             &.waterways {
-                background: #d8b830; 
+                background: #d8b830;
             }
 
             &.golf {
-                background: #22a82e; 
+                background: #22a82e;
             }
         }
 
@@ -105,12 +109,12 @@
             //text styles
             font-family: $proxima;
             color: $brown;
-            font-size: 12px; 
+            font-size: 12px;
             font-weight: 400;
             line-height: 1;
             text-align: left;
             text-transform: uppercase;
-            padding-left: 35px;   
+            padding-left: 35px;
             position: absolute;
             width: 250px;
             top: 5px;
@@ -133,49 +137,49 @@
 
         //homefinder items
         .squared-checkbox.homes label:after{
-            background: #b06a6a; 
+            background: #b06a6a;
         }
 
         .squared-checkbox.homesites label:after{
-            background: #d2c80d; 
+            background: #d2c80d;
         }
 
         .squared-checkbox.condos label:after{
-            background: #0a8c7c; 
+            background: #0a8c7c;
         }
 
 
         //imap items
         .squared-checkbox.sports-fitness label:after{
-            background: #56c1b1; 
+            background: #56c1b1;
         }
 
         .squared-checkbox.commercial label:after{
-            background: #536377; 
+            background: #536377;
         }
 
         .squared-checkbox.schools label:after{
-            background: #695e49; 
+            background: #695e49;
         }
 
         .squared-checkbox.churches label:after{
-            background: #bf7616; 
+            background: #bf7616;
         }
 
         .squared-checkbox.libraries label:after{
-            background: #553184; 
+            background: #553184;
         }
 
         .squared-checkbox.parks-pools label:after{
-            background: #aa0979; 
+            background: #aa0979;
         }
 
         .squared-checkbox.waterways label:after{
-            background: #d8b830; 
+            background: #d8b830;
         }
 
         .squared-checkbox.golf label:after{
-            background: #22a82e; 
+            background: #22a82e;
         }
 
 
@@ -191,4 +195,4 @@
             opacity: 1;
         }
     }
-}   
+}

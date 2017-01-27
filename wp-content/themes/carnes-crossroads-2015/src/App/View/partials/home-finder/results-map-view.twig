@@ -3,25 +3,24 @@
     <div class="home-finder-map-view">
         <div class="container-fluid">
             <div class="row">
-                <div class="col-md-7 col-map">
+                <div class="col-md-8 col-lg-7 col-map">
                      {{ include('partials/home-finder/map-legend-homes.twig') }}
                     <div id="fullscreen-map" class="fullscreen-map off hidden-sm hidden-xs">Fullscreen</div>
                     <div id="map">
                     </div>
                 </div>
-                <div class="col-md-5 col-map-listings hidden-sm hidden-xs">
+                <div class="col-md-4 col-lg-5 col-map-listings hidden-sm hidden-xs">
                     <h2 class="listings-title">{% if listingsTitle %}{{ listingsTitle }}{% else %}All Listings{% endif %}</h2>
 
                     <div id="saveSearchSection" {% if isFeaturedListings or isNewOfferings or isRecentlyListed or isSavedListings or isSingle or filters.isEmptySearch %} style="display:none;"{% endif %}>
-                        <a href="#" id="accountSaveSearch">Save Search Results</a>
+                        <a href="#" id="accountSaveSearch">Save Results</a>
                     </div>
 
                     <div class="results-count">
                         {{ result.total }} Result{% if result.total > 1 %}s{% endif %}
                     </div>
 
-                    <div class="results-sort"
-                         {% if isNewOfferings or isFilterByAgent %}style="display:none;"{% endif %}>
+                    <div class="results-sort"{% if isNewOfferings or isFilterByAgent %} style="display:none;"{% endif %}>
                         Sort by Price:
                         <a href="#" class="sortByPriceHighToLow">High to Low</a> |
                         <a href="#" class="sortByPriceLowToHigh">Low to High</a>
