@@ -9,20 +9,27 @@
     position: absolute;
     background: $white;
     width: auto;
-    min-width: 280px;
-    top: 12px;
+    min-width: 240px;
+    top: 15px;
     left: 60px;
     z-index: 7;
 
     .legend-title {
-        font-family: $baskerville;
+        font-family: $proxima;
         color: $brown;
-        font-size: 16px;
+        font-size: 12px;
         font-weight: 400;
-        line-height: 1;
-        text-align: left;
+        padding: 16px;
         text-transform: uppercase;
-        padding: 20px 16px;
+        letter-spacing: 0.5px;
+        // font-family: $baskerville;
+        // color: $brown;
+        // font-size: 16px;
+        // font-weight: 400;
+        // line-height: 1;
+        // text-align: left;
+        // text-transform: uppercase;
+        // padding: 20px 16px;
         cursor: pointer;
         background: url(img/arrow-close.png) no-repeat 95% 50% / 8px;
 
@@ -32,13 +39,15 @@
     }
 
     form#legend-items {
+        padding-bottom: 10px;
+
         &.close {
             display: none;
         }
 
         .squared-checkbox {
-            width: 22px;
-            height: 22px;
+            width: 20px;
+            height: 20px;
             margin: 5px 20px 20px;
             position: relative;
 
@@ -96,8 +105,8 @@
         .squared-checkbox label {
             cursor: pointer;
             position: absolute;
-            width: 20px;
-            height: 20px;
+            width: 18px;
+            height: 18px;
             left: 1px;
             top: 1px;
             background: $white;
@@ -111,14 +120,14 @@
             color: $brown;
             font-size: 12px;
             font-weight: 400;
-            line-height: 1;
+            line-height: 1.1;
             text-align: left;
             text-transform: uppercase;
             padding-left: 35px;
             position: absolute;
             width: 250px;
             top: 5px;
-            letter-spacing: 1px;
+            letter-spacing: 0.5px;
             z-index: 3;
         }
 
@@ -128,8 +137,8 @@
             opacity: 0;
             content: '';
             position: absolute;
-            width: 20px;
-            height: 20px;
+            width: 18px;
+            height: 18px;
             top: 0px;
             left: 0px;
             z-index: 5;
