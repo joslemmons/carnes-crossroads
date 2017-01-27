@@ -20,17 +20,14 @@
                         {% if property.full_bathrooms %}{{ property.full_bathrooms }} Full Bath {% endif %}{% if property.half_bathrooms %}/ {{ property.half_bathrooms }} Half Bath{% endif %}
                     </div>
                 {% else %}
-                    <br>
+                    <br> 
                 {% endif %}
                 {% set numDecimalPlaces = 0 %}
-                {% if property.getPropertyType == 'Homesite' %}
-                    {% set numDecimalPlaces = 2 %}
-                {% endif %}
                 <div class="sq-ft">{{ property.square_footage }} SQ FT</div>
                 <div class="price">${{ property.price|removeNonNumbers|number_format }}</div>
             </div>
             <div class="grid-btn">
-                <a class="site-btn" href="/home-finder/properties/{{ property.getAddress|slugify }}/{{ property.getId }}">View Listing</a>
+                <a class="site-btn" href="/{{ property.link }}">View Listing</a>
             </div>
         </div>
     </div>

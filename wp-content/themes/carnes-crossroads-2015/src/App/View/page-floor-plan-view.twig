@@ -1,0 +1,376 @@
+{% extends 'base.twig' %}
+{% block template %}
+
+<div class="home-finder">
+
+    <div class="my-account-bar">
+        <div class="row">
+            <div class="property-back">
+                <div class="col-sm-4">
+                    <a href="/home-finder">&laquo; Back to Listings</a>
+                </div>
+            </div>
+            {% if function('is_user_logged_in') %}
+            <div class="account-links">
+                <div class="col-sm-8">
+                    <span class="your-account">Your Account:</span>
+                    <span class="account-links">
+                        <a href="#" class="showAccountPage savedListingsCount">Saved Listings {{ current_user.getSavedPropertyIds|length }}</a> / <a href="#" class="showAccountPage savedSearchesCount">Saved Searches {{ current_user.getRawSavedSearches|length }}</a></span> / <span class="account-link"><a href="{{ function('wp_logout_url', function('get_permalink', 35)) }}">Logout</a></span>
+                    {% else %}
+                    <a href="#" class="showAccountPage"><span class="account-links">Sign In / Create Account</span></a>
+                    {% endif %}
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="property-view-content">
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-md-4">
+                    {# NOTE - THIS IS ON THE PAGE TWICE, LOWER DOWN FOR MOBILE #}
+                    <div class="property-sidebar hidden-sm hidden-xs">
+                        <div class="property-gallery">
+                            <div class="sidebar-box">
+                                <div class="gallery-thumbs">
+                                    <div class="row">
+                                        <div class="col-md-12 col-photos">
+                                            {# 1190 x 660 #}
+                                            <a href="{{ floor_plan.getImages[0] }}" {% if function('wp_is_mobile') == false %}
+                                               {% else %}onclick="return false;"{% endif %}>
+                                                <img src="{{ floor_plan.getImages[0]|resize(1190,660) }}" class="main-photo img-responsive"/>
+                                            </a>
+                                        </div>
+                                        {% if floor_plan.getImages[1] %}
+                                        <div class="col-md-6 col-photos hidden-sm hidden-xs">
+                                            {# 594 x 360 #}
+                                            <a href="{{ floor_plan.getImages[1] }}" {% if function('wp_is_mobile') == false %}
+                                               {% else %}onclick="return false;"{% endif %}>
+                                                <img src="{{ floor_plan.getImages[1]|resize(594,360) }}" class="sub-photo img-responsive" />
+                                            </a>
+                                        </div>
+                                        {% endif %}
+                                        {% if floor_plan.getImages[2] %}
+                                        <div class="col-md-6 col-photos hidden-sm hidden-xs">
+                                            {# 594 x 360 #}
+                                            <a href="{{ floor_plan.getImages[2] }}" {% if function('wp_is_mobile') == false %}
+                                               {% else %}onclick="return false;"{% endif %}>
+                                                <img src="{{ floor_plan.getImages[2]|resize(594,360) }}" class="sub-photo img-responsive" />
+                                            </a>
+                                        </div>
+                                        {% endif %}
+                                        {% if floor_plan.getImages[3] %}
+                                        <div class="col-md-6 col-photos hidden-sm hidden-xs">
+                                            {# 594 x 360 #}
+                                            <a href="{{ floor_plan.getImages[3] }}" {% if function('wp_is_mobile') == false %}
+                                               {% else %}onclick="return false;"{% endif %}>
+                                                <img src="{{ floor_plan.getImages[3].src|resize(594,360) }}" class="sub-photo img-responsive" />
+                                            </a>
+                                        </div>
+                                        {% endif %}
+                                        {% if floor_plan.getImages[4] %}
+                                        <div class="col-md-6 col-photos hidden-sm hidden-xs">
+                                            {# 594 x 360 #}
+                                            <a href="{{ floor_plan.getImages[4] }}" {% if function('wp_is_mobile') == false %}
+                                               {% else %}onclick="return false;"{% endif %}>
+                                                <img src="{{ floor_plan.getImages[4]|resize(594,360) }}" class="sub-photo img-responsive" />
+                                            </a>
+                                        </div>
+                                        {% endif %}
+                                        <div style="display: none">
+                                            {% for i in 5..floor_plan.getImages|length %}
+                                            <div>
+                                                <a href="{{ floor_plan.getImages[i] }}" {% if function('wp_is_mobile') == false %}class="color-box-group"
+                                                   {% else %}onclick="return false;"{% endif %}>
+                                                    <img src="{{ floor_plan.getImages[i]|resize(594,360) }}"></a>
+                                            </div>
+                                            {% endfor %}
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="btn-box">
+                                    <a class="site-btn" href="{{ floor_plan.getImages[0] }}">View Gallery</a>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="property-map">
+                            <div class="sidebar-box single-map" id="single-map" data-latitude="{{ floor_plan.latitude }}"
+                                 data-longitude="{{ floor_plan.longitude }}" data-address="{{ floor_plan.address_web }}"
+                                 data-link="{{ floor_plan.link }}" data-property-type="{{ floor_plan.getPropertyType }}"
+                                 data-tool-tip="{% filter escape|combineLines %}{% include 'partials/home-finder/map-tool-tip.twig' with { property: property } only %}{% endfilter %}">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-md-8">
+                    <div class="single-listing-content">
+                        <div class="listing-actions">
+                            <div class="save action-link">
+
+                                <div class="saved"
+                                     {% if current_user.hasSavedProperty(property) == false %}style="display:none;"{% endif %}>
+                                    <a href="#" data-property-id="{{ floor_plan.id }}">Saved
+                                        <div class="star-icon">
+                                            <svg width="16" height="16">
+                                                <image xlink:href="{{ template_uri }}/img/heart-on.svg" src="{{ template_uri }}/img/heart-on.png" width="16" height="16"/>
+                                            </svg>
+                                        </div>
+                                    </a>
+                                </div>
+                                <div class="not-saved"
+                                     {% if current_user.hasSavedProperty(property) == true %}style="display:none;"{% endif %}>
+                                    <a href="#" data-property-id="{{ floor_plan.id }}">Save
+                                        <div class="star-icon">
+                                            <svg width="16" height="16">
+                                                <image xlink:href="{{ template_uri }}/img/heart-off.svg" src="{{ template_uri }}/img/heart-off.png" width="16" height="16"/>
+                                            </svg>
+                                        </div>
+                                    </a>
+                                </div>
+                            </div>
+                            <div class="share action-link">
+                                {% set tweet_share = floor_plan.getFriendlyName~' on @danielisland '~floor_plan.fullLink|url_encode %}
+                                {% set email_subject_share = '[Daniel Island Real Estate] '~floor_plan.getAddress|url_encode %}
+                                {% set email_body_share = floor_plan.title~' '~floor_plan.fullLink|url_encode %}
+                                {% set facebook_app_id = function('\\App\\Model\\Config::getFacebookAppId') %}
+                                {% set domain = floor_plan.fullLink|url_encode %}
+                                {% set facebook_share_name = floor_plan.getAddress~' on Daniel Island Real Estate'|url_encode %}
+                                {% set facebook_share_description = floor_plan.getFriendlyName|url_encode %}
+                                {% set facebook_share_caption = floor_plan.fullLink|url_encode %}
+                                {% set facebook_share_context = floor_plan.fullLink|url_encode %}
+                                {% set facebook_share_image_src = floor_plan.getFeaturedImage|url_encode %}
+                                <a class="open-share-widget">Share
+                                    <div class="star-icon">
+                                        <svg width="16" height="16">
+                                            <image xlink:href="{{ template_uri }}/img/share.svg" src="{{ template_uri }}/img/share.png" width="16" height="16"/>
+                                        </svg>
+                                    </div>
+                                </a>
+                                <div class="share-widget" data-property-id="{{ floor_plan.id }}">
+                                    <span class="share-text">Share</span>
+                                    <a href="https://www.facebook.com/dialog/feed?app_id={{ facebook_app_id }}&display=popup&name={{ facebook_share_name }}&description={{ facebook_share_description }}&picture={{ facebook_share_image_src }}&caption={{ facebook_share_caption }}&link={{ domain }}&redirect_uri={{ domain }}" target="new">
+                                        <div class="fb-icon share-icon"></div>
+                                    </a>
+                                    <a href="http://twitter.com/home?status={{ tweet_share }}" target="new">
+                                        <div class="twitter-icon share-icon"></div>
+                                    </a>
+                                    <a href="mailto:?subject={{ email_subject_share }}&body={{ email_body_share }}">
+                                        <div class="email-icon share-icon"></div>
+                                    </a>
+                                    <div class="arrow"></div>
+                                </div>
+                            </div>
+                            <div class="print action-link">
+                                <form action="https://do.convertapi.com/Web2Pdf" method="post">
+                                    <input type="hidden" name="ApiKey" value="780223306"/>
+                                    <input type="hidden" name="CUrl"
+                                           value="{{ floor_plan.link }}print/"/>
+                                    <input type="hidden" name="DocumentTitle"
+                                           value="Daniel Island {{ floor_plan.getAddress }}"/>
+                                    <input type="hidden" name="PageSize" value="letter"/>
+                                    <input type="hidden" name="MarginTop" value="0in"/>
+                                    <input type="hidden" name="MarginRight" value="0in"/>
+                                    <input type="hidden" name="MarginBottom" value="0in"/>
+                                    <input type="hidden" name="MarginLeft" value="0in"/>
+
+                                    <a href="#" onclick="jQuery(this).closest('form').submit()">Print
+                                        <div class="star-icon">
+                                            <svg width="16" height="16">
+                                                <image xlink:href="{{ template_uri }}/img/printer.svg" src="{{ template_uri }}/img/printer.png" width="16" height="16"/>
+                                            </svg>
+                                        </div>
+                                    </a>
+                                </form>
+                            </div>
+                            <div class="optional-btns">
+                                {% if floor_plan.getX3DTourLink %}
+                                <a class="optional-link" href="{{ floor_plan.getX3DTourLink }}" target="_blank">
+                                    3D Home Tour
+                                    <div class="icon-block">
+                                        <svg width="16" height="16">
+                                            <image xlink:href="{{ template_uri }}/img/cube.svg"
+                                                   src="{{ template_uri }}/img/cube.png" width="16" height="16"/>
+                                        </svg>
+                                    </div>
+                                </a>
+                                {% endif %}
+                                {% if floor_plan.getVideoLink %}
+                                <a class="video-play optional-link" href="{{ floor_plan.getVideoLink }}">
+                                    View Video
+                                    <div class="icon-block">
+                                        <svg width="16" height="16">
+                                            <image xlink:href="{{ template_uri }}/img/film.svg" src="{{ template_uri }}/img/film.png" width="16" height="16"/>
+                                        </svg>
+                                    </div>
+                                </a>
+                                {% endif %}
+                            </div>
+                        </div>
+
+                        <div class="listing-address">
+                            {{ floor_plan.title }}
+                        </div>
+
+                        <div class="listing-price">
+                            ${{ floor_plan.price|removeNonNumbers|number_format }}
+                        </div>
+
+                        <div class="listing-specs">
+                            {% set numDecimalPlaces = 0 %}
+                            {% if floor_plan.getPropertyType == 'Homesite' %}
+                            {% set numDecimalPlaces = 2 %}
+                            {% endif %}
+                            {% if floor_plan.getBedroomCount %}{{ floor_plan.getBedroomCount }} BR / {% endif %}{% if floor_plan.getFullBathroomCount %}{{ floor_plan.getFullBathroomCount }} Full Bath{% endif %}{% if floor_plan.getHalfBathroomCount %} / {{ floor_plan.getHalfBathroomCount }}  Half Bath{% endif %}{% if floor_plan.getTotalAreaSquareFootage %} / {{ floor_plan.getTotalAreaSquareFootage|number_format(numDecimalPlaces) }} {{ floor_plan.getTotalAreaSquareFootageUnitOfMeasurement }}{% endif %}
+                        </div>
+
+                        <div class="listing-neighborhood">
+                            <div class="item-padding">
+                                <a href="/real-estate/home-finder/search-listings/?propertyTypes={{ floor_plan.getPropertyType | lower }}" class="filterByPropertyType"
+                                   data-property-type="{{ floor_plan.getPropertyType }}">{% if floor_plan.getPropertyType == 'Home' %}Single Family Home{% else %}{{ floor_plan.getPropertyType }}{% endif %}</a>
+                            </div>{% if floor_plan.getPropertyType and floor_plan.getNeighborhood.title %} | {% endif %}
+                            <div class="item-padding"><a
+                                                         href="{{ floor_plan.getNeighborhood.link }}">{{ floor_plan.getNeighborhood.title }}</a>
+                            </div>{% if floor_plan.getUnitView %} |
+                            <div class="item-padding">{{ floor_plan.getUnitView }}</div>{% endif %}
+                        </div>
+
+
+                        <div class="action-buttons-container">
+                            <a class="site-btn" id="requestShowing" data-property-id="{{ floor_plan.getId }}">Tell Me More</a>
+                            {% if floor_plan.getFloorPlanDocumentLink %}
+                            <a class="site-btn" target="_blank" href="{{ floor_plan.getFloorPlanDocumentLink }}">View
+                                Floorplan</a>
+                            {% endif %}
+                        </div>
+
+                        {# MOBILE CONTENT #}
+                        <div class="property-sidebar visible-sm visible-xs">
+                            <div class="property-gallery">
+                                <div class="sidebar-box">
+                                    <div class="gallery-thumbs">
+                                        <div class="row">
+                                            <div class="col-md-12 col-photos">
+                                                {# 1190 x 660 #}
+                                                <a href="{{ floor_plan.getImages[0] }}" {% if function('wp_is_mobile') == false %}
+                                                   {% else %}onclick="return false;"{% endif %}>
+                                                    <img src="{{ floor_plan.getImages[0]|resize(1190,660) }}" class="main-photo img-responsive"/>
+                                                </a>
+                                            </div>
+                                            <div class="col-md-6 col-photos hidden-sm hidden-xs">
+                                                {# 594 x 360 #}
+                                                <a href="{{ floor_plan.getImages[1] }}" {% if function('wp_is_mobile') == false %}
+                                                   {% else %}onclick="return false;"{% endif %}>
+                                                    <img src="{{ floor_plan.getImages[1]|resize(594,360) }}" class="sub-photo img-responsive" />
+                                                </a>
+                                            </div>
+                                            <div class="col-md-6 col-photos hidden-sm hidden-xs">
+                                                {# 594 x 360 #}
+                                                <a href="{{ floor_plan.getImages[2] }}" {% if function('wp_is_mobile') == false %}
+                                                   {% else %}onclick="return false;"{% endif %}>
+                                                    <img src="{{ floor_plan.getImages[2]|resize(594,360) }}" class="sub-photo img-responsive" />
+                                                </a>
+                                            </div>
+                                            <div class="col-md-6 col-photos hidden-sm hidden-xs">
+                                                {# 594 x 360 #}
+                                                <a href="{{ floor_plan.getImages[3] }}" {% if function('wp_is_mobile') == false %}
+                                                   {% else %}onclick="return false;"{% endif %}>
+                                                    <img src="{{ floor_plan.getImages[3]|resize(594,360) }}" class="sub-photo img-responsive" />
+                                                </a>
+                                            </div>
+                                            <div class="col-md-6 col-photos hidden-sm hidden-xs">
+                                                {# 594 x 360 #}
+                                                <a href="{{ floor_plan.getImages[4] }}" {% if function('wp_is_mobile') == false %}
+                                                   {% else %}onclick="return false;"{% endif %}>
+                                                    <img src="{{ floor_plan.getImages[4]|resize(594,360) }}" class="sub-photo img-responsive" />
+                                                </a>
+                                            </div>
+                                            <div style="display: none">
+                                                {% for i in 5..floor_plan.getImages|length %}
+                                                <div>
+                                                    <a href="{{ floor_plan.getImages[i] }}" {% if function('wp_is_mobile') == false %}class="color-box-group"
+                                                       {% else %}onclick="return false;"{% endif %}>
+                                                        <img src="{{ floor_plan.getImages[i]|resize(594,360) }}"></a>
+                                                </div>
+                                                {% endfor %}
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="btn-box">
+                                        <a class="site-btn" href="{{ floor_plan.getImages[0] }}">View Gallery</a>
+                                    </div>
+                                </div>
+                            </div>
+
+                            {# NOTE - THE MAP IS LISTED ON THE PAGE TWICE BC ITS LOWER DOWN ON MOBILE #}
+                            <div class="property-map">
+                                <div class="sidebar-box single-map" id="single-map-2" data-latitude="{{ floor_plan.latitude }}"
+                                     data-longitude="{{ floor_plan.longitude }}" data-address="{{ floor_plan.address_web }}"
+                                     data-link="{{ floor_plan.link }}" data-property-type="{{ floor_plan.getPropertyType }}"
+                                     data-tool-tip="{% filter escape|combineLines %}{% include 'partials/home-finder/map-tool-tip.twig' with { property: property } only %}{% endfilter %}">
+                                </div>
+                            </div>
+
+                        </div>
+
+                        <div class="listing-details">
+                            {{ floor_plan.description }}
+                        </div>
+
+                        <div class="agent-form">
+                            <div class="listing-agent__photo-logo" style="background-image: url({{ template_uri }}/img/carnes_logo_badge.png);"></div>
+                            <h4>Curious about this property?<br>Let us help you learn more.</h4>
+                            <p>Fill out the form below to contact an agent about this floor_plan.</p>
+                            <form class="request-showing">
+                                <input type="hidden" name="propertyId" value="{{ floor_plan.getId }}"/>
+                                <input type="hidden" name="link" value="{{ floor_plan.link }}"/>
+                                <label>Name</label>
+                                <input type="text" name="name"/>
+                                <label>Email<span class="red">*</span></label>
+                                <input type="text" name="email"/>
+                                {% if function('is_user_logged_in') == false %}
+                                <p>Would you like to create an account? An account allows you to save listings, save searches, and
+                                    receive updates via email daily or weekly on your search results.</p>
+                                <div class="account">
+                                    <label>Yes</label>
+                                    <input type="checkbox" name="createAccount"/>
+                                </div>
+                                {% endif %}
+                                <label>Questions/Comments?</label>
+                                <textarea name="message"></textarea>
+                                <span style="display:none;" class="error-message"></span>
+                                <button class="site-btn">Send</button>
+                                <span style="display:none;" class="success-message-right">Your request to view this listing has successfully been submitted.Thank you for your interest.</span>
+                                <div class="required">* Required</div>
+                            </form>
+                        </div>
+
+                        {% if floor_plan.isFromMLS %}
+                        <div class="broker-reciprocity">
+                            <div class="disclaimer">
+                                The data relating to real estate for sale on this web site comes in part from the Broker Reciprocity SM Program of the Charleston Trident Multiple Listing Service. All of the information provided by Charleston Trident Multiple Listing Service is deemed reliable but not
+                                guaranteed.{% if floor_plan.listing_office_name %} Listing provided by {{ floor_plan.listing_office_name }} {% endif %}
+                            </div>
+                        </div>
+                        {% else %}
+                        <div class="dire-logo">
+                            <div class="disclaimer">
+                                This information is deemed to be accurate but is not guaranteed. Pricing and availability is subject to change. Use of some recreational amenities subject to membership and/or other requirements.
+                            </div>
+                        </div>
+                        {% endif %}
+                    </div>
+
+                </div>
+            </div>
+        </div>
+
+    </div>
+</div>
+
+{% include "partials/modal-homefinder-floor-plan-request-showing.twig" %}
+
+{% endblock %}
