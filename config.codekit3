@@ -45670,6 +45670,22 @@
 		"oF": 0,
 		"opt": 0
 		},
+	"\/wp-content\/themes\/carnes-crossroads-2015\/img\/arrow-close.png": {
+		"ft": 32768,
+		"iS": 484,
+		"oA": 0,
+		"oAP": "\/wp-content\/themes\/carnes-crossroads-2015\/img\/arrow-close.png",
+		"oF": 0,
+		"opt": 0
+		},
+	"\/wp-content\/themes\/carnes-crossroads-2015\/img\/arrow-open.png": {
+		"ft": 32768,
+		"iS": 275,
+		"oA": 0,
+		"oAP": "\/wp-content\/themes\/carnes-crossroads-2015\/img\/arrow-open.png",
+		"oF": 0,
+		"opt": 0
+		},
 	"\/wp-content\/themes\/carnes-crossroads-2015\/img\/backspace.png": {
 		"ft": 32768,
 		"iS": 248,
@@ -46362,6 +46378,22 @@
 		"oF": 0,
 		"opt": 0
 		},
+	"\/wp-content\/themes\/carnes-crossroads-2015\/img\/icon-fullscreen.png": {
+		"ft": 32768,
+		"iS": 501,
+		"oA": 0,
+		"oAP": "\/wp-content\/themes\/carnes-crossroads-2015\/img\/icon-fullscreen.png",
+		"oF": 0,
+		"opt": 0
+		},
+	"\/wp-content\/themes\/carnes-crossroads-2015\/img\/icon-fullscreen_lt.png": {
+		"ft": 32768,
+		"iS": 1298,
+		"oA": 0,
+		"oAP": "\/wp-content\/themes\/carnes-crossroads-2015\/img\/icon-fullscreen_lt.png",
+		"oF": 0,
+		"opt": 0
+		},
 	"\/wp-content\/themes\/carnes-crossroads-2015\/img\/icon-prev-next.png": {
 		"ft": 32768,
 		"iS": 2841,
@@ -46498,1699 +46530,1699 @@
 		"oF": 0,
 		"opt": 0
 		},
-	"\/wp-content\/themes\/carnes-crossroads-2015\/img\/imap\/tiles\/15\/9092\/19574.png": {
-		"ft": 32768,
-		"iS": 7190,
-		"oA": 0,
-		"oAP": "\/wp-content\/themes\/carnes-crossroads-2015\/img\/imap\/tiles\/15\/9092\/19574.png",
-		"oF": 0,
-		"opt": 0
-		},
-	"\/wp-content\/themes\/carnes-crossroads-2015\/img\/imap\/tiles\/15\/9092\/19575.png": {
+	"\/wp-content\/themes\/carnes-crossroads-2015\/img\/imap\/tiles\/15\/9092\/13192.png": {
 		"ft": 32768,
 		"iS": 27222,
 		"oA": 0,
-		"oAP": "\/wp-content\/themes\/carnes-crossroads-2015\/img\/imap\/tiles\/15\/9092\/19575.png",
+		"oAP": "\/wp-content\/themes\/carnes-crossroads-2015\/img\/imap\/tiles\/15\/9092\/13192.png",
 		"oF": 0,
 		"opt": 0
 		},
-	"\/wp-content\/themes\/carnes-crossroads-2015\/img\/imap\/tiles\/15\/9093\/19574.png": {
+	"\/wp-content\/themes\/carnes-crossroads-2015\/img\/imap\/tiles\/15\/9092\/13193.png": {
 		"ft": 32768,
-		"iS": 1748,
+		"iS": 7190,
 		"oA": 0,
-		"oAP": "\/wp-content\/themes\/carnes-crossroads-2015\/img\/imap\/tiles\/15\/9093\/19574.png",
+		"oAP": "\/wp-content\/themes\/carnes-crossroads-2015\/img\/imap\/tiles\/15\/9092\/13193.png",
 		"oF": 0,
 		"opt": 0
 		},
-	"\/wp-content\/themes\/carnes-crossroads-2015\/img\/imap\/tiles\/15\/9093\/19575.png": {
+	"\/wp-content\/themes\/carnes-crossroads-2015\/img\/imap\/tiles\/15\/9093\/13192.png": {
 		"ft": 32768,
 		"iS": 8782,
 		"oA": 0,
-		"oAP": "\/wp-content\/themes\/carnes-crossroads-2015\/img\/imap\/tiles\/15\/9093\/19575.png",
+		"oAP": "\/wp-content\/themes\/carnes-crossroads-2015\/img\/imap\/tiles\/15\/9093\/13192.png",
 		"oF": 0,
 		"opt": 0
 		},
-	"\/wp-content\/themes\/carnes-crossroads-2015\/img\/imap\/tiles\/16\/18184\/39149.png": {
+	"\/wp-content\/themes\/carnes-crossroads-2015\/img\/imap\/tiles\/15\/9093\/13193.png": {
 		"ft": 32768,
-		"iS": 4010,
+		"iS": 1748,
 		"oA": 0,
-		"oAP": "\/wp-content\/themes\/carnes-crossroads-2015\/img\/imap\/tiles\/16\/18184\/39149.png",
+		"oAP": "\/wp-content\/themes\/carnes-crossroads-2015\/img\/imap\/tiles\/15\/9093\/13193.png",
 		"oF": 0,
 		"opt": 0
 		},
-	"\/wp-content\/themes\/carnes-crossroads-2015\/img\/imap\/tiles\/16\/18184\/39150.png": {
+	"\/wp-content\/themes\/carnes-crossroads-2015\/img\/imap\/tiles\/16\/18184\/26385.png": {
 		"ft": 32768,
 		"iS": 9253,
 		"oA": 0,
-		"oAP": "\/wp-content\/themes\/carnes-crossroads-2015\/img\/imap\/tiles\/16\/18184\/39150.png",
+		"oAP": "\/wp-content\/themes\/carnes-crossroads-2015\/img\/imap\/tiles\/16\/18184\/26385.png",
 		"oF": 0,
 		"opt": 0
 		},
-	"\/wp-content\/themes\/carnes-crossroads-2015\/img\/imap\/tiles\/16\/18185\/39149.png": {
+	"\/wp-content\/themes\/carnes-crossroads-2015\/img\/imap\/tiles\/16\/18184\/26386.png": {
 		"ft": 32768,
-		"iS": 15706,
+		"iS": 4010,
 		"oA": 0,
-		"oAP": "\/wp-content\/themes\/carnes-crossroads-2015\/img\/imap\/tiles\/16\/18185\/39149.png",
+		"oAP": "\/wp-content\/themes\/carnes-crossroads-2015\/img\/imap\/tiles\/16\/18184\/26386.png",
 		"oF": 0,
 		"opt": 0
 		},
-	"\/wp-content\/themes\/carnes-crossroads-2015\/img\/imap\/tiles\/16\/18185\/39150.png": {
+	"\/wp-content\/themes\/carnes-crossroads-2015\/img\/imap\/tiles\/16\/18185\/26385.png": {
 		"ft": 32768,
 		"iS": 67280,
 		"oA": 0,
-		"oAP": "\/wp-content\/themes\/carnes-crossroads-2015\/img\/imap\/tiles\/16\/18185\/39150.png",
+		"oAP": "\/wp-content\/themes\/carnes-crossroads-2015\/img\/imap\/tiles\/16\/18185\/26385.png",
 		"oF": 0,
 		"opt": 0
 		},
-	"\/wp-content\/themes\/carnes-crossroads-2015\/img\/imap\/tiles\/16\/18186\/39149.png": {
+	"\/wp-content\/themes\/carnes-crossroads-2015\/img\/imap\/tiles\/16\/18185\/26386.png": {
 		"ft": 32768,
-		"iS": 3788,
+		"iS": 15706,
 		"oA": 0,
-		"oAP": "\/wp-content\/themes\/carnes-crossroads-2015\/img\/imap\/tiles\/16\/18186\/39149.png",
+		"oAP": "\/wp-content\/themes\/carnes-crossroads-2015\/img\/imap\/tiles\/16\/18185\/26386.png",
 		"oF": 0,
 		"opt": 0
 		},
-	"\/wp-content\/themes\/carnes-crossroads-2015\/img\/imap\/tiles\/16\/18186\/39150.png": {
+	"\/wp-content\/themes\/carnes-crossroads-2015\/img\/imap\/tiles\/16\/18186\/26385.png": {
 		"ft": 32768,
 		"iS": 22481,
 		"oA": 0,
-		"oAP": "\/wp-content\/themes\/carnes-crossroads-2015\/img\/imap\/tiles\/16\/18186\/39150.png",
+		"oAP": "\/wp-content\/themes\/carnes-crossroads-2015\/img\/imap\/tiles\/16\/18186\/26385.png",
 		"oF": 0,
 		"opt": 0
 		},
-	"\/wp-content\/themes\/carnes-crossroads-2015\/img\/imap\/tiles\/17\/36369\/78299.png": {
+	"\/wp-content\/themes\/carnes-crossroads-2015\/img\/imap\/tiles\/16\/18186\/26386.png": {
 		"ft": 32768,
-		"iS": 9631,
+		"iS": 3788,
 		"oA": 0,
-		"oAP": "\/wp-content\/themes\/carnes-crossroads-2015\/img\/imap\/tiles\/17\/36369\/78299.png",
+		"oAP": "\/wp-content\/themes\/carnes-crossroads-2015\/img\/imap\/tiles\/16\/18186\/26386.png",
 		"oF": 0,
 		"opt": 0
 		},
-	"\/wp-content\/themes\/carnes-crossroads-2015\/img\/imap\/tiles\/17\/36369\/78300.png": {
-		"ft": 32768,
-		"iS": 14000,
-		"oA": 0,
-		"oAP": "\/wp-content\/themes\/carnes-crossroads-2015\/img\/imap\/tiles\/17\/36369\/78300.png",
-		"oF": 0,
-		"opt": 0
-		},
-	"\/wp-content\/themes\/carnes-crossroads-2015\/img\/imap\/tiles\/17\/36369\/78301.png": {
+	"\/wp-content\/themes\/carnes-crossroads-2015\/img\/imap\/tiles\/17\/36369\/52770.png": {
 		"ft": 32768,
 		"iS": 10540,
 		"oA": 0,
-		"oAP": "\/wp-content\/themes\/carnes-crossroads-2015\/img\/imap\/tiles\/17\/36369\/78301.png",
+		"oAP": "\/wp-content\/themes\/carnes-crossroads-2015\/img\/imap\/tiles\/17\/36369\/52770.png",
 		"oF": 0,
 		"opt": 0
 		},
-	"\/wp-content\/themes\/carnes-crossroads-2015\/img\/imap\/tiles\/17\/36370\/78299.png": {
+	"\/wp-content\/themes\/carnes-crossroads-2015\/img\/imap\/tiles\/17\/36369\/52771.png": {
 		"ft": 32768,
-		"iS": 18494,
+		"iS": 14000,
 		"oA": 0,
-		"oAP": "\/wp-content\/themes\/carnes-crossroads-2015\/img\/imap\/tiles\/17\/36370\/78299.png",
+		"oAP": "\/wp-content\/themes\/carnes-crossroads-2015\/img\/imap\/tiles\/17\/36369\/52771.png",
 		"oF": 0,
 		"opt": 0
 		},
-	"\/wp-content\/themes\/carnes-crossroads-2015\/img\/imap\/tiles\/17\/36370\/78300.png": {
+	"\/wp-content\/themes\/carnes-crossroads-2015\/img\/imap\/tiles\/17\/36369\/52772.png": {
 		"ft": 32768,
-		"iS": 57722,
+		"iS": 9631,
 		"oA": 0,
-		"oAP": "\/wp-content\/themes\/carnes-crossroads-2015\/img\/imap\/tiles\/17\/36370\/78300.png",
+		"oAP": "\/wp-content\/themes\/carnes-crossroads-2015\/img\/imap\/tiles\/17\/36369\/52772.png",
 		"oF": 0,
 		"opt": 0
 		},
-	"\/wp-content\/themes\/carnes-crossroads-2015\/img\/imap\/tiles\/17\/36370\/78301.png": {
+	"\/wp-content\/themes\/carnes-crossroads-2015\/img\/imap\/tiles\/17\/36370\/52770.png": {
 		"ft": 32768,
 		"iS": 36487,
 		"oA": 0,
-		"oAP": "\/wp-content\/themes\/carnes-crossroads-2015\/img\/imap\/tiles\/17\/36370\/78301.png",
+		"oAP": "\/wp-content\/themes\/carnes-crossroads-2015\/img\/imap\/tiles\/17\/36370\/52770.png",
 		"oF": 0,
 		"opt": 0
 		},
-	"\/wp-content\/themes\/carnes-crossroads-2015\/img\/imap\/tiles\/17\/36371\/78299.png": {
+	"\/wp-content\/themes\/carnes-crossroads-2015\/img\/imap\/tiles\/17\/36370\/52771.png": {
 		"ft": 32768,
-		"iS": 26370,
+		"iS": 57722,
 		"oA": 0,
-		"oAP": "\/wp-content\/themes\/carnes-crossroads-2015\/img\/imap\/tiles\/17\/36371\/78299.png",
+		"oAP": "\/wp-content\/themes\/carnes-crossroads-2015\/img\/imap\/tiles\/17\/36370\/52771.png",
 		"oF": 0,
 		"opt": 0
 		},
-	"\/wp-content\/themes\/carnes-crossroads-2015\/img\/imap\/tiles\/17\/36371\/78300.png": {
+	"\/wp-content\/themes\/carnes-crossroads-2015\/img\/imap\/tiles\/17\/36370\/52772.png": {
 		"ft": 32768,
-		"iS": 60455,
+		"iS": 18494,
 		"oA": 0,
-		"oAP": "\/wp-content\/themes\/carnes-crossroads-2015\/img\/imap\/tiles\/17\/36371\/78300.png",
+		"oAP": "\/wp-content\/themes\/carnes-crossroads-2015\/img\/imap\/tiles\/17\/36370\/52772.png",
 		"oF": 0,
 		"opt": 0
 		},
-	"\/wp-content\/themes\/carnes-crossroads-2015\/img\/imap\/tiles\/17\/36371\/78301.png": {
+	"\/wp-content\/themes\/carnes-crossroads-2015\/img\/imap\/tiles\/17\/36371\/52770.png": {
 		"ft": 32768,
 		"iS": 45175,
 		"oA": 0,
-		"oAP": "\/wp-content\/themes\/carnes-crossroads-2015\/img\/imap\/tiles\/17\/36371\/78301.png",
+		"oAP": "\/wp-content\/themes\/carnes-crossroads-2015\/img\/imap\/tiles\/17\/36371\/52770.png",
 		"oF": 0,
 		"opt": 0
 		},
-	"\/wp-content\/themes\/carnes-crossroads-2015\/img\/imap\/tiles\/17\/36372\/78299.png": {
+	"\/wp-content\/themes\/carnes-crossroads-2015\/img\/imap\/tiles\/17\/36371\/52771.png": {
 		"ft": 32768,
-		"iS": 9588,
+		"iS": 60455,
 		"oA": 0,
-		"oAP": "\/wp-content\/themes\/carnes-crossroads-2015\/img\/imap\/tiles\/17\/36372\/78299.png",
+		"oAP": "\/wp-content\/themes\/carnes-crossroads-2015\/img\/imap\/tiles\/17\/36371\/52771.png",
 		"oF": 0,
 		"opt": 0
 		},
-	"\/wp-content\/themes\/carnes-crossroads-2015\/img\/imap\/tiles\/17\/36372\/78300.png": {
+	"\/wp-content\/themes\/carnes-crossroads-2015\/img\/imap\/tiles\/17\/36371\/52772.png": {
 		"ft": 32768,
-		"iS": 20102,
+		"iS": 26370,
 		"oA": 0,
-		"oAP": "\/wp-content\/themes\/carnes-crossroads-2015\/img\/imap\/tiles\/17\/36372\/78300.png",
+		"oAP": "\/wp-content\/themes\/carnes-crossroads-2015\/img\/imap\/tiles\/17\/36371\/52772.png",
 		"oF": 0,
 		"opt": 0
 		},
-	"\/wp-content\/themes\/carnes-crossroads-2015\/img\/imap\/tiles\/17\/36372\/78301.png": {
+	"\/wp-content\/themes\/carnes-crossroads-2015\/img\/imap\/tiles\/17\/36372\/52770.png": {
 		"ft": 32768,
 		"iS": 40381,
 		"oA": 0,
-		"oAP": "\/wp-content\/themes\/carnes-crossroads-2015\/img\/imap\/tiles\/17\/36372\/78301.png",
+		"oAP": "\/wp-content\/themes\/carnes-crossroads-2015\/img\/imap\/tiles\/17\/36372\/52770.png",
 		"oF": 0,
 		"opt": 0
 		},
-	"\/wp-content\/themes\/carnes-crossroads-2015\/img\/imap\/tiles\/18\/72738\/156599.png": {
+	"\/wp-content\/themes\/carnes-crossroads-2015\/img\/imap\/tiles\/17\/36372\/52771.png": {
 		"ft": 32768,
-		"iS": 2155,
+		"iS": 20102,
 		"oA": 0,
-		"oAP": "\/wp-content\/themes\/carnes-crossroads-2015\/img\/imap\/tiles\/18\/72738\/156599.png",
+		"oAP": "\/wp-content\/themes\/carnes-crossroads-2015\/img\/imap\/tiles\/17\/36372\/52771.png",
 		"oF": 0,
 		"opt": 0
 		},
-	"\/wp-content\/themes\/carnes-crossroads-2015\/img\/imap\/tiles\/18\/72738\/156600.png": {
+	"\/wp-content\/themes\/carnes-crossroads-2015\/img\/imap\/tiles\/17\/36372\/52772.png": {
 		"ft": 32768,
-		"iS": 867,
+		"iS": 9588,
 		"oA": 0,
-		"oAP": "\/wp-content\/themes\/carnes-crossroads-2015\/img\/imap\/tiles\/18\/72738\/156600.png",
+		"oAP": "\/wp-content\/themes\/carnes-crossroads-2015\/img\/imap\/tiles\/17\/36372\/52772.png",
 		"oF": 0,
 		"opt": 0
 		},
-	"\/wp-content\/themes\/carnes-crossroads-2015\/img\/imap\/tiles\/18\/72738\/156601.png": {
-		"ft": 32768,
-		"iS": 867,
-		"oA": 0,
-		"oAP": "\/wp-content\/themes\/carnes-crossroads-2015\/img\/imap\/tiles\/18\/72738\/156601.png",
-		"oF": 0,
-		"opt": 0
-		},
-	"\/wp-content\/themes\/carnes-crossroads-2015\/img\/imap\/tiles\/18\/72738\/156602.png": {
-		"ft": 32768,
-		"iS": 6574,
-		"oA": 0,
-		"oAP": "\/wp-content\/themes\/carnes-crossroads-2015\/img\/imap\/tiles\/18\/72738\/156602.png",
-		"oF": 0,
-		"opt": 0
-		},
-	"\/wp-content\/themes\/carnes-crossroads-2015\/img\/imap\/tiles\/18\/72738\/156603.png": {
+	"\/wp-content\/themes\/carnes-crossroads-2015\/img\/imap\/tiles\/18\/72738\/105540.png": {
 		"ft": 32768,
 		"iS": 5496,
 		"oA": 0,
-		"oAP": "\/wp-content\/themes\/carnes-crossroads-2015\/img\/imap\/tiles\/18\/72738\/156603.png",
+		"oAP": "\/wp-content\/themes\/carnes-crossroads-2015\/img\/imap\/tiles\/18\/72738\/105540.png",
 		"oF": 0,
 		"opt": 0
 		},
-	"\/wp-content\/themes\/carnes-crossroads-2015\/img\/imap\/tiles\/18\/72739\/156599.png": {
+	"\/wp-content\/themes\/carnes-crossroads-2015\/img\/imap\/tiles\/18\/72738\/105541.png": {
 		"ft": 32768,
-		"iS": 24924,
+		"iS": 6574,
 		"oA": 0,
-		"oAP": "\/wp-content\/themes\/carnes-crossroads-2015\/img\/imap\/tiles\/18\/72739\/156599.png",
+		"oAP": "\/wp-content\/themes\/carnes-crossroads-2015\/img\/imap\/tiles\/18\/72738\/105541.png",
 		"oF": 0,
 		"opt": 0
 		},
-	"\/wp-content\/themes\/carnes-crossroads-2015\/img\/imap\/tiles\/18\/72739\/156600.png": {
+	"\/wp-content\/themes\/carnes-crossroads-2015\/img\/imap\/tiles\/18\/72738\/105542.png": {
 		"ft": 32768,
-		"iS": 28210,
+		"iS": 867,
 		"oA": 0,
-		"oAP": "\/wp-content\/themes\/carnes-crossroads-2015\/img\/imap\/tiles\/18\/72739\/156600.png",
+		"oAP": "\/wp-content\/themes\/carnes-crossroads-2015\/img\/imap\/tiles\/18\/72738\/105542.png",
 		"oF": 0,
 		"opt": 0
 		},
-	"\/wp-content\/themes\/carnes-crossroads-2015\/img\/imap\/tiles\/18\/72739\/156601.png": {
+	"\/wp-content\/themes\/carnes-crossroads-2015\/img\/imap\/tiles\/18\/72738\/105543.png": {
 		"ft": 32768,
-		"iS": 10511,
+		"iS": 867,
 		"oA": 0,
-		"oAP": "\/wp-content\/themes\/carnes-crossroads-2015\/img\/imap\/tiles\/18\/72739\/156601.png",
+		"oAP": "\/wp-content\/themes\/carnes-crossroads-2015\/img\/imap\/tiles\/18\/72738\/105543.png",
 		"oF": 0,
 		"opt": 0
 		},
-	"\/wp-content\/themes\/carnes-crossroads-2015\/img\/imap\/tiles\/18\/72739\/156602.png": {
+	"\/wp-content\/themes\/carnes-crossroads-2015\/img\/imap\/tiles\/18\/72738\/105544.png": {
 		"ft": 32768,
-		"iS": 3055,
+		"iS": 2155,
 		"oA": 0,
-		"oAP": "\/wp-content\/themes\/carnes-crossroads-2015\/img\/imap\/tiles\/18\/72739\/156602.png",
+		"oAP": "\/wp-content\/themes\/carnes-crossroads-2015\/img\/imap\/tiles\/18\/72738\/105544.png",
 		"oF": 0,
 		"opt": 0
 		},
-	"\/wp-content\/themes\/carnes-crossroads-2015\/img\/imap\/tiles\/18\/72739\/156603.png": {
+	"\/wp-content\/themes\/carnes-crossroads-2015\/img\/imap\/tiles\/18\/72739\/105540.png": {
 		"ft": 32768,
 		"iS": 17012,
 		"oA": 0,
-		"oAP": "\/wp-content\/themes\/carnes-crossroads-2015\/img\/imap\/tiles\/18\/72739\/156603.png",
+		"oAP": "\/wp-content\/themes\/carnes-crossroads-2015\/img\/imap\/tiles\/18\/72739\/105540.png",
 		"oF": 0,
 		"opt": 0
 		},
-	"\/wp-content\/themes\/carnes-crossroads-2015\/img\/imap\/tiles\/18\/72740\/156599.png": {
+	"\/wp-content\/themes\/carnes-crossroads-2015\/img\/imap\/tiles\/18\/72739\/105541.png": {
 		"ft": 32768,
-		"iS": 27474,
+		"iS": 3055,
 		"oA": 0,
-		"oAP": "\/wp-content\/themes\/carnes-crossroads-2015\/img\/imap\/tiles\/18\/72740\/156599.png",
+		"oAP": "\/wp-content\/themes\/carnes-crossroads-2015\/img\/imap\/tiles\/18\/72739\/105541.png",
 		"oF": 0,
 		"opt": 0
 		},
-	"\/wp-content\/themes\/carnes-crossroads-2015\/img\/imap\/tiles\/18\/72740\/156600.png": {
+	"\/wp-content\/themes\/carnes-crossroads-2015\/img\/imap\/tiles\/18\/72739\/105542.png": {
 		"ft": 32768,
-		"iS": 38274,
+		"iS": 10511,
 		"oA": 0,
-		"oAP": "\/wp-content\/themes\/carnes-crossroads-2015\/img\/imap\/tiles\/18\/72740\/156600.png",
+		"oAP": "\/wp-content\/themes\/carnes-crossroads-2015\/img\/imap\/tiles\/18\/72739\/105542.png",
 		"oF": 0,
 		"opt": 0
 		},
-	"\/wp-content\/themes\/carnes-crossroads-2015\/img\/imap\/tiles\/18\/72740\/156601.png": {
+	"\/wp-content\/themes\/carnes-crossroads-2015\/img\/imap\/tiles\/18\/72739\/105543.png": {
 		"ft": 32768,
-		"iS": 42510,
+		"iS": 28210,
 		"oA": 0,
-		"oAP": "\/wp-content\/themes\/carnes-crossroads-2015\/img\/imap\/tiles\/18\/72740\/156601.png",
+		"oAP": "\/wp-content\/themes\/carnes-crossroads-2015\/img\/imap\/tiles\/18\/72739\/105543.png",
 		"oF": 0,
 		"opt": 0
 		},
-	"\/wp-content\/themes\/carnes-crossroads-2015\/img\/imap\/tiles\/18\/72740\/156602.png": {
+	"\/wp-content\/themes\/carnes-crossroads-2015\/img\/imap\/tiles\/18\/72739\/105544.png": {
 		"ft": 32768,
-		"iS": 33800,
+		"iS": 24924,
 		"oA": 0,
-		"oAP": "\/wp-content\/themes\/carnes-crossroads-2015\/img\/imap\/tiles\/18\/72740\/156602.png",
+		"oAP": "\/wp-content\/themes\/carnes-crossroads-2015\/img\/imap\/tiles\/18\/72739\/105544.png",
 		"oF": 0,
 		"opt": 0
 		},
-	"\/wp-content\/themes\/carnes-crossroads-2015\/img\/imap\/tiles\/18\/72740\/156603.png": {
+	"\/wp-content\/themes\/carnes-crossroads-2015\/img\/imap\/tiles\/18\/72740\/105540.png": {
 		"ft": 32768,
 		"iS": 12435,
 		"oA": 0,
-		"oAP": "\/wp-content\/themes\/carnes-crossroads-2015\/img\/imap\/tiles\/18\/72740\/156603.png",
+		"oAP": "\/wp-content\/themes\/carnes-crossroads-2015\/img\/imap\/tiles\/18\/72740\/105540.png",
 		"oF": 0,
 		"opt": 0
 		},
-	"\/wp-content\/themes\/carnes-crossroads-2015\/img\/imap\/tiles\/18\/72741\/156599.png": {
+	"\/wp-content\/themes\/carnes-crossroads-2015\/img\/imap\/tiles\/18\/72740\/105541.png": {
 		"ft": 32768,
-		"iS": 27869,
+		"iS": 33800,
 		"oA": 0,
-		"oAP": "\/wp-content\/themes\/carnes-crossroads-2015\/img\/imap\/tiles\/18\/72741\/156599.png",
+		"oAP": "\/wp-content\/themes\/carnes-crossroads-2015\/img\/imap\/tiles\/18\/72740\/105541.png",
 		"oF": 0,
 		"opt": 0
 		},
-	"\/wp-content\/themes\/carnes-crossroads-2015\/img\/imap\/tiles\/18\/72741\/156600.png": {
+	"\/wp-content\/themes\/carnes-crossroads-2015\/img\/imap\/tiles\/18\/72740\/105542.png": {
 		"ft": 32768,
-		"iS": 45612,
+		"iS": 42510,
 		"oA": 0,
-		"oAP": "\/wp-content\/themes\/carnes-crossroads-2015\/img\/imap\/tiles\/18\/72741\/156600.png",
+		"oAP": "\/wp-content\/themes\/carnes-crossroads-2015\/img\/imap\/tiles\/18\/72740\/105542.png",
 		"oF": 0,
 		"opt": 0
 		},
-	"\/wp-content\/themes\/carnes-crossroads-2015\/img\/imap\/tiles\/18\/72741\/156601.png": {
+	"\/wp-content\/themes\/carnes-crossroads-2015\/img\/imap\/tiles\/18\/72740\/105543.png": {
 		"ft": 32768,
-		"iS": 48733,
+		"iS": 38274,
 		"oA": 0,
-		"oAP": "\/wp-content\/themes\/carnes-crossroads-2015\/img\/imap\/tiles\/18\/72741\/156601.png",
+		"oAP": "\/wp-content\/themes\/carnes-crossroads-2015\/img\/imap\/tiles\/18\/72740\/105543.png",
 		"oF": 0,
 		"opt": 0
 		},
-	"\/wp-content\/themes\/carnes-crossroads-2015\/img\/imap\/tiles\/18\/72741\/156602.png": {
+	"\/wp-content\/themes\/carnes-crossroads-2015\/img\/imap\/tiles\/18\/72740\/105544.png": {
 		"ft": 32768,
-		"iS": 39523,
+		"iS": 27474,
 		"oA": 0,
-		"oAP": "\/wp-content\/themes\/carnes-crossroads-2015\/img\/imap\/tiles\/18\/72741\/156602.png",
+		"oAP": "\/wp-content\/themes\/carnes-crossroads-2015\/img\/imap\/tiles\/18\/72740\/105544.png",
 		"oF": 0,
 		"opt": 0
 		},
-	"\/wp-content\/themes\/carnes-crossroads-2015\/img\/imap\/tiles\/18\/72741\/156603.png": {
+	"\/wp-content\/themes\/carnes-crossroads-2015\/img\/imap\/tiles\/18\/72741\/105540.png": {
 		"ft": 32768,
 		"iS": 25342,
 		"oA": 0,
-		"oAP": "\/wp-content\/themes\/carnes-crossroads-2015\/img\/imap\/tiles\/18\/72741\/156603.png",
+		"oAP": "\/wp-content\/themes\/carnes-crossroads-2015\/img\/imap\/tiles\/18\/72741\/105540.png",
 		"oF": 0,
 		"opt": 0
 		},
-	"\/wp-content\/themes\/carnes-crossroads-2015\/img\/imap\/tiles\/18\/72742\/156599.png": {
+	"\/wp-content\/themes\/carnes-crossroads-2015\/img\/imap\/tiles\/18\/72741\/105541.png": {
 		"ft": 32768,
-		"iS": 38363,
+		"iS": 39523,
 		"oA": 0,
-		"oAP": "\/wp-content\/themes\/carnes-crossroads-2015\/img\/imap\/tiles\/18\/72742\/156599.png",
+		"oAP": "\/wp-content\/themes\/carnes-crossroads-2015\/img\/imap\/tiles\/18\/72741\/105541.png",
 		"oF": 0,
 		"opt": 0
 		},
-	"\/wp-content\/themes\/carnes-crossroads-2015\/img\/imap\/tiles\/18\/72742\/156600.png": {
+	"\/wp-content\/themes\/carnes-crossroads-2015\/img\/imap\/tiles\/18\/72741\/105542.png": {
 		"ft": 32768,
-		"iS": 45168,
+		"iS": 48733,
 		"oA": 0,
-		"oAP": "\/wp-content\/themes\/carnes-crossroads-2015\/img\/imap\/tiles\/18\/72742\/156600.png",
+		"oAP": "\/wp-content\/themes\/carnes-crossroads-2015\/img\/imap\/tiles\/18\/72741\/105542.png",
 		"oF": 0,
 		"opt": 0
 		},
-	"\/wp-content\/themes\/carnes-crossroads-2015\/img\/imap\/tiles\/18\/72742\/156601.png": {
+	"\/wp-content\/themes\/carnes-crossroads-2015\/img\/imap\/tiles\/18\/72741\/105543.png": {
 		"ft": 32768,
-		"iS": 55081,
+		"iS": 45612,
 		"oA": 0,
-		"oAP": "\/wp-content\/themes\/carnes-crossroads-2015\/img\/imap\/tiles\/18\/72742\/156601.png",
+		"oAP": "\/wp-content\/themes\/carnes-crossroads-2015\/img\/imap\/tiles\/18\/72741\/105543.png",
 		"oF": 0,
 		"opt": 0
 		},
-	"\/wp-content\/themes\/carnes-crossroads-2015\/img\/imap\/tiles\/18\/72742\/156602.png": {
+	"\/wp-content\/themes\/carnes-crossroads-2015\/img\/imap\/tiles\/18\/72741\/105544.png": {
 		"ft": 32768,
-		"iS": 39504,
+		"iS": 27869,
 		"oA": 0,
-		"oAP": "\/wp-content\/themes\/carnes-crossroads-2015\/img\/imap\/tiles\/18\/72742\/156602.png",
+		"oAP": "\/wp-content\/themes\/carnes-crossroads-2015\/img\/imap\/tiles\/18\/72741\/105544.png",
 		"oF": 0,
 		"opt": 0
 		},
-	"\/wp-content\/themes\/carnes-crossroads-2015\/img\/imap\/tiles\/18\/72742\/156603.png": {
+	"\/wp-content\/themes\/carnes-crossroads-2015\/img\/imap\/tiles\/18\/72742\/105540.png": {
 		"ft": 32768,
 		"iS": 20779,
 		"oA": 0,
-		"oAP": "\/wp-content\/themes\/carnes-crossroads-2015\/img\/imap\/tiles\/18\/72742\/156603.png",
+		"oAP": "\/wp-content\/themes\/carnes-crossroads-2015\/img\/imap\/tiles\/18\/72742\/105540.png",
 		"oF": 0,
 		"opt": 0
 		},
-	"\/wp-content\/themes\/carnes-crossroads-2015\/img\/imap\/tiles\/18\/72743\/156599.png": {
+	"\/wp-content\/themes\/carnes-crossroads-2015\/img\/imap\/tiles\/18\/72742\/105541.png": {
 		"ft": 32768,
-		"iS": 35867,
+		"iS": 39504,
 		"oA": 0,
-		"oAP": "\/wp-content\/themes\/carnes-crossroads-2015\/img\/imap\/tiles\/18\/72743\/156599.png",
+		"oAP": "\/wp-content\/themes\/carnes-crossroads-2015\/img\/imap\/tiles\/18\/72742\/105541.png",
 		"oF": 0,
 		"opt": 0
 		},
-	"\/wp-content\/themes\/carnes-crossroads-2015\/img\/imap\/tiles\/18\/72743\/156600.png": {
+	"\/wp-content\/themes\/carnes-crossroads-2015\/img\/imap\/tiles\/18\/72742\/105542.png": {
 		"ft": 32768,
-		"iS": 30732,
+		"iS": 55081,
 		"oA": 0,
-		"oAP": "\/wp-content\/themes\/carnes-crossroads-2015\/img\/imap\/tiles\/18\/72743\/156600.png",
+		"oAP": "\/wp-content\/themes\/carnes-crossroads-2015\/img\/imap\/tiles\/18\/72742\/105542.png",
 		"oF": 0,
 		"opt": 0
 		},
-	"\/wp-content\/themes\/carnes-crossroads-2015\/img\/imap\/tiles\/18\/72743\/156601.png": {
+	"\/wp-content\/themes\/carnes-crossroads-2015\/img\/imap\/tiles\/18\/72742\/105543.png": {
 		"ft": 32768,
-		"iS": 48135,
+		"iS": 45168,
 		"oA": 0,
-		"oAP": "\/wp-content\/themes\/carnes-crossroads-2015\/img\/imap\/tiles\/18\/72743\/156601.png",
+		"oAP": "\/wp-content\/themes\/carnes-crossroads-2015\/img\/imap\/tiles\/18\/72742\/105543.png",
 		"oF": 0,
 		"opt": 0
 		},
-	"\/wp-content\/themes\/carnes-crossroads-2015\/img\/imap\/tiles\/18\/72743\/156602.png": {
+	"\/wp-content\/themes\/carnes-crossroads-2015\/img\/imap\/tiles\/18\/72742\/105544.png": {
 		"ft": 32768,
-		"iS": 57070,
+		"iS": 38363,
 		"oA": 0,
-		"oAP": "\/wp-content\/themes\/carnes-crossroads-2015\/img\/imap\/tiles\/18\/72743\/156602.png",
+		"oAP": "\/wp-content\/themes\/carnes-crossroads-2015\/img\/imap\/tiles\/18\/72742\/105544.png",
 		"oF": 0,
 		"opt": 0
 		},
-	"\/wp-content\/themes\/carnes-crossroads-2015\/img\/imap\/tiles\/18\/72743\/156603.png": {
+	"\/wp-content\/themes\/carnes-crossroads-2015\/img\/imap\/tiles\/18\/72743\/105540.png": {
 		"ft": 32768,
 		"iS": 18399,
 		"oA": 0,
-		"oAP": "\/wp-content\/themes\/carnes-crossroads-2015\/img\/imap\/tiles\/18\/72743\/156603.png",
+		"oAP": "\/wp-content\/themes\/carnes-crossroads-2015\/img\/imap\/tiles\/18\/72743\/105540.png",
 		"oF": 0,
 		"opt": 0
 		},
-	"\/wp-content\/themes\/carnes-crossroads-2015\/img\/imap\/tiles\/18\/72744\/156599.png": {
+	"\/wp-content\/themes\/carnes-crossroads-2015\/img\/imap\/tiles\/18\/72743\/105541.png": {
 		"ft": 32768,
-		"iS": 12758,
+		"iS": 57070,
 		"oA": 0,
-		"oAP": "\/wp-content\/themes\/carnes-crossroads-2015\/img\/imap\/tiles\/18\/72744\/156599.png",
+		"oAP": "\/wp-content\/themes\/carnes-crossroads-2015\/img\/imap\/tiles\/18\/72743\/105541.png",
 		"oF": 0,
 		"opt": 0
 		},
-	"\/wp-content\/themes\/carnes-crossroads-2015\/img\/imap\/tiles\/18\/72744\/156600.png": {
+	"\/wp-content\/themes\/carnes-crossroads-2015\/img\/imap\/tiles\/18\/72743\/105542.png": {
 		"ft": 32768,
-		"iS": 22707,
+		"iS": 48135,
 		"oA": 0,
-		"oAP": "\/wp-content\/themes\/carnes-crossroads-2015\/img\/imap\/tiles\/18\/72744\/156600.png",
+		"oAP": "\/wp-content\/themes\/carnes-crossroads-2015\/img\/imap\/tiles\/18\/72743\/105542.png",
 		"oF": 0,
 		"opt": 0
 		},
-	"\/wp-content\/themes\/carnes-crossroads-2015\/img\/imap\/tiles\/18\/72744\/156601.png": {
+	"\/wp-content\/themes\/carnes-crossroads-2015\/img\/imap\/tiles\/18\/72743\/105543.png": {
 		"ft": 32768,
-		"iS": 14729,
+		"iS": 30732,
 		"oA": 0,
-		"oAP": "\/wp-content\/themes\/carnes-crossroads-2015\/img\/imap\/tiles\/18\/72744\/156601.png",
+		"oAP": "\/wp-content\/themes\/carnes-crossroads-2015\/img\/imap\/tiles\/18\/72743\/105543.png",
 		"oF": 0,
 		"opt": 0
 		},
-	"\/wp-content\/themes\/carnes-crossroads-2015\/img\/imap\/tiles\/18\/72744\/156602.png": {
+	"\/wp-content\/themes\/carnes-crossroads-2015\/img\/imap\/tiles\/18\/72743\/105544.png": {
 		"ft": 32768,
-		"iS": 38762,
+		"iS": 35867,
 		"oA": 0,
-		"oAP": "\/wp-content\/themes\/carnes-crossroads-2015\/img\/imap\/tiles\/18\/72744\/156602.png",
+		"oAP": "\/wp-content\/themes\/carnes-crossroads-2015\/img\/imap\/tiles\/18\/72743\/105544.png",
 		"oF": 0,
 		"opt": 0
 		},
-	"\/wp-content\/themes\/carnes-crossroads-2015\/img\/imap\/tiles\/18\/72744\/156603.png": {
+	"\/wp-content\/themes\/carnes-crossroads-2015\/img\/imap\/tiles\/18\/72744\/105540.png": {
 		"ft": 32768,
 		"iS": 34877,
 		"oA": 0,
-		"oAP": "\/wp-content\/themes\/carnes-crossroads-2015\/img\/imap\/tiles\/18\/72744\/156603.png",
+		"oAP": "\/wp-content\/themes\/carnes-crossroads-2015\/img\/imap\/tiles\/18\/72744\/105540.png",
 		"oF": 0,
 		"opt": 0
 		},
-	"\/wp-content\/themes\/carnes-crossroads-2015\/img\/imap\/tiles\/18\/72745\/156599.png": {
+	"\/wp-content\/themes\/carnes-crossroads-2015\/img\/imap\/tiles\/18\/72744\/105541.png": {
 		"ft": 32768,
-		"iS": 14948,
+		"iS": 38762,
 		"oA": 0,
-		"oAP": "\/wp-content\/themes\/carnes-crossroads-2015\/img\/imap\/tiles\/18\/72745\/156599.png",
+		"oAP": "\/wp-content\/themes\/carnes-crossroads-2015\/img\/imap\/tiles\/18\/72744\/105541.png",
 		"oF": 0,
 		"opt": 0
 		},
-	"\/wp-content\/themes\/carnes-crossroads-2015\/img\/imap\/tiles\/18\/72745\/156600.png": {
+	"\/wp-content\/themes\/carnes-crossroads-2015\/img\/imap\/tiles\/18\/72744\/105542.png": {
 		"ft": 32768,
-		"iS": 3641,
+		"iS": 14729,
 		"oA": 0,
-		"oAP": "\/wp-content\/themes\/carnes-crossroads-2015\/img\/imap\/tiles\/18\/72745\/156600.png",
+		"oAP": "\/wp-content\/themes\/carnes-crossroads-2015\/img\/imap\/tiles\/18\/72744\/105542.png",
 		"oF": 0,
 		"opt": 0
 		},
-	"\/wp-content\/themes\/carnes-crossroads-2015\/img\/imap\/tiles\/18\/72745\/156601.png": {
+	"\/wp-content\/themes\/carnes-crossroads-2015\/img\/imap\/tiles\/18\/72744\/105543.png": {
 		"ft": 32768,
-		"iS": 18885,
+		"iS": 22707,
 		"oA": 0,
-		"oAP": "\/wp-content\/themes\/carnes-crossroads-2015\/img\/imap\/tiles\/18\/72745\/156601.png",
+		"oAP": "\/wp-content\/themes\/carnes-crossroads-2015\/img\/imap\/tiles\/18\/72744\/105543.png",
 		"oF": 0,
 		"opt": 0
 		},
-	"\/wp-content\/themes\/carnes-crossroads-2015\/img\/imap\/tiles\/18\/72745\/156602.png": {
+	"\/wp-content\/themes\/carnes-crossroads-2015\/img\/imap\/tiles\/18\/72744\/105544.png": {
 		"ft": 32768,
-		"iS": 34328,
+		"iS": 12758,
 		"oA": 0,
-		"oAP": "\/wp-content\/themes\/carnes-crossroads-2015\/img\/imap\/tiles\/18\/72745\/156602.png",
+		"oAP": "\/wp-content\/themes\/carnes-crossroads-2015\/img\/imap\/tiles\/18\/72744\/105544.png",
 		"oF": 0,
 		"opt": 0
 		},
-	"\/wp-content\/themes\/carnes-crossroads-2015\/img\/imap\/tiles\/18\/72745\/156603.png": {
+	"\/wp-content\/themes\/carnes-crossroads-2015\/img\/imap\/tiles\/18\/72745\/105540.png": {
 		"ft": 32768,
 		"iS": 10677,
 		"oA": 0,
-		"oAP": "\/wp-content\/themes\/carnes-crossroads-2015\/img\/imap\/tiles\/18\/72745\/156603.png",
+		"oAP": "\/wp-content\/themes\/carnes-crossroads-2015\/img\/imap\/tiles\/18\/72745\/105540.png",
 		"oF": 0,
 		"opt": 0
 		},
-	"\/wp-content\/themes\/carnes-crossroads-2015\/img\/imap\/tiles\/19\/145477\/313198.png": {
+	"\/wp-content\/themes\/carnes-crossroads-2015\/img\/imap\/tiles\/18\/72745\/105541.png": {
 		"ft": 32768,
-		"iS": 2098,
+		"iS": 34328,
 		"oA": 0,
-		"oAP": "\/wp-content\/themes\/carnes-crossroads-2015\/img\/imap\/tiles\/19\/145477\/313198.png",
+		"oAP": "\/wp-content\/themes\/carnes-crossroads-2015\/img\/imap\/tiles\/18\/72745\/105541.png",
 		"oF": 0,
 		"opt": 0
 		},
-	"\/wp-content\/themes\/carnes-crossroads-2015\/img\/imap\/tiles\/19\/145477\/313199.png": {
+	"\/wp-content\/themes\/carnes-crossroads-2015\/img\/imap\/tiles\/18\/72745\/105542.png": {
 		"ft": 32768,
-		"iS": 3238,
+		"iS": 18885,
 		"oA": 0,
-		"oAP": "\/wp-content\/themes\/carnes-crossroads-2015\/img\/imap\/tiles\/19\/145477\/313199.png",
+		"oAP": "\/wp-content\/themes\/carnes-crossroads-2015\/img\/imap\/tiles\/18\/72745\/105542.png",
 		"oF": 0,
 		"opt": 0
 		},
-	"\/wp-content\/themes\/carnes-crossroads-2015\/img\/imap\/tiles\/19\/145477\/313200.png": {
+	"\/wp-content\/themes\/carnes-crossroads-2015\/img\/imap\/tiles\/18\/72745\/105543.png": {
 		"ft": 32768,
-		"iS": 862,
+		"iS": 3641,
 		"oA": 0,
-		"oAP": "\/wp-content\/themes\/carnes-crossroads-2015\/img\/imap\/tiles\/19\/145477\/313200.png",
+		"oAP": "\/wp-content\/themes\/carnes-crossroads-2015\/img\/imap\/tiles\/18\/72745\/105543.png",
 		"oF": 0,
 		"opt": 0
 		},
-	"\/wp-content\/themes\/carnes-crossroads-2015\/img\/imap\/tiles\/19\/145477\/313201.png": {
+	"\/wp-content\/themes\/carnes-crossroads-2015\/img\/imap\/tiles\/18\/72745\/105544.png": {
 		"ft": 32768,
-		"iS": 862,
+		"iS": 14948,
 		"oA": 0,
-		"oAP": "\/wp-content\/themes\/carnes-crossroads-2015\/img\/imap\/tiles\/19\/145477\/313201.png",
+		"oAP": "\/wp-content\/themes\/carnes-crossroads-2015\/img\/imap\/tiles\/18\/72745\/105544.png",
 		"oF": 0,
 		"opt": 0
 		},
-	"\/wp-content\/themes\/carnes-crossroads-2015\/img\/imap\/tiles\/19\/145477\/313202.png": {
-		"ft": 32768,
-		"iS": 862,
-		"oA": 0,
-		"oAP": "\/wp-content\/themes\/carnes-crossroads-2015\/img\/imap\/tiles\/19\/145477\/313202.png",
-		"oF": 0,
-		"opt": 0
-		},
-	"\/wp-content\/themes\/carnes-crossroads-2015\/img\/imap\/tiles\/19\/145477\/313203.png": {
-		"ft": 32768,
-		"iS": 862,
-		"oA": 0,
-		"oAP": "\/wp-content\/themes\/carnes-crossroads-2015\/img\/imap\/tiles\/19\/145477\/313203.png",
-		"oF": 0,
-		"opt": 0
-		},
-	"\/wp-content\/themes\/carnes-crossroads-2015\/img\/imap\/tiles\/19\/145477\/313204.png": {
-		"ft": 32768,
-		"iS": 862,
-		"oA": 0,
-		"oAP": "\/wp-content\/themes\/carnes-crossroads-2015\/img\/imap\/tiles\/19\/145477\/313204.png",
-		"oF": 0,
-		"opt": 0
-		},
-	"\/wp-content\/themes\/carnes-crossroads-2015\/img\/imap\/tiles\/19\/145477\/313205.png": {
-		"ft": 32768,
-		"iS": 17669,
-		"oA": 0,
-		"oAP": "\/wp-content\/themes\/carnes-crossroads-2015\/img\/imap\/tiles\/19\/145477\/313205.png",
-		"oF": 0,
-		"opt": 0
-		},
-	"\/wp-content\/themes\/carnes-crossroads-2015\/img\/imap\/tiles\/19\/145477\/313206.png": {
-		"ft": 32768,
-		"iS": 15198,
-		"oA": 0,
-		"oAP": "\/wp-content\/themes\/carnes-crossroads-2015\/img\/imap\/tiles\/19\/145477\/313206.png",
-		"oF": 0,
-		"opt": 0
-		},
-	"\/wp-content\/themes\/carnes-crossroads-2015\/img\/imap\/tiles\/19\/145477\/313207.png": {
+	"\/wp-content\/themes\/carnes-crossroads-2015\/img\/imap\/tiles\/19\/145477\/211080.png": {
 		"ft": 32768,
 		"iS": 573,
 		"oA": 0,
-		"oAP": "\/wp-content\/themes\/carnes-crossroads-2015\/img\/imap\/tiles\/19\/145477\/313207.png",
+		"oAP": "\/wp-content\/themes\/carnes-crossroads-2015\/img\/imap\/tiles\/19\/145477\/211080.png",
 		"oF": 0,
 		"opt": 0
 		},
-	"\/wp-content\/themes\/carnes-crossroads-2015\/img\/imap\/tiles\/19\/145478\/313198.png": {
+	"\/wp-content\/themes\/carnes-crossroads-2015\/img\/imap\/tiles\/19\/145477\/211081.png": {
 		"ft": 32768,
-		"iS": 6368,
+		"iS": 15198,
 		"oA": 0,
-		"oAP": "\/wp-content\/themes\/carnes-crossroads-2015\/img\/imap\/tiles\/19\/145478\/313198.png",
+		"oAP": "\/wp-content\/themes\/carnes-crossroads-2015\/img\/imap\/tiles\/19\/145477\/211081.png",
 		"oF": 0,
 		"opt": 0
 		},
-	"\/wp-content\/themes\/carnes-crossroads-2015\/img\/imap\/tiles\/19\/145478\/313199.png": {
+	"\/wp-content\/themes\/carnes-crossroads-2015\/img\/imap\/tiles\/19\/145477\/211082.png": {
 		"ft": 32768,
-		"iS": 40682,
+		"iS": 17669,
 		"oA": 0,
-		"oAP": "\/wp-content\/themes\/carnes-crossroads-2015\/img\/imap\/tiles\/19\/145478\/313199.png",
+		"oAP": "\/wp-content\/themes\/carnes-crossroads-2015\/img\/imap\/tiles\/19\/145477\/211082.png",
 		"oF": 0,
 		"opt": 0
 		},
-	"\/wp-content\/themes\/carnes-crossroads-2015\/img\/imap\/tiles\/19\/145478\/313200.png": {
+	"\/wp-content\/themes\/carnes-crossroads-2015\/img\/imap\/tiles\/19\/145477\/211083.png": {
 		"ft": 32768,
-		"iS": 26337,
+		"iS": 862,
 		"oA": 0,
-		"oAP": "\/wp-content\/themes\/carnes-crossroads-2015\/img\/imap\/tiles\/19\/145478\/313200.png",
+		"oAP": "\/wp-content\/themes\/carnes-crossroads-2015\/img\/imap\/tiles\/19\/145477\/211083.png",
 		"oF": 0,
 		"opt": 0
 		},
-	"\/wp-content\/themes\/carnes-crossroads-2015\/img\/imap\/tiles\/19\/145478\/313201.png": {
+	"\/wp-content\/themes\/carnes-crossroads-2015\/img\/imap\/tiles\/19\/145477\/211084.png": {
 		"ft": 32768,
-		"iS": 19084,
+		"iS": 862,
 		"oA": 0,
-		"oAP": "\/wp-content\/themes\/carnes-crossroads-2015\/img\/imap\/tiles\/19\/145478\/313201.png",
+		"oAP": "\/wp-content\/themes\/carnes-crossroads-2015\/img\/imap\/tiles\/19\/145477\/211084.png",
 		"oF": 0,
 		"opt": 0
 		},
-	"\/wp-content\/themes\/carnes-crossroads-2015\/img\/imap\/tiles\/19\/145478\/313202.png": {
+	"\/wp-content\/themes\/carnes-crossroads-2015\/img\/imap\/tiles\/19\/145477\/211085.png": {
 		"ft": 32768,
-		"iS": 858,
+		"iS": 862,
 		"oA": 0,
-		"oAP": "\/wp-content\/themes\/carnes-crossroads-2015\/img\/imap\/tiles\/19\/145478\/313202.png",
+		"oAP": "\/wp-content\/themes\/carnes-crossroads-2015\/img\/imap\/tiles\/19\/145477\/211085.png",
 		"oF": 0,
 		"opt": 0
 		},
-	"\/wp-content\/themes\/carnes-crossroads-2015\/img\/imap\/tiles\/19\/145478\/313203.png": {
+	"\/wp-content\/themes\/carnes-crossroads-2015\/img\/imap\/tiles\/19\/145477\/211086.png": {
 		"ft": 32768,
-		"iS": 10375,
+		"iS": 862,
 		"oA": 0,
-		"oAP": "\/wp-content\/themes\/carnes-crossroads-2015\/img\/imap\/tiles\/19\/145478\/313203.png",
+		"oAP": "\/wp-content\/themes\/carnes-crossroads-2015\/img\/imap\/tiles\/19\/145477\/211086.png",
 		"oF": 0,
 		"opt": 0
 		},
-	"\/wp-content\/themes\/carnes-crossroads-2015\/img\/imap\/tiles\/19\/145478\/313204.png": {
+	"\/wp-content\/themes\/carnes-crossroads-2015\/img\/imap\/tiles\/19\/145477\/211087.png": {
 		"ft": 32768,
-		"iS": 858,
+		"iS": 862,
 		"oA": 0,
-		"oAP": "\/wp-content\/themes\/carnes-crossroads-2015\/img\/imap\/tiles\/19\/145478\/313204.png",
+		"oAP": "\/wp-content\/themes\/carnes-crossroads-2015\/img\/imap\/tiles\/19\/145477\/211087.png",
 		"oF": 0,
 		"opt": 0
 		},
-	"\/wp-content\/themes\/carnes-crossroads-2015\/img\/imap\/tiles\/19\/145478\/313205.png": {
+	"\/wp-content\/themes\/carnes-crossroads-2015\/img\/imap\/tiles\/19\/145477\/211088.png": {
 		"ft": 32768,
-		"iS": 7656,
+		"iS": 3238,
 		"oA": 0,
-		"oAP": "\/wp-content\/themes\/carnes-crossroads-2015\/img\/imap\/tiles\/19\/145478\/313205.png",
+		"oAP": "\/wp-content\/themes\/carnes-crossroads-2015\/img\/imap\/tiles\/19\/145477\/211088.png",
 		"oF": 0,
 		"opt": 0
 		},
-	"\/wp-content\/themes\/carnes-crossroads-2015\/img\/imap\/tiles\/19\/145478\/313206.png": {
+	"\/wp-content\/themes\/carnes-crossroads-2015\/img\/imap\/tiles\/19\/145477\/211089.png": {
 		"ft": 32768,
-		"iS": 37091,
+		"iS": 2098,
 		"oA": 0,
-		"oAP": "\/wp-content\/themes\/carnes-crossroads-2015\/img\/imap\/tiles\/19\/145478\/313206.png",
+		"oAP": "\/wp-content\/themes\/carnes-crossroads-2015\/img\/imap\/tiles\/19\/145477\/211089.png",
 		"oF": 0,
 		"opt": 0
 		},
-	"\/wp-content\/themes\/carnes-crossroads-2015\/img\/imap\/tiles\/19\/145478\/313207.png": {
+	"\/wp-content\/themes\/carnes-crossroads-2015\/img\/imap\/tiles\/19\/145478\/211080.png": {
 		"ft": 32768,
 		"iS": 7647,
 		"oA": 0,
-		"oAP": "\/wp-content\/themes\/carnes-crossroads-2015\/img\/imap\/tiles\/19\/145478\/313207.png",
+		"oAP": "\/wp-content\/themes\/carnes-crossroads-2015\/img\/imap\/tiles\/19\/145478\/211080.png",
 		"oF": 0,
 		"opt": 0
 		},
-	"\/wp-content\/themes\/carnes-crossroads-2015\/img\/imap\/tiles\/19\/145479\/313198.png": {
+	"\/wp-content\/themes\/carnes-crossroads-2015\/img\/imap\/tiles\/19\/145478\/211081.png": {
 		"ft": 32768,
-		"iS": 5585,
+		"iS": 37091,
 		"oA": 0,
-		"oAP": "\/wp-content\/themes\/carnes-crossroads-2015\/img\/imap\/tiles\/19\/145479\/313198.png",
+		"oAP": "\/wp-content\/themes\/carnes-crossroads-2015\/img\/imap\/tiles\/19\/145478\/211081.png",
 		"oF": 0,
 		"opt": 0
 		},
-	"\/wp-content\/themes\/carnes-crossroads-2015\/img\/imap\/tiles\/19\/145479\/313199.png": {
+	"\/wp-content\/themes\/carnes-crossroads-2015\/img\/imap\/tiles\/19\/145478\/211082.png": {
 		"ft": 32768,
-		"iS": 27821,
+		"iS": 7656,
 		"oA": 0,
-		"oAP": "\/wp-content\/themes\/carnes-crossroads-2015\/img\/imap\/tiles\/19\/145479\/313199.png",
+		"oAP": "\/wp-content\/themes\/carnes-crossroads-2015\/img\/imap\/tiles\/19\/145478\/211082.png",
 		"oF": 0,
 		"opt": 0
 		},
-	"\/wp-content\/themes\/carnes-crossroads-2015\/img\/imap\/tiles\/19\/145479\/313200.png": {
-		"ft": 32768,
-		"iS": 22157,
-		"oA": 0,
-		"oAP": "\/wp-content\/themes\/carnes-crossroads-2015\/img\/imap\/tiles\/19\/145479\/313200.png",
-		"oF": 0,
-		"opt": 0
-		},
-	"\/wp-content\/themes\/carnes-crossroads-2015\/img\/imap\/tiles\/19\/145479\/313201.png": {
-		"ft": 32768,
-		"iS": 24726,
-		"oA": 0,
-		"oAP": "\/wp-content\/themes\/carnes-crossroads-2015\/img\/imap\/tiles\/19\/145479\/313201.png",
-		"oF": 0,
-		"opt": 0
-		},
-	"\/wp-content\/themes\/carnes-crossroads-2015\/img\/imap\/tiles\/19\/145479\/313202.png": {
+	"\/wp-content\/themes\/carnes-crossroads-2015\/img\/imap\/tiles\/19\/145478\/211083.png": {
 		"ft": 32768,
 		"iS": 858,
 		"oA": 0,
-		"oAP": "\/wp-content\/themes\/carnes-crossroads-2015\/img\/imap\/tiles\/19\/145479\/313202.png",
+		"oAP": "\/wp-content\/themes\/carnes-crossroads-2015\/img\/imap\/tiles\/19\/145478\/211083.png",
 		"oF": 0,
 		"opt": 0
 		},
-	"\/wp-content\/themes\/carnes-crossroads-2015\/img\/imap\/tiles\/19\/145479\/313203.png": {
+	"\/wp-content\/themes\/carnes-crossroads-2015\/img\/imap\/tiles\/19\/145478\/211084.png": {
 		"ft": 32768,
-		"iS": 19080,
+		"iS": 10375,
 		"oA": 0,
-		"oAP": "\/wp-content\/themes\/carnes-crossroads-2015\/img\/imap\/tiles\/19\/145479\/313203.png",
+		"oAP": "\/wp-content\/themes\/carnes-crossroads-2015\/img\/imap\/tiles\/19\/145478\/211084.png",
 		"oF": 0,
 		"opt": 0
 		},
-	"\/wp-content\/themes\/carnes-crossroads-2015\/img\/imap\/tiles\/19\/145479\/313204.png": {
-		"ft": 32768,
-		"iS": 858,
-		"oA": 0,
-		"oAP": "\/wp-content\/themes\/carnes-crossroads-2015\/img\/imap\/tiles\/19\/145479\/313204.png",
-		"oF": 0,
-		"opt": 0
-		},
-	"\/wp-content\/themes\/carnes-crossroads-2015\/img\/imap\/tiles\/19\/145479\/313205.png": {
+	"\/wp-content\/themes\/carnes-crossroads-2015\/img\/imap\/tiles\/19\/145478\/211085.png": {
 		"ft": 32768,
 		"iS": 858,
 		"oA": 0,
-		"oAP": "\/wp-content\/themes\/carnes-crossroads-2015\/img\/imap\/tiles\/19\/145479\/313205.png",
+		"oAP": "\/wp-content\/themes\/carnes-crossroads-2015\/img\/imap\/tiles\/19\/145478\/211085.png",
 		"oF": 0,
 		"opt": 0
 		},
-	"\/wp-content\/themes\/carnes-crossroads-2015\/img\/imap\/tiles\/19\/145479\/313206.png": {
+	"\/wp-content\/themes\/carnes-crossroads-2015\/img\/imap\/tiles\/19\/145478\/211086.png": {
 		"ft": 32768,
-		"iS": 4948,
+		"iS": 19084,
 		"oA": 0,
-		"oAP": "\/wp-content\/themes\/carnes-crossroads-2015\/img\/imap\/tiles\/19\/145479\/313206.png",
+		"oAP": "\/wp-content\/themes\/carnes-crossroads-2015\/img\/imap\/tiles\/19\/145478\/211086.png",
 		"oF": 0,
 		"opt": 0
 		},
-	"\/wp-content\/themes\/carnes-crossroads-2015\/img\/imap\/tiles\/19\/145479\/313207.png": {
+	"\/wp-content\/themes\/carnes-crossroads-2015\/img\/imap\/tiles\/19\/145478\/211087.png": {
+		"ft": 32768,
+		"iS": 26337,
+		"oA": 0,
+		"oAP": "\/wp-content\/themes\/carnes-crossroads-2015\/img\/imap\/tiles\/19\/145478\/211087.png",
+		"oF": 0,
+		"opt": 0
+		},
+	"\/wp-content\/themes\/carnes-crossroads-2015\/img\/imap\/tiles\/19\/145478\/211088.png": {
+		"ft": 32768,
+		"iS": 40682,
+		"oA": 0,
+		"oAP": "\/wp-content\/themes\/carnes-crossroads-2015\/img\/imap\/tiles\/19\/145478\/211088.png",
+		"oF": 0,
+		"opt": 0
+		},
+	"\/wp-content\/themes\/carnes-crossroads-2015\/img\/imap\/tiles\/19\/145478\/211089.png": {
+		"ft": 32768,
+		"iS": 6368,
+		"oA": 0,
+		"oAP": "\/wp-content\/themes\/carnes-crossroads-2015\/img\/imap\/tiles\/19\/145478\/211089.png",
+		"oF": 0,
+		"opt": 0
+		},
+	"\/wp-content\/themes\/carnes-crossroads-2015\/img\/imap\/tiles\/19\/145479\/211080.png": {
 		"ft": 32768,
 		"iS": 5282,
 		"oA": 0,
-		"oAP": "\/wp-content\/themes\/carnes-crossroads-2015\/img\/imap\/tiles\/19\/145479\/313207.png",
+		"oAP": "\/wp-content\/themes\/carnes-crossroads-2015\/img\/imap\/tiles\/19\/145479\/211080.png",
 		"oF": 0,
 		"opt": 0
 		},
-	"\/wp-content\/themes\/carnes-crossroads-2015\/img\/imap\/tiles\/19\/145480\/313198.png": {
+	"\/wp-content\/themes\/carnes-crossroads-2015\/img\/imap\/tiles\/19\/145479\/211081.png": {
 		"ft": 32768,
-		"iS": 5802,
+		"iS": 4948,
 		"oA": 0,
-		"oAP": "\/wp-content\/themes\/carnes-crossroads-2015\/img\/imap\/tiles\/19\/145480\/313198.png",
+		"oAP": "\/wp-content\/themes\/carnes-crossroads-2015\/img\/imap\/tiles\/19\/145479\/211081.png",
 		"oF": 0,
 		"opt": 0
 		},
-	"\/wp-content\/themes\/carnes-crossroads-2015\/img\/imap\/tiles\/19\/145480\/313199.png": {
+	"\/wp-content\/themes\/carnes-crossroads-2015\/img\/imap\/tiles\/19\/145479\/211082.png": {
 		"ft": 32768,
-		"iS": 37217,
+		"iS": 858,
 		"oA": 0,
-		"oAP": "\/wp-content\/themes\/carnes-crossroads-2015\/img\/imap\/tiles\/19\/145480\/313199.png",
+		"oAP": "\/wp-content\/themes\/carnes-crossroads-2015\/img\/imap\/tiles\/19\/145479\/211082.png",
 		"oF": 0,
 		"opt": 0
 		},
-	"\/wp-content\/themes\/carnes-crossroads-2015\/img\/imap\/tiles\/19\/145480\/313200.png": {
+	"\/wp-content\/themes\/carnes-crossroads-2015\/img\/imap\/tiles\/19\/145479\/211083.png": {
 		"ft": 32768,
-		"iS": 28047,
+		"iS": 858,
 		"oA": 0,
-		"oAP": "\/wp-content\/themes\/carnes-crossroads-2015\/img\/imap\/tiles\/19\/145480\/313200.png",
+		"oAP": "\/wp-content\/themes\/carnes-crossroads-2015\/img\/imap\/tiles\/19\/145479\/211083.png",
 		"oF": 0,
 		"opt": 0
 		},
-	"\/wp-content\/themes\/carnes-crossroads-2015\/img\/imap\/tiles\/19\/145480\/313201.png": {
+	"\/wp-content\/themes\/carnes-crossroads-2015\/img\/imap\/tiles\/19\/145479\/211084.png": {
 		"ft": 32768,
-		"iS": 35125,
+		"iS": 19080,
 		"oA": 0,
-		"oAP": "\/wp-content\/themes\/carnes-crossroads-2015\/img\/imap\/tiles\/19\/145480\/313201.png",
+		"oAP": "\/wp-content\/themes\/carnes-crossroads-2015\/img\/imap\/tiles\/19\/145479\/211084.png",
 		"oF": 0,
 		"opt": 0
 		},
-	"\/wp-content\/themes\/carnes-crossroads-2015\/img\/imap\/tiles\/19\/145480\/313202.png": {
+	"\/wp-content\/themes\/carnes-crossroads-2015\/img\/imap\/tiles\/19\/145479\/211085.png": {
 		"ft": 32768,
-		"iS": 30405,
+		"iS": 858,
 		"oA": 0,
-		"oAP": "\/wp-content\/themes\/carnes-crossroads-2015\/img\/imap\/tiles\/19\/145480\/313202.png",
+		"oAP": "\/wp-content\/themes\/carnes-crossroads-2015\/img\/imap\/tiles\/19\/145479\/211085.png",
 		"oF": 0,
 		"opt": 0
 		},
-	"\/wp-content\/themes\/carnes-crossroads-2015\/img\/imap\/tiles\/19\/145480\/313203.png": {
+	"\/wp-content\/themes\/carnes-crossroads-2015\/img\/imap\/tiles\/19\/145479\/211086.png": {
 		"ft": 32768,
-		"iS": 24080,
+		"iS": 24726,
 		"oA": 0,
-		"oAP": "\/wp-content\/themes\/carnes-crossroads-2015\/img\/imap\/tiles\/19\/145480\/313203.png",
+		"oAP": "\/wp-content\/themes\/carnes-crossroads-2015\/img\/imap\/tiles\/19\/145479\/211086.png",
 		"oF": 0,
 		"opt": 0
 		},
-	"\/wp-content\/themes\/carnes-crossroads-2015\/img\/imap\/tiles\/19\/145480\/313204.png": {
+	"\/wp-content\/themes\/carnes-crossroads-2015\/img\/imap\/tiles\/19\/145479\/211087.png": {
 		"ft": 32768,
-		"iS": 22538,
+		"iS": 22157,
 		"oA": 0,
-		"oAP": "\/wp-content\/themes\/carnes-crossroads-2015\/img\/imap\/tiles\/19\/145480\/313204.png",
+		"oAP": "\/wp-content\/themes\/carnes-crossroads-2015\/img\/imap\/tiles\/19\/145479\/211087.png",
 		"oF": 0,
 		"opt": 0
 		},
-	"\/wp-content\/themes\/carnes-crossroads-2015\/img\/imap\/tiles\/19\/145480\/313205.png": {
+	"\/wp-content\/themes\/carnes-crossroads-2015\/img\/imap\/tiles\/19\/145479\/211088.png": {
 		"ft": 32768,
-		"iS": 31502,
+		"iS": 27821,
 		"oA": 0,
-		"oAP": "\/wp-content\/themes\/carnes-crossroads-2015\/img\/imap\/tiles\/19\/145480\/313205.png",
+		"oAP": "\/wp-content\/themes\/carnes-crossroads-2015\/img\/imap\/tiles\/19\/145479\/211088.png",
 		"oF": 0,
 		"opt": 0
 		},
-	"\/wp-content\/themes\/carnes-crossroads-2015\/img\/imap\/tiles\/19\/145480\/313206.png": {
+	"\/wp-content\/themes\/carnes-crossroads-2015\/img\/imap\/tiles\/19\/145479\/211089.png": {
 		"ft": 32768,
-		"iS": 4681,
+		"iS": 5585,
 		"oA": 0,
-		"oAP": "\/wp-content\/themes\/carnes-crossroads-2015\/img\/imap\/tiles\/19\/145480\/313206.png",
+		"oAP": "\/wp-content\/themes\/carnes-crossroads-2015\/img\/imap\/tiles\/19\/145479\/211089.png",
 		"oF": 0,
 		"opt": 0
 		},
-	"\/wp-content\/themes\/carnes-crossroads-2015\/img\/imap\/tiles\/19\/145480\/313207.png": {
+	"\/wp-content\/themes\/carnes-crossroads-2015\/img\/imap\/tiles\/19\/145480\/211080.png": {
 		"ft": 32768,
 		"iS": 502,
 		"oA": 0,
-		"oAP": "\/wp-content\/themes\/carnes-crossroads-2015\/img\/imap\/tiles\/19\/145480\/313207.png",
+		"oAP": "\/wp-content\/themes\/carnes-crossroads-2015\/img\/imap\/tiles\/19\/145480\/211080.png",
 		"oF": 0,
 		"opt": 0
 		},
-	"\/wp-content\/themes\/carnes-crossroads-2015\/img\/imap\/tiles\/19\/145481\/313198.png": {
+	"\/wp-content\/themes\/carnes-crossroads-2015\/img\/imap\/tiles\/19\/145480\/211081.png": {
 		"ft": 32768,
-		"iS": 13762,
+		"iS": 4681,
 		"oA": 0,
-		"oAP": "\/wp-content\/themes\/carnes-crossroads-2015\/img\/imap\/tiles\/19\/145481\/313198.png",
+		"oAP": "\/wp-content\/themes\/carnes-crossroads-2015\/img\/imap\/tiles\/19\/145480\/211081.png",
 		"oF": 0,
 		"opt": 0
 		},
-	"\/wp-content\/themes\/carnes-crossroads-2015\/img\/imap\/tiles\/19\/145481\/313199.png": {
+	"\/wp-content\/themes\/carnes-crossroads-2015\/img\/imap\/tiles\/19\/145480\/211082.png": {
 		"ft": 32768,
-		"iS": 30608,
+		"iS": 31502,
 		"oA": 0,
-		"oAP": "\/wp-content\/themes\/carnes-crossroads-2015\/img\/imap\/tiles\/19\/145481\/313199.png",
+		"oAP": "\/wp-content\/themes\/carnes-crossroads-2015\/img\/imap\/tiles\/19\/145480\/211082.png",
 		"oF": 0,
 		"opt": 0
 		},
-	"\/wp-content\/themes\/carnes-crossroads-2015\/img\/imap\/tiles\/19\/145481\/313200.png": {
+	"\/wp-content\/themes\/carnes-crossroads-2015\/img\/imap\/tiles\/19\/145480\/211083.png": {
 		"ft": 32768,
-		"iS": 33123,
+		"iS": 22538,
 		"oA": 0,
-		"oAP": "\/wp-content\/themes\/carnes-crossroads-2015\/img\/imap\/tiles\/19\/145481\/313200.png",
+		"oAP": "\/wp-content\/themes\/carnes-crossroads-2015\/img\/imap\/tiles\/19\/145480\/211083.png",
 		"oF": 0,
 		"opt": 0
 		},
-	"\/wp-content\/themes\/carnes-crossroads-2015\/img\/imap\/tiles\/19\/145481\/313201.png": {
+	"\/wp-content\/themes\/carnes-crossroads-2015\/img\/imap\/tiles\/19\/145480\/211084.png": {
 		"ft": 32768,
-		"iS": 23824,
+		"iS": 24080,
 		"oA": 0,
-		"oAP": "\/wp-content\/themes\/carnes-crossroads-2015\/img\/imap\/tiles\/19\/145481\/313201.png",
+		"oAP": "\/wp-content\/themes\/carnes-crossroads-2015\/img\/imap\/tiles\/19\/145480\/211084.png",
 		"oF": 0,
 		"opt": 0
 		},
-	"\/wp-content\/themes\/carnes-crossroads-2015\/img\/imap\/tiles\/19\/145481\/313202.png": {
+	"\/wp-content\/themes\/carnes-crossroads-2015\/img\/imap\/tiles\/19\/145480\/211085.png": {
 		"ft": 32768,
-		"iS": 39923,
+		"iS": 30405,
 		"oA": 0,
-		"oAP": "\/wp-content\/themes\/carnes-crossroads-2015\/img\/imap\/tiles\/19\/145481\/313202.png",
+		"oAP": "\/wp-content\/themes\/carnes-crossroads-2015\/img\/imap\/tiles\/19\/145480\/211085.png",
 		"oF": 0,
 		"opt": 0
 		},
-	"\/wp-content\/themes\/carnes-crossroads-2015\/img\/imap\/tiles\/19\/145481\/313203.png": {
+	"\/wp-content\/themes\/carnes-crossroads-2015\/img\/imap\/tiles\/19\/145480\/211086.png": {
 		"ft": 32768,
-		"iS": 40246,
+		"iS": 35125,
 		"oA": 0,
-		"oAP": "\/wp-content\/themes\/carnes-crossroads-2015\/img\/imap\/tiles\/19\/145481\/313203.png",
+		"oAP": "\/wp-content\/themes\/carnes-crossroads-2015\/img\/imap\/tiles\/19\/145480\/211086.png",
 		"oF": 0,
 		"opt": 0
 		},
-	"\/wp-content\/themes\/carnes-crossroads-2015\/img\/imap\/tiles\/19\/145481\/313204.png": {
+	"\/wp-content\/themes\/carnes-crossroads-2015\/img\/imap\/tiles\/19\/145480\/211087.png": {
 		"ft": 32768,
-		"iS": 22183,
+		"iS": 28047,
 		"oA": 0,
-		"oAP": "\/wp-content\/themes\/carnes-crossroads-2015\/img\/imap\/tiles\/19\/145481\/313204.png",
+		"oAP": "\/wp-content\/themes\/carnes-crossroads-2015\/img\/imap\/tiles\/19\/145480\/211087.png",
 		"oF": 0,
 		"opt": 0
 		},
-	"\/wp-content\/themes\/carnes-crossroads-2015\/img\/imap\/tiles\/19\/145481\/313205.png": {
+	"\/wp-content\/themes\/carnes-crossroads-2015\/img\/imap\/tiles\/19\/145480\/211088.png": {
 		"ft": 32768,
-		"iS": 30376,
+		"iS": 37217,
 		"oA": 0,
-		"oAP": "\/wp-content\/themes\/carnes-crossroads-2015\/img\/imap\/tiles\/19\/145481\/313205.png",
+		"oAP": "\/wp-content\/themes\/carnes-crossroads-2015\/img\/imap\/tiles\/19\/145480\/211088.png",
 		"oF": 0,
 		"opt": 0
 		},
-	"\/wp-content\/themes\/carnes-crossroads-2015\/img\/imap\/tiles\/19\/145481\/313206.png": {
+	"\/wp-content\/themes\/carnes-crossroads-2015\/img\/imap\/tiles\/19\/145480\/211089.png": {
+		"ft": 32768,
+		"iS": 5802,
+		"oA": 0,
+		"oAP": "\/wp-content\/themes\/carnes-crossroads-2015\/img\/imap\/tiles\/19\/145480\/211089.png",
+		"oF": 0,
+		"opt": 0
+		},
+	"\/wp-content\/themes\/carnes-crossroads-2015\/img\/imap\/tiles\/19\/145481\/211080.png": {
+		"ft": 32768,
+		"iS": 4299,
+		"oA": 0,
+		"oAP": "\/wp-content\/themes\/carnes-crossroads-2015\/img\/imap\/tiles\/19\/145481\/211080.png",
+		"oF": 0,
+		"opt": 0
+		},
+	"\/wp-content\/themes\/carnes-crossroads-2015\/img\/imap\/tiles\/19\/145481\/211081.png": {
 		"ft": 32768,
 		"iS": 29586,
 		"oA": 0,
-		"oAP": "\/wp-content\/themes\/carnes-crossroads-2015\/img\/imap\/tiles\/19\/145481\/313206.png",
+		"oAP": "\/wp-content\/themes\/carnes-crossroads-2015\/img\/imap\/tiles\/19\/145481\/211081.png",
 		"oF": 0,
 		"opt": 0
 		},
-	"\/wp-content\/themes\/carnes-crossroads-2015\/img\/imap\/tiles\/19\/145481\/313207.png": {
+	"\/wp-content\/themes\/carnes-crossroads-2015\/img\/imap\/tiles\/19\/145481\/211082.png": {
 		"ft": 32768,
-		"iS": 4299,
+		"iS": 30376,
 		"oA": 0,
-		"oAP": "\/wp-content\/themes\/carnes-crossroads-2015\/img\/imap\/tiles\/19\/145481\/313207.png",
+		"oAP": "\/wp-content\/themes\/carnes-crossroads-2015\/img\/imap\/tiles\/19\/145481\/211082.png",
 		"oF": 0,
 		"opt": 0
 		},
-	"\/wp-content\/themes\/carnes-crossroads-2015\/img\/imap\/tiles\/19\/145482\/313198.png": {
+	"\/wp-content\/themes\/carnes-crossroads-2015\/img\/imap\/tiles\/19\/145481\/211083.png": {
 		"ft": 32768,
-		"iS": 14676,
+		"iS": 22183,
 		"oA": 0,
-		"oAP": "\/wp-content\/themes\/carnes-crossroads-2015\/img\/imap\/tiles\/19\/145482\/313198.png",
+		"oAP": "\/wp-content\/themes\/carnes-crossroads-2015\/img\/imap\/tiles\/19\/145481\/211083.png",
 		"oF": 0,
 		"opt": 0
 		},
-	"\/wp-content\/themes\/carnes-crossroads-2015\/img\/imap\/tiles\/19\/145482\/313199.png": {
+	"\/wp-content\/themes\/carnes-crossroads-2015\/img\/imap\/tiles\/19\/145481\/211084.png": {
 		"ft": 32768,
-		"iS": 33461,
+		"iS": 40246,
 		"oA": 0,
-		"oAP": "\/wp-content\/themes\/carnes-crossroads-2015\/img\/imap\/tiles\/19\/145482\/313199.png",
+		"oAP": "\/wp-content\/themes\/carnes-crossroads-2015\/img\/imap\/tiles\/19\/145481\/211084.png",
 		"oF": 0,
 		"opt": 0
 		},
-	"\/wp-content\/themes\/carnes-crossroads-2015\/img\/imap\/tiles\/19\/145482\/313200.png": {
+	"\/wp-content\/themes\/carnes-crossroads-2015\/img\/imap\/tiles\/19\/145481\/211085.png": {
 		"ft": 32768,
-		"iS": 31623,
+		"iS": 39923,
 		"oA": 0,
-		"oAP": "\/wp-content\/themes\/carnes-crossroads-2015\/img\/imap\/tiles\/19\/145482\/313200.png",
+		"oAP": "\/wp-content\/themes\/carnes-crossroads-2015\/img\/imap\/tiles\/19\/145481\/211085.png",
 		"oF": 0,
 		"opt": 0
 		},
-	"\/wp-content\/themes\/carnes-crossroads-2015\/img\/imap\/tiles\/19\/145482\/313201.png": {
+	"\/wp-content\/themes\/carnes-crossroads-2015\/img\/imap\/tiles\/19\/145481\/211086.png": {
 		"ft": 32768,
-		"iS": 33064,
+		"iS": 23824,
 		"oA": 0,
-		"oAP": "\/wp-content\/themes\/carnes-crossroads-2015\/img\/imap\/tiles\/19\/145482\/313201.png",
+		"oAP": "\/wp-content\/themes\/carnes-crossroads-2015\/img\/imap\/tiles\/19\/145481\/211086.png",
 		"oF": 0,
 		"opt": 0
 		},
-	"\/wp-content\/themes\/carnes-crossroads-2015\/img\/imap\/tiles\/19\/145482\/313202.png": {
+	"\/wp-content\/themes\/carnes-crossroads-2015\/img\/imap\/tiles\/19\/145481\/211087.png": {
 		"ft": 32768,
-		"iS": 40452,
+		"iS": 33123,
 		"oA": 0,
-		"oAP": "\/wp-content\/themes\/carnes-crossroads-2015\/img\/imap\/tiles\/19\/145482\/313202.png",
+		"oAP": "\/wp-content\/themes\/carnes-crossroads-2015\/img\/imap\/tiles\/19\/145481\/211087.png",
 		"oF": 0,
 		"opt": 0
 		},
-	"\/wp-content\/themes\/carnes-crossroads-2015\/img\/imap\/tiles\/19\/145482\/313203.png": {
+	"\/wp-content\/themes\/carnes-crossroads-2015\/img\/imap\/tiles\/19\/145481\/211088.png": {
 		"ft": 32768,
-		"iS": 39478,
+		"iS": 30608,
 		"oA": 0,
-		"oAP": "\/wp-content\/themes\/carnes-crossroads-2015\/img\/imap\/tiles\/19\/145482\/313203.png",
+		"oAP": "\/wp-content\/themes\/carnes-crossroads-2015\/img\/imap\/tiles\/19\/145481\/211088.png",
 		"oF": 0,
 		"opt": 0
 		},
-	"\/wp-content\/themes\/carnes-crossroads-2015\/img\/imap\/tiles\/19\/145482\/313204.png": {
+	"\/wp-content\/themes\/carnes-crossroads-2015\/img\/imap\/tiles\/19\/145481\/211089.png": {
 		"ft": 32768,
-		"iS": 30970,
+		"iS": 13762,
 		"oA": 0,
-		"oAP": "\/wp-content\/themes\/carnes-crossroads-2015\/img\/imap\/tiles\/19\/145482\/313204.png",
+		"oAP": "\/wp-content\/themes\/carnes-crossroads-2015\/img\/imap\/tiles\/19\/145481\/211089.png",
 		"oF": 0,
 		"opt": 0
 		},
-	"\/wp-content\/themes\/carnes-crossroads-2015\/img\/imap\/tiles\/19\/145482\/313205.png": {
-		"ft": 32768,
-		"iS": 35709,
-		"oA": 0,
-		"oAP": "\/wp-content\/themes\/carnes-crossroads-2015\/img\/imap\/tiles\/19\/145482\/313205.png",
-		"oF": 0,
-		"opt": 0
-		},
-	"\/wp-content\/themes\/carnes-crossroads-2015\/img\/imap\/tiles\/19\/145482\/313206.png": {
-		"ft": 32768,
-		"iS": 26137,
-		"oA": 0,
-		"oAP": "\/wp-content\/themes\/carnes-crossroads-2015\/img\/imap\/tiles\/19\/145482\/313206.png",
-		"oF": 0,
-		"opt": 0
-		},
-	"\/wp-content\/themes\/carnes-crossroads-2015\/img\/imap\/tiles\/19\/145482\/313207.png": {
+	"\/wp-content\/themes\/carnes-crossroads-2015\/img\/imap\/tiles\/19\/145482\/211080.png": {
 		"ft": 32768,
 		"iS": 3299,
 		"oA": 0,
-		"oAP": "\/wp-content\/themes\/carnes-crossroads-2015\/img\/imap\/tiles\/19\/145482\/313207.png",
+		"oAP": "\/wp-content\/themes\/carnes-crossroads-2015\/img\/imap\/tiles\/19\/145482\/211080.png",
 		"oF": 0,
 		"opt": 0
 		},
-	"\/wp-content\/themes\/carnes-crossroads-2015\/img\/imap\/tiles\/19\/145483\/313198.png": {
+	"\/wp-content\/themes\/carnes-crossroads-2015\/img\/imap\/tiles\/19\/145482\/211081.png": {
 		"ft": 32768,
-		"iS": 9801,
+		"iS": 26137,
 		"oA": 0,
-		"oAP": "\/wp-content\/themes\/carnes-crossroads-2015\/img\/imap\/tiles\/19\/145483\/313198.png",
+		"oAP": "\/wp-content\/themes\/carnes-crossroads-2015\/img\/imap\/tiles\/19\/145482\/211081.png",
 		"oF": 0,
 		"opt": 0
 		},
-	"\/wp-content\/themes\/carnes-crossroads-2015\/img\/imap\/tiles\/19\/145483\/313199.png": {
+	"\/wp-content\/themes\/carnes-crossroads-2015\/img\/imap\/tiles\/19\/145482\/211082.png": {
 		"ft": 32768,
-		"iS": 30433,
+		"iS": 35709,
 		"oA": 0,
-		"oAP": "\/wp-content\/themes\/carnes-crossroads-2015\/img\/imap\/tiles\/19\/145483\/313199.png",
+		"oAP": "\/wp-content\/themes\/carnes-crossroads-2015\/img\/imap\/tiles\/19\/145482\/211082.png",
 		"oF": 0,
 		"opt": 0
 		},
-	"\/wp-content\/themes\/carnes-crossroads-2015\/img\/imap\/tiles\/19\/145483\/313200.png": {
+	"\/wp-content\/themes\/carnes-crossroads-2015\/img\/imap\/tiles\/19\/145482\/211083.png": {
 		"ft": 32768,
-		"iS": 44526,
+		"iS": 30970,
 		"oA": 0,
-		"oAP": "\/wp-content\/themes\/carnes-crossroads-2015\/img\/imap\/tiles\/19\/145483\/313200.png",
+		"oAP": "\/wp-content\/themes\/carnes-crossroads-2015\/img\/imap\/tiles\/19\/145482\/211083.png",
 		"oF": 0,
 		"opt": 0
 		},
-	"\/wp-content\/themes\/carnes-crossroads-2015\/img\/imap\/tiles\/19\/145483\/313201.png": {
+	"\/wp-content\/themes\/carnes-crossroads-2015\/img\/imap\/tiles\/19\/145482\/211084.png": {
 		"ft": 32768,
-		"iS": 35108,
+		"iS": 39478,
 		"oA": 0,
-		"oAP": "\/wp-content\/themes\/carnes-crossroads-2015\/img\/imap\/tiles\/19\/145483\/313201.png",
+		"oAP": "\/wp-content\/themes\/carnes-crossroads-2015\/img\/imap\/tiles\/19\/145482\/211084.png",
 		"oF": 0,
 		"opt": 0
 		},
-	"\/wp-content\/themes\/carnes-crossroads-2015\/img\/imap\/tiles\/19\/145483\/313202.png": {
+	"\/wp-content\/themes\/carnes-crossroads-2015\/img\/imap\/tiles\/19\/145482\/211085.png": {
 		"ft": 32768,
-		"iS": 36913,
+		"iS": 40452,
 		"oA": 0,
-		"oAP": "\/wp-content\/themes\/carnes-crossroads-2015\/img\/imap\/tiles\/19\/145483\/313202.png",
+		"oAP": "\/wp-content\/themes\/carnes-crossroads-2015\/img\/imap\/tiles\/19\/145482\/211085.png",
 		"oF": 0,
 		"opt": 0
 		},
-	"\/wp-content\/themes\/carnes-crossroads-2015\/img\/imap\/tiles\/19\/145483\/313203.png": {
+	"\/wp-content\/themes\/carnes-crossroads-2015\/img\/imap\/tiles\/19\/145482\/211086.png": {
 		"ft": 32768,
-		"iS": 38861,
+		"iS": 33064,
 		"oA": 0,
-		"oAP": "\/wp-content\/themes\/carnes-crossroads-2015\/img\/imap\/tiles\/19\/145483\/313203.png",
+		"oAP": "\/wp-content\/themes\/carnes-crossroads-2015\/img\/imap\/tiles\/19\/145482\/211086.png",
 		"oF": 0,
 		"opt": 0
 		},
-	"\/wp-content\/themes\/carnes-crossroads-2015\/img\/imap\/tiles\/19\/145483\/313204.png": {
+	"\/wp-content\/themes\/carnes-crossroads-2015\/img\/imap\/tiles\/19\/145482\/211087.png": {
 		"ft": 32768,
-		"iS": 30798,
+		"iS": 31623,
 		"oA": 0,
-		"oAP": "\/wp-content\/themes\/carnes-crossroads-2015\/img\/imap\/tiles\/19\/145483\/313204.png",
+		"oAP": "\/wp-content\/themes\/carnes-crossroads-2015\/img\/imap\/tiles\/19\/145482\/211087.png",
 		"oF": 0,
 		"opt": 0
 		},
-	"\/wp-content\/themes\/carnes-crossroads-2015\/img\/imap\/tiles\/19\/145483\/313205.png": {
+	"\/wp-content\/themes\/carnes-crossroads-2015\/img\/imap\/tiles\/19\/145482\/211088.png": {
 		"ft": 32768,
-		"iS": 28652,
+		"iS": 33461,
 		"oA": 0,
-		"oAP": "\/wp-content\/themes\/carnes-crossroads-2015\/img\/imap\/tiles\/19\/145483\/313205.png",
+		"oAP": "\/wp-content\/themes\/carnes-crossroads-2015\/img\/imap\/tiles\/19\/145482\/211088.png",
 		"oF": 0,
 		"opt": 0
 		},
-	"\/wp-content\/themes\/carnes-crossroads-2015\/img\/imap\/tiles\/19\/145483\/313206.png": {
+	"\/wp-content\/themes\/carnes-crossroads-2015\/img\/imap\/tiles\/19\/145482\/211089.png": {
 		"ft": 32768,
-		"iS": 36315,
+		"iS": 14676,
 		"oA": 0,
-		"oAP": "\/wp-content\/themes\/carnes-crossroads-2015\/img\/imap\/tiles\/19\/145483\/313206.png",
+		"oAP": "\/wp-content\/themes\/carnes-crossroads-2015\/img\/imap\/tiles\/19\/145482\/211089.png",
 		"oF": 0,
 		"opt": 0
 		},
-	"\/wp-content\/themes\/carnes-crossroads-2015\/img\/imap\/tiles\/19\/145483\/313207.png": {
+	"\/wp-content\/themes\/carnes-crossroads-2015\/img\/imap\/tiles\/19\/145483\/211080.png": {
 		"ft": 32768,
 		"iS": 15050,
 		"oA": 0,
-		"oAP": "\/wp-content\/themes\/carnes-crossroads-2015\/img\/imap\/tiles\/19\/145483\/313207.png",
+		"oAP": "\/wp-content\/themes\/carnes-crossroads-2015\/img\/imap\/tiles\/19\/145483\/211080.png",
 		"oF": 0,
 		"opt": 0
 		},
-	"\/wp-content\/themes\/carnes-crossroads-2015\/img\/imap\/tiles\/19\/145484\/313198.png": {
+	"\/wp-content\/themes\/carnes-crossroads-2015\/img\/imap\/tiles\/19\/145483\/211081.png": {
 		"ft": 32768,
-		"iS": 22368,
+		"iS": 36315,
 		"oA": 0,
-		"oAP": "\/wp-content\/themes\/carnes-crossroads-2015\/img\/imap\/tiles\/19\/145484\/313198.png",
+		"oAP": "\/wp-content\/themes\/carnes-crossroads-2015\/img\/imap\/tiles\/19\/145483\/211081.png",
 		"oF": 0,
 		"opt": 0
 		},
-	"\/wp-content\/themes\/carnes-crossroads-2015\/img\/imap\/tiles\/19\/145484\/313199.png": {
+	"\/wp-content\/themes\/carnes-crossroads-2015\/img\/imap\/tiles\/19\/145483\/211082.png": {
 		"ft": 32768,
-		"iS": 34929,
+		"iS": 28652,
 		"oA": 0,
-		"oAP": "\/wp-content\/themes\/carnes-crossroads-2015\/img\/imap\/tiles\/19\/145484\/313199.png",
+		"oAP": "\/wp-content\/themes\/carnes-crossroads-2015\/img\/imap\/tiles\/19\/145483\/211082.png",
 		"oF": 0,
 		"opt": 0
 		},
-	"\/wp-content\/themes\/carnes-crossroads-2015\/img\/imap\/tiles\/19\/145484\/313200.png": {
+	"\/wp-content\/themes\/carnes-crossroads-2015\/img\/imap\/tiles\/19\/145483\/211083.png": {
 		"ft": 32768,
-		"iS": 45839,
+		"iS": 30798,
 		"oA": 0,
-		"oAP": "\/wp-content\/themes\/carnes-crossroads-2015\/img\/imap\/tiles\/19\/145484\/313200.png",
+		"oAP": "\/wp-content\/themes\/carnes-crossroads-2015\/img\/imap\/tiles\/19\/145483\/211083.png",
 		"oF": 0,
 		"opt": 0
 		},
-	"\/wp-content\/themes\/carnes-crossroads-2015\/img\/imap\/tiles\/19\/145484\/313201.png": {
+	"\/wp-content\/themes\/carnes-crossroads-2015\/img\/imap\/tiles\/19\/145483\/211084.png": {
 		"ft": 32768,
-		"iS": 38415,
+		"iS": 38861,
 		"oA": 0,
-		"oAP": "\/wp-content\/themes\/carnes-crossroads-2015\/img\/imap\/tiles\/19\/145484\/313201.png",
+		"oAP": "\/wp-content\/themes\/carnes-crossroads-2015\/img\/imap\/tiles\/19\/145483\/211084.png",
 		"oF": 0,
 		"opt": 0
 		},
-	"\/wp-content\/themes\/carnes-crossroads-2015\/img\/imap\/tiles\/19\/145484\/313202.png": {
+	"\/wp-content\/themes\/carnes-crossroads-2015\/img\/imap\/tiles\/19\/145483\/211085.png": {
 		"ft": 32768,
-		"iS": 34848,
+		"iS": 36913,
 		"oA": 0,
-		"oAP": "\/wp-content\/themes\/carnes-crossroads-2015\/img\/imap\/tiles\/19\/145484\/313202.png",
+		"oAP": "\/wp-content\/themes\/carnes-crossroads-2015\/img\/imap\/tiles\/19\/145483\/211085.png",
 		"oF": 0,
 		"opt": 0
 		},
-	"\/wp-content\/themes\/carnes-crossroads-2015\/img\/imap\/tiles\/19\/145484\/313203.png": {
+	"\/wp-content\/themes\/carnes-crossroads-2015\/img\/imap\/tiles\/19\/145483\/211086.png": {
 		"ft": 32768,
-		"iS": 35461,
+		"iS": 35108,
 		"oA": 0,
-		"oAP": "\/wp-content\/themes\/carnes-crossroads-2015\/img\/imap\/tiles\/19\/145484\/313203.png",
+		"oAP": "\/wp-content\/themes\/carnes-crossroads-2015\/img\/imap\/tiles\/19\/145483\/211086.png",
 		"oF": 0,
 		"opt": 0
 		},
-	"\/wp-content\/themes\/carnes-crossroads-2015\/img\/imap\/tiles\/19\/145484\/313204.png": {
+	"\/wp-content\/themes\/carnes-crossroads-2015\/img\/imap\/tiles\/19\/145483\/211087.png": {
 		"ft": 32768,
-		"iS": 25394,
+		"iS": 44526,
 		"oA": 0,
-		"oAP": "\/wp-content\/themes\/carnes-crossroads-2015\/img\/imap\/tiles\/19\/145484\/313204.png",
+		"oAP": "\/wp-content\/themes\/carnes-crossroads-2015\/img\/imap\/tiles\/19\/145483\/211087.png",
 		"oF": 0,
 		"opt": 0
 		},
-	"\/wp-content\/themes\/carnes-crossroads-2015\/img\/imap\/tiles\/19\/145484\/313205.png": {
+	"\/wp-content\/themes\/carnes-crossroads-2015\/img\/imap\/tiles\/19\/145483\/211088.png": {
 		"ft": 32768,
-		"iS": 27938,
+		"iS": 30433,
 		"oA": 0,
-		"oAP": "\/wp-content\/themes\/carnes-crossroads-2015\/img\/imap\/tiles\/19\/145484\/313205.png",
+		"oAP": "\/wp-content\/themes\/carnes-crossroads-2015\/img\/imap\/tiles\/19\/145483\/211088.png",
 		"oF": 0,
 		"opt": 0
 		},
-	"\/wp-content\/themes\/carnes-crossroads-2015\/img\/imap\/tiles\/19\/145484\/313206.png": {
+	"\/wp-content\/themes\/carnes-crossroads-2015\/img\/imap\/tiles\/19\/145483\/211089.png": {
 		"ft": 32768,
-		"iS": 27463,
+		"iS": 9801,
 		"oA": 0,
-		"oAP": "\/wp-content\/themes\/carnes-crossroads-2015\/img\/imap\/tiles\/19\/145484\/313206.png",
+		"oAP": "\/wp-content\/themes\/carnes-crossroads-2015\/img\/imap\/tiles\/19\/145483\/211089.png",
 		"oF": 0,
 		"opt": 0
 		},
-	"\/wp-content\/themes\/carnes-crossroads-2015\/img\/imap\/tiles\/19\/145484\/313207.png": {
+	"\/wp-content\/themes\/carnes-crossroads-2015\/img\/imap\/tiles\/19\/145484\/211080.png": {
 		"ft": 32768,
 		"iS": 3669,
 		"oA": 0,
-		"oAP": "\/wp-content\/themes\/carnes-crossroads-2015\/img\/imap\/tiles\/19\/145484\/313207.png",
+		"oAP": "\/wp-content\/themes\/carnes-crossroads-2015\/img\/imap\/tiles\/19\/145484\/211080.png",
 		"oF": 0,
 		"opt": 0
 		},
-	"\/wp-content\/themes\/carnes-crossroads-2015\/img\/imap\/tiles\/19\/145485\/313198.png": {
+	"\/wp-content\/themes\/carnes-crossroads-2015\/img\/imap\/tiles\/19\/145484\/211081.png": {
 		"ft": 32768,
-		"iS": 18193,
+		"iS": 27463,
 		"oA": 0,
-		"oAP": "\/wp-content\/themes\/carnes-crossroads-2015\/img\/imap\/tiles\/19\/145485\/313198.png",
+		"oAP": "\/wp-content\/themes\/carnes-crossroads-2015\/img\/imap\/tiles\/19\/145484\/211081.png",
 		"oF": 0,
 		"opt": 0
 		},
-	"\/wp-content\/themes\/carnes-crossroads-2015\/img\/imap\/tiles\/19\/145485\/313199.png": {
+	"\/wp-content\/themes\/carnes-crossroads-2015\/img\/imap\/tiles\/19\/145484\/211082.png": {
 		"ft": 32768,
-		"iS": 44474,
+		"iS": 27938,
 		"oA": 0,
-		"oAP": "\/wp-content\/themes\/carnes-crossroads-2015\/img\/imap\/tiles\/19\/145485\/313199.png",
+		"oAP": "\/wp-content\/themes\/carnes-crossroads-2015\/img\/imap\/tiles\/19\/145484\/211082.png",
 		"oF": 0,
 		"opt": 0
 		},
-	"\/wp-content\/themes\/carnes-crossroads-2015\/img\/imap\/tiles\/19\/145485\/313200.png": {
+	"\/wp-content\/themes\/carnes-crossroads-2015\/img\/imap\/tiles\/19\/145484\/211083.png": {
 		"ft": 32768,
-		"iS": 33996,
+		"iS": 25394,
 		"oA": 0,
-		"oAP": "\/wp-content\/themes\/carnes-crossroads-2015\/img\/imap\/tiles\/19\/145485\/313200.png",
+		"oAP": "\/wp-content\/themes\/carnes-crossroads-2015\/img\/imap\/tiles\/19\/145484\/211083.png",
 		"oF": 0,
 		"opt": 0
 		},
-	"\/wp-content\/themes\/carnes-crossroads-2015\/img\/imap\/tiles\/19\/145485\/313201.png": {
+	"\/wp-content\/themes\/carnes-crossroads-2015\/img\/imap\/tiles\/19\/145484\/211084.png": {
 		"ft": 32768,
-		"iS": 21444,
+		"iS": 35461,
 		"oA": 0,
-		"oAP": "\/wp-content\/themes\/carnes-crossroads-2015\/img\/imap\/tiles\/19\/145485\/313201.png",
+		"oAP": "\/wp-content\/themes\/carnes-crossroads-2015\/img\/imap\/tiles\/19\/145484\/211084.png",
 		"oF": 0,
 		"opt": 0
 		},
-	"\/wp-content\/themes\/carnes-crossroads-2015\/img\/imap\/tiles\/19\/145485\/313202.png": {
+	"\/wp-content\/themes\/carnes-crossroads-2015\/img\/imap\/tiles\/19\/145484\/211085.png": {
 		"ft": 32768,
-		"iS": 49934,
+		"iS": 34848,
 		"oA": 0,
-		"oAP": "\/wp-content\/themes\/carnes-crossroads-2015\/img\/imap\/tiles\/19\/145485\/313202.png",
+		"oAP": "\/wp-content\/themes\/carnes-crossroads-2015\/img\/imap\/tiles\/19\/145484\/211085.png",
 		"oF": 0,
 		"opt": 0
 		},
-	"\/wp-content\/themes\/carnes-crossroads-2015\/img\/imap\/tiles\/19\/145485\/313203.png": {
+	"\/wp-content\/themes\/carnes-crossroads-2015\/img\/imap\/tiles\/19\/145484\/211086.png": {
 		"ft": 32768,
-		"iS": 54886,
+		"iS": 38415,
 		"oA": 0,
-		"oAP": "\/wp-content\/themes\/carnes-crossroads-2015\/img\/imap\/tiles\/19\/145485\/313203.png",
+		"oAP": "\/wp-content\/themes\/carnes-crossroads-2015\/img\/imap\/tiles\/19\/145484\/211086.png",
 		"oF": 0,
 		"opt": 0
 		},
-	"\/wp-content\/themes\/carnes-crossroads-2015\/img\/imap\/tiles\/19\/145485\/313204.png": {
+	"\/wp-content\/themes\/carnes-crossroads-2015\/img\/imap\/tiles\/19\/145484\/211087.png": {
 		"ft": 32768,
-		"iS": 36723,
+		"iS": 45839,
 		"oA": 0,
-		"oAP": "\/wp-content\/themes\/carnes-crossroads-2015\/img\/imap\/tiles\/19\/145485\/313204.png",
+		"oAP": "\/wp-content\/themes\/carnes-crossroads-2015\/img\/imap\/tiles\/19\/145484\/211087.png",
 		"oF": 0,
 		"opt": 0
 		},
-	"\/wp-content\/themes\/carnes-crossroads-2015\/img\/imap\/tiles\/19\/145485\/313205.png": {
+	"\/wp-content\/themes\/carnes-crossroads-2015\/img\/imap\/tiles\/19\/145484\/211088.png": {
 		"ft": 32768,
-		"iS": 35405,
+		"iS": 34929,
 		"oA": 0,
-		"oAP": "\/wp-content\/themes\/carnes-crossroads-2015\/img\/imap\/tiles\/19\/145485\/313205.png",
+		"oAP": "\/wp-content\/themes\/carnes-crossroads-2015\/img\/imap\/tiles\/19\/145484\/211088.png",
 		"oF": 0,
 		"opt": 0
 		},
-	"\/wp-content\/themes\/carnes-crossroads-2015\/img\/imap\/tiles\/19\/145485\/313206.png": {
+	"\/wp-content\/themes\/carnes-crossroads-2015\/img\/imap\/tiles\/19\/145484\/211089.png": {
 		"ft": 32768,
-		"iS": 29878,
+		"iS": 22368,
 		"oA": 0,
-		"oAP": "\/wp-content\/themes\/carnes-crossroads-2015\/img\/imap\/tiles\/19\/145485\/313206.png",
+		"oAP": "\/wp-content\/themes\/carnes-crossroads-2015\/img\/imap\/tiles\/19\/145484\/211089.png",
 		"oF": 0,
 		"opt": 0
 		},
-	"\/wp-content\/themes\/carnes-crossroads-2015\/img\/imap\/tiles\/19\/145485\/313207.png": {
+	"\/wp-content\/themes\/carnes-crossroads-2015\/img\/imap\/tiles\/19\/145485\/211080.png": {
 		"ft": 32768,
 		"iS": 4600,
 		"oA": 0,
-		"oAP": "\/wp-content\/themes\/carnes-crossroads-2015\/img\/imap\/tiles\/19\/145485\/313207.png",
+		"oAP": "\/wp-content\/themes\/carnes-crossroads-2015\/img\/imap\/tiles\/19\/145485\/211080.png",
 		"oF": 0,
 		"opt": 0
 		},
-	"\/wp-content\/themes\/carnes-crossroads-2015\/img\/imap\/tiles\/19\/145486\/313198.png": {
+	"\/wp-content\/themes\/carnes-crossroads-2015\/img\/imap\/tiles\/19\/145485\/211081.png": {
 		"ft": 32768,
-		"iS": 14221,
+		"iS": 29878,
 		"oA": 0,
-		"oAP": "\/wp-content\/themes\/carnes-crossroads-2015\/img\/imap\/tiles\/19\/145486\/313198.png",
+		"oAP": "\/wp-content\/themes\/carnes-crossroads-2015\/img\/imap\/tiles\/19\/145485\/211081.png",
 		"oF": 0,
 		"opt": 0
 		},
-	"\/wp-content\/themes\/carnes-crossroads-2015\/img\/imap\/tiles\/19\/145486\/313199.png": {
+	"\/wp-content\/themes\/carnes-crossroads-2015\/img\/imap\/tiles\/19\/145485\/211082.png": {
 		"ft": 32768,
-		"iS": 57936,
+		"iS": 35405,
 		"oA": 0,
-		"oAP": "\/wp-content\/themes\/carnes-crossroads-2015\/img\/imap\/tiles\/19\/145486\/313199.png",
+		"oAP": "\/wp-content\/themes\/carnes-crossroads-2015\/img\/imap\/tiles\/19\/145485\/211082.png",
 		"oF": 0,
 		"opt": 0
 		},
-	"\/wp-content\/themes\/carnes-crossroads-2015\/img\/imap\/tiles\/19\/145486\/313200.png": {
+	"\/wp-content\/themes\/carnes-crossroads-2015\/img\/imap\/tiles\/19\/145485\/211083.png": {
 		"ft": 32768,
-		"iS": 32191,
+		"iS": 36723,
 		"oA": 0,
-		"oAP": "\/wp-content\/themes\/carnes-crossroads-2015\/img\/imap\/tiles\/19\/145486\/313200.png",
+		"oAP": "\/wp-content\/themes\/carnes-crossroads-2015\/img\/imap\/tiles\/19\/145485\/211083.png",
 		"oF": 0,
 		"opt": 0
 		},
-	"\/wp-content\/themes\/carnes-crossroads-2015\/img\/imap\/tiles\/19\/145486\/313201.png": {
+	"\/wp-content\/themes\/carnes-crossroads-2015\/img\/imap\/tiles\/19\/145485\/211084.png": {
 		"ft": 32768,
-		"iS": 36309,
+		"iS": 54886,
 		"oA": 0,
-		"oAP": "\/wp-content\/themes\/carnes-crossroads-2015\/img\/imap\/tiles\/19\/145486\/313201.png",
+		"oAP": "\/wp-content\/themes\/carnes-crossroads-2015\/img\/imap\/tiles\/19\/145485\/211084.png",
 		"oF": 0,
 		"opt": 0
 		},
-	"\/wp-content\/themes\/carnes-crossroads-2015\/img\/imap\/tiles\/19\/145486\/313202.png": {
+	"\/wp-content\/themes\/carnes-crossroads-2015\/img\/imap\/tiles\/19\/145485\/211085.png": {
 		"ft": 32768,
-		"iS": 49592,
+		"iS": 49934,
 		"oA": 0,
-		"oAP": "\/wp-content\/themes\/carnes-crossroads-2015\/img\/imap\/tiles\/19\/145486\/313202.png",
+		"oAP": "\/wp-content\/themes\/carnes-crossroads-2015\/img\/imap\/tiles\/19\/145485\/211085.png",
 		"oF": 0,
 		"opt": 0
 		},
-	"\/wp-content\/themes\/carnes-crossroads-2015\/img\/imap\/tiles\/19\/145486\/313203.png": {
+	"\/wp-content\/themes\/carnes-crossroads-2015\/img\/imap\/tiles\/19\/145485\/211086.png": {
 		"ft": 32768,
-		"iS": 52582,
+		"iS": 21444,
 		"oA": 0,
-		"oAP": "\/wp-content\/themes\/carnes-crossroads-2015\/img\/imap\/tiles\/19\/145486\/313203.png",
+		"oAP": "\/wp-content\/themes\/carnes-crossroads-2015\/img\/imap\/tiles\/19\/145485\/211086.png",
 		"oF": 0,
 		"opt": 0
 		},
-	"\/wp-content\/themes\/carnes-crossroads-2015\/img\/imap\/tiles\/19\/145486\/313204.png": {
+	"\/wp-content\/themes\/carnes-crossroads-2015\/img\/imap\/tiles\/19\/145485\/211087.png": {
 		"ft": 32768,
-		"iS": 55295,
+		"iS": 33996,
 		"oA": 0,
-		"oAP": "\/wp-content\/themes\/carnes-crossroads-2015\/img\/imap\/tiles\/19\/145486\/313204.png",
+		"oAP": "\/wp-content\/themes\/carnes-crossroads-2015\/img\/imap\/tiles\/19\/145485\/211087.png",
 		"oF": 0,
 		"opt": 0
 		},
-	"\/wp-content\/themes\/carnes-crossroads-2015\/img\/imap\/tiles\/19\/145486\/313205.png": {
+	"\/wp-content\/themes\/carnes-crossroads-2015\/img\/imap\/tiles\/19\/145485\/211088.png": {
 		"ft": 32768,
-		"iS": 36848,
+		"iS": 44474,
 		"oA": 0,
-		"oAP": "\/wp-content\/themes\/carnes-crossroads-2015\/img\/imap\/tiles\/19\/145486\/313205.png",
+		"oAP": "\/wp-content\/themes\/carnes-crossroads-2015\/img\/imap\/tiles\/19\/145485\/211088.png",
 		"oF": 0,
 		"opt": 0
 		},
-	"\/wp-content\/themes\/carnes-crossroads-2015\/img\/imap\/tiles\/19\/145486\/313206.png": {
+	"\/wp-content\/themes\/carnes-crossroads-2015\/img\/imap\/tiles\/19\/145485\/211089.png": {
 		"ft": 32768,
-		"iS": 24266,
+		"iS": 18193,
 		"oA": 0,
-		"oAP": "\/wp-content\/themes\/carnes-crossroads-2015\/img\/imap\/tiles\/19\/145486\/313206.png",
+		"oAP": "\/wp-content\/themes\/carnes-crossroads-2015\/img\/imap\/tiles\/19\/145485\/211089.png",
 		"oF": 0,
 		"opt": 0
 		},
-	"\/wp-content\/themes\/carnes-crossroads-2015\/img\/imap\/tiles\/19\/145486\/313207.png": {
+	"\/wp-content\/themes\/carnes-crossroads-2015\/img\/imap\/tiles\/19\/145486\/211080.png": {
 		"ft": 32768,
 		"iS": 7930,
 		"oA": 0,
-		"oAP": "\/wp-content\/themes\/carnes-crossroads-2015\/img\/imap\/tiles\/19\/145486\/313207.png",
+		"oAP": "\/wp-content\/themes\/carnes-crossroads-2015\/img\/imap\/tiles\/19\/145486\/211080.png",
 		"oF": 0,
 		"opt": 0
 		},
-	"\/wp-content\/themes\/carnes-crossroads-2015\/img\/imap\/tiles\/19\/145487\/313198.png": {
+	"\/wp-content\/themes\/carnes-crossroads-2015\/img\/imap\/tiles\/19\/145486\/211081.png": {
 		"ft": 32768,
-		"iS": 14594,
+		"iS": 24266,
 		"oA": 0,
-		"oAP": "\/wp-content\/themes\/carnes-crossroads-2015\/img\/imap\/tiles\/19\/145487\/313198.png",
+		"oAP": "\/wp-content\/themes\/carnes-crossroads-2015\/img\/imap\/tiles\/19\/145486\/211081.png",
 		"oF": 0,
 		"opt": 0
 		},
-	"\/wp-content\/themes\/carnes-crossroads-2015\/img\/imap\/tiles\/19\/145487\/313199.png": {
+	"\/wp-content\/themes\/carnes-crossroads-2015\/img\/imap\/tiles\/19\/145486\/211082.png": {
 		"ft": 32768,
-		"iS": 27369,
+		"iS": 36848,
 		"oA": 0,
-		"oAP": "\/wp-content\/themes\/carnes-crossroads-2015\/img\/imap\/tiles\/19\/145487\/313199.png",
+		"oAP": "\/wp-content\/themes\/carnes-crossroads-2015\/img\/imap\/tiles\/19\/145486\/211082.png",
 		"oF": 0,
 		"opt": 0
 		},
-	"\/wp-content\/themes\/carnes-crossroads-2015\/img\/imap\/tiles\/19\/145487\/313200.png": {
+	"\/wp-content\/themes\/carnes-crossroads-2015\/img\/imap\/tiles\/19\/145486\/211083.png": {
 		"ft": 32768,
-		"iS": 19205,
+		"iS": 55295,
 		"oA": 0,
-		"oAP": "\/wp-content\/themes\/carnes-crossroads-2015\/img\/imap\/tiles\/19\/145487\/313200.png",
+		"oAP": "\/wp-content\/themes\/carnes-crossroads-2015\/img\/imap\/tiles\/19\/145486\/211083.png",
 		"oF": 0,
 		"opt": 0
 		},
-	"\/wp-content\/themes\/carnes-crossroads-2015\/img\/imap\/tiles\/19\/145487\/313201.png": {
+	"\/wp-content\/themes\/carnes-crossroads-2015\/img\/imap\/tiles\/19\/145486\/211084.png": {
 		"ft": 32768,
-		"iS": 9518,
+		"iS": 52582,
 		"oA": 0,
-		"oAP": "\/wp-content\/themes\/carnes-crossroads-2015\/img\/imap\/tiles\/19\/145487\/313201.png",
+		"oAP": "\/wp-content\/themes\/carnes-crossroads-2015\/img\/imap\/tiles\/19\/145486\/211084.png",
 		"oF": 0,
 		"opt": 0
 		},
-	"\/wp-content\/themes\/carnes-crossroads-2015\/img\/imap\/tiles\/19\/145487\/313202.png": {
+	"\/wp-content\/themes\/carnes-crossroads-2015\/img\/imap\/tiles\/19\/145486\/211085.png": {
 		"ft": 32768,
-		"iS": 21051,
+		"iS": 49592,
 		"oA": 0,
-		"oAP": "\/wp-content\/themes\/carnes-crossroads-2015\/img\/imap\/tiles\/19\/145487\/313202.png",
+		"oAP": "\/wp-content\/themes\/carnes-crossroads-2015\/img\/imap\/tiles\/19\/145486\/211085.png",
 		"oF": 0,
 		"opt": 0
 		},
-	"\/wp-content\/themes\/carnes-crossroads-2015\/img\/imap\/tiles\/19\/145487\/313203.png": {
+	"\/wp-content\/themes\/carnes-crossroads-2015\/img\/imap\/tiles\/19\/145486\/211086.png": {
 		"ft": 32768,
-		"iS": 33693,
+		"iS": 36309,
 		"oA": 0,
-		"oAP": "\/wp-content\/themes\/carnes-crossroads-2015\/img\/imap\/tiles\/19\/145487\/313203.png",
+		"oAP": "\/wp-content\/themes\/carnes-crossroads-2015\/img\/imap\/tiles\/19\/145486\/211086.png",
 		"oF": 0,
 		"opt": 0
 		},
-	"\/wp-content\/themes\/carnes-crossroads-2015\/img\/imap\/tiles\/19\/145487\/313204.png": {
+	"\/wp-content\/themes\/carnes-crossroads-2015\/img\/imap\/tiles\/19\/145486\/211087.png": {
 		"ft": 32768,
-		"iS": 55352,
+		"iS": 32191,
 		"oA": 0,
-		"oAP": "\/wp-content\/themes\/carnes-crossroads-2015\/img\/imap\/tiles\/19\/145487\/313204.png",
+		"oAP": "\/wp-content\/themes\/carnes-crossroads-2015\/img\/imap\/tiles\/19\/145486\/211087.png",
 		"oF": 0,
 		"opt": 0
 		},
-	"\/wp-content\/themes\/carnes-crossroads-2015\/img\/imap\/tiles\/19\/145487\/313205.png": {
+	"\/wp-content\/themes\/carnes-crossroads-2015\/img\/imap\/tiles\/19\/145486\/211088.png": {
 		"ft": 32768,
-		"iS": 34595,
+		"iS": 57936,
 		"oA": 0,
-		"oAP": "\/wp-content\/themes\/carnes-crossroads-2015\/img\/imap\/tiles\/19\/145487\/313205.png",
+		"oAP": "\/wp-content\/themes\/carnes-crossroads-2015\/img\/imap\/tiles\/19\/145486\/211088.png",
 		"oF": 0,
 		"opt": 0
 		},
-	"\/wp-content\/themes\/carnes-crossroads-2015\/img\/imap\/tiles\/19\/145487\/313206.png": {
+	"\/wp-content\/themes\/carnes-crossroads-2015\/img\/imap\/tiles\/19\/145486\/211089.png": {
 		"ft": 32768,
-		"iS": 20003,
+		"iS": 14221,
 		"oA": 0,
-		"oAP": "\/wp-content\/themes\/carnes-crossroads-2015\/img\/imap\/tiles\/19\/145487\/313206.png",
+		"oAP": "\/wp-content\/themes\/carnes-crossroads-2015\/img\/imap\/tiles\/19\/145486\/211089.png",
 		"oF": 0,
 		"opt": 0
 		},
-	"\/wp-content\/themes\/carnes-crossroads-2015\/img\/imap\/tiles\/19\/145487\/313207.png": {
+	"\/wp-content\/themes\/carnes-crossroads-2015\/img\/imap\/tiles\/19\/145487\/211080.png": {
 		"ft": 32768,
 		"iS": 4462,
 		"oA": 0,
-		"oAP": "\/wp-content\/themes\/carnes-crossroads-2015\/img\/imap\/tiles\/19\/145487\/313207.png",
+		"oAP": "\/wp-content\/themes\/carnes-crossroads-2015\/img\/imap\/tiles\/19\/145487\/211080.png",
 		"oF": 0,
 		"opt": 0
 		},
-	"\/wp-content\/themes\/carnes-crossroads-2015\/img\/imap\/tiles\/19\/145488\/313198.png": {
+	"\/wp-content\/themes\/carnes-crossroads-2015\/img\/imap\/tiles\/19\/145487\/211081.png": {
 		"ft": 32768,
-		"iS": 6501,
+		"iS": 20003,
 		"oA": 0,
-		"oAP": "\/wp-content\/themes\/carnes-crossroads-2015\/img\/imap\/tiles\/19\/145488\/313198.png",
+		"oAP": "\/wp-content\/themes\/carnes-crossroads-2015\/img\/imap\/tiles\/19\/145487\/211081.png",
 		"oF": 0,
 		"opt": 0
 		},
-	"\/wp-content\/themes\/carnes-crossroads-2015\/img\/imap\/tiles\/19\/145488\/313199.png": {
+	"\/wp-content\/themes\/carnes-crossroads-2015\/img\/imap\/tiles\/19\/145487\/211082.png": {
 		"ft": 32768,
-		"iS": 17109,
+		"iS": 34595,
 		"oA": 0,
-		"oAP": "\/wp-content\/themes\/carnes-crossroads-2015\/img\/imap\/tiles\/19\/145488\/313199.png",
+		"oAP": "\/wp-content\/themes\/carnes-crossroads-2015\/img\/imap\/tiles\/19\/145487\/211082.png",
 		"oF": 0,
 		"opt": 0
 		},
-	"\/wp-content\/themes\/carnes-crossroads-2015\/img\/imap\/tiles\/19\/145488\/313200.png": {
+	"\/wp-content\/themes\/carnes-crossroads-2015\/img\/imap\/tiles\/19\/145487\/211083.png": {
 		"ft": 32768,
-		"iS": 5143,
+		"iS": 55352,
 		"oA": 0,
-		"oAP": "\/wp-content\/themes\/carnes-crossroads-2015\/img\/imap\/tiles\/19\/145488\/313200.png",
+		"oAP": "\/wp-content\/themes\/carnes-crossroads-2015\/img\/imap\/tiles\/19\/145487\/211083.png",
 		"oF": 0,
 		"opt": 0
 		},
-	"\/wp-content\/themes\/carnes-crossroads-2015\/img\/imap\/tiles\/19\/145488\/313201.png": {
+	"\/wp-content\/themes\/carnes-crossroads-2015\/img\/imap\/tiles\/19\/145487\/211084.png": {
 		"ft": 32768,
-		"iS": 22100,
+		"iS": 33693,
 		"oA": 0,
-		"oAP": "\/wp-content\/themes\/carnes-crossroads-2015\/img\/imap\/tiles\/19\/145488\/313201.png",
+		"oAP": "\/wp-content\/themes\/carnes-crossroads-2015\/img\/imap\/tiles\/19\/145487\/211084.png",
 		"oF": 0,
 		"opt": 0
 		},
-	"\/wp-content\/themes\/carnes-crossroads-2015\/img\/imap\/tiles\/19\/145488\/313202.png": {
+	"\/wp-content\/themes\/carnes-crossroads-2015\/img\/imap\/tiles\/19\/145487\/211085.png": {
 		"ft": 32768,
-		"iS": 859,
+		"iS": 21051,
 		"oA": 0,
-		"oAP": "\/wp-content\/themes\/carnes-crossroads-2015\/img\/imap\/tiles\/19\/145488\/313202.png",
+		"oAP": "\/wp-content\/themes\/carnes-crossroads-2015\/img\/imap\/tiles\/19\/145487\/211085.png",
 		"oF": 0,
 		"opt": 0
 		},
-	"\/wp-content\/themes\/carnes-crossroads-2015\/img\/imap\/tiles\/19\/145488\/313203.png": {
+	"\/wp-content\/themes\/carnes-crossroads-2015\/img\/imap\/tiles\/19\/145487\/211086.png": {
 		"ft": 32768,
-		"iS": 12917,
+		"iS": 9518,
 		"oA": 0,
-		"oAP": "\/wp-content\/themes\/carnes-crossroads-2015\/img\/imap\/tiles\/19\/145488\/313203.png",
+		"oAP": "\/wp-content\/themes\/carnes-crossroads-2015\/img\/imap\/tiles\/19\/145487\/211086.png",
 		"oF": 0,
 		"opt": 0
 		},
-	"\/wp-content\/themes\/carnes-crossroads-2015\/img\/imap\/tiles\/19\/145488\/313204.png": {
+	"\/wp-content\/themes\/carnes-crossroads-2015\/img\/imap\/tiles\/19\/145487\/211087.png": {
 		"ft": 32768,
-		"iS": 31379,
+		"iS": 19205,
 		"oA": 0,
-		"oAP": "\/wp-content\/themes\/carnes-crossroads-2015\/img\/imap\/tiles\/19\/145488\/313204.png",
+		"oAP": "\/wp-content\/themes\/carnes-crossroads-2015\/img\/imap\/tiles\/19\/145487\/211087.png",
 		"oF": 0,
 		"opt": 0
 		},
-	"\/wp-content\/themes\/carnes-crossroads-2015\/img\/imap\/tiles\/19\/145488\/313205.png": {
+	"\/wp-content\/themes\/carnes-crossroads-2015\/img\/imap\/tiles\/19\/145487\/211088.png": {
 		"ft": 32768,
-		"iS": 40736,
+		"iS": 27369,
 		"oA": 0,
-		"oAP": "\/wp-content\/themes\/carnes-crossroads-2015\/img\/imap\/tiles\/19\/145488\/313205.png",
+		"oAP": "\/wp-content\/themes\/carnes-crossroads-2015\/img\/imap\/tiles\/19\/145487\/211088.png",
 		"oF": 0,
 		"opt": 0
 		},
-	"\/wp-content\/themes\/carnes-crossroads-2015\/img\/imap\/tiles\/19\/145488\/313206.png": {
+	"\/wp-content\/themes\/carnes-crossroads-2015\/img\/imap\/tiles\/19\/145487\/211089.png": {
 		"ft": 32768,
-		"iS": 37960,
+		"iS": 14594,
 		"oA": 0,
-		"oAP": "\/wp-content\/themes\/carnes-crossroads-2015\/img\/imap\/tiles\/19\/145488\/313206.png",
+		"oAP": "\/wp-content\/themes\/carnes-crossroads-2015\/img\/imap\/tiles\/19\/145487\/211089.png",
 		"oF": 0,
 		"opt": 0
 		},
-	"\/wp-content\/themes\/carnes-crossroads-2015\/img\/imap\/tiles\/19\/145488\/313207.png": {
+	"\/wp-content\/themes\/carnes-crossroads-2015\/img\/imap\/tiles\/19\/145488\/211080.png": {
 		"ft": 32768,
 		"iS": 8315,
 		"oA": 0,
-		"oAP": "\/wp-content\/themes\/carnes-crossroads-2015\/img\/imap\/tiles\/19\/145488\/313207.png",
+		"oAP": "\/wp-content\/themes\/carnes-crossroads-2015\/img\/imap\/tiles\/19\/145488\/211080.png",
 		"oF": 0,
 		"opt": 0
 		},
-	"\/wp-content\/themes\/carnes-crossroads-2015\/img\/imap\/tiles\/19\/145489\/313198.png": {
+	"\/wp-content\/themes\/carnes-crossroads-2015\/img\/imap\/tiles\/19\/145488\/211081.png": {
 		"ft": 32768,
-		"iS": 7721,
+		"iS": 37960,
 		"oA": 0,
-		"oAP": "\/wp-content\/themes\/carnes-crossroads-2015\/img\/imap\/tiles\/19\/145489\/313198.png",
+		"oAP": "\/wp-content\/themes\/carnes-crossroads-2015\/img\/imap\/tiles\/19\/145488\/211081.png",
 		"oF": 0,
 		"opt": 0
 		},
-	"\/wp-content\/themes\/carnes-crossroads-2015\/img\/imap\/tiles\/19\/145489\/313199.png": {
+	"\/wp-content\/themes\/carnes-crossroads-2015\/img\/imap\/tiles\/19\/145488\/211082.png": {
 		"ft": 32768,
-		"iS": 10168,
+		"iS": 40736,
 		"oA": 0,
-		"oAP": "\/wp-content\/themes\/carnes-crossroads-2015\/img\/imap\/tiles\/19\/145489\/313199.png",
+		"oAP": "\/wp-content\/themes\/carnes-crossroads-2015\/img\/imap\/tiles\/19\/145488\/211082.png",
 		"oF": 0,
 		"opt": 0
 		},
-	"\/wp-content\/themes\/carnes-crossroads-2015\/img\/imap\/tiles\/19\/145489\/313200.png": {
+	"\/wp-content\/themes\/carnes-crossroads-2015\/img\/imap\/tiles\/19\/145488\/211083.png": {
 		"ft": 32768,
-		"iS": 29687,
+		"iS": 31379,
 		"oA": 0,
-		"oAP": "\/wp-content\/themes\/carnes-crossroads-2015\/img\/imap\/tiles\/19\/145489\/313200.png",
+		"oAP": "\/wp-content\/themes\/carnes-crossroads-2015\/img\/imap\/tiles\/19\/145488\/211083.png",
 		"oF": 0,
 		"opt": 0
 		},
-	"\/wp-content\/themes\/carnes-crossroads-2015\/img\/imap\/tiles\/19\/145489\/313201.png": {
+	"\/wp-content\/themes\/carnes-crossroads-2015\/img\/imap\/tiles\/19\/145488\/211084.png": {
 		"ft": 32768,
-		"iS": 15656,
+		"iS": 12917,
 		"oA": 0,
-		"oAP": "\/wp-content\/themes\/carnes-crossroads-2015\/img\/imap\/tiles\/19\/145489\/313201.png",
+		"oAP": "\/wp-content\/themes\/carnes-crossroads-2015\/img\/imap\/tiles\/19\/145488\/211084.png",
 		"oF": 0,
 		"opt": 0
 		},
-	"\/wp-content\/themes\/carnes-crossroads-2015\/img\/imap\/tiles\/19\/145489\/313202.png": {
+	"\/wp-content\/themes\/carnes-crossroads-2015\/img\/imap\/tiles\/19\/145488\/211085.png": {
 		"ft": 32768,
-		"iS": 1846,
+		"iS": 859,
 		"oA": 0,
-		"oAP": "\/wp-content\/themes\/carnes-crossroads-2015\/img\/imap\/tiles\/19\/145489\/313202.png",
+		"oAP": "\/wp-content\/themes\/carnes-crossroads-2015\/img\/imap\/tiles\/19\/145488\/211085.png",
 		"oF": 0,
 		"opt": 0
 		},
-	"\/wp-content\/themes\/carnes-crossroads-2015\/img\/imap\/tiles\/19\/145489\/313203.png": {
+	"\/wp-content\/themes\/carnes-crossroads-2015\/img\/imap\/tiles\/19\/145488\/211086.png": {
 		"ft": 32768,
-		"iS": 31365,
+		"iS": 22100,
 		"oA": 0,
-		"oAP": "\/wp-content\/themes\/carnes-crossroads-2015\/img\/imap\/tiles\/19\/145489\/313203.png",
+		"oAP": "\/wp-content\/themes\/carnes-crossroads-2015\/img\/imap\/tiles\/19\/145488\/211086.png",
 		"oF": 0,
 		"opt": 0
 		},
-	"\/wp-content\/themes\/carnes-crossroads-2015\/img\/imap\/tiles\/19\/145489\/313204.png": {
+	"\/wp-content\/themes\/carnes-crossroads-2015\/img\/imap\/tiles\/19\/145488\/211087.png": {
 		"ft": 32768,
-		"iS": 25202,
+		"iS": 5143,
 		"oA": 0,
-		"oAP": "\/wp-content\/themes\/carnes-crossroads-2015\/img\/imap\/tiles\/19\/145489\/313204.png",
+		"oAP": "\/wp-content\/themes\/carnes-crossroads-2015\/img\/imap\/tiles\/19\/145488\/211087.png",
 		"oF": 0,
 		"opt": 0
 		},
-	"\/wp-content\/themes\/carnes-crossroads-2015\/img\/imap\/tiles\/19\/145489\/313205.png": {
+	"\/wp-content\/themes\/carnes-crossroads-2015\/img\/imap\/tiles\/19\/145488\/211088.png": {
 		"ft": 32768,
-		"iS": 26554,
+		"iS": 17109,
 		"oA": 0,
-		"oAP": "\/wp-content\/themes\/carnes-crossroads-2015\/img\/imap\/tiles\/19\/145489\/313205.png",
+		"oAP": "\/wp-content\/themes\/carnes-crossroads-2015\/img\/imap\/tiles\/19\/145488\/211088.png",
 		"oF": 0,
 		"opt": 0
 		},
-	"\/wp-content\/themes\/carnes-crossroads-2015\/img\/imap\/tiles\/19\/145489\/313206.png": {
+	"\/wp-content\/themes\/carnes-crossroads-2015\/img\/imap\/tiles\/19\/145488\/211089.png": {
 		"ft": 32768,
-		"iS": 48721,
+		"iS": 6501,
 		"oA": 0,
-		"oAP": "\/wp-content\/themes\/carnes-crossroads-2015\/img\/imap\/tiles\/19\/145489\/313206.png",
+		"oAP": "\/wp-content\/themes\/carnes-crossroads-2015\/img\/imap\/tiles\/19\/145488\/211089.png",
 		"oF": 0,
 		"opt": 0
 		},
-	"\/wp-content\/themes\/carnes-crossroads-2015\/img\/imap\/tiles\/19\/145489\/313207.png": {
+	"\/wp-content\/themes\/carnes-crossroads-2015\/img\/imap\/tiles\/19\/145489\/211080.png": {
 		"ft": 32768,
 		"iS": 15300,
 		"oA": 0,
-		"oAP": "\/wp-content\/themes\/carnes-crossroads-2015\/img\/imap\/tiles\/19\/145489\/313207.png",
+		"oAP": "\/wp-content\/themes\/carnes-crossroads-2015\/img\/imap\/tiles\/19\/145489\/211080.png",
 		"oF": 0,
 		"opt": 0
 		},
-	"\/wp-content\/themes\/carnes-crossroads-2015\/img\/imap\/tiles\/19\/145490\/313198.png": {
+	"\/wp-content\/themes\/carnes-crossroads-2015\/img\/imap\/tiles\/19\/145489\/211081.png": {
 		"ft": 32768,
-		"iS": 17242,
+		"iS": 48721,
 		"oA": 0,
-		"oAP": "\/wp-content\/themes\/carnes-crossroads-2015\/img\/imap\/tiles\/19\/145490\/313198.png",
+		"oAP": "\/wp-content\/themes\/carnes-crossroads-2015\/img\/imap\/tiles\/19\/145489\/211081.png",
 		"oF": 0,
 		"opt": 0
 		},
-	"\/wp-content\/themes\/carnes-crossroads-2015\/img\/imap\/tiles\/19\/145490\/313199.png": {
+	"\/wp-content\/themes\/carnes-crossroads-2015\/img\/imap\/tiles\/19\/145489\/211082.png": {
 		"ft": 32768,
-		"iS": 26196,
+		"iS": 26554,
 		"oA": 0,
-		"oAP": "\/wp-content\/themes\/carnes-crossroads-2015\/img\/imap\/tiles\/19\/145490\/313199.png",
+		"oAP": "\/wp-content\/themes\/carnes-crossroads-2015\/img\/imap\/tiles\/19\/145489\/211082.png",
 		"oF": 0,
 		"opt": 0
 		},
-	"\/wp-content\/themes\/carnes-crossroads-2015\/img\/imap\/tiles\/19\/145490\/313200.png": {
+	"\/wp-content\/themes\/carnes-crossroads-2015\/img\/imap\/tiles\/19\/145489\/211083.png": {
 		"ft": 32768,
-		"iS": 909,
+		"iS": 25202,
 		"oA": 0,
-		"oAP": "\/wp-content\/themes\/carnes-crossroads-2015\/img\/imap\/tiles\/19\/145490\/313200.png",
+		"oAP": "\/wp-content\/themes\/carnes-crossroads-2015\/img\/imap\/tiles\/19\/145489\/211083.png",
 		"oF": 0,
 		"opt": 0
 		},
-	"\/wp-content\/themes\/carnes-crossroads-2015\/img\/imap\/tiles\/19\/145490\/313201.png": {
+	"\/wp-content\/themes\/carnes-crossroads-2015\/img\/imap\/tiles\/19\/145489\/211084.png": {
 		"ft": 32768,
-		"iS": 9130,
+		"iS": 31365,
 		"oA": 0,
-		"oAP": "\/wp-content\/themes\/carnes-crossroads-2015\/img\/imap\/tiles\/19\/145490\/313201.png",
+		"oAP": "\/wp-content\/themes\/carnes-crossroads-2015\/img\/imap\/tiles\/19\/145489\/211084.png",
 		"oF": 0,
 		"opt": 0
 		},
-	"\/wp-content\/themes\/carnes-crossroads-2015\/img\/imap\/tiles\/19\/145490\/313202.png": {
+	"\/wp-content\/themes\/carnes-crossroads-2015\/img\/imap\/tiles\/19\/145489\/211085.png": {
 		"ft": 32768,
-		"iS": 13011,
+		"iS": 1846,
 		"oA": 0,
-		"oAP": "\/wp-content\/themes\/carnes-crossroads-2015\/img\/imap\/tiles\/19\/145490\/313202.png",
+		"oAP": "\/wp-content\/themes\/carnes-crossroads-2015\/img\/imap\/tiles\/19\/145489\/211085.png",
 		"oF": 0,
 		"opt": 0
 		},
-	"\/wp-content\/themes\/carnes-crossroads-2015\/img\/imap\/tiles\/19\/145490\/313203.png": {
+	"\/wp-content\/themes\/carnes-crossroads-2015\/img\/imap\/tiles\/19\/145489\/211086.png": {
 		"ft": 32768,
-		"iS": 34642,
+		"iS": 15656,
 		"oA": 0,
-		"oAP": "\/wp-content\/themes\/carnes-crossroads-2015\/img\/imap\/tiles\/19\/145490\/313203.png",
+		"oAP": "\/wp-content\/themes\/carnes-crossroads-2015\/img\/imap\/tiles\/19\/145489\/211086.png",
 		"oF": 0,
 		"opt": 0
 		},
-	"\/wp-content\/themes\/carnes-crossroads-2015\/img\/imap\/tiles\/19\/145490\/313204.png": {
+	"\/wp-content\/themes\/carnes-crossroads-2015\/img\/imap\/tiles\/19\/145489\/211087.png": {
 		"ft": 32768,
-		"iS": 37497,
+		"iS": 29687,
 		"oA": 0,
-		"oAP": "\/wp-content\/themes\/carnes-crossroads-2015\/img\/imap\/tiles\/19\/145490\/313204.png",
+		"oAP": "\/wp-content\/themes\/carnes-crossroads-2015\/img\/imap\/tiles\/19\/145489\/211087.png",
 		"oF": 0,
 		"opt": 0
 		},
-	"\/wp-content\/themes\/carnes-crossroads-2015\/img\/imap\/tiles\/19\/145490\/313205.png": {
+	"\/wp-content\/themes\/carnes-crossroads-2015\/img\/imap\/tiles\/19\/145489\/211088.png": {
 		"ft": 32768,
-		"iS": 55806,
+		"iS": 10168,
 		"oA": 0,
-		"oAP": "\/wp-content\/themes\/carnes-crossroads-2015\/img\/imap\/tiles\/19\/145490\/313205.png",
+		"oAP": "\/wp-content\/themes\/carnes-crossroads-2015\/img\/imap\/tiles\/19\/145489\/211088.png",
 		"oF": 0,
 		"opt": 0
 		},
-	"\/wp-content\/themes\/carnes-crossroads-2015\/img\/imap\/tiles\/19\/145490\/313206.png": {
+	"\/wp-content\/themes\/carnes-crossroads-2015\/img\/imap\/tiles\/19\/145489\/211089.png": {
 		"ft": 32768,
-		"iS": 23482,
+		"iS": 7721,
 		"oA": 0,
-		"oAP": "\/wp-content\/themes\/carnes-crossroads-2015\/img\/imap\/tiles\/19\/145490\/313206.png",
+		"oAP": "\/wp-content\/themes\/carnes-crossroads-2015\/img\/imap\/tiles\/19\/145489\/211089.png",
 		"oF": 0,
 		"opt": 0
 		},
-	"\/wp-content\/themes\/carnes-crossroads-2015\/img\/imap\/tiles\/19\/145490\/313207.png": {
+	"\/wp-content\/themes\/carnes-crossroads-2015\/img\/imap\/tiles\/19\/145490\/211080.png": {
 		"ft": 32768,
 		"iS": 7276,
 		"oA": 0,
-		"oAP": "\/wp-content\/themes\/carnes-crossroads-2015\/img\/imap\/tiles\/19\/145490\/313207.png",
+		"oAP": "\/wp-content\/themes\/carnes-crossroads-2015\/img\/imap\/tiles\/19\/145490\/211080.png",
 		"oF": 0,
 		"opt": 0
 		},
-	"\/wp-content\/themes\/carnes-crossroads-2015\/img\/imap\/tiles\/19\/145491\/313198.png": {
+	"\/wp-content\/themes\/carnes-crossroads-2015\/img\/imap\/tiles\/19\/145490\/211081.png": {
 		"ft": 32768,
-		"iS": 644,
+		"iS": 23482,
 		"oA": 0,
-		"oAP": "\/wp-content\/themes\/carnes-crossroads-2015\/img\/imap\/tiles\/19\/145491\/313198.png",
+		"oAP": "\/wp-content\/themes\/carnes-crossroads-2015\/img\/imap\/tiles\/19\/145490\/211081.png",
 		"oF": 0,
 		"opt": 0
 		},
-	"\/wp-content\/themes\/carnes-crossroads-2015\/img\/imap\/tiles\/19\/145491\/313199.png": {
+	"\/wp-content\/themes\/carnes-crossroads-2015\/img\/imap\/tiles\/19\/145490\/211082.png": {
 		"ft": 32768,
-		"iS": 881,
+		"iS": 55806,
 		"oA": 0,
-		"oAP": "\/wp-content\/themes\/carnes-crossroads-2015\/img\/imap\/tiles\/19\/145491\/313199.png",
+		"oAP": "\/wp-content\/themes\/carnes-crossroads-2015\/img\/imap\/tiles\/19\/145490\/211082.png",
 		"oF": 0,
 		"opt": 0
 		},
-	"\/wp-content\/themes\/carnes-crossroads-2015\/img\/imap\/tiles\/19\/145491\/313200.png": {
+	"\/wp-content\/themes\/carnes-crossroads-2015\/img\/imap\/tiles\/19\/145490\/211083.png": {
 		"ft": 32768,
-		"iS": 881,
+		"iS": 37497,
 		"oA": 0,
-		"oAP": "\/wp-content\/themes\/carnes-crossroads-2015\/img\/imap\/tiles\/19\/145491\/313200.png",
+		"oAP": "\/wp-content\/themes\/carnes-crossroads-2015\/img\/imap\/tiles\/19\/145490\/211083.png",
 		"oF": 0,
 		"opt": 0
 		},
-	"\/wp-content\/themes\/carnes-crossroads-2015\/img\/imap\/tiles\/19\/145491\/313201.png": {
+	"\/wp-content\/themes\/carnes-crossroads-2015\/img\/imap\/tiles\/19\/145490\/211084.png": {
 		"ft": 32768,
-		"iS": 881,
+		"iS": 34642,
 		"oA": 0,
-		"oAP": "\/wp-content\/themes\/carnes-crossroads-2015\/img\/imap\/tiles\/19\/145491\/313201.png",
+		"oAP": "\/wp-content\/themes\/carnes-crossroads-2015\/img\/imap\/tiles\/19\/145490\/211084.png",
 		"oF": 0,
 		"opt": 0
 		},
-	"\/wp-content\/themes\/carnes-crossroads-2015\/img\/imap\/tiles\/19\/145491\/313202.png": {
+	"\/wp-content\/themes\/carnes-crossroads-2015\/img\/imap\/tiles\/19\/145490\/211085.png": {
 		"ft": 32768,
-		"iS": 4299,
+		"iS": 13011,
 		"oA": 0,
-		"oAP": "\/wp-content\/themes\/carnes-crossroads-2015\/img\/imap\/tiles\/19\/145491\/313202.png",
+		"oAP": "\/wp-content\/themes\/carnes-crossroads-2015\/img\/imap\/tiles\/19\/145490\/211085.png",
 		"oF": 0,
 		"opt": 0
 		},
-	"\/wp-content\/themes\/carnes-crossroads-2015\/img\/imap\/tiles\/19\/145491\/313203.png": {
+	"\/wp-content\/themes\/carnes-crossroads-2015\/img\/imap\/tiles\/19\/145490\/211086.png": {
 		"ft": 32768,
-		"iS": 6551,
+		"iS": 9130,
 		"oA": 0,
-		"oAP": "\/wp-content\/themes\/carnes-crossroads-2015\/img\/imap\/tiles\/19\/145491\/313203.png",
+		"oAP": "\/wp-content\/themes\/carnes-crossroads-2015\/img\/imap\/tiles\/19\/145490\/211086.png",
 		"oF": 0,
 		"opt": 0
 		},
-	"\/wp-content\/themes\/carnes-crossroads-2015\/img\/imap\/tiles\/19\/145491\/313204.png": {
+	"\/wp-content\/themes\/carnes-crossroads-2015\/img\/imap\/tiles\/19\/145490\/211087.png": {
 		"ft": 32768,
-		"iS": 8921,
+		"iS": 909,
 		"oA": 0,
-		"oAP": "\/wp-content\/themes\/carnes-crossroads-2015\/img\/imap\/tiles\/19\/145491\/313204.png",
+		"oAP": "\/wp-content\/themes\/carnes-crossroads-2015\/img\/imap\/tiles\/19\/145490\/211087.png",
 		"oF": 0,
 		"opt": 0
 		},
-	"\/wp-content\/themes\/carnes-crossroads-2015\/img\/imap\/tiles\/19\/145491\/313205.png": {
+	"\/wp-content\/themes\/carnes-crossroads-2015\/img\/imap\/tiles\/19\/145490\/211088.png": {
 		"ft": 32768,
-		"iS": 6631,
+		"iS": 26196,
 		"oA": 0,
-		"oAP": "\/wp-content\/themes\/carnes-crossroads-2015\/img\/imap\/tiles\/19\/145491\/313205.png",
+		"oAP": "\/wp-content\/themes\/carnes-crossroads-2015\/img\/imap\/tiles\/19\/145490\/211088.png",
 		"oF": 0,
 		"opt": 0
 		},
-	"\/wp-content\/themes\/carnes-crossroads-2015\/img\/imap\/tiles\/19\/145491\/313206.png": {
+	"\/wp-content\/themes\/carnes-crossroads-2015\/img\/imap\/tiles\/19\/145490\/211089.png": {
 		"ft": 32768,
-		"iS": 3265,
+		"iS": 17242,
 		"oA": 0,
-		"oAP": "\/wp-content\/themes\/carnes-crossroads-2015\/img\/imap\/tiles\/19\/145491\/313206.png",
+		"oAP": "\/wp-content\/themes\/carnes-crossroads-2015\/img\/imap\/tiles\/19\/145490\/211089.png",
 		"oF": 0,
 		"opt": 0
 		},
-	"\/wp-content\/themes\/carnes-crossroads-2015\/img\/imap\/tiles\/19\/145491\/313207.png": {
+	"\/wp-content\/themes\/carnes-crossroads-2015\/img\/imap\/tiles\/19\/145491\/211080.png": {
 		"ft": 32768,
 		"iS": 532,
 		"oA": 0,
-		"oAP": "\/wp-content\/themes\/carnes-crossroads-2015\/img\/imap\/tiles\/19\/145491\/313207.png",
+		"oAP": "\/wp-content\/themes\/carnes-crossroads-2015\/img\/imap\/tiles\/19\/145491\/211080.png",
+		"oF": 0,
+		"opt": 0
+		},
+	"\/wp-content\/themes\/carnes-crossroads-2015\/img\/imap\/tiles\/19\/145491\/211081.png": {
+		"ft": 32768,
+		"iS": 3265,
+		"oA": 0,
+		"oAP": "\/wp-content\/themes\/carnes-crossroads-2015\/img\/imap\/tiles\/19\/145491\/211081.png",
+		"oF": 0,
+		"opt": 0
+		},
+	"\/wp-content\/themes\/carnes-crossroads-2015\/img\/imap\/tiles\/19\/145491\/211082.png": {
+		"ft": 32768,
+		"iS": 6631,
+		"oA": 0,
+		"oAP": "\/wp-content\/themes\/carnes-crossroads-2015\/img\/imap\/tiles\/19\/145491\/211082.png",
+		"oF": 0,
+		"opt": 0
+		},
+	"\/wp-content\/themes\/carnes-crossroads-2015\/img\/imap\/tiles\/19\/145491\/211083.png": {
+		"ft": 32768,
+		"iS": 8921,
+		"oA": 0,
+		"oAP": "\/wp-content\/themes\/carnes-crossroads-2015\/img\/imap\/tiles\/19\/145491\/211083.png",
+		"oF": 0,
+		"opt": 0
+		},
+	"\/wp-content\/themes\/carnes-crossroads-2015\/img\/imap\/tiles\/19\/145491\/211084.png": {
+		"ft": 32768,
+		"iS": 6551,
+		"oA": 0,
+		"oAP": "\/wp-content\/themes\/carnes-crossroads-2015\/img\/imap\/tiles\/19\/145491\/211084.png",
+		"oF": 0,
+		"opt": 0
+		},
+	"\/wp-content\/themes\/carnes-crossroads-2015\/img\/imap\/tiles\/19\/145491\/211085.png": {
+		"ft": 32768,
+		"iS": 4299,
+		"oA": 0,
+		"oAP": "\/wp-content\/themes\/carnes-crossroads-2015\/img\/imap\/tiles\/19\/145491\/211085.png",
+		"oF": 0,
+		"opt": 0
+		},
+	"\/wp-content\/themes\/carnes-crossroads-2015\/img\/imap\/tiles\/19\/145491\/211086.png": {
+		"ft": 32768,
+		"iS": 881,
+		"oA": 0,
+		"oAP": "\/wp-content\/themes\/carnes-crossroads-2015\/img\/imap\/tiles\/19\/145491\/211086.png",
+		"oF": 0,
+		"opt": 0
+		},
+	"\/wp-content\/themes\/carnes-crossroads-2015\/img\/imap\/tiles\/19\/145491\/211087.png": {
+		"ft": 32768,
+		"iS": 881,
+		"oA": 0,
+		"oAP": "\/wp-content\/themes\/carnes-crossroads-2015\/img\/imap\/tiles\/19\/145491\/211087.png",
+		"oF": 0,
+		"opt": 0
+		},
+	"\/wp-content\/themes\/carnes-crossroads-2015\/img\/imap\/tiles\/19\/145491\/211088.png": {
+		"ft": 32768,
+		"iS": 881,
+		"oA": 0,
+		"oAP": "\/wp-content\/themes\/carnes-crossroads-2015\/img\/imap\/tiles\/19\/145491\/211088.png",
+		"oF": 0,
+		"opt": 0
+		},
+	"\/wp-content\/themes\/carnes-crossroads-2015\/img\/imap\/tiles\/19\/145491\/211089.png": {
+		"ft": 32768,
+		"iS": 644,
+		"oA": 0,
+		"oAP": "\/wp-content\/themes\/carnes-crossroads-2015\/img\/imap\/tiles\/19\/145491\/211089.png",
 		"oF": 0,
 		"opt": 0
 		},

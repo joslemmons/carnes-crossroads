@@ -987,4 +987,10 @@ jQuery(function ($) {
         $('.col-map').toggleClass('open');
     });
 
+     //Map Legend
+    $(document).on('click', '#legend-title', function () {
+        $('#legend-title').toggleClass('close');
+        $('#legend-items').toggleClass('close');
+    });
+
 });

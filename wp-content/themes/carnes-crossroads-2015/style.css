@@ -6228,13 +6228,16 @@ Edits by Chernoff Newman
     text-align: left;
     text-transform: uppercase;
     padding: 20px 16px;
+    cursor: pointer;
     background: url(img/arrow-close.png) no-repeat 95% 50%/8px; }
     .map-legend .legend-title.close {
       background: url(img/arrow-open.png) no-repeat 95% 50%/8px; }
+  .map-legend form#legend-items.close {
+    display: none; }
   .map-legend form#legend-items .squared-checkbox {
     width: 22px;
     height: 22px;
-    margin: 20px 20px;
+    margin: 5px 20px 20px;
     position: relative; }
     .map-legend form#legend-items .squared-checkbox.homes {
       background: #b06a6a; }
@@ -8310,8 +8313,8 @@ Edits by Chernoff Newman
     text-transform: uppercase;
     background: #fff url(img/icon-fullscreen.png) no-repeat 90% 50%/12px; }
     .home-finder-content #fullscreen-map:hover {
-      background: #cce9e6 url(img/icon-fullscreen.png) no-repeat 90% 50%/12px;
-      color: #536377; }
+      background: #695e49 url(img/icon-fullscreen_lt.png) no-repeat 90% 50%/12px;
+      color: #f8f2e9; }
   .home-finder-content #map {
     position: absolute;
     width: 200vw;
