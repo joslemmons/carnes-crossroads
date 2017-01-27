@@ -2,11 +2,11 @@
     background: $beige;
     position: relative;
     padding-top: $navbar-offset;
-    
+
     @media (max-width: 1150px) {
         padding-top: ($navbar-offset - 15px);
     }
-    
+
     @media (max-width: $screen-sm-max) {
         padding-top: ($navbar-offset - 25px);
     }
@@ -42,7 +42,7 @@
         }
 
         @media (max-width: $screen-md-max) {
-            padding: 30px 20px 55px;
+            padding: 30px 5% 55px;
         }
 
         @media (max-width: $screen-sm-max) {
