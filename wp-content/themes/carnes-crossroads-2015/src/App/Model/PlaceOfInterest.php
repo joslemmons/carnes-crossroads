@@ -38,9 +38,9 @@ class PlaceOfInterest extends \TimberPost {
 
     public static function bootstrap()
     {
-        self::$_postType = Config::getKeyPrefix() . 'place_of_interest';
+        self::$_postType = 'place_of_interest';
         self::$_title = 'Place of Interest';
-        self::$_taxonomy = 'place_of_interest_type';
+        self::$_taxonomy = 'place_of_interest_t';
 
         self::$field_address = 'address';
         self::$field_longitude = 'longitude';
@@ -153,7 +153,7 @@ class PlaceOfInterest extends \TimberPost {
     }
 
     public function getCategory() {
-        $categories = $this->get_terms('place_of_interest_type');
+        $categories = $this->get_terms('place_of_interest_t');
         $cat = end($categories);
         return $cat->slug;
     }
