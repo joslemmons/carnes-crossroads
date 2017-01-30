@@ -128,12 +128,12 @@
                                 </div>
                             </div>
                             <div class="share action-link">
-                                {% set tweet_share = property.getFriendlyName~' on @danielisland '~property.link|url_encode %}
-                                {% set email_subject_share = '[Daniel Island Real Estate] '~property.getAddress|url_encode %}
+                                {% set tweet_share = property.getFriendlyName~' on @carnesxroads '~property.link|url_encode %}
+                                {% set email_subject_share = '[Carnes Crossroads Real Estate] '~property.getAddress|url_encode %}
                                 {% set email_body_share = property.getFriendlyName~' '~property.link|url_encode %}
                                 {% set facebook_app_id = function('\\App\\Model\\Config::getFacebookAppId') %}
                                 {% set domain = property.link|url_encode %}
-                                {% set facebook_share_name = property.getAddress~' on Daniel Island Real Estate'|url_encode %}
+                                {% set facebook_share_name = property.getAddress~' on Carnes Crossroads Real Estate'|url_encode %}
                                 {% set facebook_share_description = property.getFriendlyName|url_encode %}
                                 {% set facebook_share_caption = property.link|url_encode %}
                                 {% set facebook_share_context = property.link|url_encode %}
