@@ -4,6 +4,7 @@ use App\Controller\Router;
 use App\Model\Config;
 use App\Model\Helper;
 use App\Model\NewOfferings;
+use App\Model\PlaceOfInterest;
 use HomeFinder\Model\HomeFinderFilters;
 use HomeFinder\Model\Metric;
 use HomeFinder\Model\Property;
@@ -106,6 +107,22 @@ class HomeFinder extends Router
         $result = \HomeFinder\Model\HomeFinder::getProperties($filters, $per_page, $page, $order_by, $order);
         $filters->setMLSPage($result->mlsPage);
 
+        $places_of_interest_t = PlaceOfInterest::all();
+
+        $places_of_interest = array();
+
+        foreach($places_of_interest_t as $listing) {
+            $location_t = array(
+                $listing->address,
+                $listing->title,
+                $listing->latitude,
+                $listing->longitude,
+                $listing->getCategory()
+            );
+
+            $places_of_interest[] = $location_t;
+        }
+
         $html = \Timber::compile($render_view, array(
             'name' => $name,
             'result' => $result,
@@ -125,6 +142,7 @@ class HomeFinder extends Router
         self::renderJSON(array(
             'status' => 200,
             'total' => $result->total,
+            'placesOfInterest' => $places_of_interest,
             'rsp' => $html
         ));
     }

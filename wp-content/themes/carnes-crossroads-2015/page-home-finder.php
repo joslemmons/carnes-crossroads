@@ -1,6 +1,7 @@
 <?php
 
 use App\Model\HomeFinderPage;
+use App\Model\PlaceOfInterest;
 use HomeFinder\Model\HomeFinder;
 use HomeFinder\Model\Result;
 
@@ -18,8 +19,8 @@ $context['view'] = $view;
 $context['result'] = $featured_properties_result;
 $context['isAvailableHomes'] = true;
 $context['listingsTitle'] = 'Search Listings';
+$context['places_of_interest'] = PlaceOfInterest::all();
 
 HomeFinderPage::enqueueAssets();
 
 Timber::render('page-home-finder.twig', $context);
-

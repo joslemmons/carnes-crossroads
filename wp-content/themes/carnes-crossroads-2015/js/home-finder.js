@@ -16,7 +16,7 @@ jQuery(function ($) {
     var $saveSearchSection = $('#saveSearchSection'),
         order = 'default';
 
-    function initMap() {
+    function initMap(placesOfInterest) {
         filters = document.getElementById('legend-items');
         checkboxes = document.getElementsByClassName('squared-checkbox');
         listings = document.getElementsByClassName('map-results-box');
@@ -47,6 +47,22 @@ jQuery(function ($) {
                     "marker-color": (locations[i][6] === 'Single Family Home') ? '#b06a6a' : (locations[i][6] === 'Condominium' || locations[i][6] === 'Townhome') ? '#0a8c7c' : '#c9c23d',
                     "pop-up": locations[i][5],
                     "listing-type": (locations[i][6] === 'Single Family Home') ? 'available-homes' : (locations[i][6] === 'Condominium' || locations[i][6] === 'Townhome') ? 'available-townhomes' : 'available-homesites'
+                }
+            });
+        }
+
+        for(i = 0; i < placesOfInterest.length; i++) {
+            geoJson.features.push({
+                "type": "Feature",
+                "geometry": {
+                    "type": "Point",
+                    "coordinates": [parseFloat(placesOfInterest[i][3]), parseFloat(placesOfInterest[i][2])]
+                },
+                "properties": {
+                    "address": placesOfInterest[i][0],
+                    "marker-color": /*(locations[i][6] === 'Single Family Home') ? '#b06a6a' : (locations[i][6] === 'Condominium' || locations[i][6] === 'Townhome') ? '#0a8c7c' :*/ '#c9c23d',
+                    "pop-up": '<div>HI</div>',
+                    "listing-type": "place-of-interest"// (locations[i][6] === 'Single Family Home') ? 'available-homes' : (locations[i][6] === 'Condominium' || locations[i][6] === 'Townhome') ? 'available-townhomes' : 'available-homesites'
                 }
             });
         }
@@ -466,7 +482,8 @@ jQuery(function ($) {
             data: filtersForQuery,
             success: function (data) {
                 var html = data.rsp,
-                    total = data.total;
+                    total = data.total,
+                    placesOfInterest = data.placesOfInterest;
 
                 locations = [];
 
@@ -479,7 +496,7 @@ jQuery(function ($) {
                 $('div.home-finder-container').html(html).fadeTo('slow', 1);
 
                 if(view == 'map'){
-                    initMap();
+                    initMap(placesOfInterest);
                 }
 
                 $input.prop('readonly', false);
