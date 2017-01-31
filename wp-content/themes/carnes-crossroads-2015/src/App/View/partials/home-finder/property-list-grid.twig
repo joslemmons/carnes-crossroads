@@ -1,9 +1,9 @@
 {% set activePropertyId = activeProperty.getId %}
 {% for property in properties %}
     {% if property.isFloorPlan %}
-        {{ include('partials/home-finder/type/floorplan-grid.twig', { property: property, nextPageUrl: nextPageUrl, activeOffering: activeOffering, current_user: current_user}, with_context = false) }}
+        {{ include('partials/home-finder/type/floorplan-grid.twig', { property: property, nextPageUrl: nextPageUrl, activeOffering: activeOffering, current_user: current_user, activePropertyId: activePropertyId}, with_context = false) }}
     {% else %}
-        {{ include('partials/home-finder/type/property-grid.twig', { property: property, nextPageUrl: nextPageUrl, activeProperty: activeOffering, current_user: current_user, page: page, pages: pages, name: name }, with_context = false) }}
+        {{ include('partials/home-finder/type/property-grid.twig', { property: property, nextPageUrl: nextPageUrl, activeProperty: activeOffering, current_user: current_user, page: page, pages: pages, name: name, activePropertyId: activePropertyId }, with_context = false) }}
     {% endif %}
 {% endfor %}
 
