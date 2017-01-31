@@ -20,12 +20,15 @@ if (!empty($_REQUEST)) {
 /* @var Result */
 $result = HomeFinder::getFeaturedProperties(null, $page, null, null);
 
+$filters = HomeFinderFilters::withREQUESTParams();
+$filters->setShouldIncludePlans(false);
+
 $context['pages'] = $result->paginator->count();;
 $context['page'] = $page;
 $context['name'] = $name;
 $context['view'] = $view;
 $context['filterString'] = $filterString;
-$context['filters'] = HomeFinderFilters::withREQUESTParams();
+$context['filters'] = $filters;
 
 $context['result'] = $result;
 $context['isFeaturedListings'] = true;
