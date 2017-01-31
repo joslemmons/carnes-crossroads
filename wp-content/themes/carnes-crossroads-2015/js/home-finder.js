@@ -483,7 +483,7 @@ jQuery(function ($) {
                     total = data.total,
                     placesOfInterest = data.placesOfInterest;
 
-                locations = [];
+                locations = data.locations;
 
                 hideLoadingListingsIndicator();
 
