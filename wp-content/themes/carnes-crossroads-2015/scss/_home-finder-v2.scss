@@ -533,12 +533,13 @@
         padding: 13px 13px 8px 13px;
         color: $cc-med-grey;
         overflow: hidden;
+        min-height: 133px;
 
         .map-address {
             font-family: $baskerville;
             font-size: 1.28rem;
             font-weight: 400;
-            margin-bottom: 7px;
+            margin-bottom: 10px;
             line-height: 1.1;
             color: $brown;
 
@@ -561,7 +562,7 @@
         }
 
         .price {
-            font-size: 1rem;
+            font-size: 1.05rem;
             letter-spacing: 0.5px;
         }
 
@@ -572,6 +573,9 @@
             text-transform: uppercase;
             letter-spacing: 1px;
             text-align: right;
+            position: absolute;
+            right: 10px;
+            bottom: 10px;
         }
     }
 

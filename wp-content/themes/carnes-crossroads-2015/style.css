@@ -8440,12 +8440,13 @@ Edits by Chernoff Newman
     position: relative;
     padding: 13px 13px 8px 13px;
     color: #828181;
-    overflow: hidden; }
+    overflow: hidden;
+    min-height: 133px; }
     .home-finder-content .map-box-content .map-address {
       font-family: "baskerville-urw", serif;
       font-size: 1.28rem;
       font-weight: 400;
-      margin-bottom: 7px;
+      margin-bottom: 10px;
       line-height: 1.1;
       color: #695e49; }
       @media (min-width: 1900px) {
@@ -8461,7 +8462,7 @@ Edits by Chernoff Newman
     .home-finder-content .map-box-content .sq-ft, .home-finder-content .map-box-content .price {
       display: inline-block; }
     .home-finder-content .map-box-content .price {
-      font-size: 1rem;
+      font-size: 1.05rem;
       letter-spacing: 0.5px; }
     .home-finder-content .map-box-content .type-box {
       font-family: "Oswald", sans-serif;
@@ -8469,7 +8470,10 @@ Edits by Chernoff Newman
       font-weight: 400;
       text-transform: uppercase;
       letter-spacing: 1px;
-      text-align: right; }
+      text-align: right;
+      position: absolute;
+      right: 10px;
+      bottom: 10px; }
   .home-finder-content .leaflet-popup-content .listing-img-col {
     width: 100%;
     height: 150px;
