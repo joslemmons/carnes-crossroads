@@ -13,7 +13,7 @@
                         {% if property.getBedroomCount %}{{ property.getBedroomCount }} BR /{% endif %}
                         {% if property.getFullBathroomCount %}{{ property.getFullBathroomCount }} BA {% endif %}
                         {% if property.getHalfBathroomCount %}/ {{ property.getHalfBathroomCount }}  Half BA {% endif %}
-                        <span class="specs-sqft"> {{ property.getTotalAreaSquareFootage|number_format(numDecimalPlaces) }} {{ property.getTotalAreaSquareFootageUnitOfMeasurement }}</span>
+                        <span class="specs-sqft"> {{ property.square_footage }} {{ property.getTotalAreaSquareFootageUnitOfMeasurement }}</span>
                     </div>
                     {% else %}
                     <br>
