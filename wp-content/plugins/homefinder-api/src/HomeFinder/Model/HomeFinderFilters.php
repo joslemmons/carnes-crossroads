@@ -285,6 +285,11 @@ class HomeFinderFilters
         $this->_includePlans = $should;
     }
 
+    public function shouldIncludeHomesAndHomePlans()
+    {
+        return ($this->_includePlans && $this->_includeHomes);
+    }
+
     public function shouldIncludeHomes()
     {
         return $this->_includeHomes;

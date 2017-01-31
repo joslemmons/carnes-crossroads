@@ -38,6 +38,43 @@ class FloorPlan
         return 'home-finder/floor-plans/'.$builder.'/'.$floor_plan.'/';
     }
 
+    public function getTotalAreaSquareFootageUnitOfMeasurement()
+    {
+        return 'SQ FT';
+    }
+
+    public function getTotalAreaSquareFootage()
+    {
+        return $this->square_footage;
+    }
+
+    public function getBedroomCount()
+    {
+        if (is_array($this->bedrooms) && empty($this->bedrooms)) {
+            return '0';
+        }
+
+        return $this->bedrooms;
+    }
+
+    public function getHalfBathroomCount()
+    {
+        if (is_array($this->half_bathrooms) && empty($this->half_bathrooms)) {
+            return '0';
+        }
+
+        return $this->half_bathrooms;
+    }
+
+    public function getFullBathroomCount()
+    {
+        if (is_array($this->full_bathrooms) && empty($this->full_bathrooms)) {
+            return '0';
+        }
+
+        return $this->full_bathrooms;
+    }
+
     public function getImages()
     {
         return $this->featured_images;
