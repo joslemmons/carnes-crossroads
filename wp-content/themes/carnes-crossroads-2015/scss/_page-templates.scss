@@ -6,7 +6,7 @@
     display: block;
 
     &__content-wrap {
-        width: 75%;
+        width: 67%;
         margin-top: 25px;
         text-align: center;
         position: absolute;
@@ -15,6 +15,10 @@
 
         @media (max-width: $screen-xs-max) {
             margin-top: 70px;
+        }
+
+        @media (min-width: 1800px) {
+            width: 60%;
         }
     }
 
@@ -318,12 +322,20 @@
     &--contact {
         @extend .page-content;
         padding: 0;
+
+        .block--large {
+            height: 530px;
+        }
     }
 
     &--footer {
         @extend .page-content;
         padding: 45px 0 0 0;
         border-top: 1px solid $cc-lt-grey;
+
+        @media (min-width: $screen-lg) {
+            padding: 35px 0 0 0;
+        }
     }
 
     &__copy-block {
@@ -339,10 +351,6 @@
         font-family: $font-serif;
         font-size: 1.15rem;
         color: $cc-brown;
-    }
-
-    #map {
-        border: 1px solid $cc-lt-grey;
     }
 }
 
@@ -466,7 +474,7 @@
 .block-tab {
     position: absolute;
     padding: 20px 25px 10px;
-    min-width: 330px;
+    min-width: 300px;
     min-height: 110px;
     background: $white;
 
@@ -486,7 +494,7 @@
     }
 
     h3 {
-        font-size: 1.3rem;
+        font-size: 1.35rem;
     }
 
     a, a h3 {

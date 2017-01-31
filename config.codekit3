@@ -49841,6 +49841,12 @@
 		"oAP": "\/wp-content\/themes\/carnes-crossroads-2015\/piklist\/parts\/meta-boxes\/page.php",
 		"oF": 0
 		},
+	"\/wp-content\/themes\/carnes-crossroads-2015\/piklist\/parts\/meta-boxes\/place-of-interest.php": {
+		"ft": 8192,
+		"oA": 2,
+		"oAP": "\/wp-content\/themes\/carnes-crossroads-2015\/piklist\/parts\/meta-boxes\/place-of-interest.php",
+		"oF": 0
+		},
 	"\/wp-content\/themes\/carnes-crossroads-2015\/piklist\/parts\/meta-boxes\/post-announcement.php": {
 		"ft": 8192,
 		"oA": 2,
@@ -51380,6 +51386,12 @@
 		"oAP": "\/wp-content\/themes\/carnes-crossroads-2015\/src\/App\/Model\/Page.php",
 		"oF": 0
 		},
+	"\/wp-content\/themes\/carnes-crossroads-2015\/src\/App\/Model\/PlaceOfInterest.php": {
+		"ft": 8192,
+		"oA": 2,
+		"oAP": "\/wp-content\/themes\/carnes-crossroads-2015\/src\/App\/Model\/PlaceOfInterest.php",
+		"oF": 0
+		},
 	"\/wp-content\/themes\/carnes-crossroads-2015\/src\/App\/Model\/Post.php": {
 		"ft": 8192,
 		"oA": 0,
@@ -51546,6 +51558,12 @@
 		"ft": 8192,
 		"oA": 0,
 		"oAP": "\/wp-content\/themes\/carnes-crossroads-2015\/src\/App\/View\/page-faq.twig",
+		"oF": 0
+		},
+	"\/wp-content\/themes\/carnes-crossroads-2015\/src\/App\/View\/page-floor-plan-view.twig": {
+		"ft": 8192,
+		"oA": 2,
+		"oAP": "\/wp-content\/themes\/carnes-crossroads-2015\/src\/App\/View\/page-floor-plan-view.twig",
 		"oF": 0
 		},
 	"\/wp-content\/themes\/carnes-crossroads-2015\/src\/App\/View\/page-home-finder.twig": {
