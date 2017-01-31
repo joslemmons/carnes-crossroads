@@ -22,8 +22,8 @@ jQuery(function ($) {
         listings = document.getElementsByClassName('map-results-box');
 
         map = L.mapbox.map('map', 'mapbox.streets', {
-            /*'maxZoom': 18,
-            'minZoom': 15,*/
+            'maxZoom': 18,
+            'minZoom': 15,
             'scrollWheelZoom' : 'center'
         })
             .setView([33.055457, -80.103917], 17);
