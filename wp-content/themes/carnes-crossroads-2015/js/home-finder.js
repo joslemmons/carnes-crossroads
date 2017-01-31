@@ -22,8 +22,8 @@ jQuery(function ($) {
         listings = document.getElementsByClassName('map-results-box');
 
         map = L.mapbox.map('map', 'mapbox.streets', {
-            'maxZoom': 18,
-            'minZoom': 15,
+            /*'maxZoom': 18,
+            'minZoom': 15,*/
             'scrollWheelZoom' : 'center'
         })
             .setView([33.055457, -80.103917], 17);
@@ -34,6 +34,19 @@ jQuery(function ($) {
             type: 'FeatureCollection',
             features: []
         };
+
+        for(var j = 0; j < placesOfInterest.length; j++) {
+            geoJson.features.push({
+                "type": "Feature",
+                "geometry": {
+                    "type": "Point",
+                    "coordinates": [-80.103914, 33.055454]
+                },
+                "properties": {
+                    "listing-type": "place-of-interest"
+                }
+            });
+        }
 
         for(var i = 0; i < locations.length; i++) {
             geoJson.features.push({
@@ -51,22 +64,6 @@ jQuery(function ($) {
             });
         }
 
-        for(i = 0; i < placesOfInterest.length; i++) {
-            geoJson.features.push({
-                "type": "Feature",
-                "geometry": {
-                    "type": "Point",
-                    "coordinates": [parseFloat(placesOfInterest[i][3]), parseFloat(placesOfInterest[i][2])]
-                },
-                "properties": {
-                    "address": placesOfInterest[i][0],
-                    "marker-color": /*(locations[i][6] === 'Single Family Home') ? '#b06a6a' : (locations[i][6] === 'Condominium' || locations[i][6] === 'Townhome') ? '#0a8c7c' :*/ '#c9c23d',
-                    "pop-up": '<div>HI</div>',
-                    "listing-type": "place-of-interest"// (locations[i][6] === 'Single Family Home') ? 'available-homes' : (locations[i][6] === 'Condominium' || locations[i][6] === 'Townhome') ? 'available-townhomes' : 'available-homesites'
-                }
-            });
-        }
-
         layer.setGeoJSON(geoJson);
 
         var stamenLayer = L.tileLayer(DI.templateUri + "/img/imap/tiles/{z}/{x}/{y}.png").addTo(map);
@@ -77,19 +74,19 @@ jQuery(function ($) {
         change();
 
         map.eachLayer(function(marker) {
-            if(marker.feature) {
+            if(marker.feature && marker.feature.properties['pop-up']) {
                 marker.bindPopup(marker.feature.properties['pop-up'], L.popup({ 'autoPan' : true }));
             }
         });
 
-        for(var i = 0; i < listings.length; i++) listings[i].onmouseover = hoverMarkerPopUp;
+        for(var k = 0; k < listings.length; k++) listings[k].onmouseover = hoverMarkerPopUp;
     }
 
     function hoverMarkerPopUp() {
         var address = $(this).find($('div.map-address')).text().trim();
 
         map.eachLayer(function(marker) {
-            if (marker['feature']) {
+            if (marker.feature && marker.feature.properties.address) {
                 if (marker.feature.properties.address === address) {
                     marker.openPopup();
                 }
@@ -98,7 +95,7 @@ jQuery(function ($) {
     }
 
     function change() {
-        var on = [];
+        var on = ['place-of-interest'];
         // Find all checkboxes that are checked and build a list of their values
         for(var i = 0; i < checkboxes.length; i++) {
             if(checkboxes[i].childNodes[1].checked) on.push(checkboxes[i].childNodes[1].name);
@@ -110,6 +107,7 @@ jQuery(function ($) {
             // of symbols that should be on, stored in the 'on' array
             return on.indexOf(f.properties["listing-type"]) !== -1;
         });
+
         return false;
     }
 
