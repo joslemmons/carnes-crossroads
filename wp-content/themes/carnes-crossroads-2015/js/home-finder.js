@@ -13,6 +13,8 @@ jQuery(function ($) {
     var map, filters, checkboxes, layer, listings;
     L.mapbox.accessToken = 'pk.eyJ1IjoiZGlkZXZjbyIsImEiOiJjaXM3cWY3NDEwNDc0Mnpwa2w5YnllMXZkIn0.4pWeAL6-vhtobhpFd2HDuA';
 
+    if($("#map").length) initMap(placesOfInterest);
+
     var $saveSearchSection = $('#saveSearchSection'),
         order = 'default';
 
@@ -40,7 +42,7 @@ jQuery(function ($) {
                 "type": "Feature",
                 "geometry": {
                     "type": "Point",
-                    "coordinates": [-80.103914, 33.055454]
+                    "coordinates": [parseFloat(placesOfInterest[j][3]), parseFloat(placesOfInterest[j][2])]
                 },
                 "properties": {
                     "listing-type": "place-of-interest",
