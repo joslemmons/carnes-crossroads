@@ -86,11 +86,11 @@
 }
 
 .single-listing-content {
-    padding: 20px;
+    padding: 20px 20px 20px 60px;
     max-width: 100%;
 
     @media (min-width: 1500px) {
-        padding: 15px 50px 20px;
+        padding: 15px 60px 20px;
         max-width: 900px;
     }
 
@@ -536,11 +536,16 @@
     }
 
     p {
+        width: 80%;
         font-size: 16px;
         text-transform: none;
         font-family: $minion;
         font-weight: 400;
         letter-spacing: normal;
+
+        @media (max-width: $screen-xs-max) {
+            width: 100%;
+        }
     }
 
     label {
@@ -607,6 +612,7 @@
 
     input[type="checkbox"] {
         width: auto;
+        display: inline-block;
     }
 
     .site-btn {

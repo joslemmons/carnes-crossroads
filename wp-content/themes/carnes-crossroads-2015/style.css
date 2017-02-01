@@ -8651,11 +8651,11 @@ Edits by Chernoff Newman
     z-index: 2; }
 
 .single-listing-content {
-  padding: 20px;
+  padding: 20px 20px 20px 60px;
   max-width: 100%; }
   @media (min-width: 1500px) {
     .single-listing-content {
-      padding: 15px 50px 20px;
+      padding: 15px 60px 20px;
       max-width: 900px; } }
   @media (max-width: 991px) {
     .single-listing-content {
@@ -8999,11 +8999,15 @@ Edits by Chernoff Newman
         margin-top: -3px;
         margin-bottom: 18px; } }
   .agent-form p {
+    width: 80%;
     font-size: 16px;
     text-transform: none;
     font-family: "minion-pro", serif;
     font-weight: 400;
     letter-spacing: normal; }
+    @media (max-width: 767px) {
+      .agent-form p {
+        width: 100%; } }
   .agent-form label {
     font-family: "proxima-nova", sans-serif;
     text-transform: uppercase;
@@ -9051,7 +9055,8 @@ Edits by Chernoff Newman
   .agent-form textarea {
     height: 120px; }
   .agent-form input[type="checkbox"] {
-    width: auto; }
+    width: auto;
+    display: inline-block; }
   .agent-form .site-btn {
     margin-top: 10px; }
   .agent-form .required {
