@@ -105,11 +105,14 @@ class HomeFinder extends Router
 
         /* @var $result Result */
         $result = \HomeFinder\Model\HomeFinder::getProperties($filters, $per_page, $page, $order_by, $order);
+        $resultAll = \HomeFinder\Model\HomeFinder::getProperties($filters, $result->total, 1, $order_by, $order);
+
         $filters->setMLSPage($result->mlsPage);
 
         $places_of_interest_t = PlaceOfInterest::all();
 
         $places_of_interest = array();
+        $locations = array();
 
         foreach($places_of_interest_t as $listing) {
             $location_t = array(
@@ -117,10 +120,39 @@ class HomeFinder extends Router
                 $listing->title,
                 $listing->latitude,
                 $listing->longitude,
-                $listing->getCategory()
+                $listing->getCategory(),
+                \Timber::compile('partials/home-finder/imap-tool-tip.twig', array(
+                    'post' => $listing
+                ))
             );
 
             $places_of_interest[] = $location_t;
+        }
+
+        foreach ($resultAll->items as $property) {
+            if ($property->latitude && $property->longitude) {
+                if ($property->getPropertyType() == 'Homesite') {
+                    $op = 0;
+                } else {
+                    $op = $property->getPropertyType();
+                }
+
+                $htmlAux = \Timber::compile('partials/home-finder/map-tool-tip.twig', array(
+                    'property' => $property
+                ));
+
+                $auxLocation = array(
+                    $property->address_web,
+                    $property->latitude,
+                    $property->longitude,
+                    '4',
+                    $property->link,
+                    $htmlAux,
+                    $op
+                );
+
+                $locations[] = $auxLocation;
+            }
         }
 
         $html = \Timber::compile($render_view, array(
@@ -143,6 +175,7 @@ class HomeFinder extends Router
             'status' => 200,
             'total' => $result->total,
             'placesOfInterest' => $places_of_interest,
+            'locations' => $locations,
             'rsp' => $html
         ));
     }
