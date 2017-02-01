@@ -21,6 +21,7 @@ if (!empty($_REQUEST)) {
 $result = HomeFinder::getFeaturedProperties(null, $page, null, null);
 
 $filters = HomeFinderFilters::withREQUESTParams();
+$filters->setShouldIncludeHomes(true);
 $filters->setShouldIncludePlans(false);
 
 $context['pages'] = $result->paginator->count();;

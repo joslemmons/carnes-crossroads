@@ -9,7 +9,7 @@ $context = Timber::get_context();
 
 $filters = \HomeFinder\Model\HomeFinderFilters::withREQUESTParams();
 $filters->setShouldIncludeHomes(true);
-$filters->setShouldIncludePlans(true);
+$filters->setShouldIncludePlans(false);
 
 $view = isset($_REQUEST['view']) ? $_REQUEST['view'] : 'grid';
 
