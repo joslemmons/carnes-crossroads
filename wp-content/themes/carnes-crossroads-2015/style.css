@@ -8586,6 +8586,18 @@ Edits by Chernoff Newman
       .home-finder-content .leaflet-popup-content .listing-details a.showProperty:hover {
         color: #fff; }
 
+.listing {
+  min-width: 225px; }
+  .listing .listing-details {
+    margin-top: 10px !important; }
+  .listing .site-btn {
+    width: 100%;
+    color: #695e49;
+    text-align: center;
+    margin-top: 10px; }
+    .listing .site-btn:hover {
+      color: #fff; }
+
 .gallery-lightbox-container > .close,
 .gallery-lightbox-container > .prev,
 .gallery-lightbox-container > .next,

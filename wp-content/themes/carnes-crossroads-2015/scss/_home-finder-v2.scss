@@ -727,6 +727,26 @@
     }
 }
 
+// map tooltip popups
+.listing {
+    min-width: 225px;
+
+    .listing-details {
+        margin-top: 10px !important;
+    }
+
+    .site-btn {
+        width: 100%;
+        color: $brown;
+        text-align: center;
+        margin-top: 10px;
+
+        &:hover {
+            color: $white;
+        }
+    }
+}
+
 .gallery-lightbox-container >.close,
 .gallery-lightbox-container >.prev,
 .gallery-lightbox-container >.next,
