@@ -120,7 +120,10 @@ class HomeFinder extends Router
                 $listing->title,
                 $listing->latitude,
                 $listing->longitude,
-                $listing->getCategory()
+                $listing->getCategory(),
+                \Timber::compile('partials/home-finder/imap-tool-tip.twig', array(
+                    'post' => $listing
+                ))
             );
 
             $places_of_interest[] = $location_t;

@@ -43,7 +43,8 @@ jQuery(function ($) {
                     "coordinates": [-80.103914, 33.055454]
                 },
                 "properties": {
-                    "listing-type": "place-of-interest"
+                    "listing-type": "place-of-interest",
+                    "pop-up": placesOfInterest[j][5]
                 }
             });
         }
