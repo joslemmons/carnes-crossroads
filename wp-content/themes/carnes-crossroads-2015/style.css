@@ -9056,7 +9056,8 @@ Edits by Chernoff Newman
     height: 120px; }
   .agent-form input[type="checkbox"] {
     width: auto;
-    display: inline-block; }
+    display: inline-block;
+    margin-right: 5px; }
   .agent-form .site-btn {
     margin-top: 10px; }
   .agent-form .required {

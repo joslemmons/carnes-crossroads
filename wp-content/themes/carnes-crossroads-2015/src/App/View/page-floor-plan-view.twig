@@ -192,7 +192,9 @@
                             <div class="listing-specs">
                                 {% if floor_plan.bedrooms or floor_plan.full_bathrooms or floor_plan.half_bathrooms or floor_plan.square_footage %}
                                     {% if floor_plan.bedrooms %}{{ floor_plan.bedrooms }} BR /{% endif %}
-                                    {% if floor_plan.full_bathrooms %}{{ floor_plan.full_bathrooms }} Full BA /{% endif %}{% if floor_plan.half_bathrooms %} {{ floor_plan.half_bathrooms }}  Half BA <span class="hidden-xs-inline">/</span>{% endif %}{% if floor_plan.square_footage %}  <br class="visible-xs">{{ floor_plan.square_footage|removeNonNumbers|number_format }} sq ft{% endif %}
+                                    {% if floor_plan.full_bathrooms %}{{ floor_plan.full_bathrooms }} Full BA /{% endif %}
+                                    {% if floor_plan.half_bathrooms %} {{ floor_plan.half_bathrooms }}  Half BA <span class="hidden-xs-inline">/</span>{% endif %}
+                                    {% if floor_plan.square_footage %}  <br class="visible-xs">{{ floor_plan.square_footage|removeNonNumbers|number_format }} sq ft{% endif %}
                                 {% endif %}
                             </div>
 
