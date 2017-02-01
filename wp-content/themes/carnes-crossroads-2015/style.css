@@ -8602,7 +8602,9 @@ Edits by Chernoff Newman
     .property-view-content {
       padding-top: 0; } }
   .property-view-content .container-fluid > .row {
-    padding: 0 5%; }
+    padding: 0 5%;
+    margin-left: 0;
+    margin-right: 0; }
   .property-view-content .row > .col-md-4 {
     padding-left: 0; }
 

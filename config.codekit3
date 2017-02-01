@@ -11087,7 +11087,7 @@
 		},
 	"\/wp-content\/plugins\/homefinder-api\/src\/HomeFinder\/Controller\/HomeFinder.php": {
 		"ft": 8192,
-		"oA": 0,
+		"oA": 2,
 		"oAP": "\/wp-content\/plugins\/homefinder-api\/src\/HomeFinder\/Controller\/HomeFinder.php",
 		"oF": 0
 		},
@@ -51656,6 +51656,12 @@
 		"oAP": "\/wp-content\/themes\/carnes-crossroads-2015\/src\/App\/View\/partials\/home-finder\/homefinder-filters.twig",
 		"oF": 0
 		},
+	"\/wp-content\/themes\/carnes-crossroads-2015\/src\/App\/View\/partials\/home-finder\/imap-tool-tip.twig": {
+		"ft": 8192,
+		"oA": 2,
+		"oAP": "\/wp-content\/themes\/carnes-crossroads-2015\/src\/App\/View\/partials\/home-finder\/imap-tool-tip.twig",
+		"oF": 0
+		},
 	"\/wp-content\/themes\/carnes-crossroads-2015\/src\/App\/View\/partials\/home-finder\/map-legend-homes.twig": {
 		"ft": 8192,
 		"oA": 2,
@@ -59852,6 +59858,14 @@
 		"iS": 49400,
 		"oA": 0,
 		"oAP": "\/wp-content\/uploads\/2016\/01\/3058CSC-AREAR-500x323.jpg",
+		"oF": 0,
+		"opt": 0
+		},
+	"\/wp-content\/uploads\/2016\/01\/3059CSC-A-Province-500x367-1-1190x800-c-default.jpg": {
+		"ft": 16384,
+		"iS": 154950,
+		"oA": 0,
+		"oAP": "\/wp-content\/uploads\/2016\/01\/3059CSC-A-Province-500x367-1-1190x800-c-default.jpg",
 		"oF": 0,
 		"opt": 0
 		},
@@ -73615,11 +73629,83 @@
 		"oF": 0,
 		"opt": 0
 		},
+	"\/wp-content\/uploads\/2017\/02\/612a11fa9941a323b9db92fe7480300a-594x360-c-default.jpeg": {
+		"ft": 16384,
+		"iS": 28157,
+		"oA": 0,
+		"oAP": "\/wp-content\/uploads\/2017\/02\/612a11fa9941a323b9db92fe7480300a-594x360-c-default.jpg",
+		"oF": 0,
+		"opt": 0
+		},
 	"\/wp-content\/uploads\/2017\/02\/612a11fa9941a323b9db92fe7480300a.jpeg": {
 		"ft": 16384,
 		"iS": 811688,
 		"oA": 0,
 		"oAP": "\/wp-content\/uploads\/2017\/02\/612a11fa9941a323b9db92fe7480300a.jpg",
+		"oF": 0,
+		"opt": 0
+		},
+	"\/wp-content\/uploads\/2017\/02\/6135f811ba5a58747354e941bae6d32c-594x360-c-default.jpeg": {
+		"ft": 16384,
+		"iS": 32988,
+		"oA": 0,
+		"oAP": "\/wp-content\/uploads\/2017\/02\/6135f811ba5a58747354e941bae6d32c-594x360-c-default.jpg",
+		"oF": 0,
+		"opt": 0
+		},
+	"\/wp-content\/uploads\/2017\/02\/6135f811ba5a58747354e941bae6d32c.jpeg": {
+		"ft": 16384,
+		"iS": 1041079,
+		"oA": 0,
+		"oAP": "\/wp-content\/uploads\/2017\/02\/6135f811ba5a58747354e941bae6d32c.jpg",
+		"oF": 0,
+		"opt": 0
+		},
+	"\/wp-content\/uploads\/2017\/02\/6350b93197a1b711b396edb3a1336c13-594x360-c-default.jpeg": {
+		"ft": 16384,
+		"iS": 24117,
+		"oA": 0,
+		"oAP": "\/wp-content\/uploads\/2017\/02\/6350b93197a1b711b396edb3a1336c13-594x360-c-default.jpg",
+		"oF": 0,
+		"opt": 0
+		},
+	"\/wp-content\/uploads\/2017\/02\/6350b93197a1b711b396edb3a1336c13.jpeg": {
+		"ft": 16384,
+		"iS": 708954,
+		"oA": 0,
+		"oAP": "\/wp-content\/uploads\/2017\/02\/6350b93197a1b711b396edb3a1336c13.jpg",
+		"oF": 0,
+		"opt": 0
+		},
+	"\/wp-content\/uploads\/2017\/02\/65afc1de4b6b4c626279905a3490f497-594x360-c-default.jpeg": {
+		"ft": 16384,
+		"iS": 33246,
+		"oA": 0,
+		"oAP": "\/wp-content\/uploads\/2017\/02\/65afc1de4b6b4c626279905a3490f497-594x360-c-default.jpg",
+		"oF": 0,
+		"opt": 0
+		},
+	"\/wp-content\/uploads\/2017\/02\/65afc1de4b6b4c626279905a3490f497.jpeg": {
+		"ft": 16384,
+		"iS": 1077726,
+		"oA": 0,
+		"oAP": "\/wp-content\/uploads\/2017\/02\/65afc1de4b6b4c626279905a3490f497.jpg",
+		"oF": 0,
+		"opt": 0
+		},
+	"\/wp-content\/uploads\/2017\/02\/694d26d0b9c7a130d42c627c0610c27c-594x360-c-default.jpeg": {
+		"ft": 16384,
+		"iS": 35473,
+		"oA": 0,
+		"oAP": "\/wp-content\/uploads\/2017\/02\/694d26d0b9c7a130d42c627c0610c27c-594x360-c-default.jpg",
+		"oF": 0,
+		"opt": 0
+		},
+	"\/wp-content\/uploads\/2017\/02\/694d26d0b9c7a130d42c627c0610c27c.jpeg": {
+		"ft": 16384,
+		"iS": 1260515,
+		"oA": 0,
+		"oAP": "\/wp-content\/uploads\/2017\/02\/694d26d0b9c7a130d42c627c0610c27c.jpg",
 		"oF": 0,
 		"opt": 0
 		},
@@ -73908,6 +73994,14 @@
 		"iS": 95821,
 		"oA": 0,
 		"oAP": "\/wp-content\/uploads\/2017\/02\/b9effadfb9e117be578969364285a07c.jpg",
+		"oF": 0,
+		"opt": 0
+		},
+	"\/wp-content\/uploads\/2017\/02\/bcd768a05bbcf164e4a0b22510e3e35e-1190x660-c-default.jpeg": {
+		"ft": 16384,
+		"iS": 112007,
+		"oA": 0,
+		"oAP": "\/wp-content\/uploads\/2017\/02\/bcd768a05bbcf164e4a0b22510e3e35e-1190x660-c-default.jpg",
 		"oF": 0,
 		"opt": 0
 		},
