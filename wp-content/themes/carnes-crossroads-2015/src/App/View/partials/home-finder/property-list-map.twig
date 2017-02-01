@@ -14,19 +14,41 @@
     }
 
     {% for property in properties %}
-    {% if property.latitude and property.longitude and property.isFromPropertyBase %}
+        {% if property.latitude and property.longitude and property.isFromPropertyBase %}
 
-    locations.push([
-        '{{ property.address_web }}',
-        '{{ property.latitude }}',
-        '{{ property.longitude }}',
-        '4',
-        '{{ property.link }}',
-        '{% filter combineLines|escape('js') %}{% include 'partials/home-finder/map-tool-tip.twig' with { property: property } only %}{% endfilter %}',
-        {% if property.getPropertyType == 'Homesite' %}0{% else %}'{{ property.getPropertyType }}'{% endif %}
+            locations.push([
+                '{{ property.address_web }}',
+                '{{ property.latitude }}',
+                '{{ property.longitude }}',
+                '4',
+                '{{ property.link }}',
+                '{% filter combineLines|escape('js') %}{% include 'partials/home-finder/map-tool-tip.twig' with { property: property } only %}{% endfilter %}',
+                {% if property.getPropertyType == 'Homesite' %}0{% else %}'{{ property.getPropertyType }}'{% endif %}
+            ]);
+
+         {% endif %}
+    {% endfor %}
+</script>
+{% endif %}
+
+{% if placesOfInterest | length > 0 %}
+<script>
+    if(typeof placesOfInterest === 'undefined')
+        placesOfInterest = [];
+
+    {% for location in placesOfInterest %}
+    {% if location.latitude and location.longitude %}
+
+    placesOfInterest.push([
+        '{{ location.address }}',
+        '{{ location.title }}',
+        '{{ location.latitude }}',
+        '{{ location.longitude }}',
+        'place-of-interest',
+        '{{ listing.tooltip|e('js') }}'
     ]);
 
-     {% endif %}
-     {% endfor %}
+    {% endif %}
+    {% endfor %}
 </script>
 {% endif %}

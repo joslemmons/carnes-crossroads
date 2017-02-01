@@ -1,5 +1,5 @@
 <div class="listing">
-    {% if post.thumbnail.src %}
+    {% if post.thumbnail and post.thumbnail.src %}
     <div class="listing-img-col"
          style="background:url('{{ post.thumbnail.src }}') no-repeat 50% 50%; background-size: cover;">
     </div>
