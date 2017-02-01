@@ -15,7 +15,7 @@
                 <div class="col-sm-8">
                     <span class="your-account">Your Account:</span>
                     <span class="account-links">
-                        <a href="#" class="showAccountPage savedListingsCount">Saved Listings {{ current_user.getSavedPropertyIds|length }}</a> / <a href="#" class="showAccountPage savedSearchesCount">Saved Searches {{ current_user.getRawSavedSearches|length }}</a></span> / <span class="account-link"><a href="{{ function('wp_logout_url', function('get_permalink', 35)) }}">Logout</a></span>
+                        <a href="#" class="showAccountPage savedListingsCount">Saved Listings {{ current_user.getSavedPropertyIds|length }}</a> <span class="hidden-xs-inline">/</span> <br class="visible-xs"><a href="#" class="showAccountPage savedSearchesCount">Saved Searches {{ current_user.getRawSavedSearches|length }}</a></span> / <span class="account-link"><a href="{{ function('wp_logout_url', function('get_permalink', 35)) }}">Logout</a></span>
                     {% else %}
                     <a href="#" class="showAccountPage"><span class="account-links">Sign In / Create Account</span></a>
                     {% endif %}
@@ -38,7 +38,7 @@
                                             {# 1190 x 660 #}
                                             <a href="{{ floor_plan.getImages[0] }}" {% if function('wp_is_mobile') == false %}
                                                {% else %}onclick="return false;"{% endif %}>
-                                                <img src="{{ floor_plan.getImages[0]|resize(1190,660) }}" class="main-photo img-responsive"/>
+                                                <img src="{{ floor_plan.getImages[0]|resize(1190,800) }}" class="main-photo img-responsive"/>
                                             </a>
                                         </div>
                                         {% if floor_plan.getImages[1] %}
@@ -156,11 +156,11 @@
                                 </a>
                             </div>
                             {% endif %}
-                            
+
                             <div class="listing-address">
                                 {{ floor_plan.title }}
                             </div>
-                            
+
                             <div class="optional-btns">
                                 {% if floor_plan.getX3DTourLink %}
                                 <a class="optional-link" href="{{ floor_plan.getX3DTourLink }}" target="_blank">
@@ -184,7 +184,7 @@
                                 </a>
                                 {% endif %}
                             </div>
-                            
+
                             <div class="listing-price">
                                 ${{ floor_plan.price|removeNonNumbers|number_format }}
                             </div>
@@ -192,32 +192,25 @@
                             <div class="listing-specs">
                                 {% if floor_plan.bedrooms or floor_plan.full_bathrooms or floor_plan.half_bathrooms or floor_plan.square_footage %}
                                     {% if floor_plan.bedrooms %}{{ floor_plan.bedrooms }} BR /{% endif %}
-                                    {% if floor_plan.full_bathrooms %}{{ floor_plan.full_bathrooms }} Full Bath /{% endif %}{% if floor_plan.half_bathrooms %}{{ floor_plan.half_bathrooms }}  Half Bath /{% endif %}{% if floor_plan.square_footage %}  {{ floor_plan.square_footage|removeNonNumbers|number_format }} sq ft{% endif %}
+                                    {% if floor_plan.full_bathrooms %}{{ floor_plan.full_bathrooms }} Full BA /{% endif %}{% if floor_plan.half_bathrooms %} {{ floor_plan.half_bathrooms }}  Half BA <span class="hidden-xs-inline">/</span>{% endif %}{% if floor_plan.square_footage %}  <br class="visible-xs">{{ floor_plan.square_footage|removeNonNumbers|number_format }} sq ft{% endif %}
                                 {% endif %}
                             </div>
 
                             <div class="listing-neighborhood">
                                 <div class="item-padding">
-                                    Available Home Plan | {{ floor_plan.builder.title }}
+                                    Available Home Plan&nbsp;&nbsp;|&nbsp;&nbsp; <a href="/homes/builders#{{ floor_plan.builder.title|slugify }}">{{ floor_plan.builder.title }}</a>
                                 </div>
                             </div>
 
                             <div class="action-buttons-container">
                                 <a class="site-btn" id="requestShowing" data-floor-plan-id="{{ floor_plan.getId }}">Request Information</a>
                                 {% if floor_plan.brochure_src %}
-                                    <a class="site-btn" target="_blank"
-                                       href="{{ floor_plan.brochure_src }}">View
-                                        Brochure</a>
+                                    <a class="site-btn" target="_blank" href="{{ floor_plan.brochure_src }}">View Brochure</a>
                                 {% endif %}
                                 {% if floor_plan.floor_plan_src %}
-                                    <a class="site-btn" target="_blank"
-                                       href="{{ floor_plan.floor_plan_src }}">View
-                                        Floor Plan</a>
+                                    <a class="site-btn" target="_blank" href="{{ floor_plan.floor_plan_src }}">View Floor Plan</a>
                                 {% endif %}
-
                             </div>
-
-                            
 
                             {# MOBILE CONTENT #}
                             <div class="property-sidebar visible-sm visible-xs">
@@ -229,7 +222,7 @@
                                                     {# 1190 x 660 #}
                                                     <a href="{{ floor_plan.getImages[0] }}" {% if function('wp_is_mobile') == false %}
                                                        {% else %}onclick="return false;"{% endif %}>
-                                                        <img src="{{ floor_plan.getImages[0]|resize(1190,660) }}" class="main-photo img-responsive"/>
+                                                        <img src="{{ floor_plan.getImages[0]|resize(1190,800) }}" class="main-photo img-responsive"/>
                                                     </a>
                                                 </div>
                                                 <div class="col-md-6 col-photos hidden-sm hidden-xs">
@@ -277,7 +270,7 @@
                                         </div>
                                     </div>
                                 </div>
-                                        
+
                                 {% if floor_plan.longitude and floor_plan.latitude %}
                                     {# NOTE - THE MAP IS LISTED ON THE PAGE TWICE BC ITS LOWER DOWN ON MOBILE #}
                                     <div class="property-map">
@@ -296,8 +289,8 @@
 
                             <div class="agent-form">
                                 <div class="listing-agent__photo-logo" style="background-image: url({{ template_uri }}/img/carnes_logo_badge.png);"></div>
-                                <h4>Curious about this property?<br>Let us help you learn more.</h4>
-                                <p>Fill out the form below to contact an agent about this floor_plan.</p>
+                                <h4>Curious about this property? <br class="hidden-xs">Let us help you learn more.</h4>
+                                <p>Fill out the form below to contact an agent about this home plan.</p>
                                 <form class="request-showing">
                                     <input type="hidden" name="builderTitle" value="{{ floor_plan.builder.title() }}"/>
                                     <input type="hidden" name="floorPlanTitle" value="{{ floor_plan.title }}"/>

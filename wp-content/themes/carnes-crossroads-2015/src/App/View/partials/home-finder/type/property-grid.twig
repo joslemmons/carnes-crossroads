@@ -38,7 +38,7 @@
 
                 {% if property.getBedroomCount or property.getFullBathroomCount or property.getHalfBathroomCount %}
                     <div class="specs">{% if property.getBedroomCount %}{{ property.getBedroomCount }} BR /{% endif %}
-                        {% if property.getFullBathroomCount %}{{ property.getFullBathroomCount }} Full Bath {% endif %}{% if property.getHalfBathroomCount %}/ {{ property.getHalfBathroomCount }} Half Bath{% endif %}
+                        {% if property.getFullBathroomCount %}{{ property.getFullBathroomCount }} Full BA {% endif %}{% if property.getHalfBathroomCount %}/ {{ property.getHalfBathroomCount }} Half BA{% endif %}
                     </div>
                 {% else %}
                     <br>

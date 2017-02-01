@@ -847,11 +847,11 @@ jQuery(function ($) {
     // });
 
     //-Map View
-    $('.col-map-listings').each(function(i, elem) {
-        $(elem)
-            .find('.map-results-box')   // Only children of this row
-            .matchHeight({byRow: false}); // Row detection gets confused so disable it
-    });
+    // $('.col-map-listings').each(function(i, elem) {
+    //     $(elem)
+    //         .find('.map-results-box')   // Only children of this row
+    //         .matchHeight({byRow: false}); // Row detection gets confused so disable it
+    // });
 
 
     //Mobile Only
