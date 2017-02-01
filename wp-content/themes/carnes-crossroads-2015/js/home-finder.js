@@ -521,7 +521,7 @@ jQuery(function ($) {
     function getShouldIncludePlans() {
         var selection = $('#filter-listings-type-copy').find('option:selected').val();
 
-        return (selection === 'home-plans' || selection === 'available-homes-and-plans' || selection === 'Select Filters');
+        return (selection === 'home-plans' || selection === 'available-homes-and-plans');
     }
 
     function getShouldIncludeHomes() {
