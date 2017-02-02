@@ -16,11 +16,19 @@ $view = isset($_REQUEST['view']) ? $_REQUEST['view'] : 'grid';
 /* @var Result */
 $featured_properties_result = HomeFinder::getProperties($filters);
 
+$placesOfInterest = PlaceOfInterest::all();
+
+foreach ($placesOfInterest as $listing) {
+    $listing->tooltip = Timber::compile('partials/home-finder/imap-tool-tip.twig', array(
+        'post' => $listing
+    ));
+}
+
 $context['view'] = $view;
 $context['result'] = $featured_properties_result;
 $context['isAvailableHomes'] = true;
 $context['listingsTitle'] = 'Search Listings';
-$context['places_of_interest'] = PlaceOfInterest::all();
+$context['placesOfInterest'] = $placesOfInterest;
 
 HomeFinderPage::enqueueAssets();
 

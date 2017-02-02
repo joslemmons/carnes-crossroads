@@ -45,7 +45,7 @@
             '{{ location.latitude }}',
             '{{ location.longitude }}',
             'place-of-interest',
-            '{{ listing.tooltip|e('js') }}'
+            '{{ location.tooltip|e('js') }}'
         ]);
 
         {% endif %}
