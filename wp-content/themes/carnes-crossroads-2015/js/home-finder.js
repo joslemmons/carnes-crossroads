@@ -10,12 +10,21 @@ Number.prototype.formatMoney = function (c, d, t) {
 };
 
 jQuery(function ($) {
+    
     var map, filters, checkboxes, layer, listings;
     L.mapbox.accessToken = 'pk.eyJ1IjoiZGlkZXZjbyIsImEiOiJjaXM3cWY3NDEwNDc0Mnpwa2w5YnllMXZkIn0.4pWeAL6-vhtobhpFd2HDuA';
 
     var $saveSearchSection = $('#saveSearchSection'),
         order = 'default';
-
+        
+    jQuery( document ).ready(function() {
+        try {
+            initMap();
+        } catch(err) {
+           console.log(err);
+        }
+    });
+    
     function initMap(placesOfInterest) {
         filters = document.getElementById('legend-items');
         checkboxes = document.getElementsByClassName('squared-checkbox');
@@ -35,18 +44,20 @@ jQuery(function ($) {
             features: []
         };
 
-        for(var j = 0; j < placesOfInterest.length; j++) {
-            geoJson.features.push({
-                "type": "Feature",
-                "geometry": {
-                    "type": "Point",
-                    "coordinates": [-80.103914, 33.055454]
-                },
-                "properties": {
-                    "listing-type": "place-of-interest"
-                }
-            });
-        }
+        if (placesOfInterest) {
+            for(var j = 0; j < placesOfInterest.length; j++) {
+                geoJson.features.push({
+                    "type": "Feature",
+                    "geometry": {
+                        "type": "Point",
+                        "coordinates": [-80.103914, 33.055454]
+                    },
+                    "properties": {
+                        "listing-type": "place-of-interest"
+                    }
+                });
+            }
+        } 
 
         for(var i = 0; i < locations.length; i++) {
             geoJson.features.push({
