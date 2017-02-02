@@ -99,11 +99,13 @@ class HomeFinderFilters
         if ($shouldIncludePlans === 'true') {
             $shouldIncludePlans = true;
         }
+        if ($shouldIncludePlans === 'false') $shouldIncludePlans = false;
 
         $shouldIncludeHomes = (isset($data['includeHomes'])) ? sanitize_text_field($data['includeHomes']) : true;
         if ($shouldIncludeHomes === 'true') {
             $shouldIncludeHomes = true;
         }
+        if ($shouldIncludeHomes === 'false') $shouldIncludeHomes = false;
 
         $filters->setShouldIncludePlans($shouldIncludePlans);
         $filters->setShouldIncludeHomes($shouldIncludeHomes);

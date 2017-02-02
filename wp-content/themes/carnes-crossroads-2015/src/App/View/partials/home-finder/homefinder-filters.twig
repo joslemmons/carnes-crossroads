@@ -25,10 +25,10 @@
         <a href="#" id="filter-clearAll">Clear</a>
         <select id="filter-listings-type-copy">
                 <option>Select Filters</option>
-                <option {% if filters.shouldIncludeHomes and not filters.shouldIncludePlans %}selected="selected"{% endif %}
+                <option {% if filters.shouldIncludeHomes %}selected="selected"{% endif %}
                     value="available-homes">Available Homes
                 </option>
-                <option {% if filters.shouldIncludePlans and not filters.shouldIncludeHomes %}selected="selected"{% endif %}
+                <option {% if filters.shouldIncludePlans %}selected="selected"{% endif %}
                     value="home-plans">Home Plans
                 </option>
                 <option {% if filters.shouldIncludeHomesAndHomePlans %}selected="selected"{% endif %}
