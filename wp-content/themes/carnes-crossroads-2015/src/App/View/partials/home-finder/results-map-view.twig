@@ -30,9 +30,9 @@
 
                         {# TODO: Setup New Offerings View #}
                         {% if isNewOfferings %}
-                            {{ include('partials/home-finder/new-offerings-list-map.twig', { offerings: result.items, nextPageUrl: result.paginator.getNextPageUrl, activeOffering: activeItem, current_user: current_user}, with_context = false) }}
+                            {{ include('partials/home-finder/new-offerings-list-map.twig', { placesOfInterest: placesOfInterest, offerings: result.items, nextPageUrl: result.paginator.getNextPageUrl, activeOffering: activeItem, current_user: current_user}, with_context = false) }}
                         {% else %}
-                            {{ include('partials/home-finder/property-list-map.twig', { properties: result.items, nextPageUrl: result.paginator.getNextPageUrl, activeProperty: activeItem, current_user: current_user }, with_context = false) }}
+                            {{ include('partials/home-finder/property-list-map.twig', { placesOfInterest: placesOfInterest, properties: result.items, nextPageUrl: result.paginator.getNextPageUrl, activeProperty: activeItem, current_user: current_user }, with_context = false) }}
                         {% endif %}
 
                     </div>

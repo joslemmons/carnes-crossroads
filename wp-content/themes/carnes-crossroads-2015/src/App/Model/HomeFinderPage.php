@@ -16,6 +16,7 @@ class HomeFinderPage
         // wp_enqueue_script('match-height-js', get_template_directory_uri() . '/js/lib/jquery.matchHeight-min.js', array('jquery'), false, false);
         wp_enqueue_script('nouislider-js', get_template_directory_uri() . '/js/lib/nouislider/nouislider.min.js', array('wnumb-js'), false, true);
         wp_enqueue_style('nouislider-css', get_template_directory_uri() . '/js/lib/nouislider/nouislider.min.css');
+        wp_enqueue_script('match-height-js', get_template_directory_uri() . '/js/lib/jquery.matchHeight-min.js', array('jquery'), false, false);
         wp_enqueue_script('jquery-outside-events-js', get_template_directory_uri() . '/js/lib/jquery.ba-outside-events.min.js', array('jquery'), false, true);
         wp_enqueue_script('home-finder-js', get_template_directory_uri() . '/js/home-finder.js', array('jquery', 'backbone', 'nouislider-js', 'jquery-outside-events-js', 'multiple-select-js'), Config::getAppVersion(), true);
         wp_localize_script('home-finder-js', 'DI', array(

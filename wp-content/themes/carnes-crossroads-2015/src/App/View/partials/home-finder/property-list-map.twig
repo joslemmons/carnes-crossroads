@@ -37,18 +37,18 @@
         placesOfInterest = [];
 
     {% for location in placesOfInterest %}
-    {% if location.latitude and location.longitude %}
+        {% if location.latitude and location.longitude %}
 
-    placesOfInterest.push([
-        '{{ location.address }}',
-        '{{ location.title }}',
-        '{{ location.latitude }}',
-        '{{ location.longitude }}',
-        'place-of-interest',
-        '{{ listing.tooltip|e('js') }}'
-    ]);
+        placesOfInterest.push([
+            '{{ location.address }}',
+            '{{ location.title }}',
+            '{{ location.latitude }}',
+            '{{ location.longitude }}',
+            'place-of-interest',
+            '{{ listing.tooltip|e('js') }}'
+        ]);
 
-    {% endif %}
+        {% endif %}
     {% endfor %}
 </script>
 {% endif %}

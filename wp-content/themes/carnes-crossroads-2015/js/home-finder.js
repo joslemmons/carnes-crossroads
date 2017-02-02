@@ -13,15 +13,13 @@ jQuery(function ($) {
     
     var map, filters, checkboxes, layer, listings;
     L.mapbox.accessToken = 'pk.eyJ1IjoiZGlkZXZjbyIsImEiOiJjaXM3cWY3NDEwNDc0Mnpwa2w5YnllMXZkIn0.4pWeAL6-vhtobhpFd2HDuA';
-
-    if($("#map").length) initMap(placesOfInterest);
-
+    
     var $saveSearchSection = $('#saveSearchSection'),
         order = 'default';
         
     jQuery( document ).ready(function() {
         try {
-            initMap();
+            if($("#map").length) initMap(placesOfInterest);
         } catch(err) {
            console.log(err);
         }
@@ -46,7 +44,7 @@ jQuery(function ($) {
             features: []
         };
         
-        if (placesOfInterest) {
+        if (typeof placesOfInterest !== 'undefined') {
             for(var j = 0; j < placesOfInterest.length; j++) {
                 geoJson.features.push({
                     "type": "Feature",
