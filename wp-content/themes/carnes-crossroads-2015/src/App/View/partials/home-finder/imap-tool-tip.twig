@@ -1,0 +1,15 @@
+<div class="listing">
+    {% if post.thumbnail and post.thumbnail.src %}
+    <div class="listing-img-col"
+         style="background:url('{{ post.thumbnail.src }}') no-repeat 50% 50%; background-size: cover;">
+    </div>
+    {% endif %}
+    <div class="listing-details-col">
+        <div class="listing-neighborhood">{{ post.title }}</div>
+        <div class="listing-details">
+            {% if post.website_url %}
+            <a href="{{ post.website_url }}" class="showProperty site-btn">Visit Website</a>
+            {% endif %}
+        </div>
+    </div>
+</div>

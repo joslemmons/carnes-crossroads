@@ -27,7 +27,7 @@
                                     <div class="listing-specs">
                                         {% if property.getBedroomCount or property.getFullBathroomCount or property.getHalfBathroomCount %}
                                         {% if property.getBedroomCount %}{{ property.getBedroomCount }} BR /{% endif %}
-                                            {% if property.getFullBathroomCount %}{{ property.getFullBathroomCount }} Full Bath /{% endif %}{% if property.getHalfBathroomCount %}{{ property.getHalfBathroomCount }}  Half Bath{% endif %}
+                                            {% if property.getFullBathroomCount %}{{ property.getFullBathroomCount }} Full BA /{% endif %}{% if property.getHalfBathroomCount %}{{ property.getHalfBathroomCount }}  Half BA{% endif %}
                                         {% endif %}
                                         {% set numDecimalPlaces = 0 %}
                                         {% if property.getPropertyType == 'Homesite' %}

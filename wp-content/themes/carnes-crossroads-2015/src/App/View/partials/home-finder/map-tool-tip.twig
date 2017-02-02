@@ -1,16 +1,16 @@
 <div class="listing">
-    <div class="listing-img-col" style="background:url('{{ property.getFeaturedImageSrc }}') no-repeat 50% 50%; background-size: cover; height: 200px;">
+    <div class="listing-img-col" style="background:url('{{ property.getFeaturedImageSrc }}') no-repeat 50% 50%; background-size: cover; height: 160px;">
         {% if property.isFromMLS %}
             <div class="broker-reciprocity"></div>
         {% endif %}
     </div>
     <div class="listing-details-col">
         <div class="listing-address">{{ property.getAddress }}</div>
-        <div class="listing-neighborhood">{{ property.getPropertyType }}</div>
+        {# <div class="listing-neighborhood">{{ property.getPropertyType }}</div> #}
         <div class="listing-details">
             {% if property.getBedroomCount or property.getFullBathroomCount or property.getHalfBathroomCount %}
                 <div class="specs">{% if property.getBedroomCount %}{{ property.getBedroomCount }} BR /{% endif %}
-                    {% if property.getFullBathroomCount %}{{ property.getFullBathroomCount }} Full Bath /{% endif %}{% if property.getHalfBathroomCount %}{{ property.getHalfBathroomCount }}  Half Bath{% endif %}
+                    {% if property.getFullBathroomCount %}{{ property.getFullBathroomCount }} Full BA / {% endif %}{% if property.getHalfBathroomCount %}{{ property.getHalfBathroomCount }} Half BA{% endif %}
                 </div>
             {% endif %}
             {% set numDecimalPlaces = 0 %}
@@ -19,7 +19,7 @@
             {% endif %}
             <div class="square-footage">{{ property.getTotalAreaSquareFootage|number_format(numDecimalPlaces) }} {{ property.getTotalAreaSquareFootageUnitOfMeasurement }}</div>
             <div class="price">${{ property.getPurchaseListPrice|number_format }}</div>
-            <a href="{{ property.link }}" class="showProperty" data-property-id="{{ property.getId }}"
+            <a class="site-btn" href="{{ property.link }}" class="showProperty" data-property-id="{{ property.getId }}"
                data-property-address="{{ property.getAddress }}">View Listing</a>
         </div>
     </div>

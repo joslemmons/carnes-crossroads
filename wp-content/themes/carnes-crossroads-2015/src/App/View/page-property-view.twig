@@ -15,7 +15,7 @@
                 <div class="col-sm-8">
                     <span class="your-account">Your Account:</span>
                     <span class="account-links">
-                        <a href="#" class="showAccountPage savedListingsCount">Saved Listings {{ current_user.getSavedPropertyIds|length }}</a> / <a href="#" class="showAccountPage savedSearchesCount">Saved Searches {{ current_user.getRawSavedSearches|length }}</a></span> / <span class="account-link"><a href="{{ function('wp_logout_url', function('get_permalink', 35)) }}">Logout</a></span>
+                        <a href="#" class="showAccountPage savedListingsCount">Saved Listings {{ current_user.getSavedPropertyIds|length }}</a> <span class="hidden-xs-inline">/</span> <br class="visible-xs"><a href="#" class="showAccountPage savedSearchesCount">Saved Searches {{ current_user.getRawSavedSearches|length }}</a></span> / <span class="account-link"><a href="{{ function('wp_logout_url', function('get_permalink', 35)) }}">Logout</a></span>
                     {% else %}
                     <a href="#" class="showAccountPage"><span class="account-links">Sign In / Create Account</span></a>
                     {% endif %}
@@ -38,7 +38,7 @@
                                             {# 1190 x 660 #}
                                             <a href="{{ property.getImages[0] }}" {% if function('wp_is_mobile') == false %}
                                                {% else %}onclick="return false;"{% endif %}>
-                                                <img src="{{ property.getImages[0]|resize(1190,660) }}" class="main-photo img-responsive"/>
+                                                <img src="{{ property.getImages[0]|resize(1190,800) }}" class="main-photo img-responsive"/>
                                             </a>
                                         </div>
                                         {% if property.getImages[2] %}
@@ -219,7 +219,10 @@
                             {% if property.getPropertyType == 'Homesite' %}
                             {% set numDecimalPlaces = 2 %}
                             {% endif %}
-                            {% if property.getBedroomCount %}{{ property.getBedroomCount }} BR / {% endif %}{% if property.getFullBathroomCount %}{{ property.getFullBathroomCount }} Full Bath{% endif %}{% if property.getHalfBathroomCount %} / {{ property.getHalfBathroomCount }}  Half Bath{% endif %}{% if property.getTotalAreaSquareFootage %} / {{ property.getTotalAreaSquareFootage|number_format(numDecimalPlaces) }} {{ property.getTotalAreaSquareFootageUnitOfMeasurement }}{% endif %}
+                            {% if property.getBedroomCount %}{{ property.getBedroomCount }} BR / {% endif %}
+                                {% if property.getFullBathroomCount %}{{ property.getFullBathroomCount }} Full BA /{% endif %}
+                                {% if property.getHalfBathroomCount %}{{ property.getHalfBathroomCount }}  Half BA <span class="hidden-xs-inline">/</span>{% endif %}
+                                {% if property.getTotalAreaSquareFootage %}  <br class="visible-xs">{{ property.getTotalAreaSquareFootage|number_format(numDecimalPlaces) }} {{ property.getTotalAreaSquareFootageUnitOfMeasurement }}{% endif %}
                         </div>
 
                         <div class="listing-neighborhood">

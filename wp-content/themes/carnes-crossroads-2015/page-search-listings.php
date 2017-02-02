@@ -1,6 +1,7 @@
 <?php
 
 use App\Model\HomeFinderPage;
+use App\Model\PlaceOfInterest;
 use HomeFinder\Model\HomeFinderFilters;
 use HomeFinder\Model\Metric;
 use HomeFinder\Model\Result;
@@ -40,11 +41,20 @@ Metric::trackSearch($filters);
 /* @var $result Result */
 $result = \HomeFinder\Model\HomeFinder::getProperties($filters, $per_page, $page);
 
+$placesOfInterest = PlaceOfInterest::all();
+
+foreach ($placesOfInterest as $listing) {
+    $listing->tooltip = Timber::compile('partials/home-finder/imap-tool-tip.twig', array(
+        'post' => $listing
+    ));
+}
+
 $context['view'] = isset($_REQUEST['view']) ? $_REQUEST['view'] : 'grid';
 $context['filters'] = $filters;
 $context['result'] = $result;
 $context['isSearchListings'] = true;
 $context['listingsTitle'] = 'Search Listings';
+$context['placesOfInterest'] = $placesOfInterest;
 
 HomeFinderPage::enqueueAssets();
 
