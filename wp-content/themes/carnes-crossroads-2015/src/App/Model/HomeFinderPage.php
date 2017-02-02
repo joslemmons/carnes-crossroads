@@ -28,11 +28,11 @@ class HomeFinderPage
         wp_enqueue_script('mapbox-js', 'https://api.mapbox.com/mapbox.js/v3.0.0/mapbox.js', array(), false, true);
         wp_enqueue_style('mapbox-css', 'https://api.mapbox.com/mapbox.js/v3.0.0/mapbox.css');
 
-        wp_enqueue_script('imap-js', get_template_directory_uri() . '/js/imap.js', array('jquery', 'google-map-js'), Config::getAppVersion(), true);
-        wp_localize_script('imap-js', 'DI', array(
-            'templateUri' => get_template_directory_uri(),
-            'isLoggedIn' => ($current_user !== false) ? 'true' : 'false'
-        ));
+//        wp_enqueue_script('imap-js', get_template_directory_uri() . '/js/imap.js', array('jquery', 'google-map-js'), Config::getAppVersion(), true);
+//        wp_localize_script('imap-js', 'DI', array(
+//            'templateUri' => get_template_directory_uri(),
+//            'isLoggedIn' => ($current_user !== false) ? 'true' : 'false'
+//        ));
 
         add_action('wp_footer', function() {
             echo '<script>var DIG = {}; DIG.isHomeFinderPage = true</script>';
