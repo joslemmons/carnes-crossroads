@@ -227,12 +227,12 @@
 
                         <div class="listing-neighborhood">
                             <div class="item-padding">
-                                <a href="/real-estate/home-finder/search-listings/?propertyTypes={{ property.getPropertyType | lower }}" class="filterByPropertyType"
-                                   data-property-type="{{ property.getPropertyType }}">{% if property.getPropertyType == 'Home' %}Single Family Home{% else %}{{ property.getPropertyType }}{% endif %}</a>
+                                <a href="/home-finder/search-listings/?{% if property.getPropertyType == 'Home' or property.getPropertyType == 'Single Family Home' %}includePlans=false&includeHomes=true{% else %}includePlans=true&includeHomes=false {% endif %}" class="filterByPropertyType">
+                                    {% if property.getPropertyType == 'Home' %}Single Family Home{% else %}{{ property.getPropertyType }}{% endif %}</a>
                             </div>{% if property.getPropertyType and property.getNeighborhood.title %} | {% endif %}
-                            <div class="item-padding"><a
+                            {% if property.getNeighborhood.link %}<div class="item-padding"><a
                                                          href="{{ property.getNeighborhood.link }}">{{ property.getNeighborhood.title }}</a>
-                            </div>{% if property.getUnitView %} |
+                            </div>{% endif %}{% if property.getUnitView %} |
                             <div class="item-padding">{{ property.getUnitView }}</div>{% endif %}
                         </div>
 
