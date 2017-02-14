@@ -7878,7 +7878,7 @@ Edits by Chernoff Newman
             margin-left: 5px; }
           .home-finder .home-finder-main .single-listing-col .single-listing-content .listing-actions .share-widget {
             position: absolute;
-            background: #9f9f9f;
+            background: #8b8b8b;
             top: -70px;
             left: -50px;
             color: #fff;
@@ -7887,13 +7887,16 @@ Edits by Chernoff Newman
             width: 180px;
             z-index: 1;
             opacity: 0;
-            -webkit-transition: 0.5s all;
-            transition: 0.5s all; }
+            -webkit-transition: 0.4s all;
+            transition: 0.4s all; }
             .home-finder .home-finder-main .single-listing-col .single-listing-content .listing-actions .share-widget.open {
               opacity: 1;
               top: -90px; }
             .home-finder .home-finder-main .single-listing-col .single-listing-content .listing-actions .share-widget a {
-              color: #fff; }
+              color: #fff;
+              text-decoration: none; }
+              .home-finder .home-finder-main .single-listing-col .single-listing-content .listing-actions .share-widget a:hover {
+                text-decoration: none; }
             .home-finder .home-finder-main .single-listing-col .single-listing-content .listing-actions .share-widget span.share-text {
               position: relative;
               top: -4px;
@@ -7907,10 +7910,10 @@ Edits by Chernoff Newman
               margin-right: 8px;
               position: relative;
               top: 0;
-              -webkit-transition: 0.5s all;
-              transition: 0.5s all; }
+              -webkit-transition: 0.3s all;
+              transition: 0.3s all; }
               .home-finder .home-finder-main .single-listing-col .single-listing-content .listing-actions .share-widget .fb-icon:hover {
-                top: 4px; }
+                top: 2px; }
             .home-finder .home-finder-main .single-listing-col .single-listing-content .listing-actions .share-widget .twitter-icon {
               width: 18px;
               height: 18px;
@@ -7920,10 +7923,10 @@ Edits by Chernoff Newman
               margin-right: 8px;
               position: relative;
               top: 0;
-              -webkit-transition: 0.5s all;
-              transition: 0.5s all; }
+              -webkit-transition: 0.3s all;
+              transition: 0.3s all; }
               .home-finder .home-finder-main .single-listing-col .single-listing-content .listing-actions .share-widget .twitter-icon:hover {
-                top: 4px; }
+                top: 2px; }
             .home-finder .home-finder-main .single-listing-col .single-listing-content .listing-actions .share-widget .email-icon {
               width: 18px;
               height: 18px;
@@ -7932,10 +7935,10 @@ Edits by Chernoff Newman
               display: inline-block;
               position: relative;
               top: 0;
-              -webkit-transition: 0.5s all;
-              transition: 0.5s all; }
+              -webkit-transition: 0.3s all;
+              transition: 0.3s all; }
               .home-finder .home-finder-main .single-listing-col .single-listing-content .listing-actions .share-widget .email-icon:hover {
-                top: 4px; }
+                top: 2px; }
             .home-finder .home-finder-main .single-listing-col .single-listing-content .listing-actions .share-widget .arrow {
               position: absolute;
               background: url(img/icon-caret.png) no-repeat 50% 50%;
@@ -8711,7 +8714,7 @@ Edits by Chernoff Newman
       margin-left: 5px; }
     .single-listing-content .listing-actions .share-widget {
       position: absolute;
-      background: #9f9f9f;
+      background: #8b8b8b;
       top: -70px;
       left: -50px;
       color: #fff;
@@ -8720,13 +8723,16 @@ Edits by Chernoff Newman
       width: 180px;
       z-index: 1;
       opacity: 0;
-      -webkit-transition: 0.5s all;
-      transition: 0.5s all; }
+      -webkit-transition: 0.3s all;
+      transition: 0.3s all; }
       .single-listing-content .listing-actions .share-widget.open {
         opacity: 1;
-        top: -90px; }
+        top: -80px; }
       .single-listing-content .listing-actions .share-widget a {
-        color: #fff; }
+        color: #fff;
+        text-decoration: none; }
+        .single-listing-content .listing-actions .share-widget a:hover {
+          text-decoration: none; }
       .single-listing-content .listing-actions .share-widget span.share-text {
         position: relative;
         top: -4px;
@@ -8740,10 +8746,10 @@ Edits by Chernoff Newman
         margin-right: 8px;
         position: relative;
         top: 0;
-        -webkit-transition: 0.5s all;
-        transition: 0.5s all; }
+        -webkit-transition: 0.3s all;
+        transition: 0.3s all; }
         .single-listing-content .listing-actions .share-widget .fb-icon:hover {
-          top: 4px; }
+          top: 2px; }
       .single-listing-content .listing-actions .share-widget .twitter-icon {
         width: 18px;
         height: 18px;
@@ -8753,10 +8759,10 @@ Edits by Chernoff Newman
         margin-right: 8px;
         position: relative;
         top: 0;
-        -webkit-transition: 0.5s all;
-        transition: 0.5s all; }
+        -webkit-transition: 0.3s all;
+        transition: 0.3s all; }
         .single-listing-content .listing-actions .share-widget .twitter-icon:hover {
-          top: 4px; }
+          top: 2px; }
       .single-listing-content .listing-actions .share-widget .email-icon {
         width: 18px;
         height: 18px;
@@ -8765,10 +8771,10 @@ Edits by Chernoff Newman
         display: inline-block;
         position: relative;
         top: 0;
-        -webkit-transition: 0.5s all;
-        transition: 0.5s all; }
+        -webkit-transition: 0.3s all;
+        transition: 0.3s all; }
         .single-listing-content .listing-actions .share-widget .email-icon:hover {
-          top: 4px; }
+          top: 2px; }
       .single-listing-content .listing-actions .share-widget .arrow {
         position: absolute;
         background: url(img/select-arrow.png) no-repeat 50% 50%;
