@@ -648,7 +648,7 @@ jQuery(function ($) {
         $('.filter-options').toggle('slow');
     });
 
-    $('div.home-finder-main').on('click', 'div.save.action-link a', function () {
+    $('div.home-finder-container').on('click', 'div.save.action-link a', function () {
         if (typeof DI === 'undefined' || typeof DI.isLoggedIn === 'undefined' || DI.isLoggedIn !== 'true') {
             $('a.showAccountPage').trigger('click');
             return false;
@@ -696,8 +696,8 @@ jQuery(function ($) {
         pauseSearch = true;
         $('#filter-searchAddress').val('');
         filterPriceSlider.noUiSlider.set([0, 500000]);
-        $("#filter-builders, #filter-bedrooms, #filter-bathrooms, #filter-sqft").find('option').removeProp('selected');
-        $("#filter-builders, #filter-bedrooms, #filter-bathrooms, #filter-sqft").trigger('chosen:updated');
+        $("#filter-listings-type-copy, #filter-builders, #filter-bedrooms, #filter-bathrooms, #filter-sqft").find('option').removeProp('selected');
+        $("#filter-listings-type-copy, #filter-builders, #filter-bedrooms, #filter-bathrooms, #filter-sqft").trigger('chosen:updated');
         $('#filter-homeFeatures').multipleSelect('uncheckAll');
         pauseSearch = false;
     }
