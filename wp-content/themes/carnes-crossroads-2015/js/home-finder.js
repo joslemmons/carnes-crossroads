@@ -648,7 +648,7 @@ jQuery(function ($) {
         $('.filter-options').toggle('slow');
     });
 
-    $('div.home-finder-main').on('click', 'div.save.action-link a', function () {
+    $('div.home-finder-container').on('click', 'div.save.action-link a', function () {
         if (typeof DI === 'undefined' || typeof DI.isLoggedIn === 'undefined' || DI.isLoggedIn !== 'true') {
             $('a.showAccountPage').trigger('click');
             return false;
