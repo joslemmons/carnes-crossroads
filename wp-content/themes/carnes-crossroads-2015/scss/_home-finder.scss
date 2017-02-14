@@ -883,6 +883,7 @@
 
                     .share-widget {
                         position: absolute;
+                        visibility: hidden;
                         background: #8b8b8b;
                         top: -70px;
                         left: -50px;
@@ -895,6 +896,7 @@
                         @include transition(.4s all);
 
                         &.open {
+                            visibility: visible;
                             opacity: 1;
                             top: -90px;
                         }

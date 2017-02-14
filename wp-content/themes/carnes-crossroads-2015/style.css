@@ -7878,6 +7878,7 @@ Edits by Chernoff Newman
             margin-left: 5px; }
           .home-finder .home-finder-main .single-listing-col .single-listing-content .listing-actions .share-widget {
             position: absolute;
+            visibility: hidden;
             background: #8b8b8b;
             top: -70px;
             left: -50px;
@@ -7890,6 +7891,7 @@ Edits by Chernoff Newman
             -webkit-transition: 0.4s all;
             transition: 0.4s all; }
             .home-finder .home-finder-main .single-listing-col .single-listing-content .listing-actions .share-widget.open {
+              visibility: visible;
               opacity: 1;
               top: -90px; }
             .home-finder .home-finder-main .single-listing-col .single-listing-content .listing-actions .share-widget a {
@@ -8714,6 +8716,7 @@ Edits by Chernoff Newman
       margin-left: 5px; }
     .single-listing-content .listing-actions .share-widget {
       position: absolute;
+      visibility: hidden;
       background: #8b8b8b;
       top: -70px;
       left: -50px;
@@ -8726,6 +8729,7 @@ Edits by Chernoff Newman
       -webkit-transition: 0.3s all;
       transition: 0.3s all; }
       .single-listing-content .listing-actions .share-widget.open {
+        visibility: visible;
         opacity: 1;
         top: -80px; }
       .single-listing-content .listing-actions .share-widget a {
