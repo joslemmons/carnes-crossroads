@@ -521,18 +521,18 @@
     #fullscreen-map {
         font-family: $proxima;
         color: $brown;
-        font-size: 12px;
+        font-size: 10px;
         font-weight: 400;
-        padding: 16px 40px 16px 20px;
+        padding: 13px 30px 10px 13px;
         position: absolute;
         top: 15px;
         right: 15px;
         z-index: 999;
         text-transform: uppercase;
-        background: $white url(img/icon-fullscreen.png) no-repeat 90% 50% / 12px;
+        background: $white url(img/icon-fullscreen.png) no-repeat 90% 50% / 10px;
 
         &:hover {
-            background: $brown url(img/icon-fullscreen_lt.png) no-repeat 90% 50% / 12px;
+            background: $brown url(img/icon-fullscreen_lt.png) no-repeat 90% 50% / 10px;
             color: $cc-tan;
         }
     }

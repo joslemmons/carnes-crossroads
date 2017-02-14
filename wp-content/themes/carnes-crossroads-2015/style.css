@@ -8432,17 +8432,17 @@ Edits by Chernoff Newman
   .home-finder-content #fullscreen-map {
     font-family: "proxima-nova", sans-serif;
     color: #695e49;
-    font-size: 12px;
+    font-size: 10px;
     font-weight: 400;
-    padding: 16px 40px 16px 20px;
+    padding: 13px 30px 10px 13px;
     position: absolute;
     top: 15px;
     right: 15px;
     z-index: 999;
     text-transform: uppercase;
-    background: #fff url(img/icon-fullscreen.png) no-repeat 90% 50%/12px; }
+    background: #fff url(img/icon-fullscreen.png) no-repeat 90% 50%/10px; }
     .home-finder-content #fullscreen-map:hover {
-      background: #695e49 url(img/icon-fullscreen_lt.png) no-repeat 90% 50%/12px;
+      background: #695e49 url(img/icon-fullscreen_lt.png) no-repeat 90% 50%/10px;
       color: #f8f2e9; }
   .home-finder-content #map {
     position: absolute;
