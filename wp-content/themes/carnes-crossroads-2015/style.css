@@ -4787,7 +4787,8 @@ body.has-active-menu {
       padding-top: 0; } }
 
 #modal-account {
-  padding-top: 0; }
+  padding-top: 0;
+  padding-right: 0 !important; }
 
 .modal.fade .modal-dialog {
   -webkit-transform: translate(125%, 0);
