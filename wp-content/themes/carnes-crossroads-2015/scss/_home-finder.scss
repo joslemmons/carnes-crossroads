@@ -883,7 +883,8 @@
 
                     .share-widget {
                         position: absolute;
-                        background: #9f9f9f;
+                        visibility: hidden;
+                        background: #8b8b8b;
                         top: -70px;
                         left: -50px;
                         color: $white;
@@ -892,15 +893,21 @@
                         width: 180px;
                         z-index: 1;
                         opacity: 0;
-                        @include transition(.5s all);
+                        @include transition(.4s all);
 
                         &.open {
+                            visibility: visible;
                             opacity: 1;
                             top: -90px;
                         }
 
                         a {
                             color: $white;
+                            text-decoration: none;
+
+                            &:hover {
+                                text-decoration: none;
+                            }
                         }
 
                         span.share-text {
@@ -919,10 +926,10 @@
                             margin-right: 8px;
                             position: relative;
                             top: 0;
-                            @include transition(.5s all);
+                            @include transition(.3s all);
 
                             &:hover {
-                                top: 4px;
+                                top: 2px;
                             }
 
                         }
@@ -936,10 +943,10 @@
                             margin-right: 8px;
                             position: relative;
                             top: 0;
-                            @include transition(.5s all);
+                            @include transition(.3s all);
 
                             &:hover {
-                                top: 4px;
+                                top: 2px;
                             }
                         }
 
@@ -951,10 +958,10 @@
                             display: inline-block;
                             position: relative;
                             top: 0;
-                            @include transition(.5s all);
+                            @include transition(.3s all);
 
                             &:hover {
-                                top: 4px;
+                                top: 2px;
                             }
                         }
 
