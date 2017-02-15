@@ -53,6 +53,7 @@ jQuery(function ($) {
                         "coordinates": [parseFloat(placesOfInterest[j][3]), parseFloat(placesOfInterest[j][2])]
                     },
                     "properties": {
+                        "marker-color": '#0a8c7c',
                         "listing-type": "place-of-interest",
                         "pop-up": placesOfInterest[j][5]
                     }
@@ -69,9 +70,9 @@ jQuery(function ($) {
                 },
                 "properties": {
                     "address": locations[i][0],
-                    "marker-color": (locations[i][6] === 'Single Family Home') ? '#b06a6a' : (locations[i][6] === 'Condominium' || locations[i][6] === 'Townhome') ? '#0a8c7c' : '#c9c23d',
+                    "marker-color": (locations[i][6] === 'Single Family Home') ? '#b06a6a' : (locations[i][6] === 'Amenities') ? '#0a8c7c' : '#c9c23d',
                     "pop-up": locations[i][5],
-                    "listing-type": (locations[i][6] === 'Single Family Home') ? 'available-homes' : (locations[i][6] === 'Condominium' || locations[i][6] === 'Townhome') ? 'available-townhomes' : 'available-homesites'
+                    "listing-type": (locations[i][6] === 'Single Family Home') ? 'available-homes' : (locations[i][6] === 'Amenities') ? 'available-amenities' : 'available-homesites'
                 }
             });
         }
@@ -107,7 +108,7 @@ jQuery(function ($) {
     }
 
     function change() {
-        var on = ['place-of-interest'];
+        var on = [];
         // Find all checkboxes that are checked and build a list of their values
         for(var i = 0; i < checkboxes.length; i++) {
             if(checkboxes[i].childNodes[1].checked) on.push(checkboxes[i].childNodes[1].name);
