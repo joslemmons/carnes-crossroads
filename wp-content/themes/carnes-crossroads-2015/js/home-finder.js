@@ -134,11 +134,15 @@ jQuery(function ($) {
     });
 
     $('#map-view-toggle').on('click', function () {
-        if(!$(this).hasClass('active')) {
-            $('#grid-view-toggle').removeClass('active');
-            $(this).addClass('active');
-            $('.pagination').attr('data-page',1);
-            performSearch();
+        var selection = $(this).find('option:selected').val();    
+        var view = $('#map-view-toggle').hasClass('active') ? 'map' : 'grid';
+        if (selection !== 'home-plans' && view !== 'grid') {
+            if(!$(this).hasClass('active')) {
+                $('#grid-view-toggle').removeClass('active');
+                $(this).addClass('active');
+                $('.pagination').attr('data-page',1);
+                performSearch();
+            }
         }
     });
 
@@ -997,17 +1001,18 @@ jQuery(function ($) {
   $('#filter-listings-type-copy').on('change', function() {
       $('#filter-listings-type').find('option[value="' + $(this).find('option:selected').val() + '"]').prop('selected', true);
       $('#filter-listings-type').trigger("chosen:updated");
-      var selection = $(this).find('option:selected').val();
+      
+      var selection = $(this).find('option:selected').val();    
+      var view = $('#map-view-toggle').hasClass('active') ? 'map' : 'grid';
+      if (selection === 'home-plans' && view === 'map') {
+          $('div.view-on-map').css('visibility', 'hidden');
+          $('#grid-view-toggle').trigger('click');
+      }else {
+          $('div.view-on-map').css('visibility', 'visible');
+      }
 
-        if (selection === 'home-plans') {
-            $('div.view-on-map').css('visibility', 'hidden');
-        }
-        else {
-            $('div.view-on-map').css('visibility', 'visible');
-        }
-
-        $('#filter-searchAddress').val('');
-        performSearch();
+      $('#filter-searchAddress').val('');
+      performSearch();
   });
 
     //Fullscreen Map

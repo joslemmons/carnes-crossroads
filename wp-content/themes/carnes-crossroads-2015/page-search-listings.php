@@ -48,8 +48,11 @@ foreach ($placesOfInterest as $listing) {
         'post' => $listing
     ));
 }
-
-$context['view'] = isset($_REQUEST['view']) ? $_REQUEST['view'] : 'grid';
+$view = isset($_REQUEST['view']) ? $_REQUEST['view'] : 'grid';
+if ($filters->shouldIncludeHomes() == false) {
+    $view = 'grid';
+}
+$context['view'] = $view;
 $context['filters'] = $filters;
 $context['result'] = $result;
 $context['isSearchListings'] = true;
