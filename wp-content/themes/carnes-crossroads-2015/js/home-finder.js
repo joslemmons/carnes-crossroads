@@ -134,15 +134,11 @@ jQuery(function ($) {
     });
 
     $('#map-view-toggle').on('click', function () {
-        var selection = $(this).find('option:selected').val();    
-        var view = $('#map-view-toggle').hasClass('active') ? 'map' : 'grid';
-        if (selection !== 'home-plans' && view !== 'grid') {
-            if(!$(this).hasClass('active')) {
-                $('#grid-view-toggle').removeClass('active');
-                $(this).addClass('active');
-                $('.pagination').attr('data-page',1);
-                performSearch();
-            }
+        if(!$(this).hasClass('active')) {
+            $('#grid-view-toggle').removeClass('active');
+            $(this).addClass('active');
+            $('.pagination').attr('data-page',1);
+            performSearch();
         }
     });
 
@@ -1005,9 +1001,13 @@ jQuery(function ($) {
       var selection = $(this).find('option:selected').val();    
       var view = $('#map-view-toggle').hasClass('active') ? 'map' : 'grid';
       if (selection === 'home-plans' && view === 'map') {
+          $('.toggle-btn').hide();
           $('div.view-on-map').css('visibility', 'hidden');
           $('#grid-view-toggle').trigger('click');
-      }else {
+      }else if(selection === 'home-plans') {
+          $('.toggle-btn').hide();
+      }else{
+          $('.toggle-btn').show();
           $('div.view-on-map').css('visibility', 'visible');
       }
 
