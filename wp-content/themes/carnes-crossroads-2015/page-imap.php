@@ -17,8 +17,22 @@ foreach ($listings as $listing) {
     ));
 }
 
+$request_data = array(
+    'prices' => "0-5000000",
+    'bedrooms' => "",
+    'bathrooms' => "",
+    'searchAddress' => "",
+    'sort' => "default",
+    'includePlans' => "false",
+    'builders' => ""
+);
+
+$filters = \HomeFinder\Model\HomeFinderFilters::withRawFilters($request_data);
+$available_homes = \HomeFinder\Model\HomeFinder::getProperties($filters)->items;
+
 $context['page'] = $page;
 $context['listings'] = $listings;
+$context['available_homes'] = $available_homes;
 
 \App\Model\iMap::enqueueAssets();
 

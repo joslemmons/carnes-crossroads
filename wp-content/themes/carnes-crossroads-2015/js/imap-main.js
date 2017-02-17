@@ -26,7 +26,6 @@ var geoJson = {
 };
 
 for (var i = 0; i < locations.length; i++) {
-    var color = setMarkerColor(locations[i][4]);
 
     geoJson.features.push({
         "type": "Feature",
@@ -37,6 +36,21 @@ for (var i = 0; i < locations.length; i++) {
         "properties": {
             "listing-type": locations[i][4],
             "marker-color": setMarkerColor(locations[i][4])
+        }
+    });
+}
+
+for (var i = 0; i < homes.length; i++) {
+
+    geoJson.features.push({
+        "type": "Feature",
+        "geometry": {
+            "type": "Point",
+            "coordinates": [parseFloat(homes[i][2]), parseFloat(homes[i][1])]
+        },
+        "properties": {
+            "listing-type": 'available-home',
+            "marker-color": '#b06a6a'
         }
     });
 }

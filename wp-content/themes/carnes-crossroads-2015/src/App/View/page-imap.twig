@@ -25,4 +25,22 @@
         </script>
     {% endif %}
 
+    {% if available_homes|length > 0 %}
+        <script>
+            if (typeof homes === 'undefined') homes = [];
+
+            {% for home in available_homes %}
+            {% if home.latitude and home.longitude %}
+            homes.push([
+                "{{ home.address_web }}",
+                '{{ home.latitude }}',
+                '{{ home.longitude }}',
+                'available-home',
+                '{{ home.tooltip|e('js') }}'
+            ]);
+            {% endif %}
+            {% endfor %}
+        </script>
+    {% endif %}
+
 {% endblock %}
