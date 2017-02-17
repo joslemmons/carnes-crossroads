@@ -4,19 +4,16 @@
 
 L.mapbox.accessToken = 'pk.eyJ1IjoiZGlkZXZjbyIsImEiOiJjaXM3cWY3NDEwNDc0Mnpwa2w5YnllMXZkIn0.4pWeAL6-vhtobhpFd2HDuA';
 
-var map = L.mapbox.map('imap', 'mapbox.streets', {
-    minZoom: 15,
-    maxZoom: 17,
-    zoom: 15
-});
+map = L.mapbox.map('imap', 'mapbox.streets', {
+    'maxZoom': 18,
+    'minZoom': 15,
+    'scrollWheelZoom' : 'center'
+}).setView([33.055457, -80.103917], 17);
+
 var filters = document.getElementById('legend-items');
 var checkboxes = document.getElementsByClassName('squared-checkbox');
 
 var layer = L.mapbox.featureLayer().addTo(map);
-
-var southWest = L.latLng(32.83064187300698, -79.93316068560326);
-var northEast = L.latLng(32.89325262945007, -79.88402077618287);
-var bounds = L.latLngBounds(southWest, northEast);
 
 var stamenLayer = L.tileLayer(DI.templateUri + '/img/imap/tiles/{z}/{x}/{y}.png',{
     minZoom: 15,
@@ -61,7 +58,7 @@ change();
 function setMarkerColor(listingType) {
     var color = null;
 
-    switch (locations[i][4]) {
+    switch (listingType) {
         case 'sports-fitness':
             color = '#56c1b1';
             break;
