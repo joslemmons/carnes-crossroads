@@ -35,12 +35,13 @@ for (var i = 0; i < locations.length; i++) {
         },
         "properties": {
             "listing-type": locations[i][4],
-            "marker-color": setMarkerColor(locations[i][4])
+            "marker-color": setMarkerColor(locations[i][4]),
+            "pop-up": locations[i][5]
         }
     });
 }
 
-for (var i = 0; i < homes.length; i++) {
+for (i = 0; i < homes.length; i++) {
 
     geoJson.features.push({
         "type": "Feature",
@@ -49,17 +50,19 @@ for (var i = 0; i < homes.length; i++) {
             "coordinates": [parseFloat(homes[i][2]), parseFloat(homes[i][1])]
         },
         "properties": {
-            "listing-type": 'available-home',
-            "marker-color": '#b06a6a'
+            "listing-type": 'available-homes',
+            "marker-color": '#b06a6a',
+            "pop-up": homes[i][4]
         }
     });
 }
 
 layer.setGeoJSON(geoJson);
-map.fitBounds(bounds);
 
-map.featureLayer.on('click', function (e) {
-    map.panTo(e.layer.getLatLng());
+map.eachLayer(function(marker) {
+    if(marker.feature && marker.feature.properties['pop-up']) {
+        marker.bindPopup(marker.feature.properties['pop-up'], L.popup({ 'autoPan' : true }));
+    }
 });
 
 map.setZoom(16);

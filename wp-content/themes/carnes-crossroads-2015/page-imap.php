@@ -30,6 +30,12 @@ $request_data = array(
 $filters = \HomeFinder\Model\HomeFinderFilters::withRawFilters($request_data);
 $available_homes = \HomeFinder\Model\HomeFinder::getProperties($filters)->items;
 
+foreach ($available_homes as $home) {
+    $home->tooltip = Timber::compile('partials/home-finder/map-tool-tip.twig', array(
+        'post' => $home
+    ));
+}
+
 $context['page'] = $page;
 $context['listings'] = $listings;
 $context['available_homes'] = $available_homes;
