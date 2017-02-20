@@ -66,22 +66,13 @@ jQuery(function ($) {
         //re-filter the markers when the form is changed
         filters.onchange = change;
         //initially trigger the filter
-        change();
-
-        map.eachLayer(function(marker) {
-            if(marker.feature && marker.feature.properties['pop-up']) {
-                marker.bindPopup(marker.feature.properties['pop-up'], L.popup({ 'autoPan' : true }));
-            }
-        });
-
-        for(var k = 0; k < listings.length; k++) listings[k].onmouseover = hoverMarkerPopUp;
+        change();       
     }
 
     function hoverMarkerPopUp() {
         var address = $(this).find($('div.map-address')).text().trim();
-
         map.eachLayer(function(marker) {
-            if (marker.feature && marker.feature.properties.address) {
+            if (marker['feature']) {
                 if (marker.feature.properties.address === address) {
                     marker.openPopup();
                 }
@@ -102,8 +93,14 @@ jQuery(function ($) {
             // of symbols that should be on, stored in the 'on' array
             return on.indexOf(f.properties["listing-type"]) !== -1;
         });
-
-        return false;
+        
+         map.eachLayer(function(marker) {
+            if(marker.feature && marker.feature.properties['pop-up']) {
+                marker.bindPopup(marker.feature.properties['pop-up'], L.popup({ 'autoPan' : true }));
+            }
+        });
+        
+        for(var k = 0; k < listings.length; k++) listings[k].onmouseover = hoverMarkerPopUp;
     }
 
     $('#grid-view-toggle').on('click', function () {
