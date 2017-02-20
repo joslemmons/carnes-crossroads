@@ -32,7 +32,7 @@ $available_homes = \HomeFinder\Model\HomeFinder::getProperties($filters)->items;
 
 foreach ($available_homes as $home) {
     $home->tooltip = Timber::compile('partials/home-finder/map-tool-tip.twig', array(
-        'post' => $home
+        'property' => $home
     ));
 }
 
