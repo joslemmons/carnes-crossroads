@@ -4,7 +4,6 @@ use App\Controller\Router;
 use App\Model\Config;
 use App\Model\Helper;
 use App\Model\NewOfferings;
-use App\Model\PlaceOfInterest;
 use HomeFinder\Model\HomeFinderFilters;
 use HomeFinder\Model\Metric;
 use HomeFinder\Model\Property;
@@ -109,25 +108,7 @@ class HomeFinder extends Router
 
         $filters->setMLSPage($result->mlsPage);
 
-        $places_of_interest_t = PlaceOfInterest::all();
-
-        $places_of_interest = array();
         $locations = array();
-
-        foreach($places_of_interest_t as $listing) {
-            $location_t = array(
-                $listing->address,
-                $listing->title,
-                $listing->latitude,
-                $listing->longitude,
-                $listing->getCategory(),
-                \Timber::compile('partials/home-finder/imap-tool-tip.twig', array(
-                    'post' => $listing
-                ))
-            );
-
-            $places_of_interest[] = $location_t;
-        }
 
         foreach ($resultAll->items as $property) {
             if ($property->latitude && $property->longitude) {
@@ -174,7 +155,6 @@ class HomeFinder extends Router
         self::renderJSON(array(
             'status' => 200,
             'total' => $result->total,
-            'placesOfInterest' => $places_of_interest,
             'locations' => $locations,
             'rsp' => $html
         ));

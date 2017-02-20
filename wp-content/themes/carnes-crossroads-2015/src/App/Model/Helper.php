@@ -271,4 +271,14 @@ class Helper
 
         return $forms;
     }
+
+    public static function getPageCacheTime()
+    {
+        if (Helper::isProduction()) {
+            // 1 hour
+            return 60 * 60 * 1;
+        }
+
+        return false;
+    }
 }

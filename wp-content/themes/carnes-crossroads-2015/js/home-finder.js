@@ -19,13 +19,13 @@ jQuery(function ($) {
         
     jQuery( document ).ready(function() {
         try {
-            if($("#map").length) initMap(placesOfInterest);
+            if($("#map").length) initMap();
         } catch(err) {
            console.log(err);
         }
     });
     
-    function initMap(placesOfInterest) {
+    function initMap() {
         filters = document.getElementById('legend-items');
         checkboxes = document.getElementsByClassName('squared-checkbox');
         listings = document.getElementsByClassName('map-results-box');
@@ -43,23 +43,6 @@ jQuery(function ($) {
             type: 'FeatureCollection',
             features: []
         };
-        
-        if (typeof placesOfInterest !== 'undefined') {
-            for(var j = 0; j < placesOfInterest.length; j++) {
-                geoJson.features.push({
-                    "type": "Feature",
-                    "geometry": {
-                        "type": "Point",
-                        "coordinates": [parseFloat(placesOfInterest[j][3]), parseFloat(placesOfInterest[j][2])]
-                    },
-                    "properties": {
-                        "marker-color": '#0a8c7c',
-                        "listing-type": "place-of-interest",
-                        "pop-up": placesOfInterest[j][5]
-                    }
-                });
-            }
-        } 
 
         for(var i = 0; i < locations.length; i++) {
             geoJson.features.push({
@@ -492,8 +475,7 @@ jQuery(function ($) {
             data: filtersForQuery,
             success: function (data) {
                 var html = data.rsp,
-                    total = data.total,
-                    placesOfInterest = data.placesOfInterest;
+                    total = data.total
 
                 locations = data.locations;
 
@@ -506,7 +488,7 @@ jQuery(function ($) {
                 $('div.home-finder-container').html(html).fadeTo('slow', 1);
 
                 if(view == 'map'){
-                    initMap(placesOfInterest);
+                    initMap();
                 }
 
                 $input.prop('readonly', false);

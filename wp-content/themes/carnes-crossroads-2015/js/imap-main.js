@@ -4,19 +4,16 @@
 
 L.mapbox.accessToken = 'pk.eyJ1IjoiZGlkZXZjbyIsImEiOiJjaXM3cWY3NDEwNDc0Mnpwa2w5YnllMXZkIn0.4pWeAL6-vhtobhpFd2HDuA';
 
-var map = L.mapbox.map('imap', 'mapbox.streets', {
-    minZoom: 15,
-    maxZoom: 17,
-    zoom: 15
-});
+map = L.mapbox.map('imap', 'mapbox.streets', {
+    'maxZoom': 18,
+    'minZoom': 15,
+    'scrollWheelZoom' : 'center'
+}).setView([33.055457, -80.103917], 17);
+
 var filters = document.getElementById('legend-items');
 var checkboxes = document.getElementsByClassName('squared-checkbox');
 
 var layer = L.mapbox.featureLayer().addTo(map);
-
-var southWest = L.latLng(32.83064187300698, -79.93316068560326);
-var northEast = L.latLng(32.89325262945007, -79.88402077618287);
-var bounds = L.latLngBounds(southWest, northEast);
 
 var stamenLayer = L.tileLayer(DI.templateUri + '/img/imap/tiles/{z}/{x}/{y}.png',{
     minZoom: 15,
@@ -29,7 +26,6 @@ var geoJson = {
 };
 
 for (var i = 0; i < locations.length; i++) {
-    var color = setMarkerColor(locations[i][4]);
 
     geoJson.features.push({
         "type": "Feature",
@@ -39,16 +35,37 @@ for (var i = 0; i < locations.length; i++) {
         },
         "properties": {
             "listing-type": locations[i][4],
-            "marker-color": setMarkerColor(locations[i][4])
+            "marker-color": setMarkerColor(locations[i][4]),
+            "pop-up": locations[i][5]
+        }
+    });
+}
+
+for (i = 0; i < homes.length; i++) {
+
+    geoJson.features.push({
+        "type": "Feature",
+        "geometry": {
+            "type": "Point",
+            "coordinates": [parseFloat(homes[i][2]), parseFloat(homes[i][1])]
+        },
+        "properties": {
+            "listing-type": 'available-homes',
+            "marker-color": '#b06a6a',
+            "pop-up": homes[i][4]
         }
     });
 }
 
 layer.setGeoJSON(geoJson);
-map.fitBounds(bounds);
 
-map.featureLayer.on('click', function (e) {
-    map.panTo(e.layer.getLatLng());
+layer.on('click', function(e) {
+    if (!e.layer) return;
+
+    var popup = L.popup()
+        .setLatLng(e.latlng)
+        .setContent(e.layer.feature.properties["pop-up"])
+        .openOn(map)
 });
 
 map.setZoom(16);
@@ -61,7 +78,7 @@ change();
 function setMarkerColor(listingType) {
     var color = null;
 
-    switch (locations[i][4]) {
+    switch (listingType) {
         case 'sports-fitness':
             color = '#56c1b1';
             break;
