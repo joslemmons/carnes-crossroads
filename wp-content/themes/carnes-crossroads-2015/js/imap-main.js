@@ -59,10 +59,13 @@ for (i = 0; i < homes.length; i++) {
 
 layer.setGeoJSON(geoJson);
 
-map.eachLayer(function(marker) {
-    if(marker.feature && marker.feature.properties['pop-up']) {
-        marker.bindPopup(marker.feature.properties['pop-up'], L.popup({ 'autoPan' : true }));
-    }
+layer.on('click', function(e) {
+    if (!e.layer) return;
+
+    var popup = L.popup()
+        .setLatLng(e.latlng)
+        .setContent(e.layer.feature.properties["pop-up"])
+        .openOn(map)
 });
 
 map.setZoom(16);
