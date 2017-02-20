@@ -70,13 +70,12 @@ jQuery(function ($) {
                 },
                 "properties": {
                     "address": locations[i][0],
-                    "marker-color": (locations[i][6] === 'Single Family Home') ? '#b06a6a' : (locations[i][6] === 'Amenities') ? '#0a8c7c' : '#c9c23d',
+                    "marker-color": (locations[i][6] === 'Single Family Home') ? '#b06a6a' : (locations[i][6] === 'Amenities') ? '#0a8c7c' : '#b06a6a',
                     "pop-up": locations[i][5],
-                    "listing-type": (locations[i][6] === 'Single Family Home') ? 'available-homes' : (locations[i][6] === 'Amenities') ? 'available-amenities' : 'available-homesites'
+                    "listing-type": (locations[i][6] === 'Single Family Home') ? 'available-homes' : (locations[i][6] === 'Amenities') ? 'available-amenities' : 'available-homes'
                 }
             });
         }
-
         layer.setGeoJSON(geoJson);
 
         var stamenLayer = L.tileLayer(DI.templateUri + "/img/imap/tiles/{z}/{x}/{y}.png").addTo(map);
