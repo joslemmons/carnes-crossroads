@@ -30,16 +30,15 @@ jQuery(function ($) {
         checkboxes = document.getElementsByClassName('squared-checkbox');
         listings = document.getElementsByClassName('map-results-box');
 
-        if(typeof map === 'undefined') {
-            map = L.mapbox.map('map', 'mapbox.streets', {
-                'maxZoom': 18,
-                'minZoom': 15,
-                'scrollWheelZoom': 'center'
-            })
-                .setView([33.055457, -80.103917], 17);
+        map = L.mapbox.map('map', 'mapbox.streets', {
+            'maxZoom': 18,
+            'minZoom': 15,
+            'scrollWheelZoom': 'center'
+        })
+            .setView([33.055457, -80.103917], 17);
 
-            layer = L.mapbox.featureLayer().addTo(map);
-        }
+        layer = L.mapbox.featureLayer().addTo(map);
+
 
         var geoJson = {
             type: 'FeatureCollection',
@@ -69,9 +68,6 @@ jQuery(function ($) {
         filters.onchange = change;
         //initially trigger the filter
         change();
-        map.on('mousemove', function (e) {
-            console.log('clicked');
-        });
     }
 
     function hoverMarkerPopUp() {
