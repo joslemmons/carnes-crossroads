@@ -63,13 +63,13 @@
                 <div class="listing-specs">
                     <span class="listing-specs-headline">${{ property.getPurchaseListPrice|number_format }}&nbsp;&nbsp;&#8226;&nbsp;&nbsp;{% if property.getTotalAreaSquareFootage %}{{ property.getTotalAreaSquareFootage|number_format(numDecimalPlaces) }} {{ property.getTotalAreaSquareFootageUnitOfMeasurement }}{% endif %}&nbsp;&nbsp;&#8226;&nbsp;&nbsp;{{ property.getBuilder }}</span>
                     <br/>
-                    {% if property.getBedroomCount %}{{ property.getBedroomCount }} Bedrooms / {% endif %}{% if property.getFullBathroomCount %}{{ property.getFullBathroomCount }} Full Baths / {% endif %}{% if property.getHalfBathroomCount %}{{ property.getHalfBathroomCount }}  Half Bath{% endif %}
+                    {% if property.getBedroomCount %}{{ property.getBedroomCount }} Bedrooms / {% endif %}{% if property.getFullBathroomCount %}{{ property.getFullBathroomCount }} Full Baths{% endif %}{% if property.getHalfBathroomCount %}{{ property.getHalfBathroomCount }} / Half Bath{% endif %}
                 </div>
             </div>
             <div class="row">
-                <div class="listing-details">
+                <ul class="listing-details">
                     {{ property.getDescription }}
-                </div>
+                </ul>
             </div>
 
             {# {% if property.getImages|length > 1 %}
