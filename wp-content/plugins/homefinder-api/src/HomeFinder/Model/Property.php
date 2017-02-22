@@ -108,6 +108,10 @@ class Property
             return 'St. Thomas Park';
         }
 
+        if ($this->phase_id == 'a0AC000001X9zCsMAJ') {
+            return 'St. James Park';
+        }
+
         return $this->phase_id;
     }
 
