@@ -36,25 +36,3 @@
     {% endfor %}
 </script>
 {% endif %}
-
-{% if placesOfInterest | length > 0 %}
-<script>
-    if(typeof placesOfInterest === 'undefined')
-        placesOfInterest = [];
-
-    {% for location in placesOfInterest %}
-        {% if location.latitude and location.longitude %}
-
-        placesOfInterest.push([
-            '{{ location.address }}',
-            '{{ location.title }}',
-            '{{ location.latitude }}',
-            '{{ location.longitude }}',
-            'place-of-interest',
-            '{{ location.tooltip|e('js') }}'
-        ]);
-
-        {% endif %}
-    {% endfor %}
-</script>
-{% endif %}
