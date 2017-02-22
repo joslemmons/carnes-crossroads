@@ -27,18 +27,16 @@
 
         {% include "partials/page-single.twig" %}
 
-        {% for contact in agent %}
+        {% for contact in agents %}
         <div class="agent-contact">
             <div class="item"><strong>Name: </strong>{{ contact.name }}</div>
-            <div class="item"><strong>Office Phone: </strong>{{ contact.app_contact_office_phone }}</div>
-            <div class="item"><strong>Mobile Phone: </strong>{{ contact.app_contact_mobile_phone }}</div>
+            <div class="item"><strong>Office Phone: </strong>{{ contact.getOfficePhone }}</div>
+            <div class="item"><strong>Mobile Phone: </strong>{{ contact.getMobileNumber }}</div>
             <div class="item"><strong>Email: </strong><a href="mailto:{{ contact.email }}">{{ contact.app_contact_email }}</a></div>
             <p>{{ contact.content }}</p>
             <img src="{{ contact.thumbnail.src }}" width="100" height="auto">
         </div>
         {% endfor %}
-
-        {{dump(agent)}}
 
     </div>
 </section>
