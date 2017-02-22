@@ -4,7 +4,7 @@
     <div class="grid-results-box {% if property.getId == activePropertyId %}active{% endif %} {% if loop.last and nextPageUrl %}infinite-check{% endif %}" data-property-id="{{ property.getId }}"
          data-property-address="{{ property.getAddress|slugify }}"
          {% if loop.last and nextPageUrl %}data-infinite-scroll-next-url="{{ nextPageUrl }}"{% endif %}>
-        <a href="/{{ property.link }}">
+        <a href="{{ property.link }}">
             <div class="home-image" style="background:url('{{ property.getFeaturedImage }}') no-repeat 50% 50%; background-size: cover;">
                 <div class="type-box">{{ property.builder.title }}</div>
             </div>
@@ -27,7 +27,7 @@
                 <div class="price">${{ property.price|removeNonNumbers|number_format }}</div>
             </div>
             <div class="grid-btn">
-                <a class="site-btn" href="/{{ property.link }}">View Home Plan</a>
+                <a class="site-btn" href="{{ property.link }}">View Home Plan</a>
             </div>
         </div>
     </div>

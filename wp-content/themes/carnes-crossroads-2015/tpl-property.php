@@ -27,6 +27,17 @@ if (is_user_logged_in()) {
 
 // If navigating directly to a property, then we'll show featured properties in the list be default
 $featured_properties_result = HomeFinder::getFeaturedProperties();
+
+$back_url = $params['http_referer'];
+$need_search = 'home-finder/search-listings';
+$need_featured = 'home-finder/featured-listings';
+if (is_null($back_url) || ((strpos($back_url,$need_search) === FALSE &&
+    strpos($back_url,$need_featured) === FALSE)))
+{
+    $back_url = '/home-finder';
+}
+$context['back_url'] = $back_url;
+
 $context['listingsTitle'] = 'Featured Listings';
 
 $context['isSingle'] = true;
@@ -40,13 +51,15 @@ if (160 < strlen($description)) {
 }
 
 $back_url = $params['http_referer'];
-$need_search = 'real-estate/home-finder/search-listings';
-$need_featured = 'real-estate/home-finder/featured-listings';
+$need_search = 'home-finder/search-listings';
+$need_featured = 'home-finder/featured-listings';
+
 if (is_null($back_url) || ((strpos($back_url,$need_search) === FALSE &&
         strpos($back_url,$need_featured) === FALSE)))
 {
     $back_url = '/home-finder';
 }
+
 $context['back_url'] = $back_url;
 
 $context['seo_description'] = $description;

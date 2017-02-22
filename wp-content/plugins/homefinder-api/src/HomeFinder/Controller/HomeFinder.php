@@ -4,7 +4,6 @@ use App\Controller\Router;
 use App\Model\Config;
 use App\Model\Helper;
 use App\Model\NewOfferings;
-use App\Model\PlaceOfInterest;
 use HomeFinder\Model\HomeFinderFilters;
 use HomeFinder\Model\Metric;
 use HomeFinder\Model\Property;
@@ -109,50 +108,34 @@ class HomeFinder extends Router
 
         $filters->setMLSPage($result->mlsPage);
 
-        $places_of_interest_t = PlaceOfInterest::all();
-
-        $places_of_interest = array();
         $locations = array();
 
-        foreach($places_of_interest_t as $listing) {
-            $location_t = array(
-                $listing->address,
-                $listing->title,
-                $listing->latitude,
-                $listing->longitude,
-                $listing->getCategory(),
-                \Timber::compile('partials/home-finder/imap-tool-tip.twig', array(
-                    'post' => $listing
-                ))
+        foreach ($resultAll->items as $property) {
+            $latitude = ($property->latitude) ? $property->latitude : 33.055447;
+            $longitude = ($property->longitude) ? $property->longitude : -80.103878;
+
+            if ($property->getPropertyType() == 'Homesite') {
+                $op = 0;
+            } else {
+                $op = $property->getPropertyType();
+            }
+
+            $htmlAux = \Timber::compile('partials/home-finder/map-tool-tip.twig', array(
+                'property' => $property
+            ));
+
+            $auxLocation = array(
+                $property->address_web,
+                $latitude,
+                $longitude,
+                '4',
+                $property->link,
+                $htmlAux,
+                $op
             );
 
-            $places_of_interest[] = $location_t;
-        }
-
-        foreach ($resultAll->items as $property) {
-            if ($property->latitude && $property->longitude) {
-                if ($property->getPropertyType() == 'Homesite') {
-                    $op = 0;
-                } else {
-                    $op = $property->getPropertyType();
-                }
-
-                $htmlAux = \Timber::compile('partials/home-finder/map-tool-tip.twig', array(
-                    'property' => $property
-                ));
-
-                $auxLocation = array(
-                    $property->address_web,
-                    $property->latitude,
-                    $property->longitude,
-                    '4',
-                    $property->link,
-                    $htmlAux,
-                    $op
-                );
-
-                $locations[] = $auxLocation;
-            }
+            $locations[] = $auxLocation;
+            
         }
 
         $html = \Timber::compile($render_view, array(
@@ -174,7 +157,6 @@ class HomeFinder extends Router
         self::renderJSON(array(
             'status' => 200,
             'total' => $result->total,
-            'placesOfInterest' => $places_of_interest,
             'locations' => $locations,
             'rsp' => $html
         ));

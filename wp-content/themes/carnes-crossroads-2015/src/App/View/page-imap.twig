@@ -1,0 +1,46 @@
+{% extends 'base.twig' %}
+{% block template %}
+
+    {{ include('partials/home-finder/map-legend-imap.twig') }}
+
+    <div id="imap">
+    </div>
+
+    {% if listings|length > 0 %}
+        <script>
+            if (typeof locations === 'undefined') locations = [];
+
+            {% for listing in listings %}
+            {% if listing.latitude and listing.longitude %}
+            locations.push([
+                "{{ listing.post_title }}",
+                "{{ listing.address }}",
+                '{{ listing.latitude }}',
+                '{{ listing.longitude }}',
+                '{{ listing.getCategory }}',
+                '{{ listing.tooltip|e('js') }}'
+            ]);
+            {% endif %}
+            {% endfor %}
+        </script>
+    {% endif %}
+
+    {% if available_homes|length > 0 %}
+        <script>
+            if (typeof homes === 'undefined') homes = [];
+
+            {% for home in available_homes %}
+            {% if home.latitude and home.longitude %}
+            homes.push([
+                "{{ home.address_web }}",
+                '{{ home.latitude }}',
+                '{{ home.longitude }}',
+                'available-homes',
+                '{{ home.tooltip|e('js') }}'
+            ]);
+            {% endif %}
+            {% endfor %}
+        </script>
+    {% endif %}
+
+{% endblock %}

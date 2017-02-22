@@ -6,7 +6,6 @@
     </div>
     <div class="listing-details-col">
         <div class="listing-address">{{ property.getAddress }}</div>
-        {# <div class="listing-neighborhood">{{ property.getPropertyType }}</div> #}
         <div class="listing-details">
             {% if property.getBedroomCount or property.getFullBathroomCount or property.getHalfBathroomCount %}
                 <div class="specs">{% if property.getBedroomCount %}{{ property.getBedroomCount }} BR /{% endif %}
@@ -18,7 +17,11 @@
                 {% set numDecimalPlaces = 2 %}
             {% endif %}
             <div class="square-footage">{{ property.getTotalAreaSquareFootage|number_format(numDecimalPlaces) }} {{ property.getTotalAreaSquareFootageUnitOfMeasurement }}</div>
-            <div class="price">${{ property.getPurchaseListPrice|number_format }}</div>
+            {% if property.isFloorPlan %}
+                <div class="price">${{ property.price|removeNonNumbers|number_format }}</div>
+            {% else %}
+                <div class="price">${{ property.getPurchaseListPrice|number_format }}</div>
+            {% endif %}
             <a class="site-btn" href="{{ property.link }}" class="showProperty" data-property-id="{{ property.getId }}"
                data-property-address="{{ property.getAddress }}">View Listing</a>
         </div>

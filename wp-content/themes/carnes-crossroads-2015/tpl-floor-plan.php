@@ -29,6 +29,17 @@ if (!$floor_plan) {
 $filters = \HomeFinder\Model\HomeFinderFilters::withREQUESTParams();
 $filters->setShouldIncludePlans(true);
 $featured_properties_result = HomeFinder::getProperties($filters);
+
+$back_url = $params['http_referer'];
+$need_search = 'home-finder/search-listings';
+$need_featured = 'home-finder/featured-listings';
+if (is_null($back_url) || ((strpos($back_url,$need_search) === FALSE &&
+    strpos($back_url,$need_featured) === FALSE)))
+{
+    $back_url = '/home-finder';
+}
+$context['back_url'] = $back_url;
+
 $context['listingsTitle'] = 'Search Listings';
 
 $context['isSingle'] = true;

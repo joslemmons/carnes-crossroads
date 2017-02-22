@@ -12,43 +12,27 @@
     if (typeof locations === 'undefined') {
         locations = [];
     }
-
     {% for property in properties %}
-        {% if property.latitude and property.longitude and property.isFromPropertyBase %}
-
+        {% if property.isFloorPlan %}
+            {% set latitude = 33.055447 %}
+            {% set longitude = -80.103878 %}
+            {% set isFromPropertyBase = 1 %}
+        {% else %}
+            {% set latitude = property.latitude %}
+            {% set longitude = property.longitude %}
+            {% set isFromPropertyBase = property.isFromPropertyBase %}
+        {% endif %}
+        {% if latitude and longitude and isFromPropertyBase %}
             locations.push([
-                '{{ property.address_web }}',
-                '{{ property.latitude }}',
-                '{{ property.longitude }}',
+                '{{ property.isFloorPlan ? property.title : property.address_web }}',
+                '{{ latitude }}',
+                '{{ longitude }}',
                 '4',
-                '{{ property.link }}',
+                '{{ property.isFloorPlan ? property.fullLink : property.link_web }}',
                 '{% filter combineLines|escape('js') %}{% include 'partials/home-finder/map-tool-tip.twig' with { property: property } only %}{% endfilter %}',
                 {% if property.getPropertyType == 'Homesite' %}0{% else %}'{{ property.getPropertyType }}'{% endif %}
             ]);
-
          {% endif %}
-    {% endfor %}
-</script>
-{% endif %}
-
-{% if placesOfInterest | length > 0 %}
-<script>
-    if(typeof placesOfInterest === 'undefined')
-        placesOfInterest = [];
-
-    {% for location in placesOfInterest %}
-        {% if location.latitude and location.longitude %}
-
-        placesOfInterest.push([
-            '{{ location.address }}',
-            '{{ location.title }}',
-            '{{ location.latitude }}',
-            '{{ location.longitude }}',
-            'place-of-interest',
-            '{{ location.tooltip|e('js') }}'
-        ]);
-
-        {% endif %}
     {% endfor %}
 </script>
 {% endif %}

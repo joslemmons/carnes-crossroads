@@ -30,12 +30,32 @@ class FloorPlan
         return home_url().'/home-finder/floor-plans/'.$builder.'/'.$floor_plan.'/';
     }
 
+    public function getId()
+    {
+        return $this->title;
+    }
+
+    public function getPropertyType()
+    {
+        return 'Floor Plan';
+    }
+
+    public function getAddress()
+    {
+        return $this->title;
+    }
+
+    public function isFromMLS()
+    {
+        return false;
+    }
+
     public function link()
     {
         $slug       = new Slugify();
         $builder    = $slug->slugify($this->builder->title());
         $floor_plan = $slug->slugify($this->title);
-        return 'home-finder/floor-plans/'.$builder.'/'.$floor_plan.'/';
+        return '/home-finder/floor-plans/'.$builder.'/'.$floor_plan.'/';
     }
 
     public function getTotalAreaSquareFootageUnitOfMeasurement()
@@ -87,12 +107,15 @@ class FloorPlan
 
     public function getFriendlyName()
     {
-        return sprintf('%s, %s Bedrooms, %s Full Bathrooms, $%s',
-            $this->title,
-            $this->bedrooms,
-            $this->full_bathrooms,
+        return sprintf('%s, %s Bedrooms, %s Full Bathrooms, $%s', $this->title,
+            $this->bedrooms, $this->full_bathrooms,
             number_format(preg_replace("/[^0-9]/", "", $this->price))
         );
+    }
+
+    public function getFeaturedImageSrc()
+    {
+        return $this->getFeaturedImage();
     }
 
     public function getFeaturedImage()

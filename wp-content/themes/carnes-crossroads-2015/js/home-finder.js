@@ -19,13 +19,13 @@ jQuery(function ($) {
         
     jQuery( document ).ready(function() {
         try {
-            if($("#map").length) initMap(placesOfInterest);
+            if($("#map").length) initMap();
         } catch(err) {
            console.log(err);
         }
     });
     
-    function initMap(placesOfInterest) {
+    function initMap() {
         filters = document.getElementById('legend-items');
         checkboxes = document.getElementsByClassName('squared-checkbox');
         listings = document.getElementsByClassName('map-results-box');
@@ -33,33 +33,17 @@ jQuery(function ($) {
         map = L.mapbox.map('map', 'mapbox.streets', {
             'maxZoom': 18,
             'minZoom': 15,
-            'scrollWheelZoom' : 'center'
+            'scrollWheelZoom': 'center'
         })
             .setView([33.055457, -80.103917], 17);
 
         layer = L.mapbox.featureLayer().addTo(map);
 
+
         var geoJson = {
             type: 'FeatureCollection',
             features: []
         };
-        
-        if (typeof placesOfInterest !== 'undefined') {
-            for(var j = 0; j < placesOfInterest.length; j++) {
-                geoJson.features.push({
-                    "type": "Feature",
-                    "geometry": {
-                        "type": "Point",
-                        "coordinates": [parseFloat(placesOfInterest[j][3]), parseFloat(placesOfInterest[j][2])]
-                    },
-                    "properties": {
-                        "marker-color": '#0a8c7c',
-                        "listing-type": "place-of-interest",
-                        "pop-up": placesOfInterest[j][5]
-                    }
-                });
-            }
-        } 
 
         for(var i = 0; i < locations.length; i++) {
             geoJson.features.push({
@@ -70,13 +54,12 @@ jQuery(function ($) {
                 },
                 "properties": {
                     "address": locations[i][0],
-                    "marker-color": (locations[i][6] === 'Single Family Home') ? '#b06a6a' : (locations[i][6] === 'Amenities') ? '#0a8c7c' : '#c9c23d',
+                    "marker-color": (locations[i][6] === 'Single Family Home') ? '#b06a6a' : (locations[i][6] === 'Amenities') ? '#0a8c7c' : '#b06a6a',
                     "pop-up": locations[i][5],
-                    "listing-type": (locations[i][6] === 'Single Family Home') ? 'available-homes' : (locations[i][6] === 'Amenities') ? 'available-amenities' : 'available-homesites'
+                    "listing-type": (locations[i][6] === 'Single Family Home') ? 'available-homes' : (locations[i][6] === 'Amenities') ? 'available-amenities' : 'available-homes'
                 }
             });
         }
-
         layer.setGeoJSON(geoJson);
 
         var stamenLayer = L.tileLayer(DI.templateUri + "/img/imap/tiles/{z}/{x}/{y}.png").addTo(map);
@@ -85,21 +68,12 @@ jQuery(function ($) {
         filters.onchange = change;
         //initially trigger the filter
         change();
-
-        map.eachLayer(function(marker) {
-            if(marker.feature && marker.feature.properties['pop-up']) {
-                marker.bindPopup(marker.feature.properties['pop-up'], L.popup({ 'autoPan' : true }));
-            }
-        });
-
-        for(var k = 0; k < listings.length; k++) listings[k].onmouseover = hoverMarkerPopUp;
     }
 
     function hoverMarkerPopUp() {
         var address = $(this).find($('div.map-address')).text().trim();
-
         map.eachLayer(function(marker) {
-            if (marker.feature && marker.feature.properties.address) {
+            if (marker['feature']) {
                 if (marker.feature.properties.address === address) {
                     marker.openPopup();
                 }
@@ -120,8 +94,14 @@ jQuery(function ($) {
             // of symbols that should be on, stored in the 'on' array
             return on.indexOf(f.properties["listing-type"]) !== -1;
         });
-
-        return false;
+        
+         map.eachLayer(function(marker) {
+            if(marker.feature && marker.feature.properties['pop-up']) {
+                marker.bindPopup(marker.feature.properties['pop-up'], L.popup({ 'autoPan' : true }));
+            }
+        });
+        
+        for(var k = 0; k < listings.length; k++) listings[k].onmouseover = hoverMarkerPopUp;
     }
 
     $('#grid-view-toggle').on('click', function () {
@@ -493,8 +473,7 @@ jQuery(function ($) {
             data: filtersForQuery,
             success: function (data) {
                 var html = data.rsp,
-                    total = data.total,
-                    placesOfInterest = data.placesOfInterest;
+                    total = data.total
 
                 locations = data.locations;
 
@@ -507,7 +486,7 @@ jQuery(function ($) {
                 $('div.home-finder-container').html(html).fadeTo('slow', 1);
 
                 if(view == 'map'){
-                    initMap(placesOfInterest);
+                    initMap();
                 }
 
                 $input.prop('readonly', false);
@@ -997,17 +976,22 @@ jQuery(function ($) {
   $('#filter-listings-type-copy').on('change', function() {
       $('#filter-listings-type').find('option[value="' + $(this).find('option:selected').val() + '"]').prop('selected', true);
       $('#filter-listings-type').trigger("chosen:updated");
-      var selection = $(this).find('option:selected').val();
+      
+      var selection = $(this).find('option:selected').val();    
+      var view = $('#map-view-toggle').hasClass('active') ? 'map' : 'grid';
+      if (selection === 'home-plans' && view === 'map') {
+          $('.toggle-btn').hide();
+          $('div.view-on-map').css('visibility', 'hidden');
+          $('#grid-view-toggle').trigger('click');
+      }else if(selection === 'home-plans') {
+          $('.toggle-btn').hide();
+      }else{
+          $('.toggle-btn').show();
+          $('div.view-on-map').css('visibility', 'visible');
+      }
 
-        if (selection === 'home-plans') {
-            $('div.view-on-map').css('visibility', 'hidden');
-        }
-        else {
-            $('div.view-on-map').css('visibility', 'visible');
-        }
-
-        $('#filter-searchAddress').val('');
-        performSearch();
+      $('#filter-searchAddress').val('');
+      performSearch();
   });
 
     //Fullscreen Map
