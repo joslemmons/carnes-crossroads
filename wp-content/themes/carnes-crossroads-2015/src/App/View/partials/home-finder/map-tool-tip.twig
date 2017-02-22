@@ -23,7 +23,7 @@
                 <div class="price">${{ property.getPurchaseListPrice|number_format }}</div>
             {% endif %}
             <a class="site-btn" href="{{ property.link }}" class="showProperty" data-property-id="{{ property.getId }}"
-               data-property-address="{{ property.getAddress }}">View Listing</a>
+               data-property-address="{{ property.getAddress }}"> {% if property.isFloorPlan %} View Home Plan {% else %} View Listing {% endif %} </a>
         </div>
     </div>
 </div>
