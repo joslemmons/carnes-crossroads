@@ -26,19 +26,16 @@ jQuery(function ($) {
     });
     
     function initMap() {
-        filters = document.getElementById('legend-items');
-        checkboxes = document.getElementsByClassName('squared-checkbox');
         listings = document.getElementsByClassName('map-results-box');
 
         map = L.mapbox.map('map', 'mapbox.streets', {
             'maxZoom': 18,
             'minZoom': 15,
-            'scrollWheelZoom': 'center'
+            'scrollWheelZoom' : 'center'
         })
             .setView([33.055457, -80.103917], 17);
 
         layer = L.mapbox.featureLayer().addTo(map);
-
 
         var geoJson = {
             type: 'FeatureCollection',
@@ -64,10 +61,13 @@ jQuery(function ($) {
 
         var stamenLayer = L.tileLayer(DI.templateUri + "/img/imap/tiles/{z}/{x}/{y}.png").addTo(map);
 
-        //re-filter the markers when the form is changed
-        filters.onchange = change;
-        //initially trigger the filter
-        change();
+        map.eachLayer(function(marker) {
+            if(marker.feature && marker.feature.properties['pop-up']) {
+                marker.bindPopup(marker.feature.properties['pop-up'], L.popup({ 'autoPan' : true }));
+            }
+        });
+
+        for(var k = 0; k < listings.length; k++) listings[k].onmouseover = hoverMarkerPopUp;
     }
 
     function hoverMarkerPopUp() {
@@ -94,14 +94,6 @@ jQuery(function ($) {
             // of symbols that should be on, stored in the 'on' array
             return on.indexOf(f.properties["listing-type"]) !== -1;
         });
-        
-         map.eachLayer(function(marker) {
-            if(marker.feature && marker.feature.properties['pop-up']) {
-                marker.bindPopup(marker.feature.properties['pop-up'], L.popup({ 'autoPan' : true }));
-            }
-        });
-        
-        for(var k = 0; k < listings.length; k++) listings[k].onmouseover = hoverMarkerPopUp;
     }
 
     $('#grid-view-toggle').on('click', function () {
