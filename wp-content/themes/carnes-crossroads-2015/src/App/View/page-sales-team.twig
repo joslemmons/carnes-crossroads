@@ -1,0 +1,51 @@
+{% extends 'base.twig' %}
+{% block template %}
+
+    {% if page.thumbnail %}
+        {% set headerImage = page.thumbnail %}
+    {% else %}
+        {% set headerImage = page.parent.thumbnail %}
+    {% endif %}
+
+    <section class="hero__page" style="background-image: url('{{ page.thumbnail.src }}')">
+    <div class="hero__content-tab-orange">
+        <div class="hero__content-inner">
+            <h1>{{ page.title }}</h1>
+        </div>
+    </div>
+</section>
+
+<section class="page-content--white-floral-top">
+    <div class="container">
+        {% if page.headline %}
+        <div class="row extra-bottom">
+            <div class="col-xs-12 col-md-8 col-lg-10 col-md-offset-2 col-lg-offset-1 text-center">
+                <h2>{{ page.getHeadline }}</h2>
+            </div>
+        </div>
+        {% endif %}
+
+        {% include "partials/page-single.twig" %}
+
+        {% for contact in agent %}
+        <div class="agent-contact">
+            <div class="item"><strong>Name: </strong>{{ contact.name }}</div>
+            <div class="item"><strong>Office Phone: </strong>{{ contact.app_contact_office_phone }}</div>
+            <div class="item"><strong>Mobile Phone: </strong>{{ contact.app_contact_mobile_phone }}</div>
+            <div class="item"><strong>Email: </strong><a href="mailto:{{ contact.email }}">{{ contact.app_contact_email }}</a></div>
+            <p>{{ contact.content }}</p>
+            <img src="{{ contact.thumbnail.src }}" width="100" height="auto">
+        </div>
+        {% endfor %}
+
+        {{dump(agent)}}
+
+    </div>
+</section>
+
+
+{% include "partials/link-widgets.twig" %}
+
+{% include "partials/contact-foot.twig" %}
+
+{% endblock %}
