@@ -111,29 +111,31 @@ class HomeFinder extends Router
         $locations = array();
 
         foreach ($resultAll->items as $property) {
-            if ($property->latitude && $property->longitude) {
-                if ($property->getPropertyType() == 'Homesite') {
-                    $op = 0;
-                } else {
-                    $op = $property->getPropertyType();
-                }
+            $latitude = ($property->latitude) ? $property->latitude : 33.055447;
+            $longitude = ($property->longitude) ? $property->longitude : -80.103878;
 
-                $htmlAux = \Timber::compile('partials/home-finder/map-tool-tip.twig', array(
-                    'property' => $property
-                ));
-
-                $auxLocation = array(
-                    $property->address_web,
-                    $property->latitude,
-                    $property->longitude,
-                    '4',
-                    $property->link,
-                    $htmlAux,
-                    $op
-                );
-
-                $locations[] = $auxLocation;
+            if ($property->getPropertyType() == 'Homesite') {
+                $op = 0;
+            } else {
+                $op = $property->getPropertyType();
             }
+
+            $htmlAux = \Timber::compile('partials/home-finder/map-tool-tip.twig', array(
+                'property' => $property
+            ));
+
+            $auxLocation = array(
+                $property->address_web,
+                $latitude,
+                $longitude,
+                '4',
+                $property->link,
+                $htmlAux,
+                $op
+            );
+
+            $locations[] = $auxLocation;
+            
         }
 
         $html = \Timber::compile($render_view, array(
