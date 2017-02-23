@@ -8,7 +8,7 @@ map = L.mapbox.map('imap', 'mapbox.streets', {
     'maxZoom': 18,
     'minZoom': 15,
     'scrollWheelZoom' : 'center'
-}).setView([33.055457, -80.103917], 17);
+}).setView([33.0565, -80.103917]);
 
 var filters = document.getElementById('legend-items');
 var checkboxes = document.getElementsByClassName('squared-checkbox');
@@ -16,8 +16,8 @@ var checkboxes = document.getElementsByClassName('squared-checkbox');
 var layer = L.mapbox.featureLayer().addTo(map);
 
 var stamenLayer = L.tileLayer(DI.templateUri + '/img/imap/tiles/{z}/{x}/{y}.png',{
-    minZoom: 15,
-    maxZoom: 17
+    minZoom: 14,
+    maxZoom: 19
 }).addTo(map);
 
 var geoJson = {
@@ -68,7 +68,7 @@ layer.on('click', function(e) {
         .openOn(map)
 });
 
-map.setZoom(16);
+map.setZoom(18);
 
 //re-filter the markers when the form is changed
 filters.onchange = change;
