@@ -79,36 +79,20 @@ function setMarkerColor(listingType) {
     var color = null;
 
     switch (listingType) {
-        case 'sports-fitness':
+        case 'community-amenity':
             color = '#56c1b1';
             break;
 
-        case 'commercial':
+        case 'neighborhood':
             color = '#536377';
             break;
 
-        case 'schools':
+        case 'park-lake':
             color = '#695e49';
             break;
 
-        case 'churches':
+        case 'town':
             color = '#bf7616';
-            break;
-
-        case 'libraries':
-            color = '#553184';
-            break;
-
-        case 'parks-pools':
-            color = '#aa0979';
-            break;
-
-        case 'waterways':
-            color = '#d8b830';
-            break;
-
-        case 'golf':
-            color = '#22a82e';
             break;
 
         default:
