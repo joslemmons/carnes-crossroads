@@ -21,7 +21,7 @@
                     <div class="price">${{ property.getPurchaseListPrice|removeNonNumbers|number_format }}</div>
                 </div>                            
                 <div class="type-box">
-                    {{ property.builder.title }}
+                    {{ property.builder.title | replace({'Homes': "Home Plan"}) }}
                 </div>
             </div>
         </div>
