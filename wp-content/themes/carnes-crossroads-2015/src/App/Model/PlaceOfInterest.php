@@ -18,14 +18,10 @@ class PlaceOfInterest extends \TimberPost {
     public static $field_latitude;
     public static $field_website_url;
 
-    const TAX_SPORTS_FITNESS = 'sports-fitness';
-    const TAX_COMMERCIAL = 'commercial';
-    const TAX_SCHOOLS = 'schools';
-    const TAX_CHURCHES = 'churches';
-    const TAX_LIBRARIES = 'libraries';
-    const TAX_PARKS_POOLS = 'parks-pools';
-    const TAX_WATERWAYS = 'waterways';
-    const TAX_GOLF = 'golf';
+    const TAX_COMMUNITY_AMENITY = 'community_amenity';
+    const TAX_NEIGHBORHOOD = 'neighborhood';
+    const TAX_PARK_LAKE = 'park_lake';
+    const TAX_TOWN = 'town';
 
     public static function getPostType()
     {
@@ -114,29 +110,17 @@ class PlaceOfInterest extends \TimberPost {
 
     public static function addTermsForTaxonomy()
     {
-        wp_insert_term('Sports & Fitness', self::$_taxonomy, array(
-            'slug' => self::TAX_SPORTS_FITNESS
+        wp_insert_term('Community Amenity', self::$_taxonomy, array(
+            'slug' => self::TAX_COMMUNITY_AMENITY
         ));
-        wp_insert_term('Commercial', self::$_taxonomy, array(
-            'slug' => self::TAX_COMMERCIAL
+        wp_insert_term('Neighborhood', self::$_taxonomy, array(
+            'slug' => self::TAX_NEIGHBORHOOD
         ));
-        wp_insert_term('Schools', self::$_taxonomy, array(
-            'slug' => self::TAX_SCHOOLS
+        wp_insert_term('Park or Lake', self::$_taxonomy, array(
+            'slug' => self::TAX_PARK_LAKE
         ));
-        wp_insert_term('Churches', self::$_taxonomy, array(
-            'slug' => self::TAX_CHURCHES
-        ));
-        wp_insert_term('Libraries', self::$_taxonomy, array(
-            'slug' => self::TAX_LIBRARIES
-        ));
-        wp_insert_term('Parks & Pools', self::$_taxonomy, array(
-            'slug' => self::TAX_PARKS_POOLS
-        ));
-        wp_insert_term('Waterways', self::$_taxonomy, array(
-            'slug' => self::TAX_WATERWAYS
-        ));
-        wp_insert_term('Golf', self::$_taxonomy, array(
-            'slug' => self::TAX_GOLF
+        wp_insert_term('Town', self::$_taxonomy, array(
+            'slug' => self::TAX_TOWN
         ));
     }
 
