@@ -47,7 +47,7 @@
                     {% endif %}
                     <div class="price">${{ property.getPurchaseListPrice|number_format }}</div>
                 </div>
-                <div class="type-box">{{ property.getPropertyType }}{% if property.getPropertyType and property.getNeighborhood.title %} | {% endif %}{{ property.getNeighborhood.title }}</div>
+                <div class="type-box">{% if property.getPropertyType == 'Single Family Home' %}{{ 'Available Home' }}{% endif %}{% if property.getPropertyType and property.getNeighborhood.title %} | {% endif %}{{ property.getNeighborhood.title }}</div>
             </div>
         </div>
     </a>

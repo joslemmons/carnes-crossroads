@@ -6,7 +6,7 @@
          {% if loop.last and nextPageUrl %}data-infinite-scroll-next-url="{{ nextPageUrl }}"{% endif %}>
         <a href="{{ property.link }}">
             <div class="home-image" style="background:url('{{ property.getFeaturedImage }}') no-repeat 50% 50%; background-size: cover;">
-                <div class="type-box">{{ property.builder.title }}</div>
+                <div class="type-box">{{ property.builder.title | replace({'Homes': "Home Plan"}) }}</div>
             </div>
         </a>
         <div class="grid-box-content">
