@@ -110,16 +110,16 @@ class PlaceOfInterest extends \TimberPost {
 
     public static function addTermsForTaxonomy()
     {
-        wp_insert_term('Community Amenity', self::$_taxonomy, array(
+        wp_insert_term('Community Amenities', self::$_taxonomy, array(
             'slug' => self::TAX_COMMUNITY_AMENITY
         ));
-        wp_insert_term('Neighborhood', self::$_taxonomy, array(
+        wp_insert_term('Neighborhoods', self::$_taxonomy, array(
             'slug' => self::TAX_NEIGHBORHOOD
         ));
-        wp_insert_term('Park or Lake', self::$_taxonomy, array(
+        wp_insert_term('Parks & Lakes', self::$_taxonomy, array(
             'slug' => self::TAX_PARK_LAKE
         ));
-        wp_insert_term('Town', self::$_taxonomy, array(
+        wp_insert_term('Towns', self::$_taxonomy, array(
             'slug' => self::TAX_TOWN
         ));
     }
