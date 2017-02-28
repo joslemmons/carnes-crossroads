@@ -79,7 +79,7 @@ function setMarkerColor(listingType) {
     var color = null;
 
     switch (listingType) {
-        case 'community-amenity':
+        case 'community_amenity':
             color = '#56c1b1';
             break;
 
@@ -87,7 +87,7 @@ function setMarkerColor(listingType) {
             color = '#536377';
             break;
 
-        case 'park-lake':
+        case 'park_lake':
             color = '#695e49';
             break;
 
