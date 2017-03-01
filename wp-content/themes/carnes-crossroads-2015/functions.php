@@ -63,4 +63,15 @@ function disable_plugin_deactivation( $actions, $plugin_file, $plugin_data, $con
     return $actions;
 }
 
+function my_search_wp_basic_auth_creds() {
+    $credentials = array(
+        'username' => 'dire',
+        'password' => 'Islandtown!1!'
+    );
+
+    return $credentials;
+}
+
+add_filter('search_wp_basic_auth_creds', 'my_search_wp_basic_auth_creds');
+
 \App\Model\Bootstrap::init();
