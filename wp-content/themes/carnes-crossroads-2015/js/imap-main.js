@@ -41,9 +41,9 @@ for (var i = 0; i < locations.length; i++) {
     });
 }
 
-for (i = 0; i < homes.length; i++) {
+/*for (i = 0; i < homes.length; i++) {
 
-    geoJson.features.push({
+    /geoJson.features.push({
         "type": "Feature",
         "geometry": {
             "type": "Point",
@@ -55,7 +55,7 @@ for (i = 0; i < homes.length; i++) {
             "pop-up": homes[i][4]
         }
     });
-}
+}*/
 
 layer.setGeoJSON(geoJson);
 
