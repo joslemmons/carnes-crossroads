@@ -22,6 +22,7 @@ class PlaceOfInterest extends \TimberPost {
     const TAX_NEIGHBORHOOD = 'neighborhood';
     const TAX_PARK_LAKE = 'park_lake';
     const TAX_TOWN = 'town';
+    const TAX_REAL_ESTATE = 'real_estate';
 
     public static function getPostType()
     {
@@ -121,6 +122,9 @@ class PlaceOfInterest extends \TimberPost {
         ));
         wp_insert_term('Towns', self::$_taxonomy, array(
             'slug' => self::TAX_TOWN
+        ));
+        wp_insert_term('Real Estate', self::$_taxonomy, array(
+            'slug' => self::TAX_REAL_ESTATE
         ));
     }
 

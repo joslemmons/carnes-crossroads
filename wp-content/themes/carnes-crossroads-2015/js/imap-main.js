@@ -95,6 +95,10 @@ function setMarkerColor(listingType) {
             color = '#bf7616';
             break;
 
+        case 'real_estate':
+            color = '#aa0979';
+            break;
+
         default:
             break;
     }
