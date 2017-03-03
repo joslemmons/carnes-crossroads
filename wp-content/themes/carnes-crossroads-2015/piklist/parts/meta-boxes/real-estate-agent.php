@@ -1,6 +1,6 @@
 <?php
 /*
- * Title: Real Estate Agent Options (Daniel Island Theme 2015)
+ * Title: Real Estate Agent Options (Carnes Crossroads Theme 2015)
  * Post Type: agent
  */
 
@@ -16,9 +16,7 @@ piklist('field', array(
 
 piklist('field', array(
     'type' => 'group',
-    'field' => RealEstateAgent::$field_contacts,
     'label' => 'Contact Information',
-    'add_more' => true,
     'fields' => array(
         array(
             'type' => 'text',

@@ -135,6 +135,7 @@ class Bootstrap
         HomesPage::bootstrap();
         RealEstateAgent::bootstrap();
         Announcement::bootstrap();
+        PlaceOfInterest::bootstrap();
     }
 
 }

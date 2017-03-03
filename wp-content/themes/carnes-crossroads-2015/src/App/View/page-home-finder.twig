@@ -8,12 +8,12 @@
     {% endif %}
 
     <div class="home-finder">
-        
+
         {{ include('partials/home-finder/homefinder-filters.twig') }}
-        
+
         <div class="home-finder-content">
             {# Toggle View Btn #}
-            <div class="toggle-btn">
+            <div class="toggle-btn"{% if view == 'map' %} style="right:3%"{% endif %} {#{% if filters.shouldIncludeHomes() == false %}style="display:none;"{% endif %}#}>
                 <span id="grid-view-toggle" class="toggle-view {% if view == 'grid' %} active {% endif %}"><a>Grid</a></span>
                 <span id="map-view-toggle" class="toggle-view {% if view == 'map' %} active {% endif %}"><a>Map</a></span>
             </div>
@@ -23,10 +23,8 @@
         {% else %}
             {{ include('partials/home-finder/results-grid-view.twig') }}
         {% endif %}
-            
+
         </div>
     </div>
-
-    
 
 {% endblock %}

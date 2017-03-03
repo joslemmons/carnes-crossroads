@@ -21,8 +21,8 @@ class HomeFinderFilters
     private $_searchMLS = false;
     private $_searchAddress = '';
     private $_listingAgents = array();
-    private $_includePlans = false;
-    private $_includeHomes = false;
+    private $_includePlans = true;
+    private $_includeHomes = true;
     private $_builders = '';
 
     private $_rawMinLastUpdate = '';
@@ -95,19 +95,17 @@ class HomeFinderFilters
         $mlsPage = (isset($data['mlsPage'])) ? filter_var($data['mlsPage'], FILTER_VALIDATE_INT) : false;
         $filters->setMLSPage($mlsPage);
 
-        $shouldIncludePlans = (isset($data['includePlans'])) ? sanitize_text_field($data['includePlans']) : false;
+        $shouldIncludePlans = (isset($data['includePlans'])) ? sanitize_text_field($data['includePlans']) : true;
         if ($shouldIncludePlans === 'true') {
             $shouldIncludePlans = true;
-        } else {
-            $shouldIncludePlans = false;
         }
+        if ($shouldIncludePlans === 'false') $shouldIncludePlans = false;
 
-        $shouldIncludeHomes = (isset($data['includeHomes'])) ? sanitize_text_field($data['includeHomes']) : false;
+        $shouldIncludeHomes = (isset($data['includeHomes'])) ? sanitize_text_field($data['includeHomes']) : true;
         if ($shouldIncludeHomes === 'true') {
             $shouldIncludeHomes = true;
-        } else {
-            $shouldIncludeHomes = false;
         }
+        if ($shouldIncludeHomes === 'false') $shouldIncludeHomes = false;
 
         $filters->setShouldIncludePlans($shouldIncludePlans);
         $filters->setShouldIncludeHomes($shouldIncludeHomes);
@@ -151,7 +149,11 @@ class HomeFinderFilters
                     'default' => 0
                 )
             ));
-            $max_price = filter_var($prices_split_by_hyphen[1], FILTER_VALIDATE_INT);
+            $max_price = filter_var($prices_split_by_hyphen[1], FILTER_VALIDATE_INT, array(
+                'options' => array(
+                    'default' => 5000000
+                )
+            ));
             $filters->setMinPrice($min_price);
             $filters->setMaxPrice($max_price);
         }
@@ -167,7 +169,11 @@ class HomeFinderFilters
                     'default' => 0
                 )
             ));
-            $max_square_footage = filter_var($square_footages_split_by_hyphen[1], FILTER_VALIDATE_INT);
+            $max_square_footage = filter_var($square_footages_split_by_hyphen[1], FILTER_VALIDATE_INT, array(
+                'options' => array(
+                    'default' => 10000
+                )
+            ));
             $filters->setMinSquareFootage($min_square_footage);
             $filters->setMaxSquareFootage($max_square_footage);
         }
@@ -279,6 +285,11 @@ class HomeFinderFilters
     public function setShouldIncludePlans($should)
     {
         $this->_includePlans = $should;
+    }
+
+    public function shouldIncludeHomesAndHomePlans()
+    {
+        return ($this->_includePlans && $this->_includeHomes);
     }
 
     public function shouldIncludeHomes()
@@ -425,7 +436,7 @@ class HomeFinderFilters
     public function getMinPrice()
     {
         if ($this->_minPrice === '') {
-            return false;
+            return 0;
         }
 
         return $this->_minPrice;
@@ -434,7 +445,7 @@ class HomeFinderFilters
     public function getMaxPrice()
     {
         if ($this->_maxPrice === '' || $this->_maxPrice === 'any') {
-            return false;
+            return 5000000;
         }
 
         return $this->_maxPrice;
@@ -488,7 +499,7 @@ class HomeFinderFilters
     public function getMinSquareFootage()
     {
         if ($this->_minSquareFootage === '') {
-            return false;
+            return 0;
         }
 
         return $this->_minSquareFootage;
@@ -497,7 +508,7 @@ class HomeFinderFilters
     public function getMaxSquareFootage()
     {
         if ($this->_maxSquareFootage === '' || $this->_maxSquareFootage === 'any') {
-            return false;
+            return 10000;
         }
 
         return $this->_maxSquareFootage;
@@ -983,14 +994,14 @@ class HomeFinderFilters
             $friendly_name[] = ucfirst($builders);
         }
 
-        $includePlans = (isset($raw_filters['includePlans'])) ? $raw_filters['includePlans'] : false;
+        $includePlans = (isset($raw_filters['includePlans'])) ? $raw_filters['includePlans'] : true;
         if (false !== $includePlans && $includePlans !== '') {
             if ($includePlans === 'true') {
                 $friendly_name[] = 'Include Floor Plans';
             }
         }
 
-        $includeHomes = (isset($raw_filters['includeHomes'])) ? $raw_filters['includeHomes'] : false;
+        $includeHomes = (isset($raw_filters['includeHomes'])) ? $raw_filters['includeHomes'] : true;
         if (false !== $includeHomes && $includeHomes !== '') {
             if ($includeHomes === 'true') {
                 $friendly_name[] = 'Include Available Homes';

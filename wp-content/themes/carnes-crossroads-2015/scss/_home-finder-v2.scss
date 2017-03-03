@@ -1,28 +1,56 @@
 //V2 - .my-account-bar
 .my-account-bar {
-    background: $blue;
-    color: $white;
-    font-family: $proxima;
+    background: $cc-dk-tan;
+    color: $dk-grey;
+    font-family: $oswald;
     font-size: 12px;
+    letter-spacing: 0.5px;
     text-transform: uppercase;
-    padding: 13px 40px;
+    padding: 25px 5% 18px;
     position: relative;
     text-align: right;
 
+    @media (max-width: $screen-xs-max) {
+        padding: 13px 5%;
+        font-size: 0.85rem;
+    }
+
     a {
-        color: $white;
+        color: $cc-brown;
+        text-decoration: none;
 
         &:hover {
-            border-bottom: 1px solid $white;
+            border-bottom: 1px solid $cc-brown;
         }
     }
 
     .property-back {
         text-align: left;
+
+        @media (max-width: $screen-xs-max) {
+            display: inline-block;
+            float: left;
+        }
+
+        .col-sm-4 {
+            padding-left: 0;
+        }
     }
 
     .account-links {
         text-align: right;
+
+        .col-sm-8 {
+            padding-right: 0;
+        }
+
+        .hidden-xs-inline {
+            display: inline-block !important;
+
+            @media (max-width: $screen-xs-max) {
+                display: none !important;
+            }
+        }
     }
 
     .your-account {
@@ -53,6 +81,11 @@
                 border-bottom: none;
                 padding: 15px;
                 background: $white;
+
+                @media (max-width: $screen-xs-max) {
+                    padding: 10px;
+                    font-size: 0.85rem;
+                }
 
                 &:hover {
                     border-bottom: none;
@@ -103,12 +136,16 @@
         }
     }
 
-    //Grid View 
+    //Grid View
     .home-finder-grid-view {
         padding-top: 35px;
         padding-bottom: 35px;
         padding-left: 4.1%;
         padding-right: 4.1%;
+
+        @media (max-width: $screen-xs-max) {
+            padding-top: 21px;
+        }
     }
 
     h2.listings-title {
@@ -117,10 +154,22 @@
         font-size: 32px;
         font-weight: 400;
         display: inline-block;
+
+        @media (max-width: $screen-xs-max) {
+            font-size: 2rem;
+            display: block;
+        }
     }
 
     #saveSearchSection {
         display: inline-block;
+        margin-left: 8px;
+
+        @media (max-width: $screen-xs-max) {
+            display: block;
+            margin-left: 0;
+            margin-top: 13px;
+        }
 
         #accountSaveSearch {
             font-family: $oswald;
@@ -135,7 +184,10 @@
             border-bottom: none;
             position: relative;
             top: -4px;
-            margin-left: 8px;
+
+            @media (max-width: $screen-xs-max) {
+                top: 0;
+            }
 
             &:hover {
                 border-bottom: none;
@@ -145,10 +197,17 @@
         }
     }
 
+    .results-count {
+        @media (max-width: $screen-xs-max) {
+            margin-top: 30px;
+            font-size: 10px !important;
+        }
+    }
+
     .results-count, #saveSearchSection {
         font-family: $proxima;
         color: $brown;
-        font-size: .75em; /* Approximation due to font substitution */
+        font-size: .75rem; /* Approximation due to font substitution */
         font-weight: 400;
         line-height: 1; /* Approximation due to font substitution */
         text-align: left;
@@ -159,9 +218,9 @@
     .results-sort {
         font-family: $proxima;
         color: $brown;
-        font-size: 10px; 
+        font-size: 10px;
         font-weight: 900;
-        line-height: 1; 
+        line-height: 1;
         text-align: left;
         letter-spacing: 1px;
         text-transform: uppercase;
@@ -169,6 +228,10 @@
         text-align: left;
         margin-top: 20px;
         margin-bottom: 20px;
+
+        @media (max-width: $screen-xs-max) {
+            margin-top: 8px;
+        }
 
         a  {
             font-family: $proxima;
@@ -224,9 +287,16 @@
 
             .grid-box-content {
                 padding: 25px;
+                height: 260px;
+                position: relative;
 
                 @media (max-width: $screen-sm-max) {
                     padding: 10px 25px;
+                }
+
+                @media (max-width: $screen-xs-max) {
+                    height: 200px;
+                    padding: 20px;
                 }
             }
 
@@ -236,22 +306,31 @@
                 font-size: 1.3rem;
                 font-weight: 400;
                 margin-bottom: 15px;
+                line-height: 1.05;
 
                 @media (max-width: $screen-sm-max) {
                     margin-bottom: 10px;
+                }
+
+                @media (max-width: $screen-xs-max) {
+                    font-size: 1.4rem;
                 }
             }
 
             .grid-details {
                 font-family: $proxima;
                 color: $cc-med-grey;
-                font-size: 0.87rem; 
+                font-size: 0.9rem;
                 font-weight: 400;
                 text-transform: uppercase;
 
+                @media (max-width: $screen-xs-max) {
+                    font-size: 1rem;
+                }
+
                 .price {
-                    margin-top: 27px;
-                    margin-bottom: 43px;
+                    margin-top: 15px;
+                    // margin-bottom: 43px;
                     font-family: $oswald;
                     color: $cc-dk-green;
                     font-size: 1.15rem;
@@ -265,11 +344,25 @@
             }
 
             .grid-btn {
+                position: absolute;
+                bottom: 25px;
+                width: 80%;
+                @include center(x);
+
+                @media (max-width: $screen-xs-max) {
+                    bottom: 14px;
+                }
+
                 .site-btn {
                     color: $cc-brown;
                     background: $white;
                     border: 1px solid $cc-green;
                     text-decoration: none;
+
+                    @media (max-width: $screen-xs-max) {
+                        padding: 14px 20px;
+                        font-size: 0.9rem;
+                    }
 
                     &:hover {
                         color: $white;
@@ -283,6 +376,58 @@
 
     //V2 - Map View
 
+    .row-map-view {
+
+        .col-lg-6 {
+            @media (min-width: 1900px) {
+                width: percentage((4 / $grid-columns));
+            }
+        }
+
+        // For 3 column padding
+        .col-lg-6:nth-child(3n+1) {
+            @media (min-width: 1900px) {
+                padding-left:  0 !important;
+                padding-right: ($grid-gutter-width / 2.75) !important;
+            }
+        }
+
+        .col-lg-6:nth-child(3n+2) {
+            @media (min-width: 1900px) {
+                padding-left:  ($grid-gutter-width / 2.75) !important;
+                padding-right: ($grid-gutter-width / 2.75) !important;
+            }
+        }
+
+        .col-lg-6:nth-child(3n) {
+            @media (min-width: 1900px) {
+                padding-left:  ($grid-gutter-width / 2.75) !important;
+                padding-right: 0 !important;
+            }
+        }
+
+        // For 2 column padding
+        .col-lg-6:nth-child(odd) {
+            @media (max-width: $screen-md-max) {
+                padding: 0;
+            }
+
+            @media (min-width: $screen-lg) {
+                padding-left: 0;
+            }
+        }
+
+        .col-lg-6:nth-child(even) {
+            @media (max-width: $screen-md-max) {
+                padding: 0;
+            }
+
+            @media (min-width: $screen-lg) {
+                padding-right: 0;
+            }
+        }
+    }
+
     .col-map {
         padding: 0;
         position: relative;
@@ -290,7 +435,6 @@
         overflow: hidden;
         background: $white;
         z-index: 2;
-//            width: 100%;
 
         @include transition(0.3s all);
 
@@ -308,17 +452,68 @@
     .col-map-listings {
         z-index: 1;
         height: 900px;
-        overflow: scroll;
+        padding: 20px 30px 0 30px;
+        overflow-y: scroll;
 
         h2.listings-title {
-            display: block;
+            display: inline-block;
+            font-size: 2rem;
+
+            @media (max-width: 1225px) {
+                font-size: 1.7rem;
+            }
         }
 
         #saveSearchSection {
-            display: block;
+            display: inline-block;
             margin-top: 20px;
 
-            #accountSaveSearch {
+            @media (max-width: $screen-md-max) {
+                display: block;
+                margin-left: 0;
+            }
+        }
+
+        #accountSaveSearch {
+            margin-left: 0;
+        }
+
+        .results-count {
+            @media (max-width: $screen-md-max) {
+                margin-top: 26px;
+            }
+        }
+
+        .results-sort {
+            @media (max-width: $screen-md-max) {
+                margin-top: 10px;
+            }
+        }
+
+        .row-map-view {
+            margin-top: 15px;
+            clear: both;
+        }
+
+        .specs {
+            letter-spacing: 0.25px;
+
+            @media (max-width: 1450px) {
+                font-size: 0.76rem;
+                letter-spacing: 0.15px;
+            }
+        }
+
+        .specs-sqft{
+            @media (min-width: 1900px) {
+                display: block;
+                margin-bottom: 10px;
+            }
+
+            &:before {
+                @media (max-width: 1899px) {
+                    content: "/";
+                }
             }
         }
     }
@@ -326,19 +521,19 @@
     #fullscreen-map {
         font-family: $proxima;
         color: $brown;
-        font-size: 12px;
+        font-size: 10px;
         font-weight: 400;
-        padding: 16px 40px 16px 20px;
+        padding: 13px 30px 10px 13px;
         position: absolute;
-        top: 20px;
-        right: 20px;
+        top: 15px;
+        right: 15px;
         z-index: 999;
         text-transform: uppercase;
-        background: $white url(img/icon-fullscreen.png) no-repeat 90% 50% / 12px;
+        background: $white url(img/icon-fullscreen.png) no-repeat 90% 50% / 10px;
 
         &:hover {
-            background: $teal url(img/icon-fullscreen.png) no-repeat 90% 50% / 12px;
-            color: $blue;
+            background: $brown url(img/icon-fullscreen_lt.png) no-repeat 90% 50% / 10px;
+            color: $cc-tan;
         }
     }
 
@@ -364,12 +559,23 @@
         }
     }
 
+    .map-results-link {
+        text-decoration: none;
+
+        &:hover {
+            text-decoration: none;
+        }
+    }
 
     .map-results-box {
         width: 100%;
-        height: 250px;
         position: relative;
         margin-bottom: 30px;
+        @include transition(0.2s all);
+
+        &:hover {
+            @include box-shadow(0 0 8px rgba($brown, 0.3));
+        }
     }
 
     .map-save {
@@ -379,53 +585,51 @@
         z-index: 1;
     }
 
-    .broker-reciprocity {
-        position: absolute;
-        background: #fff url(img/broker-reciprocity.png) no-repeat 50% 50%;
-        background-size: 80px;
-        width: 100px;
-        left: 0;
-        top: 0;
+    .map-box-image {
+        widows: 100%;
+        height: 155px;
+        position: relative;
     }
-
-    .dire-logo {           
-        position: absolute;
-        background: #fff url(img/dire-logo-listings.png) no-repeat 50% 50%;
-        background-size: 60px;
-        width: 100px;
-        left: 0;
-        top: 0;
-        height: 30px;
-        padding-top: 0;
-    }
-
 
     .map-box-content {
-        background-color: rgba(204, 233, 230, 0.89);
+        background-color: $white;
         width: 100%;
         height: auto;
-        position: absolute;
-        bottom: 0;
-        padding: 10px 8px;
-        color: $blue;
+        position: relative;
+        padding: 13px 13px 8px 13px;
+        color: $cc-med-grey;
+        overflow: hidden;
+        min-height: 133px;
 
         .map-address {
             font-family: $baskerville;
-            font-size: 18px;
+            font-size: 1.28rem;
             font-weight: 400;
-            margin-bottom: 11px;
+            margin-bottom: 10px;
+            line-height: 1.1;
+            color: $brown;
+
+            @media (min-width: 1900px) {
+                font-size: 1.15rem;
+                white-space: nowrap;
+            }
         }
 
         .map-details {
             font-family: $proxima;
-            font-size: 12px; 
+            font-size: 0.82rem;
             font-weight: 400;
-            letter-spacing: 1px;
+            letter-spacing: 0.35px;
             text-transform: uppercase;
         }
 
         .sq-ft, .price {
             display: inline-block;
+        }
+
+        .price {
+            font-size: 1.05rem;
+            letter-spacing: 0.5px;
         }
 
         .type-box {
@@ -435,6 +639,9 @@
             text-transform: uppercase;
             letter-spacing: 1px;
             text-align: right;
+            position: absolute;
+            right: 10px;
+            bottom: 10px;
         }
     }
 
@@ -452,7 +659,7 @@
             color: $brown;
             font-size: 22px;
             font-weight: 400;
-            line-height: 1; 
+            line-height: 1;
             text-align: left;
             margin-top: 20px;
         }
@@ -472,7 +679,7 @@
         .listing-neighborhood {
             font-family: $oswald;
             color: $brown;
-            font-size: 12px; 
+            font-size: 12px;
             font-weight: 400;
             line-height: 1; /* Approximation due to font substitution */
             text-align: left;
@@ -518,4 +725,33 @@
             }
         }
     }
+}
+
+// map tooltip popups
+.listing {
+    min-width: 225px;
+
+    .listing-details {
+        margin-top: 10px !important;
+    }
+
+    .site-btn {
+        width: 100%;
+        color: $brown;
+        text-align: center;
+        margin-top: 10px;
+
+        &:hover {
+            color: $white;
+        }
+    }
+}
+
+.gallery-lightbox-container >.close,
+.gallery-lightbox-container >.prev,
+.gallery-lightbox-container >.next,
+.gallery-lightbox-container >.play-pause {
+    width: 40px;
+    height: 40px;
+    line-height: 40px;
 }

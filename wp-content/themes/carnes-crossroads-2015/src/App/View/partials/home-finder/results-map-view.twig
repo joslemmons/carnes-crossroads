@@ -3,63 +3,38 @@
     <div class="home-finder-map-view">
         <div class="container-fluid">
             <div class="row">
-                <div class="col-md-7 col-map">
-                     {{ include('partials/home-finder/map-legend-homes.twig') }}
+                <div class="col-md-8 col-lg-7 col-map">
                     <div id="fullscreen-map" class="fullscreen-map off hidden-sm hidden-xs">Fullscreen</div>
                     <div id="map">
                     </div>
                 </div>
-                <div class="col-md-5 col-map-listings hidden-sm hidden-xs">
+                <div class="col-md-4 col-lg-5 col-map-listings hidden-sm hidden-xs">
                     <h2 class="listings-title">{% if listingsTitle %}{{ listingsTitle }}{% else %}All Listings{% endif %}</h2>
 
                     <div id="saveSearchSection" {% if isFeaturedListings or isNewOfferings or isRecentlyListed or isSavedListings or isSingle or filters.isEmptySearch %} style="display:none;"{% endif %}>
-                        <a href="#" id="accountSaveSearch">Save Search Results</a>
+                        <a href="#" id="accountSaveSearch">Save Results</a>
                     </div>
 
                     <div class="results-count">
                         {{ result.total }} Result{% if result.total > 1 %}s{% endif %}
                     </div>
 
-                    <div class="results-sort"
-                         {% if isNewOfferings or isFilterByAgent %}style="display:none;"{% endif %}>
+                    <div class="results-sort"{% if isNewOfferings or isFilterByAgent %} style="display:none;"{% endif %}>
                         Sort by Price:
                         <a href="#" class="sortByPriceHighToLow">High to Low</a> |
                         <a href="#" class="sortByPriceLowToHigh">Low to High</a>
                     </div>
-                    
+
                     <div class="row row-map-view">
-                        
+
                         {# TODO: Setup New Offerings View #}
                         {% if isNewOfferings %}
                             {{ include('partials/home-finder/new-offerings-list-map.twig', { offerings: result.items, nextPageUrl: result.paginator.getNextPageUrl, activeOffering: activeItem, current_user: current_user}, with_context = false) }}
                         {% else %}
                             {{ include('partials/home-finder/property-list-map.twig', { properties: result.items, nextPageUrl: result.paginator.getNextPageUrl, activeProperty: activeItem, current_user: current_user }, with_context = false) }}
                         {% endif %}
-                
+
                     </div>
-                    
-                    <div class="row">
-                        <div class="col-md-12">   
-                            <div class="pagination" data-page="{{ page }}">
-                            {% if page != 1 %}
-                                <a href="/real-estate/home-finder/{{ name }}/page/{{ page - 1 }}{{ filterString }}">Previous</a>
-                            {% endif %}
-
-                            {% for i in 1..pages %}
-                                {% if page == i %}
-                                    <a class='active' href="/real-estate/home-finder/{{ name }}/page/{{ i }}{{ filterString }}"> {{ i }} </a>
-                                {% else %}
-                                    <a href="/real-estate/home-finder/{{ name }}/page/{{ i }}{{ filterString }}"> {{ i }} </a>
-                                {% endif %}
-                            {% endfor %}
-
-                            {% if page < pages %}
-                                <a href="/real-estate/home-finder/{{ name }}/page/{{ page + 1 }}{{ filterString }}">Next</a>
-                            {% endif %}
-                            </div>
-                        </div>
-                    </div>
-
                 </div>
             </div>
         </div>

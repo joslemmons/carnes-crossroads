@@ -19,13 +19,21 @@
 
     &__logo {
         position: absolute;
-        height: 90px;
-        width: 180px;
+        height: 100px;
+        width: 190px;
         margin-top: 6px;
         margin-left: 5%;
         overflow: hidden;
         float: left;
         @include transition(0.3s all);
+
+        @media (max-width: 1150px) {
+            width: 160px;
+        }
+
+        @media (max-width: $screen-sm-max) {
+            width: 130px;
+        }
     }
 
     &__sub {
@@ -82,7 +90,7 @@
         @include transition(1s all);
 
         @media (max-width: 1150px) {
-            padding: 0 10px;
+            padding: 0 5% 0 0;
         }
     }
 
@@ -137,8 +145,8 @@
 
     .main-nav__logo {
         margin-top: 7px;
-        width: 130px;
-        height: 65px;
+        width: 145px;
+        height: 75px;
     }
 
     .main-nav__primary-item {

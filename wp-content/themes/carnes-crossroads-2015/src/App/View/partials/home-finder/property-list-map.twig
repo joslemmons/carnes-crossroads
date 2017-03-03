@@ -1,63 +1,10 @@
 {% set activePropertyId = activeProperty.getId %}
-
 {% for property in properties %}
-<div class="col-md-6">
-
-    <div class="map-save">
-        <div class="save action-link">
-            <div class="saved"
-                 {% if current_user.hasSavedProperty(property) == false %}style="display:none;"{% endif %}>
-                <a href="#" data-property-id="{{ property.id }}">
-                    <div class="heart-icon">
-                        <img src="/wp-content/themes/daniel-island-2015/img/favorite-icon-on.png" width="41" height="37"/>
-                    </div>
-                </a>
-            </div>
-            <div class="not-saved"
-                 {% if current_user.hasSavedProperty(property) == true %}style="display:none;"{% endif %}>
-                <a href="#" data-property-id="{{ property.id }}">
-                    <div class="heart-icon">
-                        <div class="heart-icon">
-                            <img src="/wp-content/themes/daniel-island-2015/img/favorite-icon-off.png" width="41" height="37"/>
-                        </div>
-                    </div>
-                </a>
-            </div>
-        </div>
-    </div>
-
-    <a href="/real-estate/home-finder/properties/{{ property.getAddress|slugify }}/{{ property.getId }}">
-        <div class="map-results-box" style="background:url('{{ property.getFeaturedImageSrc }}') no-repeat 50% 50%; background-size: cover;">
-
-            {% if property.isFromMLS %}
-            <div class="broker-reciprocity"></div>
-            {% else %}
-            <div class="dire-logo"></div>
-            {% endif %}
-            <div class="map-box-content">
-                <div class="map-address">
-                    {{ property.getAddress }}
-                </div>
-                <div class="map-details">
-
-                    {% if property.getBedroomCount or property.getFullBathroomCount or property.getHalfBathroomCount %}
-                    <div class="specs">{% if property.getBedroomCount %}{{ property.getBedroomCount }} BR /{% endif %}
-                        {% if property.getFullBathroomCount %}{{ property.getFullBathroomCount }} Full Bath {% endif %}{% if property.getHalfBathroomCount %}/ {{ property.getHalfBathroomCount }}  Half Bath{% endif %}
-                    </div>
-                    {% else %}
-                    <br>
-                    {% endif %}
-                    {% set numDecimalPlaces = 0 %}
-                    {% if property.getPropertyType == 'Homesite' %}
-                    {% set numDecimalPlaces = 2 %}
-                    {% endif %}
-                    <div class="sq-ft">{{ property.getTotalAreaSquareFootage|number_format(numDecimalPlaces) }} {{ property.getTotalAreaSquareFootageUnitOfMeasurement }}</div> | <div class="price">${{ property.getPurchaseListPrice|number_format }}</div>
-                </div>
-                <div class="type-box">{{ property.getPropertyType }}{% if property.getPropertyType and property.getNeighborhood.title %} | {% endif %}{{ property.getNeighborhood.title }}</div>
-            </div>
-        </div>
-    </a>
-</div>
+    {% if property.isFloorPlan %}
+        {{ include('partials/home-finder/type/floorplan-map.twig', { property: property, nextPageUrl: nextPageUrl, activeOffering: activeOffering, current_user: current_user, activePropertyId: activePropertyId}, with_context = false) }}
+    {% else %}
+        {{ include('partials/home-finder/type/property-map.twig', { property: property, nextPageUrl: nextPageUrl, activeProperty: activeOffering, current_user: current_user, page: page, pages: pages, name: name, activePropertyId: activePropertyId }, with_context = false) }}
+    {% endif %}
 {% endfor %}
 
 {% if properties|length > 0 %}
@@ -65,21 +12,27 @@
     if (typeof locations === 'undefined') {
         locations = [];
     }
-
     {% for property in properties %}
-    {% if property.latitude and property.longitude and property.isFromPropertyBase %}
-
-    locations.push([
-        '{{ property.address_web }}',
-        '{{ property.latitude }}',
-        '{{ property.longitude }}',
-        '4',
-        '{{ property.link }}',
-        '{% filter combineLines|escape('js') %}{% include 'partials/home-finder/map-tool-tip.twig' with { property: property } only %}{% endfilter %}',
-        {% if property.getPropertyType == 'Homesite' %}0{% else %}'{{ property.getPropertyType }}'{% endif %}
-    ]);
-
-     {% endif %}
-     {% endfor %}
+        {% if property.isFloorPlan %}
+            {% set latitude = 33.055447 %}
+            {% set longitude = -80.103878 %}
+            {% set isFromPropertyBase = 1 %}
+        {% else %}
+            {% set latitude = property.latitude %}
+            {% set longitude = property.longitude %}
+            {% set isFromPropertyBase = property.isFromPropertyBase %}
+        {% endif %}
+        {% if latitude and longitude and isFromPropertyBase %}
+            locations.push([
+                '{{ property.isFloorPlan ? property.title : property.address_web }}',
+                '{{ latitude }}',
+                '{{ longitude }}',
+                '4',
+                '{{ property.isFloorPlan ? property.fullLink : property.link_web }}',
+                '{% filter combineLines|escape('js') %}{% include 'partials/home-finder/map-tool-tip.twig' with { property: property } only %}{% endfilter %}',
+                {% if property.getPropertyType == 'Homesite' %}0{% else %}'{{ property.getPropertyType }}'{% endif %}
+            ]);
+         {% endif %}
+    {% endfor %}
 </script>
 {% endif %}

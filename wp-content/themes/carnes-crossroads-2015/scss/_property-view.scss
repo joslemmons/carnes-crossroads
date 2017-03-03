@@ -6,8 +6,25 @@
     @media (max-width: $screen-sm-max) {
         padding-top: 0;
     }
+
+    .container-fluid > .row {
+        padding: 0 5%;
+        margin-left: 0;
+        margin-right: 0;
+    }
+
+    .row > .col-md-4 {
+        padding-left: 0;
+    }
 }
 
+.hidden-xs-inline {
+    display: inline-block !important;
+
+    @media (max-width: $screen-xs-max) {
+        display: none !important;
+    }
+}
 
 .property-sidebar {
 
@@ -26,9 +43,17 @@
         @media (max-width: $screen-sm-max) {
             padding: 40px;
         }
+
+        @media (max-width: $screen-xs-max) {
+            padding: 15px;
+        }
     }
 
     .property-gallery {
+
+        .site-btn {
+            text-decoration: none;
+        }
 
         .gallery-thumbs {
 
@@ -61,23 +86,23 @@
 }
 
 .single-listing-content {
-    padding: 20px;
+    padding: 20px 20px 20px 60px;
     max-width: 100%;
 
-    @media (min-width: $screen-lg) {
-        padding: 40px 100px 20px;
+    @media (min-width: 1500px) {
+        padding: 15px 60px 20px;
         max-width: 900px;
     }
 
     @media (max-width: $screen-sm-max) {
-        padding: 20px;
+        padding: 20px 0 20px;
         max-width: 100%;
     }
 
     .listing-actions {
         font-family: $proxima;
         color: $brown;
-        font-size: 12px; /* Approximation due to font substitution */
+        font-size: 12px;
         font-weight: 400;
         line-height: 1; /* Approximation due to font substitution */
         text-align: left;
@@ -104,6 +129,14 @@
             }
         }
 
+        .hidden-xs-inline {
+            display: inline-block !important;
+
+            @media (max-width: $screen-xs-max) {
+                display: none !important;
+            }
+        }
+
         .star-icon {
             display: inline-block;
             position: relative;
@@ -119,7 +152,8 @@
 
         .share-widget {
             position: absolute;
-            background: #9f9f9f;
+            visibility: hidden;
+            background: #8b8b8b;
             top: -70px;
             left: -50px;
             color: $white;
@@ -128,15 +162,21 @@
             width: 180px;
             z-index: 1;
             opacity: 0;
-            @include transition(.5s all);
+            @include transition(.3s all);
 
             &.open {
+                visibility: visible;
                 opacity: 1;
-                top: -90px;
+                top: -80px;
             }
 
             a {
                 color: $white;
+                text-decoration: none;
+
+                &:hover {
+                    text-decoration: none;
+                }
             }
 
             span.share-text {
@@ -155,10 +195,10 @@
                 margin-right: 8px;
                 position: relative;
                 top: 0;
-                @include transition(.5s all);
+                @include transition(.3s all);
 
                 &:hover {
-                    top: 4px;
+                    top: 2px;
                 }
 
             }
@@ -172,10 +212,10 @@
                 margin-right: 8px;
                 position: relative;
                 top: 0;
-                @include transition(.5s all);
+                @include transition(.3s all);
 
                 &:hover {
-                    top: 4px;
+                    top: 2px;
                 }
             }
 
@@ -187,10 +227,10 @@
                 display: inline-block;
                 position: relative;
                 top: 0;
-                @include transition(.5s all);
+                @include transition(.3s all);
 
                 &:hover {
-                    top: 4px;
+                    top: 2px;
                 }
             }
 
@@ -216,6 +256,12 @@
         line-height: 1;
         text-align: left;
         margin-top: 25px;
+        text-transform: none;
+
+        @media (max-width: $screen-xs-max) {
+            font-size: 2.5rem;
+            margin-top: 40px;
+        }
     }
 
     .optional-btns {
@@ -266,18 +312,28 @@
             width: 100%;
             margin-bottom: 20px;
         }
+
+        @media (max-width: $screen-xs-max) {
+            margin-top: 5px;
+            margin-bottom: 10px;
+            font-size: 1.8rem;
+        }
     }
 
     .listing-specs {
         display: inline-block;
         font-family: $proxima;
         color: $brown;
-        font-size: 18px; /* Approximation due to font substitution */
+        font-size: 1.3rem;
         font-weight: 400;
-        line-height: 1; /* Approximation due to font substitution */
+        line-height: 1.2;
         text-align: left;
         text-transform: uppercase;
         letter-spacing: 1px;
+
+        @media (max-width: $screen-md-max) {
+            font-size: 1.15rem;
+        }
     }
 
     .listing-neighborhood {
@@ -293,6 +349,11 @@
 
         @media (max-width: $screen-sm-max) {
             font-size: 12px
+        }
+
+        @media (max-width: $screen-xs-max) {
+            font-size: 0.8rem;
+            letter-spacing: 1px;
         }
 
         .item-padding {
@@ -318,22 +379,30 @@
         margin-top: 40px;
         margin-bottom: 50px;
 
+        @media (max-width: $screen-xs-max) {
+            margin-top: 20px;
+        }
+
         .site-btn {
             //main btn styles in base.scss
             margin-right: 10px;
-            width: 100%;
             text-align: center;
             margin-bottom: 5px;
+            padding: 14px 35px;
+            color: $cc-brown;
+            background: $white;
+            border: 1px solid $cc-green;
+            text-decoration: none;
+
+            &:hover {
+                color: $white !important;
+                background: $cc-green;
+                border: 1px solid $cc-green !important;
+            }
 
             @media (min-width: $screen-lg) {
                 width: auto;
                 text-align: left;
-            }
-
-            &#requestShowing {
-                background: $teal;
-                color: $blue;
-                border: none;
             }
         }
     }
@@ -362,14 +431,17 @@
         display: inline-block;
         float: left;
         position: relative;
-        margin: -12px 15px 0 -13px;
-        height: 100px;
-        width: 100px;
-        border: 1px solid $grey;
-        border-radius: 100%;
+        margin: -5px 15px 0 -13px;
+        height: 80px;
+        width: 80px;
         background-size: cover;
         background-position: center center;
         background-repeat: no-repeat;
+
+        @media (max-width: $screen-xs-max) {
+            height: 65px;
+            width: 65px;
+        }
 
         a {
             width: 100%;
@@ -392,10 +464,17 @@
         }
     }
 
+    .listing-details, .listing-details p {
+        line-height: 1.35;
+    }
+
     .listing-details, .listing-details p, .listing-details ul, .listing-details ol {
         font-family: $cronos;
         color: $brown;
         font-weight: 400;
+        font-size: 1.15rem;
+        text-transform: none;
+        letter-spacing: .25px;
     }
 
     .listing-details ul, .listing-details ol {
@@ -406,6 +485,11 @@
         li {
             margin-left: 17px;  //only bc most content is in lists
         }
+    }
+
+    .listing-details li {
+        text-indent: -33px;
+        padding-left: 33px;
     }
 }
 
@@ -432,12 +516,24 @@
 }
 
 .agent-form {
+    width: 100%;
+    margin-top: 50px;
     padding-top: 40px;
-    padding-bottom: 40px;
+    padding-bottom: 20px;
     color: $brown;
 
+    @media (max-width: $screen-xs-max) {
+        width: 100%;
+    }
+
     h4 {
-        margin-bottom: 0;
+        margin-bottom: 3px;
+        font-family: $baskerville;
+        font-weight: 400;
+        font-size: 1.45rem;
+        text-transform: none;
+        letter-spacing: 0.5px;
+        color: $brown;
 
         @media (max-width: 767px) {
             line-height: 1.2;
@@ -447,7 +543,16 @@
     }
 
     p {
+        width: 80%;
         font-size: 16px;
+        text-transform: none;
+        font-family: $minion;
+        font-weight: 400;
+        letter-spacing: normal;
+
+        @media (max-width: $screen-xs-max) {
+            width: 100%;
+        }
     }
 
     label {
@@ -480,7 +585,7 @@
 
     input, textarea {
         background: $white;
-        width: 100%;
+        width: 80%;
         font-family: $proxima;
         color:  $brown;
         font-size: 14px;/* Approximation due to font substitution */
@@ -488,11 +593,15 @@
         line-height: 1;/* Approximation due to font substitution */
         text-align: left;
         border-radius: 0;
-        border: 1px solid $brown;
+        border: 1px solid $lt-grey !important;
         padding: 10px 15px;
         margin-bottom: 5px;
-        text-transform: uppercase;
         margin-bottom: 20px;
+        display: block;
+
+        @media (max-width: $screen-xs-max) {
+            width: 100%;
+        }
 
         &:focus {
             outline: none;
@@ -504,16 +613,22 @@
         }
     }
 
+    textarea {
+        height: 120px;
+    }
+
     input[type="checkbox"] {
         width: auto;
+        display: inline-block;
+        margin-right: 5px;
     }
 
     .site-btn {
-        margin-top: 20px;
+        margin-top: 10px;
     }
 
     .required {
-        margin-top: 20px;
+        margin-top: 10px;
         font-family: $proxima;
         text-transform: uppercase;
         font-size: 12px;

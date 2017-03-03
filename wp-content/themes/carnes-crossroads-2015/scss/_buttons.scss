@@ -46,7 +46,7 @@
         @extend .btn-green;
         padding-left: 8px;
         padding-right: 8px;
-        font-size: 0.7rem;
+        font-size: 0.85rem;
         letter-spacing: 1px;
         margin: 15px 5px 0;
     }
@@ -78,7 +78,7 @@
     text-transform: uppercase;
     @include transition(0.3s all);
 
-    @media (max-width: $screen-sm-max) {
+    @media (max-width: $screen-xs-max) {
         width: 100%;
         display: block;
         margin-bottom: 8px;

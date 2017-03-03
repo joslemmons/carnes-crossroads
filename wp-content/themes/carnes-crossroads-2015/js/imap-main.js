@@ -4,23 +4,20 @@
 
 L.mapbox.accessToken = 'pk.eyJ1IjoiZGlkZXZjbyIsImEiOiJjaXM3cWY3NDEwNDc0Mnpwa2w5YnllMXZkIn0.4pWeAL6-vhtobhpFd2HDuA';
 
-var map = L.mapbox.map('imap', 'mapbox.streets', {
-    minZoom: 15,
-    maxZoom: 17,
-    zoom: 15
-});
+map = L.mapbox.map('imap', 'mapbox.streets', {
+    'maxZoom': 18,
+    'minZoom': 15,
+    'scrollWheelZoom' : 'center'
+}).setView([33.0565, -80.103917]);
+
 var filters = document.getElementById('legend-items');
 var checkboxes = document.getElementsByClassName('squared-checkbox');
 
 var layer = L.mapbox.featureLayer().addTo(map);
 
-var southWest = L.latLng(32.83064187300698, -79.93316068560326);
-var northEast = L.latLng(32.89325262945007, -79.88402077618287);
-var bounds = L.latLngBounds(southWest, northEast);
-
 var stamenLayer = L.tileLayer(DI.templateUri + '/img/imap/tiles/{z}/{x}/{y}.png',{
-    minZoom: 15,
-    maxZoom: 17
+    minZoom: 14,
+    maxZoom: 19
 }).addTo(map);
 
 var geoJson = {
@@ -29,7 +26,6 @@ var geoJson = {
 };
 
 for (var i = 0; i < locations.length; i++) {
-    var color = setMarkerColor(locations[i][4]);
 
     geoJson.features.push({
         "type": "Feature",
@@ -39,19 +35,40 @@ for (var i = 0; i < locations.length; i++) {
         },
         "properties": {
             "listing-type": locations[i][4],
-            "marker-color": setMarkerColor(locations[i][4])
+            "marker-color": setMarkerColor(locations[i][4]),
+            "pop-up": locations[i][5]
         }
     });
 }
 
-layer.setGeoJSON(geoJson);
-map.fitBounds(bounds);
+/*for (i = 0; i < homes.length; i++) {
 
-map.featureLayer.on('click', function (e) {
-    map.panTo(e.layer.getLatLng());
+    /geoJson.features.push({
+        "type": "Feature",
+        "geometry": {
+            "type": "Point",
+            "coordinates": [parseFloat(homes[i][2]), parseFloat(homes[i][1])]
+        },
+        "properties": {
+            "listing-type": 'available-homes',
+            "marker-color": '#b06a6a',
+            "pop-up": homes[i][4]
+        }
+    });
+}*/
+
+layer.setGeoJSON(geoJson);
+
+layer.on('click', function(e) {
+    if (!e.layer) return;
+
+    var popup = L.popup()
+        .setLatLng(e.latlng)
+        .setContent(e.layer.feature.properties["pop-up"])
+        .openOn(map)
 });
 
-map.setZoom(16);
+map.setZoom(18);
 
 //re-filter the markers when the form is changed
 filters.onchange = change;
@@ -61,37 +78,25 @@ change();
 function setMarkerColor(listingType) {
     var color = null;
 
-    switch (locations[i][4]) {
-        case 'sports-fitness':
+    switch (listingType) {
+        case 'community_amenity':
             color = '#56c1b1';
             break;
 
-        case 'commercial':
+        case 'neighborhood':
             color = '#536377';
             break;
 
-        case 'schools':
+        case 'park_lake':
             color = '#695e49';
             break;
 
-        case 'churches':
+        case 'town':
             color = '#bf7616';
             break;
 
-        case 'libraries':
-            color = '#553184';
-            break;
-
-        case 'parks-pools':
+        case 'real_estate':
             color = '#aa0979';
-            break;
-
-        case 'waterways':
-            color = '#d8b830';
-            break;
-
-        case 'golf':
-            color = '#22a82e';
             break;
 
         default:

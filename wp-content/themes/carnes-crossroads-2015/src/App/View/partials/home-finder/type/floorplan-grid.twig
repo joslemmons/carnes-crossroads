@@ -1,0 +1,34 @@
+
+<div class="col-lg-3 col-md-4 col-sm-6">
+
+    <div class="grid-results-box {% if property.getId == activePropertyId %}active{% endif %} {% if loop.last and nextPageUrl %}infinite-check{% endif %}" data-property-id="{{ property.getId }}"
+         data-property-address="{{ property.getAddress|slugify }}"
+         {% if loop.last and nextPageUrl %}data-infinite-scroll-next-url="{{ nextPageUrl }}"{% endif %}>
+        <a href="{{ property.link }}">
+            <div class="home-image" style="background:url('{{ property.getFeaturedImage }}') no-repeat 50% 50%; background-size: cover;">
+                <div class="type-box">{{ property.builder.title | replace({'Homes': "Home Plan"}) }}</div>
+            </div>
+        </a>
+        <div class="grid-box-content">
+            <div class="grid-address">
+                {{ property.title }}
+            </div>
+            <div class="grid-details">
+
+                {% if property.bedrooms or property.full_bathrooms or property.half_bathrooms %}
+                    <div class="specs">{% if property.bedrooms %}{{ property.bedrooms }} BR /{% endif %}
+                        {% if property.full_bathrooms %}{{ property.full_bathrooms }} Full BA {% endif %}{% if property.half_bathrooms %}/ {{ property.half_bathrooms }} Half BA{% endif %}
+                    </div>
+                {% else %}
+                    <br>
+                {% endif %}
+                {% set numDecimalPlaces = 0 %}
+                <div class="sq-ft">{{ property.square_footage|removeNonNumbers|number_format }} SQ FT</div>
+                <div class="price">${{ property.price|removeNonNumbers|number_format }}</div>
+            </div>
+            <div class="grid-btn">
+                <a class="site-btn" href="{{ property.link }}">View Home Plan</a>
+            </div>
+        </div>
+    </div>
+</div>

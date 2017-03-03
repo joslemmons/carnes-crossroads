@@ -32,28 +32,6 @@
                 {% endif %}
             </div>
 
-            <div class="row">
-                <div class="col-md-12">   
-                    <div class="pagination" data-page="{{ page }}">
-                    {% if page != 1 %}
-                        <a href="/real-estate/home-finder/{{ name }}/page/{{ page - 1 }}{{ filterString }}">Previous</a>
-                    {% endif %}
-
-                    {% for i in 1..pages %}
-                        {% if page == i %}
-                            <a class='active' href="/real-estate/home-finder/{{ name }}/page/{{ i }}{{ filterString }}"> {{ i }} </a>
-                        {% else %}
-                            <a href="/real-estate/home-finder/{{ name }}/page/{{ i }}{{ filterString }}"> {{ i }} </a>
-                        {% endif %}
-                    {% endfor %}
-
-                    {% if page < pages %}
-                        <a href="/real-estate/home-finder/{{ name }}/page/{{ page + 1 }}{{ filterString }}">Next</a>
-                    {% endif %}
-                    </div>
-                </div>
-            </div>
-
         </div>
     </div>
 </div>
