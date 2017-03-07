@@ -6264,6 +6264,8 @@ Edits by Chernoff Newman
   background: #f4f0e9;
   width: 100vw;
   height: 100vh; }
+  #imap .leaflet-top {
+    top: 162px; }
 
 .map-legend {
   position: absolute;
@@ -6273,6 +6275,9 @@ Edits by Chernoff Newman
   top: 15px;
   left: 60px;
   z-index: 7; }
+  .map-legend.imap {
+    top: 175px;
+    left: 50px; }
   .map-legend .legend-title {
     font-family: "proxima-nova", sans-serif;
     color: #695e49;

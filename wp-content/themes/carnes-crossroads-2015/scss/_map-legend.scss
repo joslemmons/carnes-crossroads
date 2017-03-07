@@ -4,6 +4,10 @@
     background: $beige;
     width: 100vw;
     height: 100vh;
+    
+    .leaflet-top {
+        top: 162px;
+    }
 }
 .map-legend {
     position: absolute;
@@ -13,6 +17,11 @@
     top: 15px;
     left: 60px;
     z-index: 7;
+    
+    &.imap {
+        top: 175px;
+        left: 50px;
+    }
 
     .legend-title {
         font-family: $proxima;
