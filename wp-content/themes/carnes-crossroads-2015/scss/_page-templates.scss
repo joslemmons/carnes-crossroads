@@ -1074,3 +1074,29 @@
         }
     }
 }
+
+.agent-profile {
+    .agent-name {
+        margin-bottom: 20px;
+    }
+    
+    .agent-info {
+        margin-bottom: 20px;
+    }
+    
+    .agent-img {
+        float: left;
+        margin-right: 30px;
+        margin-bottom: 10px;
+        max-width: 400px;
+        height: auto;
+        
+        @media (max-width: $screen-sm-max) {
+            float: none;
+            margin: 10px;
+            max-width: 100%;
+            display: block;
+            height: auto;
+        }
+    }
+}

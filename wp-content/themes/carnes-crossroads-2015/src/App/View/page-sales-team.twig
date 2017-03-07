@@ -38,11 +38,18 @@
                     <div class="agent-content">
                         <img src="{{ contact.thumbnail.src|resize(772,600) }}" class="img-responsive agent-img">
                         <div class="item"><h4>{{ contact.name }}</h4></div>
+                        {% if contact.getOfficeNumber %}
+                        <div class="item"><strong>Office Phone: </strong>{{ contact.getOfficeNumber }}</div>
+                        {% endif %}
+                        {% if contact.getMobileNumber %}
                         <div class="item"><strong>Mobile Phone: </strong>{{ contact.getMobileNumber }}</div>
+                        {% endif %}
+                        {% if contact.app_contact_email %}
                         <div class="item"><strong>Email: </strong><a href="mailto:{{ contact.app_contact_email }}">{{ contact.app_contact_email }}</a></div>
+                        {% endif %}
                         <p>{{ contact.content|truncate(50) }}</p>
                     </div>
-                    <div class="item" read-more><strong><a class="btn btn-green-small" href="{{ contact.link }}">Read More</a></strong></div>
+                    <div class="item read-more"><a class="btn btn-green-small" href="{{ contact.link }}">Read More</a></div>
                 </div>
             </div>
             {% endfor %}

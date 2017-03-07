@@ -7211,6 +7211,26 @@ Edits by Chernoff Newman
     .sales-team .agent-contact .agent-content {
       height: auto; } }
 
+.agent-profile .agent-name {
+  margin-bottom: 20px; }
+
+.agent-profile .agent-info {
+  margin-bottom: 20px; }
+
+.agent-profile .agent-img {
+  float: left;
+  margin-right: 30px;
+  margin-bottom: 10px;
+  max-width: 400px;
+  height: auto; }
+  @media (max-width: 991px) {
+    .agent-profile .agent-img {
+      float: none;
+      margin: 10px;
+      max-width: 100%;
+      display: block;
+      height: auto; } }
+
 .home-finder {
   background: #f4f0e9;
   position: relative;

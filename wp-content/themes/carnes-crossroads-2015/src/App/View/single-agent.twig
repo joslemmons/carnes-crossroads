@@ -1,10 +1,10 @@
 {% extends 'base.twig' %}
 {% block template %}
 
-    <section class="hero__page" style="background-image: url('{{ parent.thumbnail.src|resize(1500) }}')">
-        <div class="hero__content-tab-{{ parent.getHeroColor }}">
+    <section class="hero__page" style="background-image: url('{{ site.theme.link }}/img/cx-hero.jpg')">
+        <div class="hero__content-tab-red">
         <div class="hero__content-inner">
-            <h1>{{ parent.title }}</h1>
+            <h1>Sales Team</h1>
         </div>
     </div>
 </section>
