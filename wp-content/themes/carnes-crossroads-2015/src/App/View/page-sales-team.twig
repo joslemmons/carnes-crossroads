@@ -15,7 +15,7 @@
     </div>
 </section>
 
-<section class="page-content--white-floral-top">
+<section class="page-content--white-floral-top sales-team">
     <div class="container">
         {% if page.headline %}
         <div class="row extra-bottom">
@@ -26,22 +26,27 @@
         {% endif %}
 
         <div class="row">
-            <div class="col-xs-3">
-
-            </div>
-            <div class="col-xs-9">
-                {{ page.content }}
-
-                {% for contact in agents %}
-                <div class="agent-contact">
-                    <img src="{{ contact.thumbnail.src }}" width="100" height="auto">
-                    <div class="item"><strong>Name: </strong>{{ contact.name }}</div>
-                    <div class="item"><strong>Mobile Phone: </strong>{{ contact.getMobileNumber }}</div>
-                    <div class="item"><strong>Email: </strong><a href="mailto:{{ contact.app_contact_email }}">{{ contact.app_contact_email }}</a></div>
-                    <p>{{ contact.content }}</p>
+            <div class="col-md-10 col-md-offset-2">
+                <div class="sales-team-content">
+                    {{ page.content }}
                 </div>
-                {% endfor %}
             </div>
+
+            {% for contact in agents %}
+            <div class="col-md-3">
+                <div class="agent-contact">
+                    <div class="agent-content">
+                        <img src="{{ contact.thumbnail.src|resize(772,600) }}" class="img-responsive agent-img">
+                        <div class="item"><h4>{{ contact.name }}</h4></div>
+                        <div class="item"><strong>Mobile Phone: </strong>{{ contact.getMobileNumber }}</div>
+                        <div class="item"><strong>Email: </strong><a href="mailto:{{ contact.app_contact_email }}">{{ contact.app_contact_email }}</a></div>
+                        <p>{{ contact.content|truncate(50) }}</p>
+                    </div>
+                    <div class="item" read-more><strong><a class="btn btn-green-small" href="{{ contact.link }}">Read More</a></strong></div>
+                </div>
+            </div>
+            {% endfor %}
+            
         </div>
 
     </div>

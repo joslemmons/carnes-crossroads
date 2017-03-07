@@ -308,6 +308,10 @@
         .bx-wrapper {
             margin-top: 0 !important;
         }
+        
+        h4#map {
+            border: none;
+        }
     }
 
     &--tan {
@@ -1036,6 +1040,37 @@
         @media (max-width: $screen-xs-max) {
             height: 265px;
             margin-top: -265px;
+        }
+    }
+}
+
+.sales-team {
+    
+    .sales-team-content {
+        margin-bottom: 40px;
+    }
+    
+    .agent-img {
+        margin-bottom: 40px;
+    }
+
+    .agent-contact {
+        
+        @media (max-width: $screen-sm-max) {
+            margin-bottom: 40px;
+        }
+        
+        .agent-content {
+            height: 660px;
+            
+            @media (min-width: 1600px) {
+                height: 740px;
+            }
+            
+            @media (max-width: $screen-sm-max) {
+                height: auto;
+            }
+            
         }
     }
 }
