@@ -7259,6 +7259,9 @@ Edits by Chernoff Newman
     height: 80px;
     padding: 25px 5% 55px;
     position: relative; }
+    @media (max-width: 991px) {
+      .home-finder .home-finder-filters {
+        overflow: auto; } }
     .home-finder .home-finder-filters .ms-drop {
       width: auto; }
     .home-finder .home-finder-filters.more {
@@ -7268,6 +7271,9 @@ Edits by Chernoff Newman
       @media (min-width: 1685px) {
         .home-finder .home-finder-filters.more {
           height: 130px; } }
+      @media (max-width: 991px) {
+        .home-finder .home-finder-filters.more {
+          height: auto; } }
     @media (max-width: 1199px) {
       .home-finder .home-finder-filters {
         padding: 30px 5% 55px; } }
@@ -7329,12 +7335,11 @@ Edits by Chernoff Newman
           margin-bottom: 5px; } }
       .home-finder .home-finder-filters .home-finder-search input[type="search"] {
         border: none;
-        background: #ffffff url("img/search.png") no-repeat 95% 50%;
         background-size: 18px;
         width: 200px;
-        padding: 12px 33px 10px 13px;
-        font-family: "proxima-nova", sans-serif, sans-serif;
-        color: #3d3421;
+        padding: 10px 33px 10px 15px;
+        font-family: "proxima-nova", sans-serif;
+        color: #695e49;
         font-size: .75em;
         /* Approximation due to font substitution */
         font-weight: 400;
@@ -7342,21 +7347,29 @@ Edits by Chernoff Newman
         /* Approximation due to font substitution */
         text-align: left;
         text-transform: uppercase;
-        letter-spacing: 0.5px; }
+        letter-spacing: 1px; }
         @media (max-width: 991px) {
           .home-finder .home-finder-filters .home-finder-search input[type="search"] {
-            width: 100% !important;
+            width: 100%;
             margin-top: 20px; } }
-        @media (max-width: 1400px) {
-          .home-finder .home-finder-filters .home-finder-search input[type="search"] {
-            width: 175px; } }
-        @media (max-width: 1100px) {
-          .home-finder .home-finder-filters .home-finder-search input[type="search"] {
-            width: 130px;
-            background: #fff;
-            padding: 12px 10px 10px 10px; } }
         .home-finder .home-finder-filters .home-finder-search input[type="search"]:focus {
           outline: none; }
+      .home-finder .home-finder-filters .home-finder-search #filter-searchAddress-btn {
+        background: #fff url("img/search.png") no-repeat 50% 50%;
+        border: none;
+        height: 33px;
+        width: 34px;
+        font-size: 0;
+        position: relative;
+        top: -4px;
+        left: -5px;
+        -webkit-transition: 0.3s all;
+        transition: 0.3s all; }
+        .home-finder .home-finder-filters .home-finder-search #filter-searchAddress-btn:hover {
+          background: #f4f0e9 url("img/search.png") no-repeat 50% 50%; }
+        @media (max-width: 991px) {
+          .home-finder .home-finder-filters .home-finder-search #filter-searchAddress-btn {
+            display: none; } }
     .home-finder .home-finder-filters .filter-options {
       float: right; }
       @media (max-width: 991px) {
@@ -7536,7 +7549,7 @@ Edits by Chernoff Newman
       @media (max-width: 991px) {
         .home-finder .home-finder-filters button.more-button {
           width: 100%;
-          background: #fff url("img/plus.png") no-repeat 86% 50%;
+          background: #fff url("img/plus.png") no-repeat 95% 50%;
           background-size: 8px;
           display: block;
           float: none;
@@ -7547,6 +7560,10 @@ Edits by Chernoff Newman
         background: #fcf9ee url("img/plus.png") no-repeat 90% 50%;
         background-size: 8px;
         color: #3d3421; }
+        @media (max-width: 991px) {
+          .home-finder .home-finder-filters button.more-button:hover {
+            background: #fcf9ee url("img/plus.png") no-repeat 95% 50%;
+            background-size: 8px; } }
     .home-finder .home-finder-filters input[type="checkbox"] {
       background-color: #fff;
       display: inline-block;

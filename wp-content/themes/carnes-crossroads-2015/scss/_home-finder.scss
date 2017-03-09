@@ -27,6 +27,10 @@
         height: 80px;
         padding: 25px 5% 55px;
         position: relative;
+        
+        @media (max-width: $screen-sm-max) {
+            overflow: auto;
+        }
 
         .ms-drop {
             width: auto;
@@ -38,6 +42,10 @@
 
             @media (min-width: 1685px) {
                 height: 130px;
+            }
+            
+            @media (max-width: $screen-sm-max) {
+                height: auto;
             }
         }
 
@@ -121,36 +129,48 @@
 
             input[type="search"] {
                 border: none;
-                background:  #ffffff url('img/search.png') no-repeat 95% 50%;
+                //v2 - remove background
                 background-size: 18px;
+                //v2 - change width to add btn
                 width: 200px;
-                padding: 12px 33px 10px 13px;
-                font-family: $font-sans;
-                color:  $cc-brown;
+                padding: 10px 33px 10px 15px;
+                font-family: $proxima;
+                color:  $brown;
                 font-size: .75em;/* Approximation due to font substitution */
                 font-weight: 400;
                 line-height: 1;/* Approximation due to font substitution */
                 text-align: left;
                 text-transform: uppercase;
-                letter-spacing: 0.5px;
+                letter-spacing: 1px;
 
                 @media (max-width: $screen-sm-max) {
-                    width: 100% !important;
+                    width: 100%;
                     margin-top: 20px;
-                }
-
-                @media (max-width: 1400px) {
-                    width: 175px;
-                }
-
-                @media (max-width: 1100px) {
-                    width: 130px;
-                    background: $white;
-                    padding: 12px 10px 10px 10px;
                 }
 
                 &:focus {
                     outline: none;
+                }
+            }
+            
+            //V2 - new search button
+            #filter-searchAddress-btn {
+                background:  $white url('img/search.png') no-repeat 50% 50%;
+                border: none;
+                height: 33px;
+                width: 34px;
+                font-size: 0;
+                position: relative;
+                top: -4px;
+                left: -5px;
+                @include transition (0.3s all);
+
+                &:hover {
+                    background:  $beige url('img/search.png') no-repeat 50% 50%;
+                }
+
+                @media (max-width: $screen-sm-max) {
+                    display: none;
                 }
             }
         }
@@ -366,7 +386,7 @@
 
             @media (max-width: $screen-sm-max) {
                 width: 100%;
-                background: $white url('img/plus.png') no-repeat 86% 50%;
+                background: $white url('img/plus.png') no-repeat 95% 50%;
                 background-size: 8px;
                 display: block;
                 float: none;
@@ -381,6 +401,11 @@
                 background: #fcf9ee url('img/plus.png') no-repeat 90% 50%;
                 background-size: 8px;
                 color: $cc-brown;
+                
+                @media (max-width: $screen-sm-max) {
+                    background: #fcf9ee url('img/plus.png') no-repeat 95% 50%;
+                    background-size: 8px;
+                }
             }
         }
 
