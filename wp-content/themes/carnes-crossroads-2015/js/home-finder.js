@@ -944,6 +944,8 @@ jQuery(function ($) {
     $('#filter-searchAddress').val('');
     order = 'default';
     performSearch();
+
+    $('#showPriceFilter').html($('#minPriceFilter').val() + " - " + $('#maxPriceFilter').val());
   });
 
   filterPriceSlider.noUiSlider.on('update', function (values, handle) {
