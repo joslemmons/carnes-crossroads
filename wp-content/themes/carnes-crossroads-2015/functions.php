@@ -63,4 +63,17 @@ function disable_plugin_deactivation( $actions, $plugin_file, $plugin_data, $con
     return $actions;
 }
 
+function fix_keys(&$value) {
+    if (is_array($value)) {
+        // Check whether the array has numeric keys
+        // From: http://stackoverflow.com/a/4254008
+        if (!(count(array_filter(array_keys($value), 'is_string')) > 0)) {
+            $value = array_values($value);
+        }
+        foreach ($value as &$item) {
+            fix_keys($item);
+        }
+    }
+}
+
 \App\Model\Bootstrap::init();

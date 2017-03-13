@@ -3106,6 +3106,9 @@ class Piklist_Form
             }
             else
             {
+              if ($field['type'] === 'group' && is_array($field['request_value'])) {
+                fix_keys($field['request_value']);
+              }
               if (!empty($current_meta_ids))
               {
                 if (is_numeric($field['index_force']))
