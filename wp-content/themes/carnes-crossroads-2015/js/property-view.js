@@ -267,8 +267,34 @@ jQuery(function ($) {
     $(document).click( function(){
         $('.share-widget').removeClass('open');
     });
-    
-    
+
+    $('div.property-view-content').on('click', 'div.save.action-link a', function () {
+        if (typeof DI === 'undefined' || typeof DI.isLoggedIn === 'undefined' || DI.isLoggedIn !== 'true') {
+            $('a.showAccountPage').trigger('click');
+            return false;
+        }
+
+        var propertyId = $(this).attr('data-property-id'),
+            toSaveOrUnSave = 'save',
+            $that = $(this);
+
+        if ($(this).parent().hasClass('saved')) {
+            toSaveOrUnSave = 'un-save';
+        }
+
+        if (toSaveOrUnSave === 'save') {
+            $that.closest('div.action-link').find('div.not-saved').hide();
+            $that.closest('div.action-link').find('div.saved').show();
+        }
+        else {
+            $that.closest('div.action-link').find('div.not-saved').show();
+            $that.closest('div.action-link').find('div.saved').hide();
+        }
+
+        saveOrUnSaveProperty(propertyId, toSaveOrUnSave);
+
+        return false;
+    });
 
     function saveShareMetric(network, property_id) {
         $.post('/api/home-finder/properties/' + property_id + '/share', {network: network}, function () {
