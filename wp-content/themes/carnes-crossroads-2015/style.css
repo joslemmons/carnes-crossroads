@@ -7473,11 +7473,11 @@ Edits by Chernoff Newman
         text-align: left;
         border-radius: 0;
         border: none;
-        padding: 12px 15px;
+        padding: 12px 35px 12px 15px;
         margin: 0 0 5px 0;
         text-transform: uppercase;
         display: inline-block;
-        width: 80px;
+        width: auto;
         -webkit-transition: 0.3s all;
         transition: 0.3s all; }
         @media (max-width: 991px) {
