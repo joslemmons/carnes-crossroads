@@ -55367,15 +55367,6 @@
 		"sC": 1,
 		"tS": 0
 		},
-	"\/wp-content\/themes\/carnes-crossroads-2015\/js\/home-finder.js": {
-		"ft": 64,
-		"mi": 1,
-		"oA": 0,
-		"oAP": "\/wp-content\/themes\/carnes-crossroads-2015\/js\/min\/home-finder-min.js",
-		"oF": 0,
-		"sC": 1,
-		"tS": 0
-		},
 	"\/wp-content\/themes\/carnes-crossroads-2015\/js\/home-finder.min.js": {
 		"ft": 64,
 		"mi": 1,
@@ -58062,12 +58053,6 @@
 		"ft": 8192,
 		"oA": 0,
 		"oAP": "\/wp-content\/themes\/carnes-crossroads-2015\/src\/App\/View\/partials\/home-finder\/floor-plan.twig",
-		"oF": 0
-		},
-	"\/wp-content\/themes\/carnes-crossroads-2015\/src\/App\/View\/partials\/home-finder\/homefinder-filters.twig": {
-		"ft": 8192,
-		"oA": 2,
-		"oAP": "\/wp-content\/themes\/carnes-crossroads-2015\/src\/App\/View\/partials\/home-finder\/homefinder-filters.twig",
 		"oF": 0
 		},
 	"\/wp-content\/themes\/carnes-crossroads-2015\/src\/App\/View\/partials\/home-finder\/imap-tool-tip.twig": {

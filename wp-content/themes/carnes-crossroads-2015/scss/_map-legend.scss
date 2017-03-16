@@ -213,4 +213,25 @@
             opacity: 1;
         }
     }
+    
+    .all-listings-btn {
+        background: $cc-red;
+        color: $white;
+        width: 100%;
+        display: block;
+        padding: 10px 10px;
+        text-align: center;
+        font-family: $oswald;
+        text-transform: uppercase;
+        text-decoration: none;
+        border-bottom: none;
+        font-size: 14px;
+
+        &:hover {
+            text-decoration: none;
+            border-bottom: none;
+            background: $cc-green;
+            color: $white;
+        }
+    }
 }

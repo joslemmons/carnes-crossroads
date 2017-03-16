@@ -6387,6 +6387,23 @@ Edits by Chernoff Newman
       -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=100)";
       filter: alpha(opacity=100);
       opacity: 1; }
+  .map-legend .all-listings-btn {
+    background: #e26f57;
+    color: #fff;
+    width: 100%;
+    display: block;
+    padding: 10px 10px;
+    text-align: center;
+    font-family: "Oswald", sans-serif;
+    text-transform: uppercase;
+    text-decoration: none;
+    border-bottom: none;
+    font-size: 14px; }
+    .map-legend .all-listings-btn:hover {
+      text-decoration: none;
+      border-bottom: none;
+      background: #768e1c;
+      color: #fff; }
 
 .hero__map-link {
   margin: 100px auto 0 auto; }
@@ -8707,10 +8724,13 @@ Edits by Chernoff Newman
   background: #e26f57;
   text-transform: uppercase;
   font-family: "Oswald", sans-serif;
-  color: #fff; }
+  color: #fff;
+  text-decoration: none;
+  border-bottom: none; }
 
 .property-sidebar a:hover .btn-box {
-  text-decoration: none; }
+  text-decoration: none;
+  border-bottom: none; }
 
 .property-sidebar .property-gallery .site-btn {
   text-decoration: none; }

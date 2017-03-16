@@ -46,11 +46,14 @@
         text-transform: uppercase;
         font-family: $oswald;
         color: $white;
+        text-decoration: none;
+        border-bottom: none;
     }
     
     a:hover {
         .btn-box {
             text-decoration: none;
+            border-bottom: none;
         }
     }
 
