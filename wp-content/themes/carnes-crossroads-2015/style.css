@@ -8699,14 +8699,18 @@ Edits by Chernoff Newman
 .property-sidebar .btn-box {
   margin: auto;
   text-align: center;
-  padding-top: 40px;
-  padding-bottom: 40px; }
-  @media (max-width: 991px) {
-    .property-sidebar .btn-box {
-      padding: 40px; } }
-  @media (max-width: 767px) {
-    .property-sidebar .btn-box {
-      padding: 15px; } }
+  padding-top: 10px;
+  padding-bottom: 10px;
+  margin-bottom: 2px;
+  position: relative;
+  width: 100%;
+  background: #e26f57;
+  text-transform: uppercase;
+  font-family: "Oswald", sans-serif;
+  color: #fff; }
+
+.property-sidebar a:hover .btn-box {
+  text-decoration: none; }
 
 .property-sidebar .property-gallery .site-btn {
   text-decoration: none; }

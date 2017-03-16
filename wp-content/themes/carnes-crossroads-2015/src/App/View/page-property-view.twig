@@ -30,6 +30,7 @@
                 <div class="col-md-4">
                     {# NOTE - THIS IS ON THE PAGE TWICE, LOWER DOWN FOR MOBILE #}
                     <div class="property-sidebar hidden-sm hidden-xs">
+                        {% if property.getImages[1] %}
                         <div class="property-gallery">
                             <div class="sidebar-box">
                                 <div class="gallery-thumbs">
@@ -38,6 +39,9 @@
                                             {# 1190 x 660 #}
                                             <a href="{{ property.getImages[0] }}" {% if function('wp_is_mobile') == false %}
                                                {% else %}onclick="return false;"{% endif %} data-gallery="#desktop-gallery">
+                                                <div class="btn-box">
+                                                    View Gallery
+                                                </div>
                                                 <img src="{{ property.getImages[0]|resize(1190,800) }}" class="main-photo img-responsive"/>
                                             </a>
                                         </div>
@@ -86,12 +90,9 @@
                                         {% endif %}
                                     </div>
                                 </div>
-
-                                <div class="btn-box">
-                                    <a class="site-btn" href="{{ property.getImages[0] }}" data-gallery="#desktop-gallery">View Gallery</a>
-                                </div>
                             </div>
                         </div>
+                        {% endif %}
 
                         <div class="property-map">
                             <div class="sidebar-box single-map" id="single-map" data-latitude="{{ property.latitude }}"
@@ -249,6 +250,7 @@
 
                         {# MOBILE CONTENT #}
                         <div class="property-sidebar visible-sm visible-xs">
+                            {% if property.getImages[1] %}
                             <div class="property-gallery">
                                 <div class="sidebar-box">
                                     <div class="gallery-thumbs">
@@ -257,6 +259,9 @@
                                                 {# 1190 x 660 #}
                                                 <a href="{{ property.getImages[0] }}" {% if function('wp_is_mobile') == false %}
                                                    {% else %}onclick="return false;"{% endif %} data-gallery="#mobile-gallery">
+                                                    <div class="btn-box">
+                                                        View Gallery
+                                                    </div>
                                                     <img src="{{ property.getImages[0]|resize(1190,660) }}" class="main-photo img-responsive"/>
                                                 </a>
                                             </div>
@@ -300,12 +305,11 @@
                                         </div>
                                     </div>
 
-                                    <div class="btn-box">
-                                        <a class="site-btn" href="{{ property.getImages[0] }}" data-gallery="#mobile-gallery">View Gallery</a>
-                                    </div>
+                                    
                                 </div>
                             </div>
-
+                            {% endif %}
+                            
                             {# NOTE - THE MAP IS LISTED ON THE PAGE TWICE BC ITS LOWER DOWN ON MOBILE #}
                             <div class="property-map">
                                 <div class="sidebar-box single-map" id="single-map-2" data-latitude="{{ property.latitude }}"

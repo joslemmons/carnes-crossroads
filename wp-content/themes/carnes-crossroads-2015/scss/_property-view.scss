@@ -37,15 +37,20 @@
     .btn-box {
         margin: auto;
         text-align: center;
-        padding-top: 40px;
-        padding-bottom: 40px;
-
-        @media (max-width: $screen-sm-max) {
-            padding: 40px;
-        }
-
-        @media (max-width: $screen-xs-max) {
-            padding: 15px;
+        padding-top: 10px;
+        padding-bottom: 10px;
+        margin-bottom: 2px;
+        position: relative;
+        width: 100%;
+        background: $cc-red;
+        text-transform: uppercase;
+        font-family: $oswald;
+        color: $white;
+    }
+    
+    a:hover {
+        .btn-box {
+            text-decoration: none;
         }
     }
 
