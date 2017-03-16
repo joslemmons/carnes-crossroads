@@ -25,20 +25,21 @@ var geoJson = {
     features: []
 };
 
-for (var i = 0; i < locations.length; i++) {
-
-    geoJson.features.push({
-        "type": "Feature",
-        "geometry": {
-            "type": "Point",
-            "coordinates": [parseFloat(locations[i][3]), parseFloat(locations[i][2])]
-        },
-        "properties": {
-            "listing-type": locations[i][4],
-            "marker-color": setMarkerColor(locations[i][4]),
-            "pop-up": locations[i][5]
-        }
-    });
+if(typeof locations != 'undefined') {
+    for (var i = 0; i < locations.length; i++) {
+        geoJson.features.push({
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [parseFloat(locations[i][3]), parseFloat(locations[i][2])]
+            },
+            "properties": {
+                "listing-type": locations[i][4],
+                "marker-color": setMarkerColor(locations[i][4]),
+                "pop-up": locations[i][5]
+            }
+        });
+    }
 }
 
 /*for (i = 0; i < homes.length; i++) {
