@@ -628,7 +628,8 @@ jQuery(function ($) {
 
         var propertyId = $(this).attr('data-property-id'),
             toSaveOrUnSave = 'save',
-            $that = $(this);
+            $that = $(this),
+            savedListingsCount = parseInt($('a.savedListingsCount').text().replace(/\D/g, ''));
 
         if ($(this).parent().hasClass('saved')) {
             toSaveOrUnSave = 'un-save';
@@ -637,10 +638,15 @@ jQuery(function ($) {
         if (toSaveOrUnSave === 'save') {
             $that.closest('div.action-link').find('div.not-saved').hide();
             $that.closest('div.action-link').find('div.saved').show();
+
+            savedListingsCount++;
+            $('a.savedListingsCount').text('Saved Listings ' + savedListingsCount);
         }
         else {
             $that.closest('div.action-link').find('div.not-saved').show();
             $that.closest('div.action-link').find('div.saved').hide();
+            savedListingsCount--;
+            $('a.savedListingsCount').text('Saved Listings ' + savedListingsCount);
         }
 
         saveOrUnSaveProperty(propertyId, toSaveOrUnSave);

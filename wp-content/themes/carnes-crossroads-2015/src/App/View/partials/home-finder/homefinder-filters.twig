@@ -9,7 +9,7 @@
     <div>
         {% if function('is_user_logged_in') %}
         <span class="account-links">
-            <a href="#" class="showAccountPage">Saved Listings {{ current_user.getSavedPropertyIds|length }}</a>
+            <a href="#" class="showAccountPage savedListingsCount">Saved Listings {{ current_user.getSavedPropertyIds|length }}</a>
             &nbsp;/&nbsp;
             <a href="#" class="showAccountPage">Saved Searches {{ current_user.getRawSavedSearches|length }}</a>
             &nbsp;/&nbsp;
