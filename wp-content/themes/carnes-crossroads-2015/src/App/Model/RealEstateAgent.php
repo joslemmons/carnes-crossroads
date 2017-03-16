@@ -145,4 +145,16 @@ class RealEstateAgent extends \TimberPost
             'custom_link' => home_url() . '/home-finder/search-listings/?listingAgents[]=' . $listing_agent_id
         );
     }
+
+    public function getOfficePhone()
+    {
+        $field = self::$field_contact_office_number;
+        return $this->$field;
+    }
+
+    public function getMobileNumber()
+    {
+        $field = self::$field_contact_mobile_number;
+        return $this->$field;
+    }
 }
