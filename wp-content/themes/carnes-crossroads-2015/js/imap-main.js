@@ -121,3 +121,13 @@ function change() {
     });
     return false;
 }
+
+jQuery(function ($) {
+
+    //iMap Legend
+    $('.legend-title').click(function(){
+        $('.legend-title').toggleClass('close');
+        $( "#legend-items" ).slideToggle( "slow", function() {
+          });
+    });
+});
