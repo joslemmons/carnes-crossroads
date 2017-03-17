@@ -49631,6 +49631,12 @@
 		"oAP": "\/wp-content\/themes\/carnes-crossroads-2015\/page-residents.php",
 		"oF": 0
 		},
+	"\/wp-content\/themes\/carnes-crossroads-2015\/page-sales-team.php": {
+		"ft": 8192,
+		"oA": 2,
+		"oAP": "\/wp-content\/themes\/carnes-crossroads-2015\/page-sales-team.php",
+		"oF": 0
+		},
 	"\/wp-content\/themes\/carnes-crossroads-2015\/page-saved-listings.php": {
 		"ft": 8192,
 		"oA": 0,
@@ -51458,6 +51464,12 @@
 		"ft": 8192,
 		"oA": 0,
 		"oAP": "\/wp-content\/themes\/carnes-crossroads-2015\/src\/App\/View\/page-privacy.twig",
+		"oF": 0
+		},
+	"\/wp-content\/themes\/carnes-crossroads-2015\/src\/App\/View\/page-sales-team.twig": {
+		"ft": 8192,
+		"oA": 2,
+		"oAP": "\/wp-content\/themes\/carnes-crossroads-2015\/src\/App\/View\/page-sales-team.twig",
 		"oF": 0
 		},
 	"\/wp-content\/themes\/carnes-crossroads-2015\/src\/App\/View\/page-terms-of-use.twig": {

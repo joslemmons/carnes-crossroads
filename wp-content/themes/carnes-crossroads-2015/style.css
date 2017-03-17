@@ -7094,6 +7094,45 @@ Edits by Chernoff Newman
       height: 265px;
       margin-top: -265px; } }
 
+.sales-team .sales-team-content {
+  margin-bottom: 40px; }
+
+.sales-team .agent-img {
+  margin-bottom: 40px; }
+
+@media (max-width: 991px) {
+  .sales-team .agent-contact {
+    margin-bottom: 40px; } }
+
+.sales-team .agent-contact .agent-content {
+  height: 660px; }
+  @media (min-width: 1600px) {
+    .sales-team .agent-contact .agent-content {
+      height: 740px; } }
+  @media (max-width: 991px) {
+    .sales-team .agent-contact .agent-content {
+      height: auto; } }
+
+.agent-profile .agent-name {
+  margin-bottom: 20px; }
+
+.agent-profile .agent-info {
+  margin-bottom: 20px; }
+
+.agent-profile .agent-img {
+  float: left;
+  margin-right: 30px;
+  margin-bottom: 10px;
+  max-width: 400px;
+  height: auto; }
+  @media (max-width: 991px) {
+    .agent-profile .agent-img {
+      float: none;
+      margin: 10px;
+      max-width: 100%;
+      display: block;
+      height: auto; } }
+
 .home-finder {
   background: #f4f0e9;
   position: relative;
