@@ -34,7 +34,7 @@
                 </div>
             </div>
             <div class="row">
-                {% for property in properties|slice(1, 9) %}
+                {% for property in properties %}
                 <div class="col-xs-4 listing-item">
                     <div class="listing-image" style="background-image: url({{ property.getImages[0]|resize(300,200) }})"></div>
                     <h3>{{ property.getAddress }}</h3><p class="listing-price">${{ property.getPurchaseListPrice|number_format }}</p>
