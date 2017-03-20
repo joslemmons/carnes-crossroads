@@ -1,0 +1,67 @@
+{% extends 'base.twig' %}
+{% block template %}
+
+    {% if page.thumbnail %}
+        {% set headerImage = page.thumbnail %}
+    {% else %}
+        {% set headerImage = page.parent.thumbnail %}
+    {% endif %}
+
+    <section class="hero__page" style="background-image: url('{{ page.thumbnail.src }}')">
+    <div class="hero__content-tab-orange">
+        <div class="hero__content-inner">
+            <h1>{{ page.title }}</h1>
+        </div>
+    </div>
+</section>
+
+<section class="page-content--white-floral-top sales-team">
+    <div class="container">
+        {% if page.headline %}
+        <div class="row extra-bottom">
+            <div class="col-xs-12 col-md-8 col-lg-10 col-md-offset-2 col-lg-offset-1 text-center">
+                <h2>{{ page.getHeadline }}</h2>
+            </div>
+        </div>
+        {% endif %}
+
+        <div class="row">
+            <div class="col-md-10 col-md-offset-2">
+                <div class="sales-team-content">
+                    {{ page.content }}
+                </div>
+            </div>
+
+            {% for contact in agents %}
+            <div class="col-md-3">
+                <div class="agent-contact">
+                    <div class="agent-content">
+                        <img src="{{ contact.thumbnail.src|resize(772,600) }}" class="img-responsive agent-img">
+                        <div class="item"><h4>{{ contact.name }}</h4></div>
+                        {% if contact.getOfficeNumber %}
+                        <div class="item"><strong>Office Phone: </strong>{{ contact.getOfficeNumber }}</div>
+                        {% endif %}
+                        {% if contact.getMobileNumber %}
+                        <div class="item"><strong>Mobile Phone: </strong>{{ contact.getMobileNumber }}</div>
+                        {% endif %}
+                        {% if contact.app_contact_email %}
+                        <div class="item"><strong>Email: </strong><a href="mailto:{{ contact.app_contact_email }}">{{ contact.app_contact_email }}</a></div>
+                        {% endif %}
+                        <p>{{ contact.content|truncate(50) }}</p>
+                    </div>
+                    <div class="item read-more"><a class="btn btn-green-small" href="{{ contact.link }}">Read More</a></div>
+                </div>
+            </div>
+            {% endfor %}
+            
+        </div>
+
+    </div>
+</section>
+
+
+{% include "partials/link-widgets.twig" %}
+
+{% include "partials/contact-foot.twig" %}
+
+{% endblock %}
