@@ -9273,6 +9273,12 @@ Edits by Chernoff Newman
     font-size: 16px;
     text-transform: uppercase; }
 
+.bueimp-gallery .slide-error {
+  display: none; }
+
+.bueimp-gallery ol.indicator li:last-child {
+  display: none; }
+
 #tribe-events {
   padding: 0 50px; }
 

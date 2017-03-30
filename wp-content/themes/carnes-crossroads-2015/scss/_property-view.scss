@@ -651,3 +651,14 @@
         text-transform: uppercase;
     }
 }
+
+ //Hide empty gallery thumbs/slide
+.bueimp-gallery {
+    .slide-error {
+        display: none;
+    }
+
+    ol.indicator li:last-child {
+        display: none;
+    }
+}
