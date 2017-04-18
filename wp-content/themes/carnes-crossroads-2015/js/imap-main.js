@@ -15,7 +15,7 @@ var checkboxes = document.getElementsByClassName('squared-checkbox');
 
 var layer = L.mapbox.featureLayer().addTo(map);
 
-var stamenLayer = L.tileLayer(DI.templateUri + '/img/imap/tiles/{z}/{x}/{y}.png',{
+var stamenLayer = L.tileLayer(DI.templateUri + '/img/imap/imap-cx-update/{z}/{x}/{y}.png',{
     minZoom: 14,
     maxZoom: 19
 }).addTo(map);

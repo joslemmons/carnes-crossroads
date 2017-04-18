@@ -59,7 +59,7 @@ jQuery(function ($) {
         }
         layer.setGeoJSON(geoJson);
 
-        var stamenLayer = L.tileLayer(DI.templateUri + "/img/imap/tiles/{z}/{x}/{y}.png").addTo(map);
+        var stamenLayer = L.tileLayer(DI.templateUri + "/img/imap/imap-cx-update/{z}/{x}/{y}.png").addTo(map);
 
         map.eachLayer(function(marker) {
             if(marker.feature && marker.feature.properties['pop-up']) {
