@@ -61,16 +61,22 @@
         background-repeat: no-repeat;
         overflow: hidden;
 
+        &-quote {
+            @extend .slider-lg__item;
+            background-color: #cbc3b6;
+        }
+
         @media (max-width: $screen-sm-max) {
             height: 290px;
         }
 
         .social-quote {
             position: absolute;
-            top: 20%;
+            top: 15%;
             display: block;
             font-family: $font-serif;
             font-size: 1.3rem;
+            line-height: 1.3;
             color: $white;
 
             span {
