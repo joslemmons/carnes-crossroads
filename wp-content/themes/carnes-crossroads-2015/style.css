@@ -6354,151 +6354,6 @@ Edits by Chernoff Newman
 .ms-drop .ms-no-results {
   display: none; }
 
-#imap {
-  background: #f4f0e9;
-  width: 100vw;
-  height: 100vh; }
-  #imap .leaflet-top {
-    top: 162px; }
-
-.map-legend {
-  position: absolute;
-  background: #fff;
-  width: auto;
-  min-width: 240px;
-  top: 15px;
-  left: 60px;
-  z-index: 7; }
-  .map-legend.imap {
-    top: 175px;
-    left: 50px; }
-  .map-legend .legend-title {
-    font-family: "proxima-nova", sans-serif;
-    color: #695e49;
-    font-size: 12px;
-    font-weight: 400;
-    padding: 16px;
-    text-transform: uppercase;
-    letter-spacing: 0.5px;
-    cursor: pointer;
-    background: url(img/arrow-close.png) no-repeat 95% 50%/8px; }
-    .map-legend .legend-title.close {
-      background: url(img/arrow-open.png) no-repeat 95% 50%/8px; }
-  .map-legend form#legend-items {
-    padding-bottom: 10px; }
-    .map-legend form#legend-items.close {
-      display: none; }
-    .map-legend form#legend-items .squared-checkbox {
-      width: 20px;
-      height: 20px;
-      margin: 5px 20px 20px;
-      position: relative; }
-      .map-legend form#legend-items .squared-checkbox.homes {
-        background: #b06a6a; }
-      .map-legend form#legend-items .squared-checkbox.homesites {
-        background: #d2c80d; }
-      .map-legend form#legend-items .squared-checkbox.condos {
-        background: #0a8c7c; }
-      .map-legend form#legend-items .squared-checkbox.sports-fitness {
-        background: #56c1b1; }
-      .map-legend form#legend-items .squared-checkbox.commercial {
-        background: #536377; }
-      .map-legend form#legend-items .squared-checkbox.schools {
-        background: #695e49; }
-      .map-legend form#legend-items .squared-checkbox.churches {
-        background: #bf7616; }
-      .map-legend form#legend-items .squared-checkbox.libraries {
-        background: #553184; }
-      .map-legend form#legend-items .squared-checkbox.parks-pools {
-        background: #aa0979; }
-      .map-legend form#legend-items .squared-checkbox.waterways {
-        background: #d8b830; }
-      .map-legend form#legend-items .squared-checkbox.golf {
-        background: #22a82e; }
-    .map-legend form#legend-items .squared-checkbox input[type="checkbox"] {
-      display: none; }
-    .map-legend form#legend-items .squared-checkbox label {
-      cursor: pointer;
-      position: absolute;
-      width: 18px;
-      height: 18px;
-      left: 1px;
-      top: 1px;
-      background: #fff;
-      z-index: 4; }
-    .map-legend form#legend-items .squared-checkbox span {
-      font-family: "proxima-nova", sans-serif;
-      color: #695e49;
-      font-size: 12px;
-      font-weight: 400;
-      line-height: 1.1;
-      text-align: left;
-      text-transform: uppercase;
-      padding-left: 35px;
-      position: absolute;
-      width: 250px;
-      top: 5px;
-      letter-spacing: 0.5px;
-      z-index: 3; }
-    .map-legend form#legend-items .squared-checkbox label:after {
-      -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=0)";
-      filter: alpha(opacity=0);
-      opacity: 0;
-      content: '';
-      position: absolute;
-      width: 18px;
-      height: 18px;
-      top: 0px;
-      left: 0px;
-      z-index: 5; }
-    .map-legend form#legend-items .squared-checkbox.homes label:after {
-      background: #b06a6a; }
-    .map-legend form#legend-items .squared-checkbox.homesites label:after {
-      background: #d2c80d; }
-    .map-legend form#legend-items .squared-checkbox.condos label:after {
-      background: #0a8c7c; }
-    .map-legend form#legend-items .squared-checkbox.sports-fitness label:after {
-      background: #56c1b1; }
-    .map-legend form#legend-items .squared-checkbox.commercial label:after {
-      background: #536377; }
-    .map-legend form#legend-items .squared-checkbox.schools label:after {
-      background: #695e49; }
-    .map-legend form#legend-items .squared-checkbox.churches label:after {
-      background: #bf7616; }
-    .map-legend form#legend-items .squared-checkbox.libraries label:after {
-      background: #553184; }
-    .map-legend form#legend-items .squared-checkbox.parks-pools label:after {
-      background: #aa0979; }
-    .map-legend form#legend-items .squared-checkbox.waterways label:after {
-      background: #d8b830; }
-    .map-legend form#legend-items .squared-checkbox.golf label:after {
-      background: #22a82e; }
-    .map-legend form#legend-items .squared-checkbox label:hover::after {
-      -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=30)";
-      filter: alpha(opacity=30);
-      opacity: 0.3; }
-    .map-legend form#legend-items .squared-checkbox input[type=checkbox]:checked + label:after {
-      -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=100)";
-      filter: alpha(opacity=100);
-      opacity: 1; }
-  .map-legend .all-listings-btn {
-    background: #e26f57;
-    color: #fff;
-    width: 100%;
-    display: block;
-    padding: 10px 10px;
-    text-align: center;
-    font-family: "Oswald", sans-serif;
-    text-transform: uppercase;
-    text-decoration: none;
-    border-bottom: none;
-    font-size: 14px; }
-    .map-legend .all-listings-btn:hover {
-      text-decoration: none;
-      border-bottom: none;
-      background: #768e1c;
-      color: #fff; }
-
 .hero__map-link {
   margin: 100px auto 0 auto; }
   @media (max-height: 780px) {
@@ -9752,16 +9607,6 @@ span.tel {
   width: 100%; }
 
 @media screen {
-  #imap {
-    background: #f4f0e9;
-    width: 100vw;
-    height: 100vh; }
-    #imap .leaflet-top {
-      top: 162px; }
-  .page-imap .cx-logo {
-    display: none; }
-  .page-imap .menu-icon {
-    background: #768e1c; }
   .map-legend {
     position: absolute;
     background: #fff;
@@ -9772,7 +9617,12 @@ span.tel {
     z-index: 7; }
     .map-legend.imap {
       top: 175px;
-      left: 50px; }
+      left: 50px; } }
+  @media screen and (max-width: 767px) {
+    .map-legend {
+      min-width: 64%; } }
+
+@media screen {
     .map-legend .legend-title {
       font-family: "proxima-nova", sans-serif;
       color: #695e49;
@@ -9786,7 +9636,12 @@ span.tel {
       .map-legend .legend-title.close {
         background: url(img/arrow-open.png) no-repeat 95% 50%/8px; }
     .map-legend form#legend-items {
-      padding-bottom: 10px; }
+      padding-bottom: 10px; } }
+    @media screen and (max-width: 767px) {
+      .map-legend form#legend-items {
+        display: none; } }
+
+@media screen {
       .map-legend form#legend-items.close {
         display: none; }
       .map-legend form#legend-items .squared-checkbox {
@@ -9898,7 +9753,24 @@ span.tel {
         text-decoration: none;
         border-bottom: none;
         background: #768e1c;
-        color: #fff; } }
+        color: #fff; }
+  .page-imap .cx-logo {
+    display: none; }
+  .page-imap .menu-icon {
+    background: #768e1c; }
+  .page-imap #imap {
+    background: #f4f0e9;
+    width: 100vw;
+    height: 100vh; }
+    .page-imap #imap .leaflet-top {
+      top: 162px; } }
+    @media screen and (max-width: 767px) {
+      .page-imap #imap .leaflet-top {
+        top: 10px; } }
+
+@media screen and (max-width: 767px) {
+  .page-imap .map-legend {
+    top: 20px; } }
 
 .print .container {
   height: 1320px;

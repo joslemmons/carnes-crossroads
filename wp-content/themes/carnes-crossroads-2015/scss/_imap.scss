@@ -1,26 +1,6 @@
 @media screen {
 
-    #imap {
-        background: $beige;
-        width: 100vw;
-        height: 100vh;
-
-        .leaflet-top {
-            top: 162px;
-        }
-    }
-
-    .page-imap {
-
-        .cx-logo {
-            display: none;
-        }
-        .menu-icon {
-            background: $cc-green;
-        }
-    }
-
-    //Map Legend
+    //Map Legend for iMap and Homefinder
     .map-legend {
         position: absolute;
         background: $white;
@@ -33,6 +13,10 @@
         &.imap {
             top: 175px;
             left: 50px;
+        }
+        
+        @media (max-width: $screen-xs-max) {
+            min-width: 64%;
         }
 
         .legend-title {
@@ -61,6 +45,10 @@
 
         form#legend-items {
             padding-bottom: 10px;
+            
+            @media (max-width: $screen-xs-max) {
+                display: none;
+            }
 
             &.close {
                 display: none;
@@ -244,6 +232,37 @@
                 border-bottom: none;
                 background: $cc-green;
                 color: $white;
+            }
+        }
+    }
+    
+    //iMap Page Only
+    .page-imap {
+
+        .cx-logo {
+            display: none;
+        }
+        .menu-icon {
+            background: $cc-green;
+        }
+        
+        #imap {
+            background: $beige;
+            width: 100vw;
+            height: 100vh;
+
+            .leaflet-top {
+                top: 162px;
+                
+                @media (max-width: $screen-xs-max) {
+                    top: 10px;
+                }
+            }
+        }
+        
+        .map-legend {
+            @media (max-width: $screen-xs-max) {
+                top: 20px;
             }
         }
     }
