@@ -220,7 +220,7 @@ jQuery(function ($) {
     function isSearchEmpty() {
         return (
             getBuilders() === '' &&
-            getFilterPrice() === '0-500000' &&
+            getFilterPrice() === '0-1000000' &&
             getFilterBedrooms() === '' &&
             getFilterBathrooms() === '',
             getFilterHomeFeatures() === '' &&
@@ -459,7 +459,7 @@ jQuery(function ($) {
         order = 'default';
         pauseSearch = true;
         $('#filter-searchAddress').val('');
-        filterPriceSlider.noUiSlider.set([0, 500000]);
+        filterPriceSlider.noUiSlider.set([0, 1000000]);
         $("#filter-builders, #filter-bedrooms, #filter-bathrooms, #filter-sqft").find('option').removeProp('selected');
         $("#filter-builders, #filter-bedrooms, #filter-bathrooms, #filter-sqft").trigger('chosen:updated');
         $('#filter-homeFeatures').multipleSelect('uncheckAll');
@@ -702,12 +702,12 @@ jQuery(function ($) {
   var filterPriceSlider = document.getElementById('filter-price');
 
   noUiSlider.create(filterPriceSlider, {
-    start: [0, 500000],
+    start: [0, 1000000],
     connect: true,
     step: 50000,
     range: {
       'min': 0,
-      'max': 500000
+      'max': 1000000
     },
     format: wNumb({
       decimals: 0,
