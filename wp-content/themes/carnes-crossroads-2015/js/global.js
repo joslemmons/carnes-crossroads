@@ -179,7 +179,7 @@ jQuery(function ($) {
             slickSlideNum = $(this).parent().attr('data-slick-index');
 
         if (confirm('Are you sure?')) {
-            $('.saved-listings-slider').slick('slickRemove', slickSlideNum);
+            $('.saved-listings-slider').slick('slickRemove', $('.slick-slide').index(this) + 1);
         }
 
         saveOrUnSaveProperty(propertyId, 'un-save');
