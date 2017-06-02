@@ -144,7 +144,7 @@ class User extends \TimberUser
     public function getSavedPropertyIds()
     {
         $saved_property_ids = get_user_meta($this->ID, self::SAVED_PROPERTIES_KEY);
-        return $saved_property_ids;
+        return array_filter($saved_property_ids);
     }
 
     public function getSavedProperties($count = -1)
