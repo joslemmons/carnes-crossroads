@@ -1,3 +1,7 @@
+{% if page.title == 'iMap' %}
+    {# show nothing #}
+{% else %}
+
 <footer class="page-content--footer">
     <div class="container">
         <div class="row">
@@ -7,8 +11,6 @@
                     <li class="footer__social-item"><a href="https://www.facebook.com/CarnesCrossroads" target="blank"><img src="{{ template_uri }}/img/icon-social-fb.png"/></a></li>
                     <li class="footer__social-item"><a href="https://www.youtube.com/user/CarnesXroads" target="blank"><img src="{{ template_uri }}/img/icon-social-yt.png"/></a></li>
                     <li class="footer__social-item"><a href="https://www.instagram.com/carnescrossroads/" target="blank"><img src="{{ template_uri }}/img/icon-social-ig.png"/></a></li>
-                    <li class="footer__social-item"><a href="https://www.pinterest.com/carnesxroads/" target="blank"><img src="{{ template_uri }}/img/icon-social-pn.png"/></a></li>
-                    <li class="footer__social-item"><a href="https://plus.google.com/u/0/+Carnescharleston" target="blank"><img src="{{ template_uri }}/img/icon-social-goog.png"/></a></li>
                 </ul>
             </div>
         </div>
@@ -63,3 +65,4 @@
         </div>
     </div>
 </footer>
+{% endif %}

@@ -128,7 +128,7 @@ class Page extends \TimberPost
                         'get_src' => get_template_directory_uri() . '/img/bg-button-map.jpg'
                     ),
                     'button' => array(
-                        'link' => get_template_directory_uri() . '/img/map-master-plan.jpg'
+                        'link' => '/imap/'
                     )
                 ));
 

@@ -1,7 +1,126 @@
-jQuery(function ($) {
+Number.prototype.formatMoney = function (c, d, t) {
+    var n = this,
+        c = isNaN(c = Math.abs(c)) ? 2 : c,
+        d = d == undefined ? "." : d,
+        t = t == undefined ? "," : t,
+        s = n < 0 ? "-" : "",
+        i = parseInt(n = Math.abs(+n || 0).toFixed(c)) + "",
+        j = (j = i.length) > 3 ? j % 3 : 0;
+    return s + (j ? i.substr(0, j) + t : "") + i.substr(j).replace(/(\d{3})(?=\d)/g, "$1" + t) + (c ? d + Math.abs(n - i).toFixed(c).slice(2) : "");
+};
 
+jQuery(function ($) {
+    
+    var map, filters, checkboxes, layer, listings;
+    L.mapbox.accessToken = 'pk.eyJ1IjoiZGlkZXZjbyIsImEiOiJjaXM3cWY3NDEwNDc0Mnpwa2w5YnllMXZkIn0.4pWeAL6-vhtobhpFd2HDuA';
+    
     var $saveSearchSection = $('#saveSearchSection'),
         order = 'default';
+        
+    jQuery( document ).ready(function() {
+        try {
+            if($("#map").length) initMap();
+        } catch(err) {
+           console.log(err);
+        }
+    });
+    
+    function initMap() {
+        listings = document.getElementsByClassName('map-results-box');
+
+        map = L.mapbox.map('map', 'mapbox.streets', {
+            'maxZoom': 18,
+            'minZoom': 15,
+            'scrollWheelZoom' : 'center'
+        })
+            .setView([33.055457, -80.103917], 17);
+
+        layer = L.mapbox.featureLayer().addTo(map);
+
+        var geoJson = {
+            type: 'FeatureCollection',
+            features: []
+        };
+
+        for(var i = 0; i < locations.length; i++) {
+            geoJson.features.push({
+                "type": "Feature",
+                "geometry": {
+                    "type": "Point",
+                    "coordinates": [parseFloat(locations[i][2]), parseFloat(locations[i][1])]
+                },
+                "properties": {
+                    "address": locations[i][0],
+                    "marker-color": (locations[i][6] === 'Single Family Home') ? '#b06a6a' : (locations[i][6] === 'Amenities') ? '#0a8c7c' : '#b06a6a',
+                    "pop-up": locations[i][5],
+                    "listing-type": (locations[i][6] === 'Single Family Home') ? 'available-homes' : (locations[i][6] === 'Amenities') ? 'available-amenities' : 'available-homes'
+                }
+            });
+        }
+        layer.setGeoJSON(geoJson);
+
+        var stamenLayer = L.tileLayer(DI.templateUri + "/img/imap/imap-cx-update/{z}/{x}/{y}.png").addTo(map);
+
+        map.eachLayer(function(marker) {
+            if(marker.feature && marker.feature.properties['pop-up']) {
+                marker.bindPopup(marker.feature.properties['pop-up'], L.popup({ 'autoPan' : true }));
+            }
+        });
+
+        for(var k = 0; k < listings.length; k++) listings[k].onmouseover = hoverMarkerPopUp;
+    }
+
+    function hoverMarkerPopUp() {
+        var address = $(this).find($('div.map-address')).text().trim();
+        map.eachLayer(function(marker) {
+            if (marker['feature']) {
+                if (marker.feature.properties.address === address) {
+                    marker.openPopup();
+                }
+            }
+        });
+    }
+
+    function change() {
+        var on = [];
+        // Find all checkboxes that are checked and build a list of their values
+        for(var i = 0; i < checkboxes.length; i++) {
+            if(checkboxes[i].childNodes[1].checked) on.push(checkboxes[i].childNodes[1].name);
+        }
+        // The filter function takes a GeoJSON feature object
+        // and returns true to show it or false to hide it.
+        layer.setFilter(function (f) {
+            // check each marker's symbol to see if its value is in the list
+            // of symbols that should be on, stored in the 'on' array
+            return on.indexOf(f.properties["listing-type"]) !== -1;
+        });
+    }
+
+    $('#grid-view-toggle').on('click', function () {
+        if(!$(this).hasClass('active')) {
+            $('#map-view-toggle').removeClass('active');
+            $(this).addClass('active');
+            $('.pagination').attr('data-page',1);
+            performSearch();
+        }
+    });
+
+    $('#map-view-toggle').on('click', function () {
+        if(!$(this).hasClass('active')) {
+            $('#grid-view-toggle').removeClass('active');
+            $(this).addClass('active');
+            $('.pagination').attr('data-page',1);
+            performSearch();
+        }
+    });
+
+    function slugifyListingType() {
+        return $('h2.listings-title')
+            .text()
+            .toLowerCase()
+            .replace(/ /g,'-')
+            .replace(/[^\w-]+/g,'');
+    }
 
     function updateListingDetailAreaToBeFirstResult() {
         if ($('div.listings-wrapper').find('div.listing').length > 0) {
@@ -43,6 +162,60 @@ jQuery(function ($) {
             // auto click the first result
             $('div.listings-wrapper').find('div.listing').first().trigger('click');
         });
+    }
+
+    function showRecentlyListed() {
+        $('div.listings-wrapper').fadeTo('slow', 0.3);
+        $saveSearchSection.hide();
+        showLoadingListingsIndicator();
+        $.get('/api/home-finder/recently-listed/page/1', {}, function (data) {
+            var html = data.rsp,
+                total = data.total;
+
+            hideLoadingListingsIndicator();
+
+            $('h2.listings-title').text('Recently Listed');
+
+            $('div.results-count').text(pluralize('Result', total, true));
+
+            $('div.listings-wrapper').html(html).fadeTo('slow', 1);
+
+            clearFilters();
+            $('#filter-searchAddress').val('');
+
+            // auto click the first result
+            updateListingDetailAreaToBeFirstResult()
+        });
+    }
+
+    function showFeaturedListings() {
+        $('div.listings-wrapper').fadeTo('slow', 0.3);
+        $saveSearchSection.hide();
+        showLoadingListingsIndicator();
+        $.get('/api/home-finder/featured-properties/page/1', {sort: order}, function (data) {
+            var html = data.rsp,
+                total = data.total;
+
+            hideLoadingListingsIndicator();
+
+            $('h2.listings-title').text('Featured Listings');
+
+            $('div.results-count').text(pluralize('Result', total, true));
+
+            $('div.listings-wrapper').html(html).fadeTo('slow', 1);
+
+            clearFilters();
+            $('#filter-searchAddress').val('');
+
+            // auto click the first result
+            updateListingDetailAreaToBeFirstResult()
+        });
+    }
+
+    function showAllListings() {
+        $('div.listings-wrapper').fadeTo('slow', 0.3);
+        clearFilters();
+        performSearch('default', true);
     }
 
     function showProperty(address, id) {
@@ -89,16 +262,32 @@ jQuery(function ($) {
     var Router = Backbone.Router.extend({
         routes: {
             'home-finder/properties/:address/:id/': 'showProperty',
-            'home-finder/saved-listings/': 'showSavedListings'
+            'home-finder/featured-listings/': 'showFeaturedListings',
+            'home-finder/recently-listed/': 'showRecentlyListed',
+            'home-finder/saved-listings/': 'showSavedListings',
+            'home-finder/all-listings/': 'showAllListings',
         },
 
         showSavedListings: function () {
             showSavedListings();
         },
 
+        showRecentlyListed: function () {
+            showRecentlyListed();
+
+        },
+
+        showFeaturedListings: function () {
+            showFeaturedListings();
+        },
+
         showProperty: function (address, id) {
             showProperty(address, id);
-        }
+        },
+
+        showAllListings: function () {
+            showAllListings();
+        },
 
     });
 
@@ -110,6 +299,10 @@ jQuery(function ($) {
             silent: true
         });
         Backbone.history.started = true;
+
+        if ('home-finder/' === Backbone.history.getFragment()) {
+            router.navigate("home-finder/featured-listings/", {trigger: false, replace: true});
+        }
     }
 
     function showLoadingListingsIndicator() {
@@ -192,6 +385,8 @@ jQuery(function ($) {
             sort = 'default';
         }
 
+        var view = $('#map-view-toggle').hasClass('active') ? 'map' : 'grid';
+
         var filters = {
             prices: getFilterPrice(),
             bedrooms: getFilterBedrooms(),
@@ -201,8 +396,13 @@ jQuery(function ($) {
             includeHomes: getShouldIncludeHomes(),
             builders: getBuilders(),
             homeFeatures: getFilterHomeFeatures(),
-            squareFootage: getFilterSquareFootage()
+            squareFootage: getFilterSquareFootage(),
+            name: $('.home-finder').attr('data-nameType')
         };
+
+        // On Change Filter, reset the pagination.
+        router.navigate('real-estate/home-finder/'+$('.home-finder').attr('data-nameType')+'/?' + $.param(filters), {trigger: false});
+        page = $('.pagination').attr('data-page',1);
 
         $('div.results-sort').show();
         showLoadingListingsIndicator();
@@ -214,7 +414,7 @@ jQuery(function ($) {
             $saveSearchSection.hide();
         }
 
-        getListings(filters, sort, isAllListings);
+        getListings(filters, sort, isAllListings, view);
     }
 
     function isSearchEmpty() {
@@ -228,7 +428,7 @@ jQuery(function ($) {
         );
     }
 
-    function getListings(filters, sort, isAllListings) {
+    function getListings(filters, sort, isAllListings, view) {
         if (typeof sort === 'undefined') {
             sort = 'default';
         }
@@ -247,7 +447,9 @@ jQuery(function ($) {
             includeHomes: filters.includeHomes,
             builders: filters.builders,
             homeFeatures: filters.homeFeatures,
-            squareFootage: filters.squareFootage
+            squareFootage: filters.squareFootage,
+            view: view,
+            name: $('.home-finder').attr('data-nameType')
         };
 
         if (isAllListings === true) {
@@ -256,14 +458,16 @@ jQuery(function ($) {
 
         router.navigate('home-finder/search-listings/?' + $.param(filtersForQuery), {trigger: false});
 
+        page = $('.pagination').data('page');
+
         $.ajax({
             url: '/api/home-finder/search',
             data: filtersForQuery,
             success: function (data) {
                 var html = data.rsp,
-                    total = data.total;
+                    total = data.total
 
-                locations = [];
+                locations = data.locations;
 
                 hideLoadingListingsIndicator();
 
@@ -271,7 +475,11 @@ jQuery(function ($) {
 
                 $('div.results-count').text(pluralize('Result', total, true));
 
-                $('div.listings-wrapper').html(html).fadeTo('slow', 1);
+                $('div.home-finder-container').html(html).fadeTo('slow', 1);
+
+                if(view == 'map'){
+                    initMap();
+                }
 
                 $input.prop('readonly', false);
                 // auto click the first result
@@ -292,15 +500,15 @@ jQuery(function ($) {
     }
 
     function getShouldIncludePlans() {
-        var selection = $('#filter-listings-type').find('option:selected').val();
+        var selection = $('#filter-listings-type-copy').find('option:selected').val();
 
         return (selection === 'home-plans' || selection === 'available-homes-and-plans');
     }
 
     function getShouldIncludeHomes() {
-        var selection = $('#filter-listings-type').find('option:selected').val();
+        var selection = $('#filter-listings-type-copy').find('option:selected').val();
 
-        return (selection === 'available-homes' || selection === 'available-homes-and-plans');
+        return (selection === 'available-homes' || selection === 'available-homes-and-plans' || selection == 'Select Filters');
     }
 
     function getSearchAddress() {
@@ -412,7 +620,7 @@ jQuery(function ($) {
         $('.filter-options').toggle('slow');
     });
 
-    $('div.home-finder-main').on('click', 'div.save.action-link a', function () {
+    $('div.home-finder-container').on('click', 'div.save.action-link a', function () {
         if (typeof DI === 'undefined' || typeof DI.isLoggedIn === 'undefined' || DI.isLoggedIn !== 'true') {
             $('a.showAccountPage').trigger('click');
             return false;
@@ -420,7 +628,8 @@ jQuery(function ($) {
 
         var propertyId = $(this).attr('data-property-id'),
             toSaveOrUnSave = 'save',
-            $that = $(this);
+            $that = $(this),
+            savedListingsCount = parseInt($('a.savedListingsCount').text().replace(/\D/g, ''));
 
         if ($(this).parent().hasClass('saved')) {
             toSaveOrUnSave = 'un-save';
@@ -429,10 +638,15 @@ jQuery(function ($) {
         if (toSaveOrUnSave === 'save') {
             $that.closest('div.action-link').find('div.not-saved').hide();
             $that.closest('div.action-link').find('div.saved').show();
+
+            savedListingsCount++;
+            $('a.savedListingsCount').text('Saved Listings ' + savedListingsCount);
         }
         else {
             $that.closest('div.action-link').find('div.not-saved').show();
             $that.closest('div.action-link').find('div.saved').hide();
+            savedListingsCount--;
+            $('a.savedListingsCount').text('Saved Listings ' + savedListingsCount);
         }
 
         saveOrUnSaveProperty(propertyId, toSaveOrUnSave);
@@ -459,9 +673,11 @@ jQuery(function ($) {
         order = 'default';
         pauseSearch = true;
         $('#filter-searchAddress').val('');
-        filterPriceSlider.noUiSlider.set([0, 1000000]);
-        $("#filter-builders, #filter-bedrooms, #filter-bathrooms, #filter-sqft").find('option').removeProp('selected');
-        $("#filter-builders, #filter-bedrooms, #filter-bathrooms, #filter-sqft").trigger('chosen:updated');
+
+        filterPriceSlider.noUiSlider.set([0, 500000]);
+        $("#filter-listings-type-copy, #filter-builders, #filter-bedrooms, #filter-bathrooms, #filter-sqft").find('option').removeProp('selected');
+        $("#filter-listings-type-copy, #filter-builders, #filter-bedrooms, #filter-bathrooms, #filter-sqft").trigger('chosen:updated');
+
         $('#filter-homeFeatures').multipleSelect('uncheckAll');
         pauseSearch = false;
     }
@@ -614,6 +830,22 @@ jQuery(function ($) {
         $('.single-listing-col').animate({scrollTop: "0px"});
     });
 
+    /*** Match Height ***/
+    //-Grid View
+    // $('.row-grid-view').each(function(i, elem) {
+    //     $(elem)
+    //         .find('.grid-results-box')   // Only children of this row
+    //         .matchHeight({byRow: false}); // Row detection gets confused so disable it
+    // });
+
+    //-Map View
+    // $('.col-map-listings').each(function(i, elem) {
+    //     $(elem)
+    //         .find('.map-results-box')   // Only children of this row
+    //         .matchHeight({byRow: false}); // Row detection gets confused so disable it
+    // });
+
+
     //Mobile Only
     $(document).on('click', 'div.listing', function () {
         $('.single-listing-col').addClass('move-up');
@@ -720,6 +952,8 @@ jQuery(function ($) {
     $('#filter-searchAddress').val('');
     order = 'default';
     performSearch();
+
+    $('#showPriceFilter').html($('#minPriceFilter').val() + " - " + $('#maxPriceFilter').val());
   });
 
   filterPriceSlider.noUiSlider.on('update', function (values, handle) {
@@ -744,17 +978,33 @@ jQuery(function ($) {
   $('#filter-listings-type-copy').on('change', function() {
       $('#filter-listings-type').find('option[value="' + $(this).find('option:selected').val() + '"]').prop('selected', true);
       $('#filter-listings-type').trigger("chosen:updated");
-      var selection = $(this).find('option:selected').val();
+      
+      var selection = $(this).find('option:selected').val();    
+      var view = $('#map-view-toggle').hasClass('active') ? 'map' : 'grid';
+      if (selection === 'home-plans' && view === 'map') {
+          $('.toggle-btn').hide();
+          $('div.view-on-map').css('visibility', 'hidden');
+          $('#grid-view-toggle').trigger('click');
+      }else if(selection === 'home-plans') {
+          $('.toggle-btn').hide();
+      }else{
+          $('.toggle-btn').show();
+          $('div.view-on-map').css('visibility', 'visible');
+      }
 
-        if (selection === 'home-plans') {
-            $('div.view-on-map').css('visibility', 'hidden');
-        }
-        else {
-            $('div.view-on-map').css('visibility', 'visible');
-        }
-
-        $('#filter-searchAddress').val('');
-        performSearch();
+      $('#filter-searchAddress').val('');
+      performSearch();
   });
+
+    //Fullscreen Map
+    $(document).on('click', '#fullscreen-map', function () {
+        $('.col-map').toggleClass('open');
+    });
+
+     //Map Legend
+    $(document).on('click', '#legend-title', function () {
+        $('#legend-title').toggleClass('close');
+        $('#legend-items').toggleClass('close');
+    });
 
 });

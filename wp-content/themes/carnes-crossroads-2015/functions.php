@@ -76,4 +76,15 @@ function fix_keys(&$value) {
     }
 }
 
+function my_search_wp_basic_auth_creds() {
+    $credentials = array(
+        'username' => 'dire',
+        'password' => 'Islandtown!1!'
+    );
+
+    return $credentials;
+}
+
+add_filter('search_wp_basic_auth_creds', 'my_search_wp_basic_auth_creds');
+
 \App\Model\Bootstrap::init();

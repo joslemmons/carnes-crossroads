@@ -1,0 +1,29 @@
+
+<div class="col-lg-6">
+    <a href="{{ property.link }}" class="map-results-link">
+        <div class="map-results-box">
+            <div class="map-box-image" style="background:url('{{ property.getFeaturedImage }}') no-repeat 50% 50%; background-size: cover;"></div>
+            <div class="map-box-content">
+                <div class="map-address">
+                    {{ property.title }}
+                </div>
+                <div class="map-details">
+                    {% if property.getBedroomCount or property.getFullBathroomCount or property.getHalfBathroomCount %}
+                    <div class="specs">
+                        {% if property.getBedroomCount %}{{ property.getBedroomCount }} BR /{% endif %}
+                        {% if property.getFullBathroomCount %}{{ property.getFullBathroomCount }} BA {% endif %}
+                        {% if property.getHalfBathroomCount %}/ {{ property.getHalfBathroomCount }}  Half BA {% endif %}
+                        <span class="specs-sqft"> {{ property.square_footage }} {{ property.getTotalAreaSquareFootageUnitOfMeasurement }}</span>
+                    </div>
+                    {% else %}
+                    <br>
+                    {% endif %}
+                    <div class="price">${{ property.getPurchaseListPrice|removeNonNumbers|number_format }}</div>
+                </div>                            
+                <div class="type-box">
+                    {{ property.builder.title | replace({'Homes': "Home Plan"}) }}
+                </div>
+            </div>
+        </div>
+    </a>
+</div>

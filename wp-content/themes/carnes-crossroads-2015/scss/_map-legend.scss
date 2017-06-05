@@ -1,0 +1,237 @@
+//Styles for Map Legend on Homefinder and iMap
+
+#imap {
+    background: $beige;
+    width: 100vw;
+    height: 100vh;
+    
+    .leaflet-top {
+        top: 162px;
+    }
+}
+.map-legend {
+    position: absolute;
+    background: $white;
+    width: auto;
+    min-width: 240px;
+    top: 15px;
+    left: 60px;
+    z-index: 7;
+    
+    &.imap {
+        top: 175px;
+        left: 50px;
+    }
+
+    .legend-title {
+        font-family: $proxima;
+        color: $brown;
+        font-size: 12px;
+        font-weight: 400;
+        padding: 16px;
+        text-transform: uppercase;
+        letter-spacing: 0.5px;
+        // font-family: $baskerville;
+        // color: $brown;
+        // font-size: 16px;
+        // font-weight: 400;
+        // line-height: 1;
+        // text-align: left;
+        // text-transform: uppercase;
+        // padding: 20px 16px;
+        cursor: pointer;
+        background: url(img/arrow-close.png) no-repeat 95% 50% / 8px;
+
+        &.close {
+            background: url(img/arrow-open.png) no-repeat 95% 50% / 8px;
+        }
+    }
+
+    form#legend-items {
+        padding-bottom: 10px;
+
+        &.close {
+            display: none;
+        }
+
+        .squared-checkbox {
+            width: 20px;
+            height: 20px;
+            margin: 5px 20px 20px;
+            position: relative;
+
+            //homefinder items
+            &.homes {
+                background: #b06a6a;
+            }
+
+            &.homesites {
+                background: #d2c80d;
+            }
+
+            &.condos {
+                background: #0a8c7c;
+            }
+
+            //imap items
+            &.sports-fitness {
+                background: #56c1b1;
+            }
+
+            &.commercial {
+                background: #536377;
+            }
+
+            &.schools {
+                background: #695e49;
+            }
+
+            &.churches {
+                background: #bf7616;
+            }
+
+            &.libraries {
+                background: #553184;
+            }
+
+            &.parks-pools {
+                background: #aa0979;
+            }
+
+            &.waterways {
+                background: #d8b830;
+            }
+
+            &.golf {
+                background: #22a82e;
+            }
+        }
+
+        .squared-checkbox input[type="checkbox"] {
+            display: none;
+        }
+
+        .squared-checkbox label {
+            cursor: pointer;
+            position: absolute;
+            width: 18px;
+            height: 18px;
+            left: 1px;
+            top: 1px;
+            background: $white;
+            z-index: 4;
+
+        }
+
+        .squared-checkbox span {
+            //text styles
+            font-family: $proxima;
+            color: $brown;
+            font-size: 12px;
+            font-weight: 400;
+            line-height: 1.1;
+            text-align: left;
+            text-transform: uppercase;
+            padding-left: 35px;
+            position: absolute;
+            width: 250px;
+            top: 5px;
+            letter-spacing: 0.5px;
+            z-index: 3;
+        }
+
+        .squared-checkbox label:after {
+            -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=0)";
+            filter: alpha(opacity=0);
+            opacity: 0;
+            content: '';
+            position: absolute;
+            width: 18px;
+            height: 18px;
+            top: 0px;
+            left: 0px;
+            z-index: 5;
+        }
+
+        //homefinder items
+        .squared-checkbox.homes label:after{
+            background: #b06a6a;
+        }
+
+        .squared-checkbox.homesites label:after{
+            background: #d2c80d;
+        }
+
+        .squared-checkbox.condos label:after{
+            background: #0a8c7c;
+        }
+
+
+        //imap items
+        .squared-checkbox.sports-fitness label:after{
+            background: #56c1b1;
+        }
+
+        .squared-checkbox.commercial label:after{
+            background: #536377;
+        }
+
+        .squared-checkbox.schools label:after{
+            background: #695e49;
+        }
+
+        .squared-checkbox.churches label:after{
+            background: #bf7616;
+        }
+
+        .squared-checkbox.libraries label:after{
+            background: #553184;
+        }
+
+        .squared-checkbox.parks-pools label:after{
+            background: #aa0979;
+        }
+
+        .squared-checkbox.waterways label:after{
+            background: #d8b830;
+        }
+
+        .squared-checkbox.golf label:after{
+            background: #22a82e;
+        }
+
+
+        .squared-checkbox label:hover::after {
+            -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=30)";
+            filter: alpha(opacity=30);
+            opacity: 0.3;
+        }
+
+        .squared-checkbox input[type=checkbox]:checked + label:after {
+            -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=100)";
+            filter: alpha(opacity=100);
+            opacity: 1;
+        }
+    }
+    
+    .all-listings-btn {
+        background: $cc-red;
+        color: $white;
+        width: 100%;
+        display: block;
+        padding: 10px 10px;
+        text-align: center;
+        font-family: $oswald;
+        text-transform: uppercase;
+        text-decoration: none;
+        border-bottom: none;
+        font-size: 14px;
+
+        &:hover {
+            text-decoration: none;
+            border-bottom: none;
+            background: $cc-green;
+            color: $white;
+        }
+    }
+}

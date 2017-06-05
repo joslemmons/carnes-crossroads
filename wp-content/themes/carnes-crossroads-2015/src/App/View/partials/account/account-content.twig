@@ -21,11 +21,12 @@
                         {{ property.getAddress }}
                     </div>
                     <div class="details">
-                        <div class="neighborhood">{{ property.getPropertyType }}{% if property.getPropertyType and property.getNeighborhood %} | {% endif %}{{ property.getNeighborhood }}</div>
+                        {# <div class="neighborhood">{{ property.getPropertyType }}{% if property.getPropertyType and property.getNeighborhood %} | {% endif %}{{ property.getNeighborhood }}</div> #}
+                        <div class="neighborhood">{{ property.getPropertyType }}</div>
                         <div class="details">
                             {% if property.getBedroomCount or property.getFullBathroomCount or property.getHalfBathroomCount %}
                             <div class="specs">{% if property.getBedroomCount %}{{ property.getBedroomCount }} BR /{% endif %}
-                                {% if property.getFullBathroomCount %}{{ property.getFullBathroomCount }} Full Bath /{% endif %}{% if property.getHalfBathroomCount %}{{ property.getHalfBathroomCount }}  Half Bath{% endif %}
+                                {% if property.getFullBathroomCount %}{{ property.getFullBathroomCount }} Full BA / {% endif %}{% if property.getHalfBathroomCount %}{{ property.getHalfBathroomCount }} Half BA{% endif %}
                             </div>
                             {% endif %}
                             {% set numDecimalPlaces = 0 %}

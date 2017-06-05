@@ -196,7 +196,7 @@
     }
 
     input#gform_submit_button_2.gform_button.button {
-        margin-top: 15px;
+        margin-top: 25px;
     }
 }
 
@@ -211,6 +211,46 @@
 
 .gform_wrapper ul li.gfield {
     margin-bottom: 0;
+}
+
+#gform_wrapper_3 {
+
+    input[type=submit] {
+        -webkit-appearance: none;
+        -moz-appearance: none;
+        appearance: none;
+        padding: 7px 25px;
+        margin-top: 2px;
+        position: relative;
+        font-family: $font-serif;
+        font-weight: $weight-regular;
+        font-size: 1rem !important;
+        text-transform: uppercase;
+        letter-spacing: 2px;
+        color: $white;
+        background-color: $cc-green;
+        border: 1px solid darken($cc-green, 10);
+        outline: 5px solid $cc-green;
+        left: 50%;
+
+        @media (max-width: $screen-xs-max) {
+            width: 100%;
+            left: 0;
+            margin-top: 12px;
+        }
+
+        @media (max-width: $screen-md-max) {
+            margin-top: 7px;
+        }
+
+        &:hover {
+            color: $white;
+            text-shadow: 0 2px 10px rgba($black, .5);
+            background-color: darken($cc-green, 2);
+            border: 1px solid darken($cc-green, 10);
+            outline: 5px solid darken($cc-green, 2);;
+        }
+    }
 }
 
 .gform_wrapper .hidden_label input.small,
@@ -362,53 +402,9 @@
     }
 }
 
-.gform_wrapper .gform_footer {
-    margin-top: -65px !important;
-
-    @media (max-width: $screen-xs-max) {
-        margin-top: 0 !important;
-    }
-}
-
 .events__form-container .gform_wrapper .gform_footer {
     margin-top: -80px !important;
     padding-top: 0;
-}
-
-.gform_wrapper .gform_footer input[type=submit] {
-    -webkit-appearance: none;
-    -moz-appearance: none;
-    appearance: none;
-    padding: 7px 25px;
-    position: relative;
-    font-family: $font-serif;
-    font-weight: $weight-regular;
-    font-size: 1rem !important;
-    text-transform: uppercase;
-    letter-spacing: 2px;
-    color: $white;
-    background-color: $cc-green;
-    border: 1px solid darken($cc-green, 10);
-    outline: 5px solid $cc-green;
-    left: 77%;
-
-    &:hover {
-        color: $white;
-        text-shadow: 0 2px 10px rgba($black, .5);
-        background-color: darken($cc-green, 2);
-        border: 1px solid darken($cc-green, 10);
-        outline: 5px solid darken($cc-green, 2);;
-    }
-
-    @media (max-width: 1150px) {
-        left: 74%;
-    }
-
-    @media (max-width: $screen-xs-max) {
-        left: 0;
-        width: 100%;
-        font-size: 1rem !important;
-    }
 }
 
 .gform_confirmation_message {
@@ -546,6 +542,67 @@
 
         @media (max-width: $screen-xs-max) {
             margin-top: 0 !important;
+        }
+    }
+}
+
+#gform_wrapper_1 {
+    margin-top: 25px;
+
+    label.gfield_label {
+        line-height: 0;
+        display: none;
+    }
+
+    li.gfield {
+        margin-bottom: 20px;
+    }
+
+    textarea {
+        margin-top: -25px;
+    }
+
+    .gform_footer {
+        margin-top: -78px !important;
+
+        @media (max-width: $screen-xs-max) {
+            margin-top: 0 !important;
+        }
+
+        input[type=submit] {
+            -webkit-appearance: none;
+            -moz-appearance: none;
+            appearance: none;
+            padding: 7px 25px;
+            position: relative;
+            font-family: $font-serif;
+            font-weight: $weight-regular;
+            font-size: 1rem !important;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            color: $white;
+            background-color: $cc-green;
+            border: 1px solid darken($cc-green, 10);
+            outline: 5px solid $cc-green;
+            left: 50%;
+
+                &:hover {
+                    color: $white;
+                    text-shadow: 0 2px 10px rgba($black, .5);
+                    background-color: darken($cc-green, 2);
+                    border: 1px solid darken($cc-green, 10);
+                    outline: 5px solid darken($cc-green, 2);;
+                }
+
+            @media (max-width: 1150px) {
+                left: 74%;
+            }
+
+            @media (max-width: $screen-xs-max) {
+                left: 0;
+                width: 100%;
+                font-size: 1rem !important;
+            }
         }
     }
 }

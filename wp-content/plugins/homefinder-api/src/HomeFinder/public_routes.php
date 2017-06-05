@@ -28,7 +28,13 @@ Routes::map('/api/home-finder/sign-in', array('\HomeFinder\Controller\User', 'ro
 
 Routes::map('/property-sitemap.xml', array('\HomeFinder\Controller\SEO', 'routeGetPropertySitemap'));
 Routes::map('/home-finder/properties/:address/:id/', function ($params) {
+    $params['http_referer'] = $_SERVER['HTTP_REFERER'];
     Routes::load('tpl-property.php', $params);
+});
+
+Routes::map('/home-finder/floor-plans/:builder_name/:floor_plan_title/', function ($params) {
+    $params['http_referer'] = $_SERVER['HTTP_REFERER'];
+    Routes::load('tpl-floor-plan.php', $params);
 });
 
 Routes::map('/api/home-finder/floor-plans/:builder_name/:floor_plan_title', array('\HomeFinder\Controller\Builder', 'routeGetFloorPlan'));
