@@ -4,14 +4,14 @@
 <section class="agent-profile">
     <h2 class="agent-name">Contact Information</h2>
     <div class="agent-info">
-        {% if page.app_contact_office_number %}
-        <div class="item"><strong>Office Phone: </strong>{{ page.app_contact_office_number }}</div>
+        {% if page.app_contacts[0].app_contact_office_number %}
+            <div class="item"><strong>Office Phone: </strong>{{ page.app_contacts[0].app_contact_office_number }}</div>
         {% endif %}
-        {% if page.app_contact_mobile_number %}
-        <div class="item"><strong>Mobile Phone: </strong>{{ page.app_contact_mobile_number }}</div>
+        {% if page.app_contacts[0].app_contact_mobile_number %}
+            <div class="item"><strong>Mobile Phone: </strong>{{ page.app_contacts[0].app_contact_mobile_number }}</div>
         {% endif %}
-        {% if page.app_contact_email %}
-        <div class="item"><strong>Email: </strong><a href="mailto:{{ contact.app_contact_email }}">{{ page.app_contact_email }}</a></div>
+        {% if page.app_contacts[0].app_contact_email %}
+            <div class="item"><strong>Email: </strong><a href="mailto:{{ page.app_contact_email }}">{{ page.app_contacts[0].app_contact_email }}</a></div>
         {% endif %}
     </div>
     <img src="{{ page.thumbnail.src|resize(772,600) }}" class="agent-img">
