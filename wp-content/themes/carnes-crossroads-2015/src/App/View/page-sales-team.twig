@@ -45,7 +45,7 @@
                         <div class="item"><strong>Mobile Phone: </strong>{{ contact.app_contacts[0].app_contact_mobile_number }}</div>
                         {% endif %}
                         {% if contact.app_contacts[0].app_contact_email %}
-                        <div class="item"><strong>Email: </strong><a href="mailto:{{ ontact.app_contacts[0].app_contact_email }}">{{ contact.app_contacts[0].app_contact_email }}</a></div>
+                        <div class="item"><strong>Email: </strong><a href="mailto:{{ contact.app_contacts[0].app_contact_email }}">{{ contact.app_contacts[0].app_contact_email }}</a></div>
                         {% endif %}
                         <p>{{ contact.content|truncate(50) }}</p>
                     </div>
