@@ -5,3 +5,4 @@ config.codekit
 config.codekit3
 .idea/
 /local-config.php
+/config.codekit3
