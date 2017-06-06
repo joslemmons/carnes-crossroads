@@ -26,14 +26,14 @@
         {% endif %}
 
         <div class="row">
-            <div class="col-md-12">
+            <div class="col-xs-12">
                 <div class="sales-team-content">
                     {{ page.content }}
                 </div>
             </div>
 
             {% for contact in agents %}
-            <div class="col-md-3">
+            <div class="col-sm-6 col-md-3">
                 <div class="agent-contact">
                     <div class="agent-content">
                         <a href="{{ contact.link }}"><img src="{{ contact.thumbnail.src|resize(772,600) }}" class="img-responsive agent-img"></a>
@@ -47,7 +47,8 @@
                         {% if contact.app_contacts[0].app_contact_email %}
                         <div class="item"><strong>Email: </strong><a href="mailto:{{ contact.app_contacts[0].app_contact_email }}">{{ contact.app_contacts[0].app_contact_email }}</a></div>
                         {% endif %}
-                        <p>{{ contact.content|truncate(50) }}</p>
+                        <br>
+                        {{ contact.content|truncate(50) }}
                     </div>
                     <div class="item read-more"><a class="btn btn-green-small" href="{{ contact.link }}">Read More</a></div>
                 </div>
