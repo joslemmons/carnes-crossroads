@@ -4,9 +4,13 @@
     background: $beige;
     width: 100vw;
     height: 100vh;
-    
+
     .leaflet-top {
         top: 162px;
+    }
+
+    .listing-img-col {
+        height: 200px;
     }
 }
 .map-legend {
@@ -17,7 +21,7 @@
     top: 15px;
     left: 60px;
     z-index: 7;
-    
+
     &.imap {
         top: 175px;
         left: 50px;
@@ -213,7 +217,7 @@
             opacity: 1;
         }
     }
-    
+
     .all-listings-btn {
         background: $cc-red;
         color: $white;
