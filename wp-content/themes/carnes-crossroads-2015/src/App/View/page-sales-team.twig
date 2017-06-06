@@ -36,7 +36,7 @@
             <div class="col-md-3">
                 <div class="agent-contact">
                     <div class="agent-content">
-                        <img src="{{ contact.thumbnail.src|resize(772,600) }}" class="img-responsive agent-img">
+                        <a href="{{ contact.link }}"><img src="{{ contact.thumbnail.src|resize(772,600) }}" class="img-responsive agent-img"></a>
                         <div class="item"><h4>{{ contact.name }}</h4></div>
                         {% if contact.app_contacts[0].app_contact_office_number %}
                         <div class="item"><strong>Office Phone: </strong>{{ contact.app_contacts[0].app_contact_office_number }}</div>
