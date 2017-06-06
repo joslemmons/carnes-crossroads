@@ -7,7 +7,9 @@
  */
 
 $context = Timber::get_context();
+$context['page_class'] = 'page-imap';
 $page = Timber::get_post(false, '\App\Model\Page');
+
 
 $listings = \App\Model\PlaceOfInterest::all();
 

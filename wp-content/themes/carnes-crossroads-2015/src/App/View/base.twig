@@ -93,7 +93,7 @@
         window.onload = init();
     </script>
 </head>
-<body>
+<body class="{{ page_class }}">
 <!--[if lt IE 7]>
 <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a
         href="{{ template_uri }}/img/faviconshttp://browsehappy.com/">upgrade
@@ -124,7 +124,7 @@
 {% include "partials/site-header.twig" %}
 <div id="o-wrapper" class="o-wrapper">
     <a href="/">
-        <img src="{{ theme.link }}/img/carnes_logo_wht.svg" alt="Carnes Crossroads">
+        <img src="{{ theme.link }}/img/carnes_logo_wht.svg" alt="Carnes Crossroads" class="cx-logo">
     </a>
     {% block template %}
     {% endblock %}
