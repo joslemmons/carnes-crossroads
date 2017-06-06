@@ -12,6 +12,21 @@
     .listing-img-col {
         height: 200px;
     }
+
+    .listing-neighborhood {
+        font-family: $oswald;
+        color: $cc-brown;
+        text-transform: uppercase;
+        font-size: 0.95rem;
+        letter-spacing: 0.4px;
+    }
+
+    .listing-details {
+        font-family: $proxima;
+        font-size: 0.8rem;
+        text-transform: uppercase;
+        color: $cc-brown;
+    }
 }
 .map-legend {
     position: absolute;
