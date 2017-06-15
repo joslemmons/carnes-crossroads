@@ -30,7 +30,7 @@
                 <div class="col-md-4">
                     {# NOTE - THIS IS ON THE PAGE TWICE, LOWER DOWN FOR MOBILE #}
                     <div class="property-sidebar hidden-sm hidden-xs">
-                        {% if property.getImages[1] %}
+                        {% if property.getImages[0] %}
                         <div class="property-gallery">
                             <div class="sidebar-box">
                                 <div class="gallery-thumbs">
@@ -38,10 +38,12 @@
                                         <div class="col-md-12 col-photos">
                                             {# 1190 x 660 #}
                                             <a href="{{ property.getImages[0] }}" {% if function('wp_is_mobile') == false %}
-                                               {% else %}onclick="return false;"{% endif %} data-gallery="#desktop-gallery">
-                                                <div class="btn-box">
-                                                    View Gallery
-                                                </div>
+                                            {% else %}onclick="return false;"{% endif %} data-gallery="#desktop-gallery">
+                                                {% if property.getImages | length > 1 %}
+                                                    <div class="btn-box">
+                                                            View Gallery
+                                                    </div>
+                                                {% endif %}
                                                 <img src="{{ property.getImages[0]|resize(1190,800) }}" class="main-photo img-responsive"/>
                                             </a>
                                         </div>
@@ -250,7 +252,7 @@
 
                         {# MOBILE CONTENT #}
                         <div class="property-sidebar visible-sm visible-xs">
-                            {% if property.getImages[1] %}
+                            {% if property.getImages[0] %}
                             <div class="property-gallery">
                                 <div class="sidebar-box">
                                     <div class="gallery-thumbs">
@@ -259,9 +261,11 @@
                                                 {# 1190 x 660 #}
                                                 <a href="{{ property.getImages[0] }}" {% if function('wp_is_mobile') == false %}
                                                    {% else %}onclick="return false;"{% endif %} data-gallery="#mobile-gallery">
-                                                    <div class="btn-box">
-                                                        View Gallery
-                                                    </div>
+                                                    {% if property.getImages | length > 1 %}
+                                                        <div class="btn-box">
+                                                            View Gallery
+                                                        </div>
+                                                    {% endif %}
                                                     <img src="{{ property.getImages[0]|resize(1190,660) }}" class="main-photo img-responsive"/>
                                                 </a>
                                             </div>

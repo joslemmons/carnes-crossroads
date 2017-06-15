@@ -4,9 +4,28 @@
     background: $beige;
     width: 100vw;
     height: 100vh;
-    
+
     .leaflet-top {
         top: 162px;
+    }
+
+    .listing-img-col {
+        height: 200px;
+    }
+
+    .listing-neighborhood {
+        font-family: $oswald;
+        color: $cc-brown;
+        text-transform: uppercase;
+        font-size: 0.95rem;
+        letter-spacing: 0.4px;
+    }
+
+    .listing-details {
+        font-family: $proxima;
+        font-size: 0.8rem;
+        text-transform: uppercase;
+        color: $cc-brown;
     }
 }
 .map-legend {
@@ -17,7 +36,7 @@
     top: 15px;
     left: 60px;
     z-index: 7;
-    
+
     &.imap {
         top: 175px;
         left: 50px;
@@ -213,7 +232,7 @@
             opacity: 1;
         }
     }
-    
+
     .all-listings-btn {
         background: $cc-red;
         color: $white;

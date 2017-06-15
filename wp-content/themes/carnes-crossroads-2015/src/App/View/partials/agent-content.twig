@@ -1,21 +1,35 @@
 <div class="breadcrumbs">
-    {{ function('\\App\\Model\\Page::getBreadcrumbs') }}
+    {# {{ function('\\App\\Model\\Page::getBreadcrumbs') }} #}
+    <span>
+        <a href="/">Home</a>
+        &nbsp;&raquo;&nbsp;
+        <a href="/homes/sales-team">Sales Team</a>
+        &nbsp;&raquo;&nbsp;
+        <span class="breadcrumb_last">{{ page.title }}</span>
+    </span>
+
 </div>
 <section class="agent-profile">
-    <h2 class="agent-name">Contact Information</h2>
-    <div class="agent-info">
-        {% if page.app_contact_office_number %}
-        <div class="item"><strong>Office Phone: </strong>{{ page.app_contact_office_number }}</div>
-        {% endif %}
-        {% if page.app_contact_mobile_number %}
-        <div class="item"><strong>Mobile Phone: </strong>{{ page.app_contact_mobile_number }}</div>
-        {% endif %}
-        {% if page.app_contact_email %}
-        <div class="item"><strong>Email: </strong><a href="mailto:{{ contact.app_contact_email }}">{{ page.app_contact_email }}</a></div>
-        {% endif %}
+    <div class="row">
+        <div class="col-sm-4">
+            <img src="{{ page.thumbnail.src|resize(772,600) }}" class="img-responsive">
+            <br>
+            <h2 class="agent-name">Contact Information</h2>
+            <div class="agent-info">
+                {% if page.app_contacts[0].app_contact_office_number %}
+                    <div class="item"><strong>Office Phone: </strong>{{ page.app_contacts[0].app_contact_office_number }}</div>
+                {% endif %}
+                {% if page.app_contacts[0].app_contact_mobile_number %}
+                    <div class="item"><strong>Mobile Phone: </strong>{{ page.app_contacts[0].app_contact_mobile_number }}</div>
+                {% endif %}
+                {% if page.app_contacts[0].app_contact_email %}
+                    <div class="item"><strong>Email: </strong><a href="mailto:{{ page.app_contact_email }}">{{ page.app_contacts[0].app_contact_email }}</a></div>
+                {% endif %}
+            </div>
+        </div>
+        <div class="col-sm-7 agent-bio">
+            {{ page.content }}
+            <div class="item read-more"><a class="btn btn-green-small" href="/sales-team">Back to Sales Team</a></div>
+        </div>
     </div>
-    <img src="{{ page.thumbnail.src|resize(772,600) }}" class="agent-img">
-    <p>{{ page.content }}</p>
-        
-    <div class="item read-more"><a class="btn btn-green-small" href="/sales-team">Back to Sales Team</a></div>
 </section>

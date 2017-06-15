@@ -89,9 +89,11 @@
                                     </div>
                                 </div>
 
-                                <div class="btn-box">
-                                    <a class="site-btn" href="{{ floor_plan.getImages[0] }}">View Gallery</a>
-                                </div>
+                                {% if floor_plan.getImages|length > 1 %}
+                                    <div class="btn-box">
+                                        <a class="site-btn" href="{{ floor_plan.getImages[0] }}">View Gallery</a>
+                                    </div>
+                                {% endif %}
                             </div>
                         </div>
                         {% if floor_plan.latitude and floor_plan.longitude%}
@@ -267,9 +269,11 @@
                                             </div>
                                         </div>
 
-                                        <div class="btn-box">
-                                            <a class="site-btn" href="{{ floor_plan.getImages[0] }}">View Gallery</a>
-                                        </div>
+                                        {% if floor_plan.getImages|length > 1 %}
+                                            <div class="btn-box">
+                                                <a class="site-btn" href="{{ floor_plan.getImages[0] }}">View Gallery</a>
+                                            </div>
+                                        {% endif %}
                                     </div>
                                 </div>
 
