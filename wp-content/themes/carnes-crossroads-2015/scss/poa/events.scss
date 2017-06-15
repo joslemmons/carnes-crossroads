@@ -17,6 +17,11 @@
         }
     }
     
+    //Link Color Override 
+    a.url {
+        color: $dkr-grey;
+    }
+    
     //Event Single
     div#tribe-events {
         margin-top: 85px;
