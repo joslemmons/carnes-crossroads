@@ -11301,6 +11301,17 @@ select::-ms-expand {
       color: #fff; }
   a.url {
     color: #363636; }
+  .toggle-view {
+    margin-top: 20px; }
+  .poa-tribe-events #tribe-bar-form {
+    background: #fff; }
+  .poa-tribe-events #tribe-bar-dates {
+    visibility: hidden; }
+  #tribe-events-content {
+    width: 100% !important; }
+  .tribe-bar-active {
+    font-size: 12px;
+    color: #444444; }
   div#tribe-events {
     margin-top: 85px; }
   .tribe-events-back {

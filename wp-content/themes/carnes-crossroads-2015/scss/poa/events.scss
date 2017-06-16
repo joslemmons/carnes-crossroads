@@ -22,6 +22,31 @@
         color: $dkr-grey;
     }
     
+    .toggle-view {
+            margin-top: 20px;
+        }
+
+        .poa-tribe-events {
+
+            #tribe-bar-form {
+                background: $white;
+            }
+
+            #tribe-bar-dates {
+                visibility: hidden;
+            }
+        }
+        
+        #tribe-events-content {
+            width: 100% !important;
+            
+        }
+        
+        .tribe-bar-active {
+            font-size: 12px;
+            color: #444444;
+        }
+    
     //Event Single
     div#tribe-events {
         margin-top: 85px;
