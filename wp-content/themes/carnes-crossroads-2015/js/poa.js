@@ -81,6 +81,11 @@ jQuery(function ($) {
           ]
     });
     
+    //Event Views
+    $('#tribe-bar-views').click(function () {
+        $(this).addClass('tribe-bar-views-open');
+    });
+    
     //Match Height - Home Page
     //--Events
     $('.home-events').each(function(i, elem) {
