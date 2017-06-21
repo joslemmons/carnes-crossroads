@@ -7,6 +7,9 @@
     <div class="listing-details-col">
         <div class="listing-neighborhood">{{ post.title }}</div>
         <div class="listing-details">
+            {% if post.content %}
+                {{ post.content }}
+            {% endif %}
             {% if post.website_url %}
             <a href="{{ post.website_url }}" class="showProperty site-btn">Visit Website</a>
             {% endif %}
