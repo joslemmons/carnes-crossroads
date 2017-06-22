@@ -9774,6 +9774,10 @@ span.tel {
       .page-imap #imap .leaflet-top {
         top: 10px; } }
 
+@media screen {
+    .page-imap #imap .listing-details {
+      text-transform: none; } }
+
 @media screen and (max-width: 767px) {
   .page-imap .map-legend {
     top: 20px; } }
