@@ -1,6 +1,27 @@
 
 <div class="col-lg-3 col-md-4 col-sm-6">
-
+    <div class="grid-save">
+        <div class="save action-link">
+            <div class="saved"
+                 {% if current_user.hasSavedProperty(property) == false %}style="display:none;"{% endif %}>
+                <a href="#" data-property-id="{{ property.id }}">
+                    <div class="heart-icon">
+                        <img src="/wp-content/themes/carnes-crossroads-2015/img/favorite-icon-on.png" width="41" height="37"/>
+                    </div>
+                </a>
+            </div>
+            <div class="not-saved"
+                 {% if current_user.hasSavedProperty(property) == true %}style="display:none;"{% endif %}>
+                <a href="#" data-property-id="{{ property.id }}">
+                    <div class="heart-icon">
+                        <div class="heart-icon">
+                            <img src="/wp-content/themes/carnes-crossroads-2015/img/favorite-icon-off.png" width="41" height="37"/>
+                        </div>
+                    </div>
+                </a>
+            </div>
+        </div>
+    </div>
     <div class="grid-results-box {% if property.getId == activePropertyId %}active{% endif %} {% if loop.last and nextPageUrl %}infinite-check{% endif %}" data-property-id="{{ property.getId }}"
          data-property-address="{{ property.getAddress|slugify }}"
          {% if loop.last and nextPageUrl %}data-infinite-scroll-next-url="{{ nextPageUrl }}"{% endif %}>
