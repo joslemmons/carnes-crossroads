@@ -12,28 +12,13 @@ if ( ! defined( 'ABSPATH' ) ) {
 class Tribe__Events__Shortcode__Event_Details {
 
 	/**
-	 * We use a Private constructor to Prevent `new Class` usage
-	 * Correct usage: `Tribe__Events__Shortcode__Event_Details::instance()`
-	 *
-	 * @since  4.1
-	 * @return  void
-	 */
-	private function __construct() {}
-
-	/**
 	 * Static Singleton Factory Method
 	 *
 	 * @since  4.1
 	 * @return Tribe__Events__Shortcode__Event_Details
 	 */
 	public static function instance() {
-		static $instance;
-
-		if ( ! $instance ) {
-			$instance = new self;
-		}
-
-		return $instance;
+		return tribe( 'tec.shortcodes.event-details' );
 	}
 
 	/**
@@ -42,10 +27,8 @@ class Tribe__Events__Shortcode__Event_Details {
 	 * @since  4.1
 	 * @return  void
 	 */
-	public static function hook() {
-		$myself = self::instance();
-
-		add_action( 'init', array( $myself, 'add_shortcode' ) );
+	public function hook() {
+		add_action( 'init', array( $this, 'add_shortcode' ) );
 	}
 
 	/**
@@ -148,7 +131,7 @@ class Tribe__Events__Shortcode__Event_Details {
 		$slug = $this->get_shortcode_slug();
 
 		$args = (object) shortcode_atts( array(
-			'align' => 'right',
+			'align' => 'left',
 			'id' => null,
 		), $args, $tag );
 

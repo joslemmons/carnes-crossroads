@@ -12,24 +12,6 @@ if ( ! class_exists( 'Tribe__App_Shop' ) ) {
 	class Tribe__App_Shop {
 
 		/**
-		 * Version of the data model
-		 */
-		const API_VERSION = '1.0';
-		/**
-		 * URL of the API
-		 */
-		const API_ENDPOINT = 'http://tri.be/api/app-shop/';
-
-		/**
-		 * Base name for the transients key
-		 */
-		const CACHE_KEY_BASE = 'tribe-app-shop';
-		/**
-		 * Duration of the transients, in seconds.
-		 */
-		const CACHE_EXPIRATION = 300; //5 min
-
-		/**
 		 * Slug of the WP admin menu item
 		 */
 		const MENU_SLUG = 'tribe-app-shop';
@@ -46,7 +28,6 @@ if ( ! class_exists( 'Tribe__App_Shop' ) ) {
 		 * @var string
 		 */
 		private $admin_page = null;
-
 
 		/**
 		 * Class constructor
@@ -99,35 +80,17 @@ if ( ! class_exists( 'Tribe__App_Shop' ) ) {
 		 * Enqueue the styles and script
 		 */
 		public function enqueue() {
-			wp_enqueue_style( 'app-shop', tribe_resource_url( 'app-shop.css', false, 'common' ), array(), apply_filters( 'tribe_events_css_version', Tribe__Main::VERSION ) );
-			wp_enqueue_script( 'app-shop', tribe_resource_url( 'app-shop.js', false, 'common' ), array(), apply_filters( 'tribe_events_js_version', Tribe__Main::VERSION ) );
+			wp_enqueue_style( 'app-shop', tribe_resource_url( 'app-shop.css', false, null, Tribe__Main::instance() ), array(), apply_filters( 'tribe_events_css_version', Tribe__Main::VERSION ) );
+			wp_enqueue_script( 'app-shop', tribe_resource_url( 'app-shop.js', false, null, Tribe__Main::instance() ), array(), apply_filters( 'tribe_events_js_version', Tribe__Main::VERSION ) );
 		}
 
 		/**
 		 * Renders the Shop App page
 		 */
 		public function do_menu_page() {
-			$remote = $this->get_all_products();
-
-			if ( ! empty( $remote ) ) {
-				$products = null;
-				if ( property_exists( $remote, 'data' ) ) {
-					$products = $remote->data;
-				}
-				$banner = null;
-				if ( property_exists( $remote, 'banner' ) ) {
-					$banner = $remote->banner;
-				}
-
-				if ( empty( $products ) ) {
-					return;
-				}
-
-				$categories = array_unique( wp_list_pluck( $products, 'category' ) );
-
-				include_once Tribe__Main::instance()->plugin_path . 'src/admin-views/app-shop.php';
-			}
-
+			$main = Tribe__Main::instance();
+			$products = $this->get_all_products();
+			include_once Tribe__Main::instance()->plugin_path . 'src/admin-views/app-shop.php';
 		}
 
 		/**
@@ -136,45 +99,20 @@ if ( ! class_exists( 'Tribe__App_Shop' ) ) {
 		 * @return array|WP_Error
 		 */
 		private function get_all_products() {
+			$all_products = tribe( 'plugins.api' )->get_products();
 
-			$cache_key = self::CACHE_KEY_BASE . '-products';
-			$products  = get_transient( $cache_key );
-
-			if ( ! $products ) {
-				$products = $this->remote_get( 'get-products' );
-				if ( $products && ! $products->error ) {
-					set_transient( $cache_key, $products, self::CACHE_EXPIRATION );
-				}
-			}
-
-			if ( is_string( $products ) ) {
-				$products = json_decode( $products );
-			}
+			$products = array(
+				(object) $all_products['event-aggregator'],
+				(object) $all_products['events-calendar-pro'],
+				(object) $all_products['event-tickets-plus'],
+				(object) $all_products['tribe-filterbar'],
+				(object) $all_products['events-community'],
+				(object) $all_products['events-community-tickets'],
+				(object) $all_products['tribe-eventbrite'],
+				(object) $all_products['image-widget-plus'],
+			);
 
 			return $products;
-
-		}
-
-		/**
-		 * Makes the remote call to the API endpoint
-		 *
-		 * @param            $action
-		 * @param array|null $args
-		 *
-		 * @return array|WP_Error
-		 */
-		private function remote_get( $action, $args = null ) {
-
-			$url = trailingslashit( self::API_ENDPOINT . self::API_VERSION ) . $action;
-
-			$ret = wp_remote_get( $url );
-
-			if ( ! is_wp_error( $ret ) && isset( $ret['body'] ) ) {
-				return json_decode( $ret['body'] );
-			}
-
-			return null;
-
 		}
 
 		/**
@@ -190,6 +128,5 @@ if ( ! class_exists( 'Tribe__App_Shop' ) ) {
 
 			return self::$instance;
 		}
-
 	}
 }
