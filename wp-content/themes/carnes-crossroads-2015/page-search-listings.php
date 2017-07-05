@@ -39,6 +39,7 @@ Metric::trackSearch($filters);
 
 /* @var $result Result */
 $result = \HomeFinder\Model\HomeFinder::getProperties($filters, $per_page, $page);
+$resultAll = \HomeFinder\Model\HomeFinder::getFeaturedProperties($result->total, 1, null, null);
 
 $view = isset($_REQUEST['view']) ? $_REQUEST['view'] : 'grid';
 if ($filters->shouldIncludeHomes() == false) {
@@ -46,7 +47,7 @@ if ($filters->shouldIncludeHomes() == false) {
 }
 $context['view'] = $view;
 $context['filters'] = $filters;
-$context['result'] = $result;
+$context['result'] = $resultAll;
 $context['isSearchListings'] = true;
 $context['listingsTitle'] = 'Search Listings';
 

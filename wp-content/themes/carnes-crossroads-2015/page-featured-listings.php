@@ -19,6 +19,7 @@ if (!empty($_REQUEST)) {
 
 /* @var Result */
 $result = HomeFinder::getFeaturedProperties(null, $page, null, null);
+$resultAll = HomeFinder::getFeaturedProperties($result->total, 1, null, null);
 
 $filters = HomeFinderFilters::withREQUESTParams();
 $filters->setShouldIncludeHomes(true);
@@ -31,7 +32,7 @@ $context['view'] = $view;
 $context['filterString'] = $filterString;
 $context['filters'] = $filters;
 
-$context['result'] = $result;
+$context['result'] = $resultAll;
 $context['isFeaturedListings'] = true;
 $context['listingsTitle'] = 'Featured Listings';
 

@@ -140,7 +140,7 @@ class HomeFinder extends Router
 
         $html = \Timber::compile($render_view, array(
             'name' => $name,
-            'result' => $result,
+            'result' => $resultAll,
             'nextPageUrl' => '/api/home-finder/search/page/' . ($page + 1) . '?' . http_build_query(
                     array_merge(
                         $filters->getRawFilters(),

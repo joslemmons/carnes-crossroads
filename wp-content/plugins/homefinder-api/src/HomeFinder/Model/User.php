@@ -112,7 +112,7 @@ class User extends \TimberUser
      * @param Property $property
      * @return bool
      */
-    public function hasSavedProperty(Property $property)
+    public function hasSavedProperty($property)
     {
         $saved_property_ids = $this->getSavedPropertyIds();
         return ($saved_property_ids && in_array($property->getId(), $saved_property_ids));
