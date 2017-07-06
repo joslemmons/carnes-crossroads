@@ -120,7 +120,7 @@ class PlaceOfInterest extends \TimberPost {
         wp_insert_term('Parks & Lakes', self::$_taxonomy, array(
             'slug' => self::TAX_PARK_LAKE
         ));
-        wp_insert_term('Towns/Medical/Office', self::$_taxonomy, array(
+        wp_insert_term('Town/Medical/Office', self::$_taxonomy, array(
             'slug' => self::TAX_TOWN_MEDICAL_OFFICE
         ));
         wp_insert_term('Real Estate', self::$_taxonomy, array(
