@@ -111,6 +111,7 @@ class PlaceOfInterest extends \TimberPost {
 
     public static function addTermsForTaxonomy()
     {
+        wp_delete_term(56, self::$_taxonomy);
         wp_delete_term(62, self::$_taxonomy);
         wp_delete_term(63, self::$_taxonomy);
         wp_delete_term(61, self::$_taxonomy);
