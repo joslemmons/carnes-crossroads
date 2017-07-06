@@ -21,7 +21,7 @@ class PlaceOfInterest extends \TimberPost {
     const TAX_COMMUNITY_AMENITY = 'community_amenity';
     const TAX_NEIGHBORHOOD = 'neighborhood';
     const TAX_PARK_LAKE = 'park_lake';
-    const TAX_TOWN = 'town';
+    const TAX_TOWN_MEDICAL_OFFICE = 'town_medical_office';
     const TAX_REAL_ESTATE = 'real_estate';
 
     public static function getPostType()
@@ -120,8 +120,8 @@ class PlaceOfInterest extends \TimberPost {
         wp_insert_term('Parks & Lakes', self::$_taxonomy, array(
             'slug' => self::TAX_PARK_LAKE
         ));
-        wp_insert_term('Towns', self::$_taxonomy, array(
-            'slug' => self::TAX_TOWN
+        wp_insert_term('Towns/Medical/Office', self::$_taxonomy, array(
+            'slug' => self::TAX_TOWN_MEDICAL_OFFICE
         ));
         wp_insert_term('Real Estate', self::$_taxonomy, array(
             'slug' => self::TAX_REAL_ESTATE

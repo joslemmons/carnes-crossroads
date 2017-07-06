@@ -92,7 +92,7 @@ function setMarkerColor(listingType) {
             color = '#695e49';
             break;
 
-        case 'town':
+        case 'town_medical_office':
             color = '#bf7616';
             break;
 
