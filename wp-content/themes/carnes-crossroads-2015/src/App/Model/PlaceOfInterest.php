@@ -111,6 +111,10 @@ class PlaceOfInterest extends \TimberPost {
 
     public static function addTermsForTaxonomy()
     {
+        wp_delete_term(62, self::$_taxonomy);
+        wp_delete_term(63, self::$_taxonomy);
+        wp_delete_term(61, self::$_taxonomy);
+
         wp_insert_term('Community Amenities', self::$_taxonomy, array(
             'slug' => self::TAX_COMMUNITY_AMENITY
         ));
