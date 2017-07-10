@@ -195,10 +195,11 @@ jQuery(function ($) {
 
         $('#saveSearchSection').find('a.showAccountPage').text('(' + savedSearchesCount + ')');
 
-        $(this).parent().remove();
+        if (confirm('Are you sure?')) {
+            $(this).parent().remove();
+        }
 
-        $.post(unSaveLink, {}, function (rsp) {
-        });
+        $.post(unSaveLink, {}, function (rsp) {});
 
         return false;
     });
