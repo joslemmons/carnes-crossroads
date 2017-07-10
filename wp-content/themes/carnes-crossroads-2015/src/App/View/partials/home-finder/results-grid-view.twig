@@ -10,7 +10,7 @@
                     </div>
 
                     <div class="results-count">
-                        {{ result.total }} Result{% if result.total > 1 %}s{% endif %}
+                        {% if not isFeaturedListings %}{{ result.total }} Result{% if result.total > 1 %}s{% endif %}{% endif %}
                     </div>
 
                     <div class="results-sort"
