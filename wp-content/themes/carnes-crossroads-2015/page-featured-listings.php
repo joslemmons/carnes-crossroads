@@ -32,7 +32,7 @@ $context['view'] = $view;
 $context['filterString'] = $filterString;
 $context['filters'] = $filters;
 
-$context['result'] = $resultAll;
+$context['result'] = $result;
 $context['isFeaturedListings'] = true;
 $context['listingsTitle'] = 'Featured Listings';
 
