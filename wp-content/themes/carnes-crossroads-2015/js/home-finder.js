@@ -674,7 +674,7 @@ jQuery(function ($) {
         pauseSearch = true;
         $('#filter-searchAddress').val('');
 
-        filterPriceSlider.noUiSlider.set([0, 500000]);
+        filterPriceSlider.noUiSlider.set([0, 1000000]);
         $("#filter-listings-type-copy, #filter-builders, #filter-bedrooms, #filter-bathrooms, #filter-sq-ft").find('option').removeProp('selected');
         $("#filter-listings-type-copy, #filter-builders, #filter-bedrooms, #filter-bathrooms, #filter-sq-ft").trigger('chosen:updated');
 
