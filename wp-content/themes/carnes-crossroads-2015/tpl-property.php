@@ -43,7 +43,7 @@ $context['listingsTitle'] = 'Featured Listings';
 $context['isSingle'] = true;
 $context['result'] = $featured_properties_result;
 $context['property'] = $property;
-$context['seo_title'] = $property->getAddress() . ' - Daniel Island';
+$context['seo_title'] = $property->getAddress() . ' - Carnes Crossroads';
 $context['property_images'] = $property->getImages();
 $description = trim(preg_replace('/\s\s+/', ' ', strip_tags($property->getDescription())));
 if (160 < strlen($description)) {
