@@ -49,7 +49,7 @@ $context['view'] = $view;
 $context['filters'] = $filters;
 $context['result'] = $resultAll;
 $context['isSearchListings'] = true;
-$context['listingsTitle'] = 'Search Listings';
+$context['listingsTitle'] = 'Search Results';
 
 HomeFinderPage::enqueueAssets();
 

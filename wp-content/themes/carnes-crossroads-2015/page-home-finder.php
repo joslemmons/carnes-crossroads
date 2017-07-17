@@ -18,7 +18,8 @@ $featured_properties_result = HomeFinder::getProperties($filters);
 $context['view'] = $view;
 $context['result'] = $featured_properties_result;
 $context['isAvailableHomes'] = true;
-$context['listingsTitle'] = 'Search Listings';
+$context['listingsTitle'] = 'Featured Listings';
+$context['isFeaturedListings'] = true;
 
 HomeFinderPage::enqueueAssets();
 

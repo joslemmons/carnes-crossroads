@@ -471,11 +471,11 @@ jQuery(function ($) {
 
                 hideLoadingListingsIndicator();
 
-                $('h2.listings-title').text('Search Listings');
-
                 $('div.results-count').text(pluralize('Result', total, true));
 
                 $('div.home-finder-container').html(html).fadeTo('slow', 1);
+
+                $('h2.listings-title').text('Search Results');
 
                 if(view == 'map'){
                     initMap();
