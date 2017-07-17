@@ -26,7 +26,7 @@
         <a href="#" id="filter-clearAll">Clear</a>
         <select id="filter-listings-type-copy">
                 <option>Property Type</option>
-                <option {% if filters.shouldIncludeHomes %}selected="selected"{% endif %}
+                <option {% if filters.shouldIncludeHomes and not isFeaturedListings %}selected="selected"{% endif %}
                     value="available-homes">Available Homes
                 </option>
                 <option {% if filters.shouldIncludePlans %}selected="selected"{% endif %}
