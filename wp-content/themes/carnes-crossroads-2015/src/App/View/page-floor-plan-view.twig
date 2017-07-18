@@ -112,39 +112,60 @@
                     <div class="single-listing-content">
                         <div class="listing-actions">
                             <div class="save action-link">
-                            <div class="share action-link">
-                                {% set tweet_share = floor_plan.getFriendlyName~' on @carnesxroads '~floor_plan.link|url_encode %}
-                                {% set email_subject_share = '[Carnes Crossroads Real Estate] '~floor_plan.getAddress|url_encode %}
-                                {% set email_body_share = floor_plan.getFriendlyName~' '~floor_plan.link|url_encode %}
-                                {% set facebook_app_id = function('\\App\\Model\\Config::getFacebookAppId') %}
-                                {% set domain = floor_plan.link|url_encode %}
-                                {% set facebook_share_name = floor_plan.getAddress~' on Carnes Crossroads Real Estate'|url_encode %}
-                                {% set facebook_share_description = floor_plan.getFriendlyName|url_encode %}
-                                {% set facebook_share_caption = floor_plan.link|url_encode %}
-                                {% set facebook_share_context = floor_plan.link|url_encode %}
-                                {% set facebook_share_image_src = floor_plan.getFeaturedImageSrc|url_encode %}
-                                <a class="open-share-widget">Share
-                                    <div class="star-icon">
-                                        <svg width="16" height="16">
-                                            <image xlink:href="{{ template_uri }}/img/share.svg"
-                                                   src="{{ template_uri }}/img/share.png" width="16" height="16"/>
-                                        </svg>
-                                    </div>
-                                </a>
-                                <div class="share-widget">
-                                    <span class="share-text">Share</span>
-                                    <a href="https://www.facebook.com/dialog/feed?app_id={{ facebook_app_id }}&display=popup&name={{ facebook_share_name }}&description={{ facebook_share_description }}&caption={{ facebook_share_caption }}&link={{ domain }}&redirect_uri={{ domain }}&picture={{ facebook_share_image_src }}"
-                                       target="blank">
-                                        <div class="fb-icon share-icon"></div>
+                                <div class="saved"
+                                     {% if current_user.hasSavedProperty(property) == false %}style="display:none;"{% endif %}>
+                                    <a href="#" data-property-id="{{ property.id }}">Saved
+                                        <div class="star-icon">
+                                            <svg width="16" height="16">
+                                                <image xlink:href="{{ template_uri }}/img/heart-on.svg" src="{{ template_uri }}/img/heart-on.png" width="16" height="16"/>
+                                            </svg>
+                                        </div>
                                     </a>
-                                    <a href="http://twitter.com/home?status={{ tweet_share }}" target="blank">
-                                        <div class="twitter-icon share-icon"></div>
-                                    </a>
-                                    <a href="mailto:?subject={{ email_subject_share }}&body={{ email_body_share }}">
-                                        <div class="email-icon share-icon"></div>
-                                    </a>
-                                    <div class="arrow"></div>
                                 </div>
+                                <div class="not-saved"
+                                     {% if current_user.hasSavedProperty(property) == true %}style="display:none;"{% endif %}>
+                                    <a href="#" data-property-id="{{ property.id }}">Save
+                                        <div class="star-icon">
+                                            <svg width="16" height="16">
+                                                <image xlink:href="{{ template_uri }}/img/heart-off.svg" src="{{ template_uri }}/img/heart-off.png" width="16" height="16"/>
+                                            </svg>
+                                        </div>
+                                    </a>
+                                </div>
+                            </div>
+                            <div class="share action-link">
+                            {% set tweet_share = floor_plan.getFriendlyName~' on @carnesxroads '~floor_plan.link|url_encode %}
+                            {% set email_subject_share = '[Carnes Crossroads Real Estate] '~floor_plan.getAddress|url_encode %}
+                            {% set email_body_share = floor_plan.getFriendlyName~' '~floor_plan.link|url_encode %}
+                            {% set facebook_app_id = function('\\App\\Model\\Config::getFacebookAppId') %}
+                            {% set domain = floor_plan.link|url_encode %}
+                            {% set facebook_share_name = floor_plan.getAddress~' on Carnes Crossroads Real Estate'|url_encode %}
+                            {% set facebook_share_description = floor_plan.getFriendlyName|url_encode %}
+                            {% set facebook_share_caption = floor_plan.link|url_encode %}
+                            {% set facebook_share_context = floor_plan.link|url_encode %}
+                            {% set facebook_share_image_src = floor_plan.getFeaturedImageSrc|url_encode %}
+                            <a class="open-share-widget">Share
+                                <div class="star-icon">
+                                    <svg width="16" height="16">
+                                        <image xlink:href="{{ template_uri }}/img/share.svg"
+                                               src="{{ template_uri }}/img/share.png" width="16" height="16"/>
+                                    </svg>
+                                </div>
+                            </a>
+                            <div class="share-widget">
+                                <span class="share-text">Share</span>
+                                <a href="https://www.facebook.com/dialog/feed?app_id={{ facebook_app_id }}&display=popup&name={{ facebook_share_name }}&description={{ facebook_share_description }}&caption={{ facebook_share_caption }}&link={{ domain }}&redirect_uri={{ domain }}&picture={{ facebook_share_image_src }}"
+                                   target="blank">
+                                    <div class="fb-icon share-icon"></div>
+                                </a>
+                                <a href="http://twitter.com/home?status={{ tweet_share }}" target="blank">
+                                    <div class="twitter-icon share-icon"></div>
+                                </a>
+                                <a href="mailto:?subject={{ email_subject_share }}&body={{ email_body_share }}">
+                                    <div class="email-icon share-icon"></div>
+                                </a>
+                                <div class="arrow"></div>
+                            </div>
                             </div>
                             {% if floor_plan.brochure_src %}
                             <div class="print action-link">
