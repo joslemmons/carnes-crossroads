@@ -135,7 +135,7 @@
                             <div class="share action-link">
                                 {% set tweet_share = property.getFriendlyName~' on @carnesxroads '~property.link|url_encode %}
                                 {% set email_subject_share = '[Carnes Crossroads Real Estate] '~property.getAddress|url_encode %}
-                                {% set email_body_share = property.getFriendlyName~' <br> Check out this property on Carnes Crossroads -- '~property.link|url_encode %}
+                                {% set email_body_share = property.getFriendlyName~' Check out this property on Carnes Crossroads -- '~property.link|url_encode %}
                                 {% set facebook_app_id = function('\\App\\Model\\Config::getFacebookAppId') %}
                                 {% set domain = property.link|url_encode %}
                                 {% set facebook_share_name = property.getAddress~' on Carnes Crossroads Real Estate'|url_encode %}
