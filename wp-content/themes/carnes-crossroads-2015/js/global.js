@@ -175,11 +175,10 @@ jQuery(function ($) {
     }
 
     $(document).on('click', '#account-saved-listings a.account-unsave-listing', function () {
-        var propertyId = $(this).attr('data-property-id'),
-            slickSlideNum = $(this).parent().attr('data-slick-index');
+        var propertyId = $(this).attr('data-property-id')
 
         if (confirm('Are you sure?')) {
-            $('.saved-listings-slider').slick('slickRemove', $('.slick-slide').index(this) + 1);
+            $('.saved-listings-slider').slick('slickRemove', $('.slick-slide').index($(this).parent()));
         }
 
         saveOrUnSaveProperty(propertyId, 'un-save');
