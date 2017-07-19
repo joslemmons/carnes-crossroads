@@ -19,11 +19,17 @@ jQuery(function ($) {
         var map = L.mapbox.map('single-map', 'mapbox.streets', { scrollWheelZoom : false }).setView([parseFloat($('#single-map').attr('data-latitude')), parseFloat($('#single-map').attr('data-longitude'))], 15);
         var hometype = $('#single-map').attr('data-property-type');
 
+        var stamenLayer = L.tileLayer(DI.templateUri + '/img/imap/imap-cx-update/{z}/{x}/{y}.png',{}).addTo(map);
+
         L.marker([parseFloat($('#single-map').attr('data-latitude')), parseFloat($('#single-map').attr('data-longitude'))], {
             icon: L.mapbox.marker.icon({
                 'marker-color': '#f86767'
             })
         }).addTo(map);
+
+        if(!$('#single-map').attr('data-latitude') || $('#single-map').attr('data-longitude')) {
+            map.setView([33.0565, -80.103917]);
+        }
     }
     
     
@@ -31,6 +37,11 @@ jQuery(function ($) {
     if( $('#single-map-2').length ) {
         var map = L.mapbox.map('single-map-2', 'mapbox.streets', { scrollWheelZoom : false }).setView([parseFloat($('#single-map-2').attr('data-latitude')), parseFloat($('#single-map-2').attr('data-longitude'))], 15);
         var hometype = $('#single-map-2').attr('data-property-type');
+
+        var stamenLayer = L.tileLayer(DI.templateUri + '/img/imap/imap-cx-update/{z}/{x}/{y}.png',{
+            minZoom: 14,
+            maxZoom: 19
+        }).addTo(map);
 
         L.marker([parseFloat($('#single-map-2').attr('data-latitude')), parseFloat($('#single-map-2').attr('data-longitude'))], {
             icon: L.mapbox.marker.icon({
