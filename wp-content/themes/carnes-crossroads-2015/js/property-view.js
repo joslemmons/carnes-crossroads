@@ -16,38 +16,57 @@ jQuery(function ($) {
     L.mapbox.accessToken = 'pk.eyJ1IjoiZGlkZXZjbyIsImEiOiJjaXM3cWY3NDEwNDc0Mnpwa2w5YnllMXZkIn0.4pWeAL6-vhtobhpFd2HDuA';
 
     if( $('#single-map').length ) {
-        var map = L.mapbox.map('single-map', 'mapbox.streets', { scrollWheelZoom : false }).setView([parseFloat($('#single-map').attr('data-latitude')), parseFloat($('#single-map').attr('data-longitude'))], 15);
+        var map = L.mapbox.map('single-map', 'mapbox.streets', { scrollWheelZoom : false });
+        map.setZoom(17);
+
+        var southWest = L.latLng(32.83064187300698, -79.93316068560326);
+        var northEast = L.latLng(32.89325262945007, -79.88402077618287);
+        var bounds = L.latLngBounds(southWest, northEast);
+        map.fitBounds(bounds);
+
         var hometype = $('#single-map').attr('data-property-type');
 
         var stamenLayer = L.tileLayer(DI.templateUri + '/img/imap/imap-cx-update/{z}/{x}/{y}.png',{}).addTo(map);
 
-        L.marker([parseFloat($('#single-map').attr('data-latitude')), parseFloat($('#single-map').attr('data-longitude'))], {
-            icon: L.mapbox.marker.icon({
-                'marker-color': '#f86767'
-            })
-        }).addTo(map);
+        var latitude = parseFloat($('#single-map').attr('data-latitude'));
+        var longitude = parseFloat($('#single-map').attr('data-longitude'));
 
-        if(!$('#single-map').attr('data-latitude') || $('#single-map').attr('data-longitude')) {
-            map.setView([33.0565, -80.103917]);
+        if(latitude && longitude) {
+            map.setView([latitude, longitude], 15);
+            L.marker([latitude, longitude], {
+                icon: L.mapbox.marker.icon({
+                    'marker-color': '#f86767'
+                })
+            }).addTo(map);
         }
     }
     
     
     //duplicated for mobile map
     if( $('#single-map-2').length ) {
-        var map = L.mapbox.map('single-map-2', 'mapbox.streets', { scrollWheelZoom : false }).setView([parseFloat($('#single-map-2').attr('data-latitude')), parseFloat($('#single-map-2').attr('data-longitude'))], 15);
-        var hometype = $('#single-map-2').attr('data-property-type');
+        var map = L.mapbox.map('single-map', 'mapbox.streets', { scrollWheelZoom : false });
+        map.setZoom(17);
 
-        var stamenLayer = L.tileLayer(DI.templateUri + '/img/imap/imap-cx-update/{z}/{x}/{y}.png',{
-            minZoom: 14,
-            maxZoom: 19
-        }).addTo(map);
+        var southWest = L.latLng(32.83064187300698, -79.93316068560326);
+        var northEast = L.latLng(32.89325262945007, -79.88402077618287);
+        var bounds = L.latLngBounds(southWest, northEast);
+        map.fitBounds(bounds);
 
-        L.marker([parseFloat($('#single-map-2').attr('data-latitude')), parseFloat($('#single-map-2').attr('data-longitude'))], {
-            icon: L.mapbox.marker.icon({
-                'marker-color': '#f86767'
-            })
-        }).addTo(map);
+        var hometype = $('#single-map').attr('data-property-type');
+
+        var stamenLayer = L.tileLayer(DI.templateUri + '/img/imap/imap-cx-update/{z}/{x}/{y}.png',{}).addTo(map);
+
+        var latitude = parseFloat($('#single-map').attr('data-latitude'));
+        var longitude = parseFloat($('#single-map').attr('data-longitude'));
+
+        if(latitude && longitude) {
+            map.setView([latitude, longitude], 15);
+            L.marker([latitude, longitude], {
+                icon: L.mapbox.marker.icon({
+                    'marker-color': '#f86767'
+                })
+            }).addTo(map);
+        }
     }
 
     var $saveSearchSection = $('#saveSearchSection'),
