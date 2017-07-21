@@ -8297,7 +8297,7 @@ Edits by Chernoff Newman
       @media (max-width: 991px) {
         .home-finder-content .row-grid-view .grid-results-box .home-image {
           height: 180px; } }
-    .home-finder-content .row-grid-view .grid-results-box .type-box {
+    .home-finder-content .row-grid-view .grid-results-box .type-box, .home-finder-content .row-grid-view .grid-results-box .type-box-available {
       background-color: #e4e2d6;
       padding: 10px 18px;
       position: absolute;
@@ -8313,6 +8313,8 @@ Edits by Chernoff Newman
       font-weight: 400;
       text-transform: uppercase;
       letter-spacing: 0.75px; }
+      .home-finder-content .row-grid-view .grid-results-box .type-box-available {
+        background-color: #ced8a7; }
     .home-finder-content .row-grid-view .grid-results-box .grid-box-content {
       padding: 25px;
       height: 260px;
@@ -8550,7 +8552,7 @@ Edits by Chernoff Newman
     .home-finder-content .map-box-content .price {
       font-size: 1.05rem;
       letter-spacing: 0.5px; }
-    .home-finder-content .map-box-content .type-box {
+    .home-finder-content .map-box-content .type-box, .home-finder-content .map-box-content .row-grid-view .grid-results-box .type-box-available, .home-finder-content .row-grid-view .grid-results-box .map-box-content .type-box-available {
       font-family: "Oswald", sans-serif;
       font-size: 10px;
       font-weight: 400;
@@ -10214,7 +10216,7 @@ select::-ms-expand {
 .ie9 .menu-text {
   display: none; }
 
-.ie9 .home-finder-content .row-grid-view .grid-results-box .type-box {
+.ie9 .home-finder-content .row-grid-view .grid-results-box .type-box, .ie9 .home-finder-content .row-grid-view .grid-results-box .type-box-available {
   width: 100%;
   left: 0; }
 

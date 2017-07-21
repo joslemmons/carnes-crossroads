@@ -283,6 +283,11 @@
                 font-weight: 400;
                 text-transform: uppercase;
                 letter-spacing: 0.75px;
+
+                &-available {
+                    @extend .type-box;
+                    background-color: #ced8a7;
+                }
             }
 
             .grid-box-content {
