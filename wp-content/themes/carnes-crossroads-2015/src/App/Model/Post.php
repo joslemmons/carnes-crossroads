@@ -407,7 +407,7 @@ class Post extends \TimberPost
                 'get_src' => get_template_directory_uri() . '/img/bg-button-events.jpg'
             ),
             'button' => array(
-                'link' => '/events-at-carnes-crossroads/'
+                'link' => '/calendar-of-events/'
             )
         ));
         
