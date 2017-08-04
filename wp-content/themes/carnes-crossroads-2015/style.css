@@ -8314,7 +8314,8 @@ Edits by Chernoff Newman
       text-transform: uppercase;
       letter-spacing: 0.75px; }
       .home-finder-content .row-grid-view .grid-results-box .type-box-available {
-        background-color: #ced8a7; }
+        background-color: #e26f57;
+        color: #fff; }
     .home-finder-content .row-grid-view .grid-results-box .grid-box-content {
       padding: 25px;
       height: 260px;

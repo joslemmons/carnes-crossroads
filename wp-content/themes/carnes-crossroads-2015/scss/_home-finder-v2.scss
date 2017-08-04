@@ -286,7 +286,8 @@
 
                 &-available {
                     @extend .type-box;
-                    background-color: #ced8a7;
+                    background-color: $cc-red;
+                    color: $white;
                 }
             }
 
